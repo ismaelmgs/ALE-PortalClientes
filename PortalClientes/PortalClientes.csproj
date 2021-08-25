@@ -1392,11 +1392,13 @@
     <Content Include="vendors\validator\multifield.js" />
     <Content Include="vendors\validator\validator.js" />
     <Content Include="Views\frmDashboard.aspx" />
+    <Content Include="Views\frmUsuarios.aspx" />
     <Content Include="Web.config" />
     <Content Include="widgets.html" />
     <Content Include="xx.html" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Clases\Helper.cs" />
     <Compile Include="Clases\Utils.cs" />
     <Compile Include="DomainModel\DBBase.cs" />
     <Compile Include="DomainModel\DBDashboard.cs" />
@@ -1419,6 +1421,8 @@
     </Compile>
     <Compile Include="Interfaces\IBaseView.cs" />
     <Compile Include="Interfaces\IViewDashboard.cs" />
+    <Compile Include="Objetos\UserIdentity.cs" />
+    <Compile Include="Objetos\Usuario.cs" />
     <Compile Include="Presenter\BasePresenter.cs" />
     <Compile Include="Presenter\Dashboard_Presenter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -1435,6 +1439,13 @@
     </Compile>
     <Compile Include="Views\frmDashboard.aspx.designer.cs">
       <DependentUpon>frmDashboard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\frmUsuarios.aspx.cs">
+      <DependentUpon>frmUsuarios.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\frmUsuarios.aspx.designer.cs">
+      <DependentUpon>frmUsuarios.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -1525,7 +1536,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Objetos\" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
