@@ -77,9 +77,11 @@
     <Content Include="frmLogin.aspx" />
     <Content Include="Global.asax" />
     <Content Include="Views\frmDashboard.aspx" />
+    <Content Include="Views\frmUsuarios.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Clases\Helper.cs" />
     <Compile Include="Clases\Utils.cs" />
     <Compile Include="DomainModel\DBBase.cs" />
     <Compile Include="DomainModel\DBDashboard.cs" />
@@ -102,6 +104,8 @@
     </Compile>
     <Compile Include="Interfaces\IBaseView.cs" />
     <Compile Include="Interfaces\IViewDashboard.cs" />
+    <Compile Include="Objetos\UserIdentity.cs" />
+    <Compile Include="Objetos\Usuario.cs" />
     <Compile Include="Presenter\BasePresenter.cs" />
     <Compile Include="Presenter\Dashboard_Presenter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -119,6 +123,13 @@
     <Compile Include="Views\frmDashboard.aspx.designer.cs">
       <DependentUpon>frmDashboard.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Views\frmUsuarios.aspx.cs">
+      <DependentUpon>frmUsuarios.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\frmUsuarios.aspx.designer.cs">
+      <DependentUpon>frmUsuarios.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -132,7 +143,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Objetos\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
