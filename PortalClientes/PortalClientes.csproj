@@ -130,7 +130,6 @@
     <Content Include="glyphicons.html" />
     <Content Include="icons.html" />
     <Content Include="inbox.html" />
-    <Content Include="index.html" />
     <Content Include="index2.html" />
     <Content Include="index3.html" />
     <Content Include="invoice.html" />
