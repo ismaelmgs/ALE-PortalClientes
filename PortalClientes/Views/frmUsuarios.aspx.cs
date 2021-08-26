@@ -34,6 +34,8 @@ namespace PortalClientes.Views
 
             gvUsuarios.DataSource = ListUsers;
             gvUsuarios.DataBind();
+            gvusuarios2.DataSource = ListUsers;
+            gvusuarios2.DataBind();
         }
 
         protected void btnBuscar_ServerClick(object sender, EventArgs e)

@@ -44,7 +44,7 @@
         <div class="col-md-3 left_col">
           <div class="left_col scroll-view">
             <div class="navbar nav_title" style="border: 0;">
-              <a href="index.html" class="site_title"><img src='<%=ResolveUrl("~/build/images/logo-ale_blanco.png")%>' width="91" alt="ALE"></a>
+              <a href="frmDashboard.aspx" class="site_title"><img src='<%=ResolveUrl("~/build/images/logo-ale_blanco.png")%>' width="91" alt="ALE"></a>
             </div>
 
             <div class="clearfix"></div>
@@ -56,7 +56,7 @@
               </div>
               <div class="profile_info">
                 <!-- <span>Welcome,</span> --> <br />
-                <h2>B200GT</h2>
+                <asp:Label ID="lblAeronaveLat" runat="server" Text="B200GT" Font-Bold="true" Style="font-size:25px;"></asp:Label>
               </div>
             </div>
             <!-- /menu profile quick info -->
@@ -68,7 +68,7 @@
               <div class="menu_section">
                 <!-- <h3>Menú General</h3> -->
                 <ul class="nav side-menu">
-                    <li><a><i class="fa fa-th-large"></i> Dashboard </a></li>
+                    <li><a href="frmDashboard.aspx"><i class="fa fa-th-large"></i> Dashboard </a></li>
                     <li><a><i class="fa fa-plane"></i> Tu Aeronave </a></li>
                     <li><a><i class="fa fa-calendar"></i> Calendario </a></li>
                     <li><a><i class="fa fa-list"></i> Estados de Cuenta </a></li>
@@ -201,36 +201,52 @@
               <ul class=" navbar-right">
                 <li class="nav-item dropdown open" style="padding-left: 15px;">
                   <a href="javascript:;" class="user-profile dropdown-toggle" aria-haspopup="true" id="navbarDropdown" data-toggle="dropdown" aria-expanded="false">
-                     <img src='<%=ResolveUrl("~/build/images/img.jpg")%>' alt="">B200GT
+                     <img src='<%=ResolveUrl("~/build/images/img.jpg")%>' alt=""><asp:Label ID="lblAeronave" runat="server" Text="B200GT" Font-Bold="true"></asp:Label>
                   </a>
-                  <div class="dropdown-menu dropdown-usermenu pull-right" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item"  href="javascript:;"> Profile</a>
-                      <a class="dropdown-item"  href="javascript:;">
-                        <span class="badge bg-red pull-right">50%</span>
-                        <span>Settings</span>
-                      </a>
-                  <a class="dropdown-item"  href="javascript:;">Help</a>
-                    <a class="dropdown-item"  href="login.html"><i class="fa fa-sign-out pull-right"></i> Log Out</a>
-                  </div>
+                  <div class="dropdown-menu dropdown-usermenu pull-right" aria-labelledby="navbarDropdown" style="width:320px;">
+                    <a class="dropdown-item"  href="javascript:;"> <asp:Label ID="lblUsuario" runat="server" Text="Usuario" Font-Bold="true"></asp:Label> <i class="fa fa-user" style="position: absolute; right: 22px;"></i></a>
+                    <a class="dropdown-item"  href="javascript:;"> <asp:Label ID="lblUserSetings" runat="server" Text="Administrar cuenta" Font-Bold="true"></asp:Label> <i class="fa fa-cog" style="position: absolute; right: 22px;"></i> </a>
+                    <a class="dropdown-item"  href="javascript:;">
+                      <div class="row" style="margin-left: 0px;">
+                        <div class="col-md-6">
+                            <span style="font-size:14px;color:#ffffff; background-color:#1a8ebb; padding:5px; border-radius:50%; margin:4px;"><i class="fa fa-plane"></i></span>&nbsp;&nbsp;<asp:Label ID="lblmatricula1" runat="server" Text="N849WC" Font-Bold="" Style="font-size:12px;"></asp:Label>
+                        </div>
+                        <div class="col-md-6">
+                            <asp:Label ID="lblDescripcionAeronave1" runat="server" Text="AAAAAAA0000000" Font-Bold="true"></asp:Label>
+                        </div>
+                    </div>
+                    </a>
+                    <a class="dropdown-item"  href="javascript:;">
+                        <div class="row" style="margin-left: 0px;">
+                            <div class="col-md-6">
+                                <span style="font-size:14px;color:#ffffff; background-color:#808080; padding:5px; border-radius:50%; margin:4px;"><i class="fa fa-plane"></i></span>&nbsp;&nbsp;<asp:Label ID="lblmatricula2" runat="server" Text="N849WC" Font-Bold="" Style="font-size:12px;"></asp:Label>
+                            </div>
+                            <div class="col-md-6">
+                                <asp:Label ID="lblDescripcionAeronave2" runat="server" Text="AAAAAAA0000000" Font-Bold="true"></asp:Label>
+                            </div>
+                        </div>
+                    </a>
+                    <a class="dropdown-item"  href="javascript:;"> <asp:Label ID="lblSalir" runat="server" Text="Salir" Font-Bold="true"></asp:Label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i class="fa fa-sign-out pull-right"></i> </a>
+                </div>
                 </li>
 
                 <li role="presentation" class="nav-item dropdown open">
                   <a href="javascript:;" class="dropdown-toggle info-number" id="navbarDropdown1" data-toggle="dropdown" aria-expanded="false">
-                    <br /><i class="fa fa-globe"></i>
+                    <br /><i class="fa fa-globe" style="font-size:30px;margin-top:-20px;"></i>
                     <!-- <span class="badge bg-green">6</span> -->
                   </a>
                   <ul class="dropdown-menu list-unstyled msg_list" role="menu" aria-labelledby="navbarDropdown1">
                     <li class="nav-item">
                       <a class="dropdown-item">
                         <span>
-                          <span><i class="fa fa-globe"></i> Español</span>
+                          <span><i class="fa fa-globe"></i> <asp:Label ID="lblIdiomaEspanol" runat="server" Text="Español" Font-Bold="true"></asp:Label></span>
                         </span>
                       </a>
                     </li>
                     <li class="nav-item">
                       <a class="dropdown-item">
                         <span>
-                          <span><i class="fa fa-globe"></i> English</span>
+                          <span><i class="fa fa-globe"></i> <asp:Label ID="lblIdiomaEnglish" runat="server" Text="English" Font-Bold="true"></asp:Label></span>
                         </span>
                       </a>
                     </li>
@@ -249,8 +265,10 @@
        <!-- footer content -->
         <footer>
           <div class="pull-right">
-            Template by <a href="https://www.morvelit.com/">Morvelit</a>
-          </div>
+            <script>
+                document.write(new Date().getFullYear())
+            </script>© Power by <a href="https://www.aerolineasejecutivas.com/" target="_blank">Eerolíneas Ejecutivas</a>
+            </div>
           <div class="clearfix"></div>
         </footer>
         <!-- /footer content -->

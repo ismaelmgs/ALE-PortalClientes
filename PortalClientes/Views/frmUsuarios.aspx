@@ -93,83 +93,18 @@
                                 </thead>
 
                                 <tbody>
-                                    <tr>
-                                        <td>Nombre 000</td>
-                                        <td>Paterno 000</td>
-                                        <td>Materno 000</td>
-                                        <td>Correo 000</td>
-                                        <td>Puesto 000</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Nombre 111</td>
-                                        <td>Paterno 111</td>
-                                        <td>Materno 111</td>
-                                        <td>Correo 111</td>
-                                        <td>Puesto 111</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Nombre 333</td>
-                                        <td>Paterno 333</td>
-                                        <td>Materno 333</td>
-                                        <td>Correo 333</td>
-                                        <td>Puesto 333</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Nombre 444</td>
-                                        <td>Paterno 444</td>
-                                        <td>Materno 444</td>
-                                        <td>Correo 444</td>
-                                        <td>Puesto 444</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Nombre 555</td>
-                                        <td>Paterno 555</td>
-                                        <td>Materno 555</td>
-                                        <td>Correo 555</td>
-                                        <td>Puesto 555</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Nombre 666</td>
-                                        <td>Paterno 666</td>
-                                        <td>Materno 666</td>
-                                        <td>Correo 666</td>
-                                        <td>Puesto 666</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Nombre 777</td>
-                                        <td>Paterno 777</td>
-                                        <td>Materno 777</td>
-                                        <td>Correo 777</td>
-                                        <td>Puesto 777</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Nombre 888</td>
-                                        <td>Paterno 888</td>
-                                        <td>Materno 888</td>
-                                        <td>Correo 888</td>
-                                        <td>Puesto 888</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Nombre 999</td>
-                                        <td>Paterno 999</td>
-                                        <td>Materno 999</td>
-                                        <td>Correo 999</td>
-                                        <td>Puesto 999</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Nombre 122</td>
-                                        <td>Paterno 122</td>
-                                        <td>Materno 122</td>
-                                        <td>Correo 122</td>
-                                        <td>Puesto 122</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Nombre 123</td>
-                                        <td>Paterno 123</td>
-                                        <td>Materno 123</td>
-                                        <td>Correo 123</td>
-                                        <td>Puesto 123</td>
-                                    </tr>
+                                   <asp:GridView ID="gvusuarios2" runat="server" AutoGenerateColumns="false" ShowHeader="false" Width="100%" >
+                                        <HeaderStyle />
+                                        <RowStyle />
+                                        <AlternatingRowStyle />
+                                        <Columns>
+                                            <asp:BoundField DataField="Nombres" HeaderText="Nombres" />
+                                            <asp:BoundField DataField="ApePat" HeaderText="Apellido Paterno" />
+                                            <asp:BoundField DataField="ApeMat" HeaderText="Apellido Materno" />
+                                            <asp:BoundField DataField="Correo" HeaderText="Correo" />
+                                            <asp:BoundField DataField="Puesto" HeaderText="Puesto" />
+                                        </Columns>
+                                    </asp:GridView>
                                 </tbody>
                             </table>
                         </div>
