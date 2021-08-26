@@ -20,7 +20,7 @@ namespace PortalClientes.Views
         private void LlenaGrid()
         {
             List<Usuario> ListUsers = new List<Usuario>();
-            for (int i = 0; i < 5; i++)
+            for (int i = 1; i <= 25; i++)
             {
                 Usuario oUser = new Usuario();
                 oUser.Correo = "Correo" + i.S();
@@ -34,6 +34,17 @@ namespace PortalClientes.Views
 
             gvUsuarios.DataSource = ListUsers;
             gvUsuarios.DataBind();
+        }
+
+        protected void btnBuscar_ServerClick(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void gvUsuarios_PageIndexChanging(object sender, GridViewPageEventArgs e)
+        {
+            gvUsuarios.PageIndex = e.NewPageIndex;
+            LlenaGrid();
         }
     }
 }
