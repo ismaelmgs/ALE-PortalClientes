@@ -2,13 +2,14 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-        <div class="">
-        <div class="page-title">
+    <div class="row">
+        <div class="col-md-6">
             <div class="title_left">
                 <h3>Dashboard</h3>
             </div>
-
-            <div class="title_right">
+        </div>
+        <div class="col-md-6">
+        <div class="title_right">
                 <div class="col-md-5 col-sm-5   form-group pull-right top_search">
                     <div class="input-group">
                         <asp:TextBox ID="txtBusqueda" runat="server" CssClass="form-control" placeholder="Buscar..."></asp:TextBox>
@@ -22,6 +23,7 @@
             </div>
         </div>
     </div>
+
     <div class="row">
        <div class="col-md-12 col-sm-12">
         <div class="x_panel">

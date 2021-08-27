@@ -17,13 +17,13 @@
     <asp:UpdatePanel ID="upaPrincipal" runat="server">
         <ContentTemplate>
 
-
-            <div class="">
-                <div class="page-title">
+            <div class="row">
+                <div class="col-md-6">
                     <div class="title_left">
                         <h3>Administración de Usuarios</h3>
                     </div>
-
+                </div>
+                <div class="col-md-6">
                     <div class="title_right">
                         <div class="col-md-5 col-sm-5   form-group pull-right top_search">
                             <div class="input-group">
@@ -136,20 +136,19 @@
     <cc1:ModalPopupExtender ID="mpeUsuario" runat="server" TargetControlID="hdTargetUsuario"
         PopupControlID="pnlUsuario" BackgroundCssClass="overlayy">
     </cc1:ModalPopupExtender>
-    <asp:Panel ID="pnlUsuario" runat="server" BorderColor="" BackColor="White" Height="300px" HorizontalAlign="Center"
-        Width="600px" CssClass="modalrlr">
+    <asp:Panel ID="pnlUsuario" runat="server" BorderColor="" BackColor="White" Height="" HorizontalAlign="Center"
+        Width="" CssClass="modalrlr">
         <asp:UpdatePanel ID="upaUsuario" runat="server">
             <ContentTemplate>
+                <asp:Button ID="Button1" runat="server" CssClass="btn" Text="X" Font-Bold="true" OnClientClick="OcultarEdicionUsuarios();" Style="z-index: 2000; margin-top: -15px;right: -3px;position: absolute; color:#838383;" />
                 <table style="width: 100%">
                     <tr>
-                        <td style="width: 5%"></td>
-                        <td colspan="2" style="width: 90%; text-align: center">
+                        <td text-align: center">
                             <h5 class="modal-title">
                                 <%--Edición de empleados--%>
                                 <asp:Label ID="lblTituloModalUsuario" runat="server"></asp:Label>
-                            </h5>
+                            </h5><br />
                         </td>
-                        <td style="width: 5%"></td>
                     </tr>
                     <%--<tr>
                         <td style="width:5%">
@@ -162,67 +161,87 @@
                         </td>
                     </tr>--%>
                     <tr>
-                        <td colspan="4" style="height: 15px"></td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td style="width: 30%">
-                            <asp:Label ID="lblNombre" runat="server"></asp:Label>
-                        </td>
-                        <td style="width: 60%">
-                            <asp:TextBox ID="txtNombre" runat="server"></asp:TextBox>
-                        </td>
                         <td></td>
                     </tr>
                     <tr>
-                        <td></td>
-                        <td>
-                            <asp:Label ID="lblApellidoPat" runat="server"></asp:Label>
+                        <td>                
+                            <div class="row">
+                                <div class="col-md-3" style="width:300px;">
+                                    <asp:Label ID="lblNombre" runat="server" style="width:550px;"></asp:Label>
+                                </div>
+                                <div class="col-md-9">
+                                    <asp:TextBox ID="txtNombre" runat="server" CssClass="form-control"></asp:TextBox>
+                                </div>
+                            </div>    
                         </td>
-                        <td>
-                            <asp:TextBox ID="txtApellidoPat" runat="server"></asp:TextBox>
-                        </td>
-                        <td></td>
                     </tr>
                     <tr>
-                        <td></td>
                         <td>
-                            <asp:Label ID="lblApellidoMat" runat="server"></asp:Label>
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <asp:Label ID="lblApellidoPat" runat="server"></asp:Label>
+                                </div>
+                                <div class="col-md-9">
+                                    <asp:TextBox ID="txtApellidoPat" runat="server" CssClass="form-control"></asp:TextBox>
+                                </div>
+                            </div>
                         </td>
-                        <td>
-                            <asp:TextBox ID="txtApellidoMat" runat="server"></asp:TextBox>
-                        </td>
-                        <td></td>
                     </tr>
                     <tr>
-                        <td></td>
                         <td>
-                            <asp:Label ID="lblCorreo" runat="server"></asp:Label>
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <asp:Label ID="lblApellidoMat" runat="server"></asp:Label>
+                                </div>
+                                <div class="col-md-9">
+                                    <asp:TextBox ID="txtApellidoMat" runat="server" CssClass="form-control"></asp:TextBox>
+                                </div>
+                            </div>
                         </td>
-                        <td>
-                            <asp:TextBox ID="txtCorreo" runat="server"></asp:TextBox>
-                        </td>
-                        <td></td>
                     </tr>
                     <tr>
-                        <td></td>
                         <td>
-                            <asp:Label ID="lblPuesto" runat="server"></asp:Label>
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <asp:Label ID="lblCorreo" runat="server"></asp:Label>
+                                </div>
+                                <div class="col-md-9">
+                                    <asp:TextBox ID="txtCorreo" runat="server" CssClass="form-control"></asp:TextBox>
+                                </div>
+                            </div>  
                         </td>
+                    </tr>
+                    <tr>
                         <td>
-                            <asp:TextBox ID="txtPuesto" runat="server"></asp:TextBox>
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <asp:Label ID="lblPuesto" runat="server"></asp:Label>
+                                </div>
+                                <div class="col-md-9">
+                                    <asp:TextBox ID="txtPuesto" runat="server" CssClass="form-control"></asp:TextBox>
+                                </div>
+                            </div>  
                         </td>
-                        <td></td>
                     </tr>
                 </table>
                 <br />
                 <table style="width: 100%">
                     <tr>
-                        <td style="text-align: right; width: 50%">
-                            <asp:Button ID="btnAceptar" runat="server" CssClass="btn btn-primary" OnClientClick="OcultarEdicionUsuarios();"/>
-                        </td>
-                        <td style="text-align: left; width: 50%">
-                            <asp:Button ID="btnCancelar" runat="server" CssClass="btn btn-warning" OnClientClick="OcultarEdicionUsuarios();" />
+                        <td>
+                            <div class="row">
+                                <div class="col-md-3">
+                                    &nbsp;
+                                </div>
+                                <div class="col-md-3" style="text-align:center;">
+                                    <asp:Button ID="btnAceptar" runat="server" CssClass="btn btn-primary" OnClientClick="OcultarEdicionUsuarios();"/>
+                                </div>
+                                <div class="col-md-3" style="text-align:center;">
+                                    <asp:Button ID="btnCancelar" runat="server" CssClass="btn btn-danger" OnClientClick="OcultarEdicionUsuarios();" />
+                                </div>
+                                <div class="col-md-3">
+                                    &nbsp;
+                                </div>
+                            </div>
                         </td>
                     </tr>
                 </table>

@@ -293,7 +293,7 @@
             </div>
 
             <div>
-                <asp:TextBox ID="txtLang" runat="server"></asp:TextBox>
+                <asp:TextBox ID="txtLang" runat="server" type="hidden"></asp:TextBox>
             </div>
             <!-- /top navigation -->
             <div class="right_col">
