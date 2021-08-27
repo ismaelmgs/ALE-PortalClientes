@@ -11,5 +11,6 @@ namespace PortalClientes.Objetos
         public string sNombre { set; get; }
         public string sPuesto { set; get; }
         public string sCorreo { set; get; }
+        public string sIdioma { set; get; }
     }
 }

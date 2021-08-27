@@ -6,16 +6,38 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using NucleoBase.Core;
+using PortalClientes.Clases;
 
 namespace PortalClientes.Views
 {
     public partial class frmUsuarios : System.Web.UI.Page
     {
+
         protected void Page_Load(object sender, EventArgs e)
         {
+            TextBox milabel = (TextBox)this.Master.FindControl("txtLang");
+            if (milabel.Text != Utils.Idioma)
+            {
+                Utils.Idioma = milabel.Text;
+                System.Threading.Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo(Utils.Idioma);
+                ArmaFormulario();
+            }
+            
             LlenaGrid();
         }
 
+        private void ArmaFormulario()
+        {
+            lblNombre.Text = Properties.Resources.Nombre;
+            lblApellidoPat.Text = Properties.Resources.ApePat;
+            lblApellidoMat.Text = Properties.Resources.ApeMat;
+            lblCorreo.Text = Properties.Resources.Correo;
+            lblPuesto.Text = Properties.Resources.Puesto;
+            lblTituloModalUsuario.Text = Properties.Resources.TituloEdUsuarios;
+            btnAceptar.Text = Properties.Resources.Aceptar;
+            btnCancelar.Text = Properties.Resources.Cancelar;
+            btnAgregar.Text = Properties.Resources.AltaUsuario;
+        }
 
         private void LlenaGrid()
         {
@@ -47,6 +69,23 @@ namespace PortalClientes.Views
         {
             gvUsuarios.PageIndex = e.NewPageIndex;
             LlenaGrid();
+        }
+
+        protected void btnAgregar_Click(object sender, EventArgs e)
+        {
+            mpeUsuario.Show();
+        }
+
+        protected void gvUsuarios_RowDataBound(object sender, GridViewRowEventArgs e)
+        {
+            if (e.Row.RowType == DataControlRowType.Header)
+            {
+                e.Row.Cells[0].Text = Properties.Resources.Nombre;
+                e.Row.Cells[1].Text = Properties.Resources.ApePat;
+                e.Row.Cells[2].Text = Properties.Resources.ApeMat;
+                e.Row.Cells[3].Text = Properties.Resources.Correo;
+                e.Row.Cells[4].Text = Properties.Resources.Puesto;
+            }
         }
     }
 }
