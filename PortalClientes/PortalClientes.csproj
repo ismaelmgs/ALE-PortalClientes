@@ -1390,7 +1390,14 @@
     <Content Include="vendors\validator\fv.css" />
     <Content Include="vendors\validator\multifield.js" />
     <Content Include="vendors\validator\validator.js" />
+    <Content Include="Views\frmCalendario.aspx" />
     <Content Include="Views\frmDashboard.aspx" />
+    <Content Include="Views\frmEstadoCuenta.aspx" />
+    <Content Include="Views\frmMantenimientos.aspx" />
+    <Content Include="Views\frmMetricasEstadisticas.aspx" />
+    <Content Include="Views\frmReportes.aspx" />
+    <Content Include="Views\frmTripulacion.aspx" />
+    <Content Include="Views\frmTuAeronave.aspx" />
     <Content Include="Views\frmUsuarios.aspx" />
     <Content Include="Web.config" />
     <Content Include="widgets.html" />
@@ -1442,12 +1449,61 @@
     <Compile Include="Site1.Master.designer.cs">
       <DependentUpon>Site1.Master</DependentUpon>
     </Compile>
+    <Compile Include="Views\frmCalendario.aspx.cs">
+      <DependentUpon>frmCalendario.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\frmCalendario.aspx.designer.cs">
+      <DependentUpon>frmCalendario.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Views\frmDashboard.aspx.cs">
       <DependentUpon>frmDashboard.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Views\frmDashboard.aspx.designer.cs">
       <DependentUpon>frmDashboard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\frmEstadoCuenta.aspx.cs">
+      <DependentUpon>frmEstadoCuenta.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\frmEstadoCuenta.aspx.designer.cs">
+      <DependentUpon>frmEstadoCuenta.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\frmMantenimientos.aspx.cs">
+      <DependentUpon>frmMantenimientos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\frmMantenimientos.aspx.designer.cs">
+      <DependentUpon>frmMantenimientos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\frmMetricasEstadisticas.aspx.cs">
+      <DependentUpon>frmMetricasEstadisticas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\frmMetricasEstadisticas.aspx.designer.cs">
+      <DependentUpon>frmMetricasEstadisticas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\frmReportes.aspx.cs">
+      <DependentUpon>frmReportes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\frmReportes.aspx.designer.cs">
+      <DependentUpon>frmReportes.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\frmTripulacion.aspx.cs">
+      <DependentUpon>frmTripulacion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\frmTripulacion.aspx.designer.cs">
+      <DependentUpon>frmTripulacion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\frmTuAeronave.aspx.cs">
+      <DependentUpon>frmTuAeronave.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\frmTuAeronave.aspx.designer.cs">
+      <DependentUpon>frmTuAeronave.aspx</DependentUpon>
     </Compile>
     <Compile Include="Views\frmUsuarios.aspx.cs">
       <DependentUpon>frmUsuarios.aspx</DependentUpon>
