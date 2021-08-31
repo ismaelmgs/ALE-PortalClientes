@@ -12,14 +12,17 @@ namespace PortalClientes
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
-        }
-
-        [System.Web.Services.WebMethod]
-        public static string GetCurrentTime(string name)
-        {
-            return "Hello " + name + Environment.NewLine + "The Current Time is: "
-                + DateTime.Now.ToString();
+            if (txtLang.Text != Utils.Idioma)
+            {
+                Utils.Idioma = txtLang.Text;
+                System.Threading.Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo(Utils.Idioma);
+                ArmaFormulario();
+            }
+            else
+            {
+                System.Threading.Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo(Utils.Idioma);
+                ArmaFormulario();
+            }
         }
 
         protected void lblIdiomaEspanol_Click(object sender, EventArgs e)
@@ -31,5 +34,12 @@ namespace PortalClientes
         {
             Utils.Idioma = "en-US";
         }
+
+        private void ArmaFormulario()
+        {
+            lblUserSetings.Text = Properties.Resources.AdministrarCuenta;
+            lblSalir.Text = Properties.Resources.CerrarSesion;
+        }
+
     }
 }

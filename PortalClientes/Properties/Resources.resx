@@ -120,6 +120,9 @@
   <data name="Aceptar" xml:space="preserve">
     <value>Aceptar</value>
   </data>
+  <data name="AdministrarCuenta" xml:space="preserve">
+    <value>Administrar mi cuenta</value>
+  </data>
   <data name="AltaUsuario" xml:space="preserve">
     <value>Agregar usuario</value>
   </data>
@@ -132,6 +135,9 @@
   <data name="Cancelar" xml:space="preserve">
     <value>Cancelar</value>
   </data>
+  <data name="CerrarSesion" xml:space="preserve">
+    <value>Salir</value>
+  </data>
   <data name="Correo" xml:space="preserve">
     <value>Correo:</value>
   </data>
@@ -141,7 +147,13 @@
   <data name="Puesto" xml:space="preserve">
     <value>Puesto:</value>
   </data>
+  <data name="SubTituloPagUsuarios" xml:space="preserve">
+    <value>Listado de usuarios</value>
+  </data>
   <data name="TituloEdUsuarios" xml:space="preserve">
     <value>Edición de usuarios</value>
+  </data>
+  <data name="TituloPagUsuarios" xml:space="preserve">
+    <value>Administración de Usuarios</value>
   </data>
 </root>

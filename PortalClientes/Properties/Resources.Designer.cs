@@ -70,6 +70,15 @@ namespace PortalClientes.Properties {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Administrar mi cuenta.
+        /// </summary>
+        internal static string AdministrarCuenta {
+            get {
+                return ResourceManager.GetString("AdministrarCuenta", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Agregar usuario.
         /// </summary>
         internal static string AltaUsuario {
@@ -106,6 +115,15 @@ namespace PortalClientes.Properties {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Salir.
+        /// </summary>
+        internal static string CerrarSesion {
+            get {
+                return ResourceManager.GetString("CerrarSesion", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Correo:.
         /// </summary>
         internal static string Correo {
@@ -133,11 +151,29 @@ namespace PortalClientes.Properties {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Listado de usuarios.
+        /// </summary>
+        internal static string SubTituloPagUsuarios {
+            get {
+                return ResourceManager.GetString("SubTituloPagUsuarios", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Edición de usuarios.
         /// </summary>
         internal static string TituloEdUsuarios {
             get {
                 return ResourceManager.GetString("TituloEdUsuarios", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Administración de Usuarios.
+        /// </summary>
+        internal static string TituloPagUsuarios {
+            get {
+                return ResourceManager.GetString("TituloPagUsuarios", resourceCulture);
             }
         }
     }

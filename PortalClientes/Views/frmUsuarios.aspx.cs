@@ -22,12 +22,19 @@ namespace PortalClientes.Views
                 System.Threading.Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo(Utils.Idioma);
                 ArmaFormulario();
             }
+            else
+            {
+                System.Threading.Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo(Utils.Idioma);
+                ArmaFormulario();
+            }
             
             LlenaGrid();
         }
 
         private void ArmaFormulario()
         {
+            lblTituloPagina.Text = Properties.Resources.TituloPagUsuarios;
+            lblSubTituloPagina.Text = Properties.Resources.SubTituloPagUsuarios;
             lblNombre.Text = Properties.Resources.Nombre;
             lblApellidoPat.Text = Properties.Resources.ApePat;
             lblApellidoMat.Text = Properties.Resources.ApeMat;

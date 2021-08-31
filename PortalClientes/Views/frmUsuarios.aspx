@@ -20,7 +20,7 @@
             <div class="row">
                 <div class="col-md-6">
                     <div class="title_left">
-                        <h3>Administración de Usuarios</h3>
+                        <h3><asp:Label ID="lblTituloPagina" runat="server"></asp:Label></h3>
                     </div>
                 </div>
                 <div class="col-md-6">
@@ -42,7 +42,7 @@
             <div class="col-md-12 col-sm-12">
                 <div class="x_panel">
                     <div class="x_title">
-                        <h2>Listado de usuarios</h2>
+                        <h2><asp:Label ID="lblSubTituloPagina" runat="server"></asp:Label></h2>
                         <ul class="nav navbar-right panel_toolbox">
                             <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
                             </li>
@@ -232,10 +232,10 @@
                                 <div class="col-md-3">
                                     &nbsp;
                                 </div>
-                                <div class="col-md-3" style="text-align:center;">
+                                <div class="col-md-3" style="text-align:right;">
                                     <asp:Button ID="btnAceptar" runat="server" CssClass="btn btn-primary" OnClientClick="OcultarEdicionUsuarios();"/>
                                 </div>
-                                <div class="col-md-3" style="text-align:center;">
+                                <div class="col-md-3" style="text-align:left;">
                                     <asp:Button ID="btnCancelar" runat="server" CssClass="btn btn-danger" OnClientClick="OcultarEdicionUsuarios();" />
                                 </div>
                                 <div class="col-md-3">
