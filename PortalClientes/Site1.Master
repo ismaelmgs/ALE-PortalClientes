@@ -94,10 +94,11 @@
                                 <li><a href="frmTuAeronave.aspx"><i class="fa fa-plane"></i>Tu Aeronave </a></li>
                                 <li><a href="frmCalendario.aspx"><i class="fa fa-calendar"></i>Calendario </a></li>
                                 <li><a href="frmEstadoCuenta.aspx"><i class="fa fa-list"></i>Estados de Cuenta </a></li>
-                                <li><a href="frmTripulacion.aspx"><i class="fa fa-users"></i>Tripulación </a></li>
+                                <li><a href="frmTripulacion.aspx"><i class="fa fa-male"></i>Tripulación </a></li>
                                 <li><a href="frmMetricasEstadisticas.aspx"><i class="fa fa-line-chart"></i>Métricas y Estadísticas </a></li>
                                 <li><a href="frmReportes.aspx"><i class="fa fa-list-alt"></i>Reportes </a></li>
                                 <li><a href="frmMantenimientos.aspx"><i class="fa fa-wrench"></i>Mantenimientos </a></li>
+                                <li><a href="frmUsuarios.aspx"><i class="fa fa-group"></i>Usuarios </a></li>
                             </ul>
                             <br>
                             <br>
