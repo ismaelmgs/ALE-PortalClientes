@@ -137,13 +137,13 @@
         PopupControlID="pnlUsuario" BackgroundCssClass="overlayy">
     </cc1:ModalPopupExtender>
     <asp:Panel ID="pnlUsuario" runat="server" BorderColor="" BackColor="White" Height="" HorizontalAlign="Center"
-        Width="" CssClass="modalrlr">
+        Width="" CssClass="modal-derecha">
         <asp:UpdatePanel ID="upaUsuario" runat="server">
             <ContentTemplate>
-                <asp:Button ID="Button1" runat="server" CssClass="btn" Text="X" Font-Bold="true" OnClientClick="OcultarEdicionUsuarios();" Style="z-index: 2000; margin-top: -15px;right: -3px;position: absolute; color:#838383;" />
+                <asp:Button ID="Button1" runat="server" CssClass="btn" Text="X" Font-Bold="true" OnClientClick="OcultarEdicionUsuarios();" Style="z-index: 2000;right: 13px;margin-top:10px;position: absolute; color:#838383;" />
                 <table style="width: 100%">
                     <tr>
-                        <td text-align: center">
+                        <td text-align="center" style="background-color:#efefef; padding-top:10px; border-radius:15px;">
                             <h5 class="modal-title">
                                 <%--Edición de empleados--%>
                                 <asp:Label ID="lblTituloModalUsuario" runat="server"></asp:Label>
@@ -164,7 +164,7 @@
                         <td></td>
                     </tr>
                     <tr>
-                        <td>                
+                        <td>  <br />              
                             <div class="row">
                                 <div class="col-md-3" style="width:300px;">
                                     <asp:Label ID="lblNombre" runat="server" style="width:550px;"></asp:Label>
@@ -224,18 +224,18 @@
                         </td>
                     </tr>
                 </table>
-                <br />
-                <table style="width: 100%">
+                <br /><br /><br />
+                <table style="width: 100%; position:absolute; bottom:0px;">
                     <tr>
                         <td>
                             <div class="row">
                                 <div class="col-md-3">
                                     &nbsp;
                                 </div>
-                                <div class="col-md-3" style="text-align:right;">
+                                <div class="col-md-3" style="text-align:center;">
                                     <asp:Button ID="btnAceptar" runat="server" CssClass="btn btn-primary" OnClientClick="OcultarEdicionUsuarios();"/>
                                 </div>
-                                <div class="col-md-3" style="text-align:left;">
+                                <div class="col-md-3" style="text-align:center;">
                                     <asp:Button ID="btnCancelar" runat="server" CssClass="btn btn-danger" OnClientClick="OcultarEdicionUsuarios();" />
                                 </div>
                                 <div class="col-md-3">

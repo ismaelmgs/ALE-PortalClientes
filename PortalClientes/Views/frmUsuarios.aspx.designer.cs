@@ -7,11 +7,13 @@
 // </generado automáticamente>
 //------------------------------------------------------------------------------
 
-namespace PortalClientes.Views {
-    
-    
-    public partial class frmUsuarios {
-        
+namespace PortalClientes.Views
+{
+
+
+    public partial class frmUsuarios
+    {
+
         /// <summary>
         /// Control upaPrincipal.
         /// </summary>
@@ -20,7 +22,7 @@ namespace PortalClientes.Views {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.UpdatePanel upaPrincipal;
-        
+
         /// <summary>
         /// Control lblTituloPagina.
         /// </summary>
@@ -29,7 +31,7 @@ namespace PortalClientes.Views {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblTituloPagina;
-        
+
         /// <summary>
         /// Control txtBusqueda.
         /// </summary>
@@ -38,7 +40,7 @@ namespace PortalClientes.Views {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtBusqueda;
-        
+
         /// <summary>
         /// Control btnBuscar.
         /// </summary>
@@ -47,7 +49,7 @@ namespace PortalClientes.Views {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlButton btnBuscar;
-        
+
         /// <summary>
         /// Control lblSubTituloPagina.
         /// </summary>
@@ -56,7 +58,7 @@ namespace PortalClientes.Views {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblSubTituloPagina;
-        
+
         /// <summary>
         /// Control btnAgregar.
         /// </summary>
@@ -65,7 +67,7 @@ namespace PortalClientes.Views {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnAgregar;
-        
+
         /// <summary>
         /// Control gvUsuarios.
         /// </summary>
@@ -74,7 +76,7 @@ namespace PortalClientes.Views {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.GridView gvUsuarios;
-        
+
         /// <summary>
         /// Control hdTargetUsuario.
         /// </summary>
@@ -83,7 +85,7 @@ namespace PortalClientes.Views {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.HiddenField hdTargetUsuario;
-        
+
         /// <summary>
         /// Control mpeUsuario.
         /// </summary>
@@ -92,7 +94,7 @@ namespace PortalClientes.Views {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::AjaxControlToolkit.ModalPopupExtender mpeUsuario;
-        
+
         /// <summary>
         /// Control pnlUsuario.
         /// </summary>
@@ -101,7 +103,7 @@ namespace PortalClientes.Views {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Panel pnlUsuario;
-        
+
         /// <summary>
         /// Control upaUsuario.
         /// </summary>
@@ -110,7 +112,7 @@ namespace PortalClientes.Views {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.UpdatePanel upaUsuario;
-        
+
         /// <summary>
         /// Control Button1.
         /// </summary>
@@ -119,7 +121,7 @@ namespace PortalClientes.Views {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button Button1;
-        
+
         /// <summary>
         /// Control lblTituloModalUsuario.
         /// </summary>
@@ -128,7 +130,7 @@ namespace PortalClientes.Views {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblTituloModalUsuario;
-        
+
         /// <summary>
         /// Control lblNombre.
         /// </summary>
@@ -137,7 +139,7 @@ namespace PortalClientes.Views {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblNombre;
-        
+
         /// <summary>
         /// Control txtNombre.
         /// </summary>
@@ -146,7 +148,7 @@ namespace PortalClientes.Views {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtNombre;
-        
+
         /// <summary>
         /// Control lblApellidoPat.
         /// </summary>
@@ -155,7 +157,7 @@ namespace PortalClientes.Views {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblApellidoPat;
-        
+
         /// <summary>
         /// Control txtApellidoPat.
         /// </summary>
@@ -164,7 +166,7 @@ namespace PortalClientes.Views {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtApellidoPat;
-        
+
         /// <summary>
         /// Control lblApellidoMat.
         /// </summary>
@@ -173,7 +175,7 @@ namespace PortalClientes.Views {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblApellidoMat;
-        
+
         /// <summary>
         /// Control txtApellidoMat.
         /// </summary>
@@ -182,7 +184,7 @@ namespace PortalClientes.Views {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtApellidoMat;
-        
+
         /// <summary>
         /// Control lblCorreo.
         /// </summary>
@@ -191,7 +193,7 @@ namespace PortalClientes.Views {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblCorreo;
-        
+
         /// <summary>
         /// Control txtCorreo.
         /// </summary>
@@ -200,7 +202,7 @@ namespace PortalClientes.Views {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtCorreo;
-        
+
         /// <summary>
         /// Control lblPuesto.
         /// </summary>
@@ -209,7 +211,7 @@ namespace PortalClientes.Views {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblPuesto;
-        
+
         /// <summary>
         /// Control txtPuesto.
         /// </summary>
@@ -218,7 +220,7 @@ namespace PortalClientes.Views {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtPuesto;
-        
+
         /// <summary>
         /// Control btnAceptar.
         /// </summary>
@@ -227,7 +229,7 @@ namespace PortalClientes.Views {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnAceptar;
-        
+
         /// <summary>
         /// Control btnCancelar.
         /// </summary>

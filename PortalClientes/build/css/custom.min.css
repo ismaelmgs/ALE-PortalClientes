@@ -33,4 +33,17 @@
 	border-radius: 10px;
 	box-shadow: 3px 3px 3px #00000030;
 	padding: 15px;
+	min-width:550px;
 }
+.modal-derecha {
+	border-radius: 10px;
+	box-shadow: 3px 3px 3px #00000030;
+	padding: 15px;
+	left: auto !important;
+	right: 0px;
+	height: 100vh;
+	top: 0px !important;
+	min-width: 550px;
+}
+
+
