@@ -27,7 +27,7 @@
                     <div class="title_right">
                         <div class="col-md-5 col-sm-5   form-group pull-right top_search">
                             <div class="input-group">
-                                <asp:TextBox ID="txtBusqueda" runat="server" CssClass="form-control" placeholder="Buscar..."></asp:TextBox>
+                                <asp:TextBox ID="txtBusqueda" runat="server" CssClass="form-control"></asp:TextBox>
                                 <span class="input-group-btn">
                                     <button id="btnBuscar" class="btn btn-default" type="button" runat="server" onserverclick="btnBuscar_ServerClick">
                                         <i class="fa fa-search" aria-hidden="true"></i>
@@ -78,7 +78,7 @@
                 </div>
             </div>
 
-            <br />
+            <%--<br />
             <div class="col-md-12 col-sm-12 ">
                 <div class="x_panel">
                     <div class="x_title">
@@ -126,7 +126,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div>--%>
         </ContentTemplate>
     </asp:UpdatePanel>
 

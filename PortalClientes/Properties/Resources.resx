@@ -123,37 +123,43 @@
   <data name="AdministrarCuenta" xml:space="preserve">
     <value>Administrar mi cuenta</value>
   </data>
-  <data name="AltaUsuario" xml:space="preserve">
-    <value>Agregar usuario</value>
-  </data>
-  <data name="ApeMat" xml:space="preserve">
-    <value>Apellido materno:</value>
-  </data>
-  <data name="ApePat" xml:space="preserve">
-    <value>Apellido paterno:</value>
-  </data>
   <data name="Cancelar" xml:space="preserve">
     <value>Cancelar</value>
   </data>
   <data name="CerrarSesion" xml:space="preserve">
     <value>Salir</value>
   </data>
+  <data name="Cm_Buscador" xml:space="preserve">
+    <value>Buscar...</value>
+  </data>
   <data name="Correo" xml:space="preserve">
     <value>Correo:</value>
   </data>
-  <data name="Nombre" xml:space="preserve">
+  <data name="CorreoEjemplo" xml:space="preserve">
+    <value>ejemplo@dominio.com</value>
+  </data>
+  <data name="Us_AltaUsuario" xml:space="preserve">
+    <value>Agregar usuario</value>
+  </data>
+  <data name="Us_ApeMat" xml:space="preserve">
+    <value>Apellido materno:</value>
+  </data>
+  <data name="Us_ApePat" xml:space="preserve">
+    <value>Apellido paterno:</value>
+  </data>
+  <data name="Us_Nombre" xml:space="preserve">
     <value>Nombres:</value>
   </data>
-  <data name="Puesto" xml:space="preserve">
+  <data name="Us_Puesto" xml:space="preserve">
     <value>Puesto:</value>
   </data>
-  <data name="SubTituloPagUsuarios" xml:space="preserve">
+  <data name="Us_SubTituloPagUsuarios" xml:space="preserve">
     <value>Listado de usuarios</value>
   </data>
-  <data name="TituloEdUsuarios" xml:space="preserve">
+  <data name="Us_TituloEdUsuarios" xml:space="preserve">
     <value>Edición de usuarios</value>
   </data>
-  <data name="TituloPagUsuarios" xml:space="preserve">
+  <data name="Us_TituloPagUsuarios" xml:space="preserve">
     <value>Administración de Usuarios</value>
   </data>
 </root>

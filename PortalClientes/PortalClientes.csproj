@@ -1427,6 +1427,7 @@
     </Compile>
     <Compile Include="Interfaces\IBaseView.cs" />
     <Compile Include="Interfaces\IViewDashboard.cs" />
+    <Compile Include="Objetos\MenuDinamico.cs" />
     <Compile Include="Objetos\UserIdentity.cs" />
     <Compile Include="Objetos\Usuario.cs" />
     <Compile Include="Presenter\BasePresenter.cs" />

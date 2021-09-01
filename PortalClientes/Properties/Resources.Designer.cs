@@ -79,33 +79,6 @@ namespace PortalClientes.Properties {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Agregar usuario.
-        /// </summary>
-        internal static string AltaUsuario {
-            get {
-                return ResourceManager.GetString("AltaUsuario", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Busca una cadena traducida similar a Apellido materno:.
-        /// </summary>
-        internal static string ApeMat {
-            get {
-                return ResourceManager.GetString("ApeMat", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Busca una cadena traducida similar a Apellido paterno:.
-        /// </summary>
-        internal static string ApePat {
-            get {
-                return ResourceManager.GetString("ApePat", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Busca una cadena traducida similar a Cancelar.
         /// </summary>
         internal static string Cancelar {
@@ -124,6 +97,15 @@ namespace PortalClientes.Properties {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Buscar....
+        /// </summary>
+        internal static string Cm_Buscador {
+            get {
+                return ResourceManager.GetString("Cm_Buscador", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Correo:.
         /// </summary>
         internal static string Correo {
@@ -133,47 +115,83 @@ namespace PortalClientes.Properties {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a ejemplo@dominio.com.
+        /// </summary>
+        internal static string CorreoEjemplo {
+            get {
+                return ResourceManager.GetString("CorreoEjemplo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Agregar usuario.
+        /// </summary>
+        internal static string Us_AltaUsuario {
+            get {
+                return ResourceManager.GetString("Us_AltaUsuario", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Apellido materno:.
+        /// </summary>
+        internal static string Us_ApeMat {
+            get {
+                return ResourceManager.GetString("Us_ApeMat", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Apellido paterno:.
+        /// </summary>
+        internal static string Us_ApePat {
+            get {
+                return ResourceManager.GetString("Us_ApePat", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Nombres:.
         /// </summary>
-        internal static string Nombre {
+        internal static string Us_Nombre {
             get {
-                return ResourceManager.GetString("Nombre", resourceCulture);
+                return ResourceManager.GetString("Us_Nombre", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Busca una cadena traducida similar a Puesto:.
         /// </summary>
-        internal static string Puesto {
+        internal static string Us_Puesto {
             get {
-                return ResourceManager.GetString("Puesto", resourceCulture);
+                return ResourceManager.GetString("Us_Puesto", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Busca una cadena traducida similar a Listado de usuarios.
         /// </summary>
-        internal static string SubTituloPagUsuarios {
+        internal static string Us_SubTituloPagUsuarios {
             get {
-                return ResourceManager.GetString("SubTituloPagUsuarios", resourceCulture);
+                return ResourceManager.GetString("Us_SubTituloPagUsuarios", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Busca una cadena traducida similar a Edición de usuarios.
         /// </summary>
-        internal static string TituloEdUsuarios {
+        internal static string Us_TituloEdUsuarios {
             get {
-                return ResourceManager.GetString("TituloEdUsuarios", resourceCulture);
+                return ResourceManager.GetString("Us_TituloEdUsuarios", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Busca una cadena traducida similar a Administración de Usuarios.
         /// </summary>
-        internal static string TituloPagUsuarios {
+        internal static string Us_TituloPagUsuarios {
             get {
-                return ResourceManager.GetString("TituloPagUsuarios", resourceCulture);
+                return ResourceManager.GetString("Us_TituloPagUsuarios", resourceCulture);
             }
         }
     }

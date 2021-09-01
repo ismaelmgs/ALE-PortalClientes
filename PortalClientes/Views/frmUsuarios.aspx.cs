@@ -33,17 +33,20 @@ namespace PortalClientes.Views
 
         private void ArmaFormulario()
         {
-            lblTituloPagina.Text = Properties.Resources.TituloPagUsuarios;
-            lblSubTituloPagina.Text = Properties.Resources.SubTituloPagUsuarios;
-            lblNombre.Text = Properties.Resources.Nombre;
-            lblApellidoPat.Text = Properties.Resources.ApePat;
-            lblApellidoMat.Text = Properties.Resources.ApeMat;
+            txtBusqueda.Attributes.Add("placeholder", Properties.Resources.Cm_Buscador);
+            txtCorreo.Attributes.Add("placeholder", Properties.Resources.CorreoEjemplo);
+
+            lblTituloPagina.Text = Properties.Resources.Us_TituloPagUsuarios;
+            lblSubTituloPagina.Text = Properties.Resources.Us_SubTituloPagUsuarios;
+            lblNombre.Text = Properties.Resources.Us_Nombre;
+            lblApellidoPat.Text = Properties.Resources.Us_ApePat;
+            lblApellidoMat.Text = Properties.Resources.Us_ApeMat;
             lblCorreo.Text = Properties.Resources.Correo;
-            lblPuesto.Text = Properties.Resources.Puesto;
-            lblTituloModalUsuario.Text = Properties.Resources.TituloEdUsuarios;
+            lblPuesto.Text = Properties.Resources.Us_Puesto;
+            lblTituloModalUsuario.Text = Properties.Resources.Us_TituloEdUsuarios;
             btnAceptar.Text = Properties.Resources.Aceptar;
             btnCancelar.Text = Properties.Resources.Cancelar;
-            btnAgregar.Text = Properties.Resources.AltaUsuario;
+            btnAgregar.Text = Properties.Resources.Us_AltaUsuario;
         }
 
         private void LlenaGrid()
@@ -63,8 +66,8 @@ namespace PortalClientes.Views
 
             gvUsuarios.DataSource = ListUsers;
             gvUsuarios.DataBind();
-            gvusuarios2.DataSource = ListUsers;
-            gvusuarios2.DataBind();
+            //gvusuarios2.DataSource = ListUsers;
+            //gvusuarios2.DataBind();
         }
 
         protected void btnBuscar_ServerClick(object sender, EventArgs e)
@@ -87,11 +90,11 @@ namespace PortalClientes.Views
         {
             if (e.Row.RowType == DataControlRowType.Header)
             {
-                e.Row.Cells[0].Text = Properties.Resources.Nombre;
-                e.Row.Cells[1].Text = Properties.Resources.ApePat;
-                e.Row.Cells[2].Text = Properties.Resources.ApeMat;
+                e.Row.Cells[0].Text = Properties.Resources.Us_Nombre;
+                e.Row.Cells[1].Text = Properties.Resources.Us_ApePat;
+                e.Row.Cells[2].Text = Properties.Resources.Us_ApeMat;
                 e.Row.Cells[3].Text = Properties.Resources.Correo;
-                e.Row.Cells[4].Text = Properties.Resources.Puesto;
+                e.Row.Cells[4].Text = Properties.Resources.Us_Puesto;
             }
         }
     }
