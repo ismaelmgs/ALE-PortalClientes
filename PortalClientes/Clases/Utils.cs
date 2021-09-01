@@ -44,6 +44,14 @@ namespace PortalClientes.Clases
             }
         }
 
+        public static string ResxPlaceholder
+        {
+            get
+            {
+                return Properties.Resources.Us_ApeMat;
+            }
+        }
+
         public static int GetIdEmpUsuario
         {
             get
