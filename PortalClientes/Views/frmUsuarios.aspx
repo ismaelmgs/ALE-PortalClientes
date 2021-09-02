@@ -4,6 +4,8 @@
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="cc1" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+
     <script type="text/javascript">
         function OcultarEdicionUsuarios() {
             "use strict";
@@ -11,7 +13,18 @@
             var modal = $find(modalId);
             modal.hide();
         }
+
+        $(document).on('keydown', function (event){
+            if (event.key == "Escape") {
+                var modalId = '<%=mpeUsuario.ClientID%>';
+                var modal = $find(modalId);
+                modal.hide();
+            }
+        });
     </script>
+    
+    
+
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <asp:UpdatePanel ID="upaPrincipal" runat="server">
@@ -143,23 +156,14 @@
                 <asp:Button ID="Button1" runat="server" CssClass="btn" Text="X" Font-Bold="true" OnClientClick="OcultarEdicionUsuarios();" Style="z-index: 2000;right: 13px;margin-top:10px;position: absolute; color:#838383;" />
                 <table style="width: 100%">
                     <tr>
-                        <td text-align="center" style="background-color:#efefef; padding-top:10px; border-radius:15px;">
+                        <%--border-radius:15px;--%>
+                        <td  style="background-color:#efefef; text-align:center; padding-top:10px; ">
                             <h5 class="modal-title">
                                 <%--Edición de empleados--%>
                                 <asp:Label ID="lblTituloModalUsuario" runat="server"></asp:Label>
                             </h5><br />
                         </td>
                     </tr>
-                    <%--<tr>
-                        <td style="width:5%">
-                        </td>
-                        <td style="width:90%; text-align:center">
-                    
-                        </td>
-                        <td style="width:5%">
-                            <asp:LinkButton ID="btnClose" runat="server" CssClass="close" Style="margin-top: -25px; margin-right: 10px; color: #cccccc; font-weight: bold;" ToolTip="Clic aqui para cerrar" OnClientClick="OcultarModalBusqueda();" >x</asp:LinkButton>
-                        </td>
-                    </tr>--%>
                     <tr>
                         <td></td>
                     </tr>
@@ -169,9 +173,10 @@
                                 <div class="col-md-3" style="width:300px;">
                                     <asp:Label ID="lblNombre" runat="server" style="width:550px;"></asp:Label>
                                 </div>
-                                <div class="col-md-9">
+                                <div class="col-md-8">
                                     <asp:TextBox ID="txtNombre" runat="server" CssClass="form-control"></asp:TextBox>
                                 </div>
+                                <div class="col-md-1"></div>
                             </div>    
                         </td>
                     </tr>
@@ -181,9 +186,10 @@
                                 <div class="col-md-3">
                                     <asp:Label ID="lblApellidoPat" runat="server"></asp:Label>
                                 </div>
-                                <div class="col-md-9">
+                                <div class="col-md-8">
                                     <asp:TextBox ID="txtApellidoPat" runat="server" CssClass="form-control"></asp:TextBox>
                                 </div>
+                                <div class="col-md-1"></div>
                             </div>
                         </td>
                     </tr>
@@ -193,9 +199,10 @@
                                 <div class="col-md-3">
                                     <asp:Label ID="lblApellidoMat" runat="server"></asp:Label>
                                 </div>
-                                <div class="col-md-9">
+                                <div class="col-md-8">
                                     <asp:TextBox ID="txtApellidoMat" runat="server" CssClass="form-control"></asp:TextBox>
                                 </div>
+                                <div class="col-md-1"></div>
                             </div>
                         </td>
                     </tr>
@@ -205,9 +212,10 @@
                                 <div class="col-md-3">
                                     <asp:Label ID="lblCorreo" runat="server"></asp:Label>
                                 </div>
-                                <div class="col-md-9">
+                                <div class="col-md-8">
                                     <asp:TextBox ID="txtCorreo" runat="server" CssClass="form-control"></asp:TextBox>
                                 </div>
+                                <div class="col-md-1"></div>
                             </div>  
                         </td>
                     </tr>
@@ -217,28 +225,38 @@
                                 <div class="col-md-3">
                                     <asp:Label ID="lblPuesto" runat="server"></asp:Label>
                                 </div>
-                                <div class="col-md-9">
+                                <div class="col-md-8">
                                     <asp:TextBox ID="txtPuesto" runat="server" CssClass="form-control"></asp:TextBox>
                                 </div>
+                                <div class="col-md-1"></div>
                             </div>  
                         </td>
                     </tr>
                 </table>
+                <div class="row">
+                    <div class="col-md-3">
+                        <asp:Label ID="lblTelefonoMovil" runat="server"></asp:Label>
+                    </div>
+                    <div class="col-md-8">
+                        <asp:TextBox ID="txtTelMovil" runat="server" CssClass="form-control"></asp:TextBox>
+                    </div>
+                    <div class="col-md-1"></div>
+                </div>
                 <br /><br /><br />
                 <table style="width: 100%; position:absolute; bottom:0px;">
                     <tr>
                         <td>
                             <div class="row">
-                                <div class="col-md-3">
+                                <div class="col-md-1">
                                     &nbsp;
                                 </div>
-                                <div class="col-md-3" style="text-align:center;">
+                                <div class="col-md-10" style="text-align:right;">
                                     <asp:Button ID="btnAceptar" runat="server" CssClass="btn btn-primary" OnClientClick="OcultarEdicionUsuarios();"/>
                                 </div>
-                                <div class="col-md-3" style="text-align:center;">
+                                <%--<div class="col-md-3" style="text-align:center;">
                                     <asp:Button ID="btnCancelar" runat="server" CssClass="btn btn-danger" OnClientClick="OcultarEdicionUsuarios();" />
-                                </div>
-                                <div class="col-md-3">
+                                </div>--%>
+                                <div class="col-md-1">
                                     &nbsp;
                                 </div>
                             </div>

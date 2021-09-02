@@ -45,7 +45,7 @@ namespace PortalClientes.Views
             lblPuesto.Text = Properties.Resources.Us_Puesto;
             lblTituloModalUsuario.Text = Properties.Resources.Us_TituloEdUsuarios;
             btnAceptar.Text = Properties.Resources.Aceptar;
-            btnCancelar.Text = Properties.Resources.Cancelar;
+            //btnCancelar.Text = Properties.Resources.Cancelar;
             btnAgregar.Text = Properties.Resources.Us_AltaUsuario;
         }
 
