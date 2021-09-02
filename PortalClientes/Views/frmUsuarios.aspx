@@ -243,7 +243,7 @@
                     <div class="col-md-1"></div>
                 </div>
                 <br /><br /><br />
-                <table style="width: 100%; position:absolute; bottom:0px;">
+                <table style="width: 100%;">
                     <tr>
                         <td>
                             <div class="row">
