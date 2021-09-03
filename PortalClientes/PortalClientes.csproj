@@ -133,6 +133,11 @@
     <Content Include="index2.html" />
     <Content Include="index3.html" />
     <Content Include="invoice.html" />
+    <Content Include="jets\demo_jet_01.jpg" />
+    <Content Include="jets\demo_jet_02.jpg" />
+    <Content Include="jets\demo_jet_03.jpg" />
+    <Content Include="jets\demo_jet_04.jpg" />
+    <Content Include="jets\demo_jet_05.jpg" />
     <Content Include="level2.html" />
     <Content Include="login.html" />
     <Content Include="map.html" />

@@ -48,7 +48,7 @@
                     <br /><br />
                     <div class="row">
                         <div class="col-md-4">
-                            <asp:Label ID="lblOrigen" runat="server" Text="Origen:" Font-Bold="true"></asp:Label>
+                            <asp:Label ID="lblOrigen" runat="server" Text="Origen:"></asp:Label>
                         </div>
                         <div class="col-md-8">
                             <asp:Label ID="lblOrigenText" runat="server" Text="---" Font-Bold="true"></asp:Label>
@@ -56,7 +56,7 @@
                     </div>
                     <div class="row">
                         <div class="col-md-4">
-                            <asp:Label ID="lblDestino" runat="server" Text="Destino:" Font-Bold="true"></asp:Label>
+                            <asp:Label ID="lblDestino" runat="server" Text="Destino:"></asp:Label>
                         </div>
                         <div class="col-md-8"">
                             <asp:Label ID="lblDestinoText" runat="server" Text="---" Font-Bold="true"></asp:Label>
@@ -65,7 +65,7 @@
                     <br />
                     <div class="row">
                         <div class="col-md-4">
-                            <asp:Label ID="lblSalida" runat="server" Text="Salida:" Font-Bold="true"></asp:Label>
+                            <asp:Label ID="lblSalida" runat="server" Text="Salida:"></asp:Label>
                         </div>
                         <div class="col-md-8">
                             <asp:Label ID="lblSalidaText" runat="server" Text="---" Font-Bold="true"></asp:Label>
@@ -73,7 +73,7 @@
                     </div>
                     <div class="row">
                         <div class="col-md-4">
-                            <asp:Label ID="lblLlego" runat="server" Text="Llegada:" Font-Bold="true"></asp:Label>
+                            <asp:Label ID="lblLlego" runat="server" Text="Llegada:"></asp:Label>
                         </div>
                         <div class="col-md-8">
                             <asp:Label ID="lblLlegoText" runat="server" Text="---" Font-Bold="true"></asp:Label>
@@ -96,7 +96,7 @@
                           <br />
                           <div class="widget_summary">
                             <div class="w_left w_25">
-                              <asp:Label ID="lblMes01Vuelo" runat="server" Text="Mes 1" Font-Bold="true"></asp:Label>
+                              <asp:Label ID="lblMes01Vuelo" runat="server" Text="Mes 1"></asp:Label>
                             </div>
                             <div class="w_right w_20">
                               <asp:Label ID="lblMes01VueloNum" runat="server" Text="8" style="font-size:14px;"></asp:Label>&nbsp;
@@ -110,7 +110,7 @@
                           </div>
                           <div class="widget_summary">
                             <div class="w_left w_25">
-                              <asp:Label ID="lblMes02Vuelo" runat="server" Text="Mes 2" Font-Bold="true"></asp:Label>
+                              <asp:Label ID="lblMes02Vuelo" runat="server" Text="Mes 2"></asp:Label>
                             </div>
                             <div class="w_right w_20">
                               <asp:Label ID="lblMes02VueloNum" runat="server" Text="9" style="font-size:14px;"></asp:Label>&nbsp;
@@ -124,7 +124,7 @@
                           </div>
                           <div class="widget_summary">
                             <div class="w_left w_25">
-                              <asp:Label ID="lblMes03Vuelo" runat="server" Text="Mes 3" Font-Bold="true"></asp:Label>
+                              <asp:Label ID="lblMes03Vuelo" runat="server" Text="Mes 3"></asp:Label>
                             </div>
                             <div class="w_right w_20">
                               <asp:Label ID="lblMes03VueloNum" runat="server" Text="7" style="font-size:14px;"></asp:Label>&nbsp;
@@ -141,7 +141,7 @@
                            <br />
                           <div class="widget_summary">
                             <div class="w_left w_25">
-                              <asp:Label ID="lblMes01bVuelo" runat="server" Text="Mes 1b" Font-Bold="true"></asp:Label>
+                              <asp:Label ID="lblMes01bVuelo" runat="server" Text="Mes 1b"></asp:Label>
                             </div>
                             <div class="w_right w_20">
                               <asp:Label ID="lblMes01bVueloNum" runat="server" Text="8" style="font-size:14px;"></asp:Label>&nbsp;
@@ -155,7 +155,7 @@
                           </div>
                           <div class="widget_summary">
                             <div class="w_left w_25">
-                              <asp:Label ID="lblMes02bVuelo" runat="server" Text="Mes 2b" Font-Bold="true"></asp:Label>
+                              <asp:Label ID="lblMes02bVuelo" runat="server" Text="Mes 2b"></asp:Label>
                             </div>
                             <div class="w_right w_20">
                               <asp:Label ID="lblMes02bVueloNum" runat="server" Text="9" style="font-size:14px;"></asp:Label>&nbsp;
@@ -169,7 +169,7 @@
                           </div>
                           <div class="widget_summary">
                             <div class="w_left w_25">
-                              <asp:Label ID="lblMes03bVuelo" runat="server" Text="Mes 3b" Font-Bold="true"></asp:Label>
+                              <asp:Label ID="lblMes03bVuelo" runat="server" Text="Mes 3b"></asp:Label>
                             </div>
                             <div class="w_right w_20">
                               <asp:Label ID="lblMes03bVueloNum" runat="server" Text="7" style="font-size:14px;"></asp:Label>&nbsp;
@@ -185,7 +185,7 @@
                       <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab"> <br />
                           <div class="widget_summary">
                             <div class="w_left w_25">
-                              <asp:Label ID="lblMes01cVuelo" runat="server" Text="Mes 1c" Font-Bold="true"></asp:Label>
+                              <asp:Label ID="lblMes01cVuelo" runat="server" Text="Mes 1c"></asp:Label>
                             </div>
                             <div class="w_right w_20">
                               <asp:Label ID="lblMes01cVueloNum" runat="server" Text="8" style="font-size:14px;"></asp:Label>&nbsp;
@@ -199,7 +199,7 @@
                           </div>
                           <div class="widget_summary">
                             <div class="w_left w_25">
-                              <asp:Label ID="lblMes02cVuelo" runat="server" Text="Mes 2c" Font-Bold="true"></asp:Label>
+                              <asp:Label ID="lblMes02cVuelo" runat="server" Text="Mes 2c"></asp:Label>
                             </div>
                             <div class="w_right w_20">
                               <asp:Label ID="lblMes02cVueloNum" runat="server" Text="9" style="font-size:14px;"></asp:Label>&nbsp;
@@ -213,7 +213,7 @@
                           </div>
                           <div class="widget_summary">
                             <div class="w_left w_25">
-                              <asp:Label ID="lblMes03cVuelo" runat="server" Text="Mes 3c" Font-Bold="true"></asp:Label>
+                              <asp:Label ID="lblMes03cVuelo" runat="server" Text="Mes 3c"></asp:Label>
                             </div>
                             <div class="w_right w_20">
                               <asp:Label ID="lblMes03cVueloNum" runat="server" Text="7" style="font-size:14px;"></asp:Label>&nbsp;
