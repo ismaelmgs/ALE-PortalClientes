@@ -9,7 +9,9 @@ namespace PortalClientes.Objetos
     {
         public string UrlPage { set; get; }
         public string Style { set; get; }
-        public string Nombre { set; get; }
+        public string NombreESP { set; get; }
         public string NombreUSD { set; get; }
     }
+
+
 }

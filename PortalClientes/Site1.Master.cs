@@ -51,7 +51,7 @@ namespace PortalClientes
 
             foreach (MenuDinamico oMenu in olst)
             {
-                string sNombre = Utils.Idioma == "es-MX" || Utils.Idioma == string.Empty ? oMenu.Nombre : oMenu.NombreUSD;
+                string sNombre = Utils.Idioma == "es-MX" || Utils.Idioma == string.Empty ? oMenu.NombreESP : oMenu.NombreUSD;
                 sHtml += "<li><a href = '" + oMenu.UrlPage + "'><i class='" + oMenu.Style + "'></i>"+ sNombre + "</a></li>";
             }
                                 //<li><a href = "frmDashboard.aspx">< i class="fa fa-th-large"></i>Dashboard</a></li>
@@ -77,55 +77,55 @@ namespace PortalClientes
                 MenuDinamico oMenu1 = new MenuDinamico();
                 oMenu1.UrlPage = "frmDashboard.aspx";
                 oMenu1.Style = "fa fa-th-large";
-                oMenu1.Nombre = "Dashboard";
+                oMenu1.NombreESP = "Dashboard";
                 oMenu1.NombreUSD = "Dashboard";
 
                 MenuDinamico oMenu2 = new MenuDinamico();
                 oMenu2.UrlPage = "frmTuAeronave.aspx";
                 oMenu2.Style = "fa fa-plane";
-                oMenu2.Nombre = "Tu Aeronave";
+                oMenu2.NombreESP = "Tu Aeronave";
                 oMenu2.NombreUSD = "Your Aircraft";
 
                 MenuDinamico oMenu3 = new MenuDinamico();
                 oMenu3.UrlPage = "frmCalendario.aspx";
                 oMenu3.Style = "fa fa-calendar";
-                oMenu3.Nombre = "Calendario";
+                oMenu3.NombreESP = "Calendario";
                 oMenu3.NombreUSD = "Calendar";
 
                 MenuDinamico oMenu4 = new MenuDinamico();
                 oMenu4.UrlPage = "frmEstadoCuenta.aspx";
                 oMenu4.Style = "fa fa-list";
-                oMenu4.Nombre = "Estados de Cuenta";
+                oMenu4.NombreESP = "Estados de Cuenta";
                 oMenu4.NombreUSD = "Account statements";
 
                 MenuDinamico oMenu5 = new MenuDinamico();
                 oMenu5.UrlPage = "frmTripulacion.aspx";
                 oMenu5.Style = "fa fa-male";
-                oMenu5.Nombre = "Tripulación";
+                oMenu5.NombreESP = "Tripulación";
                 oMenu5.NombreUSD = "Crew";
 
                 MenuDinamico oMenu6 = new MenuDinamico();
                 oMenu6.UrlPage = "frmMetricasEstadisticas.aspx";
                 oMenu6.Style = "fa fa-line-chart";
-                oMenu6.Nombre = "Métricas y Estadísticas";
+                oMenu6.NombreESP = "Métricas y Estadísticas";
                 oMenu6.NombreUSD = "Metrics and Statistics";
 
                 MenuDinamico oMenu7 = new MenuDinamico();
                 oMenu7.UrlPage = "frmReportes.aspx";
                 oMenu7.Style = "fa fa-list-alt";
-                oMenu7.Nombre = "Reportes";
+                oMenu7.NombreESP = "Reportes";
                 oMenu7.NombreUSD = "Reports";
 
                 MenuDinamico oMenu8 = new MenuDinamico();
                 oMenu8.UrlPage = "frmMantenimientos.aspx";
                 oMenu8.Style = "fa fa-wrench";
-                oMenu8.Nombre = "Mantenimientos";
+                oMenu8.NombreESP = "Mantenimientos";
                 oMenu8.NombreUSD = "Maintenance";
 
                 MenuDinamico oMenu9 = new MenuDinamico();
                 oMenu9.UrlPage = "frmUsuarios.aspx";
                 oMenu9.Style = "fa fa-group";
-                oMenu9.Nombre = "Usuarios";
+                oMenu9.NombreESP = "Usuarios";
                 oMenu9.NombreUSD = "Users";
 
 
