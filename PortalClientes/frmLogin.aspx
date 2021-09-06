@@ -31,18 +31,20 @@
         <div class="animate form login_form">
           <section class="login_content">
             <form><br />
-              <h1>Acceso</h1>
+              <h1><asp:Label ID="lblAcceso" runat="server" Text="Acceso"></asp:Label></h1>
               <div>
-                <input type="text" class="form-control" placeholder="Usuario" required />
+                  <asp:TextBox ID="txtUsuario" runat="server" CssClass="form-control" placeholder="Usuario"></asp:TextBox>
               </div><br />
               <div>
-                <input type="password" class="form-control" placeholder="Contraseña" required />
+                  <asp:TextBox ID="txtPassword" runat="server" CssClass="form-control" placeholder="contraseña"></asp:TextBox>
               </div>
               <div><br />
                   <div class="row">
                       <div class="col-md-12" style="text-align:center;">
-                        <a class="btn btn-primary" href="Views/frmDashboard.aspx">Enviar</a><br /><br />
-                        <a href="#">¿Olvidó su contraseña?</a>
+                        <button id="btnEntrar" class="btn btn-primary" type="button" runat="server">
+                            Enviar
+                        </button><br /><br />
+                        <asp:Label ID="lblOlvidoPAssword" runat="server" Text="¿Olvidó su contraseña?"></asp:Label>
                       </div>
                   </div>
               </div>
@@ -56,10 +58,23 @@
 
                 <div class="clearfix"></div>
                 <br />
-
+                  <div class="row" style="width:100%;">
+                      <div class="col-md-5" style="text-align:right;">
+                          <asp:LinkButton ID="lblIdiomaEspanol" runat="server" Text="Español" Font-Bold="true"></asp:LinkButton>
+                      </div>
+                      <div class="col-md-2">
+                          <i class="fa fa-globe" style="font-size:25px;"></i>
+                      </div>
+                      <div class="col-md-5" style="text-align:left;">
+                          <asp:LinkButton ID="lblIdiomaEnglish" runat="server" Text="English" Font-Bold="true"></asp:LinkButton>
+                      </div>
+                  </div>
                 <div><br />
-                  <h2><img src="build/images/logo-ale_azul2.png" width="150" alt="ALE"> <!-- Aerolíneas Ejecutivas --></h2>
-                  <p>© 2021 All Rights Reserved. Aerolíneas Ejecutivas. Privacy and Terms</p>
+                  <h2><img src="build/images/logo-ale_azul2.png" width="150" alt="ALE" /> <!-- Aerolíneas Ejecutivas --></h2>
+                  <p><script>
+                            document.write(new Date().getFullYear())
+                  </script>
+                        © All Rights Reserved. Aerolíneas Ejecutivas.</p>
                 </div>
               </div>
             </form>
