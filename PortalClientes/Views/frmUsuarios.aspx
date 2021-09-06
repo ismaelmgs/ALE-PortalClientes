@@ -153,94 +153,61 @@
         Width="" CssClass="modal-derecha">
         <asp:UpdatePanel ID="upaUsuario" runat="server">
             <ContentTemplate>
-                <asp:Button ID="Button1" runat="server" CssClass="btn" Text="X" Font-Bold="true" OnClientClick="OcultarEdicionUsuarios();" Style="z-index: 2000;right: 13px;margin-top:10px;position: absolute; color:#838383;" />
-                <table style="width: 100%">
+                <asp:Button ID="Button1" runat="server" CssClass="btn" Text="X" Font-Bold="true" OnClientClick="OcultarEdicionUsuarios();" Style="z-index: 2000;right: 13px;margin-top:10px;position: absolute; color:#ffffff;" />
+                <h5 class="modal-title" style="color:#ffffff;background-color:#2a3f54;width:100%;height:70px;padding-top:15px;">
+                    <%--Edición de empleados--%>
+                    <asp:Label ID="lblTituloModalUsuario" runat="server"></asp:Label>
+                </h5><br />
+                <div style="margin:4px;">
+                    <table style="width: 100%;">
                     <tr>
-                        <%--border-radius:15px;--%>
-                        <td  style="background-color:#efefef; text-align:center; padding-top:10px; ">
-                            <h5 class="modal-title">
-                                <%--Edición de empleados--%>
-                                <asp:Label ID="lblTituloModalUsuario" runat="server"></asp:Label>
-                            </h5><br />
+                        <td>
+                            &nbsp;
                         </td>
                     </tr>
                     <tr>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>  <br />              
+                        <td>  <br /><br />          
                             <div class="row">
-                                <div class="col-md-3" style="width:300px;">
-                                    <asp:Label ID="lblNombre" runat="server" style="width:550px;"></asp:Label>
-                                </div>
-                                <div class="col-md-8">
+                                <div class="col-md-6" style="text-align:left;">
+                                    <asp:Label ID="lblNombre" runat="server" style="width:550px;"></asp:Label><br />
                                     <asp:TextBox ID="txtNombre" runat="server" CssClass="form-control"></asp:TextBox>
                                 </div>
-                                <div class="col-md-1"></div>
+                                <div class="col-md-6" style="text-align:left;">
+                                    <asp:Label ID="lblApellidoPat" runat="server"></asp:Label><br />
+                                    <asp:TextBox ID="txtApellidoPat" runat="server" CssClass="form-control"></asp:TextBox>
+                                </div>
                             </div>    
                         </td>
                     </tr>
                     <tr>
                         <td>
                             <div class="row">
-                                <div class="col-md-3">
-                                    <asp:Label ID="lblApellidoPat" runat="server"></asp:Label>
-                                </div>
-                                <div class="col-md-8">
-                                    <asp:TextBox ID="txtApellidoPat" runat="server" CssClass="form-control"></asp:TextBox>
-                                </div>
-                                <div class="col-md-1"></div>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <div class="row">
-                                <div class="col-md-3">
-                                    <asp:Label ID="lblApellidoMat" runat="server"></asp:Label>
-                                </div>
-                                <div class="col-md-8">
+                                <div class="col-md-6" style="text-align:left;">
+                                    <asp:Label ID="lblApellidoMat" runat="server"></asp:Label><br />
                                     <asp:TextBox ID="txtApellidoMat" runat="server" CssClass="form-control"></asp:TextBox>
                                 </div>
-                                <div class="col-md-1"></div>
+                                <div class="col-md-6" style="text-align:left;">
+                                    <asp:Label ID="lblCorreo" runat="server"></asp:Label><br />
+                                    <asp:TextBox ID="txtCorreo" runat="server" CssClass="form-control"></asp:TextBox>
+                                </div>
                             </div>
                         </td>
                     </tr>
                     <tr>
                         <td>
                             <div class="row">
-                                <div class="col-md-3">
-                                    <asp:Label ID="lblCorreo" runat="server"></asp:Label>
-                                </div>
-                                <div class="col-md-8">
-                                    <asp:TextBox ID="txtCorreo" runat="server" CssClass="form-control"></asp:TextBox>
-                                </div>
-                                <div class="col-md-1"></div>
-                            </div>  
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <div class="row">
-                                <div class="col-md-3">
+                                <div class="col-md-6" style="text-align:left;">
                                     <asp:Label ID="lblPuesto" runat="server"></asp:Label>
-                                </div>
-                                <div class="col-md-8">
                                     <asp:TextBox ID="txtPuesto" runat="server" CssClass="form-control"></asp:TextBox>
                                 </div>
-                                <div class="col-md-1"></div>
+                                <div class="col-md-6" style="text-align:left;">
+                                    <asp:Label ID="lblTelefonoMovil" runat="server" Text="Celular:"></asp:Label><br />
+                                    <asp:TextBox ID="txtTelMovil" runat="server" CssClass="form-control"></asp:TextBox>
+                                </div>
                             </div>  
                         </td>
                     </tr>
                 </table>
-                <div class="row">
-                    <div class="col-md-3">
-                        <asp:Label ID="lblTelefonoMovil" runat="server"></asp:Label>
-                    </div>
-                    <div class="col-md-8">
-                        <asp:TextBox ID="txtTelMovil" runat="server" CssClass="form-control"></asp:TextBox>
-                    </div>
-                    <div class="col-md-1"></div>
                 </div>
                 <br /><br /><br />
                 <table style="width: 100%;">
