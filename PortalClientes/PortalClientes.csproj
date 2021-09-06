@@ -1398,6 +1398,7 @@
     <Content Include="Views\frmCalendario.aspx" />
     <Content Include="Views\frmDashboard.aspx" />
     <Content Include="Views\frmEstadoCuenta.aspx" />
+    <Content Include="Views\frmLegal.aspx" />
     <Content Include="Views\frmMantenimientos.aspx" />
     <Content Include="Views\frmMetricasEstadisticas.aspx" />
     <Content Include="Views\frmReportes.aspx" />
@@ -1475,6 +1476,13 @@
     </Compile>
     <Compile Include="Views\frmEstadoCuenta.aspx.designer.cs">
       <DependentUpon>frmEstadoCuenta.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\frmLegal.aspx.cs">
+      <DependentUpon>frmLegal.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\frmLegal.aspx.designer.cs">
+      <DependentUpon>frmLegal.aspx</DependentUpon>
     </Compile>
     <Compile Include="Views\frmMantenimientos.aspx.cs">
       <DependentUpon>frmMantenimientos.aspx</DependentUpon>

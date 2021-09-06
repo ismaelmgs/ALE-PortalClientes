@@ -213,7 +213,7 @@
                         <script>
                             document.write(new Date().getFullYear())
                         </script>
-                        © Power by <a href="https://www.aerolineasejecutivas.com/" target="_blank">Morvel IT</a>
+                        © Power by <a href="https://www.aerolineasejecutivas.com/" target="_blank">Aerolíneas Ejecutivas</a> | <a href="frmLegal.aspx">Aviso Legal</a>
                     </div>
                     <div class="clearfix"></div>
                 </footer>
