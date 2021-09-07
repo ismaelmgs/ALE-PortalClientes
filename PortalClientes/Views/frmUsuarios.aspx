@@ -4,6 +4,7 @@
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="cc1" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+    
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 
     <script type="text/javascript">
@@ -22,7 +23,7 @@
             }
         });
     </script>
-    
+   
     
 
 </asp:Content>
@@ -51,6 +52,25 @@
                     </div>
                 </div>
             </div>
+
+            <div class="container mt-5">
+                <button id="btnAlerta" class="btn btn-info">Alerta</button>
+            </div>
+
+            <%--<div class="row">
+                <div class="col-sm-4"></div>
+                <div class="col-sm-8">
+                    <div class="x_content bs-example-popovers">
+                        <div class="alert alert-info alert-dismissible" role="alert">
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true">x</span>
+                            </button>
+                            <strong>Holy guacamole!</strong>
+                            " Best check yo self, you're not looking too good. "
+                        </div>
+                    </div>
+                </div>
+            </div>--%>
 
             <div class="col-md-12 col-sm-12">
                 <div class="x_panel">
@@ -140,6 +160,7 @@
                     </div>
                 </div>
             </div>--%>
+
         </ContentTemplate>
     </asp:UpdatePanel>
 
@@ -158,7 +179,7 @@
                     <%--Edición de empleados--%>
                     <asp:Label ID="lblTituloModalUsuario" runat="server"></asp:Label>
                 </h5><br />
-                <div style="margin:4px;">
+                <div ><%--style="margin:4px;">--%>
                     <table style="width: 100%;">
                     <tr>
                         <td>
@@ -168,42 +189,48 @@
                     <tr>
                         <td>  <br /><br />          
                             <div class="row">
-                                <div class="col-md-6" style="text-align:left;">
+                                <div class="col-md-1"></div>
+                                <div class="col-md-5" style="text-align:left;">
                                     <asp:Label ID="lblNombre" runat="server" style="width:550px;"></asp:Label><br />
                                     <asp:TextBox ID="txtNombre" runat="server" CssClass="form-control"></asp:TextBox>
                                 </div>
-                                <div class="col-md-6" style="text-align:left;">
+                                <div class="col-md-5" style="text-align:left;">
                                     <asp:Label ID="lblApellidoPat" runat="server"></asp:Label><br />
                                     <asp:TextBox ID="txtApellidoPat" runat="server" CssClass="form-control"></asp:TextBox>
                                 </div>
+                                <div class="col-md-1"></div>
                             </div>    
                         </td>
                     </tr>
                     <tr>
                         <td>
                             <div class="row">
-                                <div class="col-md-6" style="text-align:left;">
+                                <div class="col-md-1"></div>
+                                <div class="col-md-5" style="text-align:left;">
                                     <asp:Label ID="lblApellidoMat" runat="server"></asp:Label><br />
                                     <asp:TextBox ID="txtApellidoMat" runat="server" CssClass="form-control"></asp:TextBox>
                                 </div>
-                                <div class="col-md-6" style="text-align:left;">
+                                <div class="col-md-5" style="text-align:left;">
                                     <asp:Label ID="lblCorreo" runat="server"></asp:Label><br />
                                     <asp:TextBox ID="txtCorreo" runat="server" CssClass="form-control"></asp:TextBox>
                                 </div>
+                                <div class="col-md-1"></div>
                             </div>
                         </td>
                     </tr>
                     <tr>
                         <td>
                             <div class="row">
-                                <div class="col-md-6" style="text-align:left;">
+                                <div class="col-md-1"></div>
+                                <div class="col-md-5" style="text-align:left;">
                                     <asp:Label ID="lblPuesto" runat="server"></asp:Label>
                                     <asp:TextBox ID="txtPuesto" runat="server" CssClass="form-control"></asp:TextBox>
                                 </div>
-                                <div class="col-md-6" style="text-align:left;">
+                                <div class="col-md-5" style="text-align:left;">
                                     <asp:Label ID="lblTelefonoMovil" runat="server" Text="Celular:"></asp:Label><br />
                                     <asp:TextBox ID="txtTelMovil" runat="server" CssClass="form-control"></asp:TextBox>
                                 </div>
+                                <div class="col-md-1"></div>
                             </div>  
                         </td>
                     </tr>
