@@ -4,6 +4,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using NucleoBase.Core;
+using RestSharp;
+using Newtonsoft.Json;
+using System.Web.Script.Serialization;
 
 namespace PortalClientes.Clases
 {
@@ -66,5 +69,29 @@ namespace PortalClientes.Clases
                 return ((UserIdentity)System.Web.HttpContext.Current.Session["UserIdentity"]).iIdUsuario;
             }
         }
+
+        public static TokenWS ObtieneToken
+        {
+            get
+            {
+                JavaScriptSerializer ser = new JavaScriptSerializer();
+                CredencialesWS oCred = new CredencialesWS();
+                oCred.username = Globales.GetConfigApp<string>("UsrWs");
+                oCred.password = Globales.GetConfigApp<string>("PassWs");
+
+                var client = new RestClient(Helper.UrlToken);
+                var request = new RestRequest(Method.POST);
+                
+                request.AddJsonBody(oCred);
+
+                IRestResponse response = client.Execute(request);
+                var resp = response.Content;
+
+                TokenWS oToken = ser.Deserialize<TokenWS>(resp);
+
+                return oToken;
+            }
+        }
+
     }
 }

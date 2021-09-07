@@ -14,5 +14,7 @@ namespace PortalClientes.Clases
         public const string EstadoCuenta = "E1";
         public const string Tripulacion = "T1";
         public const string Metricas = "M1";
+
+        public const string UrlToken = "http://201.163.208.231/WSMorvelRest/ws/authentica";
     }
 }
