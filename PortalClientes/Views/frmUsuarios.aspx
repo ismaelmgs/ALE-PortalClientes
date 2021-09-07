@@ -202,7 +202,7 @@
         PopupControlID="pnlUsuario" BackgroundCssClass="overlayy">
     </cc1:ModalPopupExtender>
     <asp:Panel ID="pnlUsuario" runat="server" BorderColor="" BackColor="White" Height="" HorizontalAlign="Center"
-        Width="" CssClass="modal-derecha">
+        Width="" CssClass="modal-derecha anim_RLR">
         <asp:UpdatePanel ID="upaUsuario" runat="server">
             <ContentTemplate>
                 <asp:Button ID="Button1" runat="server" CssClass="btn" Text="X" Font-Bold="true" OnClientClick="OcultarEdicionUsuarios();" Style="z-index: 2000;right: 13px;margin-top:10px;position: absolute; color:#ffffff;" />
@@ -211,14 +211,14 @@
                     <asp:Label ID="lblTituloModalUsuario" runat="server"></asp:Label>
                 </h5><br />
                 <div><%--style="margin:4px;">--%>
-                    <table style="width: 100%;">
+                    <table style="width: 97%; margin:0 auto !important;">
                     <tr>
                         <td>
                             &nbsp;
                         </td>
                     </tr>
                     <tr>
-                        <td>  <br /><br />          
+                        <td>  <br />        
                             <div class="row">
                                 <div class="col-md-1"></div>
                                 <div class="col-md-5" style="text-align:left;">
