@@ -132,6 +132,9 @@
   <data name="Cm_Buscador" xml:space="preserve">
     <value>Filter...</value>
   </data>
+  <data name="Cm_CampoReq" xml:space="preserve">
+    <value>This field is required.</value>
+  </data>
   <data name="Correo" xml:space="preserve">
     <value>E-mail:</value>
   </data>
@@ -147,8 +150,17 @@
   <data name="Us_ApePat" xml:space="preserve">
     <value>Last name:</value>
   </data>
+  <data name="Us_Celular" xml:space="preserve">
+    <value>Cellphone:</value>
+  </data>
+  <data name="Us_ConfirPass" xml:space="preserve">
+    <value>Confirm password:</value>
+  </data>
   <data name="Us_Nombre" xml:space="preserve">
     <value>Names:</value>
+  </data>
+  <data name="Us_Password" xml:space="preserve">
+    <value>Password:</value>
   </data>
   <data name="Us_Puesto" xml:space="preserve">
     <value>Job:</value>
@@ -161,5 +173,11 @@
   </data>
   <data name="Us_TituloPagUsuarios" xml:space="preserve">
     <value>Users Management</value>
+  </data>
+  <data name="Us_ValConfirPass" xml:space="preserve">
+    <value>Passwords are not the same</value>
+  </data>
+  <data name="Us_ValCorreo" xml:space="preserve">
+    <value>The email is not valid</value>
   </data>
 </root>

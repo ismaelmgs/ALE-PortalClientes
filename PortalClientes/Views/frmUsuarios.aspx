@@ -2,6 +2,7 @@
 
 <%@ Register Assembly="System.Web.Extensions, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Namespace="System.Web.UI" TagPrefix="asp" %>
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="cc1" %>
+<%@ Register Assembly="xVal.WebForms" Namespace="xVal.WebForms" TagPrefix="val" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     
@@ -22,10 +23,43 @@
                 modal.hide();
             }
         });
-    </script>
-   
-    
 
+        $(document).ready(function() {
+            $("#basic-form").validate();
+        });
+
+        //$(document).ready(function ()
+        //{
+        //    $("#basic-form").validate({
+        //        rules: {
+        //            name : {
+        //                required: true,
+        //                minlength: 3
+        //            },
+        //            age: {
+        //                required: true,
+        //                number: true,
+        //                min: 18
+        //            },
+        //            email: {
+        //                required: true,
+        //                email: true
+        //            },
+        //            weight: {
+        //                required: {
+        //                    depends: function(elem) {
+        //                    return $("#age").val() > 50
+        //                    }
+        //            },
+        //            number: true,
+        //            min: 0
+        //            }
+        //        }
+        //  });
+        //});
+
+    </script>
+    
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <asp:UpdatePanel ID="upaPrincipal" runat="server">
@@ -53,9 +87,6 @@
                 </div>
             </div>
 
-            <div class="container mt-5">
-                <button id="btnAlerta" class="btn btn-info">Alerta</button>
-            </div>
 
             <%--<div class="row">
                 <div class="col-sm-4"></div>
@@ -179,7 +210,7 @@
                     <%--Edición de empleados--%>
                     <asp:Label ID="lblTituloModalUsuario" runat="server"></asp:Label>
                 </h5><br />
-                <div ><%--style="margin:4px;">--%>
+                <div><%--style="margin:4px;">--%>
                     <table style="width: 100%;">
                     <tr>
                         <td>
@@ -193,13 +224,15 @@
                                 <div class="col-md-5" style="text-align:left;">
                                     <asp:Label ID="lblNombre" runat="server" style="width:550px;"></asp:Label><br />
                                     <asp:TextBox ID="txtNombre" runat="server" CssClass="form-control"></asp:TextBox>
+                                    <asp:Label ID="lblReqNombre" runat="server" ForeColor="Red" Visible="false"></asp:Label>
                                 </div>
                                 <div class="col-md-5" style="text-align:left;">
                                     <asp:Label ID="lblApellidoPat" runat="server"></asp:Label><br />
                                     <asp:TextBox ID="txtApellidoPat" runat="server" CssClass="form-control"></asp:TextBox>
+                                    
                                 </div>
                                 <div class="col-md-1"></div>
-                            </div>    
+                            </div>
                         </td>
                     </tr>
                     <tr>
@@ -211,8 +244,9 @@
                                     <asp:TextBox ID="txtApellidoMat" runat="server" CssClass="form-control"></asp:TextBox>
                                 </div>
                                 <div class="col-md-5" style="text-align:left;">
-                                    <asp:Label ID="lblCorreo" runat="server"></asp:Label><br />
-                                    <asp:TextBox ID="txtCorreo" runat="server" CssClass="form-control"></asp:TextBox>
+                                    <asp:Label ID="lblPuesto" runat="server"></asp:Label>
+                                    <asp:TextBox ID="txtPuesto" runat="server" CssClass="form-control"></asp:TextBox>
+                                    
                                 </div>
                                 <div class="col-md-1"></div>
                             </div>
@@ -223,15 +257,36 @@
                             <div class="row">
                                 <div class="col-md-1"></div>
                                 <div class="col-md-5" style="text-align:left;">
-                                    <asp:Label ID="lblPuesto" runat="server"></asp:Label>
-                                    <asp:TextBox ID="txtPuesto" runat="server" CssClass="form-control"></asp:TextBox>
+                                    <asp:Label ID="lblCorreo" runat="server"></asp:Label><br />
+                                    <asp:TextBox ID="txtCorreo" runat="server" CssClass="form-control"></asp:TextBox>
+                                    <asp:Label ID="lblReqCorreo" runat="server" ForeColor="Red" Visible="false"></asp:Label>
                                 </div>
                                 <div class="col-md-5" style="text-align:left;">
-                                    <asp:Label ID="lblTelefonoMovil" runat="server" Text="Celular:"></asp:Label><br />
-                                    <asp:TextBox ID="txtTelMovil" runat="server" CssClass="form-control"></asp:TextBox>
+                                    <asp:Label ID="lblTelefonoMovil" runat="server"></asp:Label><br />
+                                    <asp:TextBox ID="txtTelMovil" runat="server" CssClass="form-control" MaxLength="13"></asp:TextBox>
+                                    <cc1:FilteredTextBoxExtender ID="fteTelMovil" runat="server" TargetControlID="txtTelMovil" FilterMode="ValidChars"
+                                        ValidChars="0123456789+"/>
                                 </div>
                                 <div class="col-md-1"></div>
                             </div>  
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="row">
+                                <div class="col-md-1"></div>
+                                <div class="col-md-5" style="text-align:left;">
+                                    <asp:Label ID="lblPass" runat="server"></asp:Label><br />
+                                    <asp:TextBox ID="txtPass" runat="server" TextMode="Password" CssClass="form-control"></asp:TextBox>
+                                    <asp:Label ID="lblReqPass" runat="server" ForeColor="Red" Visible="false"></asp:Label>
+                                </div>
+                                <div class="col-md-5" style="text-align:left;">
+                                    <asp:Label ID="lblConfirPass" runat="server"></asp:Label><br />
+                                    <asp:TextBox ID="txtConfirPass" runat="server" TextMode="Password" CssClass="form-control"></asp:TextBox>
+                                    <asp:Label ID="lblReqConfirPass" runat="server" ForeColor="Red" Visible="false"></asp:Label>
+                                </div>
+                                <div class="col-md-1"></div>
+                            </div>
                         </td>
                     </tr>
                 </table>
@@ -245,7 +300,7 @@
                                     &nbsp;
                                 </div>
                                 <div class="col-md-10" style="text-align:right;">
-                                    <asp:Button ID="btnAceptar" runat="server" CssClass="btn btn-primary" OnClientClick="OcultarEdicionUsuarios();"/>
+                                    <asp:Button ID="btnAceptar" runat="server" CssClass="btn btn-primary" UseSubmitBehavior="true" OnClick="btnAceptar_Click"/>
                                 </div>
                                 <%--<div class="col-md-3" style="text-align:center;">
                                     <asp:Button ID="btnCancelar" runat="server" CssClass="btn btn-danger" OnClientClick="OcultarEdicionUsuarios();" />

@@ -148,6 +148,15 @@ namespace PortalClientes.Views {
         protected global::System.Web.UI.WebControls.TextBox txtNombre;
         
         /// <summary>
+        /// Control lblReqNombre.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblReqNombre;
+        
+        /// <summary>
         /// Control lblApellidoPat.
         /// </summary>
         /// <remarks>
@@ -184,24 +193,6 @@ namespace PortalClientes.Views {
         protected global::System.Web.UI.WebControls.TextBox txtApellidoMat;
         
         /// <summary>
-        /// Control lblCorreo.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblCorreo;
-        
-        /// <summary>
-        /// Control txtCorreo.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtCorreo;
-        
-        /// <summary>
         /// Control lblPuesto.
         /// </summary>
         /// <remarks>
@@ -220,6 +211,33 @@ namespace PortalClientes.Views {
         protected global::System.Web.UI.WebControls.TextBox txtPuesto;
         
         /// <summary>
+        /// Control lblCorreo.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblCorreo;
+        
+        /// <summary>
+        /// Control txtCorreo.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtCorreo;
+        
+        /// <summary>
+        /// Control lblReqCorreo.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblReqCorreo;
+        
+        /// <summary>
         /// Control lblTelefonoMovil.
         /// </summary>
         /// <remarks>
@@ -236,6 +254,69 @@ namespace PortalClientes.Views {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtTelMovil;
+        
+        /// <summary>
+        /// Control fteTelMovil.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::AjaxControlToolkit.FilteredTextBoxExtender fteTelMovil;
+        
+        /// <summary>
+        /// Control lblPass.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblPass;
+        
+        /// <summary>
+        /// Control txtPass.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtPass;
+        
+        /// <summary>
+        /// Control lblReqPass.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblReqPass;
+        
+        /// <summary>
+        /// Control lblConfirPass.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblConfirPass;
+        
+        /// <summary>
+        /// Control txtConfirPass.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtConfirPass;
+        
+        /// <summary>
+        /// Control lblReqConfirPass.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblReqConfirPass;
         
         /// <summary>
         /// Control btnAceptar.

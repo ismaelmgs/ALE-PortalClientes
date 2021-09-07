@@ -5,6 +5,7 @@ using System.Web;
 
 namespace PortalClientes.Objetos
 {
+    [Serializable]
     public class MenuDinamico
     {
         public string UrlPage { set; get; }

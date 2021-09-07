@@ -5,6 +5,7 @@ using System.Web;
 
 namespace PortalClientes.Objetos
 {
+    [Serializable]
     public class UserIdentity
     {
         public int iIdUsuario { set; get; }

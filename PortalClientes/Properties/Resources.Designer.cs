@@ -106,6 +106,15 @@ namespace PortalClientes.Properties {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a El campo es requerido..
+        /// </summary>
+        internal static string Cm_CampoReq {
+            get {
+                return ResourceManager.GetString("Cm_CampoReq", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Correo:.
         /// </summary>
         internal static string Correo {
@@ -151,11 +160,38 @@ namespace PortalClientes.Properties {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Celular:.
+        /// </summary>
+        internal static string Us_Celular {
+            get {
+                return ResourceManager.GetString("Us_Celular", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Confirma contraseña:.
+        /// </summary>
+        internal static string Us_ConfirPass {
+            get {
+                return ResourceManager.GetString("Us_ConfirPass", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Nombres:.
         /// </summary>
         internal static string Us_Nombre {
             get {
                 return ResourceManager.GetString("Us_Nombre", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Contraseña:.
+        /// </summary>
+        internal static string Us_Password {
+            get {
+                return ResourceManager.GetString("Us_Password", resourceCulture);
             }
         }
         
@@ -192,6 +228,24 @@ namespace PortalClientes.Properties {
         internal static string Us_TituloPagUsuarios {
             get {
                 return ResourceManager.GetString("Us_TituloPagUsuarios", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Las contraseñas no son iguales.
+        /// </summary>
+        internal static string Us_ValConfirPass {
+            get {
+                return ResourceManager.GetString("Us_ValConfirPass", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a El correo no es válido.
+        /// </summary>
+        internal static string Us_ValCorreo {
+            get {
+                return ResourceManager.GetString("Us_ValCorreo", resourceCulture);
             }
         }
     }

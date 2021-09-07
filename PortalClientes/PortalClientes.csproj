@@ -49,8 +49,14 @@
       <HintPath>..\..\..\AerolineasEjecutivas\Codigos\MyALE\trunk\MyALE\MyALE\bin\AjaxControlToolkit.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>packages\Newtonsoft.Json.13.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="NucleoBase">
       <HintPath>..\..\..\AerolineasEjecutivas\Codigos\MyALE\trunk\MyALE\MyALE\bin\NucleoBase.dll</HintPath>
+    </Reference>
+    <Reference Include="RestSharp, Version=106.12.0.0, Culture=neutral, PublicKeyToken=598062e77f915f75, processorArchitecture=MSIL">
+      <HintPath>packages\RestSharp.106.12.0\lib\net452\RestSharp.dll</HintPath>
     </Reference>
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
@@ -68,6 +74,10 @@
     <Reference Include="System.Configuration" />
     <Reference Include="System.Web.Services" />
     <Reference Include="System.EnterpriseServices" />
+    <Reference Include="xVal.WebForms, Version=0.4.7919.43116, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>ReferenciasDll\xVal.WebForms.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
@@ -105,8 +115,6 @@
     <Content Include="build\images\prod-5.jpg" />
     <Content Include="build\images\user.png" />
     <Content Include="build\images\visa.png" />
-    <Content Include="build\js\custom.js" />
-    <Content Include="build\js\custom.min.js" />
     <Content Include="build\js\datepicker\daterangepicker.js" />
     <Content Include="build\js\moment\moment.min.js" />
     <Content Include="calendar.html" />
@@ -152,8 +160,11 @@
     <Content Include="profile.html" />
     <Content Include="projects.html" />
     <Content Include="project_detail.html" />
+    <Content Include="ReferenciasDll\xVal.WebForms.dll" />
     <Content Include="tables.html" />
     <Content Include="tables_dynamic.html" />
+    <Content Include="toastr\toastr.min.css" />
+    <Content Include="toastr\toastr.min.js" />
     <Content Include="typography.html" />
     <Content Include="vendors\animate.css\animate.css" />
     <Content Include="vendors\animate.css\animate.min.css" />
@@ -1414,6 +1425,8 @@
     <Compile Include="Clases\Utils.cs" />
     <Compile Include="DomainModel\DBBase.cs" />
     <Compile Include="DomainModel\DBDashboard.cs" />
+    <Compile Include="DomainModel\DBUsuarios.cs" />
+    <Compile Include="DomainModel\DBUtils.cs" />
     <Compile Include="frmDefault.aspx.cs">
       <DependentUpon>frmDefault.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1433,11 +1446,14 @@
     </Compile>
     <Compile Include="Interfaces\IBaseView.cs" />
     <Compile Include="Interfaces\IViewDashboard.cs" />
+    <Compile Include="Interfaces\IViewUsuarios.cs" />
+    <Compile Include="Objetos\CredencialesWS.cs" />
     <Compile Include="Objetos\MenuDinamico.cs" />
     <Compile Include="Objetos\UserIdentity.cs" />
     <Compile Include="Objetos\Usuario.cs" />
     <Compile Include="Presenter\BasePresenter.cs" />
     <Compile Include="Presenter\Dashboard_Presenter.cs" />
+    <Compile Include="Presenter\Usuarios_Presenter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Resources.en-US.Designer.cs">
       <DependentUpon>Resources.en-US.resx</DependentUpon>

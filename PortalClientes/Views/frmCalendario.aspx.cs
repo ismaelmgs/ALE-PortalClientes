@@ -13,5 +13,16 @@ namespace PortalClientes.Views
         {
 
         }
+
+        protected void btnAlerta2_Click(object sender, EventArgs e)
+        {
+            MostrarMensaje("Mensaje de exito!", "Aviso");
+        }
+
+        public void MostrarMensaje(string sMensaje, string sCaption)
+        {
+            sMensaje = "alertexito('" + sMensaje + "');";
+            ScriptManager.RegisterClientScriptBlock(this, typeof(Page), "alertexito", sMensaje, true);
+        }
     }
 }
