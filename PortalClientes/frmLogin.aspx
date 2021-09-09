@@ -1,4 +1,5 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="frmLogin.aspx.cs" Inherits="PortalClientes.frmLogin" %>
+<%@ Register Assembly="DevExpress.Web.Bootstrap.v18.1, Version=18.1.15.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Namespace="DevExpress.Web.Bootstrap" TagPrefix="dx" %>
 
 <!DOCTYPE html>
 
@@ -31,20 +32,27 @@
         <div class="animate form login_form">
           <section class="login_content">
             <form><br />
-              <h1><asp:Label ID="lblAcceso" runat="server" Text="Acceso"></asp:Label></h1>
+              <h1><asp:Label ID="lblAcceso" runat="server"></asp:Label></h1>
               <div>
-                  <asp:TextBox ID="txtUsuario" runat="server" CssClass="form-control" placeholder="Usuario"></asp:TextBox>
+                  <%--<asp:TextBox ID="txtUsuario" runat="server" CssClass="form-control" placeholder="Usuario"></asp:TextBox>--%>
+                  <dx:BootstrapTextBox ID="txtUsuarios" runat="server"></dx:BootstrapTextBox>
               </div><br />
               <div>
-                  <asp:TextBox ID="txtPassword" runat="server" CssClass="form-control" placeholder="contraseña"></asp:TextBox>
+                  <%--<asp:TextBox ID="txtPassword" runat="server" CssClass="form-control" placeholder="contraseña"></asp:TextBox>--%>
+                  <dx:BootstrapTextBox ID="txtPassword" runat="server"></dx:BootstrapTextBox>
               </div>
               <div><br />
                   <div class="row">
                       <div class="col-md-12" style="text-align:center;">
-                        <button id="btnEntrar" class="btn btn-primary" type="button" runat="server">
+                        <%--<button id="btnEntrar" class="btn btn-primary" type="button" runat="server">
                             Enviar
-                        </button><br /><br />
-                        <asp:Label ID="lblOlvidoPAssword" runat="server" Text="¿Olvidó su contraseña?"></asp:Label>
+                        </button>--%>
+                          <dx:BootstrapButton ID="btnEntrar" runat="server" OnClick="btnEntrar_Click">
+                              <SettingsBootstrap RenderOption="Primary" />
+                          </dx:BootstrapButton>
+                          <br />
+                          <br />
+                        <asp:Label ID="lblOlvidoPAssword" runat="server"></asp:Label>
                       </div>
                   </div>
               </div>
@@ -60,13 +68,13 @@
                 <br />
                   <div class="row" style="width:100%;">
                       <div class="col-md-5" style="text-align:right;">
-                          <asp:LinkButton ID="lblIdiomaEspanol" runat="server" Text="Español" Font-Bold="true"></asp:LinkButton>
+                          <asp:LinkButton ID="lblIdiomaEspanol" runat="server" Text="Español" Font-Bold="true" OnClick="lblIdiomaEspanol_Click"></asp:LinkButton>
                       </div>
                       <div class="col-md-2">
                           <i class="fa fa-globe" style="font-size:25px;"></i>
                       </div>
                       <div class="col-md-5" style="text-align:left;">
-                          <asp:LinkButton ID="lblIdiomaEnglish" runat="server" Text="English" Font-Bold="true"></asp:LinkButton>
+                          <asp:LinkButton ID="lblIdiomaEnglish" runat="server" Text="English" Font-Bold="true" OnClick="lblIdiomaEnglish_Click"></asp:LinkButton>
                       </div>
                   </div>
                 <div><br />

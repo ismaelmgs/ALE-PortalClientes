@@ -1,11 +1,12 @@
 ﻿using PortalClientes.Clases;
 using PortalClientes.Objetos;
-using RestSharp;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using NucleoBase.Core;
+using RestSharp;
+using System.Web.Script.Serialization;
 
 namespace PortalClientes.DomainModel
 {
@@ -13,18 +14,29 @@ namespace PortalClientes.DomainModel
     { 
         public List<Usuario> ObtieneUsuarios()
         {
+            JavaScriptSerializer ser = new JavaScriptSerializer();
             List<Usuario> ListUsers = new List<Usuario>();
-            for (int i = 1; i <= 25; i++)
-            {
-                Usuario oUser = new Usuario();
-                oUser.Correo = "Correo" + i.S();
-                oUser.Nombres = "Nombres " + i.S();
-                oUser.ApePat = "Paterno " + i.S();
-                oUser.ApeMat = "Materno " + i.S();
-                oUser.Puesto = "Puesto " + i.S();
+            //for (int i = 1; i <= 25; i++)
+            //{
+            //    Usuario oUser = new Usuario();
+            //    oUser.Correo = "Correo" + i.S();
+            //    oUser.Nombres = "Nombres " + i.S();
+            //    oUser.ApePat = "Paterno " + i.S();
+            //    oUser.ApeMat = "Materno " + i.S();
+            //    oUser.Puesto = "Puesto " + i.S();
 
-                ListUsers.Add(oUser);
-            }
+            //    ListUsers.Add(oUser);
+            //}
+
+            TokenWS oToken = Utils.ObtieneToken;
+            
+            var client = new RestClient(Helper.US_UrlObtieneUsuarios);
+            var request = new RestRequest(Method.GET);
+            request.AddHeader("Authorization", oToken.token);
+
+            IRestResponse response = client.Execute(request);
+            var resp = response.Content;
+            ListUsers = ser.Deserialize<List<Usuario>>(resp);
 
             return ListUsers;
         }
@@ -33,21 +45,21 @@ namespace PortalClientes.DomainModel
         {
             try
             {
-                TokenWS oToken = Utils.ObtieneToken;
-                HorasDisponibles oHoras = new HorasDisponibles();
-                oHoras.claveCliente = "FARMA";
-                oHoras.tiempoVuelo = "00:50";
+                //TokenWS oToken = Utils.ObtieneToken;
+                //HorasDisponibles oHoras = new HorasDisponibles();
+                //oHoras.claveCliente = "FARMA";
+                //oHoras.tiempoVuelo = "00:50";
 
-                var client = new RestClient("http://201.163.208.231/WSMorvelRest/ws/getavailabilityhoursfly");
-                var request = new RestRequest(Method.POST);
-                request.AddHeader("Authorization", oToken.token);
+                //var client = new RestClient("http://201.163.208.231/WSMorvelRest/ws/getavailabilityhoursfly");
+                //var request = new RestRequest(Method.POST);
+                //request.AddHeader("Authorization", oToken.token);
 
-                request.AddJsonBody(oHoras);
+                //request.AddJsonBody(oHoras);
 
-                IRestResponse response = client.Execute(request);
-                var resp = response.Content;
+                //IRestResponse response = client.Execute(request);
+                //var resp = response.Content;
 
-                return resp;
+                return string.Empty; //resp;
             }
             catch (Exception ex)
             {

@@ -141,6 +141,21 @@
   <data name="CorreoEjemplo" xml:space="preserve">
     <value>example@domain.com</value>
   </data>
+  <data name="Lo_Contrasena" xml:space="preserve">
+    <value>Password</value>
+  </data>
+  <data name="Lo_Correo" xml:space="preserve">
+    <value>Email</value>
+  </data>
+  <data name="Lo_Ingresar" xml:space="preserve">
+    <value>Sign In</value>
+  </data>
+  <data name="Lo_OlvidoPass" xml:space="preserve">
+    <value>Forgot your password?</value>
+  </data>
+  <data name="Lo_Titulo" xml:space="preserve">
+    <value>Login</value>
+  </data>
   <data name="Us_AltaUsuario" xml:space="preserve">
     <value>Add user</value>
   </data>

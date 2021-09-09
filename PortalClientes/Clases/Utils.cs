@@ -73,6 +73,7 @@ namespace PortalClientes.Clases
         public static TokenWS ObtieneToken
         {
             get
+
             {
                 JavaScriptSerializer ser = new JavaScriptSerializer();
                 CredencialesWS oCred = new CredencialesWS();
@@ -81,7 +82,7 @@ namespace PortalClientes.Clases
 
                 var client = new RestClient(Helper.UrlToken);
                 var request = new RestRequest(Method.POST);
-                
+
                 request.AddJsonBody(oCred);
 
                 IRestResponse response = client.Execute(request);
@@ -92,6 +93,6 @@ namespace PortalClientes.Clases
                 return oToken;
             }
         }
-
+        
     }
 }

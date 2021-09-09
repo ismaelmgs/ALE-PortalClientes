@@ -133,6 +133,51 @@ namespace PortalClientes.Properties {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Contraseña.
+        /// </summary>
+        internal static string Lo_Contrasena {
+            get {
+                return ResourceManager.GetString("Lo_Contrasena", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Correo.
+        /// </summary>
+        internal static string Lo_Correo {
+            get {
+                return ResourceManager.GetString("Lo_Correo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Ingresar.
+        /// </summary>
+        internal static string Lo_Ingresar {
+            get {
+                return ResourceManager.GetString("Lo_Ingresar", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a ¿Olvidó su contraseña?.
+        /// </summary>
+        internal static string Lo_OlvidoPass {
+            get {
+                return ResourceManager.GetString("Lo_OlvidoPass", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Acceso.
+        /// </summary>
+        internal static string Lo_Titulo {
+            get {
+                return ResourceManager.GetString("Lo_Titulo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Agregar usuario.
         /// </summary>
         internal static string Us_AltaUsuario {

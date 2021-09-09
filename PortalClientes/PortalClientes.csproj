@@ -25,6 +25,7 @@
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
     <TypeScriptToolsVersion>4.3</TypeScriptToolsVersion>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -48,6 +49,106 @@
     <Reference Include="AjaxControlToolkit">
       <HintPath>..\..\..\AerolineasEjecutivas\Codigos\MyALE\trunk\MyALE\MyALE\bin\AjaxControlToolkit.dll</HintPath>
     </Reference>
+    <Reference Include="DevExpress.Charts.v18.1.Core, Version=18.1.15.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>ReferenciasDll\DevExpress.Charts.v18.1.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Data.v18.1, Version=18.1.15.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>ReferenciasDll\DevExpress.Data.v18.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.DataAccess.v18.1, Version=18.1.15.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>ReferenciasDll\DevExpress.DataAccess.v18.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Images.v18.1, Version=18.1.15.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>ReferenciasDll\DevExpress.Images.v18.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Office.v18.1.Core, Version=18.1.15.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>ReferenciasDll\DevExpress.Office.v18.1.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Pdf.v18.1.Core, Version=18.1.15.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>ReferenciasDll\DevExpress.Pdf.v18.1.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.PivotGrid.v18.1.Core, Version=18.1.15.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>ReferenciasDll\DevExpress.PivotGrid.v18.1.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Printing.v18.1.Core, Version=18.1.15.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>ReferenciasDll\DevExpress.Printing.v18.1.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.RichEdit.v18.1.Core, Version=18.1.15.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>ReferenciasDll\DevExpress.RichEdit.v18.1.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.RichEdit.v18.1.Export, Version=18.1.15.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>ReferenciasDll\DevExpress.RichEdit.v18.1.Export.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Sparkline.v18.1.Core, Version=18.1.15.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>ReferenciasDll\DevExpress.Sparkline.v18.1.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Utils.v18.1, Version=18.1.15.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>ReferenciasDll\DevExpress.Utils.v18.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Web.ASPxScheduler.v18.1, Version=18.1.15.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>ReferenciasDll\DevExpress.Web.ASPxScheduler.v18.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Web.ASPxThemes.v18.1, Version=18.1.15.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>ReferenciasDll\DevExpress.Web.ASPxThemes.v18.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Web.ASPxTreeList.v18.1, Version=18.1.15.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>ReferenciasDll\DevExpress.Web.ASPxTreeList.v18.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Web.Bootstrap.v18.1, Version=18.1.15.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>ReferenciasDll\DevExpress.Web.Bootstrap.v18.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Web.Resources.v18.1, Version=18.1.15.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>ReferenciasDll\DevExpress.Web.Resources.v18.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Web.v18.1, Version=18.1.15.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>ReferenciasDll\DevExpress.Web.v18.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraBars.v18.1, Version=18.1.15.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>ReferenciasDll\DevExpress.XtraBars.v18.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraEditors.v18.1, Version=18.1.15.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>ReferenciasDll\DevExpress.XtraEditors.v18.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraLayout.v18.1, Version=18.1.15.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>ReferenciasDll\DevExpress.XtraLayout.v18.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraPrinting.v18.1, Version=18.1.15.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>ReferenciasDll\DevExpress.XtraPrinting.v18.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraScheduler.v18.1.Core, Version=18.1.15.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>ReferenciasDll\DevExpress.XtraScheduler.v18.1.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraTreeList.v18.1, Version=18.1.15.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>ReferenciasDll\DevExpress.XtraTreeList.v18.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraTreeMap.v18.1, Version=18.1.15.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>ReferenciasDll\DevExpress.XtraTreeMap.v18.1.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>packages\Newtonsoft.Json.13.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
@@ -58,22 +159,21 @@
     <Reference Include="RestSharp, Version=106.12.0.0, Culture=neutral, PublicKeyToken=598062e77f915f75, processorArchitecture=MSIL">
       <HintPath>packages\RestSharp.106.12.0\lib\net452\RestSharp.dll</HintPath>
     </Reference>
+    <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
-    <Reference Include="System.Core" />
-    <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="System.Web.Extensions" />
-    <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Web.Services" />
     <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Xml.Linq" />
     <Reference Include="xVal.WebForms, Version=0.4.7919.43116, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>ReferenciasDll\xVal.WebForms.dll</HintPath>
@@ -160,6 +260,31 @@
     <Content Include="profile.html" />
     <Content Include="projects.html" />
     <Content Include="project_detail.html" />
+    <Content Include="ReferenciasDll\DevExpress.Charts.v18.1.Core.dll" />
+    <Content Include="ReferenciasDll\DevExpress.Data.v18.1.dll" />
+    <Content Include="ReferenciasDll\DevExpress.DataAccess.v18.1.dll" />
+    <Content Include="ReferenciasDll\DevExpress.Images.v18.1.dll" />
+    <Content Include="ReferenciasDll\DevExpress.Office.v18.1.Core.dll" />
+    <Content Include="ReferenciasDll\DevExpress.Pdf.v18.1.Core.dll" />
+    <Content Include="ReferenciasDll\DevExpress.PivotGrid.v18.1.Core.dll" />
+    <Content Include="ReferenciasDll\DevExpress.Printing.v18.1.Core.dll" />
+    <Content Include="ReferenciasDll\DevExpress.RichEdit.v18.1.Core.dll" />
+    <Content Include="ReferenciasDll\DevExpress.RichEdit.v18.1.Export.dll" />
+    <Content Include="ReferenciasDll\DevExpress.Sparkline.v18.1.Core.dll" />
+    <Content Include="ReferenciasDll\DevExpress.Utils.v18.1.dll" />
+    <Content Include="ReferenciasDll\DevExpress.Web.ASPxScheduler.v18.1.dll" />
+    <Content Include="ReferenciasDll\DevExpress.Web.ASPxThemes.v18.1.dll" />
+    <Content Include="ReferenciasDll\DevExpress.Web.ASPxTreeList.v18.1.dll" />
+    <Content Include="ReferenciasDll\DevExpress.Web.Bootstrap.v18.1.dll" />
+    <Content Include="ReferenciasDll\DevExpress.Web.Resources.v18.1.dll" />
+    <Content Include="ReferenciasDll\DevExpress.Web.v18.1.dll" />
+    <Content Include="ReferenciasDll\DevExpress.XtraBars.v18.1.dll" />
+    <Content Include="ReferenciasDll\DevExpress.XtraEditors.v18.1.dll" />
+    <Content Include="ReferenciasDll\DevExpress.XtraLayout.v18.1.dll" />
+    <Content Include="ReferenciasDll\DevExpress.XtraPrinting.v18.1.dll" />
+    <Content Include="ReferenciasDll\DevExpress.XtraScheduler.v18.1.Core.dll" />
+    <Content Include="ReferenciasDll\DevExpress.XtraTreeList.v18.1.dll" />
+    <Content Include="ReferenciasDll\DevExpress.XtraTreeMap.v18.1.dll" />
     <Content Include="ReferenciasDll\xVal.WebForms.dll" />
     <Content Include="tables.html" />
     <Content Include="tables_dynamic.html" />
@@ -1416,7 +1541,9 @@
     <Content Include="Views\frmTripulacion.aspx" />
     <Content Include="Views\frmTuAeronave.aspx" />
     <Content Include="Views\frmUsuarios.aspx" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="widgets.html" />
     <Content Include="xx.html" />
   </ItemGroup>
@@ -1425,6 +1552,7 @@
     <Compile Include="Clases\Utils.cs" />
     <Compile Include="DomainModel\DBBase.cs" />
     <Compile Include="DomainModel\DBDashboard.cs" />
+    <Compile Include="DomainModel\DBLogin.cs" />
     <Compile Include="DomainModel\DBUsuarios.cs" />
     <Compile Include="DomainModel\DBUtils.cs" />
     <Compile Include="frmDefault.aspx.cs">
@@ -1446,13 +1574,16 @@
     </Compile>
     <Compile Include="Interfaces\IBaseView.cs" />
     <Compile Include="Interfaces\IViewDashboard.cs" />
+    <Compile Include="Interfaces\IViewLogin.cs" />
     <Compile Include="Interfaces\IViewUsuarios.cs" />
     <Compile Include="Objetos\CredencialesWS.cs" />
+    <Compile Include="Objetos\Login.cs" />
     <Compile Include="Objetos\MenuDinamico.cs" />
     <Compile Include="Objetos\UserIdentity.cs" />
     <Compile Include="Objetos\Usuario.cs" />
     <Compile Include="Presenter\BasePresenter.cs" />
     <Compile Include="Presenter\Dashboard_Presenter.cs" />
+    <Compile Include="Presenter\Login_Presenter.cs" />
     <Compile Include="Presenter\Usuarios_Presenter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Resources.en-US.Designer.cs">
