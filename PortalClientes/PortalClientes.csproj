@@ -217,49 +217,14 @@
     <Content Include="build\images\visa.png" />
     <Content Include="build\js\datepicker\daterangepicker.js" />
     <Content Include="build\js\moment\moment.min.js" />
-    <Content Include="calendar.html" />
-    <Content Include="chartjs.html" />
-    <Content Include="chartjs2.html" />
-    <Content Include="contacts.html" />
-    <Content Include="echarts.html" />
-    <Content Include="e_commerce.html" />
-    <Content Include="fixed_footer.html" />
-    <Content Include="fixed_sidebar.html" />
-    <Content Include="form.html" />
-    <Content Include="form_advanced.html" />
-    <Content Include="form_buttons.html" />
-    <Content Include="form_upload.html" />
-    <Content Include="form_validation.html" />
-    <Content Include="form_wizards.html" />
     <Content Include="frmDefault.aspx" />
     <Content Include="frmLogin.aspx" />
-    <Content Include="general_elements.html" />
     <Content Include="Global.asax" />
-    <Content Include="glyphicons.html" />
-    <Content Include="icons.html" />
-    <Content Include="inbox.html" />
-    <Content Include="index2.html" />
-    <Content Include="index3.html" />
-    <Content Include="invoice.html" />
     <Content Include="jets\demo_jet_01.jpg" />
     <Content Include="jets\demo_jet_02.jpg" />
     <Content Include="jets\demo_jet_03.jpg" />
     <Content Include="jets\demo_jet_04.jpg" />
     <Content Include="jets\demo_jet_05.jpg" />
-    <Content Include="level2.html" />
-    <Content Include="login.html" />
-    <Content Include="map.html" />
-    <Content Include="media_gallery.html" />
-    <Content Include="morisjs.html" />
-    <Content Include="other_charts.html" />
-    <Content Include="page_403.html" />
-    <Content Include="page_404.html" />
-    <Content Include="page_500.html" />
-    <Content Include="plain_page.html" />
-    <Content Include="pricing_tables.html" />
-    <Content Include="profile.html" />
-    <Content Include="projects.html" />
-    <Content Include="project_detail.html" />
     <Content Include="ReferenciasDll\DevExpress.Charts.v18.1.Core.dll" />
     <Content Include="ReferenciasDll\DevExpress.Data.v18.1.dll" />
     <Content Include="ReferenciasDll\DevExpress.DataAccess.v18.1.dll" />
@@ -290,7 +255,6 @@
     <Content Include="tables_dynamic.html" />
     <Content Include="toastr\toastr.min.css" />
     <Content Include="toastr\toastr.min.js" />
-    <Content Include="typography.html" />
     <Content Include="vendors\animate.css\animate.css" />
     <Content Include="vendors\animate.css\animate.min.css" />
     <Content Include="vendors\autosize\dist\autosize.js" />
@@ -1544,8 +1508,6 @@
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
-    <Content Include="widgets.html" />
-    <Content Include="xx.html" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Clases\Helper.cs" />
