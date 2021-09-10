@@ -24,9 +24,11 @@ namespace PortalClientes.Objetos
         public string Matriculas { set; get; }
         public string Clientes { set; get; }
         public string UsuarioCreacion { set; get; }
-        public DateTime FechaCreacion { set; get; }
+        public DateTime? FechaCreacion { set; get; }
         public string UsuarioModificacion { set; get; }
         public DateTime? FechaModificacion { set; get; }
+        public string codigo { set; get; }
+        public string mensaje { set; get; }
     }
 
 
@@ -43,4 +45,5 @@ namespace PortalClientes.Objetos
         public int IdUsuario { set; get; }
         public int IdMatricula { set; get; }
     }
+    
 }

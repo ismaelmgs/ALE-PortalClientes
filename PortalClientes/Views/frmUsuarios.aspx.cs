@@ -37,14 +37,27 @@ namespace PortalClientes.Views
                 ArmaFormulario();
             }
 
-
-
-            LlenaGrid();
+            if (!IsPostBack)
+            {
+                LlenaGrid();
+            }
+            else
+            {
+                LlenaGridLocal();
+            }
         }
         
         protected void btnBuscar_ServerClick(object sender, EventArgs e)
         {
-
+            try
+            {
+                if (eSearchObjFiltros != null)
+                    eSearchObjFiltros(sender, e);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
 
         protected void gvUsuarios_PageIndexChanging(object sender, GridViewPageEventArgs e)
@@ -119,9 +132,21 @@ namespace PortalClientes.Views
                 eSearchObj(null, EventArgs.Empty);
         }
 
+        private void LlenaGridLocal()
+        {
+            gvUsuarios.DataSource = oLstUsers;
+            gvUsuarios.DataBind();
+        }
+
         public void CargaUsuarios(List<Usuario> oLst)
         {
             oLstUsers = oLst;
+
+            if (oLst[0].codigo != "0000")
+            {
+                gvUsuarios.EmptyDataText = "No existen registro para mostrar";
+            }
+
             gvUsuarios.DataSource = oLstUsers;
             gvUsuarios.DataBind();
         }
@@ -210,6 +235,7 @@ namespace PortalClientes.Views
         public event EventHandler eSaveObj;
         public event EventHandler eDeleteObj;
         public event EventHandler eSearchObj;
+        public event EventHandler eSearchObjFiltros;
 
         public Usuario oUsuario
         {
@@ -233,6 +259,13 @@ namespace PortalClientes.Views
             set { ViewState["VSUsuarios"] = value; }
         }
         
+        public string sFiltro
+        {
+            get {
+                return txtBusqueda.Text.S();
+            }
+        }
+
         #endregion
     }
     

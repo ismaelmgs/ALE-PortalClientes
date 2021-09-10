@@ -16,17 +16,6 @@ namespace PortalClientes.DomainModel
         {
             JavaScriptSerializer ser = new JavaScriptSerializer();
             List<Usuario> ListUsers = new List<Usuario>();
-            //for (int i = 1; i <= 25; i++)
-            //{
-            //    Usuario oUser = new Usuario();
-            //    oUser.Correo = "Correo" + i.S();
-            //    oUser.Nombres = "Nombres " + i.S();
-            //    oUser.ApePat = "Paterno " + i.S();
-            //    oUser.ApeMat = "Materno " + i.S();
-            //    oUser.Puesto = "Puesto " + i.S();
-
-            //    ListUsers.Add(oUser);
-            //}
 
             TokenWS oToken = Utils.ObtieneToken;
             
@@ -66,12 +55,27 @@ namespace PortalClientes.DomainModel
                 throw ex;
             }
         }
+
+        public List<Usuario> ObtieneUsuariosFiltros(string sFiltro)
+        {
+            JavaScriptSerializer ser = new JavaScriptSerializer();
+            List<Usuario> oUser = new List<Usuario>();
+            Filtros oLog = new Filtros();
+            oLog.filtro = sFiltro;
+
+            TokenWS oToken = Utils.ObtieneToken;
+
+            var client = new RestClient(Helper.US_UrlObtieneUsuariosFiltros);
+            var request = new RestRequest(Method.POST);
+            request.AddHeader("Authorization", oToken.token);
+            request.AddJsonBody(oLog);
+
+            IRestResponse response = client.Execute(request);
+            var resp = response.Content;
+            oUser = ser.Deserialize<List<Usuario>>(resp);
+
+            return oUser;
+        }
     }
 
-
-    public class HorasDisponibles
-    {
-        public string claveCliente { set; get; }
-        public string tiempoVuelo { set; get; }
-    }
 }

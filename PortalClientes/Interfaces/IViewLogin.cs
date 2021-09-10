@@ -12,5 +12,6 @@ namespace PortalClientes.Interfaces
         string sEmail { get; }
         string sPassword { get; }
         Usuario oUser { set; get; }
+        UserIdentity oU { set; get; }
     }
 }

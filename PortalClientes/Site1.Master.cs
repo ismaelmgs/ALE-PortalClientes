@@ -1,4 +1,5 @@
-﻿using PortalClientes.Clases;
+﻿using DevExpress.Web.Bootstrap;
+using PortalClientes.Clases;
 using PortalClientes.Objetos;
 using System;
 using System.Collections.Generic;
@@ -26,6 +27,11 @@ namespace PortalClientes
             }
 
             ArmaMenu();
+
+            if (!IsPostBack)
+            {
+                CargaMatriculas();
+            }
         }
 
         protected void lblIdiomaEspanol_Click(object sender, EventArgs e)
@@ -40,8 +46,10 @@ namespace PortalClientes
 
         private void ArmaFormulario()
         {
-            lblUserSetings.Text = Properties.Resources.AdministrarCuenta;
-            lblSalir.Text = Properties.Resources.CerrarSesion;
+            MenuMatriculas.Items[0].Text = Properties.Resources.CerrarSesion;
+            MenuMatriculas.Items[1].Text = Utils.NombreUsuario;
+            MenuMatriculas.Items[2].Text = Properties.Resources.AdministrarCuenta;
+            
         }
 
         private void ArmaMenu()
@@ -144,6 +152,44 @@ namespace PortalClientes
             catch (Exception ex)
             {
                 throw ex;
+            }
+        }
+
+        private void CargaMatriculas()
+        {
+            if (Session["UserIdentity"] != null)
+            {
+                UserIdentity oU = (UserIdentity)Session["UserIdentity"];
+                if (oU != null)
+                {
+                    BootstrapMenuItem oMenuMats = new BootstrapMenuItem();
+                    oMenuMats = MenuMatriculas.Items[3];
+
+                    if (oU.lsMatriculas != null)
+                    {
+                        foreach (string sMat in oU.lsMatriculas)
+                        {
+                            BootstrapMenuItem oItem = new BootstrapMenuItem();
+                            oItem.Text = sMat;
+
+                            oMenuMats.Items.Add(oItem);
+                        }
+                    }
+                }
+            }
+        }
+
+        protected void MenuMatriculas_ItemClick(object source, DevExpress.Web.Bootstrap.BootstrapMenuItemEventArgs e)
+        {
+            if (e.Item.GroupName == "Group1")
+            {
+                Session["UserIdentity"] = null;
+                Response.Redirect("~/frmLogin.aspx");
+            }
+
+            if(e.Item.GroupName == "Group4")
+            {
+                string sMatricula = e.Item.Text;
             }
         }
     }

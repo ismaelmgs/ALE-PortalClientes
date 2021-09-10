@@ -110,6 +110,12 @@ namespace PortalClientes
             set { ViewState["VSUsuario"] = value; }
             get { return (Usuario)ViewState["VSUsuario"]; }
         }
+
+        public UserIdentity oU
+        {
+            set { Session["UserIdentity"] = value; }
+            get { return (UserIdentity)Session["UserIdentity"]; }
+        }
         #endregion
     }
 }

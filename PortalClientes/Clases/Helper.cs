@@ -18,5 +18,6 @@ namespace PortalClientes.Clases
         public const string UrlToken = "http://201.163.208.231/WSMorvelRestDev/ws/authentica";
         public const string UrlLogin = "http://201.163.208.231/WSMorvelRestDev/ws/pc/valAccesoUsuarios";
         public const string US_UrlObtieneUsuarios = "http://201.163.208.231/WSMorvelRestDev/ws/pc/obtieneUsuarios";
+        public const string US_UrlObtieneUsuariosFiltros = "http://201.163.208.231/WSMorvelRestDev/ws/pc/consultaUsuariosFiltros";
     }
 }

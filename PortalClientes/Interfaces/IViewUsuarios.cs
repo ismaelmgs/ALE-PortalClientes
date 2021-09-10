@@ -10,6 +10,10 @@ namespace PortalClientes.Interfaces
     public interface IViewUsuarios : IBaseView
     {
         Usuario oUsuario { get; }
+        string sFiltro { get; }
+        
         void CargaUsuarios(List<Usuario> oLstUsers);
+
+        event EventHandler eSearchObjFiltros;
     }
 }

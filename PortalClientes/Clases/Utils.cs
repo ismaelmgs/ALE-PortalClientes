@@ -94,5 +94,19 @@ namespace PortalClientes.Clases
             }
         }
         
+        public static string NombreUsuario
+        {
+            get
+            {
+                if (System.Web.HttpContext.Current.Session["UserIdentity"] == null)
+                {
+                    UserIdentity oUsuario = new UserIdentity();
+                    oUsuario.sNombre = "Ismael Morato";
+                    System.Web.HttpContext.Current.Session["UserIdentity"] = oUsuario;
+                }
+
+                return ((UserIdentity)System.Web.HttpContext.Current.Session["UserIdentity"]).sNombre;
+            }
+        }
     }
 }

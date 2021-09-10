@@ -14,17 +14,23 @@ namespace PortalClientes.Presenter
         public Usuarios_Presenter(IViewUsuarios oView, DBUsuarios oGC) : base(oView)
         {
             oIGesCat = oGC;
-            
+
+            oIView.eSearchObjFiltros += eSearchObjFiltros_Presenter;
         }
 
         protected override void SearchObj_Presenter(object sender, EventArgs e)
         {
-           oIView.CargaUsuarios(oIGesCat.ObtieneUsuarios());
+           oIView.CargaUsuarios(oIGesCat.ObtieneUsuariosFiltros(string.Empty));
         }
 
         protected override void SaveObj_Presenter(object sender, EventArgs e)
         {
             oIGesCat.InsertaActualizaUsuarios(oIView.oUsuario);
+        }
+
+        protected void eSearchObjFiltros_Presenter(object sender, EventArgs e)
+        {
+            oIView.CargaUsuarios(oIGesCat.ObtieneUsuariosFiltros(oIView.sFiltro));
         }
     }
 }

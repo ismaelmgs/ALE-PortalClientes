@@ -1,5 +1,7 @@
 ﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site1.master.cs" Inherits="PortalClientes.Site1" %>
 
+<%@ Register Assembly="DevExpress.Web.Bootstrap.v18.1, Version=18.1.15.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Namespace="DevExpress.Web.Bootstrap" TagPrefix="dx" %>
+
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="cc1" %>
 
 <!DOCTYPE html>
@@ -134,10 +136,10 @@
                                     <img src='<%=ResolveUrl("~/build/images/img.jpg")%>' alt=""><asp:Label ID="lblAeronave" runat="server" Text="B200GT" Font-Bold="true"></asp:Label>
                                 </a>
                                 <div class="dropdown-menu dropdown-usermenu pull-right" aria-labelledby="navbarDropdown" style="width: 320px;">
-                                    <a class="dropdown-item" href="javascript:;">
+                                    <%--<a class="dropdown-item" href="javascript:;">
                                         <asp:Label ID="lblUsuario" runat="server" Text="Usuario" Font-Bold="true"></asp:Label>
-                                        <i class="fa fa-user" style="position: absolute; right: 22px;"></i></a>
-                                    <a class="dropdown-item" href="javascript:;">
+                                        <i class="fa fa-user" style="position: absolute; right: 22px;"></i></a>--%>
+                                    <%--<a class="dropdown-item" href="javascript:;">
                                         <asp:Label ID="lblUserSetings" runat="server" Text="Administrar cuenta" Font-Bold="true"></asp:Label>
                                         <i class="fa fa-cog" style="position: absolute; right: 22px;"></i></a>
                                     <a class="dropdown-item" href="javascript:;">
@@ -159,9 +161,25 @@
                                                 <asp:Label ID="lblDescripcionAeronave2" runat="server" Text="AAAAAAA0000000" Font-Bold="true"></asp:Label>
                                             </div>
                                         </div>
-                                    </a>
-                                    <a class="dropdown-item" href="javascript:;">
-                                        <asp:Label ID="lblSalir" runat="server" Text="Salir" Font-Bold="true"></asp:Label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i class="fa fa-sign-out pull-right"></i> </a>
+                                    </a>--%>
+                                    <dx:BootstrapMenu ID="MenuMatriculas" runat="server" OnItemClick="MenuMatriculas_ItemClick">
+                                        <Items>
+                                            <dx:BootstrapMenuItem Text="Salir" GroupName="Group1" IconCssClass="fa fa-sign-out"></dx:BootstrapMenuItem>
+                                            <dx:BootstrapMenuItem Text="Usuario" GroupName="Group2" IconCssClass="fa fa-user"></dx:BootstrapMenuItem>
+                                            <dx:BootstrapMenuItem Text="Administrar mi cuenta" GroupName="Group3" IconCssClass="fa fa-cogs"></dx:BootstrapMenuItem>
+                                            <dx:BootstrapMenuItem Text="Matrículas" IconCssClass="fa fa-plane" GroupName="Group4">
+                                                <%--<Items>
+                                                    <dx:BootstrapMenuItem Text="XA-FLC" GroupName="SubItemGroup1" CssClass="dropdown-item">
+                                                    </dx:BootstrapMenuItem>
+                                                    <dx:BootstrapMenuItem Text="XA-SOL" GroupName="SubItemGroup1" CssClass="dropdown-item">
+                                                    </dx:BootstrapMenuItem>
+                                                </Items>--%>
+                                            </dx:BootstrapMenuItem>
+                                            
+                                        </Items>
+                                    </dx:BootstrapMenu>
+                                    <%--<a class="dropdown-item" href="javascript:;">
+                                        <asp:Label ID="lblSalir" runat="server" Text="Salir" Font-Bold="true"></asp:Label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i class="fa fa-sign-out pull-right"></i> </a>--%>
                                 </div>
                             </li>
 
