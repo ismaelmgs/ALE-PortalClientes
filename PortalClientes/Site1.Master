@@ -194,8 +194,8 @@
                                     <li class="nav-item">
                                         <a class="dropdown-item">
                                             <span>
-                                                <span><i class="fa fa-globe"></i>
-                                                    <asp:LinkButton ID="lblIdiomaEspanol" runat="server" Text="Español" Font-Bold="true" CommandArgument="es-MX"
+                                                <span>
+                                                    <asp:LinkButton ID="lblIdiomaEspanol" runat="server" Text="<i class='fa fa-globe'></i>&nbsp;&nbsp;&nbsp; Español" Font-Bold="true" CommandArgument="es-MX"
                                                         ClientIDMode="Static" OnClientClick="AsignaEspanol(this);" OnClick="lblIdiomaEspanol_Click"></asp:LinkButton>
                                                 </span>
                                             </span>
@@ -204,8 +204,8 @@
                                     <li class="nav-item">
                                         <a class="dropdown-item">
                                             <span>
-                                                <span><i id="en-US" class="fa fa-globe"></i>
-                                                    <asp:LinkButton ID="lblIdiomaEnglish" runat="server" Text="English" Font-Bold="true" CommandArgument="en-US"
+                                                <span>
+                                                    <asp:LinkButton ID="lblIdiomaEnglish" runat="server" Text="<i class='fa fa-globe'></i>&nbsp;&nbsp;&nbsp; English" Font-Bold="true" CommandArgument="en-US"
                                                         ClientIDMode="Static" OnClientClick="AsignaIngles(this);" OnClick="lblIdiomaEnglish_Click"></asp:LinkButton>
                                                 </span>
                                             </span>
