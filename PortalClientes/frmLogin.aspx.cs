@@ -31,12 +31,24 @@ namespace PortalClientes
         {
             Utils.Idioma = "es-MX";
             CambiaIdioma();
+
+            if (lblError.Visible)
+            {
+                lblError.Text = string.Empty;
+                lblError.Visible = false;
+            }
         }
 
         protected void lblIdiomaEnglish_Click(object sender, EventArgs e)
         {
             Utils.Idioma = "en-US";
             CambiaIdioma();
+
+            if (lblError.Visible)
+            {
+                lblError.Text = string.Empty;
+                lblError.Visible = false;
+            }
         }
 
         protected void btnEntrar_Click(object sender, EventArgs e)
@@ -61,8 +73,20 @@ namespace PortalClientes
                 if (eObjSelected != null)
                     eObjSelected(sender, e);
 
-                if (oUser.IdUsuario != 0)
-                    Response.Redirect("Views/frmUsuarios.aspx");
+                if (oUser.codigo == "0000")
+                {
+                    lblError.Text = string.Empty;
+                    lblError.Visible = false;
+
+                    if (oUser.IdUsuario != 0)
+                        Response.Redirect("Views/frmUsuarios.aspx");
+                }
+                else
+                {
+                    string sMensaje = Properties.Resources.ResourceManager.GetString("Ce_" + oUser.codigo, new System.Globalization.CultureInfo(Utils.Idioma));
+                    lblError.Visible = true;
+                    lblError.Text = sMensaje;
+                }
             }
         }
 

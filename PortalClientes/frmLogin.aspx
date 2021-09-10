@@ -41,6 +41,9 @@
                   <%--<asp:TextBox ID="txtPassword" runat="server" CssClass="form-control" placeholder="contraseña"></asp:TextBox>--%>
                   <dx:BootstrapTextBox ID="txtPassword" runat="server"></dx:BootstrapTextBox>
               </div>
+            <div>
+                <asp:Label ID="lblError" runat="server" ForeColor="Red" Visible="false"></asp:Label>
+            </div>
               <div><br />
                   <div class="row">
                       <div class="col-md-12" style="text-align:center;">

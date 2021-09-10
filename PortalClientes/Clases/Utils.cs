@@ -93,7 +93,7 @@ namespace PortalClientes.Clases
                 return oToken;
             }
         }
-        
+
         public static string NombreUsuario
         {
             get
@@ -107,6 +107,8 @@ namespace PortalClientes.Clases
 
                 return ((UserIdentity)System.Web.HttpContext.Current.Session["UserIdentity"]).sNombre;
             }
+
         }
+        
     }
 }

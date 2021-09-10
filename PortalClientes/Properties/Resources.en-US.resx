@@ -129,6 +129,9 @@
   <data name="CerrarSesion" xml:space="preserve">
     <value>LogOut</value>
   </data>
+  <data name="Ce_9999" xml:space="preserve">
+    <value>The username and password do not exist.</value>
+  </data>
   <data name="Cm_Buscador" xml:space="preserve">
     <value>Filter...</value>
   </data>

@@ -88,6 +88,15 @@ namespace PortalClientes.Properties {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a El usuario y contraseña no existen..
+        /// </summary>
+        internal static string Ce_9999 {
+            get {
+                return ResourceManager.GetString("Ce_9999", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Salir.
         /// </summary>
         internal static string CerrarSesion {

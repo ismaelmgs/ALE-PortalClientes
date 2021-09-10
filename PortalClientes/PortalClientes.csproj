@@ -1511,6 +1511,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Clases\Helper.cs" />
+    <Compile Include="Clases\Helper_Mensajes.cs" />
     <Compile Include="Clases\Utils.cs" />
     <Compile Include="DomainModel\DBBase.cs" />
     <Compile Include="DomainModel\DBDashboard.cs" />
