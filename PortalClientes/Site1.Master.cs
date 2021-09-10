@@ -171,7 +171,8 @@ namespace PortalClientes
                         {
                             BootstrapMenuItem oItem = new BootstrapMenuItem();
                             oItem.Text = sMat;
-
+                            oItem.IconCssClass = "fa fa-caret-right";
+                            oItem.CssClass = "icon_left";
                             oMenuMats.Items.Add(oItem);
                         }
                     }
