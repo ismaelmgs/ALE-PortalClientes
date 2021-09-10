@@ -22,10 +22,22 @@ namespace PortalClientes.Views
             //if (Session["UserIdentity"] == null)
             //    Response.Redirect("frmLogin.aspx");
 
+            //if (!IsPostBack)
+            //{
+            //    if (Session["UserIdentity"] != null)
+            //    {
+            //        TextBox milabel = (TextBox)this.Master.FindControl("txtLang");
+
+            //        UserIdentity oUI = (UserIdentity)Session["UserIdentity"];
+            //        Utils.Idioma = oUI.sIdioma;
+            //        milabel.Text = oUI.sIdioma;
+            //    }
+            //}
+
             oPresenter = new Usuarios_Presenter(this, new DBUsuarios());
 
             TextBox milabel = (TextBox)this.Master.FindControl("txtLang");
-            if (milabel.Text != Utils.Idioma)
+            if (milabel.Text != Utils.Idioma && milabel.Text != string.Empty)
             {
                 Utils.Idioma = milabel.Text;
                 System.Threading.Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo(Utils.Idioma);

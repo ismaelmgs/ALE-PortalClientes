@@ -14,6 +14,13 @@ namespace PortalClientes
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (Session["UserIdentity"] != null)
+            {
+                UserIdentity oUI = (UserIdentity)Session["UserIdentity"];
+                Utils.Idioma = oUI.sIdioma;
+                txtLang.Text = oUI.sIdioma;
+            }
+
             if (txtLang.Text != Utils.Idioma)
             {
                 Utils.Idioma = txtLang.Text;
