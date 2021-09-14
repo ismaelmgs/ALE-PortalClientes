@@ -28,7 +28,7 @@
        <div class="col-md-12 col-sm-12">
         <div class="x_panel">
             <div class="x_title">
-                <h2><asp:Label ID="lblEstadoDeVuelo" runat="server" Text="Estado del Vuelo" Font-Bold="true"></asp:Label></h2>
+                <h2><asp:Label ID="lblEstadoDeVuelo" runat="server" Text="" Font-Bold="true"></asp:Label></h2>
                 <ul class="nav navbar-right panel_toolbox">
                     <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
                     </li>
@@ -42,13 +42,13 @@
                     <br />
                     <div class="row">
                         <div class="col-md-12" style="text-align:center;">
-                            <span style="font-size:20px;color:#ffffff; background-color:#1a8ebb; padding:12px; border-radius:60%; margin:4px;"><i class="fa fa-plane"></i></span>&nbsp;&nbsp;<asp:Label ID="lblCompleto" runat="server" Text="Completo/Incompleto" Font-Bold="true" Style="font-size:20px;"></asp:Label>
+                            <span style="font-size:20px;color:#ffffff; background-color:#1a8ebb; padding:12px; border-radius:60%; margin:4px;"><i class="fa fa-plane"></i></span>&nbsp;&nbsp;<asp:Label ID="lblCompleto" runat="server" Text="" Font-Bold="true" Style="font-size:20px;"></asp:Label>
                         </div>
                     </div>
                     <br /><br />
                     <div class="row">
                         <div class="col-md-4">
-                            <asp:Label ID="lblOrigen" runat="server" Text="Origen:"></asp:Label>
+                            <asp:Label ID="lblOrigen" runat="server" Text=""></asp:Label>
                         </div>
                         <div class="col-md-8">
                             <asp:Label ID="lblOrigenText" runat="server" Text="---" Font-Bold="true"></asp:Label>
@@ -56,7 +56,7 @@
                     </div>
                     <div class="row">
                         <div class="col-md-4">
-                            <asp:Label ID="lblDestino" runat="server" Text="Destino:"></asp:Label>
+                            <asp:Label ID="lblDestino" runat="server" Text=""></asp:Label>
                         </div>
                         <div class="col-md-8"">
                             <asp:Label ID="lblDestinoText" runat="server" Text="---" Font-Bold="true"></asp:Label>
@@ -65,7 +65,7 @@
                     <br />
                     <div class="row">
                         <div class="col-md-4">
-                            <asp:Label ID="lblSalida" runat="server" Text="Salida:"></asp:Label>
+                            <asp:Label ID="lblSalida" runat="server" Text=""></asp:Label>
                         </div>
                         <div class="col-md-8">
                             <asp:Label ID="lblSalidaText" runat="server" Text="---" Font-Bold="true"></asp:Label>
@@ -73,7 +73,7 @@
                     </div>
                     <div class="row">
                         <div class="col-md-4">
-                            <asp:Label ID="lblLlego" runat="server" Text="Llegada:"></asp:Label>
+                            <asp:Label ID="lblLlego" runat="server" Text=""></asp:Label>
                         </div>
                         <div class="col-md-8">
                             <asp:Label ID="lblLlegoText" runat="server" Text="---" Font-Bold="true"></asp:Label>
@@ -82,13 +82,13 @@
                     <br /><br />
                     <ul class="nav nav-tabs" id="myTab" role="tablist">
                       <li class="nav-item">
-                        <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Vuelos</a>
+                        <a class="nav-link active" id="hometab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true"><asp:Label ID="lblVuelos" runat="server"></asp:Label></a>
                       </li>
                       <li class="nav-item">
-                        <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Horas de Vuelo</a>
+                        <a class="nav-link" id="profiletab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false"><asp:Label ID="lblHorasVuelo" runat="server"></asp:Label></a>
                       </li>
                       <li class="nav-item"> 
-                        <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">NM Vuelo</a>
+                        <a class="nav-link" id="contacttab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false"><asp:Label ID="lblNMVuelo" runat="server"></asp:Label></a>
                       </li>
                     </ul>
                     <div class="tab-content" id="myTabContent">
@@ -240,7 +240,7 @@
         <div class="col-md-12 col-sm-12">
             <div class="x_panel">
                 <div class="x_title">
-                    <h2><asp:Label ID="lblResumenDeCuenta" runat="server" Text="Resumen de la Cuenta" Font-Bold="true"></asp:Label> | <asp:Label ID="lblMatriculaAeronave" runat="server" Text="B200GT" Font-Bold="true"></asp:Label></h2>
+                    <h2><asp:Label ID="lblResumenDeCuenta" runat="server" Text="" Font-Bold="true"></asp:Label> | <asp:Label ID="lblMatriculaAeronave" runat="server" Text="" Font-Bold="true"></asp:Label></h2>
                     <ul class="nav navbar-right panel_toolbox">
                         <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
                         </li>
@@ -265,7 +265,7 @@
                     </div>
                     <div class="col-md-6">
                         <asp:Label ID="lblUltimaDeclaracion" runat="server" Text="Ultima declaración" Font-Bold="true"></asp:Label>
-                        <h1>$<asp:Label ID="Label2" runat="server" Text="58,182.87" Font-Bold="true"></asp:Label></h1>
+                        <h1>$<asp:Label ID="lblultimaDeclaracionText" runat="server" Text="58,182.87" Font-Bold="true"></asp:Label></h1>
                         <br />
                         <div class="row">
                             <div class="col-md-6">

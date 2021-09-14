@@ -142,6 +142,141 @@ namespace PortalClientes.Properties {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Completo / Incompleto.
+        /// </summary>
+        internal static string Das_Completo {
+            get {
+                return ResourceManager.GetString("Das_Completo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Declaración para:.
+        /// </summary>
+        internal static string Das_DeclaracionPara {
+            get {
+                return ResourceManager.GetString("Das_DeclaracionPara", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Destino:.
+        /// </summary>
+        internal static string Das_Destino {
+            get {
+                return ResourceManager.GetString("Das_Destino", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Estado del Vuelo.
+        /// </summary>
+        internal static string Das_EstadoVuelo {
+            get {
+                return ResourceManager.GetString("Das_EstadoVuelo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Horas de Vuelo.
+        /// </summary>
+        internal static string Das_HorasVuelo {
+            get {
+                return ResourceManager.GetString("Das_HorasVuelo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Llegada:.
+        /// </summary>
+        internal static string Das_Llego {
+            get {
+                return ResourceManager.GetString("Das_Llego", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a NM Vuelo.
+        /// </summary>
+        internal static string Das_NMVuelo {
+            get {
+                return ResourceManager.GetString("Das_NMVuelo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Origen:.
+        /// </summary>
+        internal static string Das_Origen {
+            get {
+                return ResourceManager.GetString("Das_Origen", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Resumen de la Cuenta.
+        /// </summary>
+        internal static string Das_ResumenCuenta {
+            get {
+                return ResourceManager.GetString("Das_ResumenCuenta", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Saldo Actual.
+        /// </summary>
+        internal static string Das_Saldo {
+            get {
+                return ResourceManager.GetString("Das_Saldo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Salida:.
+        /// </summary>
+        internal static string Das_Salida {
+            get {
+                return ResourceManager.GetString("Das_Salida", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Ultima declaración.
+        /// </summary>
+        internal static string Das_UltimaDeclaracion {
+            get {
+                return ResourceManager.GetString("Das_UltimaDeclaracion", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a incluido el vencimiento (+ de 90 días).
+        /// </summary>
+        internal static string Das_Ven90dias {
+            get {
+                return ResourceManager.GetString("Das_Ven90dias", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Vence:.
+        /// </summary>
+        internal static string Das_Vence {
+            get {
+                return ResourceManager.GetString("Das_Vence", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Vuelos.
+        /// </summary>
+        internal static string Das_Vuelos {
+            get {
+                return ResourceManager.GetString("Das_Vuelos", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Contraseña.
         /// </summary>
         internal static string Lo_Contrasena {

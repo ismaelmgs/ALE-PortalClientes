@@ -14,6 +14,13 @@ namespace PortalClientes.Presenter
         public Dashboard_Presenter(IViewDashboard oView, DBDashboard oGC) : base(oView)
         {
             oIGesCat = oGC;
+
+            oIView.eSearchObj += SearchObj_Presenter;
+        }
+
+        protected override void SearchObj_Presenter(object sender, EventArgs e)
+        {
+            oIView.CargarDashboard(oIGesCat.ObtenerDashboard(oIView.sMatricula));
         }
     }
 }
