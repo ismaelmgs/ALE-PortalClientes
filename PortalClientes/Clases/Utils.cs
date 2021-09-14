@@ -109,6 +109,28 @@ namespace PortalClientes.Clases
             }
 
         }
-        
+
+        public static string MatriculaUsuario
+        {
+            get
+            {
+                if (System.Web.HttpContext.Current.Session["UserIdentity"] == null)
+                {
+                    UserIdentity oUsuario = new UserIdentity();
+                    oUsuario.sNombre = "";
+                    System.Web.HttpContext.Current.Session["UserIdentity"] = oUsuario;
+                }
+
+                return ((UserIdentity)System.Web.HttpContext.Current.Session["UserIdentity"]).sMatricula;
+            }
+            set
+            {
+                UserIdentity oUser = (UserIdentity)System.Web.HttpContext.Current.Session["UserIdentity"];
+                oUser.sMatricula = value;
+                System.Web.HttpContext.Current.Session["UserIdentity"] = oUser;
+            }
+        }
+
+
     }
 }

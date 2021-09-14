@@ -19,15 +19,25 @@ namespace PortalClientes.Views
         {
             oPresenter = new Dashboard_Presenter(this, new DBDashboard());
 
-            if (!IsPostBack)
+            TextBox milabel = (TextBox)this.Master.FindControl("txtLang");
+            if (milabel.Text != Utils.Idioma && milabel.Text != string.Empty)
+            {
+                Utils.Idioma = milabel.Text;
+                System.Threading.Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo(Utils.Idioma);
+                ArmarDashboard();
+            }
+            else
             {
                 System.Threading.Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo(Utils.Idioma);
                 ArmarDashboard();
+            }
+            
+            if (!IsPostBack)
+            {
+                lblMatriculaAeronave.Text = Session["MatriculaActual"].ToString();
                 LlenarDashboard();
             }
-
-            lblMatriculaAeronave.Text = Session["MatriculaActual"].ToString();
-  
+            
         }
         #endregion
 

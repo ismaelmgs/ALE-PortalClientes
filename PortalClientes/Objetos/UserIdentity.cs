@@ -14,5 +14,6 @@ namespace PortalClientes.Objetos
         public string sCorreo { set; get; }
         public string sIdioma { set; get; }
         public List<string> lsMatriculas { set; get; }
+        public string sMatricula { set; get; }
     }
 }
