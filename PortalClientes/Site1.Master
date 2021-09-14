@@ -83,7 +83,7 @@
                         <div class="profile_info">
                             <!-- <span>Welcome,</span> -->
                             <br />
-                            <asp:Label ID="lblAeronaveLat" runat="server" Text="B200GT" Font-Bold="true" Style="font-size: 25px;"></asp:Label>
+                            <asp:Label ID="lblAeronaveLat" runat="server" Text="" Font-Bold="true" Style="font-size: 25px;"></asp:Label>
                         </div>
                     </div>
                     <!-- /menu profile quick info -->
@@ -133,7 +133,7 @@
                         <ul class=" navbar-right">
                             <li class="nav-item dropdown open" style="padding-left: 15px;">
                                 <a href="javascript:;" class="user-profile dropdown-toggle" aria-haspopup="true" id="navbarDropdown" data-toggle="dropdown" aria-expanded="false">
-                                    <img src='<%=ResolveUrl("~/build/images/img.jpg")%>' alt=""><asp:Label ID="lblAeronave" runat="server" Text="B200GT" Font-Bold="true"></asp:Label>
+                                    <img src='<%=ResolveUrl("~/build/images/img.jpg")%>' alt=""><asp:Label ID="lblAeronave" runat="server" Text="" Font-Bold="true"></asp:Label>
                                 </a>
                                 <div class="dropdown-menu dropdown-usermenu pull-right" aria-labelledby="navbarDropdown" style="width: 320px;">
                                     <%--<a class="dropdown-item" href="javascript:;">

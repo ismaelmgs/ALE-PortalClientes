@@ -198,4 +198,49 @@
   <data name="Us_ValCorreo" xml:space="preserve">
     <value>The email is not valid</value>
   </data>
+  <data name="Das_Completo" xml:space="preserve">
+    <value>Completed / Incompleted</value>
+  </data>
+  <data name="Das_DeclaracionPara" xml:space="preserve">
+    <value>Statment for</value>
+  </data>
+  <data name="Das_Destino" xml:space="preserve">
+    <value>Destination:</value>
+  </data>
+  <data name="Das_EstadoVuelo" xml:space="preserve">
+    <value>Flight Stats</value>
+  </data>
+  <data name="Das_HorasVuelo" xml:space="preserve">
+    <value>Hours flown</value>
+  </data>
+  <data name="Das_Llego" xml:space="preserve">
+    <value>Arrived:</value>
+  </data>
+  <data name="Das_NMVuelo" xml:space="preserve">
+    <value>NM flown</value>
+  </data>
+  <data name="Das_Origen" xml:space="preserve">
+    <value>Origin:</value>
+  </data>
+  <data name="Das_ResumenCuenta" xml:space="preserve">
+    <value>Account Summary</value>
+  </data>
+  <data name="Das_Saldo" xml:space="preserve">
+    <value>Current Balance</value>
+  </data>
+  <data name="Das_Salida" xml:space="preserve">
+    <value>Departed:</value>
+  </data>
+  <data name="Das_UltimaDeclaracion" xml:space="preserve">
+    <value>Last Statement</value>
+  </data>
+  <data name="Das_Ven90dias" xml:space="preserve">
+    <value>Including past due (+ 90 days)</value>
+  </data>
+  <data name="Das_Vence" xml:space="preserve">
+    <value>Due</value>
+  </data>
+  <data name="Das_Vuelos" xml:space="preserve">
+    <value>Flights</value>
+  </data>
 </root>
