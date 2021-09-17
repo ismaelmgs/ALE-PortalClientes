@@ -110,14 +110,14 @@ namespace PortalClientes.Clases
 
         }
 
-        public static string MatriculaUsuario
+        public static string MatriculaActual
         {
             get
             {
                 if (System.Web.HttpContext.Current.Session["UserIdentity"] == null)
                 {
                     UserIdentity oUsuario = new UserIdentity();
-                    oUsuario.sNombre = "";
+                    oUsuario.sMatricula = "";
                     System.Web.HttpContext.Current.Session["UserIdentity"] = oUsuario;
                 }
 

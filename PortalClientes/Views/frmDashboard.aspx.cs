@@ -34,7 +34,7 @@ namespace PortalClientes.Views
             
             if (!IsPostBack)
             {
-                lblMatriculaAeronave.Text = Session["MatriculaActual"].ToString();
+                lblMatriculaAeronave.Text = Utils.MatriculaActual;
                 LlenarDashboard();
             }
             
@@ -54,16 +54,15 @@ namespace PortalClientes.Views
         {
             oDashboard = oDash;
 
-            lblCompleto.Text = oDashboard.EstadoVuelo;
             lblOrigenText.Text = oDashboard.Origen;
             lblDestinoText.Text = oDashboard.Destino;
             lblSalidaText.Text = oDashboard.Salida.ToLongDateString();
             lblLlegoText.Text = oDashboard.Llegada.ToLongDateString();
-            lblSaldoNumber.Text = oDashboard.Saldo.ToString();
-            lblIncVenc90DiasNumber.Text = oDashboard.Saldo.ToString();
-            lblultimaDeclaracionText.Text = oDashboard.ultimoSaldo.ToString();
-            lblDeclaracionMesAno1.Text = oDashboard.DecalracionActual.ToShortDateString();
-            lblDeclaracionMesAno2.Text = oDashboard.DecalracionVence.ToShortDateString();
+            lblSaldoNumber.Text = oDashboard.SaldoActual.ToString();
+            lblIncVenc90DiasNumber.Text = oDashboard.SaldoAlVencimiento.ToString();
+            lblultimaDeclaracionText.Text = oDashboard.SaldoUltimaDeclaracion.ToString();
+            lblDeclaracionMesAno1.Text = oDashboard.FechaInicioDeclaracion.ToShortDateString();
+            lblDeclaracionMesAno2.Text = oDashboard.FechaFinDeclaracion.ToShortDateString();
         }
 
         private void ArmarDashboard()
