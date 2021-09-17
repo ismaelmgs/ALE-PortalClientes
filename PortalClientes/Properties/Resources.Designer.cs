@@ -142,7 +142,7 @@ namespace PortalClientes.Properties {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Completo / Incompleto.
+        ///   Busca una cadena traducida similar a Completo.
         /// </summary>
         internal static string Das_Completo {
             get {

@@ -37,11 +37,6 @@ namespace PortalClientes
 
             if (!IsPostBack)
             {
-
-                if(Session["MatriculaActual"] == null)
-                {
-                    Session["MatriculaActual"] = "";
-                }
                 CargaMatriculas();  
             }
         }
@@ -188,16 +183,16 @@ namespace PortalClientes
                             oItem.CssClass = "icon_left";
                             oMenuMats.Items.Add(oItem);
 
-                            if(Session["MatriculaActual"].ToString() == "")
+                            if(Utils.MatriculaActual == "")
                             {
                                 lblAeronave.Text = sMat;
                                 lblAeronaveLat.Text = sMat;
-                                Session["MatriculaActual"] = sMat;
+                                Utils.MatriculaActual = sMat;
                             }
                             else
                             {
-                                lblAeronave.Text = Session["MatriculaActual"].ToString();
-                                lblAeronaveLat.Text = Session["MatriculaActual"].ToString(); ;
+                                lblAeronave.Text = Utils.MatriculaActual;
+                                lblAeronaveLat.Text = Utils.MatriculaActual;
                             }
                         }
                     }
@@ -217,7 +212,7 @@ namespace PortalClientes
             {
                 if(Session["MatriculaActual"].ToString() != e.Item.Text)
                 {
-                    Session["MatriculaActual"] = e.Item.Text;
+                    Utils.MatriculaActual = e.Item.Text;
                     lblAeronave.Text = e.Item.Text;
                     lblAeronaveLat.Text = e.Item.Text;
                 } 

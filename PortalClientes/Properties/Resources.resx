@@ -199,7 +199,7 @@
     <value>El correo no es válido</value>
   </data>
   <data name="Das_Completo" xml:space="preserve">
-    <value>Completo / Incompleto</value>
+    <value>Completo</value>
   </data>
   <data name="Das_DeclaracionPara" xml:space="preserve">
     <value>Declaración para:</value>
