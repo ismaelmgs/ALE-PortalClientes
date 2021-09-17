@@ -322,6 +322,204 @@ namespace PortalClientes.Properties {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Altitud Máxima:.
+        /// </summary>
+        internal static string Ta_AltitudMaxima {
+            get {
+                return ResourceManager.GetString("Ta_AltitudMaxima", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Año:.
+        /// </summary>
+        internal static string Ta_Anio {
+            get {
+                return ResourceManager.GetString("Ta_Anio", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Capacidad.
+        /// </summary>
+        internal static string Ta_Capacidad {
+            get {
+                return ResourceManager.GetString("Ta_Capacidad", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Dimensiones Exteriores:.
+        /// </summary>
+        internal static string Ta_DimensionesE {
+            get {
+                return ResourceManager.GetString("Ta_DimensionesE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Dimensiones Interiores:.
+        /// </summary>
+        internal static string Ta_DimensionesI {
+            get {
+                return ResourceManager.GetString("Ta_DimensionesI", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Distancia:.
+        /// </summary>
+        internal static string Ta_Distancia {
+            get {
+                return ResourceManager.GetString("Ta_Distancia", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Fabricante:.
+        /// </summary>
+        internal static string Ta_Fabricante {
+            get {
+                return ResourceManager.GetString("Ta_Fabricante", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Combustible Max:.
+        /// </summary>
+        internal static string Ta_MaxCombustible {
+            get {
+                return ResourceManager.GetString("Ta_MaxCombustible", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Combustible Min:.
+        /// </summary>
+        internal static string Ta_MinCombustible {
+            get {
+                return ResourceManager.GetString("Ta_MinCombustible", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Modelo:.
+        /// </summary>
+        internal static string Ta_Modelo {
+            get {
+                return ResourceManager.GetString("Ta_Modelo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Registro No.:.
+        /// </summary>
+        internal static string Ta_NoRegistro {
+            get {
+                return ResourceManager.GetString("Ta_NoRegistro", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Serie No.:.
+        /// </summary>
+        internal static string Ta_NoSerie {
+            get {
+                return ResourceManager.GetString("Ta_NoSerie", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Pasajeros:.
+        /// </summary>
+        internal static string Ta_Pasajeros {
+            get {
+                return ResourceManager.GetString("Ta_Pasajeros", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Peso:.
+        /// </summary>
+        internal static string Ta_Peso {
+            get {
+                return ResourceManager.GetString("Ta_Peso", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Rendimiento:.
+        /// </summary>
+        internal static string Ta_Rendimiento {
+            get {
+                return ResourceManager.GetString("Ta_Rendimiento", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Aeronave.
+        /// </summary>
+        internal static string Ta_Subtitulo {
+            get {
+                return ResourceManager.GetString("Ta_Subtitulo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Tipo Combustible:.
+        /// </summary>
+        internal static string Ta_TipoCombustible {
+            get {
+                return ResourceManager.GetString("Ta_TipoCombustible", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Tu Aeronave.
+        /// </summary>
+        internal static string Ta_Titulo {
+            get {
+                return ResourceManager.GetString("Ta_Titulo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Especificaciones.
+        /// </summary>
+        internal static string Ta_TituloTab1 {
+            get {
+                return ResourceManager.GetString("Ta_TituloTab1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Documentos.
+        /// </summary>
+        internal static string Ta_TituloTab2 {
+            get {
+                return ResourceManager.GetString("Ta_TituloTab2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Tripulación:.
+        /// </summary>
+        internal static string Ta_Tripulacion {
+            get {
+                return ResourceManager.GetString("Ta_Tripulacion", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Velocidad Crucero:.
+        /// </summary>
+        internal static string Ta_VelocidadCrucero {
+            get {
+                return ResourceManager.GetString("Ta_VelocidadCrucero", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Agregar usuario.
         /// </summary>
         internal static string Us_AltaUsuario {

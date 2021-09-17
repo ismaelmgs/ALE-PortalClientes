@@ -5,7 +5,7 @@
         <div class="row">
         <div class="col-md-6">
             <div class="title_left">
-                <h3>Tu Aeronave</h3>
+                <h3><asp:Label ID="lblTitulo" runat="server"></asp:Label></h3>
             </div>
         </div>
         <div class="col-md-6">
@@ -41,10 +41,10 @@
 
             <ul class="nav nav-tabs" id="myTab" role="tablist">
                       <li class="nav-item">
-                        <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Especificaciones</a>
+                        <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true"><asp:Label ID="lblEspecificaciones" runat="server"></asp:Label></a>
                       </li>
                       <li class="nav-item">
-                        <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Documentos</a>
+                        <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false"><asp:Label ID="lblDocumentos" runat="server"></asp:Label></a>
                       </li>
                     </ul>
                     <div class="tab-content" id="myTabContent">
@@ -58,7 +58,7 @@
                                 </div>
                                 <div class="row" style="background-color:#f2f2f2; padding:5px;margin:5px;">
                                     <div class="col-md-4">
-                                        <asp:Label ID="c" runat="server" Text="Fabricante:"></asp:Label>
+                                        <asp:Label ID="lblFabricante" runat="server" Text="Fabricante:"></asp:Label>
                                     </div>
                                     <div class="col-md-8">
                                         <asp:Label ID="lblFabricanteResp" runat="server" Text="---" Font-Bold="true"></asp:Label>

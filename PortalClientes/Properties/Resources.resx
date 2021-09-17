@@ -243,4 +243,70 @@
   <data name="Das_Vuelos" xml:space="preserve">
     <value>Vuelos</value>
   </data>
+  <data name="Ta_AltitudMaxima" xml:space="preserve">
+    <value>Altitud Máxima:</value>
+  </data>
+  <data name="Ta_Anio" xml:space="preserve">
+    <value>Año:</value>
+  </data>
+  <data name="Ta_Capacidad" xml:space="preserve">
+    <value>Capacidad</value>
+  </data>
+  <data name="Ta_DimensionesE" xml:space="preserve">
+    <value>Dimensiones Exteriores:</value>
+  </data>
+  <data name="Ta_DimensionesI" xml:space="preserve">
+    <value>Dimensiones Interiores:</value>
+  </data>
+  <data name="Ta_Distancia" xml:space="preserve">
+    <value>Distancia:</value>
+  </data>
+  <data name="Ta_Fabricante" xml:space="preserve">
+    <value>Fabricante:</value>
+  </data>
+  <data name="Ta_MaxCombustible" xml:space="preserve">
+    <value>Combustible Max:</value>
+  </data>
+  <data name="Ta_MinCombustible" xml:space="preserve">
+    <value>Combustible Min:</value>
+  </data>
+  <data name="Ta_Modelo" xml:space="preserve">
+    <value>Modelo:</value>
+  </data>
+  <data name="Ta_NoRegistro" xml:space="preserve">
+    <value>Registro No.:</value>
+  </data>
+  <data name="Ta_NoSerie" xml:space="preserve">
+    <value>Serie No.:</value>
+  </data>
+  <data name="Ta_Pasajeros" xml:space="preserve">
+    <value>Pasajeros:</value>
+  </data>
+  <data name="Ta_Peso" xml:space="preserve">
+    <value>Peso:</value>
+  </data>
+  <data name="Ta_Rendimiento" xml:space="preserve">
+    <value>Rendimiento:</value>
+  </data>
+  <data name="Ta_Subtitulo" xml:space="preserve">
+    <value>Aeronave</value>
+  </data>
+  <data name="Ta_TipoCombustible" xml:space="preserve">
+    <value>Tipo Combustible:</value>
+  </data>
+  <data name="Ta_Titulo" xml:space="preserve">
+    <value>Tu Aeronave</value>
+  </data>
+  <data name="Ta_TituloTab1" xml:space="preserve">
+    <value>Especificaciones</value>
+  </data>
+  <data name="Ta_TituloTab2" xml:space="preserve">
+    <value>Documentos</value>
+  </data>
+  <data name="Ta_Tripulacion" xml:space="preserve">
+    <value>Tripulación:</value>
+  </data>
+  <data name="Ta_VelocidadCrucero" xml:space="preserve">
+    <value>Velocidad Crucero:</value>
+  </data>
 </root>

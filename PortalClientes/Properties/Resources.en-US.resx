@@ -133,7 +133,7 @@
     <value>The username and password do not exist.</value>
   </data>
   <data name="Cm_Buscador" xml:space="preserve">
-    <value>Filter...</value>
+    <value>Search...</value>
   </data>
   <data name="Cm_CampoReq" xml:space="preserve">
     <value>This field is required.</value>
@@ -242,5 +242,71 @@
   </data>
   <data name="Das_Vuelos" xml:space="preserve">
     <value>Flights</value>
+  </data>
+  <data name="Ta_Anio" xml:space="preserve">
+    <value>Year:</value>
+  </data>
+  <data name="Ta_Capacidad" xml:space="preserve">
+    <value>Capacity</value>
+  </data>
+  <data name="Ta_DimensionesE" xml:space="preserve">
+    <value>External Dimensions:</value>
+  </data>
+  <data name="Ta_DimensionesI" xml:space="preserve">
+    <value>Interior Dimensions:</value>
+  </data>
+  <data name="Ta_Fabricante" xml:space="preserve">
+    <value>Manufacturer:</value>
+  </data>
+  <data name="Ta_Modelo" xml:space="preserve">
+    <value>Model:</value>
+  </data>
+  <data name="Ta_NoRegistro" xml:space="preserve">
+    <value>Registration No.:</value>
+  </data>
+  <data name="Ta_NoSerie" xml:space="preserve">
+    <value>Serial No.:</value>
+  </data>
+  <data name="Ta_Pasajeros" xml:space="preserve">
+    <value>Passengers:</value>
+  </data>
+  <data name="Ta_Subtitulo" xml:space="preserve">
+    <value>Aircraft</value>
+  </data>
+  <data name="Ta_Titulo" xml:space="preserve">
+    <value>Your Aircraft</value>
+  </data>
+  <data name="Ta_TituloTab1" xml:space="preserve">
+    <value>Specifications</value>
+  </data>
+  <data name="Ta_TituloTab2" xml:space="preserve">
+    <value>Documents</value>
+  </data>
+  <data name="Ta_Tripulacion" xml:space="preserve">
+    <value>Crew:</value>
+  </data>
+  <data name="Ta_AltitudMaxima" xml:space="preserve">
+    <value>Maximum Altitude:</value>
+  </data>
+  <data name="Ta_Distancia" xml:space="preserve">
+    <value>Distance:</value>
+  </data>
+  <data name="Ta_MaxCombustible" xml:space="preserve">
+    <value>Maximun Fuel:</value>
+  </data>
+  <data name="Ta_MinCombustible" xml:space="preserve">
+    <value>Mininum Fuel:</value>
+  </data>
+  <data name="Ta_Peso" xml:space="preserve">
+    <value>Weight:</value>
+  </data>
+  <data name="Ta_Rendimiento" xml:space="preserve">
+    <value>Performance:</value>
+  </data>
+  <data name="Ta_TipoCombustible" xml:space="preserve">
+    <value>Fuel Type:</value>
+  </data>
+  <data name="Ta_VelocidadCrucero" xml:space="preserve">
+    <value>Cruising speed:</value>
   </data>
 </root>
