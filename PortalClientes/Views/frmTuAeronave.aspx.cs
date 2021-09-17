@@ -24,6 +24,12 @@ namespace PortalClientes.Views
                 System.Threading.Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo(Utils.Idioma);
                 ArmaFormulario();
             }
+
+            if (!IsPostBack)
+            {
+                //if(eObjSelected != null)
+                //  eObjSelected(sender, e);
+            }
         }
 
 
