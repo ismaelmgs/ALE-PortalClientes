@@ -220,6 +220,9 @@
     <Content Include="frmDefault.aspx" />
     <Content Include="frmLogin.aspx" />
     <Content Include="Global.asax" />
+    <Content Include="Images\icons\add_mats.png" />
+    <Content Include="Images\icons\add_permissions.png" />
+    <Content Include="Images\icons\clone_permissions.png" />
     <Content Include="jets\demo_jet_01.jpg" />
     <Content Include="jets\demo_jet_02.jpg" />
     <Content Include="jets\demo_jet_03.jpg" />
@@ -1543,6 +1546,7 @@
     <Compile Include="Objetos\Dashboard.cs" />
     <Compile Include="Objetos\Filtros.cs" />
     <Compile Include="Objetos\Login.cs" />
+    <Compile Include="Objetos\Matriculas.cs" />
     <Compile Include="Objetos\MenuDinamico.cs" />
     <Compile Include="Objetos\UserIdentity.cs" />
     <Compile Include="Objetos\Usuario.cs" />

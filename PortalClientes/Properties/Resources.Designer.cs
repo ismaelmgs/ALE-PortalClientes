@@ -547,11 +547,38 @@ namespace PortalClientes.Properties {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Asignar matriculas.
+        /// </summary>
+        internal static string Us_AsignarMats {
+            get {
+                return ResourceManager.GetString("Us_AsignarMats", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Asignar modulos.
+        /// </summary>
+        internal static string Us_AsignarModulos {
+            get {
+                return ResourceManager.GetString("Us_AsignarModulos", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Celular:.
         /// </summary>
         internal static string Us_Celular {
             get {
                 return ResourceManager.GetString("Us_Celular", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Clonar permisos de otro usuario.
+        /// </summary>
+        internal static string Us_ClonarPermisos {
+            get {
+                return ResourceManager.GetString("Us_ClonarPermisos", resourceCulture);
             }
         }
         

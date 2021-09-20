@@ -17,13 +17,12 @@ namespace PortalClientes
             if (Session["UserIdentity"] != null)
             {
                 UserIdentity oUI = (UserIdentity)Session["UserIdentity"];
-                Utils.Idioma = oUI.sIdioma;
                 txtLang.Text = oUI.sIdioma;
             }
 
             if (txtLang.Text != Utils.Idioma)
             {
-                Utils.Idioma = txtLang.Text;
+                txtLang.Text = Utils.Idioma;
                 System.Threading.Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo(Utils.Idioma);
                 ArmaFormulario();
             }

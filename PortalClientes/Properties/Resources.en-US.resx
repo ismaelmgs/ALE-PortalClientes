@@ -309,4 +309,13 @@
   <data name="Ta_VelocidadCrucero" xml:space="preserve">
     <value>Cruising speed:</value>
   </data>
+  <data name="Us_AsignarMats" xml:space="preserve">
+    <value>Assign tails</value>
+  </data>
+  <data name="Us_AsignarModulos" xml:space="preserve">
+    <value>Assign modules</value>
+  </data>
+  <data name="Us_ClonarPermisos" xml:space="preserve">
+    <value>Clone permissions of another user</value>
+  </data>
 </root>
