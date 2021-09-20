@@ -137,9 +137,9 @@
                                             <asp:BoundField DataField="Puesto" />
                                             <asp:TemplateField ItemStyle-HorizontalAlign="Center">
                                                 <ItemTemplate>
-                                                    <asp:ImageButton ID="imbAddMats" runat="server" ImageUrl="~/Images/icons/add_mats.png" Width="35px" Height="35px" />
-                                                    <asp:ImageButton ID="imbEditarModulos" runat="server" ImageUrl="~/Images/icons/add_permissions.png" Width="32px" Height="30px" />
-                                                    <asp:ImageButton ID="imbClonUsuarios" runat="server" ImageUrl="~/Images/icons/clone_permissions.png" Width="33px" Height="28px" />
+                                                    <asp:ImageButton ID="imbAddMats" runat="server" ImageUrl="~/Images/icons/add_mats.png" Width="24px" Height="28px" />&nbsp;&nbsp;&nbsp;
+                                                    <asp:ImageButton ID="imbEditarModulos" runat="server" ImageUrl="~/Images/icons/add_permissions.png" Width="26px" Height="28px" />&nbsp;&nbsp;&nbsp;
+                                                    <asp:ImageButton ID="imbClonUsuarios" runat="server" ImageUrl="~/Images/icons/clone_permissions.png" Width="28px" Height="28px" />
                                                 </ItemTemplate>
                                             </asp:TemplateField>
                                         </Columns>
