@@ -309,4 +309,28 @@
   <data name="Ta_VelocidadCrucero" xml:space="preserve">
     <value>Velocidad Crucero:</value>
   </data>
+  <data name="Us_AsignarMats" xml:space="preserve">
+    <value>Asignar matriculas</value>
+  </data>
+  <data name="Us_AsignarModulos" xml:space="preserve">
+    <value>Asignar modulos</value>
+  </data>
+  <data name="Us_ClonarPermisos" xml:space="preserve">
+    <value>Clonar permisos de otro usuario</value>
+  </data>
+  <data name="Us_TtipClonarUsuarios" xml:space="preserve">
+    <value>Clonar usuario</value>
+  </data>
+  <data name="Us_TtipMats" xml:space="preserve">
+    <value>Asignar matriculas</value>
+  </data>
+  <data name="Us_TtipModulos" xml:space="preserve">
+    <value>Asignar módulos</value>
+  </data>
+  <data name="Us_Matricula" xml:space="preserve">
+    <value>Matricula</value>
+  </data>
+  <data name="Us_TituloMats" xml:space="preserve">
+    <value>Asignación de matriculas</value>
+  </data>
 </root>

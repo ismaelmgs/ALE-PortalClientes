@@ -547,6 +547,24 @@ namespace PortalClientes.Properties {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Asignar matriculas.
+        /// </summary>
+        internal static string Us_AsignarMats {
+            get {
+                return ResourceManager.GetString("Us_AsignarMats", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Asignar modulos.
+        /// </summary>
+        internal static string Us_AsignarModulos {
+            get {
+                return ResourceManager.GetString("Us_AsignarModulos", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Celular:.
         /// </summary>
         internal static string Us_Celular {
@@ -556,11 +574,29 @@ namespace PortalClientes.Properties {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Clonar permisos de otro usuario.
+        /// </summary>
+        internal static string Us_ClonarPermisos {
+            get {
+                return ResourceManager.GetString("Us_ClonarPermisos", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Confirma contraseña:.
         /// </summary>
         internal static string Us_ConfirPass {
             get {
                 return ResourceManager.GetString("Us_ConfirPass", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Matricula.
+        /// </summary>
+        internal static string Us_Matricula {
+            get {
+                return ResourceManager.GetString("Us_Matricula", resourceCulture);
             }
         }
         
@@ -610,11 +646,47 @@ namespace PortalClientes.Properties {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Asignación de matriculas.
+        /// </summary>
+        internal static string Us_TituloMats {
+            get {
+                return ResourceManager.GetString("Us_TituloMats", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Administración de Usuarios.
         /// </summary>
         internal static string Us_TituloPagUsuarios {
             get {
                 return ResourceManager.GetString("Us_TituloPagUsuarios", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Clonar usuario.
+        /// </summary>
+        internal static string Us_TtipClonarUsuarios {
+            get {
+                return ResourceManager.GetString("Us_TtipClonarUsuarios", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Asignar matriculas.
+        /// </summary>
+        internal static string Us_TtipMats {
+            get {
+                return ResourceManager.GetString("Us_TtipMats", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Asignar módulos.
+        /// </summary>
+        internal static string Us_TtipModulos {
+            get {
+                return ResourceManager.GetString("Us_TtipModulos", resourceCulture);
             }
         }
         

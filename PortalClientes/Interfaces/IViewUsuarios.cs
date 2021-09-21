@@ -13,7 +13,9 @@ namespace PortalClientes.Interfaces
         string sFiltro { get; }
         
         void CargaUsuarios(List<Usuario> oLstUsers);
+        void CargaMatriculas(List<Matriculas> olstMats);
 
         event EventHandler eSearchObjFiltros;
+        event EventHandler eSearchMatriculas;
     }
 }

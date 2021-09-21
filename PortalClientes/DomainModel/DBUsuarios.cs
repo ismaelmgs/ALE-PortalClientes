@@ -76,6 +76,30 @@ namespace PortalClientes.DomainModel
 
             return oUser;
         }
+
+        public List<Matriculas> ObtieneMatriculas()
+        {
+            try
+            {
+                List<Matriculas> olstMats = new List<Matriculas>();
+                for (int i = 0; i < 50; i++)
+                {
+                    Matriculas oMats = new Matriculas();
+                    oMats.IdAeronave = i;
+                    oMats.Serie = "Serie: " + i.S();
+                    oMats.Matricula = "Mat: " + i.S();
+                    oMats.GrupoModelo = "GM: " + oMats.S();
+
+                    olstMats.Add(oMats);
+                }
+
+                return olstMats;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
     }
 
 }
