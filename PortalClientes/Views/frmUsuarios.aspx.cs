@@ -11,6 +11,7 @@ using PortalClientes.Interfaces;
 using PortalClientes.Presenter;
 using PortalClientes.DomainModel;
 using System.ComponentModel.DataAnnotations;
+using DevExpress.Web.Bootstrap;
 
 namespace PortalClientes.Views
 {
@@ -92,6 +93,25 @@ namespace PortalClientes.Views
                 e.Row.Cells[2].Text = Properties.Resources.Us_ApeMat;
                 e.Row.Cells[3].Text = Properties.Resources.Correo;
                 e.Row.Cells[4].Text = Properties.Resources.Us_Puesto;
+
+                ImageButton imbMats = (ImageButton)e.Row.FindControl("imbAddMats");
+                if (imbMats != null)
+                {
+                    imbMats.ToolTip = Properties.Resources.Us_TtipMats;
+                }
+
+                ImageButton imbEditarModulos = (ImageButton)e.Row.FindControl("imbEditarModulos");
+                if (imbEditarModulos != null)
+                {
+                    imbEditarModulos.ToolTip = Properties.Resources.Us_TtipModulos;
+                }
+
+                ImageButton imbClonUsuarios = (ImageButton)e.Row.FindControl("imbClonUsuarios");
+                if (imbClonUsuarios != null)
+                {
+                    imbClonUsuarios.ToolTip = Properties.Resources.Us_TtipClonarUsuarios;
+                }
+
             }
         }
 
@@ -111,6 +131,34 @@ namespace PortalClientes.Views
             {
                 throw ex;
             }
+        }
+
+        protected void imbAddMats_Click(object sender, ImageClickEventArgs e)
+        {
+            if (eSearchMatriculas != null)
+                eSearchMatriculas(sender, e);
+
+            mpeMats.Show();
+        }
+
+        protected void gvUsuarios_RowCommand(object sender, GridViewCommandEventArgs e)
+        {
+            
+
+            if (e.CommandName == "Modulos")
+            {
+
+            }
+
+            if (e.CommandName == "Usuarios")
+            {
+
+            }
+        }
+
+        protected void btnAceptarMats_Click(object sender, EventArgs e)
+        {
+            
         }
         #endregion
 
@@ -135,7 +183,10 @@ namespace PortalClientes.Views
             lblPass.Text = Properties.Resources.Us_Password;
             lblConfirPass.Text = Properties.Resources.Us_ConfirPass;
             lblTelefonoMovil.Text = Properties.Resources.Us_Celular;
-        
+
+            lblTituloMatriculas.Text = Properties.Resources.Us_TituloMats;
+            btnAceptarMats.Text = Properties.Resources.Aceptar;
+            btnCancelarMats.Text = Properties.Resources.Cancelar;
         }
 
         private void LlenaGrid()
@@ -236,6 +287,18 @@ namespace PortalClientes.Views
 
             return ban;
         }
+
+        public void CargaMatriculas(List<Matriculas> olstMats)
+        {
+            if (olstMats.Count > 0)
+            {
+                gvMatriculas.DataSource = olstMats;
+                gvMatriculas.DataBind();
+            }
+
+            gvUsuarios.DataSource = oLstUsers;
+            gvUsuarios.DataBind();
+        }
         #endregion
 
 
@@ -248,6 +311,7 @@ namespace PortalClientes.Views
         public event EventHandler eDeleteObj;
         public event EventHandler eSearchObj;
         public event EventHandler eSearchObjFiltros;
+        public event EventHandler eSearchMatriculas;
 
         public Usuario oUsuario
         {
@@ -278,7 +342,16 @@ namespace PortalClientes.Views
             }
         }
 
+
         #endregion
+
+        protected void gvMatriculas_RowDataBound(object sender, GridViewRowEventArgs e)
+        {
+            if (e.Row.RowType == DataControlRowType.Header)
+            {
+                e.Row.Cells[1].Text = Properties.Resources.Us_Matricula;
+            }
+        }
     }
     
 }

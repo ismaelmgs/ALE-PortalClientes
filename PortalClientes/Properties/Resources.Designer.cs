@@ -592,6 +592,15 @@ namespace PortalClientes.Properties {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Matricula.
+        /// </summary>
+        internal static string Us_Matricula {
+            get {
+                return ResourceManager.GetString("Us_Matricula", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Nombres:.
         /// </summary>
         internal static string Us_Nombre {
@@ -637,11 +646,47 @@ namespace PortalClientes.Properties {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Asignación de matriculas.
+        /// </summary>
+        internal static string Us_TituloMats {
+            get {
+                return ResourceManager.GetString("Us_TituloMats", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Administración de Usuarios.
         /// </summary>
         internal static string Us_TituloPagUsuarios {
             get {
                 return ResourceManager.GetString("Us_TituloPagUsuarios", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Clonar usuario.
+        /// </summary>
+        internal static string Us_TtipClonarUsuarios {
+            get {
+                return ResourceManager.GetString("Us_TtipClonarUsuarios", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Asignar matriculas.
+        /// </summary>
+        internal static string Us_TtipMats {
+            get {
+                return ResourceManager.GetString("Us_TtipMats", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Asignar módulos.
+        /// </summary>
+        internal static string Us_TtipModulos {
+            get {
+                return ResourceManager.GetString("Us_TtipModulos", resourceCulture);
             }
         }
         

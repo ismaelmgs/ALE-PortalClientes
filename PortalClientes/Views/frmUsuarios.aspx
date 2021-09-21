@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="frmUsuarios.aspx.cs" Inherits="PortalClientes.Views.frmUsuarios" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="frmUsuarios.aspx.cs" EnableEventValidation="false" Inherits="PortalClientes.Views.frmUsuarios" %>
 
 <%@ Register Assembly="DevExpress.Web.Bootstrap.v18.1, Version=18.1.15.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Namespace="DevExpress.Web.Bootstrap" TagPrefix="dx" %>
 
@@ -14,6 +14,14 @@
         function OcultarEdicionUsuarios() {
             "use strict";
             var modalId = '<%=mpeUsuario.ClientID%>';
+            var modal = $find(modalId);
+            modal.hide();
+        }
+
+
+        function OcultarModalMatriculas() {
+            "use strict";
+            var modalId = '<%=mpeMats.ClientID%>';
             var modal = $find(modalId);
             modal.hide();
         }
@@ -137,9 +145,12 @@
                                             <asp:BoundField DataField="Puesto" />
                                             <asp:TemplateField ItemStyle-HorizontalAlign="Center">
                                                 <ItemTemplate>
-                                                    <asp:ImageButton ID="imbAddMats" runat="server" ImageUrl="~/Images/icons/add_mats.png" Width="24px" Height="28px" />&nbsp;&nbsp;&nbsp;
-                                                    <asp:ImageButton ID="imbEditarModulos" runat="server" ImageUrl="~/Images/icons/add_permissions.png" Width="26px" Height="28px" />&nbsp;&nbsp;&nbsp;
-                                                    <asp:ImageButton ID="imbClonUsuarios" runat="server" ImageUrl="~/Images/icons/clone_permissions.png" Width="28px" Height="28px" />
+                                                    <asp:ImageButton ID="imbAddMats" runat="server" ImageUrl="~/Images/icons/add_mats.png" Width="24px" Height="28px"
+                                                        OnClick="imbAddMats_Click" CommandName="Mats" CommandArgument="<%# ((GridViewRow) Container).RowIndex %>" />&nbsp;&nbsp;&nbsp;
+                                                    <asp:ImageButton ID="imbEditarModulos" runat="server" ImageUrl="~/Images/icons/add_permissions.png" Width="26px" Height="28px" 
+                                                        CommandName="Modulos" CommandArgument="<%# ((GridViewRow) Container).RowIndex %>"/>&nbsp;&nbsp;&nbsp;
+                                                    <asp:ImageButton ID="imbClonUsuarios" runat="server" ImageUrl="~/Images/icons/clone_permissions.png" Width="28px" Height="28px" 
+                                                        CommandName="Usuarios" CommandArgument="<%# ((GridViewRow) Container).RowIndex %>"/>
                                                 </ItemTemplate>
                                             </asp:TemplateField>
                                         </Columns>
@@ -284,4 +295,85 @@
             </ProgressTemplate>
         </asp:UpdateProgress>--%>
     </asp:Panel>
+
+
+    <%-- MODAL PARA SELECCION DE MATRICULAS --%>
+    <asp:HiddenField ID="hdTargetMats" runat="server" />
+    <cc1:ModalPopupExtender ID="mpeMats" runat="server" TargetControlID="hdTargetMats"
+        PopupControlID="pnlMats" BackgroundCssClass="overlayy">
+    </cc1:ModalPopupExtender>
+    <asp:Panel ID="pnlMats" runat="server" BorderColor="" BackColor="White" HorizontalAlign="Center" Height="" Width=""
+         CssClass="modalrlr">
+        <asp:UpdatePanel ID="upaMats" runat="server">
+            <ContentTemplate>
+                <asp:Button ID="btnCerrarMats" runat="server" CssClass="btn" Text="X" Font-Bold="true" OnClientClick="OcultarModalMatriculas();" Style="z-index: 2000;right: 13px;margin-top:10px;position: absolute; color:#ffffff;" />
+                <h5 class="modal-title" style="color:#ffffff;background-color:#2a3f54;width:100%;height:70px;padding-top:15px;">
+                    <%--Edición de empleados--%>
+                    <asp:Label ID="lblTituloMatriculas" runat="server"></asp:Label>
+                </h5><br />
+                <div><%--style="margin:4px;">--%>
+                    <asp:Panel ID="pnlMatsScroll" runat="server" ScrollBars="Vertical" Height="150" Width="550">
+                        <table style="width: 97%; margin:0 auto !important;">
+                            <tr>
+                                <td>
+                                    &nbsp;
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>  
+                                    <br />        
+                                    <div class="row">
+                                        <div class="col-md-1"></div>
+                                        <div class="col-md-10" style="text-align:left;">
+                                            <asp:GridView ID="gvMatriculas" runat="server" AutoGenerateColumns="false" OnRowDataBound="gvMatriculas_RowDataBound">
+                                                <Columns>
+                                                    <asp:TemplateField>
+                                                        <ItemTemplate>
+                                                            <asp:CheckBox ID="chkSeleccione" runat="server" />
+                                                        </ItemTemplate>
+                                                    </asp:TemplateField>
+                                                    <asp:BoundField DataField="Matricula" />
+                                                </Columns>
+                                            </asp:GridView>
+                                        </div>
+                                        <div class="col-md-1"></div>
+                                    </div>
+                                </td>
+                            </tr>
+                        </table>
+                    </asp:Panel>
+                </div>
+                <br /><br /><br />
+                <table style="width: 100%;">
+                    <tr>
+                        <td>
+                            <div class="row">
+                                <div class="col-md-1">
+                                    &nbsp;
+                                </div>
+                                <div class="col-md-5" style="text-align:right;">
+                                    <asp:Button ID="btnAceptarMats" runat="server" CssClass="btn btn-primary" UseSubmitBehavior="true" OnClick="btnAceptarMats_Click"/>
+                                </div>
+                                <div class="col-md-5" style="text-align:left;">
+                                    <asp:Button ID="btnCancelarMats" runat="server" CssClass="btn btn-warning" UseSubmitBehavior="true" OnClientClick="OcultarModalMatriculas();"/>
+                                </div>
+                                <div class="col-md-1">
+                                    &nbsp;
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </ContentTemplate>
+        </asp:UpdatePanel>
+        <%--<asp:UpdateProgress ID="upaProgEmpleados" runat="server" DynamicLayout="true" AssociatedUpdatePanelID="upaSelectEmpleado">
+            <ProgressTemplate>
+                <div style="text-align: left">
+                    <asp:Label ID="lblProgresSeleEmpleado" runat="server" Text="Por favor espere..." Font-Italic="true"></asp:Label>
+                    <asp:Image ID="LoadModal" runat="server" ImageUrl="~/images/gifs/loadingModal2.gif" Height="24" Width="24"/>
+                </div>
+            </ProgressTemplate>
+        </asp:UpdateProgress>--%>
+    </asp:Panel>
+
 </asp:Content>

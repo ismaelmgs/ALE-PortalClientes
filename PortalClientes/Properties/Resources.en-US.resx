@@ -318,4 +318,19 @@
   <data name="Us_ClonarPermisos" xml:space="preserve">
     <value>Clone permissions of another user</value>
   </data>
+  <data name="Us_TtipClonarUsuarios" xml:space="preserve">
+    <value>Inherit permissions</value>
+  </data>
+  <data name="Us_TtipMats" xml:space="preserve">
+    <value>Assign tails</value>
+  </data>
+  <data name="Us_TtipModulos" xml:space="preserve">
+    <value>Assign modules</value>
+  </data>
+  <data name="Us_Matricula" xml:space="preserve">
+    <value>Tail</value>
+  </data>
+  <data name="Us_TituloMats" xml:space="preserve">
+    <value>Tails assignment</value>
+  </data>
 </root>
