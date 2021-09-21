@@ -1513,6 +1513,7 @@
     <Compile Include="Clases\Helper.cs" />
     <Compile Include="Clases\Helper_Mensajes.cs" />
     <Compile Include="Clases\Utils.cs" />
+    <Compile Include="DomainModel\DBAeronave.cs" />
     <Compile Include="DomainModel\DBBase.cs" />
     <Compile Include="DomainModel\DBDashboard.cs" />
     <Compile Include="DomainModel\DBLogin.cs" />
@@ -1536,9 +1537,11 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Interfaces\IBaseView.cs" />
+    <Compile Include="Interfaces\IViewAeronave.cs" />
     <Compile Include="Interfaces\IViewDashboard.cs" />
     <Compile Include="Interfaces\IViewLogin.cs" />
     <Compile Include="Interfaces\IViewUsuarios.cs" />
+    <Compile Include="Objetos\Aeronave.cs" />
     <Compile Include="Objetos\CredencialesWS.cs" />
     <Compile Include="Objetos\Dashboard.cs" />
     <Compile Include="Objetos\Filtros.cs" />
@@ -1546,6 +1549,7 @@
     <Compile Include="Objetos\MenuDinamico.cs" />
     <Compile Include="Objetos\UserIdentity.cs" />
     <Compile Include="Objetos\Usuario.cs" />
+    <Compile Include="Presenter\Aeronave_Presenter.cs" />
     <Compile Include="Presenter\BasePresenter.cs" />
     <Compile Include="Presenter\Dashboard_Presenter.cs" />
     <Compile Include="Presenter\Login_Presenter.cs" />

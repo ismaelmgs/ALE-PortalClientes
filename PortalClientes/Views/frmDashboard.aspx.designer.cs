@@ -157,6 +157,15 @@ namespace PortalClientes.Views {
         protected global::System.Web.UI.WebControls.Label lblMes01VueloNum;
         
         /// <summary>
+        /// Control barV1.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::DevExpress.Web.Bootstrap.BootstrapProgressBar barV1;
+        
+        /// <summary>
         /// Control lblMes02Vuelo.
         /// </summary>
         /// <remarks>
@@ -173,6 +182,15 @@ namespace PortalClientes.Views {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblMes02VueloNum;
+        
+        /// <summary>
+        /// Control BarV2.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::DevExpress.Web.Bootstrap.BootstrapProgressBar BarV2;
         
         /// <summary>
         /// Control lblMes03Vuelo.
@@ -193,6 +211,15 @@ namespace PortalClientes.Views {
         protected global::System.Web.UI.WebControls.Label lblMes03VueloNum;
         
         /// <summary>
+        /// Control BarV3.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::DevExpress.Web.Bootstrap.BootstrapProgressBar BarV3;
+        
+        /// <summary>
         /// Control lblMes01bVuelo.
         /// </summary>
         /// <remarks>
@@ -209,6 +236,15 @@ namespace PortalClientes.Views {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblMes01bVueloNum;
+        
+        /// <summary>
+        /// Control BarH1.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::DevExpress.Web.Bootstrap.BootstrapProgressBar BarH1;
         
         /// <summary>
         /// Control lblMes02bVuelo.
@@ -229,6 +265,15 @@ namespace PortalClientes.Views {
         protected global::System.Web.UI.WebControls.Label lblMes02bVueloNum;
         
         /// <summary>
+        /// Control BarH2.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::DevExpress.Web.Bootstrap.BootstrapProgressBar BarH2;
+        
+        /// <summary>
         /// Control lblMes03bVuelo.
         /// </summary>
         /// <remarks>
@@ -245,6 +290,15 @@ namespace PortalClientes.Views {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblMes03bVueloNum;
+        
+        /// <summary>
+        /// Control BarH3.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::DevExpress.Web.Bootstrap.BootstrapProgressBar BarH3;
         
         /// <summary>
         /// Control lblMes01cVuelo.
@@ -265,6 +319,15 @@ namespace PortalClientes.Views {
         protected global::System.Web.UI.WebControls.Label lblMes01cVueloNum;
         
         /// <summary>
+        /// Control BarNM1.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::DevExpress.Web.Bootstrap.BootstrapProgressBar BarNM1;
+        
+        /// <summary>
         /// Control lblMes02cVuelo.
         /// </summary>
         /// <remarks>
@@ -283,6 +346,15 @@ namespace PortalClientes.Views {
         protected global::System.Web.UI.WebControls.Label lblMes02cVueloNum;
         
         /// <summary>
+        /// Control BarNM2.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::DevExpress.Web.Bootstrap.BootstrapProgressBar BarNM2;
+        
+        /// <summary>
         /// Control lblMes03cVuelo.
         /// </summary>
         /// <remarks>
@@ -299,6 +371,15 @@ namespace PortalClientes.Views {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblMes03cVueloNum;
+        
+        /// <summary>
+        /// Control BarNM3.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::DevExpress.Web.Bootstrap.BootstrapProgressBar BarNM3;
         
         /// <summary>
         /// Control lblResumenDeCuenta.

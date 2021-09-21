@@ -56,13 +56,94 @@ namespace PortalClientes.Views
 
             lblOrigenText.Text = oDashboard.Origen;
             lblDestinoText.Text = oDashboard.Destino;
-            lblSalidaText.Text = oDashboard.Salida.ToLongDateString();
-            lblLlegoText.Text = oDashboard.Llegada.ToLongDateString();
+            lblSalidaText.Text = oDashboard.Salida;
+            lblLlegoText.Text = oDashboard.Llegada;
             lblSaldoNumber.Text = oDashboard.SaldoActual.ToString();
             lblIncVenc90DiasNumber.Text = oDashboard.SaldoAlVencimiento.ToString();
             lblultimaDeclaracionText.Text = oDashboard.SaldoUltimaDeclaracion.ToString();
-            lblDeclaracionMesAno1.Text = oDashboard.FechaInicioDeclaracion.ToShortDateString();
-            lblDeclaracionMesAno2.Text = oDashboard.FechaFinDeclaracion.ToShortDateString();
+            lblDeclaracionMesAno1.Text = oDashboard.FechaInicioDeclaracion;
+            lblDeclaracionMesAno2.Text = oDashboard.FechaFinDeclaracion;
+
+            var count = 0;
+
+            foreach(var i in oDashboard.Vuelos)
+            {
+                if(count == 0)
+                {
+                    lblMes01Vuelo.Text = i.Mes;
+                    lblMes01VueloNum.Text = i.total.ToString();
+                    barV1.Position = i.porcentaje;
+
+
+                    count += 1;
+                }
+                else if (count == 1)
+                {
+                    lblMes02Vuelo.Text = i.Mes;
+                    lblMes02VueloNum.Text = i.total.ToString();
+                    BarV2.Position = i.porcentaje;
+                    count += 1;
+                }
+                else if (count == 2)
+                {
+                    lblMes03Vuelo.Text = i.Mes;
+                    lblMes03VueloNum.Text = i.total.ToString();
+                    BarV3.Position = i.porcentaje;
+                    count = 0;
+                }
+            }
+
+            foreach (var i in oDashboard.Horas)
+            {
+                if (count == 0)
+                {
+                    lblMes01bVuelo.Text = i.Mes;
+                    lblMes01bVueloNum.Text = i.total.ToString();
+                    BarH1.Position = i.porcentaje;
+
+                    count += 1;
+                }
+                else if (count == 1)
+                {
+                    lblMes02bVuelo.Text = i.Mes;
+                    lblMes02bVueloNum.Text = i.total.ToString();
+                    BarH2.Position = i.porcentaje;
+                    count += 1;
+                }
+                else if (count == 2)
+                {
+                    lblMes03bVuelo.Text = i.Mes;
+                    lblMes03bVueloNum.Text = i.total.ToString();
+                    BarH3.Position = i.porcentaje;
+                    count = 0;
+                }
+            }
+
+            foreach (var i in oDashboard.NMVuelos)
+            {
+                if (count == 0)
+                {
+                    lblMes01cVuelo.Text = i.Mes;
+                    lblMes01cVueloNum.Text = i.total.ToString();
+                    BarNM1.Position = i.porcentaje;
+
+                    count += 1;
+                }
+                else if (count == 1)
+                {
+                    lblMes02cVuelo.Text = i.Mes;
+                    lblMes02cVueloNum.Text = i.total.ToString();
+                    BarNM2.Position = i.porcentaje;
+                    count += 1;
+                }
+                else if (count == 2)
+                {
+                    lblMes03cVuelo.Text = i.Mes;
+                    lblMes03cVueloNum.Text = i.total.ToString();
+                    BarNM3.Position = i.porcentaje;
+                    count = 0;
+                }
+            }
         }
 
         private void ArmarDashboard()
@@ -102,14 +183,6 @@ namespace PortalClientes.Views
         {
             get { return (Dashboard)ViewState["VSDashboard"]; }
             set { ViewState["VSDashboard"] = value; }
-        }
-
-        public string sMatricula
-        {
-            get
-            {
-                return lblMatriculaAeronave.Text;
-            }
         }
 
         #endregion

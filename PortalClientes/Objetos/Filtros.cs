@@ -10,4 +10,10 @@ namespace PortalClientes.Objetos
     {
         public string filtro { set; get; }
     }
+
+    [Serializable]
+    public class FiltroMat
+    {
+        public string matriculaActual { get; set; }
+    }
 }

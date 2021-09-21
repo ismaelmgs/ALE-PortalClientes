@@ -13,13 +13,13 @@ namespace PortalClientes.Objetos
         public string CiudadOrigen { get; set; }
         public string Destino { get; set; }
         public string CiudadDestino { get; set; }
-        public DateTime Salida { get; set; }
-        public DateTime Llegada { get; set; }
+        public string Salida { get; set; }
+        public string Llegada { get; set; }
         public double SaldoActual { get; set; }
         public double SaldoAlVencimiento { get; set; }
         public double SaldoUltimaDeclaracion { get; set; }
-        public DateTime FechaInicioDeclaracion { get; set; }
-        public DateTime FechaFinDeclaracion { get; set; }
+        public string FechaInicioDeclaracion { get; set; }
+        public string FechaFinDeclaracion { get; set; }
 
 
         public List<totalesMes> Vuelos { get; set; }

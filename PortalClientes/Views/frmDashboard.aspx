@@ -1,4 +1,5 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="frmDashboard.aspx.cs" Inherits="PortalClientes.Views.frmDashboard" %>
+<%@ Register Assembly="DevExpress.Web.Bootstrap.v18.1, Version=18.1.15.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Namespace="DevExpress.Web.Bootstrap" TagPrefix="dx" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -102,10 +103,7 @@
                               <asp:Label ID="lblMes01VueloNum" runat="server" Text="8" style="font-size:14px;"></asp:Label>&nbsp;
                             </div>
                             <div class="w_center w_55">
-                              <div class="progress">
-                                <div class="progress-bar bg-blue" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 80%;">
-                                </div>
-                              </div>
+                            <dx:BootstrapProgressBar ID="barV1" ShowPosition="false" runat="server" Minimum="0" Maximum="100"></dx:BootstrapProgressBar>
                             </div>
                           </div>
                           <div class="widget_summary">
@@ -116,10 +114,7 @@
                               <asp:Label ID="lblMes02VueloNum" runat="server" Text="9" style="font-size:14px;"></asp:Label>&nbsp;
                             </div>
                             <div class="w_center w_55">
-                              <div class="progress">
-                                <div class="progress-bar bg-blue" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 90%;">
-                                </div>
-                              </div>
+                              <dx:BootstrapProgressBar ID="BarV2" ShowPosition="false" runat="server" Minimum="0" Maximum="100"></dx:BootstrapProgressBar>
                             </div>
                           </div>
                           <div class="widget_summary">
@@ -130,10 +125,7 @@
                               <asp:Label ID="lblMes03VueloNum" runat="server" Text="7" style="font-size:14px;"></asp:Label>&nbsp;
                             </div>
                             <div class="w_center w_55">
-                              <div class="progress">
-                                <div class="progress-bar bg-blue" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 70%;">
-                                </div>
-                              </div>
+                              <dx:BootstrapProgressBar ID="BarV3" ShowPosition="false" runat="server" Minimum="0" Maximum="100"></dx:BootstrapProgressBar>
                             </div>
                           </div>
                       </div>
@@ -147,10 +139,7 @@
                               <asp:Label ID="lblMes01bVueloNum" runat="server" Text="8" style="font-size:14px;"></asp:Label>&nbsp;
                             </div>
                             <div class="w_center w_55">
-                              <div class="progress">
-                                <div class="progress-bar bg-blue" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 80%;">
-                                </div>
-                              </div>
+                              <dx:BootstrapProgressBar ID="BarH1" ShowPosition="false" runat="server" Minimum="0" Maximum="100"></dx:BootstrapProgressBar>
                             </div>
                           </div>
                           <div class="widget_summary">
@@ -161,10 +150,7 @@
                               <asp:Label ID="lblMes02bVueloNum" runat="server" Text="9" style="font-size:14px;"></asp:Label>&nbsp;
                             </div>
                             <div class="w_center w_55">
-                              <div class="progress">
-                                <div class="progress-bar bg-blue" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 90%;">
-                                </div>
-                              </div>
+                              <dx:BootstrapProgressBar ID="BarH2" ShowPosition="false" runat="server" Minimum="0" Maximum="100"></dx:BootstrapProgressBar>
                             </div>
                           </div>
                           <div class="widget_summary">
@@ -175,10 +161,7 @@
                               <asp:Label ID="lblMes03bVueloNum" runat="server" Text="7" style="font-size:14px;"></asp:Label>&nbsp;
                             </div>
                             <div class="w_center w_55">
-                              <div class="progress">
-                                <div class="progress-bar bg-blue" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 70%;">
-                                </div>
-                              </div>
+                              <dx:BootstrapProgressBar ID="BarH3" ShowPosition="false" runat="server" Minimum="0" Maximum="100"></dx:BootstrapProgressBar>
                             </div>
                           </div>
                       </div>
@@ -191,10 +174,7 @@
                               <asp:Label ID="lblMes01cVueloNum" runat="server" Text="8" style="font-size:14px;"></asp:Label>&nbsp;
                             </div>
                             <div class="w_center w_55">
-                              <div class="progress">
-                                <div class="progress-bar bg-blue" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 80%;">
-                                </div>
-                              </div>
+                              <dx:BootstrapProgressBar ID="BarNM1" ShowPosition="false" runat="server" Minimum="0" Maximum="100"></dx:BootstrapProgressBar>
                             </div>
                           </div>
                           <div class="widget_summary">
@@ -205,10 +185,7 @@
                               <asp:Label ID="lblMes02cVueloNum" runat="server" Text="9" style="font-size:14px;"></asp:Label>&nbsp;
                             </div>
                             <div class="w_center w_55">
-                              <div class="progress">
-                                <div class="progress-bar bg-blue" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 90%;">
-                                </div>
-                              </div>
+                              <dx:BootstrapProgressBar ID="BarNM2" ShowPosition="false" runat="server" Minimum="0" Maximum="100"></dx:BootstrapProgressBar>
                             </div>
                           </div>
                           <div class="widget_summary">
@@ -219,10 +196,7 @@
                               <asp:Label ID="lblMes03cVueloNum" runat="server" Text="7" style="font-size:14px;"></asp:Label>&nbsp;
                             </div>
                             <div class="w_center w_55">
-                              <div class="progress">
-                                <div class="progress-bar bg-blue" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 70%;">
-                                </div>
-                              </div>
+                             <dx:BootstrapProgressBar ID="BarNM3" ShowPosition="false" runat="server" Minimum="0" Maximum="100"></dx:BootstrapProgressBar>
                             </div>
                           </div>
                       </div>

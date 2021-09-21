@@ -5,13 +5,21 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using PortalClientes.Clases;
+using PortalClientes.DomainModel;
+using PortalClientes.Interfaces;
+using PortalClientes.Objetos;
+using PortalClientes.Presenter;
 
 namespace PortalClientes.Views
 {
-    public partial class frmTuAeronave : System.Web.UI.Page
+    public partial class frmTuAeronave : System.Web.UI.Page, IViewAeronave
     {
+
+        #region EVENTOS
         protected void Page_Load(object sender, EventArgs e)
         {
+            oPresenter = new Aeronave_Presenter(this, new DBAeronave());    
+
             TextBox milabel = (TextBox)this.Master.FindControl("txtLang");
             if (milabel.Text != Utils.Idioma && milabel.Text != string.Empty)
             {
@@ -27,14 +35,45 @@ namespace PortalClientes.Views
 
             if (!IsPostBack)
             {
-                //if(eObjSelected != null)
-                //  eObjSelected(sender, e);
+                LLenarTuAeronave();
             }
         }
-
+        #endregion
 
 
         #region METODOS 
+
+        public void LLenarTuAeronave()
+        {
+            if (eSearchObj != null)
+                eSearchObj(null, EventArgs.Empty);
+        }
+
+        public void CargarAeronave(Aeronave oAero)
+        {
+            oAeronave = oAero;
+
+            lblMatriculaTuAeronave.Text = oAero.nombreAeronave;
+            lblFabricanteResp.Text = oAero.Fabricante;
+            lblYearResp.Text = oAero.Anio;
+            lblModeloResp.Text = oAero.Modelo;
+            lblRegistroResp.Text = oAero.noRegistro;
+            lblSerieResp.Text = oAero.noSerie;
+            lblPasajerosResp.Text = oAero.noPasajeros.ToString();
+            lblTripulacionRes.Text = oAero.noTripulacion.ToString();
+            lblDimencionesExtRes.Text = oAero.dimencionesExteriores;
+            lblDimencionesIntRes.Text = oAero.dimencionesInteriores;
+            lblMaxFuelResp.Text = oAero.maxGasolina.ToString();
+            lblMinFuelResp.Text = oAero.minGasolina.ToString();
+            lblVelocidadRes.Text = oAero.velocidadCrucero.ToString();
+            lblMaxAlturaRes.Text = oAero.altitudMaxima.ToString();
+            lblTipoCombustibleRes.Text = oAero.tipoGasolina;
+            lblRendimientoRes.Text = oAero.Rendimiento.ToString();
+            lblDistanciaRes.Text = oAero.Distancia.ToString();
+            lblPesoRes.Text = oAero.Peso.ToString();
+
+        }
+
         private void ArmaFormulario()
         {
             txtBusqueda.Attributes.Add("placeholder", Properties.Resources.Cm_Buscador);
@@ -61,6 +100,23 @@ namespace PortalClientes.Views
             lblRendimiento.Text = Properties.Resources.Ta_Rendimiento;
             lblDistancia.Text = Properties.Resources.Ta_Distancia;
             lblPeso.Text = Properties.Resources.Ta_Peso;
+        }
+
+        #endregion
+
+        #region VARIABLES Y PROPIEDADES
+
+        Aeronave_Presenter oPresenter;
+        public event EventHandler eNewObj;
+        public event EventHandler eObjSelected;
+        public event EventHandler eSaveObj;
+        public event EventHandler eDeleteObj;
+        public event EventHandler eSearchObj;
+
+        public Aeronave oAeronave
+        {
+            get { return (Aeronave)ViewState["VSAeronave"]; }
+            set { ViewState["VSAeronave"] = value; }
         }
 
         #endregion

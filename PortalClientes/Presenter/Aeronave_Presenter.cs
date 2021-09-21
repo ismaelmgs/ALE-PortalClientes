@@ -7,11 +7,11 @@ using System.Web;
 
 namespace PortalClientes.Presenter
 {
-    public class Dashboard_Presenter : BasePresenter<IViewDashboard>
+    public class Aeronave_Presenter : BasePresenter<IViewAeronave>
     {
-        private readonly DBDashboard oIGesCat;
+        private readonly DBAeronave oIGesCat;
 
-        public Dashboard_Presenter(IViewDashboard oView, DBDashboard oGC) : base(oView)
+        public Aeronave_Presenter(IViewAeronave oView, DBAeronave oGC) : base(oView)
         {
             oIGesCat = oGC;
 
@@ -20,7 +20,7 @@ namespace PortalClientes.Presenter
 
         protected override void SearchObj_Presenter(object sender, EventArgs e)
         {
-            oIView.CargarDashboard(oIGesCat.ObtenerDashboard());
+            oIView.CargarAeronave(oIGesCat.ObtenerAeronave());
         }
     }
 }
