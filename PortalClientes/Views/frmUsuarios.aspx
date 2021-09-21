@@ -303,7 +303,7 @@
         PopupControlID="pnlMats" BackgroundCssClass="overlayy">
     </cc1:ModalPopupExtender>
     <asp:Panel ID="pnlMats" runat="server" BorderColor="" BackColor="White" HorizontalAlign="Center" Height="" Width=""
-         CssClass="modalrlr">
+         CssClass="modal-derecha anim_RLR">
         <asp:UpdatePanel ID="upaMats" runat="server">
             <ContentTemplate>
                 <asp:Button ID="btnCerrarMats" runat="server" CssClass="btn" Text="X" Font-Bold="true" OnClientClick="OcultarModalMatriculas();" Style="z-index: 2000;right: 13px;margin-top:10px;position: absolute; color:#ffffff;" />
@@ -312,53 +312,31 @@
                     <asp:Label ID="lblTituloMatriculas" runat="server"></asp:Label>
                 </h5><br />
                 <div><%--style="margin:4px;">--%>
-                    <asp:Panel ID="pnlMatsScroll" runat="server" ScrollBars="Vertical" Height="150" Width="550">
-                        <table style="width: 97%; margin:0 auto !important;">
-                            <tr>
-                                <td>
-                                    &nbsp;
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>  
-                                    <br />        
-                                    <div class="row">
-                                        <div class="col-md-1"></div>
-                                        <div class="col-md-10" style="text-align:left;">
-                                            <asp:GridView ID="gvMatriculas" runat="server" AutoGenerateColumns="false" OnRowDataBound="gvMatriculas_RowDataBound">
-                                                <Columns>
-                                                    <asp:TemplateField>
-                                                        <ItemTemplate>
-                                                            <asp:CheckBox ID="chkSeleccione" runat="server" />
-                                                        </ItemTemplate>
-                                                    </asp:TemplateField>
-                                                    <asp:BoundField DataField="Matricula" />
-                                                </Columns>
-                                            </asp:GridView>
-                                        </div>
-                                        <div class="col-md-1"></div>
-                                    </div>
-                                </td>
-                            </tr>
-                        </table>
+                    <asp:Panel ID="pnlMatsScroll" runat="server">
+                        <div style="height:70vh; overflow-y:auto; overflow-x:hidden; border:1px solid #efefef; background-color:#00000003;">      
+                            <div class="table-responsive" style="text-align:left;padding:5px;">
+                                <asp:GridView ID="gvMatriculas" runat="server" AutoGenerateColumns="false" OnRowDataBound="gvMatriculas_RowDataBound" Width="100%" CssClass="table table-bordered table-hover">
+                                    <Columns>
+                                        <asp:TemplateField>
+                                            <ItemTemplate>
+                                                <asp:CheckBox ID="chkSeleccione" runat="server" />
+                                            </ItemTemplate>
+                                        </asp:TemplateField>
+                                        <asp:BoundField DataField="Matricula" />
+                                    </Columns>
+                                </asp:GridView>
+                            </div>
+                        </div>
                     </asp:Panel>
                 </div>
-                <br /><br /><br />
+                <br />
                 <table style="width: 100%;">
                     <tr>
                         <td>
                             <div class="row">
-                                <div class="col-md-1">
-                                    &nbsp;
-                                </div>
-                                <div class="col-md-5" style="text-align:right;">
+                                <div class="col-md-12" style="text-align:right;">
                                     <asp:Button ID="btnAceptarMats" runat="server" CssClass="btn btn-primary" UseSubmitBehavior="true" OnClick="btnAceptarMats_Click"/>
-                                </div>
-                                <div class="col-md-5" style="text-align:left;">
                                     <asp:Button ID="btnCancelarMats" runat="server" CssClass="btn btn-warning" UseSubmitBehavior="true" OnClientClick="OcultarModalMatriculas();"/>
-                                </div>
-                                <div class="col-md-1">
-                                    &nbsp;
                                 </div>
                             </div>
                         </td>
