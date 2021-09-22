@@ -48,19 +48,15 @@
                     </div>
                     <br /><br />
                     <div class="row">
-                        <div class="col-md-4">
-                            <asp:Label ID="lblOrigen" runat="server" Text=""></asp:Label>
-                        </div>
-                        <div class="col-md-8">
+                        <div class="col-md-12">
                             <asp:Label ID="lblOrigenText" runat="server" Text="---" Font-Bold="true"></asp:Label>
+                            <asp:Label ID="lblOrigen" runat="server" Text=""></asp:Label>
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-md-4">
-                            <asp:Label ID="lblDestino" runat="server" Text=""></asp:Label>
-                        </div>
-                        <div class="col-md-8"">
+                        <div class="col-md-12">
                             <asp:Label ID="lblDestinoText" runat="server" Text="---" Font-Bold="true"></asp:Label>
+                            <asp:Label ID="lblDestino" runat="server" Text=""></asp:Label>
                         </div>
                     </div>
                     <br />

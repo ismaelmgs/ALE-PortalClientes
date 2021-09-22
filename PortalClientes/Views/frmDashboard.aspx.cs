@@ -54,6 +54,8 @@ namespace PortalClientes.Views
         {
             oDashboard = oDash;
 
+            lblOrigen.Text = oDashboard.CiudadOrigen;
+            lblDestino.Text = oDashboard.CiudadDestino;
             lblOrigenText.Text = oDashboard.Origen;
             lblDestinoText.Text = oDashboard.Destino;
             lblSalidaText.Text = oDashboard.Salida;
@@ -151,8 +153,6 @@ namespace PortalClientes.Views
             txtBusqueda.Attributes.Add("placeholder", Properties.Resources.Cm_Buscador);
 
             lblEstadoDeVuelo.Text = Properties.Resources.Das_EstadoVuelo;
-            lblOrigen.Text = Properties.Resources.Das_Origen;
-            lblDestino.Text = Properties.Resources.Das_Destino;
             lblSalida.Text = Properties.Resources.Das_Salida;
             lblLlego.Text = Properties.Resources.Das_Llego;
             lblCompleto.Text = Properties.Resources.Das_Completo;

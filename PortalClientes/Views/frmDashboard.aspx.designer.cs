@@ -40,15 +40,6 @@ namespace PortalClientes.Views {
         protected global::System.Web.UI.WebControls.Label lblCompleto;
         
         /// <summary>
-        /// Control lblOrigen.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblOrigen;
-        
-        /// <summary>
         /// Control lblOrigenText.
         /// </summary>
         /// <remarks>
@@ -58,13 +49,13 @@ namespace PortalClientes.Views {
         protected global::System.Web.UI.WebControls.Label lblOrigenText;
         
         /// <summary>
-        /// Control lblDestino.
+        /// Control lblOrigen.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblDestino;
+        protected global::System.Web.UI.WebControls.Label lblOrigen;
         
         /// <summary>
         /// Control lblDestinoText.
@@ -74,6 +65,15 @@ namespace PortalClientes.Views {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblDestinoText;
+        
+        /// <summary>
+        /// Control lblDestino.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblDestino;
         
         /// <summary>
         /// Control lblSalida.
