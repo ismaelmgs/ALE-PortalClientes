@@ -330,7 +330,7 @@
         PopupControlID="pnlMats" BackgroundCssClass="overlayy">
     </cc1:ModalPopupExtender>
     <asp:Panel ID="pnlMats" runat="server" BorderColor="" BackColor="White" HorizontalAlign="Center" Height="" Width=""
-         CssClass="modal-derecha anim_RLR">
+         CssClass="modalrlr">
         <asp:UpdatePanel ID="upaMats" runat="server">
             <ContentTemplate>
                 <asp:Button ID="btnCerrarMats" runat="server" CssClass="btn" Text="X" Font-Bold="true" OnClientClick="OcultarModalMatriculas();" Style="z-index: 2000;right: 13px;margin-top:10px;position: absolute; color:#ffffff;" />
@@ -388,7 +388,7 @@
         PopupControlID="pnlModulos" BackgroundCssClass="overlayy">
     </cc1:ModalPopupExtender>
     <asp:Panel ID="pnlModulos" runat="server" BorderColor="" BackColor="White" HorizontalAlign="Center" Height="" Width=""
-         CssClass="modal-derecha anim_RLR">
+         CssClass="modalrlr">
         <asp:UpdatePanel ID="UpdatePanel1" runat="server">
             <ContentTemplate>
                 <asp:Button ID="btnCerrarModulos" runat="server" CssClass="btn" Text="X" Font-Bold="true" OnClientClick="OcultarModalModulos();" Style="z-index: 2000;right: 13px;margin-top:10px;position: absolute; color:#ffffff;" />
@@ -446,7 +446,7 @@
         PopupControlID="pnlClonar" BackgroundCssClass="overlayy">
     </cc1:ModalPopupExtender>
     <asp:Panel ID="pnlClonar" runat="server" BorderColor="" BackColor="White" HorizontalAlign="Center" Height="" Width=""
-         CssClass="modal-derecha anim_RLR">
+         CssClass="modalrlr">
         <asp:UpdatePanel ID="upaClonar" runat="server">
             <ContentTemplate>
                 <asp:Button ID="btnCerrarClonar" runat="server" CssClass="btn" Text="X" Font-Bold="true" OnClientClick="OcultarModalClonar();" Style="z-index: 2000;right: 13px;margin-top:10px;position: absolute; color:#ffffff;" />
