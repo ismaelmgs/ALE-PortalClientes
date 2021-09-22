@@ -333,4 +333,19 @@
   <data name="Us_TituloMats" xml:space="preserve">
     <value>Asignación de matriculas</value>
   </data>
+  <data name="Us_Modulo" xml:space="preserve">
+    <value>Modulo</value>
+  </data>
+  <data name="Us_TituloModulos" xml:space="preserve">
+    <value>Asignación de modulos</value>
+  </data>
+  <data name="Us_Clave" xml:space="preserve">
+    <value>Clave</value>
+  </data>
+  <data name="Us_TituloClon" xml:space="preserve">
+    <value>Clonar permisos desde</value>
+  </data>
+  <data name="Us_Vermas" xml:space="preserve">
+    <value>Ver mas...</value>
+  </data>
 </root>

@@ -574,6 +574,15 @@ namespace PortalClientes.Properties {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Clave.
+        /// </summary>
+        internal static string Us_Clave {
+            get {
+                return ResourceManager.GetString("Us_Clave", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Clonar permisos de otro usuario.
         /// </summary>
         internal static string Us_ClonarPermisos {
@@ -597,6 +606,15 @@ namespace PortalClientes.Properties {
         internal static string Us_Matricula {
             get {
                 return ResourceManager.GetString("Us_Matricula", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Modulo.
+        /// </summary>
+        internal static string Us_Modulo {
+            get {
+                return ResourceManager.GetString("Us_Modulo", resourceCulture);
             }
         }
         
@@ -637,6 +655,15 @@ namespace PortalClientes.Properties {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Clonar permisos desde.
+        /// </summary>
+        internal static string Us_TituloClon {
+            get {
+                return ResourceManager.GetString("Us_TituloClon", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Edición de usuarios.
         /// </summary>
         internal static string Us_TituloEdUsuarios {
@@ -651,6 +678,15 @@ namespace PortalClientes.Properties {
         internal static string Us_TituloMats {
             get {
                 return ResourceManager.GetString("Us_TituloMats", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Asignación de modulos.
+        /// </summary>
+        internal static string Us_TituloModulos {
+            get {
+                return ResourceManager.GetString("Us_TituloModulos", resourceCulture);
             }
         }
         
@@ -705,6 +741,15 @@ namespace PortalClientes.Properties {
         internal static string Us_ValCorreo {
             get {
                 return ResourceManager.GetString("Us_ValCorreo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Ver mas....
+        /// </summary>
+        internal static string Us_Vermas {
+            get {
+                return ResourceManager.GetString("Us_Vermas", resourceCulture);
             }
         }
     }
