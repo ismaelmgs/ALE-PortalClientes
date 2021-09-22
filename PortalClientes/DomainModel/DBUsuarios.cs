@@ -100,6 +100,29 @@ namespace PortalClientes.DomainModel
                 throw ex;
             }
         }
+
+        public List<Modulos> ObtieneModulos()
+        {
+            try
+            {
+                List<Modulos> olstMats = new List<Modulos>();
+                for (int i = 0; i < 10; i++)
+                {
+                    Modulos oMats = new Modulos();
+                    oMats.IdModulo = i;
+                    oMats.Clave = "Clave: " + i.S();
+                    oMats.Modulo = "Modulo: " + i.S();
+
+                    olstMats.Add(oMats);
+                }
+
+                return olstMats;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
     }
 
 }

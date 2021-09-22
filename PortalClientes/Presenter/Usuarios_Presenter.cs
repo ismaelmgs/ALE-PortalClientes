@@ -17,6 +17,7 @@ namespace PortalClientes.Presenter
 
             oIView.eSearchObjFiltros += eSearchObjFiltros_Presenter;
             oIView.eSearchMatriculas += eSearchMatriculas_Presenter;
+            oIView.eSearchModulos += eSearchModulos_Presenter;
         }
 
         protected override void SearchObj_Presenter(object sender, EventArgs e)
@@ -37,6 +38,11 @@ namespace PortalClientes.Presenter
         protected void eSearchMatriculas_Presenter(object sender, EventArgs e)
         {
             oIView.CargaMatriculas(oIGesCat.ObtieneMatriculas());
+        }
+
+        protected void eSearchModulos_Presenter(object sender, EventArgs e)
+        {
+            oIView.CargaModulos(oIGesCat.ObtieneModulos());
         }
     }
 }

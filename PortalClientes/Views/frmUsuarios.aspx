@@ -11,14 +11,14 @@
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 
     <script type="text/javascript">
-        function OcultarEdicionUsuarios() {
+        function OcultarEdicionUsuarios()
+        {
             "use strict";
             var modalId = '<%=mpeUsuario.ClientID%>';
             var modal = $find(modalId);
             modal.hide();
         }
-
-
+        
         function OcultarModalMatriculas() {
             "use strict";
             var modalId = '<%=mpeMats.ClientID%>';
@@ -26,14 +26,41 @@
             modal.hide();
         }
 
+        function OcultarModalModulos() {
+            "use strict";
+            var modalId = '<%=mpeModulos.ClientID%>';
+            var modal = $find(modalId);
+            modal.hide();
+        }
+
+        function OcultarModalClonar() {
+            "use strict";
+            var modalId = '<%=mpeClonar.ClientID%>';
+            var modal = $find(modalId);
+            modal.hide();
+        }
+        
         $(document).on('keydown', function (event){
             if (event.key == "Escape") {
                 var modalId = '<%=mpeUsuario.ClientID%>';
                 var modal = $find(modalId);
                 modal.hide();
+
+                var modalmatId = '<%=mpeMats.ClientID%>';
+                var modalmat = $find(modalmatId);
+                modalmat.hide();
+
+                var modalmodId = '<%=mpeModulos.ClientID%>';
+                var modalmod = $find(modalmodId);
+                modalmod.hide();
+
+                var modalcloId = '<%=mpeClonar.ClientID%>';
+                var modalclo = $find(modalcloId);
+                modalclo.hide();
             }
         });
 
+        
         $(document).ready(function() {
             $("#basic-form").validate();
         });
@@ -148,9 +175,9 @@
                                                     <asp:ImageButton ID="imbAddMats" runat="server" ImageUrl="~/Images/icons/add_mats.png" Width="24px" Height="28px"
                                                         OnClick="imbAddMats_Click" CommandName="Mats" CommandArgument="<%# ((GridViewRow) Container).RowIndex %>" />&nbsp;&nbsp;&nbsp;
                                                     <asp:ImageButton ID="imbEditarModulos" runat="server" ImageUrl="~/Images/icons/add_permissions.png" Width="26px" Height="28px" 
-                                                        CommandName="Modulos" CommandArgument="<%# ((GridViewRow) Container).RowIndex %>"/>&nbsp;&nbsp;&nbsp;
+                                                        OnClick="imbEditarModulos_Click" CommandName="Modulos" CommandArgument="<%# ((GridViewRow) Container).RowIndex %>"/>&nbsp;&nbsp;&nbsp;
                                                     <asp:ImageButton ID="imbClonUsuarios" runat="server" ImageUrl="~/Images/icons/clone_permissions.png" Width="28px" Height="28px" 
-                                                        CommandName="Usuarios" CommandArgument="<%# ((GridViewRow) Container).RowIndex %>"/>
+                                                        OnClick="imbClonUsuarios_Click" CommandName="Usuarios" CommandArgument="<%# ((GridViewRow) Container).RowIndex %>"/>
                                                 </ItemTemplate>
                                             </asp:TemplateField>
                                         </Columns>
@@ -165,7 +192,7 @@
     </asp:UpdatePanel>
 
 
-    <%-- MODAL PARA SELECCION DE EMPLEADO --%>
+    <%-- MODAL PARA EDICIÓN DEL EMPLEADO --%>
     <asp:HiddenField ID="hdTargetUsuario" runat="server" />
     <cc1:ModalPopupExtender ID="mpeUsuario" runat="server" TargetControlID="hdTargetUsuario"
         PopupControlID="pnlUsuario" BackgroundCssClass="overlayy">
@@ -303,7 +330,7 @@
         PopupControlID="pnlMats" BackgroundCssClass="overlayy">
     </cc1:ModalPopupExtender>
     <asp:Panel ID="pnlMats" runat="server" BorderColor="" BackColor="White" HorizontalAlign="Center" Height="" Width=""
-         CssClass="modal-derecha anim_RLR">
+         CssClass="modalrlr">
         <asp:UpdatePanel ID="upaMats" runat="server">
             <ContentTemplate>
                 <asp:Button ID="btnCerrarMats" runat="server" CssClass="btn" Text="X" Font-Bold="true" OnClientClick="OcultarModalMatriculas();" Style="z-index: 2000;right: 13px;margin-top:10px;position: absolute; color:#ffffff;" />
@@ -354,4 +381,122 @@
         </asp:UpdateProgress>--%>
     </asp:Panel>
 
+
+    <%-- MODAL PARA SELECCION DE MODULOS --%>
+    <asp:HiddenField ID="hdTargetModulos" runat="server" />
+    <cc1:ModalPopupExtender ID="mpeModulos" runat="server" TargetControlID="hdTargetModulos"
+        PopupControlID="pnlModulos" BackgroundCssClass="overlayy">
+    </cc1:ModalPopupExtender>
+    <asp:Panel ID="pnlModulos" runat="server" BorderColor="" BackColor="White" HorizontalAlign="Center" Height="" Width=""
+         CssClass="modalrlr">
+        <asp:UpdatePanel ID="UpdatePanel1" runat="server">
+            <ContentTemplate>
+                <asp:Button ID="btnCerrarModulos" runat="server" CssClass="btn" Text="X" Font-Bold="true" OnClientClick="OcultarModalModulos();" Style="z-index: 2000;right: 13px;margin-top:10px;position: absolute; color:#ffffff;" />
+                <h5 class="modal-title" style="color:#ffffff;background-color:#2a3f54;width:100%;height:70px;padding-top:15px;">
+                    <asp:Label ID="lblTituloModulos" runat="server"></asp:Label>
+                </h5><br />
+                <div>
+                    <asp:Panel ID="Panel2" runat="server">
+                        <div style="height:70vh; overflow-y:auto; overflow-x:hidden; border:1px solid #efefef; background-color:#00000003;">      
+                            <div class="table-responsive" style="text-align:left;padding:5px;">
+                                <asp:GridView ID="gvModulos" runat="server" AutoGenerateColumns="false" OnRowDataBound="gvModulos_RowDataBound" Width="100%" CssClass="table table-bordered table-hover">
+                                    <Columns>
+                                        <asp:TemplateField>
+                                            <ItemTemplate>
+                                                <asp:CheckBox ID="chkSeleccione" runat="server" />
+                                            </ItemTemplate>
+                                        </asp:TemplateField>
+                                        <asp:BoundField DataField="Clave" />
+                                        <asp:BoundField DataField="Modulo" />
+                                    </Columns>
+                                </asp:GridView>
+                            </div>
+                        </div>
+                    </asp:Panel>
+                </div>
+                <br />
+                <table style="width: 100%;">
+                    <tr>
+                        <td>
+                            <div class="row">
+                                <div class="col-md-12" style="text-align:right;">
+                                    <asp:Button ID="btnAceptarModulos" runat="server" CssClass="btn btn-primary" UseSubmitBehavior="true" OnClick="btnAceptarModulos_Click"/>
+                                    <asp:Button ID="btnCancelarModulos" runat="server" CssClass="btn btn-warning" UseSubmitBehavior="true" OnClientClick="OcultarModalModulos();"/>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </ContentTemplate>
+        </asp:UpdatePanel>
+        <%--<asp:UpdateProgress ID="upaProgEmpleados" runat="server" DynamicLayout="true" AssociatedUpdatePanelID="upaSelectEmpleado">
+            <ProgressTemplate>
+                <div style="text-align: left">
+                    <asp:Label ID="lblProgresSeleEmpleado" runat="server" Text="Por favor espere..." Font-Italic="true"></asp:Label>
+                    <asp:Image ID="LoadModal" runat="server" ImageUrl="~/images/gifs/loadingModal2.gif" Height="24" Width="24"/>
+                </div>
+            </ProgressTemplate>
+        </asp:UpdateProgress>--%>
+    </asp:Panel>
+
+
+    <%-- MODAL PARA CLONAR LOS PERMISOS DE UN USUARIO A OTRO --%>
+    <asp:HiddenField ID="hdTargetClonar" runat="server" />
+    <cc1:ModalPopupExtender ID="mpeClonar" runat="server" TargetControlID="hdTargetClonar"
+        PopupControlID="pnlClonar" BackgroundCssClass="overlayy">
+    </cc1:ModalPopupExtender>
+    <asp:Panel ID="pnlClonar" runat="server" BorderColor="" BackColor="White" HorizontalAlign="Center" Height="500px" Width=""
+         CssClass="modalrlr">
+        <asp:UpdatePanel ID="upaClonar" runat="server">
+            <ContentTemplate>
+                <asp:Button ID="btnCerrarClonar" runat="server" CssClass="btn" Text="X" Font-Bold="true" OnClientClick="OcultarModalClonar();" Style="z-index: 2000;right: 13px;margin-top:10px;position: absolute; color:#ffffff;" />
+                <h5 class="modal-title" style="color:#ffffff;background-color:#2a3f54;width:100%;height:70px;padding-top:15px;">
+                    <asp:Label ID="lblTituloClonar" runat="server"></asp:Label>
+                </h5><br />
+                <div>
+                    <dx:BootstrapComboBox ID="ddlUsuarios" runat="server" ValueField="IdUsuario" TextFormatString="{0} {1}" DropDownRows="4">
+                        <Fields>
+                            <dx:BootstrapListBoxField FieldName="Nombres" />
+                            <dx:BootstrapListBoxField FieldName="ApePat" />
+                        </Fields>
+                        <ButtonTemplate>
+                            <span class="dxbs-edit-btn btn btn-secondary dropdown-toggle" data-toggle="dropdown-show">Clic</span>
+                        </ButtonTemplate>
+                        <ItemTemplate>
+                            <div class="media mb-3">
+                                <%--<dx:BootstrapBinaryImage runat="server" AlternateText="" Value='<%# Eval("Photo") %>' Width="64" Height="68">
+                                    <CssClasses Control="mr-3" />
+                                </dx:BootstrapBinaryImage>--%>
+                                <div class="media-body media-middle">
+                                    <h5 class="mt-0"><%# Eval("Nombres") %> <%# Eval("ApePat") %></h5>
+                                    <%# Eval("Puesto") %>
+                                </div>
+                            </div>
+                        </ItemTemplate>
+                    </dx:BootstrapComboBox>
+                </div>
+                <br />
+                <table style="width: 100%;">
+                    <tr>
+                        <td>
+                            <div class="row">
+                                <div class="col-md-12" style="text-align:right;">
+                                    <asp:Button ID="btnAceptarClonar" runat="server" CssClass="btn btn-primary" UseSubmitBehavior="true" OnClick="btnAceptarModulos_Click"/>
+                                    <asp:Button ID="btnCancelarClonar" runat="server" CssClass="btn btn-warning" UseSubmitBehavior="true" OnClientClick="OcultarModalClonar();"/>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </ContentTemplate>
+        </asp:UpdatePanel>
+        <%--<asp:UpdateProgress ID="upaProgEmpleados" runat="server" DynamicLayout="true" AssociatedUpdatePanelID="upaSelectEmpleado">
+            <ProgressTemplate>
+                <div style="text-align: left">
+                    <asp:Label ID="lblProgresSeleEmpleado" runat="server" Text="Por favor espere..." Font-Italic="true"></asp:Label>
+                    <asp:Image ID="LoadModal" runat="server" ImageUrl="~/images/gifs/loadingModal2.gif" Height="24" Width="24"/>
+                </div>
+            </ProgressTemplate>
+        </asp:UpdateProgress>--%>
+    </asp:Panel>
 </asp:Content>

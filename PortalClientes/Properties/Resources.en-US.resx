@@ -333,4 +333,19 @@
   <data name="Us_TituloMats" xml:space="preserve">
     <value>Tails assignment</value>
   </data>
+  <data name="Us_Modulo" xml:space="preserve">
+    <value>Module</value>
+  </data>
+  <data name="Us_TituloModulos" xml:space="preserve">
+    <value>Modules assignment</value>
+  </data>
+  <data name="Us_Clave" xml:space="preserve">
+    <value>Code</value>
+  </data>
+  <data name="Us_TituloClon" xml:space="preserve">
+    <value>Clone permissions from</value>
+  </data>
+  <data name="Us_Vermas" xml:space="preserve">
+    <value>Show more</value>
+  </data>
 </root>

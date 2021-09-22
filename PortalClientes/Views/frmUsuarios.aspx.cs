@@ -160,6 +160,45 @@ namespace PortalClientes.Views
         {
             
         }
+
+        protected void gvMatriculas_RowDataBound(object sender, GridViewRowEventArgs e)
+        {
+            if (e.Row.RowType == DataControlRowType.Header)
+            {
+                e.Row.Cells[1].Text = Properties.Resources.Us_Matricula;
+            }
+        }
+
+        protected void imbEditarModulos_Click(object sender, ImageClickEventArgs e)
+        {
+            if (eSearchModulos != null)
+                eSearchModulos(sender, e);
+
+            mpeModulos.Show();
+        }
+
+        protected void gvModulos_RowDataBound(object sender, GridViewRowEventArgs e)
+        {
+            if (e.Row.RowType == DataControlRowType.Header)
+            {
+                e.Row.Cells[1].Text = Properties.Resources.Us_Clave;
+                e.Row.Cells[2].Text = Properties.Resources.Us_Modulo;
+            }
+        }
+
+        protected void btnAceptarModulos_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        protected void imbClonUsuarios_Click(object sender, ImageClickEventArgs e)
+        {
+            ddlUsuarios.DataSource = oLstUsers;
+            ddlUsuarios.DataBind();
+
+            mpeClonar.Show();
+        }
+
         #endregion
 
 
@@ -178,7 +217,6 @@ namespace PortalClientes.Views
             lblPuesto.Text = Properties.Resources.Us_Puesto;
             lblTituloModalUsuario.Text = Properties.Resources.Us_TituloEdUsuarios;
             btnAceptar.Text = Properties.Resources.Aceptar;
-            //btnCancelar.Text = Properties.Resources.Cancelar;
             btnAgregar.Text = Properties.Resources.Us_AltaUsuario;
             lblPass.Text = Properties.Resources.Us_Password;
             lblConfirPass.Text = Properties.Resources.Us_ConfirPass;
@@ -187,6 +225,14 @@ namespace PortalClientes.Views
             lblTituloMatriculas.Text = Properties.Resources.Us_TituloMats;
             btnAceptarMats.Text = Properties.Resources.Aceptar;
             btnCancelarMats.Text = Properties.Resources.Cancelar;
+
+            lblTituloModulos.Text = Properties.Resources.Us_TituloModulos;
+            btnAceptarModulos.Text = Properties.Resources.Aceptar;
+            btnCancelarModulos.Text = Properties.Resources.Cancelar;
+
+            lblTituloClonar.Text = Properties.Resources.Us_TituloClon;
+            btnAceptarClonar.Text = Properties.Resources.Aceptar;
+            btnCancelarClonar.Text = Properties.Resources.Cancelar;
         }
 
         private void LlenaGrid()
@@ -295,9 +341,15 @@ namespace PortalClientes.Views
                 gvMatriculas.DataSource = olstMats;
                 gvMatriculas.DataBind();
             }
+        }
 
-            gvUsuarios.DataSource = oLstUsers;
-            gvUsuarios.DataBind();
+        public void CargaModulos(List<Modulos> olstModulos)
+        {
+            if (olstModulos.Count > 0)
+            {
+                gvModulos.DataSource = olstModulos;
+                gvModulos.DataBind();
+            }
         }
         #endregion
 
@@ -312,6 +364,7 @@ namespace PortalClientes.Views
         public event EventHandler eSearchObj;
         public event EventHandler eSearchObjFiltros;
         public event EventHandler eSearchMatriculas;
+        public event EventHandler eSearchModulos;
 
         public Usuario oUsuario
         {
@@ -343,15 +396,11 @@ namespace PortalClientes.Views
         }
 
 
+
+
         #endregion
 
-        protected void gvMatriculas_RowDataBound(object sender, GridViewRowEventArgs e)
-        {
-            if (e.Row.RowType == DataControlRowType.Header)
-            {
-                e.Row.Cells[1].Text = Properties.Resources.Us_Matricula;
-            }
-        }
+        
     }
     
 }
