@@ -46,6 +46,7 @@
 	/*min-width: 550px;*/
 	overflow-y: auto;
 	overflow-x: hidden;
+	min-width: 350px;
 }
 .anim_RLR {
 	position: relative;
@@ -69,5 +70,9 @@
 	.icon_left:hover {
 		background-color: #efefef;
 	}
+.dxbs-dropdown-edit.dxbs-combobox .dxbs-listbox.dropdown-menu, .dxbs-dropdown-edit.dxbs-tagbox .dxbs-listbox.dropdown-menu {
+	height: 55vh !important;
+	background-color: #00000003;
+}
 
 

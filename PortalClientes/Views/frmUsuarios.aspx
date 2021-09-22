@@ -330,7 +330,7 @@
         PopupControlID="pnlMats" BackgroundCssClass="overlayy">
     </cc1:ModalPopupExtender>
     <asp:Panel ID="pnlMats" runat="server" BorderColor="" BackColor="White" HorizontalAlign="Center" Height="" Width=""
-         CssClass="modalrlr">
+         CssClass="modal-derecha anim_RLR">
         <asp:UpdatePanel ID="upaMats" runat="server">
             <ContentTemplate>
                 <asp:Button ID="btnCerrarMats" runat="server" CssClass="btn" Text="X" Font-Bold="true" OnClientClick="OcultarModalMatriculas();" Style="z-index: 2000;right: 13px;margin-top:10px;position: absolute; color:#ffffff;" />
@@ -388,7 +388,7 @@
         PopupControlID="pnlModulos" BackgroundCssClass="overlayy">
     </cc1:ModalPopupExtender>
     <asp:Panel ID="pnlModulos" runat="server" BorderColor="" BackColor="White" HorizontalAlign="Center" Height="" Width=""
-         CssClass="modalrlr">
+         CssClass="modal-derecha anim_RLR">
         <asp:UpdatePanel ID="UpdatePanel1" runat="server">
             <ContentTemplate>
                 <asp:Button ID="btnCerrarModulos" runat="server" CssClass="btn" Text="X" Font-Bold="true" OnClientClick="OcultarModalModulos();" Style="z-index: 2000;right: 13px;margin-top:10px;position: absolute; color:#ffffff;" />
@@ -445,29 +445,30 @@
     <cc1:ModalPopupExtender ID="mpeClonar" runat="server" TargetControlID="hdTargetClonar"
         PopupControlID="pnlClonar" BackgroundCssClass="overlayy">
     </cc1:ModalPopupExtender>
-    <asp:Panel ID="pnlClonar" runat="server" BorderColor="" BackColor="White" HorizontalAlign="Center" Height="500px" Width=""
-         CssClass="modalrlr">
+    <asp:Panel ID="pnlClonar" runat="server" BorderColor="" BackColor="White" HorizontalAlign="Center" Height="" Width=""
+         CssClass="modal-derecha anim_RLR">
         <asp:UpdatePanel ID="upaClonar" runat="server">
             <ContentTemplate>
                 <asp:Button ID="btnCerrarClonar" runat="server" CssClass="btn" Text="X" Font-Bold="true" OnClientClick="OcultarModalClonar();" Style="z-index: 2000;right: 13px;margin-top:10px;position: absolute; color:#ffffff;" />
                 <h5 class="modal-title" style="color:#ffffff;background-color:#2a3f54;width:100%;height:70px;padding-top:15px;">
                     <asp:Label ID="lblTituloClonar" runat="server"></asp:Label>
                 </h5><br />
-                <div>
+                <div style="height:70vh; overflow-y:auto; overflow-x:hidden; border:1px solid #efefef; background-color:#00000003;">
                     <dx:BootstrapComboBox ID="ddlUsuarios" runat="server" ValueField="IdUsuario" TextFormatString="{0} {1}" DropDownRows="4">
                         <Fields>
                             <dx:BootstrapListBoxField FieldName="Nombres" />
                             <dx:BootstrapListBoxField FieldName="ApePat" />
                         </Fields>
                         <ButtonTemplate>
-                            <span class="dxbs-edit-btn btn btn-secondary dropdown-toggle" data-toggle="dropdown-show">Clic</span>
+                            <br />
+                            <span class="btn btn-secondary dropdown-toggle" data-toggle="dropdown-show" style="border-radius:2px;">Clic</span>
                         </ButtonTemplate>
                         <ItemTemplate>
                             <div class="media mb-3">
                                 <%--<dx:BootstrapBinaryImage runat="server" AlternateText="" Value='<%# Eval("Photo") %>' Width="64" Height="68">
                                     <CssClasses Control="mr-3" />
                                 </dx:BootstrapBinaryImage>--%>
-                                <div class="media-body media-middle">
+                                <div class="media-body media-middle" style="padding:5px;">
                                     <h5 class="mt-0"><%# Eval("Nombres") %> <%# Eval("ApePat") %></h5>
                                     <%# Eval("Puesto") %>
                                 </div>
