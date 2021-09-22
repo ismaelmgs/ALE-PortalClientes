@@ -14,8 +14,10 @@ namespace PortalClientes.Interfaces
         
         void CargaUsuarios(List<Usuario> oLstUsers);
         void CargaMatriculas(List<Matriculas> olstMats);
+        void CargaModulos(List<Modulos> olstMods);
 
         event EventHandler eSearchObjFiltros;
         event EventHandler eSearchMatriculas;
+        event EventHandler eSearchModulos;
     }
 }
