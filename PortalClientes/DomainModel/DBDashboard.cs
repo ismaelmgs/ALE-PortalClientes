@@ -12,17 +12,17 @@ namespace PortalClientes.DomainModel
 {
     public class DBDashboard
     {
-        public Dashboard ObtenerDashboard(string matricula)
+        public Dashboard ObtenerDashboard()
         {
             JavaScriptSerializer ser = new JavaScriptSerializer();
             Dashboard d = new Dashboard();
-            Filtros oLog = new Filtros();
-            oLog.filtro = Utils.MatriculaActual;
+            FiltroMat oLog = new FiltroMat();
+            oLog.matriculaActual = Utils.MatriculaActual;
 
             TokenWS oToken = Utils.ObtieneToken;
 
             var client = new RestClient(Helper.D_UrlObtenerDashboard);
-            var request = new RestRequest(Method.GET);
+            var request = new RestRequest(Method.POST);
             request.AddHeader("Authorization", oToken.token);
             request.AddJsonBody(oLog);
 

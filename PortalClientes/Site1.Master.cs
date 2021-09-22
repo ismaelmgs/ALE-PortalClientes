@@ -182,7 +182,7 @@ namespace PortalClientes
                             oItem.CssClass = "icon_left";
                             oMenuMats.Items.Add(oItem);
 
-                            if(Utils.MatriculaActual == "")
+                            if(Utils.MatriculaActual == null || Utils.MatriculaActual == "")
                             {
                                 lblAeronave.Text = sMat;
                                 lblAeronaveLat.Text = sMat;
@@ -209,7 +209,7 @@ namespace PortalClientes
 
             if(e.Item.GroupName == "Group4")
             {
-                if(Session["MatriculaActual"].ToString() != e.Item.Text)
+                if(Utils.MatriculaActual != e.Item.Text)
                 {
                     Utils.MatriculaActual = e.Item.Text;
                     lblAeronave.Text = e.Item.Text;

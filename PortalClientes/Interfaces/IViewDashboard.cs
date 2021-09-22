@@ -10,7 +10,6 @@ namespace PortalClientes.Interfaces
     public interface IViewDashboard : IBaseView
     {
         Dashboard oDashboard { get; }
-        string sMatricula { get; }
         void CargarDashboard(Dashboard oDash);
     }
 }
