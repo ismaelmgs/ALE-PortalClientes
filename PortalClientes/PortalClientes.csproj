@@ -217,7 +217,7 @@
     <Content Include="build\images\visa.png" />
     <Content Include="build\js\datepicker\daterangepicker.js" />
     <Content Include="build\js\moment\moment.min.js" />
-    <Content Include="frmDefault.aspx" />
+    <Content Include="Views\frmDefault.aspx" />
     <Content Include="frmLogin.aspx" />
     <Content Include="Global.asax" />
     <Content Include="Images\icons\add_mats.png" />
@@ -1522,11 +1522,11 @@
     <Compile Include="DomainModel\DBLogin.cs" />
     <Compile Include="DomainModel\DBUsuarios.cs" />
     <Compile Include="DomainModel\DBUtils.cs" />
-    <Compile Include="frmDefault.aspx.cs">
+    <Compile Include="Views\frmDefault.aspx.cs">
       <DependentUpon>frmDefault.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="frmDefault.aspx.designer.cs">
+    <Compile Include="Views\frmDefault.aspx.designer.cs">
       <DependentUpon>frmDefault.aspx</DependentUpon>
     </Compile>
     <Compile Include="frmLogin.aspx.cs">
