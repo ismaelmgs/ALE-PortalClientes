@@ -348,4 +348,16 @@
   <data name="Us_Vermas" xml:space="preserve">
     <value>Show more</value>
   </data>
+  <data name="Us_UsuarioDestino" xml:space="preserve">
+    <value>Destination user:</value>
+  </data>
+  <data name="Us_UsuarioOrigen" xml:space="preserve">
+    <value>Sample user:</value>
+  </data>
+  <data name="Us_CorreoSecundario" xml:space="preserve">
+    <value>Secondary email:</value>
+  </data>
+  <data name="Us_TelefonoOficina" xml:space="preserve">
+    <value>Office phone:</value>
+  </data>
 </root>

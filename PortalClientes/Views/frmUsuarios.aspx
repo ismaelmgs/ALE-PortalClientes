@@ -160,7 +160,7 @@
                                         <asp:Button ID="btnAgregar" runat="server" Text="" CssClass="btn btn-success" OnClick="btnAgregar_Click" />
                                     </div>
                                     <asp:GridView ID="gvUsuarios" runat="server" AutoGenerateColumns="false" CssClass="table table-striped table-bordered table-hover"
-                                        AllowPaging="true" OnPageIndexChanging="gvUsuarios_PageIndexChanging" OnRowDataBound="gvUsuarios_RowDataBound">
+                                        DataKeyNames="IdUsuario" AllowPaging="true" OnPageIndexChanging="gvUsuarios_PageIndexChanging" OnRowDataBound="gvUsuarios_RowDataBound">
                                         <HeaderStyle />
                                         <RowStyle />
                                         <AlternatingRowStyle />
@@ -274,6 +274,24 @@
                             <div class="row">
                                 <div class="col-md-1"></div>
                                 <div class="col-md-5" style="text-align:left;">
+                                    <asp:Label ID="lblCorreoSecundario" runat="server"></asp:Label><br />
+                                    <asp:TextBox ID="txtCorreoSecundario" runat="server" CssClass="form-control"></asp:TextBox>
+                                </div>
+                                <div class="col-md-5" style="text-align:left;">
+                                    <asp:Label ID="lblTelefonoOficina" runat="server"></asp:Label><br />
+                                    <asp:TextBox ID="txtTelefonoOficina" runat="server" CssClass="form-control" MaxLength="13"></asp:TextBox>
+                                    <cc1:FilteredTextBoxExtender ID="fteTelefonoOficina" runat="server" TargetControlID="txtTelefonoOficina" FilterMode="ValidChars"
+                                        ValidChars="0123456789+"/>
+                                </div>
+                                <div class="col-md-1"></div>
+                            </div>  
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="row">
+                                <div class="col-md-1"></div>
+                                <div class="col-md-5" style="text-align:left;">
                                     <asp:Label ID="lblPass" runat="server"></asp:Label><br />
                                     <asp:TextBox ID="txtPass" runat="server" TextMode="Password" CssClass="form-control"></asp:TextBox>
                                     <asp:Label ID="lblReqPass" runat="server" ForeColor="Red" Visible="false"></asp:Label>
@@ -300,9 +318,6 @@
                                 <div class="col-md-10" style="text-align:right;">
                                     <asp:Button ID="btnAceptar" runat="server" CssClass="btn btn-primary" UseSubmitBehavior="true" OnClick="btnAceptar_Click"/>
                                 </div>
-                                <%--<div class="col-md-3" style="text-align:center;">
-                                    <asp:Button ID="btnCancelar" runat="server" CssClass="btn btn-danger" OnClientClick="OcultarEdicionUsuarios();" />
-                                </div>--%>
                                 <div class="col-md-1">
                                     &nbsp;
                                 </div>
@@ -342,7 +357,8 @@
                     <asp:Panel ID="pnlMatsScroll" runat="server">
                         <div style="height:70vh; overflow-y:auto; overflow-x:hidden; border:1px solid #efefef; background-color:#00000003;">      
                             <div class="table-responsive" style="text-align:left;padding:5px;">
-                                <asp:GridView ID="gvMatriculas" runat="server" AutoGenerateColumns="false" OnRowDataBound="gvMatriculas_RowDataBound" Width="100%" CssClass="table table-bordered table-hover">
+                                <asp:GridView ID="gvMatriculas" runat="server" AutoGenerateColumns="false" DataKeyNames="IdAeronave" 
+                                    OnRowDataBound="gvMatriculas_RowDataBound" Width="100%" CssClass="table table-bordered table-hover">
                                     <Columns>
                                         <asp:TemplateField>
                                             <ItemTemplate>
@@ -399,15 +415,17 @@
                     <asp:Panel ID="Panel2" runat="server">
                         <div style="height:70vh; overflow-y:auto; overflow-x:hidden; border:1px solid #efefef; background-color:#00000003;">      
                             <div class="table-responsive" style="text-align:left;padding:5px;">
-                                <asp:GridView ID="gvModulos" runat="server" AutoGenerateColumns="false" OnRowDataBound="gvModulos_RowDataBound" Width="100%" CssClass="table table-bordered table-hover">
+                                <asp:GridView ID="gvModulos" runat="server" AutoGenerateColumns="false" DataKeyNames="idModulo"
+                                    OnRowDataBound="gvModulos_RowDataBound" Width="100%" CssClass="table table-bordered table-hover">
                                     <Columns>
                                         <asp:TemplateField>
                                             <ItemTemplate>
                                                 <asp:CheckBox ID="chkSeleccione" runat="server" />
                                             </ItemTemplate>
                                         </asp:TemplateField>
-                                        <asp:BoundField DataField="Clave" />
-                                        <asp:BoundField DataField="Modulo" />
+                                        <asp:BoundField DataField="ClaveModulo" />
+                                        <asp:BoundField DataField="NombreESP" />
+                                        <asp:BoundField DataField="NombreENG" />
                                     </Columns>
                                 </asp:GridView>
                             </div>
@@ -454,10 +472,16 @@
                     <asp:Label ID="lblTituloClonar" runat="server"></asp:Label>
                 </h5><br />
                 <div style="height:70vh; overflow-y:auto; overflow-x:hidden; border:1px solid #efefef; background-color:#00000003;">
-                    <dx:BootstrapComboBox ID="ddlUsuarios" runat="server" ValueField="IdUsuario" TextFormatString="{0} {1}" DropDownRows="4">
+
+                    <asp:Label ID="lblUsuarioDestino" runat="server"></asp:Label>
+                    <br />
+                    <h3><asp:Label ID="lblUsuarioDestinoResp" runat="server"></asp:Label></h3>
+                    <br />
+                    <dx:BootstrapComboBox ID="ddlUsuarios" runat="server" ValueField="IdUsuario" TextFormatString="{0} {1}"
+                        OnValueChanged="ddlUsuarios_ValueChanged" DropDownRows="4">
                         <Fields>
                             <dx:BootstrapListBoxField FieldName="Nombres" />
-                            <dx:BootstrapListBoxField FieldName="ApePat" />
+                            <dx:BootstrapListBoxField FieldName="ApePat" /> 
                         </Fields>
                         <ButtonTemplate>
                             <br />
@@ -482,7 +506,7 @@
                         <td>
                             <div class="row">
                                 <div class="col-md-12" style="text-align:right;">
-                                    <asp:Button ID="btnAceptarClonar" runat="server" CssClass="btn btn-primary" UseSubmitBehavior="true" OnClick="btnAceptarModulos_Click"/>
+                                    <asp:Button ID="btnAceptarClonar" runat="server" CssClass="btn btn-primary" UseSubmitBehavior="true" OnClick="btnAceptarClonar_Click"/>
                                     <asp:Button ID="btnCancelarClonar" runat="server" CssClass="btn btn-warning" UseSubmitBehavior="true" OnClientClick="OcultarModalClonar();"/>
                                 </div>
                             </div>
@@ -500,4 +524,5 @@
             </ProgressTemplate>
         </asp:UpdateProgress>--%>
     </asp:Panel>
+
 </asp:Content>
