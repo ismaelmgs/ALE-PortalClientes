@@ -26,6 +26,15 @@ namespace PortalClientes.Objetos
         public int Rendimiento { get; set; }
         public int Distancia { get; set; }
         public int Peso { get; set; }
+        public IEnumerable<FotoAeronave> Imagenes { get; set; }
 
+    }
+
+    [Serializable]
+    public class FotoAeronave
+    {
+        public string NombreImagen { get; set; }
+        public string Extension { get; set; }
+        public string Imagen { get; set; }
     }
 }

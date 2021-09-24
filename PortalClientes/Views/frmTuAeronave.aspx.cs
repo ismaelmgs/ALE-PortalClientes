@@ -1,14 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
-using PortalClientes.Clases;
-using PortalClientes.DomainModel;
+﻿using PortalClientes.DomainModel;
 using PortalClientes.Interfaces;
-using PortalClientes.Objetos;
 using PortalClientes.Presenter;
+using PortalClientes.Clases;
+using System;
+using PortalClientes.Objetos;
+using System.Linq;
+using System.IO;
+using System.Web.UI.WebControls;
+using System.Drawing;
 
 namespace PortalClientes.Views
 {
@@ -72,6 +71,48 @@ namespace PortalClientes.Views
             lblDistanciaRes.Text = oAero.Distancia.ToString();
             lblPesoRes.Text = oAero.Peso.ToString();
 
+            var sHtml = "<ol class='carousel-indicators'>";
+            var sHtmlCarousel = "<div class='carousel-inner'>";
+
+            var element = 0;
+            foreach (var item in oAeronave.Imagenes)
+            {
+                var imgSrc = String.Format("data:image/png;base64,{0}", item.Imagen);
+
+                sHtml += "<li data-target='#carouselExampleIndicators' data-slide-to='" + element + "' class='active'></li>";
+
+                if (element == 0)
+                {
+                    sHtmlCarousel += "<div class='carousel-item active'>" +
+                                     "<img class='d-block w-100' src='" + imgSrc + "' alt='slide " + (element + 1) + "'>" +
+                                     "</div>";
+                }
+                else
+                {
+                    sHtmlCarousel += "<div class='carousel-item'>" +
+                                     "<img class='d-block w-100' src='" + imgSrc + "' alt='slide " + (element + 1) + "'>" +
+                                     "</div>";
+                }
+
+                if ((element + 1) == oAeronave.Imagenes.Count())
+                {
+                    sHtmlCarousel += "</div>";
+                    sHtml += "</ol>";
+
+                    sHtml += sHtmlCarousel;
+
+                    sHtml += "<a class='carousel-control-prev' href='#carouselExampleIndicators' role='button' data-slide='prev'>" +
+                            "<span class='carousel-control-prev-icon' aria-hidden='true'></span>" +
+                            "<span class='sr-only'>Previous</span></a>" +
+                            "<a class='carousel-control-next' href='#carouselExampleIndicators' role='button' data-slide='next'>" +
+                            "<span class='carousel-control-next-icon' aria-hidden='true'></span>" +
+                            "<span class='sr-only'>Next</span></a>";
+                }
+
+                element++;
+            }
+
+            carouselExampleIndicators.InnerHtml = sHtml;
         }
 
         private void ArmaFormulario()
