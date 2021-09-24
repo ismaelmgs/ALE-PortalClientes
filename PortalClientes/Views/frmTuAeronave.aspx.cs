@@ -79,18 +79,20 @@ namespace PortalClientes.Views
             {
                 var imgSrc = String.Format("data:image/png;base64,{0}", item.Imagen);
 
-                sHtml += "<li data-target='#carouselExampleIndicators' data-slide-to='" + element + "' class='active'></li>";
+                
 
                 if (element == 0)
                 {
+                    sHtml += "<li data-target='#ContentPlaceHolder1_carouselExampleIndicators' data-slide-to='" + element + "' class='active'></li>";
                     sHtmlCarousel += "<div class='carousel-item active'>" +
-                                     "<img class='d-block w-100' src='" + imgSrc + "' alt='slide " + (element + 1) + "'>" +
+                                     "<img class='d-block w-100' src='" + imgSrc + "' alt='slide " + (element) + "'>" +
                                      "</div>";
                 }
                 else
                 {
+                    sHtml += "<li data-target='#ContentPlaceHolder1_carouselExampleIndicators' data-slide-to='" + element + "'></li>";
                     sHtmlCarousel += "<div class='carousel-item'>" +
-                                     "<img class='d-block w-100' src='" + imgSrc + "' alt='slide " + (element + 1) + "'>" +
+                                     "<img class='d-block w-100' src='" + imgSrc + "' alt='slide " + (element) + "'>" +
                                      "</div>";
                 }
 
@@ -101,10 +103,10 @@ namespace PortalClientes.Views
 
                     sHtml += sHtmlCarousel;
 
-                    sHtml += "<a class='carousel-control-prev' href='#carouselExampleIndicators' role='button' data-slide='prev'>" +
+                    sHtml += "<a class='carousel-control-prev' href='#ContentPlaceHolder1_carouselExampleIndicators' role='button' data-slide='prev'>" +
                             "<span class='carousel-control-prev-icon' aria-hidden='true'></span>" +
                             "<span class='sr-only'>Previous</span></a>" +
-                            "<a class='carousel-control-next' href='#carouselExampleIndicators' role='button' data-slide='next'>" +
+                            "<a class='carousel-control-next' href='#ContentPlaceHolder1_carouselExampleIndicators' role='button' data-slide='next'>" +
                             "<span class='carousel-control-next-icon' aria-hidden='true'></span>" +
                             "<span class='sr-only'>Next</span></a>";
                 }
