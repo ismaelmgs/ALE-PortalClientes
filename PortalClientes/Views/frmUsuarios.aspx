@@ -445,7 +445,7 @@
     <cc1:ModalPopupExtender ID="mpeClonar" runat="server" TargetControlID="hdTargetClonar"
         PopupControlID="pnlClonar" BackgroundCssClass="overlayy">
     </cc1:ModalPopupExtender>
-    <asp:Panel ID="pnlClonar" runat="server" BorderColor="" BackColor="White" HorizontalAlign="Center" Height="500px" Width=""
+    <asp:Panel ID="pnlClonar" runat="server" BorderColor="" BackColor="White" HorizontalAlign="Center" Height="" Width=""
          CssClass="modalrlr">
         <asp:UpdatePanel ID="upaClonar" runat="server">
             <ContentTemplate>
@@ -453,21 +453,22 @@
                 <h5 class="modal-title" style="color:#ffffff;background-color:#2a3f54;width:100%;height:70px;padding-top:15px;">
                     <asp:Label ID="lblTituloClonar" runat="server"></asp:Label>
                 </h5><br />
-                <div>
+                <div style="height:70vh; overflow-y:auto; overflow-x:hidden; border:1px solid #efefef; background-color:#00000003;">
                     <dx:BootstrapComboBox ID="ddlUsuarios" runat="server" ValueField="IdUsuario" TextFormatString="{0} {1}" DropDownRows="4">
                         <Fields>
                             <dx:BootstrapListBoxField FieldName="Nombres" />
                             <dx:BootstrapListBoxField FieldName="ApePat" />
                         </Fields>
                         <ButtonTemplate>
-                            <span class="dxbs-edit-btn btn btn-secondary dropdown-toggle" data-toggle="dropdown-show">Clic</span>
+                            <br />
+                            <span class="btn btn-secondary dropdown-toggle" data-toggle="dropdown-show" style="border-radius:2px;">Clic</span>
                         </ButtonTemplate>
                         <ItemTemplate>
                             <div class="media mb-3">
                                 <%--<dx:BootstrapBinaryImage runat="server" AlternateText="" Value='<%# Eval("Photo") %>' Width="64" Height="68">
                                     <CssClasses Control="mr-3" />
                                 </dx:BootstrapBinaryImage>--%>
-                                <div class="media-body media-middle">
+                                <div class="media-body media-middle" style="padding:5px;">
                                     <h5 class="mt-0"><%# Eval("Nombres") %> <%# Eval("ApePat") %></h5>
                                     <%# Eval("Puesto") %>
                                 </div>
