@@ -1,9 +1,11 @@
 ﻿using PortalClientes.DomainModel;
 using PortalClientes.Interfaces;
+using PortalClientes.Objetos;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using NucleoBase.Core;
 
 namespace PortalClientes.Presenter
 {
@@ -17,7 +19,11 @@ namespace PortalClientes.Presenter
 
             oIView.eSearchObjFiltros += eSearchObjFiltros_Presenter;
             oIView.eSearchMatriculas += eSearchMatriculas_Presenter;
+            oIView.eSaveMatriculasUsuario += eSaveMatriculasUsuario_Presenter;
+
             oIView.eSearchModulos += eSearchModulos_Presenter;
+            oIView.eSaveModulos += eSaveModulos_Presenter;
+            oIView.eSaveClonaPermisos += eSaveClonaPermisos_Presenter;
         }
 
         protected override void SearchObj_Presenter(object sender, EventArgs e)
@@ -28,6 +34,7 @@ namespace PortalClientes.Presenter
         protected override void SaveObj_Presenter(object sender, EventArgs e)
         {
             oIGesCat.InsertaActualizaUsuarios(oIView.oUsuario);
+            oIView.CargaUsuarios(oIGesCat.ObtieneUsuariosFiltros(oIView.sFiltro));
         }
 
         protected void eSearchObjFiltros_Presenter(object sender, EventArgs e)
@@ -35,14 +42,41 @@ namespace PortalClientes.Presenter
             oIView.CargaUsuarios(oIGesCat.ObtieneUsuariosFiltros(oIView.sFiltro));
         }
 
+        // MATRICULAS
         protected void eSearchMatriculas_Presenter(object sender, EventArgs e)
         {
             oIView.CargaMatriculas(oIGesCat.ObtieneMatriculas());
         }
+        
+        protected void eSaveMatriculasUsuario_Presenter(object sender, EventArgs e)
+        {
+            requestIdUsuario ReqUsuario = oIGesCat.RelacionaUsuarioMatriculas(oIView.iIdUsuario, oIView.olst);
+        }
 
+        // MODULOS
         protected void eSearchModulos_Presenter(object sender, EventArgs e)
         {
-            oIView.CargaModulos(oIGesCat.ObtieneModulos());
+            oIView.CargaModulos(oIGesCat.ObtieneModulosPorUsuario(oIView.iIdUsuario));
+        }
+
+        protected void eSaveModulos_Presenter(object sender, EventArgs e)
+        {
+            List<int> olst = oIView.olst;
+            string sModulos = string.Empty;
+            foreach (int idMod in olst)
+            {
+                if (sModulos == string.Empty)
+                    sModulos = idMod.S();
+                else
+                    sModulos += "," + idMod.S();
+            }
+
+            oIGesCat.RelacionaModulosUsuario(oIView.iIdUsuario, sModulos);
+        }
+
+        protected void eSaveClonaPermisos_Presenter(object sender, EventArgs e)
+        {
+            List<ModulosUsuario> olstModUser = oIGesCat.ClonaPermisosDeUsuarioUsuario(oIView.iIdUsuario, oIView.iIdUsuarioDestino);
         }
     }
 }

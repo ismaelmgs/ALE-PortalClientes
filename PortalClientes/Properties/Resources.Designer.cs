@@ -601,6 +601,15 @@ namespace PortalClientes.Properties {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Correo secundario:.
+        /// </summary>
+        internal static string Us_CorreoSecundario {
+            get {
+                return ResourceManager.GetString("Us_CorreoSecundario", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Matricula.
         /// </summary>
         internal static string Us_Matricula {
@@ -651,6 +660,15 @@ namespace PortalClientes.Properties {
         internal static string Us_SubTituloPagUsuarios {
             get {
                 return ResourceManager.GetString("Us_SubTituloPagUsuarios", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Telefono oficina:.
+        /// </summary>
+        internal static string Us_TelefonoOficina {
+            get {
+                return ResourceManager.GetString("Us_TelefonoOficina", resourceCulture);
             }
         }
         
@@ -723,6 +741,24 @@ namespace PortalClientes.Properties {
         internal static string Us_TtipModulos {
             get {
                 return ResourceManager.GetString("Us_TtipModulos", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Usuario destino:.
+        /// </summary>
+        internal static string Us_UsuarioDestino {
+            get {
+                return ResourceManager.GetString("Us_UsuarioDestino", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Usuario origen:.
+        /// </summary>
+        internal static string Us_UsuarioOrigen {
+            get {
+                return ResourceManager.GetString("Us_UsuarioOrigen", resourceCulture);
             }
         }
         

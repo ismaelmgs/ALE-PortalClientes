@@ -34,21 +34,31 @@ namespace PortalClientes.DomainModel
         {
             try
             {
-                //TokenWS oToken = Utils.ObtieneToken;
-                //HorasDisponibles oHoras = new HorasDisponibles();
-                //oHoras.claveCliente = "FARMA";
-                //oHoras.tiempoVuelo = "00:50";
+                JavaScriptSerializer ser = new JavaScriptSerializer();
+                TokenWS oToken = Utils.ObtieneToken;
 
-                //var client = new RestClient("http://201.163.208.231/WSMorvelRest/ws/getavailabilityhoursfly");
-                //var request = new RestRequest(Method.POST);
-                //request.AddHeader("Authorization", oToken.token);
+                requestInsertaUsuario oReq = new requestInsertaUsuario();
+                oReq.correo = oUser.Correo;
+                oReq.pass = oUser.Pass;
+                oReq.nombres = oUser.Nombres;
+                oReq.apePat = oUser.ApePat;
+                oReq.apeMat = oUser.ApeMat;
+                oReq.puesto = oUser.Puesto;
+                oReq.telefonoMovil = oUser.TelefonoMovil;
+                oReq.telefonoOficina = oUser.TelefonoOficina;
+                oReq.correoSecundario = oUser.CorreoSecundario;
+                oReq.usuarioCreacion = "i.morato";
 
-                //request.AddJsonBody(oHoras);
 
-                //IRestResponse response = client.Execute(request);
-                //var resp = response.Content;
+                var client = new RestClient(Helper.US_UrlInsertaUsuario);
+                var request = new RestRequest(Method.POST);
+                request.AddHeader("Authorization", oToken.token);
+                request.AddJsonBody(oReq);
 
-                return string.Empty; //resp;
+                IRestResponse response = client.Execute(request);
+                var resp = response.Content;
+
+                return resp;
             }
             catch (Exception ex)
             {
@@ -77,22 +87,26 @@ namespace PortalClientes.DomainModel
             return oUser;
         }
 
+        // MATRICULAS
         public List<Matriculas> ObtieneMatriculas()
         {
             try
             {
                 List<Matriculas> olstMats = new List<Matriculas>();
-                for (int i = 0; i < 50; i++)
-                {
-                    Matriculas oMats = new Matriculas();
-                    oMats.IdAeronave = i;
-                    oMats.Serie = "Serie: " + i.S();
-                    oMats.Matricula = "Mat: " + i.S();
-                    oMats.GrupoModelo = "GM: " + oMats.S();
+                JavaScriptSerializer ser = new JavaScriptSerializer();
+                TokenWS oToken = Utils.ObtieneToken;
+                requestOpcion oRe = new requestOpcion();
+                oRe.opcion = 1;
 
-                    olstMats.Add(oMats);
-                }
+                var client = new RestClient(Helper.US_UrlConsultaMatriculas);
+                var request = new RestRequest(Method.POST);
+                request.AddHeader("Authorization", oToken.token);
+                request.AddJsonBody(oRe);
 
+                IRestResponse response = client.Execute(request);
+                var resp = response.Content;
+                olstMats = ser.Deserialize<List<Matriculas>>(resp);
+                
                 return olstMats;
             }
             catch (Exception ex)
@@ -100,23 +114,179 @@ namespace PortalClientes.DomainModel
                 throw ex;
             }
         }
-
-        public List<Modulos> ObtieneModulos()
+        
+        public responseCodigoMensaje DesvinculaUsuariosMatriculas(int iIdUsuario)
         {
             try
             {
-                List<Modulos> olstMats = new List<Modulos>();
-                for (int i = 0; i < 10; i++)
-                {
-                    Modulos oMats = new Modulos();
-                    oMats.IdModulo = i;
-                    oMats.Clave = "Clave: " + i.S();
-                    oMats.Modulo = "Modulo: " + i.S();
+                JavaScriptSerializer ser = new JavaScriptSerializer();
+                responseCodigoMensaje oCodigo = new responseCodigoMensaje();
 
-                    olstMats.Add(oMats);
+                requestUsuarioOpcion oReq = new requestUsuarioOpcion();
+                oReq.opcion = 1;
+                oReq.idUsuario = iIdUsuario;
+
+                TokenWS oToken = Utils.ObtieneToken;
+
+                var client = new RestClient(Helper.US_UrlDesvinculaUsuarioMats);
+                var request = new RestRequest(Method.POST);
+                request.AddHeader("Authorization", oToken.token);
+                request.AddJsonBody(oReq);
+
+                IRestResponse response = client.Execute(request);
+                var resp = response.Content;
+                oCodigo = ser.Deserialize<responseCodigoMensaje>(resp);
+
+                return oCodigo;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public requestIdUsuario RelacionaUsuarioMatriculas(int iIdUsuario, List<int> oLstMats)
+        {
+            try
+            {
+                JavaScriptSerializer ser = new JavaScriptSerializer();
+                requestIdUsuario oReq = new requestIdUsuario();
+                
+                foreach (int iAeronave in oLstMats)
+                {
+                    requestUsuarioMatricula oReqU = new requestUsuarioMatricula();
+                    oReqU.idUsuario = iIdUsuario;
+                    oReqU.idMatricula = iAeronave;
+                    
+                    TokenWS oToken = Utils.ObtieneToken;
+                    var client = new RestClient(Helper.US_UrlInsertaUsuario);
+                    var request = new RestRequest(Method.POST);
+                    request.AddHeader("Authorization", oToken.token);
+                    request.AddJsonBody(oReq);
+                    
+                    IRestResponse response = client.Execute(request);
+                    var resp = response.Content;
+
+                    oReq = ser.Deserialize<requestIdUsuario>(resp);
                 }
 
-                return olstMats;
+                return oReq;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+
+        // MODULOS
+        public List<ModulosUsuario> ObtieneModulos()
+        {
+            try
+            {
+                List<ModulosUsuario> olstMods = new List<ModulosUsuario>();
+                JavaScriptSerializer ser = new JavaScriptSerializer();
+                TokenWS oToken = Utils.ObtieneToken;
+
+                requestIdUsuario oRe = new requestIdUsuario();
+                oRe.idUsuario = 0;
+
+                var client = new RestClient(Helper.US_UrlObtieneModPorUser);
+                var request = new RestRequest(Method.POST);
+                request.AddHeader("Authorization", oToken.token);
+                request.AddJsonBody(oRe);
+
+                IRestResponse response = client.Execute(request);
+                var resp = response.Content;
+                olstMods = ser.Deserialize<List<ModulosUsuario>>(resp);
+
+                return olstMods;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public List<ModulosUsuario> ObtieneModulosPorUsuario(int iIdUsuario)
+        {
+            try
+            {
+                List<ModulosUsuario> olstMods = new List<ModulosUsuario>();
+                JavaScriptSerializer ser = new JavaScriptSerializer();
+                TokenWS oToken = Utils.ObtieneToken;
+
+                requestIdUsuario oRe = new requestIdUsuario();
+                oRe.idUsuario = iIdUsuario;
+
+                var client = new RestClient(Helper.US_UrlObtieneModPorUser);
+                var request = new RestRequest(Method.POST);
+                request.AddHeader("Authorization", oToken.token);
+                request.AddJsonBody(oRe);
+
+                IRestResponse response = client.Execute(request);
+                var resp = response.Content;
+                olstMods = ser.Deserialize<List<ModulosUsuario>>(resp);
+
+                return olstMods;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public List<ModulosUsuario> RelacionaModulosUsuario(int iIdUsuario, string sModulos)
+        {
+            try
+            {
+                List<ModulosUsuario> olstMods = new List<ModulosUsuario>();
+                JavaScriptSerializer ser = new JavaScriptSerializer();
+                TokenWS oToken = Utils.ObtieneToken;
+
+                requestModulosUsuario oRe = new requestModulosUsuario();
+                oRe.idUsuario = iIdUsuario;
+                oRe.modulos = sModulos;
+
+                var client = new RestClient(Helper.US_UrlRelacionaUsuarioMods);
+                var request = new RestRequest(Method.POST);
+                request.AddHeader("Authorization", oToken.token);
+                request.AddJsonBody(oRe);
+
+                IRestResponse response = client.Execute(request);
+                var resp = response.Content;
+                olstMods = ser.Deserialize<List<ModulosUsuario>>(resp);
+
+                return olstMods;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public List<ModulosUsuario> ClonaPermisosDeUsuarioUsuario(int iIdUsuarioOrigen, int iIdUsuarioDestino)
+        {
+            try
+            {
+                List<ModulosUsuario> olstMods = new List<ModulosUsuario>();
+                JavaScriptSerializer ser = new JavaScriptSerializer();
+                TokenWS oToken = Utils.ObtieneToken;
+
+                requestUsuarioUsuario oRe = new requestUsuarioUsuario();
+                oRe.idUsuarioOrigen = iIdUsuarioOrigen;
+                oRe.idUsuarioDestino = iIdUsuarioDestino;
+
+                var client = new RestClient(Helper.US_UrlClonaPermisosUserUser);
+                var request = new RestRequest(Method.POST);
+                request.AddHeader("Authorization", oToken.token);
+                request.AddJsonBody(oRe);
+
+                IRestResponse response = client.Execute(request);
+                var resp = response.Content;
+                olstMods = ser.Deserialize<List<ModulosUsuario>>(resp);
+
+                return olstMods;
             }
             catch (Exception ex)
             {
