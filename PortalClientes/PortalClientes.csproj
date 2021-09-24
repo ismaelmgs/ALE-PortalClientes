@@ -1527,6 +1527,7 @@
     <Compile Include="DomainModel\DBLogin.cs" />
     <Compile Include="DomainModel\DBUsuarios.cs" />
     <Compile Include="DomainModel\DBUtils.cs" />
+    <Compile Include="Objetos\MatriculasUsuario.cs" />
     <Compile Include="Views\frmDefault.aspx.cs">
       <DependentUpon>frmDefault.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

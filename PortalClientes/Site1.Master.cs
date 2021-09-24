@@ -1,10 +1,12 @@
 ﻿using DevExpress.Web.Bootstrap;
 using PortalClientes.Clases;
 using PortalClientes.Objetos;
+using RestSharp;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Web.Script.Serialization;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
@@ -65,8 +67,8 @@ namespace PortalClientes
 
             foreach (MenuDinamico oMenu in olst)
             {
-                string sNombre = Utils.Idioma == "es-MX" || Utils.Idioma == string.Empty ? oMenu.NombreESP : oMenu.NombreUSD;
-                sHtml += "<li><a href = '" + oMenu.UrlPage + "'><i class='" + oMenu.Style + "'></i>"+ sNombre + "</a></li>";
+                string sNombre = Utils.Idioma == "es-MX" || Utils.Idioma == string.Empty ? oMenu.nombreESP : oMenu.nombreUSD;
+                sHtml += "<li><a href = '" + oMenu.urlPage + "'><i class='" + oMenu.style + "'></i>"+ sNombre + "</a></li>";
             }
                                 //<li><a href = "frmDashboard.aspx">< i class="fa fa-th-large"></i>Dashboard</a></li>
                                 //<li><a href = "frmTuAeronave.aspx">< i class="fa fa-plane"></i>Tu Aeronave</a></li>
@@ -87,13 +89,47 @@ namespace PortalClientes
         {
             try
             {
-                List<MenuDinamico> olst = new List<MenuDinamico>()
-                //MenuDinamico oMenu0 = new MenuDinamico();
-                //oMenu0.UrlPage = "frmDefault.aspx";
-                //oMenu0.Style = "fa fa-home";
-                //oMenu0.NombreESP = "Inicio";
-                //oMenu0.NombreUSD = "Home";
+                List<MenuDinamico> olstFinal = new List<MenuDinamico>();
+                List<ModulosUsuario> olst = new List<ModulosUsuario>();
+                JavaScriptSerializer ser = new JavaScriptSerializer();
+                TokenWS oToken = Utils.ObtieneToken;
+                requestIdUsuario oRe = new requestIdUsuario();
+                oRe.idUsuario = Utils.GetIdEmpUsuario;
 
+                var client = new RestClient(Helper.US_UrlConsultaModulosPorUsuario);
+                var request = new RestRequest(Method.POST);
+                request.AddHeader("Authorization", oToken.token);
+                request.AddJsonBody(oRe);
+
+                IRestResponse response = client.Execute(request);
+                var resp = response.Content;
+                olst = ser.Deserialize<List<ModulosUsuario>>(resp);
+
+                MenuDinamico oMenu0 = new MenuDinamico();
+                oMenu0.urlPage = "frmDefault.aspx";
+                oMenu0.style = "fa fa-home";
+                oMenu0.nombreESP = "Inicio";
+                oMenu0.nombreUSD = "Home";
+
+                olstFinal.Add(oMenu0);
+
+                foreach (ModulosUsuario oMenu in olst)
+                {
+                    if (oMenu.sts == 1)
+                    {
+                        MenuDinamico oM = new MenuDinamico();
+                        oM.urlPage = oMenu.urlPage;
+                        oM.style = oMenu.icono;
+                        oM.nombreESP = oMenu.nombreESP;
+                        oM.nombreUSD = oMenu.nombreENG;
+
+                        olstFinal.Add(oM);
+                    }
+                }
+
+                return olstFinal;
+                
+                /*
                 MenuDinamico oMenu1 = new MenuDinamico();
                 oMenu1.UrlPage = "frmDashboard.aspx";
                 oMenu1.Style = "fa fa-th-large";
@@ -149,6 +185,7 @@ namespace PortalClientes
                 oMenu9.NombreUSD = "Users";
 
 
+                olst.Add(oMenu0);
                 olst.Add(oMenu1);
                 olst.Add(oMenu2);
                 olst.Add(oMenu3);
@@ -158,8 +195,9 @@ namespace PortalClientes
                 olst.Add(oMenu7);
                 olst.Add(oMenu8);
                 olst.Add(oMenu9);
-                
+
                 return olst;
+                */
             }
             catch (Exception ex)
             {

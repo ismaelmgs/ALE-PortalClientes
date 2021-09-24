@@ -8,10 +8,10 @@ namespace PortalClientes.Objetos
     [Serializable]
     public class MenuDinamico
     {
-        public string UrlPage { set; get; }
-        public string Style { set; get; }
-        public string NombreESP { set; get; }
-        public string NombreUSD { set; get; }
+        public string urlPage { set; get; }
+        public string style { set; get; }
+        public string nombreESP { set; get; }
+        public string nombreUSD { set; get; }
     }
 
 
