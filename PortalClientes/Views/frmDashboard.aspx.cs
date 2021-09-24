@@ -72,7 +72,7 @@ namespace PortalClientes.Views
             {
                 if(count == 0)
                 {
-                    lblMes01Vuelo.Text = i.Mes;
+                    lblMes01Vuelo.Text = CambioIdiomaMes(i.Mes, Utils.Idioma);
                     lblMes01VueloNum.Text = i.total.ToString();
                     barV1.Position = 100;
 
@@ -81,14 +81,14 @@ namespace PortalClientes.Views
                 }
                 else if (count == 1)
                 {
-                    lblMes02Vuelo.Text = i.Mes;
+                    lblMes02Vuelo.Text = CambioIdiomaMes(i.Mes, Utils.Idioma);
                     lblMes02VueloNum.Text = i.total.ToString();
                     BarV2.Position = 100;
                     count += 1;
                 }
                 else if (count == 2)
                 {
-                    lblMes03Vuelo.Text = i.Mes;
+                    lblMes03Vuelo.Text = CambioIdiomaMes(i.Mes, Utils.Idioma);
                     lblMes03VueloNum.Text = i.total.ToString();
                     BarV3.Position = 100;
                     count = 0;
@@ -99,7 +99,7 @@ namespace PortalClientes.Views
             {
                 if (count == 0)
                 {
-                    lblMes01bVuelo.Text = i.Mes;
+                    lblMes01bVuelo.Text = CambioIdiomaMes(i.Mes, Utils.Idioma);
                     lblMes01bVueloNum.Text = i.total.ToString();
                     BarH1.Position = 100;
 
@@ -107,14 +107,14 @@ namespace PortalClientes.Views
                 }
                 else if (count == 1)
                 {
-                    lblMes02bVuelo.Text = i.Mes;
+                    lblMes02bVuelo.Text = CambioIdiomaMes(i.Mes, Utils.Idioma);
                     lblMes02bVueloNum.Text = i.total.ToString();
                     BarH2.Position = 100;
                     count += 1;
                 }
                 else if (count == 2)
                 {
-                    lblMes03bVuelo.Text = i.Mes;
+                    lblMes03bVuelo.Text = CambioIdiomaMes(i.Mes, Utils.Idioma);
                     lblMes03bVueloNum.Text = i.total.ToString();
                     BarH3.Position = 100;
                     count = 0;
@@ -125,7 +125,7 @@ namespace PortalClientes.Views
             {
                 if (count == 0)
                 {
-                    lblMes01cVuelo.Text = i.Mes;
+                    lblMes01cVuelo.Text = CambioIdiomaMes(i.Mes, Utils.Idioma);
                     lblMes01cVueloNum.Text = i.total.ToString();
                     BarNM1.Position = 100;
 
@@ -133,19 +133,72 @@ namespace PortalClientes.Views
                 }
                 else if (count == 1)
                 {
-                    lblMes02cVuelo.Text = i.Mes;
+                    lblMes02cVuelo.Text = CambioIdiomaMes(i.Mes, Utils.Idioma);
                     lblMes02cVueloNum.Text = i.total.ToString();
                     BarNM2.Position = 100;
                     count += 1;
                 }
                 else if (count == 2)
                 {
-                    lblMes03cVuelo.Text = i.Mes;
+                    lblMes03cVuelo.Text = CambioIdiomaMes(i.Mes, Utils.Idioma);
                     lblMes03cVueloNum.Text = i.total.ToString();
                     BarNM3.Position = 100;
                     count = 0;
                 }
             }
+        }
+
+        private string CambioIdiomaMes(string mes, string idioma)
+        {
+            var nmIdioma = "";
+            if(idioma == "es-MX")
+            {
+                switch (mes)
+                {
+                    case "January":
+                        nmIdioma = "Enero";
+                        break;
+                    case "February":
+                        nmIdioma = "Febrero";
+                        break;
+                    case "March":
+                        nmIdioma = "Marzo";
+                        break;
+                    case "April":
+                        nmIdioma = "Abril";
+                        break;
+                    case "May":
+                        nmIdioma = "Mayo";
+                        break;
+                    case "June":
+                        nmIdioma = "Junio";
+                        break;
+                    case "July":
+                        nmIdioma = "Julio";
+                        break;
+                    case "August":
+                        nmIdioma = "Agosto";
+                        break;
+                    case "September":
+                        nmIdioma = "Septiembre";
+                        break;
+                    case "October":
+                        nmIdioma = "Octubre";
+                        break;
+                    case "November":
+                        nmIdioma = "Nombiembre";
+                        break;
+                    case "December":
+                        nmIdioma = "Diciembre";
+                        break;
+                }
+            }
+            else
+            {
+                nmIdioma = mes;
+            }
+
+            return nmIdioma;
         }
 
         private void ArmarDashboard()
