@@ -7,11 +7,15 @@ using System.Web;
 using NucleoBase.Core;
 using RestSharp;
 using System.Web.Script.Serialization;
+using System.Data;
+using NucleoBase.BaseDeDatos;
 
 namespace PortalClientes.DomainModel
 {
     public class DBUsuarios
-    { 
+    {
+        public BD_SP oDB_SP = new BD_SP();
+
         public List<Usuario> ObtieneUsuarios()
         {
             JavaScriptSerializer ser = new JavaScriptSerializer();
@@ -114,6 +118,19 @@ namespace PortalClientes.DomainModel
                 throw ex;
             }
         }
+
+        public List<Matriculas> DBGetObtieneMatricuasPorUsuario(int iidUsuario)
+        {
+            oDB_SP.sConexionSQL = "Data Source=192.168.1.39;Initial Catalog=MexJet360;User ID=UsrMexJet;Password=UsrMexJet";
+
+            return oDB_SP.EjecutarDT("[PortalClientes].[spS_PC_ObtieneMatriculasPorUsuario]", "@IdUsuario", iidUsuario).AsEnumerable().Select(r => new Matriculas()
+            {
+                IdAeronave = r["IdAeroave"].S().I(),
+                Serie = r["Serie"].S(),
+                Matricula = r["Matricula"].S(),
+                GrupoModelo = r["Descripcion"].S(),
+            }).ToList();
+        }
         
         public responseCodigoMensaje DesvinculaUsuariosMatriculas(int iIdUsuario)
         {
@@ -159,10 +176,10 @@ namespace PortalClientes.DomainModel
                     oReqU.idMatricula = iAeronave;
                     
                     TokenWS oToken = Utils.ObtieneToken;
-                    var client = new RestClient(Helper.US_UrlInsertaUsuario);
+                    var client = new RestClient(Helper.US_UrlRelacionaUsuarioMats);
                     var request = new RestRequest(Method.POST);
                     request.AddHeader("Authorization", oToken.token);
-                    request.AddJsonBody(oReq);
+                    request.AddJsonBody(oReqU);
                     
                     IRestResponse response = client.Execute(request);
                     var resp = response.Content;

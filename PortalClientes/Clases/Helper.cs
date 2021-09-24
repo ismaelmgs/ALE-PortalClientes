@@ -23,7 +23,9 @@ namespace PortalClientes.Clases
         public const string US_UrlObtieneUsuariosFiltros = "http://201.163.208.231/WSMorvelRestDev/ws/pc/consultaUsuariosFiltros";
         public const string US_UrlInsertaUsuario = "http://201.163.208.231/WSMorvelRestDev/ws/pc/insertaUsuarios";
         public const string US_UrlConsultaMatriculas = "http://201.163.208.231/" + DominioWS + "/ws/pc/consultaMatriculas";
-        //public const string US_UrlConsultaModulos = "http://201.163.208.231/" + DominioWS + "/ws/pc/consultaModulosPorUsuario";
+        
+        public const string US_UrlConsultaModulosPorUsuario = "http://201.163.208.231/" + DominioWS + "/ws/pc/consultaModulosPorUsuario";
+
         public const string US_UrlRelacionaUsuarioMats = "http://201.163.208.231/" + DominioWS + "/ws/pc/relUsuarioMatriculas";
         public const string US_UrlDesvinculaUsuarioMats = "http://201.163.208.231/" + DominioWS + "/ws/pc/desvinculaMatricula";
 

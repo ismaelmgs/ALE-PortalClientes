@@ -45,12 +45,37 @@ namespace PortalClientes.Presenter
         // MATRICULAS
         protected void eSearchMatriculas_Presenter(object sender, EventArgs e)
         {
-            oIView.CargaMatriculas(oIGesCat.ObtieneMatriculas());
+            List<MatriculasUsuario> olstMats = new List<MatriculasUsuario>();
+            List<Matriculas> olstMU = oIGesCat.DBGetObtieneMatricuasPorUsuario(oIView.iIdUsuario);
+            List<Matriculas> olst = oIGesCat.ObtieneMatriculas();
+
+            foreach (Matriculas item in olst)
+            {
+                MatriculasUsuario oMatU = new MatriculasUsuario();
+                oMatU.IdAeronave = item.IdAeronave;
+                oMatU.Serie = item.Serie;
+                oMatU.Matricula = item.Matricula;
+                oMatU.GrupoModelo = item.GrupoModelo;
+
+                foreach (Matriculas itemU in olstMU)
+                {
+                    if (item.IdAeronave == itemU.IdAeronave)
+                        oMatU.sts = 1;
+                }
+
+                olstMats.Add(oMatU);
+            }
+
+            oIView.CargaMatriculas(olstMats);
         }
         
         protected void eSaveMatriculasUsuario_Presenter(object sender, EventArgs e)
         {
-            requestIdUsuario ReqUsuario = oIGesCat.RelacionaUsuarioMatriculas(oIView.iIdUsuario, oIView.olst);
+            responseCodigoMensaje respuesta = oIGesCat.DesvinculaUsuariosMatriculas(oIView.iIdUsuario);
+            if (respuesta.codigo == "0000")
+            {
+                requestIdUsuario ReqUsuario = oIGesCat.RelacionaUsuarioMatriculas(oIView.iIdUsuario, oIView.olst);
+            }
         }
 
         // MODULOS
@@ -76,7 +101,12 @@ namespace PortalClientes.Presenter
 
         protected void eSaveClonaPermisos_Presenter(object sender, EventArgs e)
         {
-            List<ModulosUsuario> olstModUser = oIGesCat.ClonaPermisosDeUsuarioUsuario(oIView.iIdUsuario, oIView.iIdUsuarioDestino);
+            List<ModulosUsuario> olstModUser = oIGesCat.ClonaPermisosDeUsuarioUsuario(oIView.iIdUsuarioOrigen, oIView.iIdUsuario);
+        }
+
+        protected override void ObjSelected_Presenter(object sender, EventArgs e)
+        {
+            oIView.CargaModulosUsuario(oIGesCat.ObtieneModulosPorUsuario(oIView.iIdUsuarioOrigen));
         }
     }
 }

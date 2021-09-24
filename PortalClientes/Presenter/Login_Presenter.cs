@@ -27,6 +27,7 @@ namespace PortalClientes.Presenter
             oUI.sCorreo = oUs.Correo;
             oUI.sPuesto = oUs.Puesto;
             oUI.sIdioma = Utils.Idioma;
+            oUI.iIdUsuario = oUs.IdUsuario;
 
             if (!string.IsNullOrEmpty(oUs.Matriculas))
             {

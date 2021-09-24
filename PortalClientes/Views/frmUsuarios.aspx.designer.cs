@@ -622,7 +622,16 @@ namespace PortalClientes.Views {
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::DevExpress.Web.Bootstrap.BootstrapComboBox ddlUsuarios;
+        protected global::System.Web.UI.WebControls.DropDownList ddlUsuarios;
+        
+        /// <summary>
+        /// Control gvModulosUsuario.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView gvModulosUsuario;
         
         /// <summary>
         /// Control btnAceptarClonar.

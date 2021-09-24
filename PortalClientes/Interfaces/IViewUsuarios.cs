@@ -13,12 +13,14 @@ namespace PortalClientes.Interfaces
         string sFiltro { get; }
         int iIdUsuario { set; get; }
         List<int> olst { set; get; }
-        int iIdUsuarioDestino { set; get; }
+        int iIdUsuarioOrigen { set; get; }
 
 
         void CargaUsuarios(List<Usuario> oLstUsers);
-        void CargaMatriculas(List<Matriculas> olstMats);
+        void CargaMatriculas(List<MatriculasUsuario> olstMats);
         void CargaModulos(List<ModulosUsuario> olstMods);
+        void CargaModulosUsuario(List<ModulosUsuario> olstMods);
+        
 
         event EventHandler eSearchObjFiltros;
         event EventHandler eSearchMatriculas;

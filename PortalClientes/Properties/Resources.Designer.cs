@@ -628,6 +628,15 @@ namespace PortalClientes.Properties {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Module.
+        /// </summary>
+        internal static string Us_ModuloEng {
+            get {
+                return ResourceManager.GetString("Us_ModuloEng", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Nombres:.
         /// </summary>
         internal static string Us_Nombre {
