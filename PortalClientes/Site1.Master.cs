@@ -87,7 +87,13 @@ namespace PortalClientes
         {
             try
             {
-                List<MenuDinamico> olst = new List<MenuDinamico>();
+                List<MenuDinamico> olst = new List<MenuDinamico>()
+                //MenuDinamico oMenu0 = new MenuDinamico();
+                //oMenu0.UrlPage = "frmDefault.aspx";
+                //oMenu0.Style = "fa fa-home";
+                //oMenu0.NombreESP = "Inicio";
+                //oMenu0.NombreUSD = "Home";
+
                 MenuDinamico oMenu1 = new MenuDinamico();
                 oMenu1.UrlPage = "frmDashboard.aspx";
                 oMenu1.Style = "fa fa-th-large";
