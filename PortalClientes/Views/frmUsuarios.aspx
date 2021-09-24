@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="frmUsuarios.aspx.cs" EnableEventValidation="false" Inherits="PortalClientes.Views.frmUsuarios" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="frmUsuarios.aspx.cs" EnableViewState="true" EnableEventValidation="false" Inherits="PortalClientes.Views.frmUsuarios" %>
 
 <%@ Register Assembly="DevExpress.Web.Bootstrap.v18.1, Version=18.1.15.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Namespace="DevExpress.Web.Bootstrap" TagPrefix="dx" %>
 
@@ -465,7 +465,7 @@
     </cc1:ModalPopupExtender>
     <asp:Panel ID="pnlClonar" runat="server" BorderColor="" BackColor="White" HorizontalAlign="Center" Height="" Width=""
          CssClass="modalrlr">
-        <asp:UpdatePanel ID="upaClonar" runat="server">
+        <asp:UpdatePanel ID="upaClonar" runat="server" UpdateMode="Conditional">
             <ContentTemplate>
                 <asp:Button ID="btnCerrarClonar" runat="server" CssClass="btn" Text="X" Font-Bold="true" OnClientClick="OcultarModalClonar();" Style="z-index: 2000;right: 13px;margin-top:10px;position: absolute; color:#ffffff;" />
                 <h5 class="modal-title" style="color:#ffffff;background-color:#2a3f54;width:100%;height:70px;padding-top:15px;">
@@ -477,28 +477,20 @@
                     <br />
                     <h3><asp:Label ID="lblUsuarioDestinoResp" runat="server"></asp:Label></h3>
                     <br />
-                    <dx:BootstrapComboBox ID="ddlUsuarios" runat="server" ValueField="IdUsuario" TextFormatString="{0} {1}" ena
-                        OnValueChanged="ddlUsuarios_ValueChanged" DropDownRows="4">
-                        <Fields>
-                            <dx:BootstrapListBoxField FieldName="Nombres" />
-                            <dx:BootstrapListBoxField FieldName="ApePat" /> 
-                        </Fields>
-                        <ButtonTemplate>
-                            <br />
-                            <span class="btn btn-secondary dropdown-toggle" data-toggle="dropdown-show" style="border-radius:2px;">Clic</span>
-                        </ButtonTemplate>
-                        <ItemTemplate>
-                            <div class="media mb-3">
-                                <%--<dx:BootstrapBinaryImage runat="server" AlternateText="" Value='<%# Eval("Photo") %>' Width="64" Height="68">
-                                    <CssClasses Control="mr-3" />
-                                </dx:BootstrapBinaryImage>--%>
-                                <div class="media-body media-middle" style="padding:5px;">
-                                    <h5 class="mt-0"><%# Eval("Nombres") %> <%# Eval("ApePat") %></h5>
-                                    <%# Eval("Puesto") %>
-                                </div>
-                            </div>
-                        </ItemTemplate>
-                    </dx:BootstrapComboBox>
+                    <%--<dx:BootstrapComboBox ID="BootstrapComboBox1" runat="server"></dx:BootstrapComboBox>--%>
+                    <center>
+                    <asp:DropDownList ID="ddlUsuarios" runat="server" CssClass="form-control" AutoPostBack="true" Width="90%"
+                        OnSelectedIndexChanged="ddlUsuarios_SelectedIndexChanged"></asp:DropDownList>
+                    </center>
+                    <br />
+                    <asp:GridView ID="gvModulosUsuario" runat="server" AutoGenerateColumns="false"
+                        OnRowDataBound="gvModulosUsuario_RowDataBound" Width="100%" CssClass="table table-bordered table-hover">
+                        <Columns>
+                            <asp:BoundField DataField="ClaveModulo" />
+                            <asp:BoundField DataField="NombreESP" />
+                            <asp:BoundField DataField="NombreENG" />
+                        </Columns>
+                    </asp:GridView>
                 </div>
                 <br />
                 <table style="width: 100%;">

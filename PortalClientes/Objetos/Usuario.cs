@@ -45,5 +45,12 @@ namespace PortalClientes.Objetos
         public int IdUsuario { set; get; }
         public int IdMatricula { set; get; }
     }
-    
+
+
+    [Serializable]
+    public class UsuariosCombos
+    {
+        public int IdUsuario { set; get; }
+        public string Nombre { set; get; }
+    }
 }

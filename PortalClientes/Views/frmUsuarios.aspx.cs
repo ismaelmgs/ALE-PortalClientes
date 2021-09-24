@@ -35,6 +35,14 @@ namespace PortalClientes.Views
             //    }
             //}
 
+            //if (Request[ddlUsuarios.UniqueID] != null)
+            //{
+            //    if (Request[ddlUsuarios.UniqueID].Length > 0)
+            //    {
+            //        ddlUsuarios.Value = ddlUsuarios.Value;
+            //    }
+            //}
+
             oPresenter = new Usuarios_Presenter(this, new DBUsuarios());
 
             TextBox milabel = (TextBox)this.Master.FindControl("txtLang");
@@ -136,6 +144,12 @@ namespace PortalClientes.Views
 
         protected void imbAddMats_Click(object sender, ImageClickEventArgs e)
         {
+            GridViewRow row = ((ImageButton)sender).NamingContainer as GridViewRow;
+            if (row != null)
+            {
+                iIdUsuario = gvUsuarios.DataKeys[row.RowIndex]["IdUsuario"].S().I();
+            }
+
             if (eSearchMatriculas != null)
                 eSearchMatriculas(sender, e);
 
@@ -176,6 +190,8 @@ namespace PortalClientes.Views
 
             if (eSaveMatriculasUsuario != null)
                 eSaveMatriculasUsuario(sender, e);
+
+            mpeMats.Hide();
         }
 
         protected void gvMatriculas_RowDataBound(object sender, GridViewRowEventArgs e)
@@ -183,6 +199,18 @@ namespace PortalClientes.Views
             if (e.Row.RowType == DataControlRowType.Header)
             {
                 e.Row.Cells[1].Text = Properties.Resources.Us_Matricula;
+            }
+
+            if (e.Row.RowType == DataControlRowType.DataRow)
+            {
+                if (oLstMatssUser[e.Row.RowIndex].sts == 1)
+                {
+                    CheckBox chk = (CheckBox)e.Row.FindControl("chkSeleccione");
+                    if (chk != null)
+                    {
+                        chk.Checked = true;
+                    }
+                }
             }
         }
 
@@ -206,6 +234,7 @@ namespace PortalClientes.Views
             {
                 e.Row.Cells[1].Text = Properties.Resources.Us_Clave;
                 e.Row.Cells[2].Text = Properties.Resources.Us_Modulo;
+                e.Row.Cells[3].Text = Properties.Resources.Us_ModuloEng;
             }
 
             if (e.Row.RowType == DataControlRowType.DataRow)
@@ -240,6 +269,8 @@ namespace PortalClientes.Views
 
             if (eSaveModulos != null)
                 eSaveModulos(sender, e);
+
+            mpeModulos.Hide();
         }
 
         protected void imbClonUsuarios_Click(object sender, ImageClickEventArgs e)
@@ -254,9 +285,26 @@ namespace PortalClientes.Views
                     lblUsuarioDestinoResp.Text = row.Cells[0].Text + " " + row.Cells[1].Text;
                 }
 
-                ddlUsuarios.DataSource = oLstUsers;
+                List<UsuariosCombos> olsCombo = new List<UsuariosCombos>();
+
+                foreach (Usuario item in oLstUsers)
+                {
+                    UsuariosCombos oUser = new UsuariosCombos();
+                    oUser.IdUsuario = item.IdUsuario;
+                    oUser.Nombre = item.Nombres + " " + item.ApePat + " | " + item.Puesto;
+
+                    olsCombo.Add(oUser);
+                }
+
+
+                ddlUsuarios.DataSource = olsCombo;
+                ddlUsuarios.DataValueField = "IdUsuario";
+                ddlUsuarios.DataTextField = "Nombre";
                 ddlUsuarios.DataBind();
 
+                ddlUsuarios_SelectedIndexChanged(sender, e);
+
+                upaClonar.Update();
                 mpeClonar.Show();
             }
             catch (Exception ex)
@@ -267,10 +315,35 @@ namespace PortalClientes.Views
 
         protected void btnAceptarClonar_Click(object sender, EventArgs e)
         {
-            iIdUsuarioDestino = ddlUsuarios.Value.S().I();
+            iIdUsuarioOrigen = ddlUsuarios.SelectedValue.S().I();
 
             if (eSaveClonaPermisos != null)
                 eSaveClonaPermisos(sender, e);
+
+            mpeClonar.Hide();
+
+            if (eSearchModulos != null)
+                eSearchModulos(sender, e);
+
+            mpeModulos.Show();
+        }
+
+        protected void gvModulosUsuario_RowDataBound(object sender, GridViewRowEventArgs e)
+        {
+            if (e.Row.RowType == DataControlRowType.Header)
+            {
+                e.Row.Cells[0].Text = Properties.Resources.Us_Clave;
+                e.Row.Cells[1].Text = Properties.Resources.Us_Modulo;
+                e.Row.Cells[2].Text = Properties.Resources.Us_ModuloEng;
+            }
+        }
+
+        protected void ddlUsuarios_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            iIdUsuarioOrigen = ddlUsuarios.SelectedValue.S().I();
+
+            if (eObjSelected != null)
+                eObjSelected(sender, e);
         }
 
         #endregion
@@ -324,7 +397,7 @@ namespace PortalClientes.Views
             btnCancelarClonar.Text = Properties.Resources.Cancelar;
 
             lblUsuarioDestino.Text = Properties.Resources.Us_UsuarioDestino;
-            ddlUsuarios.Caption = Properties.Resources.Us_UsuarioOrigen;
+            //ddlUsuarios.Caption = Properties.Resources.Us_UsuarioOrigen;
         }
 
         private void LlenaGrid()
@@ -426,10 +499,11 @@ namespace PortalClientes.Views
             return ban;
         }
 
-        public void CargaMatriculas(List<Matriculas> olstMats)
+        public void CargaMatriculas(List<MatriculasUsuario> olstMats)
         {
             if (olstMats.Count > 0)
             {
+                oLstMatssUser = olstMats;
                 gvMatriculas.DataSource = olstMats;
                 gvMatriculas.DataBind();
             }
@@ -443,6 +517,14 @@ namespace PortalClientes.Views
                 gvModulos.DataSource = oLstModulosUser;
                 gvModulos.DataBind();
             }
+        }
+
+        public void CargaModulosUsuario(List<ModulosUsuario> olstModulos)
+        {
+            List<ModulosUsuario> olst = olstModulos.Where(x => x.sts == 1).ToList();
+
+            gvModulosUsuario.DataSource = olst;
+            gvModulosUsuario.DataBind();
         }
         #endregion
 
@@ -504,6 +586,12 @@ namespace PortalClientes.Views
             set { ViewState["VSModulosUsuario"] = value; }
         }
 
+        public List<MatriculasUsuario> oLstMatssUser
+        {
+            get { return (List<MatriculasUsuario>)ViewState["VSMatriculasUsuario"]; }
+            set { ViewState["VSMatriculasUsuario"] = value; }
+        }
+
         public string sFiltro
         {
             get {
@@ -523,18 +611,16 @@ namespace PortalClientes.Views
             get { return (List<int>)ViewState["VSLista"]; }
         }
 
-        public int iIdUsuarioDestino
+        public int iIdUsuarioOrigen
         {
             get { return ViewState["VSIdUsuarioDestino"].S().I(); }
             set { ViewState["VSIdUsuarioDestino"] = value; }
         }
 
         #endregion
+       
+
         
-        protected void ddlUsuarios_ValueChanged(object sender, EventArgs e)
-        {
-            iIdUsuarioDestino = ddlUsuarios.Value.S().I();
-        }
     }
     
 }

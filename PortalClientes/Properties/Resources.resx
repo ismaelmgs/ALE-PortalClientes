@@ -360,4 +360,7 @@
   <data name="Us_TelefonoOficina" xml:space="preserve">
     <value>Telefono oficina:</value>
   </data>
+  <data name="Us_ModuloEng" xml:space="preserve">
+    <value>Module</value>
+  </data>
 </root>
