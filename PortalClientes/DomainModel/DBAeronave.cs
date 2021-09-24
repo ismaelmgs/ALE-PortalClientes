@@ -4,6 +4,7 @@ using RestSharp;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 using System.Web;
 using System.Web.Script.Serialization;
 
@@ -29,24 +30,16 @@ namespace PortalClientes.DomainModel
             var resp = response.Content;
             a = ser.Deserialize<Aeronave>(resp);
 
-            //a.nombreAeronave = "Infinity 200-F";
-            //a.Fabricante = "EpicGames";
-            //a.Anio = "2021";
-            //a.Modelo = "200-F jet";
-            //a.noRegistro = "345-g-33";
-            //a.noSerie = "3449-f9997-38";
-            //a.noPasajeros = 22;
-            //a.noTripulacion = 2;
-            //a.dimencionesExteriores = "25";
-            //a.dimencionesInteriores = "20";
-            //a.maxGasolina = 20000;
-            //a.minGasolina = 1000;
-            //a.velocidadCrucero = 880;
-            //a.altitudMaxima = 15000;
-            //a.tipoGasolina = "Premium";
-            //a.Rendimiento = 120;
-            //a.Distancia = 25000;
-            //a.Peso = 120;
+            // Carga de Imagenes
+            var clientImg = new RestClient(Helper.D_UrlObtenerImagenesAeronave);
+            var requestImg = new RestRequest(Method.POST);
+            requestImg.AddHeader("Authorization", oToken.token);
+            requestImg.AddJsonBody(oLog);
+
+            IRestResponse responseImg = clientImg.Execute(requestImg);
+            var respImg = responseImg.Content;
+
+            a.Imagenes = ser.Deserialize<List<FotoAeronave>>(respImg);
 
             return a;
         }

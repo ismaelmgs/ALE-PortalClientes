@@ -74,7 +74,7 @@ namespace PortalClientes.Views
                 {
                     lblMes01Vuelo.Text = i.Mes;
                     lblMes01VueloNum.Text = i.total.ToString();
-                    barV1.Position = i.porcentaje;
+                    barV1.Position = 100;
 
 
                     count += 1;
@@ -83,14 +83,14 @@ namespace PortalClientes.Views
                 {
                     lblMes02Vuelo.Text = i.Mes;
                     lblMes02VueloNum.Text = i.total.ToString();
-                    BarV2.Position = i.porcentaje;
+                    BarV2.Position = 100;
                     count += 1;
                 }
                 else if (count == 2)
                 {
                     lblMes03Vuelo.Text = i.Mes;
                     lblMes03VueloNum.Text = i.total.ToString();
-                    BarV3.Position = i.porcentaje;
+                    BarV3.Position = 100;
                     count = 0;
                 }
             }
@@ -101,7 +101,7 @@ namespace PortalClientes.Views
                 {
                     lblMes01bVuelo.Text = i.Mes;
                     lblMes01bVueloNum.Text = i.total.ToString();
-                    BarH1.Position = i.porcentaje;
+                    BarH1.Position = 100;
 
                     count += 1;
                 }
@@ -109,14 +109,14 @@ namespace PortalClientes.Views
                 {
                     lblMes02bVuelo.Text = i.Mes;
                     lblMes02bVueloNum.Text = i.total.ToString();
-                    BarH2.Position = i.porcentaje;
+                    BarH2.Position = 100;
                     count += 1;
                 }
                 else if (count == 2)
                 {
                     lblMes03bVuelo.Text = i.Mes;
                     lblMes03bVueloNum.Text = i.total.ToString();
-                    BarH3.Position = i.porcentaje;
+                    BarH3.Position = 100;
                     count = 0;
                 }
             }
@@ -127,7 +127,7 @@ namespace PortalClientes.Views
                 {
                     lblMes01cVuelo.Text = i.Mes;
                     lblMes01cVueloNum.Text = i.total.ToString();
-                    BarNM1.Position = i.porcentaje;
+                    BarNM1.Position = 100;
 
                     count += 1;
                 }
@@ -135,14 +135,14 @@ namespace PortalClientes.Views
                 {
                     lblMes02cVuelo.Text = i.Mes;
                     lblMes02cVueloNum.Text = i.total.ToString();
-                    BarNM2.Position = i.porcentaje;
+                    BarNM2.Position = 100;
                     count += 1;
                 }
                 else if (count == 2)
                 {
                     lblMes03cVuelo.Text = i.Mes;
                     lblMes03cVueloNum.Text = i.total.ToString();
-                    BarNM3.Position = i.porcentaje;
+                    BarNM3.Position = 100;
                     count = 0;
                 }
             }
