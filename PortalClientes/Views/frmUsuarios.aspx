@@ -477,7 +477,7 @@
                     <br />
                     <h3><asp:Label ID="lblUsuarioDestinoResp" runat="server"></asp:Label></h3>
                     <br />
-                    <dx:BootstrapComboBox ID="ddlUsuarios" runat="server" ValueField="IdUsuario" TextFormatString="{0} {1}"
+                    <dx:BootstrapComboBox ID="ddlUsuarios" runat="server" ValueField="IdUsuario" TextFormatString="{0} {1}" ena
                         OnValueChanged="ddlUsuarios_ValueChanged" DropDownRows="4">
                         <Fields>
                             <dx:BootstrapListBoxField FieldName="Nombres" />

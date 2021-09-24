@@ -33,6 +33,7 @@ namespace PortalClientes.Clases
 
         public const string D_UrlObtenerDashboard = "http://201.163.208.231/WSMorvelRestDev/ws/pc/consultaInfoDashboard";
         public const string D_UrlObtenerAeronave = "http://201.163.208.231/WSMorvelRestDev/ws/pc/consultaMatriculaAeronave";
-        
+
+        public const string D_UrlObtenerImagenesAeronave = "http://201.163.208.231/WSMorvelRestDev/ws/pc/consultaImagenesAeronave";
     }
 }
