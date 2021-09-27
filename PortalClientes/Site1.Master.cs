@@ -251,7 +251,10 @@ namespace PortalClientes
                 Response.Redirect("~/frmLogin.aspx");
             }
 
-            if(e.Item.GroupName == "Group4")
+            string[] pathList = HttpContext.Current.Request.Url.Segments;
+            string path = pathList[2];
+
+            if (e.Item.GroupName == "Group4")
             {
                 if(Utils.MatriculaActual != e.Item.Text)
                 {
@@ -259,6 +262,15 @@ namespace PortalClientes
                     lblAeronave.Text = e.Item.Text;
                     lblAeronaveLat.Text = e.Item.Text;
                 } 
+            }
+
+            if (path == Enums.Dashboard)
+            {
+                Response.Redirect("~/Views/frmDashboard.aspx");
+            }
+            else if (path == Enums.Aeronaves)
+            {
+                Response.Redirect("~/Views/frmTuAeronave.aspx");
             }
         }
     }

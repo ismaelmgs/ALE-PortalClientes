@@ -217,6 +217,7 @@
     <Content Include="build\images\visa.png" />
     <Content Include="build\js\datepicker\daterangepicker.js" />
     <Content Include="build\js\moment\moment.min.js" />
+    <Content Include="build\images\no_image.jpg" />
     <Content Include="jets\fotos_portada_01.jpg" />
     <Content Include="jets\fotos_portada_02.jpg" />
     <Content Include="jets\fotos_portada_03.jpg" />
@@ -1518,6 +1519,7 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Clases\Enums.cs" />
     <Compile Include="Clases\Helper.cs" />
     <Compile Include="Clases\Helper_Mensajes.cs" />
     <Compile Include="Clases\Utils.cs" />
