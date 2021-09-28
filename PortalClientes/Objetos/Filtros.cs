@@ -15,5 +15,6 @@ namespace PortalClientes.Objetos
     public class FiltroMat
     {
         public string matriculaActual { get; set; }
+        public string idioma { get; set; }
     }
 }

@@ -18,6 +18,7 @@ namespace PortalClientes.DomainModel
             Dashboard d = new Dashboard();
             FiltroMat oLog = new FiltroMat();
             oLog.matriculaActual = Utils.MatriculaActual;
+            oLog.idioma = Utils.Idioma;
 
             TokenWS oToken = Utils.ObtieneToken;
 

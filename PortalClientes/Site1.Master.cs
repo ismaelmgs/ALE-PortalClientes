@@ -45,11 +45,13 @@ namespace PortalClientes
         protected void lblIdiomaEspanol_Click(object sender, EventArgs e)
         {
             Utils.Idioma = "es-MX";
+            Page.Response.Redirect(Page.Request.Url.ToString(), true);
         }
 
         protected void lblIdiomaEnglish_Click(object sender, EventArgs e)
         {
             Utils.Idioma = "en-US";
+            Page.Response.Redirect(Page.Request.Url.ToString(), true);
         }
 
         private void ArmaFormulario()
