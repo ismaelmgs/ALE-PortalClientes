@@ -301,6 +301,16 @@
 
             var chart = new google.visualization.PieChart(document.getElementById('piechart_3d'));
             chart.draw(data, options);
+
+            google.visualization.events.addListener(chart, 'select', function () {
+                var selection = chart.getSelection();
+                if (selection.length) {
+                    var row = selection[0].row;
+                    alert(data.getValue(row, 1));
+
+                    window.location.pathname = '/Views/frmTuAeronave.aspx';
+                }
+            });
         }
 
         window.onresize = function() {
