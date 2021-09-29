@@ -256,4 +256,58 @@
             </div>
          </div>
     </div>
+    <br />
+    <div class="row">
+        <div class="col-md-12 col-sm-12">
+            <div class="x_panel">
+                <div class="x_title">
+                    <h2><asp:Label ID="lblCostosCat" runat="server" Text="Costos Por Categoria" Font-Bold="true"></asp:Label></h2>
+                    <ul class="nav navbar-right panel_toolbox">
+                        <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                        </li>
+                        <li><a class="close-link"><i class="fa fa-close"></i></a>
+                        </li>
+                    </ul>
+                    <div class="clearfix"></div>
+                </div>
+                <div class="row">
+                    <div class="col-md-10 offset-2">
+                        <div id="piechart_3d" style="min-height: 400px; width: 100%"></div>
+                    </div>
+                </div>
+            </div>
+         </div>
+    </div>
+    <script>
+        google.charts.load("current", { packages: ["corechart"] });
+        google.charts.setOnLoadCallback(drawChart);
+        function drawChart() {
+            var data = google.visualization.arrayToDataTable([
+                ['Categoria', 'Costos'],
+                ['Crew Expenses', 44.43],
+                ['Fuel', 23.33],
+                ['FBO & Handing', 12.87],
+                ['Maintenance', 10.23],
+                ['Management Company Fees', 8.4],
+                ['Subscriptions & Services', 9.656],
+                ['Insurances',3.87],
+
+            ]);
+
+            var options = {
+                title: 'Costos por Categoria',
+                is3D: true,
+            };
+
+            var chart = new google.visualization.PieChart(document.getElementById('piechart_3d'));
+            chart.draw(data, options);
+        }
+
+        window.onresize = function() {
+            drawChart();
+        };
+
+    </script>
 </asp:Content>
+
+

@@ -39,6 +39,9 @@
 
     <!-- Custom Theme Style -->
     <link href="~/build/css/custom.min.css" rel="stylesheet">
+
+    <script src="https://www.gstatic.com/charts/loader.js"></script>
+      
     <style>
         
     </style>
