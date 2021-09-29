@@ -271,13 +271,20 @@
                     <div class="clearfix"></div>
                 </div>
                 <div class="row">
-                    <div class="col-md-10 offset-2">
+                    <div class="col-md-6">
                         <div id="piechart_3d" style="min-height: 400px; width: 100%"></div>
+                    </div>
+                    <div class="col-md-6">
+                        <!-- Aquí la otra gráfica -->
+                        <div id="" style="min-height: 400px; width: 100%">
+                            Segunda gráfica
+                        </div>
+                        </div>
+                        <!-- Aquí la otra gráfica -->
                     </div>
                 </div>
             </div>
          </div>
-    </div>
     <script>
         google.charts.load("current", { packages: ["corechart"] });
         google.charts.setOnLoadCallback(drawChart);
