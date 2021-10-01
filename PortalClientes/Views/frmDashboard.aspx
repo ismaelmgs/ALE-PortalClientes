@@ -272,59 +272,18 @@
                 </div>
                 <div class="row">
                     <div class="col-md-6">
-                        <div id="piechart_3d" style="min-height: 400px; width: 100%"></div>
+                        <div id="piechart_3d_1" style="min-height: 400px; width: 100%"></div>
                     </div>
                     <div class="col-md-6">
-                        <!-- Aquí la otra gráfica -->
-                        <div id="" style="min-height: 400px; width: 100%">
-                            Segunda gráfica
+                        <div id="piechart_3d_2" style="min-height: 400px; width: 100%">
                         </div>
-                        </div>
-                        <!-- Aquí la otra gráfica -->
                     </div>
+                </div>
                 </div>
             </div>
          </div>
-    <script>
-        google.charts.load("current", { packages: ["corechart"] });
-        google.charts.setOnLoadCallback(drawChart);
-        function drawChart() {
-            var data = google.visualization.arrayToDataTable([
-                ['Categoria', 'Costos'],
-                ['Crew Expenses', 44.43],
-                ['Fuel', 23.33],
-                ['FBO & Handing', 12.87],
-                ['Maintenance', 10.23],
-                ['Management Company Fees', 8.4],
-                ['Subscriptions & Services', 9.656],
-                ['Insurances',3.87],
-
-            ]);
-
-            var options = {
-                title: 'Costos por Categoria',
-                is3D: true,
-            };
-
-            var chart = new google.visualization.PieChart(document.getElementById('piechart_3d'));
-            chart.draw(data, options);
-
-            google.visualization.events.addListener(chart, 'select', function () {
-                var selection = chart.getSelection();
-                if (selection.length) {
-                    var row = selection[0].row;
-                    alert(data.getValue(row, 1));
-
-                    window.location.pathname = '/Views/frmTuAeronave.aspx';
-                }
-            });
-        }
-
-        window.onresize = function() {
-            drawChart();
-        };
-
-    </script>
+    <script src="../vendors/jquery/dist/jquery.js"></script>
+        <script src="../build/js/GraficasJS/GraficasDashboard.js"></script>
 </asp:Content>
 
 

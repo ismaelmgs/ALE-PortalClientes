@@ -216,6 +216,7 @@
     <Content Include="build\images\user.png" />
     <Content Include="build\images\visa.png" />
     <Content Include="build\js\datepicker\daterangepicker.js" />
+    <Content Include="build\js\GraficasJS\GraficasDashboard.js" />
     <Content Include="build\js\moment\moment.min.js" />
     <Content Include="build\images\no_image.jpg" />
     <Content Include="jets\fotos_portada_01.jpg" />
@@ -1531,6 +1532,7 @@
     <Compile Include="DomainModel\DBUsuarios.cs" />
     <Compile Include="DomainModel\DBUtils.cs" />
     <Compile Include="Objetos\MatriculasUsuario.cs" />
+    <Compile Include="Objetos\responseGraficaGastos.cs" />
     <Compile Include="Views\frmDefault.aspx.cs">
       <DependentUpon>frmDefault.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

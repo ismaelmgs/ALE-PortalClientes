@@ -9,11 +9,14 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Web.Services;
+using System.Web.Script.Services;
 
 namespace PortalClientes.Views
 {
     public partial class frmDashboard : System.Web.UI.Page, IViewDashboard
     {
+        private readonly DBDashboard oIGesCat;
         #region EVENTOS
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -165,6 +168,24 @@ namespace PortalClientes.Views
             lblUltimaDeclaracion.Text = Properties.Resources.Das_UltimaDeclaracion;
             lblDeclaracionPara.Text = Properties.Resources.Das_DeclaracionPara;
             lblVence.Text = Properties.Resources.Das_Vence;
+        }
+
+        [WebMethod]
+        public static List<responseGraficaGastos> GetGastos(string meses, DateTime? fechaInicial, DateTime? fechaFinal, string rubro, int tipoRubro)
+        {
+            DBDashboard oIGesCat = new DBDashboard();
+
+            FiltroGraficaGastos fg = new FiltroGraficaGastos();
+            fg.meses = meses;
+            fg.fechaInicial = fechaInicial;
+            fg.fechaFinal = fechaFinal;
+            fg.rubro = rubro;
+            fg.tipoRubro = tipoRubro;
+
+            List<responseGraficaGastos> lrg = new List<responseGraficaGastos>();
+            lrg = oIGesCat.ObtenerGastos(fg);
+
+            return lrg;
         }
 
         #endregion
