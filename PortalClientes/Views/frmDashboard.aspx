@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="frmDashboard.aspx.cs" Inherits="PortalClientes.Views.frmDashboard" %>
+﻿    <%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="frmDashboard.aspx.cs" Inherits="PortalClientes.Views.frmDashboard" %>
 <%@ Register Assembly="DevExpress.Web.Bootstrap.v18.1, Version=18.1.15.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Namespace="DevExpress.Web.Bootstrap" TagPrefix="dx" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
@@ -261,7 +261,7 @@
         <div class="col-md-12 col-sm-12">
             <div class="x_panel">
                 <div class="x_title">
-                    <h2><asp:Label ID="lblCostosCat" runat="server" Text="Costos Por Categoria" Font-Bold="true"></asp:Label></h2>
+                    <h2><asp:Label ID="lblCostosCat" runat="server" Text="Costos Por Categoría" Font-Bold="true"></asp:Label></h2>
                     <ul class="nav navbar-right panel_toolbox">
                         <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
                         </li>
@@ -269,6 +269,29 @@
                         </li>
                     </ul>
                     <div class="clearfix"></div>
+                </div>
+                <div class="row">
+                    <div class="col-md-1">
+                        &nbsp;
+                    </div>
+                    <div class="col-md-2">
+                        <asp:DropDownList ID="ddlGraficaUno" runat="server" CssClass="form-control" AutoPostBack="true" Width="100%"></asp:DropDownList>
+                    </div>
+                    <div class="col-md-2">
+                        <asp:TextBox ID="txtFechaInicioGrafica" runat="server" CssClass="form-control" Type="date" Width="100%"></asp:TextBox>
+                    </div>
+                    <div class="col-md-2">
+                        <asp:TextBox ID="txtFechaFinGrafica" runat="server" CssClass="form-control" Type="date" Width="100%"></asp:TextBox>
+                    </div>
+                    <div class="col-md-2">
+                        <asp:DropDownList ID="ddlGraficaDos" runat="server" CssClass="form-control" AutoPostBack="true" Width="100%"></asp:DropDownList>
+                    </div>
+                    <div class="col-md-2">
+                        <asp:Button ID="btnGraficasBuscar" runat="server" CssClass="btn btn-primary" UseSubmitBehavior="true" OnClientClick="" Text="Buscar"/>
+                    </div>
+                    <div class="col-md-1">
+                        &nbsp;
+                    </div>
                 </div>
                 <div class="row">
                     <div class="col-md-6">
