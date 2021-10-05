@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="frmTuAeronave.aspx.cs" Inherits="PortalClientes.Views.frmTuAeronave" %>
+﻿ <%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="frmTuAeronave.aspx.cs" Inherits="PortalClientes.Views.frmTuAeronave" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -243,7 +243,26 @@
                     <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
                         <br />
                         <div class="table-responsive">
-                            <table class="table table-striped table-bordered table-hover">
+                            <div class="card-box table-responsive">
+                                <asp:GridView ID="gvDocumentos" runat="server" AutoGenerateColumns="false" CssClass="table table-striped table-bordered table-hover"
+                                    DataKeyNames="NombreImagen" AllowPaging="true" OnRowDataBound="gvDocumentos_RowDataBound">
+                                    <HeaderStyle />
+                                    <RowStyle />
+                                    <AlternatingRowStyle />
+                                    <Columns>
+                                        <asp:BoundField DataField="NombreImagen" />
+                                        <asp:TemplateField ItemStyle-HorizontalAlign="Center">
+                                            <ItemTemplate>
+                                                <asp:ImageButton ID="imbViewDoc" runat="server" ImageUrl="~/Images/icons/add_mats.png" Width="24px" Height="28px"
+                                                    OnClick="imbViewDoc_Click" CommandName="Mats" CommandArgument="<%# ((GridViewRow) Container).RowIndex %>" />&nbsp;&nbsp;&nbsp;
+                                                <asp:ImageButton ID="imbDownloadDoc" runat="server" ImageUrl="~/Images/icons/add_permissions.png" Width="26px" Height="28px"
+                                                    OnClick="imbDownloadDoc_Click" CommandName="Modulos" CommandArgument="<%# ((GridViewRow) Container).RowIndex %>" />&nbsp;&nbsp;&nbsp;
+                                            </ItemTemplate>
+                                        </asp:TemplateField>
+                                    </Columns>
+                                </asp:GridView>
+                            </div>
+                            <%--<table class="table table-striped table-bordered table-hover">
                                 <tr>
                                     <th>Nombre de documento
                                     </th>
@@ -268,7 +287,7 @@
                                         <a><i class="fa fa-download"></i></a>
                                     </td>
                                 </tr>
-                            </table>
+                            </table>--%>
                         </div>
                     </div>
                 </div>

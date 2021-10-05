@@ -520,6 +520,42 @@ namespace PortalClientes.Properties {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Acciones.
+        /// </summary>
+        internal static string TabDoc_Acciones {
+            get {
+                return ResourceManager.GetString("TabDoc_Acciones", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Descargar Documento.
+        /// </summary>
+        internal static string TabDoc_DownDoc {
+            get {
+                return ResourceManager.GetString("TabDoc_DownDoc", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Nombre Documento.
+        /// </summary>
+        internal static string TabDoc_Nombre {
+            get {
+                return ResourceManager.GetString("TabDoc_Nombre", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Ver Docuemtno.
+        /// </summary>
+        internal static string TabDoc_VIewDoc {
+            get {
+                return ResourceManager.GetString("TabDoc_VIewDoc", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Agregar usuario.
         /// </summary>
         internal static string Us_AltaUsuario {

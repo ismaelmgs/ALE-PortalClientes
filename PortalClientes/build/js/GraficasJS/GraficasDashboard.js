@@ -1,12 +1,13 @@
-﻿$(document).ready(function () {
-    let url = "/Views/frmDashboard.aspx/GetGastos"; // API URL
+﻿const url = "/Views/frmDashboard.aspx/GetGastos"; // API URL
 
+$(document).ready(function () {
+    
     let obj = JSON.stringify({
-        meses: '6',
-        fechaInicial: '',
-        fechaFinal: '',
+        meses: $("#ContentPlaceHolder1_ddlPeriodo").val(),
+        fechaInicial: $("#ContentPlaceHolder1_txtFechaInicioGrafica").val(),
+        fechaFinal: $("#ContentPlaceHolder1_txtFechaFinGrafica").val(),
         rubro: '',
-        tipoRubro: '1' // 1.fijo 2. var 3. todos
+        tipoRubro: $("#ContentPlaceHolder1_ddlTipoRubro").val() // 1.fijo 2. var 3. todos
     });
 
     ajax_data(obj, url, function (data) {
@@ -19,6 +20,27 @@
         });
     };
 });
+
+$('#btnGraficasBuscar').click(function (event) {
+
+    event.preventDefault();
+    ActualizarGrafica();
+
+});
+
+function ActualizarGrafica() {
+    let obj = JSON.stringify({
+        meses: $("#ContentPlaceHolder1_ddlPeriodo").val(),
+        fechaInicial: $("#ContentPlaceHolder1_txtFechaInicioGrafica").val(),
+        fechaFinal: $("#ContentPlaceHolder1_txtFechaFinGrafica").val(),
+        rubro: '',
+        tipoRubro: $("#ContentPlaceHolder1_ddlTipoRubro").val() // 1.fijo 2. var 3. todos
+    });
+
+    ajax_data(obj, url, function (data) {
+        charts(data, "PieChart"); // Pie Charts
+    });
+}
 
 function ajax_data(obj, url, success) {
     $.ajax({
@@ -62,8 +84,8 @@ function charts(data, ChartType) {
         const numberFormat2 = new Intl.NumberFormat('en-US', opt2);
 
         jsonData.forEach((item, index) => {
-            data.addRows([[item.rubroEsp, item.totalMXN, `${item.rubroEsp} - ${numberFormat.format(item.totalMXN)} MXN`]]);
-            dataE.addRows([[item.rubroEng, item.totalUSD, `${item.rubroEng} - ${numberFormat2.format(item.totalUSD)} USD`]]);
+            data.addRows([[item.rubroEsp, item.totalMXN, `${item.rubroEsp} - ${numberFormat.format(item.totalMXN)} MXN`,]]);
+            dataE.addRows([[item.rubroEng, item.totalUSD, `${item.rubroEng} - ${numberFormat2.format(item.totalUSD)} USD`,]]);
         });
 
         var options = {
@@ -109,8 +131,8 @@ function charts(data, ChartType) {
         google.visualization.events.addListener(chart, 'select', function () {
             var selection = chart.getSelection();
             if (selection.length) {
-                //var row = selection[0].row;
-                //alert(data.getValue(row, 1));
+                var row = selection[0].row;
+                alert(data.getValue(row, 0));
 
                 window.location.pathname = '/Views/frmTuAeronave.aspx';
             }

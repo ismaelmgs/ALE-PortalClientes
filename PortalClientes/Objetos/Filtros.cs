@@ -25,7 +25,7 @@ namespace PortalClientes.Objetos
         public string meses { get; set; }
         public DateTime? fechaInicial { get; set; }
         public DateTime? fechaFinal { get; set; }
-        public string rubro { get; set; }
+        public int rubro { get; set; }
         public string idioma { get; set; }
         public int tipoRubro { get; set; } // 1.fijo 2. var 3. todos
     }

@@ -363,4 +363,16 @@
   <data name="Us_ModuloEng" xml:space="preserve">
     <value>Module</value>
   </data>
+  <data name="TabDoc_Acciones" xml:space="preserve">
+    <value>Acciones</value>
+  </data>
+  <data name="TabDoc_DownDoc" xml:space="preserve">
+    <value>Descargar Documento</value>
+  </data>
+  <data name="TabDoc_Nombre" xml:space="preserve">
+    <value>Nombre Documento</value>
+  </data>
+  <data name="TabDoc_VIewDoc" xml:space="preserve">
+    <value>Ver Docuemtno</value>
+  </data>
 </root>

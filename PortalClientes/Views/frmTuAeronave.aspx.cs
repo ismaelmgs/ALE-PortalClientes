@@ -8,6 +8,8 @@ using System.Linq;
 using System.IO;
 using System.Web.UI.WebControls;
 using System.Drawing;
+using System.Web.UI;
+using System.Collections.Generic;
 
 namespace PortalClientes.Views
 {
@@ -37,6 +39,49 @@ namespace PortalClientes.Views
                 LLenarTuAeronave();
             }
         }
+
+        protected void gvDocumentos_RowDataBound(object sender, GridViewRowEventArgs e)
+        {
+            if (e.Row.RowType == DataControlRowType.Header)
+            {
+                e.Row.Cells[0].Text = Properties.Resources.TabDoc_Nombre;
+                e.Row.Cells[1].Text = Properties.Resources.TabDoc_Acciones;
+
+                ImageButton imbMats = (ImageButton)e.Row.FindControl("imbViewDoc");
+                if (imbMats != null)
+                {
+                    imbMats.ToolTip = Properties.Resources.TabDoc_VIewDoc;
+                }
+
+                ImageButton imbEditarModulos = (ImageButton)e.Row.FindControl("imbDownloadDoc");
+                if (imbEditarModulos != null)
+                {
+                    imbEditarModulos.ToolTip = Properties.Resources.TabDoc_DownDoc;
+                }
+
+            }
+        }
+
+        protected void imbViewDoc_Click(object sender, ImageClickEventArgs e)
+        {
+            GridViewRow row = ((ImageButton)sender).NamingContainer as GridViewRow;
+            if (row != null)
+            {
+                var nombre = gvDocumentos.DataKeys[row.RowIndex]["NombreImagen"];
+            }
+
+        }
+
+        protected void imbDownloadDoc_Click(object sender, ImageClickEventArgs e)
+        {
+            GridViewRow row = ((ImageButton)sender).NamingContainer as GridViewRow;
+            if (row != null)
+            {
+                var nombre = gvDocumentos.DataKeys[row.RowIndex]["NombreImagen"];
+            }
+
+        }
+
         #endregion
 
 
@@ -72,49 +117,65 @@ namespace PortalClientes.Views
             lblPesoRes.Text = oAero.Peso.ToString();
 
             var sHtml = "<ol class='carousel-indicators'>";
-            var sHtmlCarousel = "<div class='carousel-inner'>";
+            var sHtmlCarousel = "<div class='carousel-inner'>";       
 
             var element = 0;
+            var ImgCount = 0;
+            List<FotoAeronave> Lfa = new List<FotoAeronave>();
             foreach (var item in oAeronave.Imagenes)
             {
-                var imgSrc = String.Format("data:image/png;base64,{0}", item.Imagen);
-
-                
-
-                if (element == 0)
+                if(item.Extension != ".pdf")
                 {
-                    sHtml += "<li data-target='#ContentPlaceHolder1_carouselExampleIndicators' data-slide-to='" + element + "' class='active'></li>";
-                    sHtmlCarousel += "<div class='carousel-item active'>" +
-                                     "<img class='d-block w-100' src='" + imgSrc + "' alt='slide " + (element) + "'>" +
-                                     "</div>";
+                    var imgSrc = String.Format("data:image/png;base64,{0}", item.Imagen);
+
+                    if (element == 0)
+                    {
+                        sHtml += "<li data-target='#ContentPlaceHolder1_carouselExampleIndicators' data-slide-to='" + element + "' class='active'></li>";
+                        sHtmlCarousel += "<div class='carousel-item active'>" +
+                                         "<img class='d-block w-100' src='" + imgSrc + "' alt='slide " + (element) + "'>" +
+                                         "</div>";
+                    }
+                    else
+                    {
+                        sHtml += "<li data-target='#ContentPlaceHolder1_carouselExampleIndicators' data-slide-to='" + element + "'></li>";
+                        sHtmlCarousel += "<div class='carousel-item'>" +
+                                         "<img class='d-block w-100' src='" + imgSrc + "' alt='slide " + (element) + "'>" +
+                                         "</div>";
+                    }
+
+                    if ((element + 1) == oAeronave.Imagenes.Where(x => x.Extension != ".pdf").Count())
+                    {
+                        sHtmlCarousel += "</div>";
+                        sHtml += "</ol>";
+
+                        sHtml += sHtmlCarousel;
+
+                        sHtml += "<a class='carousel-control-prev' href='#ContentPlaceHolder1_carouselExampleIndicators' role='button' data-slide='prev'>" +
+                                "<span class='carousel-control-prev-icon' aria-hidden='true'></span>" +
+                                "<span class='sr-only'>Previous</span></a>" +
+                                "<a class='carousel-control-next' href='#ContentPlaceHolder1_carouselExampleIndicators' role='button' data-slide='next'>" +
+                                "<span class='carousel-control-next-icon' aria-hidden='true'></span>" +
+                                "<span class='sr-only'>Next</span></a>";
+                    }
+
+                    element++;
+                    ImgCount++;
                 }
                 else
                 {
-                    sHtml += "<li data-target='#ContentPlaceHolder1_carouselExampleIndicators' data-slide-to='" + element + "'></li>";
-                    sHtmlCarousel += "<div class='carousel-item'>" +
-                                     "<img class='d-block w-100' src='" + imgSrc + "' alt='slide " + (element) + "'>" +
-                                     "</div>";
+                    FotoAeronave fa = new FotoAeronave();
+                    fa.NombreImagen = item.NombreImagen;
+                    fa.Extension = item.Extension;
+                    fa.Imagen = item.Imagen;
+
+                    Lfa.Add(fa);
                 }
-
-                if ((element + 1) == oAeronave.Imagenes.Count())
-                {
-                    sHtmlCarousel += "</div>";
-                    sHtml += "</ol>";
-
-                    sHtml += sHtmlCarousel;
-
-                    sHtml += "<a class='carousel-control-prev' href='#ContentPlaceHolder1_carouselExampleIndicators' role='button' data-slide='prev'>" +
-                            "<span class='carousel-control-prev-icon' aria-hidden='true'></span>" +
-                            "<span class='sr-only'>Previous</span></a>" +
-                            "<a class='carousel-control-next' href='#ContentPlaceHolder1_carouselExampleIndicators' role='button' data-slide='next'>" +
-                            "<span class='carousel-control-next-icon' aria-hidden='true'></span>" +
-                            "<span class='sr-only'>Next</span></a>";
-                }
-
-                element++;
             }
 
-            if(oAeronave.Imagenes.Count() == 0)
+            gvDocumentos.DataSource = Lfa;
+            gvDocumentos.DataBind();
+
+            if (ImgCount == 0)
             {
                 sHtml += "<li data-target='#ContentPlaceHolder1_carouselExampleIndicators' data-slide-to='0' class='active'></li></ol>";
                 sHtmlCarousel += "<div class='carousel-item active'>" +

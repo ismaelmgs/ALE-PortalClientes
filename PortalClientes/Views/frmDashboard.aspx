@@ -85,7 +85,7 @@
                         <a class="nav-link" id="profiletab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false"><asp:Label ID="lblHorasVuelo" runat="server"></asp:Label></a>
                       </li>
                       <li class="nav-item"> 
-                        <a class="nav-link" id="contacttab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false"><asp:Label ID="lblNMVuelo" runat="server"></asp:Label></a>
+                        <a class="nav-link" hidden id="contacttab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false"><asp:Label ID="lblNMVuelo" runat="server"></asp:Label></a>
                       </li>
                     </ul>
                     <div class="tab-content" id="myTabContent">
@@ -161,7 +161,7 @@
                             </div>
                           </div>
                       </div>
-                      <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab"> <br />
+                      <div class="tab-pane fade" id="contact" hidden role="tabpanel" aria-labelledby="contact-tab"> <br />
                           <div class="widget_summary">
                             <div class="w_left w_25">
                               <asp:Label ID="lblMes01cVuelo" runat="server" Text="Mes 1c"></asp:Label>
@@ -271,26 +271,20 @@
                     <div class="clearfix"></div>
                 </div>
                 <div class="row">
-                    <div class="col-md-1">
-                        &nbsp;
-                    </div>
                     <div class="col-md-2">
-                        <asp:DropDownList ID="ddlGraficaUno" runat="server" CssClass="form-control" AutoPostBack="true" Width="100%"></asp:DropDownList>
+                        <asp:DropDownList ID="ddlPeriodo" runat="server" CssClass="form-control" Width="100%"></asp:DropDownList>
                     </div>
-                    <div class="col-md-2">
+                    <div class="col-md-3">
                         <asp:TextBox ID="txtFechaInicioGrafica" runat="server" CssClass="form-control" Type="date" Width="100%"></asp:TextBox>
                     </div>
-                    <div class="col-md-2">
+                    <div class="col-md-3">
                         <asp:TextBox ID="txtFechaFinGrafica" runat="server" CssClass="form-control" Type="date" Width="100%"></asp:TextBox>
                     </div>
                     <div class="col-md-2">
-                        <asp:DropDownList ID="ddlGraficaDos" runat="server" CssClass="form-control" AutoPostBack="true" Width="100%"></asp:DropDownList>
+                        <asp:DropDownList ID="ddlTipoRubro" runat="server" CssClass="form-control" Width="100%"></asp:DropDownList>
                     </div>
                     <div class="col-md-2">
-                        <asp:Button ID="btnGraficasBuscar" runat="server" CssClass="btn btn-primary" UseSubmitBehavior="true" OnClientClick="" Text="Buscar"/>
-                    </div>
-                    <div class="col-md-1">
-                        &nbsp;
+                        <button id="btnGraficasBuscar" class="btn btn-primary">Actualizar</button>
                     </div>
                 </div>
                 <div class="row">

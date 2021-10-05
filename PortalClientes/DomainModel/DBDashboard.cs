@@ -37,7 +37,7 @@ namespace PortalClientes.DomainModel
         public List<responseGraficaGastos> ObtenerGastos(FiltroGraficaGastos filtro)
         {
             JavaScriptSerializer ser = new JavaScriptSerializer();
-            Dashboard d = new Dashboard();
+            responseGraficaGastos d = new responseGraficaGastos();
             FiltroGraficaGastos oLog = new FiltroGraficaGastos();
             oLog = filtro;
             oLog.matricula = Utils.MatriculaActual;
@@ -45,14 +45,14 @@ namespace PortalClientes.DomainModel
 
             TokenWS oToken = Utils.ObtieneToken;
 
-            var client = new RestClient(Helper.D_UrlObtenerDashboard);
+            var client = new RestClient(Helper.D_UrlObbtenerGastoRubros);
             var request = new RestRequest(Method.POST);
             request.AddHeader("Authorization", oToken.token);
             request.AddJsonBody(oLog);
 
-            //IRestResponse response = client.Execute(request);
-            //var resp = response.Content;
-            //d = ser.Deserialize<Dashboard>(resp);
+            IRestResponse response = client.Execute(request);
+            var resp = response.Content;
+            //d = ser.Deserialize<responseGraficaGastos>(resp);
 
             //return d;
 

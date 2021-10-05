@@ -16,7 +16,6 @@ namespace PortalClientes.Views
 {
     public partial class frmDashboard : System.Web.UI.Page, IViewDashboard
     {
-        private readonly DBDashboard oIGesCat;
         #region EVENTOS
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -77,7 +76,7 @@ namespace PortalClientes.Views
                 {
                     lblMes01Vuelo.Text = i.Mes;
                     lblMes01VueloNum.Text = i.total.ToString();
-                    barV1.Position = 100;
+                    barV1.Position = i.porcentaje;
 
 
                     count += 1;
@@ -86,14 +85,14 @@ namespace PortalClientes.Views
                 {
                     lblMes02Vuelo.Text = i.Mes;
                     lblMes02VueloNum.Text = i.total.ToString();
-                    BarV2.Position = 100;
+                    BarV2.Position = i.porcentaje;
                     count += 1;
                 }
                 else if (count == 2)
                 {
                     lblMes03Vuelo.Text = i.Mes;
                     lblMes03VueloNum.Text = i.total.ToString();
-                    BarV3.Position = 100;
+                    BarV3.Position = i.porcentaje;
                     count = 0;
                 }
             }
@@ -104,7 +103,7 @@ namespace PortalClientes.Views
                 {
                     lblMes01bVuelo.Text = i.Mes;
                     lblMes01bVueloNum.Text = i.total.ToString();
-                    BarH1.Position = 100;
+                    BarH1.Position = i.porcentaje;
 
                     count += 1;
                 }
@@ -112,14 +111,14 @@ namespace PortalClientes.Views
                 {
                     lblMes02bVuelo.Text = i.Mes;
                     lblMes02bVueloNum.Text = i.total.ToString();
-                    BarH2.Position = 100;
+                    BarH2.Position = i.porcentaje;
                     count += 1;
                 }
                 else if (count == 2)
                 {
                     lblMes03bVuelo.Text = i.Mes;
                     lblMes03bVueloNum.Text = i.total.ToString();
-                    BarH3.Position = 100;
+                    BarH3.Position = i.porcentaje;
                     count = 0;
                 }
             }
@@ -130,7 +129,7 @@ namespace PortalClientes.Views
                 {
                     lblMes01cVuelo.Text = i.Mes;
                     lblMes01cVueloNum.Text = i.total.ToString();
-                    BarNM1.Position = 100;
+                    BarNM1.Position = i.porcentaje;
 
                     count += 1;
                 }
@@ -138,17 +137,35 @@ namespace PortalClientes.Views
                 {
                     lblMes02cVuelo.Text = i.Mes;
                     lblMes02cVueloNum.Text = i.total.ToString();
-                    BarNM2.Position = 100;
+                    BarNM2.Position = i.porcentaje;
                     count += 1;
                 }
                 else if (count == 2)
                 {
                     lblMes03cVuelo.Text = i.Mes;
                     lblMes03cVueloNum.Text = i.total.ToString();
-                    BarNM3.Position = 100;
+                    BarNM3.Position = i.porcentaje;
                     count = 0;
                 }
             }
+
+            // llenar dropdown Periodo
+            ddlPeriodo.Items.Clear();
+            ddlPeriodo.Items.Add(new ListItem("Manual", "0"));
+            ddlPeriodo.Items.Add(new ListItem("Mensual", "1"));
+            ddlPeriodo.Items.Add(new ListItem("Trimestral", "3"));
+            ddlPeriodo.Items.Add(new ListItem("Semestral", "6"));
+            ddlPeriodo.Items.Add(new ListItem("Anual", "12"));
+
+            ddlPeriodo.SelectedIndex = 1;
+
+            // llenar dropdown Tipo Rubro
+            ddlTipoRubro.Items.Clear();
+            ddlTipoRubro.Items.Add(new ListItem("Fijo", "1"));
+            ddlTipoRubro.Items.Add(new ListItem("Variable", "2"));
+            ddlTipoRubro.Items.Add(new ListItem("Todos", "3"));
+
+            ddlPeriodo.SelectedIndex = 3;
         }
 
         private void ArmarDashboard()
@@ -179,7 +196,7 @@ namespace PortalClientes.Views
             fg.meses = meses;
             fg.fechaInicial = fechaInicial;
             fg.fechaFinal = fechaFinal;
-            fg.rubro = rubro;
+            fg.rubro = 0; // modificar despues
             fg.tipoRubro = tipoRubro;
 
             List<responseGraficaGastos> lrg = new List<responseGraficaGastos>();
