@@ -44,7 +44,7 @@
                             <asp:DropDownList id="ddlFiltro" runat="server" CssClass="form-control">
                                 <asp:ListItem Selected="True" Value="Próximos tres meses"> Próximos 3 meses </asp:ListItem>
                                 <asp:ListItem Value="Próximos dos meses"> Próximos 2 meses </asp:ListItem>
-                                <asp:ListItem Value="Próximo mes"> Próximo mese </asp:ListItem>
+                                <asp:ListItem Value="Próximo mes"> Próximo mes </asp:ListItem>
                             </asp:DropDownList>
                         </div>
                         <div class="col-md-2" style="text-align:center;">
