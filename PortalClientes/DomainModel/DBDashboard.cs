@@ -37,7 +37,7 @@ namespace PortalClientes.DomainModel
         public List<responseGraficaGastos> ObtenerGastos(FiltroGraficaGastos filtro)
         {
             JavaScriptSerializer ser = new JavaScriptSerializer();
-            responseGraficaGastos d = new responseGraficaGastos();
+            List<responseGraficaGastos> d = new List<responseGraficaGastos>();
             FiltroGraficaGastos oLog = new FiltroGraficaGastos();
             oLog = filtro;
             oLog.matricula = Utils.MatriculaActual;
@@ -52,42 +52,10 @@ namespace PortalClientes.DomainModel
 
             IRestResponse response = client.Execute(request);
             var resp = response.Content;
-            //d = ser.Deserialize<responseGraficaGastos>(resp);
 
-            //return d;
+            d = ser.Deserialize<List<responseGraficaGastos>>(resp);
 
-            List<responseGraficaGastos> lrg = new List<responseGraficaGastos>();
-
-            var item = new responseGraficaGastos();
-            item.rubroEsp = "Tripulacion";
-            item.rubroEng = "Crew";
-            item.totalMXN = 330000.00;
-            item.totalUSD = 10000.00;
-            lrg.Add(item);
-
-            item = new responseGraficaGastos();
-            item.rubroEsp = "Capital";
-            item.rubroEng = "Capital";
-            item.totalMXN = 150000.00;
-            item.totalUSD = 12000.00;
-            lrg.Add(item);
-
-            item = new responseGraficaGastos();
-            item.rubroEsp = "Combustible";
-            item.rubroEng = "Fuel";
-            item.totalMXN = 33000.00;
-            item.totalUSD = 15000.00;
-            lrg.Add(item);
-
-            item = new responseGraficaGastos();
-            item.rubroEsp = "DIVERSOS";
-            item.rubroEng = "DIVERSOS";
-            item.totalMXN = 120000.00;
-            item.totalUSD = 6000.00;
-            lrg.Add(item);
-
-
-            return lrg;
+            return d;
         }
     }
 }

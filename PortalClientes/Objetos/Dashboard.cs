@@ -15,9 +15,9 @@ namespace PortalClientes.Objetos
         public string CiudadDestino { get; set; }
         public string Salida { get; set; }
         public string Llegada { get; set; }
-        public double SaldoActual { get; set; }
-        public double SaldoAlVencimiento { get; set; }
-        public double SaldoUltimaDeclaracion { get; set; }
+        public double? SaldoActual { get; set; }
+        public double? SaldoAlVencimiento { get; set; }
+        public double? SaldoUltimaDeclaracion { get; set; }
         public string FechaInicioDeclaracion { get; set; }
         public string FechaFinDeclaracion { get; set; }
 
@@ -32,7 +32,7 @@ namespace PortalClientes.Objetos
     public class totalesMes
     {
         public string Mes { get; set; }
-        public decimal total { get; set; }
-        public decimal porcentaje { get; set; }
+        public decimal? total { get; set; }
+        public decimal? porcentaje { get; set; }
     }
 }

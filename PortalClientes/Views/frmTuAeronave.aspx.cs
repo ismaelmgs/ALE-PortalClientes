@@ -42,10 +42,13 @@ namespace PortalClientes.Views
 
         protected void gvDocumentos_RowDataBound(object sender, GridViewRowEventArgs e)
         {
+
             if (e.Row.RowType == DataControlRowType.Header)
             {
                 e.Row.Cells[0].Text = Properties.Resources.TabDoc_Nombre;
-                e.Row.Cells[1].Text = Properties.Resources.TabDoc_Acciones;
+                e.Row.Cells[1].Visible = false;
+                e.Row.Cells[2].Visible = false;
+                e.Row.Cells[3].Text = Properties.Resources.TabDoc_Acciones;
 
                 ImageButton imbMats = (ImageButton)e.Row.FindControl("imbViewDoc");
                 if (imbMats != null)
@@ -60,6 +63,12 @@ namespace PortalClientes.Views
                 }
 
             }
+
+            if (e.Row.RowType == DataControlRowType.DataRow)
+            {
+                e.Row.Cells[1].Visible = false;
+                e.Row.Cells[2].Visible = false;
+            }
         }
 
         protected void imbViewDoc_Click(object sender, ImageClickEventArgs e)
@@ -67,7 +76,7 @@ namespace PortalClientes.Views
             GridViewRow row = ((ImageButton)sender).NamingContainer as GridViewRow;
             if (row != null)
             {
-                var nombre = gvDocumentos.DataKeys[row.RowIndex]["NombreImagen"];
+                var nombre = gvDocumentos.DataKeys[row.RowIndex]["Imagen"];
             }
 
         }
@@ -75,10 +84,24 @@ namespace PortalClientes.Views
         protected void imbDownloadDoc_Click(object sender, ImageClickEventArgs e)
         {
             GridViewRow row = ((ImageButton)sender).NamingContainer as GridViewRow;
+            var nombre = "";
+            var ext = "";
+            var img = "";
             if (row != null)
             {
-                var nombre = gvDocumentos.DataKeys[row.RowIndex]["NombreImagen"];
+                nombre = gvDocumentos.Rows[row.RowIndex].Cells[0].Text;
+                ext = gvDocumentos.Rows[row.RowIndex].Cells[1].Text;
+                img = gvDocumentos.Rows[row.RowIndex].Cells[2].Text;
             }
+
+            Response.Clear();
+
+            Response.AddHeader("content-disposition", string.Format("attachment;filename={0}", nombre));
+            Response.ContentType = "application/octet-stream";
+
+            Byte[] bytes = Convert.FromBase64String(img);
+            Response.BinaryWrite(bytes);
+            Response.End();
 
         }
 

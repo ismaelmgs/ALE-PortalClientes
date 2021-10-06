@@ -76,7 +76,7 @@ namespace PortalClientes.Views
                 {
                     lblMes01Vuelo.Text = i.Mes;
                     lblMes01VueloNum.Text = i.total.ToString();
-                    barV1.Position = i.porcentaje;
+                    barV1.Position = i.porcentaje.Value;
 
 
                     count += 1;
@@ -85,14 +85,14 @@ namespace PortalClientes.Views
                 {
                     lblMes02Vuelo.Text = i.Mes;
                     lblMes02VueloNum.Text = i.total.ToString();
-                    BarV2.Position = i.porcentaje;
+                    BarV2.Position = i.porcentaje.Value;
                     count += 1;
                 }
                 else if (count == 2)
                 {
                     lblMes03Vuelo.Text = i.Mes;
                     lblMes03VueloNum.Text = i.total.ToString();
-                    BarV3.Position = i.porcentaje;
+                    BarV3.Position = i.porcentaje.Value;
                     count = 0;
                 }
             }
@@ -103,7 +103,7 @@ namespace PortalClientes.Views
                 {
                     lblMes01bVuelo.Text = i.Mes;
                     lblMes01bVueloNum.Text = i.total.ToString();
-                    BarH1.Position = i.porcentaje;
+                    BarH1.Position = i.porcentaje.Value;
 
                     count += 1;
                 }
@@ -111,14 +111,14 @@ namespace PortalClientes.Views
                 {
                     lblMes02bVuelo.Text = i.Mes;
                     lblMes02bVueloNum.Text = i.total.ToString();
-                    BarH2.Position = i.porcentaje;
+                    BarH2.Position = i.porcentaje.Value;
                     count += 1;
                 }
                 else if (count == 2)
                 {
                     lblMes03bVuelo.Text = i.Mes;
                     lblMes03bVueloNum.Text = i.total.ToString();
-                    BarH3.Position = i.porcentaje;
+                    BarH3.Position = i.porcentaje.Value;
                     count = 0;
                 }
             }
@@ -129,7 +129,7 @@ namespace PortalClientes.Views
                 {
                     lblMes01cVuelo.Text = i.Mes;
                     lblMes01cVueloNum.Text = i.total.ToString();
-                    BarNM1.Position = i.porcentaje;
+                    BarNM1.Position = i.porcentaje.Value;
 
                     count += 1;
                 }
@@ -137,14 +137,14 @@ namespace PortalClientes.Views
                 {
                     lblMes02cVuelo.Text = i.Mes;
                     lblMes02cVueloNum.Text = i.total.ToString();
-                    BarNM2.Position = i.porcentaje;
+                    BarNM2.Position = i.porcentaje.Value;
                     count += 1;
                 }
                 else if (count == 2)
                 {
                     lblMes03cVuelo.Text = i.Mes;
                     lblMes03cVueloNum.Text = i.total.ToString();
-                    BarNM3.Position = i.porcentaje;
+                    BarNM3.Position = i.porcentaje.Value;
                     count = 0;
                 }
             }
@@ -157,7 +157,7 @@ namespace PortalClientes.Views
             ddlPeriodo.Items.Add(new ListItem("Semestral", "6"));
             ddlPeriodo.Items.Add(new ListItem("Anual", "12"));
 
-            ddlPeriodo.SelectedIndex = 1;
+            ddlPeriodo.SelectedIndex = 3;
 
             // llenar dropdown Tipo Rubro
             ddlTipoRubro.Items.Clear();
@@ -165,7 +165,7 @@ namespace PortalClientes.Views
             ddlTipoRubro.Items.Add(new ListItem("Variable", "2"));
             ddlTipoRubro.Items.Add(new ListItem("Todos", "3"));
 
-            ddlPeriodo.SelectedIndex = 3;
+            ddlTipoRubro.SelectedIndex = 2;
         }
 
         private void ArmarDashboard()
@@ -196,7 +196,7 @@ namespace PortalClientes.Views
             fg.meses = meses;
             fg.fechaInicial = fechaInicial;
             fg.fechaFinal = fechaFinal;
-            fg.rubro = 0; // modificar despues
+            fg.rubro = 5; // modificar despues
             fg.tipoRubro = tipoRubro;
 
             List<responseGraficaGastos> lrg = new List<responseGraficaGastos>();

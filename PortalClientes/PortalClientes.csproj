@@ -219,6 +219,8 @@
     <Content Include="build\js\GraficasJS\GraficasDashboard.js" />
     <Content Include="build\js\moment\moment.min.js" />
     <Content Include="build\images\no_image.jpg" />
+    <Content Include="Images\icons\descargar.png" />
+    <Content Include="Images\icons\visualizar.png" />
     <Content Include="jets\fotos_portada_01.jpg" />
     <Content Include="jets\fotos_portada_02.jpg" />
     <Content Include="jets\fotos_portada_03.jpg" />

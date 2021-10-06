@@ -84,8 +84,8 @@ function charts(data, ChartType) {
         const numberFormat2 = new Intl.NumberFormat('en-US', opt2);
 
         jsonData.forEach((item, index) => {
-            data.addRows([[item.rubroEsp, item.totalMXN, `${item.rubroEsp} - ${numberFormat.format(item.totalMXN)} MXN`,]]);
-            dataE.addRows([[item.rubroEng, item.totalUSD, `${item.rubroEng} - ${numberFormat2.format(item.totalUSD)} USD`,]]);
+            data.addRows([[item.rubroESP, item.totalMXN, `${item.rubroESP} - ${numberFormat.format(item.totalMXN)} MXN`,]]);
+            dataE.addRows([[item.rubroENG, item.totalUSD, `${item.rubroENG} - ${numberFormat2.format(item.totalUSD)} USD`,]]);
         });
 
         var options = {
@@ -132,9 +132,20 @@ function charts(data, ChartType) {
             var selection = chart.getSelection();
             if (selection.length) {
                 var row = selection[0].row;
-                alert(data.getValue(row, 0));
+                //alert(data.getValue(row, 0));
 
-                window.location.pathname = '/Views/frmTuAeronave.aspx';
+                let array = jsonData[row];
+                const gastos = array.Gastos
+
+                $.ajax({
+                    data: JSON.stringify(gastos),
+                    contentType: "Application/json;",
+                    method: 'POST',
+                    url: "/Views/frmTransacciones.aspx",
+                    dataType: "json",
+                });
+
+                //window.location.pathname = '/Views/frmTuAeronave.aspx';
             }
         });
 

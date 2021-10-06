@@ -245,49 +245,25 @@
                         <div class="table-responsive">
                             <div class="card-box table-responsive">
                                 <asp:GridView ID="gvDocumentos" runat="server" AutoGenerateColumns="false" CssClass="table table-striped table-bordered table-hover"
-                                    DataKeyNames="NombreImagen" AllowPaging="true" OnRowDataBound="gvDocumentos_RowDataBound">
+                                    DataKeyNames="NombreImagen" AllowPaging="true" OnRowDataBound="gvDocumentos_RowDataBound" EmptyDataText="No Registros">
                                     <HeaderStyle />
                                     <RowStyle />
                                     <AlternatingRowStyle />
                                     <Columns>
                                         <asp:BoundField DataField="NombreImagen" />
+                                        <asp:BoundField DataField="Extension" HeaderText="ID" ItemStyle-CssClass="hiddencol"  HeaderStyle-CssClass="hiddencol"/>
+                                        <asp:BoundField DataField="Imagen" HeaderText="ID" ItemStyle-CssClass="hiddencol"  HeaderStyle-CssClass="hiddencol"/>
                                         <asp:TemplateField ItemStyle-HorizontalAlign="Center">
                                             <ItemTemplate>
-                                                <asp:ImageButton ID="imbViewDoc" runat="server" ImageUrl="~/Images/icons/add_mats.png" Width="24px" Height="28px"
+                                                <asp:ImageButton ID="imbViewDoc" runat="server" ImageUrl="~/Images/icons/visualizar.png" Width="24px" Height="28px"
                                                     OnClick="imbViewDoc_Click" CommandName="Mats" CommandArgument="<%# ((GridViewRow) Container).RowIndex %>" />&nbsp;&nbsp;&nbsp;
-                                                <asp:ImageButton ID="imbDownloadDoc" runat="server" ImageUrl="~/Images/icons/add_permissions.png" Width="26px" Height="28px"
+                                                <asp:ImageButton ID="imbDownloadDoc" runat="server" ImageUrl="~/Images/icons/descargar.png" Width="26px" Height="28px"
                                                     OnClick="imbDownloadDoc_Click" CommandName="Modulos" CommandArgument="<%# ((GridViewRow) Container).RowIndex %>" />&nbsp;&nbsp;&nbsp;
                                             </ItemTemplate>
                                         </asp:TemplateField>
                                     </Columns>
                                 </asp:GridView>
                             </div>
-                            <%--<table class="table table-striped table-bordered table-hover">
-                                <tr>
-                                    <th>Nombre de documento
-                                    </th>
-                                    <th>Tipo de Documento
-                                    </th>
-                                    <th>Fecha de carga
-                                    </th>
-                                    <th>Acciones
-                                    </th>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <asp:Label ID="lblNombreDocRes" runat="server" Text="---" Font-Bold="true"></asp:Label>
-                                    </td>
-                                    <td>
-                                        <asp:Label ID="lblTipoDocRes" runat="server" Text="---" Font-Bold="true"></asp:Label>
-                                    </td>
-                                    <td>
-                                        <asp:Label ID="lblFechaUpload" runat="server" Text="---" Font-Bold="true"></asp:Label>
-                                    </td>
-                                    <td style="text-align: center;">
-                                        <a><i class="fa fa-download"></i></a>
-                                    </td>
-                                </tr>
-                            </table>--%>
                         </div>
                     </div>
                 </div>
@@ -297,4 +273,11 @@
             </div>
         </div>
     </div>
+
+    <style type="text/css">
+      .hiddencol
+      {
+        display: none;
+      }
+    </style>
 </asp:Content>
