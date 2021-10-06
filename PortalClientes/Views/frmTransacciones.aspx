@@ -75,10 +75,10 @@
                         </asp:dropdownlist>
                     </li>
                     <li style="padding-left:5px;">
-                        <asp:LinkButton ID="btnExcel" runat="server" Text="<i class='fa fa-file-excel-o' style='color:#2a3f54;font-size:22px;'></i>" CssClass="btn btn-success" />
+                        <asp:LinkButton ID="btnExcel" runat="server" Text="<i class='fa fa-file-excel-o' style='color:#ffffff;font-size:22px;'></i>" CssClass="btn btn-primary" />
                     </li>
                     <li>
-                        <asp:LinkButton ID="btnPDF" runat="server" Text="<i class='fa fa-file-pdf-o' style='color:#2a3f54;font-size:22px;'></i>" CssClass="btn btn-success" />
+                        <asp:LinkButton ID="btnPDF" runat="server" Text="<i class='fa fa-file-pdf-o' style='color:#ffffff;font-size:22px;'></i>" CssClass="btn btn-primary" />
                     </li>
                     <li>
                         <a class="collapse-link"><i class="fa fa-chevron-up"></i></a>

@@ -37,10 +37,10 @@
                 <div class="clearfix"></div>
             </div>
             <div class="row">
-                        <div class="col-md-8">
+                        <div class="col-md-7">
                             &nbsp;
                         </div>
-                        <div class="col-md-2" style="text-align:right;">
+                        <div class="col-md-3" style="text-align:right;">
                             <asp:DropDownList id="ddlFiltro" runat="server" CssClass="form-control">
                                 <asp:ListItem Selected="True" Value="Próximos tres meses"> Próximos 3 meses </asp:ListItem>
                                 <asp:ListItem Value="Próximos dos meses"> Próximos 2 meses </asp:ListItem>
