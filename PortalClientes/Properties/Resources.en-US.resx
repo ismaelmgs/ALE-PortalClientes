@@ -375,4 +375,55 @@
   <data name="TabDoc_VIewDoc" xml:space="preserve">
     <value>View Document</value>
   </data>
+  <data name="Das_Anual" xml:space="preserve">
+    <value>Annual</value>
+  </data>
+  <data name="Das_Fijo" xml:space="preserve">
+    <value>Permanent</value>
+  </data>
+  <data name="Das_Manual" xml:space="preserve">
+    <value>Handbook</value>
+  </data>
+  <data name="Das_Mensual" xml:space="preserve">
+    <value>Monthly</value>
+  </data>
+  <data name="Das_Semestral" xml:space="preserve">
+    <value>Biannual</value>
+  </data>
+  <data name="Das_Todos" xml:space="preserve">
+    <value>All</value>
+  </data>
+  <data name="Das_Trimestral" xml:space="preserve">
+    <value>Quarterly</value>
+  </data>
+  <data name="Das_Variable" xml:space="preserve">
+    <value>Variable</value>
+  </data>
+  <data name="TabTran_Categoria" xml:space="preserve">
+    <value>Category</value>
+  </data>
+  <data name="TabTran_Comentario" xml:space="preserve">
+    <value>Comments</value>
+  </data>
+  <data name="TabTran_Fecha" xml:space="preserve">
+    <value>Date</value>
+  </data>
+  <data name="TabTran_idRubro" xml:space="preserve">
+    <value>Id</value>
+  </data>
+  <data name="TabTran_Mes" xml:space="preserve">
+    <value>Month</value>
+  </data>
+  <data name="TabTran_Rubro" xml:space="preserve">
+    <value>Heading</value>
+  </data>
+  <data name="TabTran_TGasto" xml:space="preserve">
+    <value>Expense type</value>
+  </data>
+  <data name="TabTran_Total" xml:space="preserve">
+    <value>Total</value>
+  </data>
+  <data name="TabTransacciones" xml:space="preserve">
+    <value>Transactions</value>
+  </data>
 </root>

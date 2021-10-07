@@ -9,11 +9,14 @@ using System.Web.Script.Serialization;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using Newtonsoft.Json;
+using System.Web.Services;
 
 namespace PortalClientes.Views
 {
     public partial class frmTransacciones : System.Web.UI.Page
     {
+
+        #region EVENTOS
         protected void Page_Load(object sender, EventArgs e)
         {
 
@@ -34,19 +37,56 @@ namespace PortalClientes.Views
 
             if (!IsPostBack)
             {
-                LlenarTransacciones(Request);
+                if (Session["gvGastos"] != null)
+                {
+                    List<gvGastos> values = (List<gvGastos>)Session["gvGastos"];
+                    LlenarGV(values);
+                }
+                
             }
 
         }
 
-        #region METODOS
-        public void LlenarTransacciones(HttpRequest request)
+        protected void gvGastos_PageIndexChanging(object sender, GridViewPageEventArgs e)
         {
-            using (var reader = new StreamReader(request.InputStream))
+            gvGastos.PageIndex = e.NewPageIndex;
+            LlenarGV((List<gvGastos>)Session["gvGastos"]);
+        }
+
+        #endregion
+
+
+        #region METODOS
+        private void LlenarGV(List<gvGastos> gv)
+        {
+            gvGastos.DataSource = gv;
+            gvGastos.DataBind();
+        }
+
+        //public void LlenarTransacciones(HttpRequest request)
+        //{
+        //    using (var reader = new StreamReader(request.InputStream))
+        //    {
+        //        var content = reader.ReadToEnd();
+        //        List<gasto> gastos = new List<gasto>();
+        //        gastos = JsonConvert.DeserializeObject<List<gasto>>(content.ToString());
+
+                
+        //    }
+        //}
+
+        protected void gvGastos_RowDataBound(object sender, GridViewRowEventArgs e)
+        {
+            if (e.Row.RowType == DataControlRowType.Header)
             {
-                var content = reader.ReadToEnd();
-                List<gasto> gastos = new List<gasto>();
-                gastos = JsonConvert.DeserializeObject<List<gasto>>(content.ToString());
+                e.Row.Cells[0].Text = Properties.Resources.TabTran_idRubro;
+                e.Row.Cells[1].Text = Properties.Resources.TabTran_Rubro;
+                e.Row.Cells[2].Text = Properties.Resources.TabTran_Total;
+                e.Row.Cells[3].Text = Properties.Resources.TabTran_Fecha;
+                e.Row.Cells[4].Text = Properties.Resources.TabTran_Categoria;
+                e.Row.Cells[5].Text = Properties.Resources.TabTran_TGasto;
+                e.Row.Cells[6].Text = Properties.Resources.TabTran_Comentario;
+                e.Row.Cells[7].Text = Properties.Resources.TabTran_Mes;
 
             }
         }
@@ -55,7 +95,7 @@ namespace PortalClientes.Views
         {
             txtBusqueda.Attributes.Add("placeholder", Properties.Resources.Cm_Buscador);
 
-            //lblEstadoDeVuelo.Text = Properties.Resources.Das_EstadoVuelo;
+            lblTransacciones.Text = Properties.Resources.TabTransacciones;
             //lblSalida.Text = Properties.Resources.Das_Salida;
             //lblLlego.Text = Properties.Resources.Das_Llego;
             //lblCompleto.Text = Properties.Resources.Das_Completo;
@@ -68,6 +108,46 @@ namespace PortalClientes.Views
             //lblUltimaDeclaracion.Text = Properties.Resources.Das_UltimaDeclaracion;
             //lblDeclaracionPara.Text = Properties.Resources.Das_DeclaracionPara;
             //lblVence.Text = Properties.Resources.Das_Vence;
+        }
+
+        [WebMethod]
+        public static void ObtenerTransacciones(List<gasto> gastos, string tipoDet)
+        {
+            List<gvGastos> gv = new List<gvGastos>();
+            foreach (var item in gastos)
+            {
+                gvGastos g = new gvGastos();
+                if (tipoDet == "MXN" && item.totalUSD == 0 && item.totalMXN > 0)
+                {
+                    g.idRubro = item.idRubro;
+                    g.Rubro = Utils.Idioma == "es-MX" ? item.rubroESP : item.rubroENG;
+                    g.Total = item.totalMXN;
+                    g.Fecha = item.fecha;
+                    g.Categoria = item.categoria;
+                    g.tipodeGasto = item.tipodeGasto;
+                    g.comentarios = item.comentarios;
+                    g.mes = item.mes;
+
+                    gv.Add(g);
+                }
+
+                if (tipoDet == "USD" && item.totalMXN == 0 && item.totalUSD > 0)
+                {
+                    g.idRubro = item.idRubro;
+                    g.Rubro = Utils.Idioma == "es-Mx" ? item.rubroESP : item.rubroENG;
+                    g.Total = item.totalUSD;
+                    g.Fecha = item.fecha;
+                    g.Categoria = item.categoria;
+                    g.tipodeGasto = item.tipodeGasto;
+                    g.comentarios = item.comentarios;
+                    g.mes = item.mes;
+
+                    gv.Add(g);
+                }
+
+            }
+
+            HttpContext.Current.Session["gvGastos"] = gv;
         }
 
         #endregion

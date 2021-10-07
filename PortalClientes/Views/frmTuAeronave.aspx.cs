@@ -176,24 +176,24 @@ namespace PortalClientes.Views
         {
             oAeronave = oAero;
 
-            //lblMatriculaTuAeronave.Text = oAero.nombreAeronave;
-            //lblFabricanteResp.Text = oAero.Fabricante;
-            //lblYearResp.Text = oAero.Anio;
-            //lblModeloResp.Text = oAero.Modelo;
-            //lblRegistroResp.Text = oAero.noRegistro;
-            //lblSerieResp.Text = oAero.noSerie;
-            //lblPasajerosResp.Text = oAero.noPasajeros.ToString();
-            //lblTripulacionRes.Text = oAero.noTripulacion.ToString();
-            //lblDimencionesExtRes.Text = oAero.dimencionesExteriores;
-            //lblDimencionesIntRes.Text = oAero.dimencionesInteriores;
-            //lblMaxFuelResp.Text = oAero.maxGasolina.ToString();
-            //lblMinFuelResp.Text = oAero.minGasolina.ToString();
-            //lblVelocidadRes.Text = oAero.velocidadCrucero.ToString();
-            //lblMaxAlturaRes.Text = oAero.altitudMaxima.ToString();
-            //lblTipoCombustibleRes.Text = oAero.tipoGasolina;
-            //lblRendimientoRes.Text = oAero.Rendimiento.ToString();
-            //lblDistanciaRes.Text = oAero.Distancia.ToString();
-            //lblPesoRes.Text = oAero.Peso.ToString();
+            lblMatriculaTuAeronave.Text = oAero.nombreAeronave;
+            lblFabricanteResp.Text = oAero.Fabricante;
+            lblYearResp.Text = oAero.Anio;
+            lblModeloResp.Text = oAero.Modelo;
+            lblRegistroResp.Text = oAero.noRegistro;
+            lblSerieResp.Text = oAero.noSerie;
+            lblPasajerosResp.Text = oAero.noPasajeros.ToString();
+            lblTripulacionRes.Text = oAero.noTripulacion.ToString();
+            lblDimencionesExtRes.Text = oAero.dimencionesExteriores;
+            lblDimencionesIntRes.Text = oAero.dimencionesInteriores;
+            lblMaxFuelResp.Text = oAero.maxGasolina.ToString();
+            lblMinFuelResp.Text = oAero.minGasolina.ToString();
+            lblVelocidadRes.Text = oAero.velocidadCrucero.ToString();
+            lblMaxAlturaRes.Text = oAero.altitudMaxima.ToString();
+            lblTipoCombustibleRes.Text = oAero.tipoGasolina;
+            lblRendimientoRes.Text = oAero.Rendimiento.ToString();
+            lblDistanciaRes.Text = oAero.Distancia.ToString();
+            lblPesoRes.Text = oAero.Peso.ToString();
 
             var sHtml = "<ol class='carousel-indicators'>";
             var sHtmlCarousel = "<div class='carousel-inner'>";       
@@ -276,30 +276,30 @@ namespace PortalClientes.Views
 
         private void ArmaFormulario()
         {
-            //txtBusqueda.Attributes.Add("placeholder", Properties.Resources.Cm_Buscador);
+            txtBusqueda.Attributes.Add("placeholder", Properties.Resources.Cm_Buscador);
 
-            //lblTitulo.Text = Properties.Resources.Ta_Titulo;
-            //lblTuAeronave.Text = Properties.Resources.Ta_Subtitulo;
-            //lblEspecificaciones.Text = Properties.Resources.Ta_TituloTab1;
-            //lblDocumentos.Text = Properties.Resources.Ta_TituloTab2;
-            //lblFabricante.Text = Properties.Resources.Ta_Fabricante;
-            //lblYear.Text = Properties.Resources.Ta_Anio;
-            //lblModelo.Text = Properties.Resources.Ta_Modelo;
-            //lblRegistro.Text = Properties.Resources.Ta_NoRegistro;
-            //lblSerie.Text = Properties.Resources.Ta_NoSerie;
-            //lblCapacidad.Text = Properties.Resources.Ta_Capacidad;
-            //lblPasajeros.Text = Properties.Resources.Ta_Pasajeros;
-            //lblTripulacion.Text = Properties.Resources.Ta_Tripulacion;
-            //lblDimencionesExt.Text = Properties.Resources.Ta_DimensionesE;
-            //lblDimencionesInt.Text = Properties.Resources.Ta_DimensionesI;
-            //lblMaxFuel.Text = Properties.Resources.Ta_MaxCombustible;
-            //lblMinFuel.Text = Properties.Resources.Ta_MinCombustible;
-            //lblVelocidad.Text = Properties.Resources.Ta_VelocidadCrucero;
-            //lblMaxAltura.Text = Properties.Resources.Ta_AltitudMaxima;
-            //lblTipoCombustible.Text = Properties.Resources.Ta_TipoCombustible;
-            //lblRendimiento.Text = Properties.Resources.Ta_Rendimiento;
-            //lblDistancia.Text = Properties.Resources.Ta_Distancia;
-            //lblPeso.Text = Properties.Resources.Ta_Peso;
+            lblTitulo.Text = Properties.Resources.Ta_Titulo;
+            lblTuAeronave.Text = Properties.Resources.Ta_Subtitulo;
+            lblEspecificaciones.Text = Properties.Resources.Ta_TituloTab1;
+            lblDocumentos.Text = Properties.Resources.Ta_TituloTab2;
+            lblFabricante.Text = Properties.Resources.Ta_Fabricante;
+            lblYear.Text = Properties.Resources.Ta_Anio;
+            lblModelo.Text = Properties.Resources.Ta_Modelo;
+            lblRegistro.Text = Properties.Resources.Ta_NoRegistro;
+            lblSerie.Text = Properties.Resources.Ta_NoSerie;
+            lblCapacidad.Text = Properties.Resources.Ta_Capacidad;
+            lblPasajeros.Text = Properties.Resources.Ta_Pasajeros;
+            lblTripulacion.Text = Properties.Resources.Ta_Tripulacion;
+            lblDimencionesExt.Text = Properties.Resources.Ta_DimensionesE;
+            lblDimencionesInt.Text = Properties.Resources.Ta_DimensionesI;
+            lblMaxFuel.Text = Properties.Resources.Ta_MaxCombustible;
+            lblMinFuel.Text = Properties.Resources.Ta_MinCombustible;
+            lblVelocidad.Text = Properties.Resources.Ta_VelocidadCrucero;
+            lblMaxAltura.Text = Properties.Resources.Ta_AltitudMaxima;
+            lblTipoCombustible.Text = Properties.Resources.Ta_TipoCombustible;
+            lblRendimiento.Text = Properties.Resources.Ta_Rendimiento;
+            lblDistancia.Text = Properties.Resources.Ta_Distancia;
+            lblPeso.Text = Properties.Resources.Ta_Peso;
         }
 
         #endregion

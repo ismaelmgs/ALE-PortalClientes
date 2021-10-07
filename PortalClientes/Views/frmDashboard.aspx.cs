@@ -149,23 +149,6 @@ namespace PortalClientes.Views
                 }
             }
 
-            // llenar dropdown Periodo
-            ddlPeriodo.Items.Clear();
-            ddlPeriodo.Items.Add(new ListItem("Manual", "0"));
-            ddlPeriodo.Items.Add(new ListItem("Mensual", "1"));
-            ddlPeriodo.Items.Add(new ListItem("Trimestral", "3"));
-            ddlPeriodo.Items.Add(new ListItem("Semestral", "6"));
-            ddlPeriodo.Items.Add(new ListItem("Anual", "12"));
-
-            ddlPeriodo.SelectedIndex = 3;
-
-            // llenar dropdown Tipo Rubro
-            ddlTipoRubro.Items.Clear();
-            ddlTipoRubro.Items.Add(new ListItem("Fijo", "1"));
-            ddlTipoRubro.Items.Add(new ListItem("Variable", "2"));
-            ddlTipoRubro.Items.Add(new ListItem("Todos", "3"));
-
-            ddlTipoRubro.SelectedIndex = 2;
         }
 
         private void ArmarDashboard()
@@ -185,6 +168,40 @@ namespace PortalClientes.Views
             lblUltimaDeclaracion.Text = Properties.Resources.Das_UltimaDeclaracion;
             lblDeclaracionPara.Text = Properties.Resources.Das_DeclaracionPara;
             lblVence.Text = Properties.Resources.Das_Vence;
+
+            var vPeriodo = ddlPeriodo.SelectedValue;
+            // llenar dropdown Periodo
+            ddlPeriodo.Items.Clear();
+            ddlPeriodo.Items.Add(new ListItem(Properties.Resources.Das_Manual, "0"));
+            ddlPeriodo.Items.Add(new ListItem(Properties.Resources.Das_Mensual, "1"));
+            ddlPeriodo.Items.Add(new ListItem(Properties.Resources.Das_Trimestral, "3"));
+            ddlPeriodo.Items.Add(new ListItem(Properties.Resources.Das_Semestral, "6"));
+            ddlPeriodo.Items.Add(new ListItem(Properties.Resources.Das_Anual, "12"));
+
+            if(vPeriodo== "")
+            {
+                ddlPeriodo.SelectedIndex = 3;
+            }
+            else
+            {
+                ddlPeriodo.SelectedValue = vPeriodo;
+            }
+
+            var vTR = ddlTipoRubro.SelectedValue;
+            // llenar dropdown Tipo Rubro
+            ddlTipoRubro.Items.Clear();
+            ddlTipoRubro.Items.Add(new ListItem(Properties.Resources.Das_Fijo, "1"));
+            ddlTipoRubro.Items.Add(new ListItem(Properties.Resources.Das_Variable, "2"));
+            ddlTipoRubro.Items.Add(new ListItem(Properties.Resources.Das_Todos, "3"));
+
+            if (vPeriodo == "")
+            {
+                ddlTipoRubro.SelectedIndex = 2;
+            }
+            else
+            {
+                ddlTipoRubro.SelectedValue = vTR;
+            }
         }
 
         [WebMethod]
@@ -202,6 +219,11 @@ namespace PortalClientes.Views
             List<responseGraficaGastos> lrg = new List<responseGraficaGastos>();
             lrg = oIGesCat.ObtenerGastos(fg);
 
+            if ( lrg.Count() > 0 )
+            {
+                lrg[0].idioma = Utils.Idioma;
+            }
+            
             return lrg;
         }
 

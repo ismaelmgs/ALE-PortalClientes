@@ -142,6 +142,15 @@ namespace PortalClientes.Properties {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Anual.
+        /// </summary>
+        internal static string Das_Anual {
+            get {
+                return ResourceManager.GetString("Das_Anual", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Completo.
         /// </summary>
         internal static string Das_Completo {
@@ -178,6 +187,15 @@ namespace PortalClientes.Properties {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Fijo.
+        /// </summary>
+        internal static string Das_Fijo {
+            get {
+                return ResourceManager.GetString("Das_Fijo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Horas de Vuelo.
         /// </summary>
         internal static string Das_HorasVuelo {
@@ -192,6 +210,24 @@ namespace PortalClientes.Properties {
         internal static string Das_Llego {
             get {
                 return ResourceManager.GetString("Das_Llego", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Manual.
+        /// </summary>
+        internal static string Das_Manual {
+            get {
+                return ResourceManager.GetString("Das_Manual", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Mensual.
+        /// </summary>
+        internal static string Das_Mensual {
+            get {
+                return ResourceManager.GetString("Das_Mensual", resourceCulture);
             }
         }
         
@@ -241,11 +277,47 @@ namespace PortalClientes.Properties {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Semestral.
+        /// </summary>
+        internal static string Das_Semestral {
+            get {
+                return ResourceManager.GetString("Das_Semestral", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Todos.
+        /// </summary>
+        internal static string Das_Todos {
+            get {
+                return ResourceManager.GetString("Das_Todos", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Trimestral.
+        /// </summary>
+        internal static string Das_Trimestral {
+            get {
+                return ResourceManager.GetString("Das_Trimestral", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Ultima declaración.
         /// </summary>
         internal static string Das_UltimaDeclaracion {
             get {
                 return ResourceManager.GetString("Das_UltimaDeclaracion", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Variable.
+        /// </summary>
+        internal static string Das_Variable {
+            get {
+                return ResourceManager.GetString("Das_Variable", resourceCulture);
             }
         }
         
@@ -552,6 +624,87 @@ namespace PortalClientes.Properties {
         internal static string TabDoc_VIewDoc {
             get {
                 return ResourceManager.GetString("TabDoc_VIewDoc", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Categoria.
+        /// </summary>
+        internal static string TabTran_Categoria {
+            get {
+                return ResourceManager.GetString("TabTran_Categoria", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Comentarios.
+        /// </summary>
+        internal static string TabTran_Comentario {
+            get {
+                return ResourceManager.GetString("TabTran_Comentario", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Fecha.
+        /// </summary>
+        internal static string TabTran_Fecha {
+            get {
+                return ResourceManager.GetString("TabTran_Fecha", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Id.
+        /// </summary>
+        internal static string TabTran_idRubro {
+            get {
+                return ResourceManager.GetString("TabTran_idRubro", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Mes.
+        /// </summary>
+        internal static string TabTran_Mes {
+            get {
+                return ResourceManager.GetString("TabTran_Mes", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Rubro.
+        /// </summary>
+        internal static string TabTran_Rubro {
+            get {
+                return ResourceManager.GetString("TabTran_Rubro", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Tipo de Gasto.
+        /// </summary>
+        internal static string TabTran_TGasto {
+            get {
+                return ResourceManager.GetString("TabTran_TGasto", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Total.
+        /// </summary>
+        internal static string TabTran_Total {
+            get {
+                return ResourceManager.GetString("TabTran_Total", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Transacciones.
+        /// </summary>
+        internal static string TabTransacciones {
+            get {
+                return ResourceManager.GetString("TabTransacciones", resourceCulture);
             }
         }
         

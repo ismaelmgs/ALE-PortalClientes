@@ -67,6 +67,9 @@ function charts(data, ChartType) {
     google.charts.setOnLoadCallback(drawVisualization)
 
     function drawVisualization() {
+
+        var screenWidth = screen.width;
+
         var data = new google.visualization.DataTable();
         data.addColumn('string', 'Categoria');
         data.addColumn('number', 'Costos');
@@ -84,13 +87,27 @@ function charts(data, ChartType) {
         const numberFormat2 = new Intl.NumberFormat('en-US', opt2);
 
         jsonData.forEach((item, index) => {
-            data.addRows([[item.rubroESP, item.totalMXN, `${item.rubroESP} - ${numberFormat.format(item.totalMXN)} MXN`,]]);
-            dataE.addRows([[item.rubroENG, item.totalUSD, `${item.rubroENG} - ${numberFormat2.format(item.totalUSD)} USD`,]]);
+
+            if (jsonData[0].idioma == "es-MX") {
+                data.addRows([[item.rubroESP, item.totalMXN, `${item.rubroESP} - ${numberFormat.format(item.totalMXN)} MXN`,]]);
+                dataE.addRows([[item.rubroESP, item.totalUSD, `${item.rubroESP} - ${numberFormat2.format(item.totalUSD)} USD`,]]);
+            } else {
+                data.addRows([[item.rubroENG, item.totalMXN, `${item.rubroENG} - ${numberFormat.format(item.totalMXN)} MXN`,]]);
+                dataE.addRows([[item.rubroENG, item.totalUSD, `${item.rubroENG} - ${numberFormat2.format(item.totalUSD)} USD`,]]);
+            }
+            
         });
 
         var options = {
-            title: "Costos por Categoria'",
+            title: jsonData[0].idioma == "es-MX" ? "Costos por Categoria'" : "Costs by Category",
             is3D: true, //Pie Charts
+            fontSize: 9,
+            chartArea: {
+                left: screenWidth > 500 ? 30 : 10,
+                top: 30,
+                width: '100%',
+                height: '75%'
+            },
             animation: {
                 duration: 3000,
                 easing: 'out',
@@ -98,27 +115,7 @@ function charts(data, ChartType) {
             },
             legend: {
                 position: 'rigth',
-                alignment: 'start',
-                textStyle: {
-                    fontsize: 8
-                }
-            },
-        };
-
-        var optionsE = {
-            title: "Costs by Category",
-            is3D: true, //Pie Charts
-            animation: {
-                duration: 3000,
-                easing: 'out',
-                startup: true
-            },
-            legend: {
-                position: 'rigth',
-                alignment: 'start',
-                textStyle: {
-                    fontsize: 8
-                }
+                alignment: 'center',
             },
         };
 
@@ -126,36 +123,57 @@ function charts(data, ChartType) {
         chart.draw(data, options);
 
         var chartE = new google.visualization.PieChart(document.getElementById('piechart_3d_2'));
-        chartE.draw(dataE, optionsE);
+        chartE.draw(dataE, options);
 
         google.visualization.events.addListener(chart, 'select', function () {
             var selection = chart.getSelection();
             if (selection.length) {
                 var row = selection[0].row;
-                //alert(data.getValue(row, 0));
 
                 let array = jsonData[row];
                 const gastos = array.Gastos
 
+                let obj = JSON.stringify({
+                    gastos: gastos,
+                    tipoDet: "MXN" 
+                });
+
                 $.ajax({
-                    data: JSON.stringify(gastos),
-                    contentType: "Application/json;",
+                    data: obj,
+                    contentType: "Application/json; charset=utf-8",
+                    responseType: "json",
                     method: 'POST',
-                    url: "/Views/frmTransacciones.aspx",
+                    url: "/Views/frmTransacciones.aspx/ObtenerTransacciones",
                     dataType: "json",
                 });
 
-                //window.location.pathname = '/Views/frmTuAeronave.aspx';
+                window.location.pathname = '/Views/frmTransacciones.aspx';
             }
         });
 
         google.visualization.events.addListener(chartE, 'select', function () {
             var selection = chartE.getSelection();
             if (selection.length) {
-                //var row = selection[0].row;
-                //alert(dataE.getValue(row, 1));
+                var row = selection[0].row;
 
-                window.location.pathname = '/Views/frmTuAeronave.aspx';
+                let array = jsonData[row];
+                const gastos = array.Gastos
+
+                let obj = JSON.stringify({
+                    gastos: gastos,
+                    tipoDet: "USD"
+                });
+
+                $.ajax({
+                    data: obj,
+                    contentType: "Application/json; charset=utf-8",
+                    responseType: "json",
+                    method: 'POST',
+                    url: "/Views/frmTransacciones.aspx/ObtenerTransacciones",
+                    dataType: "json",
+                });
+
+                window.location.pathname = '/Views/frmTransacciones.aspx';
             }
         });
     }

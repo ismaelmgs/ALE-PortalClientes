@@ -92,55 +92,33 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="table-responsive">
-                        <table class="table table-striped table-bordered table-hover">
-                            <tr>
-                                <th>
-                                    <asp:Label ID="lblFecha" runat="server" Text="Fecha" Font-Bold="true"></asp:Label>
-                                </th>
-                                <th>
-                                    <asp:Label ID="lblCategoria" runat="server" Text="Categoría" Font-Bold="true"></asp:Label>
-                                </th>
-                                <th>
-                                    <asp:Label ID="lblSubCategoria" runat="server" Text="Sub Categoría" Font-Bold="true"></asp:Label>
-                                </th>
-                                <th>
-                                    <asp:Label ID="lblTripulacion" runat="server" Text="No. Tripulación" Font-Bold="true"></asp:Label>
-                                </th>
-                                <th>
-                                    <asp:Label ID="lblVendedorPagador" runat="server" Text="Vendedor/Pagador" Font-Bold="true"></asp:Label>
-                                </th>
-                                <th>
-                                    <asp:Label ID="lblDescripcion" runat="server" Text="Descripción" Font-Bold="true"></asp:Label>
-                                </th>
-                                <th>
-                                    <asp:Label ID="lblTotal" runat="server" Text="Total" Font-Bold="true"></asp:Label>
-                                </th>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <asp:Label ID="lblfechaRes" runat="server" Text="---" Font-Bold="true"></asp:Label>
-                                </td>
-                                <td>
-                                    <asp:Label ID="lblCategoriaRes" runat="server" Text="---" Font-Bold="true"></asp:Label>
-                                </td>
-                                <td>
-                                    <asp:Label ID="lblSubCategoriaRes" runat="server" Text="---" Font-Bold="true"></asp:Label>
-                                </td>
-                                <td>
-                                    <asp:Label ID="lblTripulacionRes" runat="server" Text="---" Font-Bold="true"></asp:Label>
-                                </td>
-                                <td>
-                                    <asp:Label ID="lblVendedorPagadorRes" runat="server" Text="---" Font-Bold="true"></asp:Label>
-                                </td>
-                                <td>
-                                    <asp:Label ID="lblDescripcionRes" runat="server" Text="---" Font-Bold="true"></asp:Label>
-                                </td>
-                                <td>
-                                    <asp:Label ID="lblTotalRes" runat="server" Text="---" Font-Bold="true"></asp:Label>
-                                </td>
-                            </tr>
-                        </table>
-                    </div>
+                            <div class="card-box table-responsive">
+                                <asp:GridView ID="gvGastos" runat="server" AutoGenerateColumns="false" CssClass="table table-striped table-bordered table-hover"
+                                    DataKeyNames="idRubro" AllowPaging="true" OnPageIndexChanging="gvGastos_PageIndexChanging" OnRowDataBound="gvGastos_RowDataBound" EmptyDataText="No Registros">
+                                    <HeaderStyle />
+                                    <RowStyle />
+                                    <AlternatingRowStyle />
+                                    <Columns>
+                                        <asp:BoundField DataField="idRubro" />
+                                        <asp:BoundField DataField="Rubro" />
+                                        <asp:BoundField DataField="Total" />
+                                        <asp:BoundField DataField="Fecha" />
+                                        <asp:BoundField DataField="Categoria" />
+                                        <asp:BoundField DataField="tipodeGasto" />
+                                        <asp:BoundField DataField="comentarios" />
+                                        <asp:BoundField DataField="mes" />
+                                        <%--<asp:TemplateField ItemStyle-HorizontalAlign="Center">
+                                            <ItemTemplate>
+                                                <asp:ImageButton ID="imbViewDoc" runat="server" ImageUrl="~/Images/icons/visualizar.png" Width="24px" Height="28px"
+                                                    OnClick="imbViewDoc_Click" CommandName="Mats" CommandArgument="<%# ((GridViewRow) Container).RowIndex %>" />&nbsp;&nbsp;&nbsp;
+                                                <asp:ImageButton ID="imbDownloadDoc" runat="server" ImageUrl="~/Images/icons/descargar.png" Width="26px" Height="28px"
+                                                    OnClick="imbDownloadDoc_Click" CommandName="Modulos" CommandArgument="<%# ((GridViewRow) Container).RowIndex %>" />&nbsp;&nbsp;&nbsp;
+                                            </ItemTemplate>
+                                        </asp:TemplateField>--%>
+                                    </Columns>
+                                </asp:GridView>
+                            </div>
+                        </div>
                 </div>
             </div>
         </div>
