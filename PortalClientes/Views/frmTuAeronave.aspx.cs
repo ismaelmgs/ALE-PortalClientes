@@ -74,10 +74,66 @@ namespace PortalClientes.Views
         protected void imbViewDoc_Click(object sender, ImageClickEventArgs e)
         {
             GridViewRow row = ((ImageButton)sender).NamingContainer as GridViewRow;
+            var nombre = "";
+            var ext = "";
+            var img = "";
             if (row != null)
             {
-                var nombre = gvDocumentos.DataKeys[row.RowIndex]["Imagen"];
+                nombre = gvDocumentos.Rows[row.RowIndex].Cells[0].Text;
+                ext = gvDocumentos.Rows[row.RowIndex].Cells[1].Text;
+                img = gvDocumentos.Rows[row.RowIndex].Cells[2].Text;
             }
+            var path = Server.MapPath("/images/documento.pdf");
+
+            File.Delete(path);
+            if (!File.Exists(path))
+            {
+                Byte[] bytes = Convert.FromBase64String(img);
+                MemoryStream ms = new MemoryStream(bytes);
+
+                FileStream file = new FileStream(path, FileMode.OpenOrCreate, FileAccess.Write);
+                ms.WriteTo(file);
+                file.Close();
+                ms.Close();
+            }
+
+            var sPath = Server.MapPath("../images/" + nombre);
+
+            //Response.Clear();
+            //Response.ContentType = "application/octect-stream";
+            //Response.AddHeader("Content–Disposition", "attachment; filename=foo.xyz");
+            //Response.TransmitFile(path);
+            //Response.End();
+
+            //System.IO.FileStream fs = new System.IO.FileStream(path, System.IO.FileMode.Open, System.IO.FileAccess.Read);
+            //byte[] ar = new byte[(int)fs.Length];
+            //fs.Read(ar, 0, (int)fs.Length);
+            //fs.Close();
+
+            //Response.AddHeader("content-disposition", "attachment;filename=" + nombre);
+            //Response.ContentType = "Application/pdf";
+            //Response.TransmitFile(pathtofile);
+            //Response.End();
+
+            path = path.Replace("/", "\"");
+
+            Response.Write("<script language='javascript'>window.open('file:///" + path + "','_blank')</script>");
+            Response.Write("<script language='javascript'>window.open('file:///" + path + "','_blank')</script>");
+            ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "Window1", "<script> window.open('" + path + "',''," +
+            "'top=200,left=500,height=900,width=1500,status=yes,toolbar=no,menubar=no,location=no resizable=yes');</script>", false);
+
+            ScriptManager.RegisterStartupScript(Page, Page.GetType(), "popup", "window.open('" + path + "','_blank')", true);
+
+            //Response.Clear();
+
+            //Response.AddHeader("content-disposition", string.Format("attachment;filename={0}", nombre));
+            //Response.ContentType = "application/octet-stream";
+
+            //
+            //Response.BinaryWrite(bytes);
+            //Response.End();
+
+            //Response.Write("<script> window.open('" + pageurl + "','_blank'); </script>");
 
         }
 
@@ -120,24 +176,24 @@ namespace PortalClientes.Views
         {
             oAeronave = oAero;
 
-            lblMatriculaTuAeronave.Text = oAero.nombreAeronave;
-            lblFabricanteResp.Text = oAero.Fabricante;
-            lblYearResp.Text = oAero.Anio;
-            lblModeloResp.Text = oAero.Modelo;
-            lblRegistroResp.Text = oAero.noRegistro;
-            lblSerieResp.Text = oAero.noSerie;
-            lblPasajerosResp.Text = oAero.noPasajeros.ToString();
-            lblTripulacionRes.Text = oAero.noTripulacion.ToString();
-            lblDimencionesExtRes.Text = oAero.dimencionesExteriores;
-            lblDimencionesIntRes.Text = oAero.dimencionesInteriores;
-            lblMaxFuelResp.Text = oAero.maxGasolina.ToString();
-            lblMinFuelResp.Text = oAero.minGasolina.ToString();
-            lblVelocidadRes.Text = oAero.velocidadCrucero.ToString();
-            lblMaxAlturaRes.Text = oAero.altitudMaxima.ToString();
-            lblTipoCombustibleRes.Text = oAero.tipoGasolina;
-            lblRendimientoRes.Text = oAero.Rendimiento.ToString();
-            lblDistanciaRes.Text = oAero.Distancia.ToString();
-            lblPesoRes.Text = oAero.Peso.ToString();
+            //lblMatriculaTuAeronave.Text = oAero.nombreAeronave;
+            //lblFabricanteResp.Text = oAero.Fabricante;
+            //lblYearResp.Text = oAero.Anio;
+            //lblModeloResp.Text = oAero.Modelo;
+            //lblRegistroResp.Text = oAero.noRegistro;
+            //lblSerieResp.Text = oAero.noSerie;
+            //lblPasajerosResp.Text = oAero.noPasajeros.ToString();
+            //lblTripulacionRes.Text = oAero.noTripulacion.ToString();
+            //lblDimencionesExtRes.Text = oAero.dimencionesExteriores;
+            //lblDimencionesIntRes.Text = oAero.dimencionesInteriores;
+            //lblMaxFuelResp.Text = oAero.maxGasolina.ToString();
+            //lblMinFuelResp.Text = oAero.minGasolina.ToString();
+            //lblVelocidadRes.Text = oAero.velocidadCrucero.ToString();
+            //lblMaxAlturaRes.Text = oAero.altitudMaxima.ToString();
+            //lblTipoCombustibleRes.Text = oAero.tipoGasolina;
+            //lblRendimientoRes.Text = oAero.Rendimiento.ToString();
+            //lblDistanciaRes.Text = oAero.Distancia.ToString();
+            //lblPesoRes.Text = oAero.Peso.ToString();
 
             var sHtml = "<ol class='carousel-indicators'>";
             var sHtmlCarousel = "<div class='carousel-inner'>";       
@@ -220,30 +276,30 @@ namespace PortalClientes.Views
 
         private void ArmaFormulario()
         {
-            txtBusqueda.Attributes.Add("placeholder", Properties.Resources.Cm_Buscador);
+            //txtBusqueda.Attributes.Add("placeholder", Properties.Resources.Cm_Buscador);
 
-            lblTitulo.Text = Properties.Resources.Ta_Titulo;
-            lblTuAeronave.Text = Properties.Resources.Ta_Subtitulo;
-            lblEspecificaciones.Text = Properties.Resources.Ta_TituloTab1;
-            lblDocumentos.Text = Properties.Resources.Ta_TituloTab2;
-            lblFabricante.Text = Properties.Resources.Ta_Fabricante;
-            lblYear.Text = Properties.Resources.Ta_Anio;
-            lblModelo.Text = Properties.Resources.Ta_Modelo;
-            lblRegistro.Text = Properties.Resources.Ta_NoRegistro;
-            lblSerie.Text = Properties.Resources.Ta_NoSerie;
-            lblCapacidad.Text = Properties.Resources.Ta_Capacidad;
-            lblPasajeros.Text = Properties.Resources.Ta_Pasajeros;
-            lblTripulacion.Text = Properties.Resources.Ta_Tripulacion;
-            lblDimencionesExt.Text = Properties.Resources.Ta_DimensionesE;
-            lblDimencionesInt.Text = Properties.Resources.Ta_DimensionesI;
-            lblMaxFuel.Text = Properties.Resources.Ta_MaxCombustible;
-            lblMinFuel.Text = Properties.Resources.Ta_MinCombustible;
-            lblVelocidad.Text = Properties.Resources.Ta_VelocidadCrucero;
-            lblMaxAltura.Text = Properties.Resources.Ta_AltitudMaxima;
-            lblTipoCombustible.Text = Properties.Resources.Ta_TipoCombustible;
-            lblRendimiento.Text = Properties.Resources.Ta_Rendimiento;
-            lblDistancia.Text = Properties.Resources.Ta_Distancia;
-            lblPeso.Text = Properties.Resources.Ta_Peso;
+            //lblTitulo.Text = Properties.Resources.Ta_Titulo;
+            //lblTuAeronave.Text = Properties.Resources.Ta_Subtitulo;
+            //lblEspecificaciones.Text = Properties.Resources.Ta_TituloTab1;
+            //lblDocumentos.Text = Properties.Resources.Ta_TituloTab2;
+            //lblFabricante.Text = Properties.Resources.Ta_Fabricante;
+            //lblYear.Text = Properties.Resources.Ta_Anio;
+            //lblModelo.Text = Properties.Resources.Ta_Modelo;
+            //lblRegistro.Text = Properties.Resources.Ta_NoRegistro;
+            //lblSerie.Text = Properties.Resources.Ta_NoSerie;
+            //lblCapacidad.Text = Properties.Resources.Ta_Capacidad;
+            //lblPasajeros.Text = Properties.Resources.Ta_Pasajeros;
+            //lblTripulacion.Text = Properties.Resources.Ta_Tripulacion;
+            //lblDimencionesExt.Text = Properties.Resources.Ta_DimensionesE;
+            //lblDimencionesInt.Text = Properties.Resources.Ta_DimensionesI;
+            //lblMaxFuel.Text = Properties.Resources.Ta_MaxCombustible;
+            //lblMinFuel.Text = Properties.Resources.Ta_MinCombustible;
+            //lblVelocidad.Text = Properties.Resources.Ta_VelocidadCrucero;
+            //lblMaxAltura.Text = Properties.Resources.Ta_AltitudMaxima;
+            //lblTipoCombustible.Text = Properties.Resources.Ta_TipoCombustible;
+            //lblRendimiento.Text = Properties.Resources.Ta_Rendimiento;
+            //lblDistancia.Text = Properties.Resources.Ta_Distancia;
+            //lblPeso.Text = Properties.Resources.Ta_Peso;
         }
 
         #endregion
