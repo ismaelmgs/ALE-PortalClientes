@@ -220,6 +220,8 @@
     <Content Include="build\js\moment\moment.min.js" />
     <Content Include="build\images\no_image.jpg" />
     <Content Include="Images\icons\descargar.png" />
+    <Content Include="Images\icons\flecha_abre1.png" />
+    <Content Include="Images\icons\flecha_cierra.png" />
     <Content Include="Images\icons\visualizar.png" />
     <Content Include="jets\fotos_portada_01.jpg" />
     <Content Include="jets\fotos_portada_02.jpg" />
@@ -1651,7 +1653,6 @@
     </Compile>
     <Compile Include="Views\frmTransacciones.aspx.cs">
       <DependentUpon>frmTransacciones.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Views\frmTransacciones.aspx.designer.cs">
       <DependentUpon>frmTransacciones.aspx</DependentUpon>

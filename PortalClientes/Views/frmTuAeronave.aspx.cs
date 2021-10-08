@@ -185,7 +185,7 @@ namespace PortalClientes.Views
             lblPasajerosResp.Text = oAero.noPasajeros.ToString();
             lblTripulacionRes.Text = oAero.noTripulacion.ToString();
             lblDimencionesExtRes.Text = oAero.dimencionesExteriores;
-            lblDimencionesIntRes.Text = oAero.dimencionesInteriores;
+            //lblDimencionesIntRes.Text = oAero.dimencionesInteriores;
             lblMaxFuelResp.Text = oAero.maxGasolina.ToString();
             lblMinFuelResp.Text = oAero.minGasolina.ToString();
             lblVelocidadRes.Text = oAero.velocidadCrucero.ToString();
@@ -291,7 +291,7 @@ namespace PortalClientes.Views
             lblPasajeros.Text = Properties.Resources.Ta_Pasajeros;
             lblTripulacion.Text = Properties.Resources.Ta_Tripulacion;
             lblDimencionesExt.Text = Properties.Resources.Ta_DimensionesE;
-            lblDimencionesInt.Text = Properties.Resources.Ta_DimensionesI;
+            //lblDimencionesInt.Text = Properties.Resources.Ta_DimensionesI;
             lblMaxFuel.Text = Properties.Resources.Ta_MaxCombustible;
             lblMinFuel.Text = Properties.Resources.Ta_MinCombustible;
             lblVelocidad.Text = Properties.Resources.Ta_VelocidadCrucero;

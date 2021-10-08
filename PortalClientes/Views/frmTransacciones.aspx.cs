@@ -10,9 +10,16 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using Newtonsoft.Json;
 using System.Web.Services;
+using DevExpress.Web;
+using NucleoBase.Core;
 
 namespace PortalClientes.Views
 {
+
+    class Meses
+    {
+        string mes { set; get; }
+    }
     public partial class frmTransacciones : System.Web.UI.Page
     {
 
@@ -59,7 +66,7 @@ namespace PortalClientes.Views
         #region METODOS
         private void LlenarGV(List<gvGastos> gv)
         {
-            gvGastos.DataSource = gv;
+            gvGastos.DataSource = gv.GroupBy(r => r.mes).Select(x => x.First());
             gvGastos.DataBind();
         }
 
@@ -79,15 +86,30 @@ namespace PortalClientes.Views
         {
             if (e.Row.RowType == DataControlRowType.Header)
             {
-                e.Row.Cells[0].Text = Properties.Resources.TabTran_idRubro;
-                e.Row.Cells[1].Text = Properties.Resources.TabTran_Rubro;
-                e.Row.Cells[2].Text = Properties.Resources.TabTran_Total;
-                e.Row.Cells[3].Text = Properties.Resources.TabTran_Fecha;
-                e.Row.Cells[4].Text = Properties.Resources.TabTran_Categoria;
-                e.Row.Cells[5].Text = Properties.Resources.TabTran_TGasto;
-                e.Row.Cells[6].Text = Properties.Resources.TabTran_Comentario;
-                e.Row.Cells[7].Text = Properties.Resources.TabTran_Mes;
+                //e.Row.Cells[0].Text = Properties.Resources.TabTran_idRubro;
+                //e.Row.Cells[1].Text = Properties.Resources.TabTran_Rubro;
+                //e.Row.Cells[2].Text = Properties.Resources.TabTran_Total;
+                //e.Row.Cells[3].Text = Properties.Resources.TabTran_Fecha;
+                //e.Row.Cells[4].Text = Properties.Resources.TabTran_Categoria;
+                //e.Row.Cells[5].Text = Properties.Resources.TabTran_TGasto;
+                //e.Row.Cells[6].Text = Properties.Resources.TabTran_Comentario;
+                //e.Row.Cells[7].Text = Properties.Resources.TabTran_Mes;
 
+                e.Row.Cells[1].Text = Properties.Resources.TabTran_Mes;
+                e.Row.Cells[2].Text = Properties.Resources.TabTran_Mes;
+            }
+
+            if (e.Row.RowType == DataControlRowType.DataRow)
+            {
+                GridView gvDetalle = (GridView)e.Row.FindControl("gvGastosDetalle");
+                if (gvDetalle != null)
+                {
+                    List<gvGastos> olsGastos = (List<gvGastos>)Session["gvGastos"];
+                    string smes = olsGastos[e.Row.RowIndex].mes.S();
+                    
+                    gvDetalle.DataSource = olsGastos.Where(r => r.mes == smes);
+                    gvDetalle.DataBind();
+                }
             }
         }
 
@@ -151,5 +173,8 @@ namespace PortalClientes.Views
         }
 
         #endregion
+
+
+
     }
 }
