@@ -107,7 +107,7 @@
             </div>
             <div class="row">
                 <div class="col-md-12">
-                    <div class="table-responsive">
+                    <%--<div class="table-responsive">
                             <div class="card-box table-responsive">
                                 <asp:GridView ID="gvGastos" runat="server" AutoGenerateColumns="false" CssClass="table table-striped table-bordered table-hover"
                                     OnPageIndexChanging="gvGastos_PageIndexChanging" OnRowDataBound="gvGastos_RowDataBound" EmptyDataText="No Registros">
@@ -128,13 +128,7 @@
                                                         <asp:GridView ID="gvGastosDetalle" runat="server" AutoGenerateColumns="false" CssClass="table table-striped table-bordered table-hover"
                                                             OnRowDataBound="gvGastos_RowDataBound" EmptyDataText="No Registros">
                                                             <Columns>
-                                                                <asp:BoundField DataField="idRubro" />
-                                                                <asp:BoundField DataField="Rubro" />
-                                                                <asp:BoundField DataField="Total" />
-                                                                <asp:BoundField DataField="Fecha" />
-                                                                <asp:BoundField DataField="Categoria" />
-                                                                <asp:BoundField DataField="tipodeGasto" />
-                                                                <asp:BoundField DataField="comentarios" />
+                                                                
                                                             </Columns>
                                                         </asp:GridView>
                                                     </td>
@@ -144,7 +138,24 @@
                                     </Columns>
                                 </asp:GridView>
                             </div>
+                        </div>--%>
+                    <div class="table-responsive">
+                        <div class="card-box table-responsive">
+                            <asp:GridView ID="gvGastos" runat="server" AutoGenerateColumns="false" CssClass="table table-striped table-bordered table-hover"
+                                OnPageIndexChanging="gvGastos_PageIndexChanging" OnRowDataBound="gvGastos_RowDataBound" EmptyDataText="No Registros">
+                                <Columns>
+                                    <asp:BoundField DataField="mes" />
+                                    <asp:BoundField DataField="idRubro" />
+                                    <asp:BoundField DataField="Rubro" />
+                                    <asp:BoundField DataField="Total" />
+                                    <asp:BoundField DataField="Fecha" />
+                                    <asp:BoundField DataField="Categoria" />
+                                    <asp:BoundField DataField="tipodeGasto" />
+                                    <asp:BoundField DataField="comentarios" />
+                                </Columns>
+                            </asp:GridView>
                         </div>
+                    </div>
                 </div>
             </div>
         </div>
