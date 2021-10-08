@@ -70,18 +70,6 @@ namespace PortalClientes.Views
             gvGastos.DataBind();
         }
 
-        //public void LlenarTransacciones(HttpRequest request)
-        //{
-        //    using (var reader = new StreamReader(request.InputStream))
-        //    {
-        //        var content = reader.ReadToEnd();
-        //        List<gasto> gastos = new List<gasto>();
-        //        gastos = JsonConvert.DeserializeObject<List<gasto>>(content.ToString());
-
-                
-        //    }
-        //}
-
         protected void gvGastos_RowDataBound(object sender, GridViewRowEventArgs e)
         {
             if (e.Row.RowType == DataControlRowType.Header)
