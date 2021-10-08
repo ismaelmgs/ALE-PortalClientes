@@ -123,15 +123,6 @@
                                         <asp:Label ID="lblTripulacionRes" runat="server" Text="---" Font-Bold="true"></asp:Label>
                                     </div>
                                 </div>
-                                <!-- <div class="row" style="background-color: #f2f2f2; padding: 5px; margin: 5px;">
-                                    <div class="col-md-4">
-                                        <asp:Label ID="lblDimencionesExt" runat="server" Text="Dimenciones Exteriores:"></asp:Label>
-                                    </div>
-                                    <div class="col-md-8">
-                                        <asp:Label ID="lblDimencionesExtRes" runat="server" Text="---" Font-Bold="true"></asp:Label>
-                                    </div>
-                                </div> -->
-                                
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="row" style="background-color: #f2f2f2; padding: 5px; margin: 5px;">
@@ -176,50 +167,6 @@
                                     </div>
                                 </div>
                             </div>
-                            <!-- <div class="row">
-                            <div class="col-md-6">
-                                <div class="row" style="background-color: #f2f2f2; margin: 5px;">
-                                    <div class="col-md-7">
-                                        <asp:Label ID="lblMaxFuel" runat="server" Text="Máx. Combustible:"></asp:Label>
-                                    </div>
-                                    <div class="col-md-5">
-                                        <asp:Label ID="lblMaxFuelResp" runat="server" Text="---" Font-Bold="true"></asp:Label>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="row" style="background-color: #f2f2f2; margin: 5px;">
-                                    <div class="col-md-7">
-                                        <asp:Label ID="lblMinFuel" runat="server" Text="Mín. Combustible:"></asp:Label>
-                                    </div>
-                                    <div class="col-md-5">
-                                        <asp:Label ID="lblMinFuelResp" runat="server" Text="---" Font-Bold="true"></asp:Label>
-                                    </div>
-                                </div>
-                            </div>
-                            </div> -->
-                            <!-- <div class="row">
-                            <div class="col-md-6">
-                                <div class="row" style="background-color: #f2f2f2; margin: 5px;">
-                                    <div class="col-md-7">
-                                        <asp:Label ID="lblTipoCombustible" runat="server" Text="Tipo Combustible:"></asp:Label>
-                                    </div>
-                                    <div class="col-md-5">
-                                        <asp:Label ID="lblTipoCombustibleRes" runat="server" Text="---" Font-Bold="true"></asp:Label>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="row" style="background-color: #f2f2f2; margin: 5px;">
-                                    <div class="col-md-7">
-                                        <asp:Label ID="lblRendimiento" runat="server" Text="Rendimiento:"></asp:Label>
-                                    </div>
-                                    <div class="col-md-5">
-                                        <asp:Label ID="lblRendimientoRes" runat="server" Text="---" Font-Bold="true"></asp:Label>
-                                    </div>
-                                </div>
-                            </div>
-                            </div> -->
                             <div class="row">
                             <div class="col-md-6">
                                 <div class="row" style="background-color: #f2f2f2; padding: 5px; margin: 5px;">
@@ -242,29 +189,6 @@
                                 </div>
                             </div>
                             </div>
-                            
-                            <!-- <div class="row">
-                            <div class="col-md-6">
-                                <div class="row" style="background-color: #f2f2f2; margin: 5px;">
-                                    <div class="col-md-7">
-                                        <asp:Label ID="lblDistancia" runat="server" Text="Distancia:"></asp:Label>
-                                    </div>
-                                    <div class="col-md-5">
-                                        <asp:Label ID="lblDistanciaRes" runat="server" Text="---" Font-Bold="true"></asp:Label>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="row" style="background-color: #f2f2f2; margin: 5px;">
-                                    <div class="col-md-7">
-                                        <asp:Label ID="lblPeso" runat="server" Text="Peso:"></asp:Label>
-                                    </div>
-                                    <div class="col-md-5">
-                                        <asp:Label ID="lblPesoRes" runat="server" Text="---" Font-Bold="true"></asp:Label>
-                                    </div>
-                                </div>
-                            </div>
-                            </div> -->
                         </div>
                             <div class="col-md-5">
                                 <br /><br /><br />
@@ -299,6 +223,7 @@
                                 </asp:GridView>
                             </div>
                         </div>
+                        <asp:HiddenField runat="server" ID="HFPath"/>
                     </div>
                 </div>
 

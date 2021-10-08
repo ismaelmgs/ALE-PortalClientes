@@ -426,4 +426,16 @@
   <data name="TabTransacciones" xml:space="preserve">
     <value>Transacciones</value>
   </data>
+  <data name="Ta_PesoBasicoOpe" xml:space="preserve">
+    <value>Peso Básico Operación:</value>
+  </data>
+  <data name="Ta_PesoMaxAter" xml:space="preserve">
+    <value>Peso Máx. Aterrizaje:</value>
+  </data>
+  <data name="Ta_PesoMaxDesp" xml:space="preserve">
+    <value>Peso Máx. Despegue:</value>
+  </data>
+  <data name="Ta_PesoMaxZeroComb" xml:space="preserve">
+    <value>Peso Máx. 0 combustible:</value>
+  </data>
 </root>

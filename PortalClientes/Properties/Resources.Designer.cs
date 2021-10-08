@@ -520,6 +520,42 @@ namespace PortalClientes.Properties {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Peso Básico Operación:.
+        /// </summary>
+        internal static string Ta_PesoBasicoOpe {
+            get {
+                return ResourceManager.GetString("Ta_PesoBasicoOpe", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Peso Máx. Aterrizaje:.
+        /// </summary>
+        internal static string Ta_PesoMaxAter {
+            get {
+                return ResourceManager.GetString("Ta_PesoMaxAter", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Peso Máx. Despegue:.
+        /// </summary>
+        internal static string Ta_PesoMaxDesp {
+            get {
+                return ResourceManager.GetString("Ta_PesoMaxDesp", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Peso Máx. 0 combustible:.
+        /// </summary>
+        internal static string Ta_PesoMaxZeroComb {
+            get {
+                return ResourceManager.GetString("Ta_PesoMaxZeroComb", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Rendimiento:.
         /// </summary>
         internal static string Ta_Rendimiento {

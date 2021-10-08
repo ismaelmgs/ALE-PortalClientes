@@ -426,4 +426,16 @@
   <data name="TabTransacciones" xml:space="preserve">
     <value>Transactions</value>
   </data>
+  <data name="Ta_PesoBasicoOpe" xml:space="preserve">
+    <value>Basic Weight Operation:</value>
+  </data>
+  <data name="Ta_PesoMaxAter" xml:space="preserve">
+    <value>Max Weight Landing:</value>
+  </data>
+  <data name="Ta_PesoMaxDesp" xml:space="preserve">
+    <value>Max Weight Takeoff:</value>
+  </data>
+  <data name="Ta_PesoMaxZeroComb" xml:space="preserve">
+    <value>Max Weight 0 fuel:</value>
+  </data>
 </root>
