@@ -1,19 +1,20 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="frmTransacciones.aspx.cs" Inherits="PortalClientes.Views.frmTransacciones" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-
-    <script type="text/javascript">
-        
-        $("[src*=flecha_abre1]").on("click", function () {
-            $(this).closest("tr").after("<tr><td></td><td colspan = '999'>" + $(this).next().html() + "</td></tr>")
-            $(this).attr("src", "../Images/icons/flecha_cierra.png");
-        });
-
-        $("[src*=flecha_cierra]").on("click", function () {
-            $(this).attr("src", "../Images/icons/flecha_abre1.png");
-            $(this).closest("tr").next().remove();
-        });
-        
+    <script src="../vendors/jquery/dist/jquery.js"></script>
+    
+    <script language="javascript" type="text/javascript">  
+        function divexpandcollapse(divname) {
+            var div = document.getElementById(divname);
+            var img = document.getElementById('img' + divname);
+            if (div.style.display == "none") {
+                div.style.display = "inline";
+                img.src = "../Images/icons/flecha_cierra.png";
+            } else {
+                div.style.display = "none";
+                img.src = "../Images/icons/flecha_abre1.png";
+            }
+        }
     </script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -110,20 +111,22 @@
                             <div class="card-box table-responsive">
                                 <asp:GridView ID="gvGastos" runat="server" AutoGenerateColumns="false" CssClass="table table-striped table-bordered table-hover"
                                     OnPageIndexChanging="gvGastos_PageIndexChanging" OnRowDataBound="gvGastos_RowDataBound" EmptyDataText="No Registros">
-                                    <HeaderStyle />
-                                    <RowStyle />
-                                    <AlternatingRowStyle />
                                     <Columns>
+                                        <asp:TemplateField ItemStyle-Width="20px">
+                                            <ItemTemplate>
+                                                <a href="JavaScript:divexpandcollapse('div<%# Eval("mes") %>');">
+                                                    <img id="imgdiv<%# Eval("mes") %>" width="14px;" border="0" src="../Images/icons/flecha_abre1.png" />
+                                                </a>
+                                            </ItemTemplate>
+                                        </asp:TemplateField>
+                                        <asp:BoundField DataField="mes" />
+                                        <asp:BoundField DataField="mes" HeaderText="Año" />
                                         <asp:TemplateField>
                                             <ItemTemplate>
-                                                <img alt="" style="cursor: pointer" src="../Images/icons/flecha_abre1.png" />
-                                                <asp:Panel ID="pnlOrders" runat="server" Style="display: none">
-                                                    <div id="div<%# Eval("mes") %>"   >
+                                                <tr id="div<%# Eval("mes") %>">
+                                                    <td>
                                                         <asp:GridView ID="gvGastosDetalle" runat="server" AutoGenerateColumns="false" CssClass="table table-striped table-bordered table-hover"
                                                             OnRowDataBound="gvGastos_RowDataBound" EmptyDataText="No Registros">
-                                                            <HeaderStyle />
-                                                            <RowStyle />
-                                                            <AlternatingRowStyle />
                                                             <Columns>
                                                                 <asp:BoundField DataField="idRubro" />
                                                                 <asp:BoundField DataField="Rubro" />
@@ -134,13 +137,10 @@
                                                                 <asp:BoundField DataField="comentarios" />
                                                             </Columns>
                                                         </asp:GridView>
-                                                    </div>
-                                                </asp:Panel>
+                                                    </td>
+                                                </tr>
                                             </ItemTemplate>
                                         </asp:TemplateField>
-                                        <asp:BoundField DataField="mes" />
-                                        <asp:BoundField DataField="mes" HeaderText="Año" />
-                                        
                                     </Columns>
                                 </asp:GridView>
                             </div>
