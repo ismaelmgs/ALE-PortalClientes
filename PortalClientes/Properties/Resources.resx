@@ -438,4 +438,19 @@
   <data name="Ta_PesoMaxZeroComb" xml:space="preserve">
     <value>Peso Máx. 0 combustible:</value>
   </data>
+  <data name="Das_BtnActualizar" xml:space="preserve">
+    <value>Actualizar</value>
+  </data>
+  <data name="Das_CostoCategoria" xml:space="preserve">
+    <value>Costos Por Categoria</value>
+  </data>
+  <data name="TabTran_MontoTotal" xml:space="preserve">
+    <value>Total de Gastos</value>
+  </data>
+  <data name="TabTran_NoGastos" xml:space="preserve">
+    <value>No. de Gastos</value>
+  </data>
+  <data name="TabTran_PromedioMens" xml:space="preserve">
+    <value>Promedio Mensual</value>
+  </data>
 </root>

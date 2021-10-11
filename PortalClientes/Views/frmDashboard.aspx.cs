@@ -202,6 +202,8 @@ namespace PortalClientes.Views
             {
                 ddlTipoRubro.SelectedValue = vTR;
             }
+
+            lblCostosCat.Text = Properties.Resources.Das_CostoCategoria;
         }
 
         [WebMethod]

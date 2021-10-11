@@ -31,103 +31,58 @@ namespace PortalClientes.Views {
         protected global::System.Web.UI.WebControls.TextBox txtBusqueda;
         
         /// <summary>
-        /// Control lblNumVuelos.
+        /// Control lblTotalTrasn.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblNumVuelos;
+        protected global::System.Web.UI.WebControls.Label lblTotalTrasn;
         
         /// <summary>
-        /// Control lblNumVuelosRes.
+        /// Control lblTotalTrasnRes.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblNumVuelosRes;
+        protected global::System.Web.UI.WebControls.Label lblTotalTrasnRes;
         
         /// <summary>
-        /// Control lblPagos.
+        /// Control lblTotal.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblPagos;
+        protected global::System.Web.UI.WebControls.Label lblTotal;
         
         /// <summary>
-        /// Control lblMXNUSDuno.
+        /// Control lblTotalRes.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblMXNUSDuno;
+        protected global::System.Web.UI.WebControls.Label lblTotalRes;
         
         /// <summary>
-        /// Control lblPagosRes.
+        /// Control lblPromedio.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblPagosRes;
+        protected global::System.Web.UI.WebControls.Label lblPromedio;
         
         /// <summary>
-        /// Control lblGastos.
+        /// Control lblPromedioRes.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblGastos;
-        
-        /// <summary>
-        /// Control lblMXNUSDdos.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblMXNUSDdos;
-        
-        /// <summary>
-        /// Control lblGastosRes.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblGastosRes;
-        
-        /// <summary>
-        /// Control lblGastosOperacion.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblGastosOperacion;
-        
-        /// <summary>
-        /// Control lblMXNUSDtres.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblMXNUSDtres;
-        
-        /// <summary>
-        /// Control lblGastosOperacionRes.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblGastosOperacionRes;
+        protected global::System.Web.UI.WebControls.Label lblPromedioRes;
         
         /// <summary>
         /// Control lblTransacciones.

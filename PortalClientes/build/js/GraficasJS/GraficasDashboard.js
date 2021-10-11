@@ -156,7 +156,9 @@ function charts(data, ChartType) {
 
                 let obj = JSON.stringify({
                     gastos: gastos,
-                    tipoDet: "MXN" 
+                    tipoDet: "MXN",
+                    rubroEsp: array.rubroESP,
+                    rubroEng: array.rubroENG
                 });
 
                 $.ajax({
@@ -182,7 +184,9 @@ function charts(data, ChartType) {
 
                 let obj = JSON.stringify({
                     gastos: gastos,
-                    tipoDet: "USD"
+                    tipoDet: "USD",
+                    rubroEsp: array.rubroESP,
+                    rubroEng: array.rubroENG
                 });
 
                 $.ajax({

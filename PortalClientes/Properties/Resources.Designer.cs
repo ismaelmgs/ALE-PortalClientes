@@ -151,11 +151,29 @@ namespace PortalClientes.Properties {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Actualizar.
+        /// </summary>
+        internal static string Das_BtnActualizar {
+            get {
+                return ResourceManager.GetString("Das_BtnActualizar", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Completo.
         /// </summary>
         internal static string Das_Completo {
             get {
                 return ResourceManager.GetString("Das_Completo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Costos Por Categoria.
+        /// </summary>
+        internal static string Das_CostoCategoria {
+            get {
+                return ResourceManager.GetString("Das_CostoCategoria", resourceCulture);
             }
         }
         
@@ -705,6 +723,33 @@ namespace PortalClientes.Properties {
         internal static string TabTran_Mes {
             get {
                 return ResourceManager.GetString("TabTran_Mes", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Total de Gastos.
+        /// </summary>
+        internal static string TabTran_MontoTotal {
+            get {
+                return ResourceManager.GetString("TabTran_MontoTotal", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a No. de Gastos.
+        /// </summary>
+        internal static string TabTran_NoGastos {
+            get {
+                return ResourceManager.GetString("TabTran_NoGastos", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Promedio Mensual.
+        /// </summary>
+        internal static string TabTran_PromedioMens {
+            get {
+                return ResourceManager.GetString("TabTran_PromedioMens", resourceCulture);
             }
         }
         

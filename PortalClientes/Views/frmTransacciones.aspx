@@ -40,30 +40,30 @@
         </div>
     </div>
     <div class="row" style="margin:5px;">
-        <div class="col-md-3 tile_count" style="border-left:2px solid #73879c;border-right:2px solid #73879c;">
+        <div class="col-md-4 tile_count" style="border-left:2px solid #73879c;border-right:2px solid #73879c;">
         <div class="tile_stats_count" style="text-align:center;">
-            <span class="count_top"><i class="fa fa-plane"></i><asp:Label ID="lblNumVuelos" runat="server" Text=" Número de Vuelos" Font-Bold="false"></asp:Label></span>
-            <div class="count"><asp:Label ID="lblNumVuelosRes" runat="server" Text=" 2500" Font-Bold="true" CssClass="count"></asp:Label></div>
+            <span class="count_top"><i class="fa fa-plane"></i> <asp:Label ID="lblTotalTrasn" runat="server" Text=" Número de Vuelos" Font-Bold="false"></asp:Label></span>
+            <div class="count"><asp:Label ID="lblTotalTrasnRes" runat="server" Font-Bold="true" CssClass="count"></asp:Label></div>
         </div>
         </div>
-        <div class="col-md-3 tile_count" style="border-right:2px solid #73879c;">
+        <div class="col-md-4 tile_count" style="border-right:2px solid #73879c;">
         <div class="tile_stats_count" style="text-align:center;">
-            <span class="count_top"><i class="fa fa-plane"></i><asp:Label ID="lblPagos" runat="server" Text=" Pagos" Font-Bold="false"></asp:Label></span>
-            <div class="count"><asp:Label ID="lblMXNUSDuno" runat="server" Text=" $" Font-Bold="true" CssClass="count" /> <asp:Label ID="lblPagosRes" runat="server" Text=" 2500" Font-Bold="true" CssClass="count"></asp:Label></div>
+            <span class="count_top"><i class="fa fa-plane"></i> <asp:Label ID="lblTotal" runat="server" Text=" Pagos" Font-Bold="false"></asp:Label></span>
+            <div class="count"><asp:Label ID="lblTotalRes" runat="server" Font-Bold="true" CssClass="count" /></div>
         </div>
         </div>
-        <div class="col-md-3 tile_count" style="border-right:2px solid #73879c;">
+        <div class="col-md-4 tile_count" style="border-right:2px solid #73879c;">
         <div class="tile_stats_count" style="text-align:center;">
-            <span class="count_top"><i class="fa fa-plane"></i><asp:Label ID="lblGastos" runat="server" Text=" Gastos" Font-Bold="false"></asp:Label></span>
-            <div class="count"><asp:Label ID="lblMXNUSDdos" runat="server" Text=" $" Font-Bold="true" CssClass="count" /> <asp:Label ID="lblGastosRes" runat="server" Text=" 2500" Font-Bold="true" CssClass="count"></asp:Label></div>
+            <span class="count_top"><i class="fa fa-plane"></i><asp:Label ID="lblPromedio" runat="server" Text=" Gastos" Font-Bold="false"></asp:Label></span>
+            <div class="count"><asp:Label ID="lblPromedioRes" runat="server" Font-Bold="true" CssClass="count" /></div>
         </div>
         </div>
-        <div class="col-md-3 tile_count" style="border-right:2px solid #73879c;">
+        <%--<div class="col-md-3 tile_count" style="border-right:2px solid #73879c;">
         <div class="tile_stats_count" style="text-align:center;">
             <span class="count_top"><i class="fa fa-plane"></i><asp:Label ID="lblGastosOperacion" runat="server" Text=" Gastos de Operación" Font-Bold="false"></asp:Label></span>
             <div class="count"><asp:Label ID="lblMXNUSDtres" runat="server" Text=" $" Font-Bold="true" CssClass="count" /> <asp:Label ID="lblGastosOperacionRes" runat="server" Text=" 2500" Font-Bold="true" CssClass="count"></asp:Label></div>
         </div>
-        </div>
+        </div>--%>
     </div>
     <div class="row">
        <div class="col-md-12 col-sm-12">

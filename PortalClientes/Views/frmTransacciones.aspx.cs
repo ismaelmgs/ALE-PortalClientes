@@ -12,6 +12,7 @@ using Newtonsoft.Json;
 using System.Web.Services;
 using DevExpress.Web;
 using NucleoBase.Core;
+using System.Globalization;
 
 namespace PortalClientes.Views
 {
@@ -66,6 +67,15 @@ namespace PortalClientes.Views
         #region METODOS
         private void LlenarGV(List<gvGastos> gv)
         {
+            var contMeses = gv.GroupBy(r => r.mes).Count();
+            var totalTransacciones = gv.Sum(x => x.Total);
+            var promedio = totalTransacciones / contMeses;
+
+            lblTotalTrasnRes.Text = gv.Count().S();
+            lblTotalRes.Text = totalTransacciones.ToString("C", CultureInfo.CurrentCulture);
+            lblPromedioRes.Text = promedio.ToString("C", CultureInfo.CurrentCulture);
+
+
             gvGastos.DataSource = gv.OrderBy(x => x.Fecha); //.GroupBy(r => r.mes).Select(x => x.First());
             gvGastos.DataBind();
         }
@@ -137,9 +147,15 @@ namespace PortalClientes.Views
         {
             txtBusqueda.Attributes.Add("placeholder", Properties.Resources.Cm_Buscador);
 
-            lblTransacciones.Text = Properties.Resources.TabTransacciones;
+            lblTransacciones.Text = Properties.Resources.TabTransacciones + " - " + Session["titleGastos"];
+            lblTitulo.Text = Properties.Resources.TabTransacciones;
+
+            lblTotalTrasn.Text = Properties.Resources.TabTran_NoGastos;
+            lblTotal.Text = Properties.Resources.TabTran_MontoTotal;
+            lblPromedio.Text = Properties.Resources.TabTran_PromedioMens;
+
             //lblSalida.Text = Properties.Resources.Das_Salida;
-            //lblLlego.Text = Properties.Resources.Das_Llego;
+            //lblLlego.Text = Properties.Resources.Das_Llego;s
             //lblCompleto.Text = Properties.Resources.Das_Completo;
             //lblVuelos.Text = Properties.Resources.Das_Vuelos;
             //lblHorasVuelo.Text = Properties.Resources.Das_HorasVuelo;
@@ -153,7 +169,7 @@ namespace PortalClientes.Views
         }
 
         [WebMethod]
-        public static void ObtenerTransacciones(List<gasto> gastos, string tipoDet)
+        public static void ObtenerTransacciones(List<gasto> gastos, string tipoDet, string rubroEsp, string rubroEng)
         {
             List<gvGastos> gv = new List<gvGastos>();
             foreach (var item in gastos)
@@ -189,7 +205,10 @@ namespace PortalClientes.Views
 
             }
 
+            var idiomaRubro = Utils.Idioma == "es-MX" ? CultureInfo.CurrentCulture.TextInfo.ToTitleCase(rubroEsp.ToLower()) : CultureInfo.CurrentCulture.TextInfo.ToTitleCase(rubroEsp.ToLower());
+
             HttpContext.Current.Session["gvGastos"] = gv;
+            HttpContext.Current.Session["titleGastos"] = idiomaRubro + " - " + tipoDet;
         }
 
         #endregion
