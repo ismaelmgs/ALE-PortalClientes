@@ -99,7 +99,28 @@ function charts(data, ChartType) {
         });
 
         var options = {
-            title: jsonData[0].idioma == "es-MX" ? "Costos por Categoria'" : "Costs by Category",
+            title: jsonData[0].idioma == "es-MX" ? "Costos por Categoria MXN" : "Costs by Category MXN",
+            is3D: true, //Pie Charts
+            fontSize: 9,
+            chartArea: {
+                left: screenWidth > 500 ? 30 : 10,
+                top: 30,
+                width: '100%',
+                height: '75%'
+            },
+            animation: {
+                duration: 3000,
+                easing: 'out',
+                startup: true
+            },
+            legend: {
+                position: 'rigth',
+                alignment: 'center',
+            },
+        };
+
+        var optionsE = {
+            title: jsonData[0].idioma == "es-MX" ? "Costos por Categoria USD" : "Costs by Category USD",
             is3D: true, //Pie Charts
             fontSize: 9,
             chartArea: {
@@ -123,7 +144,7 @@ function charts(data, ChartType) {
         chart.draw(data, options);
 
         var chartE = new google.visualization.PieChart(document.getElementById('piechart_3d_2'));
-        chartE.draw(dataE, options);
+        chartE.draw(dataE, optionsE);
 
         google.visualization.events.addListener(chart, 'select', function () {
             var selection = chart.getSelection();

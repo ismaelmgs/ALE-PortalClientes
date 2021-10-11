@@ -176,7 +176,7 @@ namespace PortalClientes.Views
                 if (tipoDet == "USD" && item.totalMXN == 0 && item.totalUSD > 0)
                 {
                     g.idRubro = item.idRubro;
-                    g.Rubro = Utils.Idioma == "es-Mx" ? item.rubroESP : item.rubroENG;
+                    g.Rubro = Utils.Idioma == "es-MX" ? item.rubroESP : item.rubroENG;
                     g.Total = item.totalUSD;
                     g.Fecha = item.fecha;
                     g.Categoria = item.categoria;

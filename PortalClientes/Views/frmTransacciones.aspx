@@ -72,7 +72,7 @@
                 <h2><asp:Label ID="lblTransacciones" runat="server" Text="Transacciones" Font-Bold="true"></asp:Label></h2>
                 
                 <ul class="nav navbar-right panel_toolbox">
-                    <li>
+                    <%--<li>
                         <asp:dropdownlist runat="server" id="ddlMeses" CssClass="form-control"> 
                              <asp:listitem text="Intervalo de:" value=""></asp:listitem>
                              <asp:listitem text="Último mes" value="1mes"></asp:listitem>
@@ -89,7 +89,7 @@
                              <asp:listitem text="Opción 3" value="op3"></asp:listitem>
                              <asp:listitem text="Opción 4" value="op4"></asp:listitem>
                         </asp:dropdownlist>
-                    </li>
+                    </li>--%>
                     <li style="padding-left:5px;">
                         <asp:LinkButton ID="btnExcel" runat="server" Text="<i class='fa fa-file-excel-o' style='color:#ffffff;font-size:22px;'></i>" CssClass="btn btn-primary" />
                     </li>
