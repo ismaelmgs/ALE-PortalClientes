@@ -37,6 +37,7 @@ namespace PortalClientes.DomainModel
         public List<responseGraficaGastos> ObtenerGastos(FiltroGraficaGastos filtro)
         {
             JavaScriptSerializer ser = new JavaScriptSerializer();
+            ser.MaxJsonLength = 500000000;
             List<responseGraficaGastos> d = new List<responseGraficaGastos>();
             FiltroGraficaGastos oLog = new FiltroGraficaGastos();
             oLog = filtro;

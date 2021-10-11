@@ -55,7 +55,7 @@ function ajax_data(obj, url, success) {
             success.call(this, response.d);
         },
         error: function (err) {
-            alert("Error In Connecting");
+            console.log("Error In Connecting", err.responseJSON.Message);
         }
     });
 }
