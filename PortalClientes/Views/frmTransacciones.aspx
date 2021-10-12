@@ -147,7 +147,12 @@
                                     <asp:BoundField DataField="mes" />
                                     <asp:BoundField DataField="idRubro" />
                                     <asp:BoundField DataField="Rubro" />
-                                    <asp:BoundField DataField="Total" DataFormatString="{0:c}"/>
+                                    <asp:TemplateField HeaderText="Total" ItemStyle-HorizontalAlign="Right">
+                                        <ItemTemplate>
+                                            <asp:Label runat="server" ID="lblTotal" Text='<%# String.Format("{0:C}",DataBinder.Eval(Container.DataItem,"Total"))%>'></asp:Label>
+                                        </ItemTemplate>
+                                    </asp:TemplateField>
+                                    <%--<asp:BoundField DataField="Total" DataFormatString="{0:c}" />--%>
                                     <asp:BoundField DataField="Fecha" />
                                     <asp:BoundField DataField="Categoria" />
                                     <asp:BoundField DataField="tipodeGasto" />
