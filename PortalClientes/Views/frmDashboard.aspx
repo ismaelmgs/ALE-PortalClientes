@@ -284,7 +284,7 @@
                         <asp:DropDownList ID="ddlTipoRubro" runat="server" CssClass="form-control" Width="100%"></asp:DropDownList>
                     </div>
                     <div class="col-md-2">
-                        <button id="btnGraficasBuscar" class="btn btn-primary">Actualizar</button>
+                        <button id="btnGraficasBuscar" class="btn btn-primary"><i class='fa fa-undo' style='color:#ffffff;font-size:14px;'></i></button>
                     </div>
                 </div>
                 <div class="row">
