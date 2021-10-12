@@ -42,13 +42,13 @@
     <div class="row" style="margin:5px;">
         <div class="col-md-4 tile_count" style="border-left:2px solid #73879c;border-right:2px solid #73879c;">
         <div class="tile_stats_count" style="text-align:center;">
-            <span class="count_top"><i class="fa fa-money"></i> <asp:Label ID="lblTotalTrasn" runat="server" Text=" Número de Vuelos" Font-Bold="false"></asp:Label></span>
+            <span class="count_top"><i class="fa fa-list-ol"></i> <asp:Label ID="lblTotalTrasn" runat="server" Text=" Número de Vuelos" Font-Bold="false"></asp:Label></span>
             <div class="count"><asp:Label ID="lblTotalTrasnRes" runat="server" Font-Bold="true" CssClass="count"></asp:Label></div>
         </div>
         </div>
         <div class="col-md-4 tile_count" style="border-right:2px solid #73879c;">
         <div class="tile_stats_count" style="text-align:center;">
-            <span class="count_top"><i class="fa fa-th-list"></i> <asp:Label ID="lblTotal" runat="server" Text=" Pagos" Font-Bold="false"></asp:Label></span>
+            <span class="count_top"><i class="fa fa-money"></i> <asp:Label ID="lblTotal" runat="server" Text=" Pagos" Font-Bold="false"></asp:Label></span>
             <div class="count"><asp:Label ID="lblTotalRes" runat="server" Font-Bold="true" CssClass="count" /></div>
         </div>
         </div>
