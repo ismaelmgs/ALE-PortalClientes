@@ -108,6 +108,15 @@
                     </div>
                     </div>
                 </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div id="piechart_3d_1" style="min-height: 400px;"></div>
+                    </div>
+                    <div class="col-md-6">
+                        <div id="piechart_3d_2" style="min-height: 400px;">
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -261,4 +270,6 @@
         </div>
         </div>
     </div>
+     <script src="../vendors/jquery/dist/jquery.js"></script>
+    <script src="../build/js/GraficasJS/GraficasMetricasEstadisticas.js"></script>
 </asp:Content>
