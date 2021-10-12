@@ -13,6 +13,10 @@ using System.Web.Services;
 using DevExpress.Web;
 using NucleoBase.Core;
 using System.Globalization;
+using System.Drawing;
+using iTextSharp.text;
+using iTextSharp.text.html.simpleparser;
+using iTextSharp.text.pdf;
 
 namespace PortalClientes.Views
 {
@@ -55,10 +59,57 @@ namespace PortalClientes.Views
 
         }
 
+        protected void gvGastos_RowDataBound(object sender, GridViewRowEventArgs e)
+        {
+            if (e.Row.RowType == DataControlRowType.Header)
+            {
+                e.Row.Cells[0].Text = Properties.Resources.TabTran_Mes;
+                e.Row.Cells[1].Text = Properties.Resources.TabTran_idRubro;
+                e.Row.Cells[2].Text = Properties.Resources.TabTran_Rubro;
+                e.Row.Cells[3].Text = Properties.Resources.TabTran_Total;
+                e.Row.Cells[4].Text = Properties.Resources.TabTran_Fecha;
+                e.Row.Cells[5].Text = Properties.Resources.TabTran_Categoria;
+                e.Row.Cells[6].Text = Properties.Resources.TabTran_TGasto;
+                e.Row.Cells[7].Text = Properties.Resources.TabTran_Comentario;
+
+
+                //e.Row.Cells[1].Text = Properties.Resources.TabTran_Mes;
+                //e.Row.Cells[2].Text = Properties.Resources.TabTran_Mes;
+            }
+
+            //if (e.Row.RowType == DataControlRowType.DataRow)
+            //{
+            //    GridView gvDetalle = (GridView)e.Row.FindControl("gvGastosDetalle");
+            //    if (gvDetalle != null)
+            //    {
+            //        List<gvGastos> olsGastos = (List<gvGastos>)Session["gvGastos"];
+            //        string smes = olsGastos[e.Row.RowIndex].mes.S();
+
+            //        gvDetalle.DataSource = olsGastos.Where(r => r.mes == smes);
+            //        gvDetalle.DataBind();
+            //    }
+            //}
+        }
+
         protected void gvGastos_PageIndexChanging(object sender, GridViewPageEventArgs e)
         {
             gvGastos.PageIndex = e.NewPageIndex;
             LlenarGV((List<gvGastos>)Session["gvGastos"]);
+        }
+
+        protected void btnExcel_Click(object sender, EventArgs e)
+        {
+            exportarExcel();
+        }
+
+        protected void btnPDF_Click(object sender, EventArgs e)
+        {
+            exportarPDF();
+        }
+
+        public override void VerifyRenderingInServerForm(Control control)
+        {
+            return;
         }
 
         #endregion
@@ -72,44 +123,12 @@ namespace PortalClientes.Views
             var promedio = totalTransacciones / contMeses;
 
             lblTotalTrasnRes.Text = gv.Count().S();
-            lblTotalRes.Text = totalTransacciones.ToString("C", CultureInfo.CurrentCulture);
-            lblPromedioRes.Text = promedio.ToString("C", CultureInfo.CurrentCulture);
+            lblTotalRes.Text = totalTransacciones.ToString("C", CultureInfo.CreateSpecificCulture("es-MX"));
+            lblPromedioRes.Text = promedio.ToString("C", CultureInfo.CreateSpecificCulture("es-MX"));
 
 
-            gvGastos.DataSource = gv.OrderBy(x => x.Fecha); //.GroupBy(r => r.mes).Select(x => x.First());
+            gvGastos.DataSource = gv.OrderBy(x => x.Fecha).ToList(); //.GroupBy(r => r.mes).Select(x => x.First());
             gvGastos.DataBind();
-        }
-
-        protected void gvGastos_RowDataBound(object sender, GridViewRowEventArgs e)
-        {
-            if (e.Row.RowType == DataControlRowType.Header)
-            {
-                e.Row.Cells[0].Text = Properties.Resources.TabTran_Mes;
-                e.Row.Cells[1].Text = Properties.Resources.TabTran_idRubro;
-                e.Row.Cells[2].Text = Properties.Resources.TabTran_Rubro;
-                e.Row.Cells[3].Text = Properties.Resources.TabTran_Total;
-                e.Row.Cells[4].Text = Properties.Resources.TabTran_Fecha;
-                e.Row.Cells[5].Text = Properties.Resources.TabTran_Categoria;
-                e.Row.Cells[6].Text = Properties.Resources.TabTran_TGasto;
-                e.Row.Cells[7].Text = Properties.Resources.TabTran_Comentario;
-               
-
-                //e.Row.Cells[1].Text = Properties.Resources.TabTran_Mes;
-                //e.Row.Cells[2].Text = Properties.Resources.TabTran_Mes;
-            }
-
-            //if (e.Row.RowType == DataControlRowType.DataRow)
-            //{
-            //    GridView gvDetalle = (GridView)e.Row.FindControl("gvGastosDetalle");
-            //    if (gvDetalle != null)
-            //    {
-            //        List<gvGastos> olsGastos = (List<gvGastos>)Session["gvGastos"];
-            //        string smes = olsGastos[e.Row.RowIndex].mes.S();
-                    
-            //        gvDetalle.DataSource = olsGastos.Where(r => r.mes == smes);
-            //        gvDetalle.DataBind();
-            //    }
-            //}
         }
 
         //protected void gvGastosDetalle_RowDataBound(object sender, GridViewRowEventArgs e)
@@ -209,11 +228,113 @@ namespace PortalClientes.Views
 
             HttpContext.Current.Session["gvGastos"] = gv;
             HttpContext.Current.Session["titleGastos"] = idiomaRubro + " - " + tipoDet;
+            HttpContext.Current.Session["titleGastosExcel"] = idiomaRubro + "_" + tipoDet;
         }
 
+        private void exportarExcel()
+        {
+            var nameFile = "Transacciones_" + (string)Session["titleGastosExcel"] + ".xls";
+            Response.Clear();
+            Response.Buffer = true;
+            Response.AddHeader("content-disposition", string.Format("attachment;filename={0}", nameFile));
+            Response.Charset = "";
+            Response.ContentType = "application/vnd.ms-excel";
+            using (StringWriter sw = new StringWriter())
+            {
+                HtmlTextWriter hw = new HtmlTextWriter(sw);
+
+
+                gvGastos.AllowPaging = false;
+                List<gvGastos> values = (List<gvGastos>)Session["gvGastos"];
+                LlenarGV(values);
+
+
+                gvGastos.HeaderRow.BackColor = Color.White;
+                foreach (TableCell cell in gvGastos.HeaderRow.Cells)
+                {
+                    cell.BackColor = gvGastos.HeaderStyle.BackColor;
+                }
+                foreach (GridViewRow row in gvGastos.Rows)
+                {
+                    row.BackColor = Color.White;
+                    foreach (TableCell cell in row.Cells)
+                    {
+                        if (row.RowIndex % 2 == 0)
+                        {
+                            cell.BackColor = gvGastos.AlternatingRowStyle.BackColor;
+                        }
+                        else
+                        {
+                            cell.BackColor = gvGastos.RowStyle.BackColor;
+                        }
+                        cell.CssClass = "textmode";
+                    }
+                }
+
+                gvGastos.RenderControl(hw);
+
+                string style = @"<style> .textmode { } </style>";
+                Response.Write(sw.ToString());
+                //Response.Output.Write();
+                //Response.Flush();
+                Response.End();
+            }
+        }
+
+        private void exportarPDF()
+        {
+            var nameFile = "Transacciones_" + (string)Session["titleGastosExcel"] + ".pdf";
+            Response.Clear();
+            Response.Buffer = true;
+            Response.AddHeader("content-disposition", string.Format("attachment;filename={0}", nameFile));
+            Response.Charset = "";
+            Response.ContentType = "application/octet-stream";
+            Response.Cache.SetCacheability(HttpCacheability.NoCache);
+            using (StringWriter sw = new StringWriter())
+            {
+                HtmlTextWriter hw = new HtmlTextWriter(sw);
+
+
+                gvGastos.AllowPaging = false;
+                List<gvGastos> values = (List<gvGastos>)Session["gvGastos"];
+                LlenarGV(values);
+
+
+                gvGastos.HeaderRow.BackColor = Color.White;
+                foreach (TableCell cell in gvGastos.HeaderRow.Cells)
+                {
+                    cell.BackColor = gvGastos.HeaderStyle.BackColor;
+                }
+                foreach (GridViewRow row in gvGastos.Rows)
+                {
+                    row.BackColor = Color.White;
+                    foreach (TableCell cell in row.Cells)
+                    {
+                        if (row.RowIndex % 2 == 0)
+                        {
+                            cell.BackColor = gvGastos.AlternatingRowStyle.BackColor;
+                        }
+                        else
+                        {
+                            cell.BackColor = gvGastos.RowStyle.BackColor;
+                        }
+                        cell.CssClass = "textmode";
+                    }
+                }
+
+                gvGastos.RenderControl(hw);
+
+                StringReader sr = new StringReader(sw.ToString());
+                Document pdfDoc = new Document(PageSize.A4, 10f, 10f, 100f, 0f);
+                HTMLWorker htmlparser = new HTMLWorker(pdfDoc);
+                PdfWriter.GetInstance(pdfDoc, Response.OutputStream);
+                pdfDoc.Open();
+                htmlparser.Parse(sr);
+                pdfDoc.Close();
+                Response.Write(pdfDoc);
+                Response.End();
+            }
+        }
         #endregion
-
-
-
     }
 }

@@ -91,10 +91,10 @@
                         </asp:dropdownlist>
                     </li>--%>
                     <li style="padding-left:5px;">
-                        <asp:LinkButton ID="btnExcel" runat="server" Text="<i class='fa fa-file-excel-o' style='color:#ffffff;font-size:22px;'></i>" CssClass="btn btn-primary" />
+                        <asp:LinkButton ID="btnExcel" runat="server" Text="<i class='fa fa-file-excel-o' style='color:#ffffff;font-size:22px;'></i>" CssClass="btn btn-primary" OnClick="btnExcel_Click"/>
                     </li>
                     <li>
-                        <asp:LinkButton ID="btnPDF" runat="server" Text="<i class='fa fa-file-pdf-o' style='color:#ffffff;font-size:22px;'></i>" CssClass="btn btn-primary" />
+                        <asp:LinkButton ID="btnPDF" runat="server" Text="<i class='fa fa-file-pdf-o' style='color:#ffffff;font-size:22px;'></i>" CssClass="btn btn-primary" OnClick="btnPDF_Click"/>
                     </li>
                     <li>
                         <a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
@@ -141,13 +141,13 @@
                         </div>--%>
                     <div class="table-responsive">
                         <div class="card-box table-responsive">
-                            <asp:GridView ID="gvGastos" runat="server" AutoGenerateColumns="false" CssClass="table table-striped table-bordered table-hover"
+                            <asp:GridView ID="gvGastos" runat="server" AutoGenerateColumns="false" CssClass="table table-striped table-bordered table-hover" AllowPaging="true"
                                 OnPageIndexChanging="gvGastos_PageIndexChanging" OnRowDataBound="gvGastos_RowDataBound" EmptyDataText="No Registros">
                                 <Columns>
                                     <asp:BoundField DataField="mes" />
                                     <asp:BoundField DataField="idRubro" />
                                     <asp:BoundField DataField="Rubro" />
-                                    <asp:BoundField DataField="Total" />
+                                    <asp:BoundField DataField="Total" DataFormatString="{0:c}"/>
                                     <asp:BoundField DataField="Fecha" />
                                     <asp:BoundField DataField="Categoria" />
                                     <asp:BoundField DataField="tipodeGasto" />
