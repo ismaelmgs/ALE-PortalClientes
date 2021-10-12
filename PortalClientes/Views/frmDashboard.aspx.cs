@@ -11,6 +11,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Web.Services;
 using System.Web.Script.Services;
+using System.Globalization;
 
 namespace PortalClientes.Views
 {
@@ -62,9 +63,9 @@ namespace PortalClientes.Views
             lblDestinoText.Text = oDashboard.Destino;
             lblSalidaText.Text = oDashboard.Salida;
             lblLlegoText.Text = oDashboard.Llegada;
-            lblSaldoNumber.Text = oDashboard.SaldoActual.ToString();
-            lblIncVenc90DiasNumber.Text = oDashboard.SaldoAlVencimiento.ToString();
-            lblultimaDeclaracionText.Text = oDashboard.SaldoUltimaDeclaracion.ToString();
+            lblSaldoNumber.Text = oDashboard.SaldoActual.Value.ToString("C", CultureInfo.CreateSpecificCulture("es-MX"));
+            lblIncVenc90DiasNumber.Text = oDashboard.SaldoAlVencimiento.Value.ToString("C", CultureInfo.CreateSpecificCulture("es-MX"));
+            lblultimaDeclaracionText.Text = oDashboard.SaldoUltimaDeclaracion.Value.ToString("C", CultureInfo.CreateSpecificCulture("es-MX"));
             lblDeclaracionMesAno1.Text = oDashboard.FechaInicioDeclaracion;
             lblDeclaracionMesAno2.Text = oDashboard.FechaFinDeclaracion;
 

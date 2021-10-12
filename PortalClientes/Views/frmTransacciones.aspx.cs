@@ -325,7 +325,7 @@ namespace PortalClientes.Views
                 gvGastos.RenderControl(hw);
 
                 StringReader sr = new StringReader(sw.ToString());
-                Document pdfDoc = new Document(PageSize.A4, 10f, 10f, 100f, 0f);
+                Document pdfDoc = new Document(PageSize.A4.Rotate(), 10f, 10f, 100f, 0f);
                 HTMLWorker htmlparser = new HTMLWorker(pdfDoc);
                 PdfWriter.GetInstance(pdfDoc, Response.OutputStream);
                 pdfDoc.Open();
