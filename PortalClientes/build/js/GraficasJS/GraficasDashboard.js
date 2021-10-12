@@ -168,9 +168,13 @@ function charts(data, ChartType) {
                     method: 'POST',
                     url: "/Views/frmTransacciones.aspx/ObtenerTransacciones",
                     dataType: "json",
-                });
-
-                window.location.pathname = '/Views/frmTransacciones.aspx';
+                    success: function (response) {
+                        window.location.pathname = '/Views/frmTransacciones.aspx';
+                    },
+                    error: function (err) {
+                        console.log("Error In Connecting", err.responseJSON.Message);
+                    }
+                }); 
             }
         });
 
@@ -196,9 +200,13 @@ function charts(data, ChartType) {
                     method: 'POST',
                     url: "/Views/frmTransacciones.aspx/ObtenerTransacciones",
                     dataType: "json",
+                    success: function (response) {
+                        window.location.pathname = '/Views/frmTransacciones.aspx';
+                    },
+                    error: function (err) {
+                        console.log("Error In Connecting", err.responseJSON.Message);
+                    }
                 });
-
-                window.location.pathname = '/Views/frmTransacciones.aspx';
             }
         });
     }
