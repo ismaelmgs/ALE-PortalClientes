@@ -5,7 +5,7 @@
         <div class="row">
         <div class="col-md-6">
             <div class="title_left">
-                <h3>Métricas y Estadísticas</h3>
+                <h3><asp:Label ID="lbltitulometricasEstadisticas" runat="server" Text="Métricas y Estadísticas" Font-Bold="true"></asp:Label></h3>
             </div>
         </div>
         <div class="col-md-6">
@@ -27,7 +27,7 @@
        <div class="col-md-12 col-sm-12">
         <div class="x_panel">
             <div class="x_title">
-                <h2><asp:Label ID="lblMetricasEstadisticas" runat="server" Text="Métricas y Estadísticas" Font-Bold="true"></asp:Label></h2>
+                <h2><asp:Label ID="lblResumenPeriodo" runat="server" Text="Resumen del período" Font-Bold="true"></asp:Label></h2>
                 <%--<ul class="nav navbar-right panel_toolbox">
                     <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
                     </li>
@@ -49,13 +49,13 @@
                 </div>
                 <div class="col-md-2" style="text-align:center;">
                     <button id="btnFiltrarMetricasEstadisticas" class="btn btn-primary" type="button">
-                        <i class="fa fa-filter" aria-hidden="true"></i> Filtrar
+                        <i class="fa fa-filter" aria-hidden="true"></i> <asp:Label ID="lblfiltrar" runat="server" Text="Filtrar" Font-Bold="true"></asp:Label>
                     </button>
                 </div>
             </div>
             <div>
                 <br />
-                <h2>Resumen del período</h2>
+                <%--<h2>Resumen del período</h2>--%>
                 <div class="row" style="margin:5px;">
                     <div class="col-md-3 tile_count" style="border-left:2px solid #73879c;border-right:2px solid #73879c;">
                     <div class="tile_stats_count" style="text-align:center;">
@@ -116,6 +116,7 @@
        <div class="col-md-12 col-sm-12">
         <div class="x_panel">
             <div class="x_title">
+                 <h2><asp:Label ID="lblPeriodoVuelo" runat="server" Text="Promedio de Vuelo" Font-Bold="true"></asp:Label></h2>
                 <%--<ul class="nav navbar-right panel_toolbox">
                     <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
                     </li>
@@ -141,7 +142,7 @@
             </div>
             <div>
                 <br />
-                <h2>Promedio de Vuelo</h2>
+<%--                <h2></h2>--%>
                 <div class="row" style="margin:5px;">
                     <div class="col-md-3 tile_count" style="border-left:2px solid #73879c;border-right:2px solid #73879c;">
                     <div class="tile_stats_count" style="text-align:center;">
@@ -217,6 +218,7 @@
         <div class="col-md-12">
             <div class="x_panel">
             <div class="x_title">
+                 <h2><asp:Label ID="lblReportes" runat="server" Text="Reportes" Font-Bold="true"></asp:Label></h2>
                 <%--<ul class="nav navbar-right panel_toolbox">
                     <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
                     </li>
@@ -239,7 +241,6 @@
             </div>
             <div>
                 <br />
-                <h2>Reportes</h2>
                 <div class="row" style="margin:5px;">
                     <div class="col-md-12 table-responsive">
                         <table class="table table-striped table-bordered table-hover">

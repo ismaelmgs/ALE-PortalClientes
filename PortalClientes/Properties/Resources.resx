@@ -453,4 +453,58 @@
   <data name="TabTran_PromedioMens" xml:space="preserve">
     <value>Promedio Mensual</value>
   </data>
+  <data name="ME_CostoCat" xml:space="preserve">
+    <value>Costo por Categoria</value>
+  </data>
+  <data name="ME_CostoHora" xml:space="preserve">
+    <value>Costo por Hora</value>
+  </data>
+  <data name="ME_CostoMilla" xml:space="preserve">
+    <value>Costo por Milla</value>
+  </data>
+  <data name="ME_CostoPromedio" xml:space="preserve">
+    <value>Costo Promedio</value>
+  </data>
+  <data name="ME_DistanciaPromedio" xml:space="preserve">
+    <value>Distancia Promedio</value>
+  </data>
+  <data name="ME_Filtrar" xml:space="preserve">
+    <value>Filtrar</value>
+  </data>
+  <data name="Me_GastoTotalFijo" xml:space="preserve">
+    <value>Gasto Total Fijo</value>
+  </data>
+  <data name="ME_GastoTotalVariable" xml:space="preserve">
+    <value>Gasto Total Variable</value>
+  </data>
+  <data name="ME_HorasVoladas" xml:space="preserve">
+    <value>Horas Voladas</value>
+  </data>
+  <data name="ME_NumeroVuelos" xml:space="preserve">
+    <value>Número de Vuelos</value>
+  </data>
+  <data name="ME_PeriodoVuelo" xml:space="preserve">
+    <value>Promedio de Vuelo</value>
+  </data>
+  <data name="ME_PromedioPasajeros" xml:space="preserve">
+    <value>Promedio de Pasajeros</value>
+  </data>
+  <data name="ME_Reportes" xml:space="preserve">
+    <value>Reportes</value>
+  </data>
+  <data name="ME_ResumeenPeriodo" xml:space="preserve">
+    <value>Resumen del período</value>
+  </data>
+  <data name="ME_TabDescarga" xml:space="preserve">
+    <value>Descarga</value>
+  </data>
+  <data name="ME_TabDescripcion" xml:space="preserve">
+    <value>Descripción</value>
+  </data>
+  <data name="ME_TiempoPromedio" xml:space="preserve">
+    <value>Tiempo Promedio</value>
+  </data>
+  <data name="ME_Titulo" xml:space="preserve">
+    <value>Métricas y Estadísticas</value>
+  </data>
 </root>

@@ -55,19 +55,23 @@ namespace PortalClientes.Views
         {
             txtBusqueda.Attributes.Add("placeholder", Properties.Resources.Cm_Buscador);
 
-            //lblEstadoDeVuelo.Text = Properties.Resources.Das_EstadoVuelo;
-            //lblSalida.Text = Properties.Resources.Das_Salida;
-            //lblLlego.Text = Properties.Resources.Das_Llego;
-            //lblCompleto.Text = Properties.Resources.Das_Completo;
-            //lblVuelos.Text = Properties.Resources.Das_Vuelos;
-            //lblHorasVuelo.Text = Properties.Resources.Das_HorasVuelo;
-            //lblNMVuelo.Text = Properties.Resources.Das_NMVuelo;
-            //lblResumenDeCuenta.Text = Properties.Resources.Das_ResumenCuenta;
-            //lblSaldo.Text = Properties.Resources.Das_Saldo;
-            //lblIncVenc90Dias.Text = Properties.Resources.Das_Ven90dias;
-            //lblUltimaDeclaracion.Text = Properties.Resources.Das_UltimaDeclaracion;
-            //lblDeclaracionPara.Text = Properties.Resources.Das_DeclaracionPara;
-            //lblVence.Text = Properties.Resources.Das_Vence;
+            lbltitulometricasEstadisticas.Text = Properties.Resources.ME_Titulo;
+            lblResumenPeriodo.Text = Properties.Resources.ME_ResumeenPeriodo; ;
+            lblfiltrar.Text = Properties.Resources.ME_Filtrar;
+            lblGastoTotalFijo.Text = Properties.Resources.Me_GastoTotalFijo;
+            lblGastoTotalVariable.Text = Properties.Resources.ME_GastoTotalVariable;
+            lblCostoHora.Text = Properties.Resources.ME_CostoHora;
+            lblCostoMilla.Text = Properties.Resources.ME_CostoMilla;
+            lblNumeroVuelos.Text = Properties.Resources.ME_NumeroVuelos;
+            lblHorasVoladas.Text = Properties.Resources.ME_HorasVoladas;
+            lblPromedioDePasajeros.Text = Properties.Resources.ME_PromedioPasajeros;
+            lblPeriodoVuelo.Text = Properties.Resources.ME_PeriodoVuelo;
+            lblTiempoPromedio.Text = Properties.Resources.ME_TiempoPromedio;
+            lblDistanciaPromedio.Text = Properties.Resources.ME_DistanciaPromedio;
+            lblPromedioPasajeros.Text = Properties.Resources.ME_PromedioPasajeros;
+            lblCostoPromedio.Text = Properties.Resources.ME_CostoPromedio;
+            lblCostosCat.Text = Properties.Resources.ME_CostoCat;
+            lblReportes.Text = Properties.Resources.ME_Reportes;
 
             var vPeriodo = ddlPeriodo.SelectedValue;
             // llenar dropdown Periodo

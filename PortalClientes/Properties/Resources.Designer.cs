@@ -412,6 +412,168 @@ namespace PortalClientes.Properties {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Costo por Categoria.
+        /// </summary>
+        internal static string ME_CostoCat {
+            get {
+                return ResourceManager.GetString("ME_CostoCat", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Costo por Hora.
+        /// </summary>
+        internal static string ME_CostoHora {
+            get {
+                return ResourceManager.GetString("ME_CostoHora", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Costo por Milla.
+        /// </summary>
+        internal static string ME_CostoMilla {
+            get {
+                return ResourceManager.GetString("ME_CostoMilla", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Costo Promedio.
+        /// </summary>
+        internal static string ME_CostoPromedio {
+            get {
+                return ResourceManager.GetString("ME_CostoPromedio", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Distancia Promedio.
+        /// </summary>
+        internal static string ME_DistanciaPromedio {
+            get {
+                return ResourceManager.GetString("ME_DistanciaPromedio", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Filtrar.
+        /// </summary>
+        internal static string ME_Filtrar {
+            get {
+                return ResourceManager.GetString("ME_Filtrar", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Gasto Total Fijo.
+        /// </summary>
+        internal static string Me_GastoTotalFijo {
+            get {
+                return ResourceManager.GetString("Me_GastoTotalFijo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Gasto Total Variable.
+        /// </summary>
+        internal static string ME_GastoTotalVariable {
+            get {
+                return ResourceManager.GetString("ME_GastoTotalVariable", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Horas Voladas.
+        /// </summary>
+        internal static string ME_HorasVoladas {
+            get {
+                return ResourceManager.GetString("ME_HorasVoladas", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Número de Vuelos.
+        /// </summary>
+        internal static string ME_NumeroVuelos {
+            get {
+                return ResourceManager.GetString("ME_NumeroVuelos", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Promedio de Vuelo.
+        /// </summary>
+        internal static string ME_PeriodoVuelo {
+            get {
+                return ResourceManager.GetString("ME_PeriodoVuelo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Promedio de Pasajeros.
+        /// </summary>
+        internal static string ME_PromedioPasajeros {
+            get {
+                return ResourceManager.GetString("ME_PromedioPasajeros", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Reportes.
+        /// </summary>
+        internal static string ME_Reportes {
+            get {
+                return ResourceManager.GetString("ME_Reportes", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Resumen del período.
+        /// </summary>
+        internal static string ME_ResumeenPeriodo {
+            get {
+                return ResourceManager.GetString("ME_ResumeenPeriodo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Descarga.
+        /// </summary>
+        internal static string ME_TabDescarga {
+            get {
+                return ResourceManager.GetString("ME_TabDescarga", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Descripción.
+        /// </summary>
+        internal static string ME_TabDescripcion {
+            get {
+                return ResourceManager.GetString("ME_TabDescripcion", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Tiempo Promedio.
+        /// </summary>
+        internal static string ME_TiempoPromedio {
+            get {
+                return ResourceManager.GetString("ME_TiempoPromedio", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Métricas y Estadísticas.
+        /// </summary>
+        internal static string ME_Titulo {
+            get {
+                return ResourceManager.GetString("ME_Titulo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Altitud Máxima:.
         /// </summary>
         internal static string Ta_AltitudMaxima {
