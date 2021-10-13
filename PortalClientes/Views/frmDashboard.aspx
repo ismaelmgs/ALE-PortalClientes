@@ -225,11 +225,9 @@
                         <h1><asp:Label ID="lblSaldoNumber" runat="server" Text="181,011.65" Font-Bold="true"></asp:Label></h1>
                         <br />
                         <div class="row">
-                            <div class="col-md-6">
+                            <div class="col-md-12">
                                 <asp:Label ID="lblIncVenc90Dias" runat="server" Text="incluido el vencimiento (+ de 90 días)" Font-Bold="true"></asp:Label>
-                            </div>
-                            <div class="col-md-6">
-                                <span style="color:#ff0000; font-weight:bold;"><asp:Label ID="lblIncVenc90DiasNumber" runat="server" Text="181,011.65" Font-Bold="true"></asp:Label> USD</span>
+                                &nbsp;&nbsp; <span style="color:#ff0000; font-weight:bold;"><asp:Label ID="lblIncVenc90DiasNumber" runat="server" Text="181,011.65" Font-Bold="true"></asp:Label> USD</span>
                             </div>
                         </div>
                     </div>
@@ -238,17 +236,26 @@
                         <h1><asp:Label ID="lblultimaDeclaracionText" runat="server" Text="58,182.87" Font-Bold="true"></asp:Label></h1>
                         <br />
                         <div class="row">
-                            <div class="col-md-6">
-                                <asp:Label ID="lblDeclaracionPara" runat="server" Text="Declaración para:" Font-Bold="true"></asp:Label>
-                            </div>
-                            <div class="col-md-6">
-                                <span style="font-weight:bold;">
-                                    <asp:Label ID="lblDeclaracionMesAno1" runat="server" Text="Marzo 2021" Font-Bold="true"></asp:Label>
-                                        <br />
-                                    <asp:Label ID="lblVence" runat="server" Text="Vence:" Font-Bold="true"></asp:Label>
-                                        <br />
-                                    <asp:Label ID="lblDeclaracionMesAno2" runat="server" Text="Abril 15 2020" Font-Bold="true"></asp:Label>
-                                </span>
+                            <div class="col-md-12">
+                                <table>
+                                    <tr>
+                                        <td valign="top">
+                                            <asp:Label ID="lblDeclaracionPara" runat="server" Text="Declaración para:" Font-Bold="true"></asp:Label>
+                                        </td>
+                                        <td>
+                                            &nbsp;&nbsp;&nbsp;
+                                        </td>
+                                        <td>
+                                            <span style="font-weight:bold;">
+                                                <asp:Label ID="lblDeclaracionMesAno1" runat="server" Text="Marzo 2021" Font-Bold="true"></asp:Label>
+                                                    <br />
+                                                <asp:Label ID="lblVence" runat="server" Text="Vence:" Font-Bold="true"></asp:Label>
+                                                    <br />
+                                                <asp:Label ID="lblDeclaracionMesAno2" runat="server" Text="Abril 15 2020" Font-Bold="true"></asp:Label>
+                                            </span>
+                                        </td>
+                                    </tr>
+                                </table>
                             </div>
                         </div>
                     </div>
