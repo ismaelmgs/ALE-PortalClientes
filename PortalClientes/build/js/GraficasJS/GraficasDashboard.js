@@ -172,7 +172,7 @@ function charts(data, ChartType) {
                         window.location.pathname = '/Views/frmTransacciones.aspx';
                     },
                     error: function (err) {
-                        console.log("Error In Connecting", err.responseJSON.Message);
+                        console.log("Error In Connecting", err);
                     }
                 }); 
             }
@@ -204,7 +204,7 @@ function charts(data, ChartType) {
                         window.location.pathname = '/Views/frmTransacciones.aspx';
                     },
                     error: function (err) {
-                        console.log("Error In Connecting", err.responseJSON.Message);
+                        console.log("Error In Connecting", err);
                     }
                 });
             }

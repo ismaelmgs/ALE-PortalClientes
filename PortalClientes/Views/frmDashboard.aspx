@@ -30,12 +30,12 @@
         <div class="x_panel">
             <div class="x_title">
                 <h2><asp:Label ID="lblEstadoDeVuelo" runat="server" Text="" Font-Bold="true"></asp:Label></h2>
-                <ul class="nav navbar-right panel_toolbox">
+                <%--<ul class="nav navbar-right panel_toolbox">
                     <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
                     </li>
                     <li><a class="close-link"><i class="fa fa-close"></i></a>
                     </li>
-                </ul>
+                </ul>--%>
                 <div class="clearfix"></div>
             </div>
             <div class="row">
@@ -211,12 +211,12 @@
             <div class="x_panel">
                 <div class="x_title">
                     <h2><asp:Label ID="lblResumenDeCuenta" runat="server" Text="" Font-Bold="true"></asp:Label> | <asp:Label ID="lblMatriculaAeronave" runat="server" Text="" Font-Bold="true"></asp:Label></h2>
-                    <ul class="nav navbar-right panel_toolbox">
+                    <%--<ul class="nav navbar-right panel_toolbox">
                         <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
                         </li>
                         <li><a class="close-link"><i class="fa fa-close"></i></a>
                         </li>
-                    </ul>
+                    </ul>--%>
                     <div class="clearfix"></div>
                 </div>
                 <div class="row">
@@ -225,11 +225,9 @@
                         <h1><asp:Label ID="lblSaldoNumber" runat="server" Text="181,011.65" Font-Bold="true"></asp:Label></h1>
                         <br />
                         <div class="row">
-                            <div class="col-md-6">
+                            <div class="col-md-12">
                                 <asp:Label ID="lblIncVenc90Dias" runat="server" Text="incluido el vencimiento (+ de 90 días)" Font-Bold="true"></asp:Label>
-                            </div>
-                            <div class="col-md-6">
-                                <span style="color:#ff0000; font-weight:bold;"><asp:Label ID="lblIncVenc90DiasNumber" runat="server" Text="181,011.65" Font-Bold="true"></asp:Label> USD</span>
+                                &nbsp;&nbsp; <span style="color:#ff0000; font-weight:bold;"><asp:Label ID="lblIncVenc90DiasNumber" runat="server" Text="181,011.65" Font-Bold="true"></asp:Label> USD</span>
                             </div>
                         </div>
                     </div>
@@ -238,17 +236,26 @@
                         <h1><asp:Label ID="lblultimaDeclaracionText" runat="server" Text="58,182.87" Font-Bold="true"></asp:Label></h1>
                         <br />
                         <div class="row">
-                            <div class="col-md-6">
-                                <asp:Label ID="lblDeclaracionPara" runat="server" Text="Declaración para:" Font-Bold="true"></asp:Label>
-                            </div>
-                            <div class="col-md-6">
-                                <span style="font-weight:bold;">
-                                    <asp:Label ID="lblDeclaracionMesAno1" runat="server" Text="Marzo 2021" Font-Bold="true"></asp:Label>
-                                        <br />
-                                    <asp:Label ID="lblVence" runat="server" Text="Vence:" Font-Bold="true"></asp:Label>
-                                        <br />
-                                    <asp:Label ID="lblDeclaracionMesAno2" runat="server" Text="Abril 15 2020" Font-Bold="true"></asp:Label>
-                                </span>
+                            <div class="col-md-12">
+                                <table>
+                                    <tr>
+                                        <td valign="top">
+                                            <asp:Label ID="lblDeclaracionPara" runat="server" Text="Declaración para:" Font-Bold="true"></asp:Label>
+                                        </td>
+                                        <td>
+                                            &nbsp;&nbsp;&nbsp;
+                                        </td>
+                                        <td>
+                                            <span style="font-weight:bold;">
+                                                <asp:Label ID="lblDeclaracionMesAno1" runat="server" Text="Marzo 2021" Font-Bold="true"></asp:Label>
+                                                    <br />
+                                                <asp:Label ID="lblVence" runat="server" Text="Vence:" Font-Bold="true"></asp:Label>
+                                                    <br />
+                                                <asp:Label ID="lblDeclaracionMesAno2" runat="server" Text="Abril 15 2020" Font-Bold="true"></asp:Label>
+                                            </span>
+                                        </td>
+                                    </tr>
+                                </table>
                             </div>
                         </div>
                     </div>
@@ -262,12 +269,12 @@
             <div class="x_panel">
                 <div class="x_title">
                     <h2><asp:Label ID="lblCostosCat" runat="server" Text="Costos Por Categoría" Font-Bold="true"></asp:Label></h2>
-                    <ul class="nav navbar-right panel_toolbox">
+                    <%--<ul class="nav navbar-right panel_toolbox">
                         <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
                         </li>
                         <li><a class="close-link"><i class="fa fa-close"></i></a>
                         </li>
-                    </ul>
+                    </ul>--%>
                     <div class="clearfix"></div>
                 </div>
                 <div class="row">
@@ -299,8 +306,8 @@
                 </div>
             </div>
          </div>
-    <script src="../vendors/jquery/dist/jquery.js"></script>
-        <script src="../build/js/GraficasJS/GraficasDashboard.js"></script>
+    
+    
 </asp:Content>
 
 
