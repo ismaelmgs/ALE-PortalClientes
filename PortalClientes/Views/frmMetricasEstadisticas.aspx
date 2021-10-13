@@ -108,15 +108,6 @@
                     </div>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col-md-6">
-                        <div id="piechart_3d_1" style="min-height: 400px;"></div>
-                    </div>
-                    <div class="col-md-6">
-                        <div id="piechart_3d_2" style="min-height: 400px;">
-                        </div>
-                    </div>
-                </div>
             </div>
         </div>
     </div>
@@ -182,41 +173,48 @@
     </div>
     </div>
     <div class="row">
-        <div class="col-md-6">
-        <div class="x_panel">
-            <div class="x_title">
-                <ul class="nav navbar-right panel_toolbox">
-                    <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
-                    </li>
-                    <li><a class="close-link"><i class="fa fa-close"></i></a>
-                    </li>
-                </ul>
-                <div class="clearfix"></div>
-            </div>
-            <div class="row">
-                <div class="col-md-6">
-                    &nbsp;
+        <div class="col-md-12 col-sm-12">
+            <div class="x_panel">
+                <div class="x_title">
+                    <h2>
+                        <asp:Label ID="lblCostosCat" runat="server" Text="Costos Por Categoría" Font-Bold="true"></asp:Label></h2>
+                    <ul class="nav navbar-right panel_toolbox">
+                        <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                        </li>
+                        <li><a class="close-link"><i class="fa fa-close"></i></a>
+                        </li>
+                    </ul>
+                    <div class="clearfix"></div>
                 </div>
-                <div class="col-md-6" style="text-align:right;">
-                    <asp:DropDownList id="ddlGastosCategoria" runat="server" CssClass="form-control">
-                        <asp:ListItem Selected="True" Value="Últimos tres meses"> Últimos 3 meses </asp:ListItem>
-                        <asp:ListItem Value="Últimos dos meses"> Últimos 2 meses </asp:ListItem>
-                        <asp:ListItem Value="Último mes"> Último mes </asp:ListItem>
-                    </asp:DropDownList>
+                <div class="row">
+                    <div class="col-md-2">
+                        <asp:DropDownList ID="ddlPeriodo" runat="server" CssClass="form-control" Width="100%"></asp:DropDownList>
+                    </div>
+                    <div class="col-md-3">
+                        <asp:TextBox ID="txtFechaInicioGrafica" runat="server" CssClass="form-control" Type="date" Width="100%"></asp:TextBox>
+                    </div>
+                    <div class="col-md-3">
+                        <asp:TextBox ID="txtFechaFinGrafica" runat="server" CssClass="form-control" Type="date" Width="100%"></asp:TextBox>
+                    </div>
+                    <div class="col-md-2">
+                        <asp:DropDownList ID="ddlTipoRubro" runat="server" CssClass="form-control" Width="100%"></asp:DropDownList>
+                    </div>
+                    <div class="col-md-2">
+                        <button id="btnGraficasBuscar" class="btn btn-primary"><i class='fa fa-undo' style='color: #ffffff; font-size: 14px;'></i></button>
+                    </div>
                 </div>
-            </div>
-            <div>
-                <br />
-                <h2>Gastos por Categoría</h2>
-                <div class="row" style="margin:5px;">
-                    <div class="col-md-12">
-                        Contenido Gráfica<br /><br /><br /><br /><br /><br /><br />
+                <div class="row">
+                    <div class="col-md-6">
+                        <div id="piechart_3d_1" style="min-height: 400px;"></div>
+                    </div>
+                    <div class="col-md-6">
+                        <div id="piechart_3d_2" style="min-height: 400px;">
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-        </div>
-        <div class="col-md-6">
+        <div class="col-md-12">
             <div class="x_panel">
             <div class="x_title">
                 <ul class="nav navbar-right panel_toolbox">

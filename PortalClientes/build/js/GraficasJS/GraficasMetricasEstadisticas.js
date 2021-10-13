@@ -3,11 +3,11 @@
 $(document).ready(function () {
     
     let obj = JSON.stringify({
-        meses: '12',
-        fechaInicial: '',
-        fechaFinal: '',
+        meses: $("#ContentPlaceHolder1_ddlPeriodo").val(),
+        fechaInicial: $("#ContentPlaceHolder1_txtFechaInicioGrafica").val(),
+        fechaFinal: $("#ContentPlaceHolder1_txtFechaFinGrafica").val(),
         rubro: '',
-        tipoRubro: 3 // 1.fijo 2. var 3. todos
+        tipoRubro: $("#ContentPlaceHolder1_ddlTipoRubro").val() // 1.fijo 2. var 3. todos
     });
 
     ajax_data(obj, url, function (data) {
@@ -20,6 +20,27 @@ $(document).ready(function () {
         });
     };
 });
+
+$('#btnGraficasBuscar').click(function (event) {
+
+    event.preventDefault();
+    ActualizarGrafica();
+
+});
+
+function ActualizarGrafica() {
+    let obj = JSON.stringify({
+        meses: $("#ContentPlaceHolder1_ddlPeriodo").val(),
+        fechaInicial: $("#ContentPlaceHolder1_txtFechaInicioGrafica").val(),
+        fechaFinal: $("#ContentPlaceHolder1_txtFechaFinGrafica").val(),
+        rubro: '',
+        tipoRubro: $("#ContentPlaceHolder1_ddlTipoRubro").val() // 1.fijo 2. var 3. todos
+    });
+
+    ajax_data(obj, url, function (data) {
+        charts(data, "PieChart"); // Pie Charts
+    });
+}
 
 function ajax_data(obj, url, success) {
     $.ajax({
