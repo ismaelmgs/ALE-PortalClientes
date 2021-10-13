@@ -28,12 +28,12 @@
         <div class="x_panel" style="min-height:74vh;">
             <div class="x_title">
                 <h2><asp:Label ID="lblTripulacion" runat="server" Text="Tripulación" Font-Bold="true"></asp:Label></h2>
-                <ul class="nav navbar-right panel_toolbox">
+                <%--<ul class="nav navbar-right panel_toolbox">
                     <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
                     </li>
                     <li><a class="close-link"><i class="fa fa-close"></i></a>
                     </li>
-                </ul>
+                </ul>--%>
                 <div class="clearfix"></div>
             </div>
             <div class="row">

@@ -96,12 +96,12 @@
                     <li>
                         <asp:LinkButton ID="btnPDF" runat="server" Text="<i class='fa fa-file-pdf-o' style='color:#ffffff;font-size:22px;'></i>" CssClass="btn btn-primary" OnClick="btnPDF_Click"/>
                     </li>
-                    <li>
+                    <%--<li>
                         <a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
                     </li>
                     <li>
                         <a class="close-link"><i class="fa fa-close"></i></a>
-                    </li>
+                    </li>--%>
                 </ul>
                 <div class="clearfix"></div>
             </div>
