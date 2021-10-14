@@ -1542,6 +1542,7 @@
     <Compile Include="DomainModel\DBLogin.cs" />
     <Compile Include="DomainModel\DBUsuarios.cs" />
     <Compile Include="DomainModel\DBUtils.cs" />
+    <Compile Include="Objetos\Calendario.cs" />
     <Compile Include="Objetos\MatriculasUsuario.cs" />
     <Compile Include="Objetos\responseGraficaGastos.cs" />
     <Compile Include="Views\frmDefault.aspx.cs">
@@ -1779,6 +1780,7 @@
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.en-US.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.en-US.Designer.cs</LastGenOutput>

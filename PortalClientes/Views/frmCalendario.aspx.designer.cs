@@ -31,12 +31,21 @@ namespace PortalClientes.Views {
         protected global::System.Web.UI.WebControls.Label lblCalendario;
         
         /// <summary>
-        /// Control btnAlerta2.
+        /// Control SchedulerRecurenceInfo.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnAlerta2;
+        protected global::DevExpress.Web.Bootstrap.BootstrapScheduler SchedulerRecurenceInfo;
+        
+        /// <summary>
+        /// Control ObjectDataSource1.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ObjectDataSource ObjectDataSource1;
     }
 }
