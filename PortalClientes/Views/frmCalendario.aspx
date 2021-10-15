@@ -48,25 +48,54 @@
                                     <Mappings AppointmentId="ID" Start="StartTime" End="EndTime" Subject="Subject"
                                         Description="Description" Location="Location"
                                         Type="EventType" Label="Label" Status="Status" />
+                                    <Labels >
+                                        <dx:BootstrapAppointmentLabel Text="None"
+                                            BackgroundCssClass="bg-primary" TextCssClass="text-dark"></dx:BootstrapAppointmentLabel>
+                                        <%--<dx:BootstrapAppointmentLabel Text="Routine"
+                                            BackgroundCssClass="bg-primary" TextCssClass="text-white"></dx:BootstrapAppointmentLabel>
+                                        <dx:BootstrapAppointmentLabel Text="Follow-Up"
+                                            BackgroundCssClass="bg-success" TextCssClass="text-white"></dx:BootstrapAppointmentLabel>
+                                        <dx:BootstrapAppointmentLabel Text="Urgent"
+                                            BackgroundCssClass="bg-danger" TextCssClass="text-white"></dx:BootstrapAppointmentLabel>
+                                        <dx:BootstrapAppointmentLabel Text="Lab Testing"
+                                            BackgroundCssClass="bg-warning" TextCssClass="text-dark"></dx:BootstrapAppointmentLabel>
+                                        <dx:BootstrapAppointmentLabel Text="Service"
+                                            BackgroundCssClass="bg-secondary" TextCssClass="text-white"></dx:BootstrapAppointmentLabel>--%>
+                                    </Labels>
+                                    <Statuses>
+                                        <dx:BootstrapAppointmentStatus Text="NotSet"
+                                            Type="Custom" CssClass="bg-white"></dx:BootstrapAppointmentStatus>
+                                        <%--<dx:BootstrapAppointmentStatus Text="Confirmed"
+                                            Type="Custom" CssClass="bg-success"></dx:BootstrapAppointmentStatus>
+                                        <dx:BootstrapAppointmentStatus Text="Awaiting Confirmation"
+                                            Type="Custom" CssClass="bg-danger"></dx:BootstrapAppointmentStatus>
+                                        <dx:BootstrapAppointmentStatus Text="Cancelled"
+                                            Type="Custom" CssClass="bg-secondary"></dx:BootstrapAppointmentStatus>--%>
+                                    </Statuses>
                                 </Appointments>
                             </Storage>
                             <Views>
-                                <DayView ResourcesPerPage="1" ShowWorkTimeOnly="true">
-                                    <WorkTime Start="8:00" End="19:00" />
+                                <DayView ResourcesPerPage="1" ShowWorkTimeOnly="false">
                                 </DayView>
-                                <WorkWeekView ResourcesPerPage="1" ShowWorkTimeOnly="true">
-                                    <WorkTime Start="8:00" End="19:00" />
+
+                                <WorkWeekView ShowWorkTimeOnly="false" Enabled="false">
                                 </WorkWeekView>
-                                <FullWeekView ResourcesPerPage="1" Enabled="true" ShowWorkTimeOnly="true">
-                                    <WorkTime Start="8:00" End="19:00" />
+
+                                <FullWeekView ResourcesPerPage="1" Enabled="true" ShowWorkTimeOnly="false">
                                 </FullWeekView>
+
                                 <WeekView ResourcesPerPage="1">
                                 </WeekView>
+
                                 <MonthView ResourcesPerPage="1">
+                                    <AppointmentDisplayOptions StartTimeVisibility="Never" EndTimeVisibility="Never" StatusDisplayType="Bounds" ShowRecurrence="true" />
+                                    <CellAutoHeightOptions Mode="LimitHeight" MinHeight="100" />
                                 </MonthView>
-                                <TimelineView ResourcesPerPage="1" IntervalCount="1">
+
+                                <TimelineView ResourcesPerPage="1" IntervalCount="1" Enabled="false">
                                 </TimelineView>
-                                <AgendaView ScrollAreaHeight="600">
+
+                                <AgendaView Enabled="true" ScrollAreaHeight="600">
                                 </AgendaView>
                             </Views>
                             <OptionsBehavior ShowViewSelector="true" />
