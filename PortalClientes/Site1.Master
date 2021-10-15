@@ -306,8 +306,6 @@
     <script src='<%=ResolveUrl("~/vendors/jszip/dist/jszip.min.js")%>'></script>
     <script src='<%=ResolveUrl("~/vendors/pdfmake/build/pdfmake.min.js")%>'></script>
     <script src='<%=ResolveUrl("~/vendors/pdfmake/build/vfs_fonts.js")%>'></script>
-    <script src='<%=ResolveUrl("~/build/js/GraficasJS/GraficasDashboard.js")%>'></script>
-    <script src='<%=ResolveUrl("~/build/js/GraficasJS/GraficasMetricasEstadisticas.js")%>'></script>
 
     <!-- FullCalendar -->
     <script src='<%=ResolveUrl("~/vendors/moment/min/moment.min.js")%>'></script>
