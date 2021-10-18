@@ -1,4 +1,4 @@
-﻿const url = "/Views/frmMetricasEstadisticas.aspx/GetGastos"; // API URL
+﻿const urlm = "/Views/frmMetricasEstadisticas.aspx/GetGastos"; // API URL
 
 $(document).ready(function () {
     
@@ -10,12 +10,12 @@ $(document).ready(function () {
         tipoRubro: $("#ContentPlaceHolder1_ddlTipoRubro").val() // 1.fijo 2. var 3. todos
     });
 
-    ajax_data(obj, url, function (data) {
+    ajax_data(obj, urlm, function (data) {
         charts(data, "PieChart"); // Pie Charts
     });
 
     window.onresize = function () {
-        ajax_data(obj, url, function (data) {
+        ajax_data(obj, urlm, function (data) {
             charts(data, "PieChart"); // Pie Charts
         });
     };
@@ -37,7 +37,7 @@ function ActualizarGrafica() {
         tipoRubro: $("#ContentPlaceHolder1_ddlTipoRubro").val() // 1.fijo 2. var 3. todos
     });
 
-    ajax_data(obj, url, function (data) {
+    ajax_data(obj, urlm, function (data) {
         charts(data, "PieChart"); // Pie Charts
     });
 }

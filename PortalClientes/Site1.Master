@@ -311,6 +311,10 @@
     <script src='<%=ResolveUrl("~/vendors/moment/min/moment.min.js")%>'></script>
     <script src='<%=ResolveUrl("~/vendors/fullcalendar/dist/fullcalendar.min.js")%>'></script>
 
+    <!-- Graficas -->
+    <script src='<%=ResolveUrl("~/build/js/GraficasJS/GraficasDashboard.js")%>'></script>
+    <script src='<%=ResolveUrl("~/build/js/GraficasJS/GraficasMetricasEstadisticas.js")%>'></script>
+
     <!-- Custom Theme Scripts -->
     <script src='<%=ResolveUrl("~/build/js/custom.min.js")%>'></script>
     <script>

@@ -1,24 +1,29 @@
 ﻿const url = "/Views/frmDashboard.aspx/GetGastos"; // API URL
 
 $(document).ready(function () {
-    
-    let obj = JSON.stringify({
-        meses: $("#ContentPlaceHolder1_ddlPeriodo").val(),
-        fechaInicial: $("#ContentPlaceHolder1_txtFechaInicioGrafica").val(),
-        fechaFinal: $("#ContentPlaceHolder1_txtFechaFinGrafica").val(),
-        rubro: '',
-        tipoRubro: $("#ContentPlaceHolder1_ddlTipoRubro").val() // 1.fijo 2. var 3. todos
-    });
 
-    ajax_data(obj, url, function (data) {
-        charts(data, "PieChart"); // Pie Charts
-    });
+    var URLactual = window.location.pathname;
 
-    window.onresize = function () {
+    if (URLactual == "/Views/frmDashboard.aspx") {
+
+        let obj = JSON.stringify({
+            meses: $("#ContentPlaceHolder1_ddlPeriodo").val(),
+            fechaInicial: $("#ContentPlaceHolder1_txtFechaInicioGrafica").val(),
+            fechaFinal: $("#ContentPlaceHolder1_txtFechaFinGrafica").val(),
+            rubro: '',
+            tipoRubro: $("#ContentPlaceHolder1_ddlTipoRubro").val() // 1.fijo 2. var 3. todos
+        });
+
         ajax_data(obj, url, function (data) {
             charts(data, "PieChart"); // Pie Charts
         });
-    };
+
+        window.onresize = function () {
+            ajax_data(obj, url, function (data) {
+                charts(data, "PieChart"); // Pie Charts
+            });
+        };
+    }
 });
 
 $('#btnGraficasBuscar').click(function (event) {
