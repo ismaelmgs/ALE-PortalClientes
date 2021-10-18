@@ -1,4 +1,4 @@
-﻿const urlm = "/Views/frmMetricasEstadisticas.aspx/GetGastos"; // API URL
+﻿const urlm = "http://192.168.1.250/PortalClientes/Views/frmMetricasEstadisticas.aspx/GetGastos"; // API URL
 
 $(document).ready(function () {
     

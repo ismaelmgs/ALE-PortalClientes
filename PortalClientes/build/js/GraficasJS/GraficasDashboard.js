@@ -1,4 +1,4 @@
-﻿const url = "/Views/frmDashboard.aspx/GetGastos"; // API URL
+﻿const url = "http://192.168.1.250/PortalClientes/Views/frmDashboard.aspx/GetGastos"; // API URL
 
 $(document).ready(function () {
 
