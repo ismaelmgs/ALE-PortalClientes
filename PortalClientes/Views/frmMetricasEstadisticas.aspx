@@ -269,5 +269,7 @@
         </div>
         </div>
     </div>
-    
+    <script src='<%=ResolveUrl("~/vendors/jquery/dist/jquery.min.js")%>'></script>
+    <script src='<%=ResolveUrl("~/vendors/jquery/dist/jquery.js")%>'></script>
+    <script src='<%=ResolveUrl("~/build/js/GraficasJS/GraficasMetricasEstadisticas.js")%>'></script>
 </asp:Content>

@@ -1,7 +1,5 @@
-﻿const url = "/Views/frmDashboard.aspx/GetGastos"; // API URL
-
-$(document).ready(function () {
-
+﻿$(document).ready(function () {
+    const url = ResolveUrl("~/Views/frmDashboard.aspx"); // API URL
     var URLactual = window.location.pathname;
 
     if (URLactual == "/Views/frmDashboard.aspx") {
@@ -26,6 +24,10 @@ $(document).ready(function () {
     }
 });
 
+function ResolveUrl(url) {
+    return url.replace("~/", window.location.origin + "/");
+}
+
 $('#btnGraficasBuscar').click(function (event) {
 
     event.preventDefault();
@@ -34,6 +36,7 @@ $('#btnGraficasBuscar').click(function (event) {
 });
 
 function ActualizarGrafica() {
+    const url = ResolveUrl("~/Views/frmDashboard.aspx"); // API URL
     let obj = JSON.stringify({
         meses: $("#ContentPlaceHolder1_ddlPeriodo").val(),
         fechaInicial: $("#ContentPlaceHolder1_txtFechaInicioGrafica").val(),
@@ -53,7 +56,7 @@ function ajax_data(obj, url, success) {
         contentType: "Application/json; charset=utf-8",
         responseType: "json",
         method: 'POST',
-        url: url,
+        url: url + "/GetGastos",
         dataType: "json",
         beforeSend: function (response) { },
         success: function (response) {

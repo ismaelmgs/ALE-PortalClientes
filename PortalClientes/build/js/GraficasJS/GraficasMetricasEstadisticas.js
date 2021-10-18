@@ -1,7 +1,5 @@
-﻿const urlm = "/Views/frmMetricasEstadisticas.aspx/GetGastos"; // API URL
-
-$(document).ready(function () {
-    
+﻿$(document).ready(function () {
+    const urlm = "/Views/frmMetricasEstadisticas.aspx/GetGastos"; // API URL
     let obj = JSON.stringify({
         meses: $("#ContentPlaceHolder1_ddlPeriodo").val(),
         fechaInicial: $("#ContentPlaceHolder1_txtFechaInicioGrafica").val(),
@@ -29,6 +27,7 @@ $('#btnGraficasBuscar').click(function (event) {
 });
 
 function ActualizarGrafica() {
+    const urlm = "/Views/frmMetricasEstadisticas.aspx/GetGastos"; // API URL
     let obj = JSON.stringify({
         meses: $("#ContentPlaceHolder1_ddlPeriodo").val(),
         fechaInicial: $("#ContentPlaceHolder1_txtFechaInicioGrafica").val(),
@@ -55,7 +54,7 @@ function ajax_data(obj, url, success) {
             success.call(this, response.d);
         },
         error: function (err) {
-            console.log("Error In Connecting", err.responseJSON.Message);
+            console.log("Error In Connecting", err);
         }
     });
 }

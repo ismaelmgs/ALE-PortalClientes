@@ -306,7 +306,9 @@
                 </div>
             </div>
          </div>
-    
+    <script src='<%=ResolveUrl("~/vendors/jquery/dist/jquery.min.js")%>'></script>
+    <script src='<%=ResolveUrl("~/vendors/jquery/dist/jquery.js")%>'></script>
+    <script src='<%=ResolveUrl("~/build/js/GraficasJS/GraficasDashboard.js")%>'></script>
 </asp:Content>
 
 

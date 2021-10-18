@@ -207,7 +207,7 @@ namespace PortalClientes.Views
             lblCostosCat.Text = Properties.Resources.Das_CostoCategoria;
         }
 
-        [WebMethod]
+        [WebMethod(EnableSession = true)]
         public static List<responseGraficaGastos> GetGastos(string meses, DateTime? fechaInicial, DateTime? fechaFinal, string rubro, int tipoRubro)
         {
             DBDashboard oIGesCat = new DBDashboard();
