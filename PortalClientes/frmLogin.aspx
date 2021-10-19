@@ -39,7 +39,7 @@
               </div><br />
               <div>
                   <%--<asp:TextBox ID="txtPassword" runat="server" CssClass="form-control" placeholder="contraseña"></asp:TextBox>--%>
-                  <dx:BootstrapTextBox ID="txtPassword" runat="server"></dx:BootstrapTextBox>
+                  <dx:BootstrapTextBox ID="txtPassword" runat="server" Password="true"></dx:BootstrapTextBox>
               </div>
             <div>
                 <asp:Label ID="lblError" runat="server" ForeColor="Red" Visible="false"></asp:Label>
