@@ -1,23 +1,32 @@
 ﻿$(document).ready(function () {
-    const urlm = "/Views/frmMetricasEstadisticas.aspx/GetGastos"; // API URL
-    let obj = JSON.stringify({
-        meses: $("#ContentPlaceHolder1_ddlPeriodo").val(),
-        fechaInicial: $("#ContentPlaceHolder1_txtFechaInicioGrafica").val(),
-        fechaFinal: $("#ContentPlaceHolder1_txtFechaFinGrafica").val(),
-        rubro: '',
-        tipoRubro: $("#ContentPlaceHolder1_ddlTipoRubro").val() // 1.fijo 2. var 3. todos
-    });
+    const url = ResolveUrl("~/Views/frmMetricasEstadisticas.aspx"); // API URL
+    var URLactual = window.location.pathname;
 
-    ajax_data(obj, urlm, function (data) {
-        charts(data, "PieChart"); // Pie Charts
-    });
+    if (URLactual == "/Views/frmMetricasEstadisticas.aspx") {
 
-    window.onresize = function () {
-        ajax_data(obj, urlm, function (data) {
+        let obj = JSON.stringify({
+            meses: $("#ContentPlaceHolder1_ddlPeriodo").val(),
+            fechaInicial: $("#ContentPlaceHolder1_txtFechaInicioGrafica").val(),
+            fechaFinal: $("#ContentPlaceHolder1_txtFechaFinGrafica").val(),
+            rubro: '',
+            tipoRubro: $("#ContentPlaceHolder1_ddlTipoRubro").val() // 1.fijo 2. var 3. todos
+        });
+
+        ajax_data(obj, url, function (data) {
             charts(data, "PieChart"); // Pie Charts
         });
-    };
+
+        window.onresize = function () {
+            ajax_data(obj, url, function (data) {
+                charts(data, "PieChart"); // Pie Charts
+            });
+        };
+    }
 });
+
+function ResolveUrl(url) {
+    return url.replace("~/", window.location.origin + "/");
+}
 
 $('#btnGraficasBuscar').click(function (event) {
 
@@ -27,7 +36,7 @@ $('#btnGraficasBuscar').click(function (event) {
 });
 
 function ActualizarGrafica() {
-    const urlm = "/Views/frmMetricasEstadisticas.aspx/GetGastos"; // API URL
+    const url = ResolveUrl("~/Views/frmMetricasEstadisticas.aspx"); // API URL
     let obj = JSON.stringify({
         meses: $("#ContentPlaceHolder1_ddlPeriodo").val(),
         fechaInicial: $("#ContentPlaceHolder1_txtFechaInicioGrafica").val(),
@@ -36,7 +45,7 @@ function ActualizarGrafica() {
         tipoRubro: $("#ContentPlaceHolder1_ddlTipoRubro").val() // 1.fijo 2. var 3. todos
     });
 
-    ajax_data(obj, urlm, function (data) {
+    ajax_data(obj, url, function (data) {
         charts(data, "PieChart"); // Pie Charts
     });
 }
@@ -47,7 +56,7 @@ function ajax_data(obj, url, success) {
         contentType: "Application/json; charset=utf-8",
         responseType: "json",
         method: 'POST',
-        url: url,
+        url: url + "/GetGastos",
         dataType: "json",
         beforeSend: function (response) { },
         success: function (response) {

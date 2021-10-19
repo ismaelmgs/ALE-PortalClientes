@@ -280,7 +280,6 @@
     <Content Include="vendors\animate.css\animate.min.css" />
     <Content Include="vendors\autosize\dist\autosize.js" />
     <Content Include="vendors\autosize\dist\autosize.min.js" />
-    <Content Include="vendors\autosize\example\index.html" />
     <Content Include="vendors\autosize\src\autosize.js" />
     <Content Include="vendors\bootstrap-daterangepicker\daterangepicker.css" />
     <Content Include="vendors\bootstrap-daterangepicker\daterangepicker.js" />
