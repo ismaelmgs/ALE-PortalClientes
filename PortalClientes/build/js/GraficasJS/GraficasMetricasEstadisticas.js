@@ -26,7 +26,7 @@ $(document).ready(function () {
 });
 
 function ResolveUrl(url) {
-    return url.replace("~/", window.location.origin + "/");
+    return url.replace("~/", window.location.origin + "/") + "/GetGastos";
 }
 
 $('#btnGraficasBuscar').click(function (event) {
@@ -57,7 +57,7 @@ function ajax_data(obj, url, success) {
         contentType: "Application/json; charset=utf-8",
         responseType: "json",
         method: 'POST',
-        url: url + "/GetGastos",
+        url: url,
         dataType: "json",
         beforeSend: function (response) { },
         success: function (response) {
