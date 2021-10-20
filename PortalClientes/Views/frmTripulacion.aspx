@@ -64,115 +64,44 @@
                       </li>
                     </ul>
                     <div class="tab-content" id="myTabContent">
-                      <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                        <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
                             <div class="table-responsive">
-                               <table class="table table-striped table-bordered table-hover">
-                                       <tr>
-                                           <th>
-                                               <asp:Label ID="lblFechaHoraInicio" runat="server" Text="Fecha y hora de inicio" Font-Bold="true"></asp:Label>
-                                           </th>
-                                           <th>
-                                               <asp:Label ID="lblFechaHoraFin" runat="server" Text="Fecha y hora de término" Font-Bold="true"></asp:Label>
-                                           </th>
-                                           <th>
-                                               <asp:Label ID="lblMiembroTripulacion" runat="server" Text="Miembro de la tripulación" Font-Bold="true"></asp:Label>
-                                           </th>
-                                           <th>
-                                               <asp:Label ID="lblTripulacionTipo" runat="server" Text="Tipo" Font-Bold="true"></asp:Label>
-                                           </th>
-                                           <th>
-                                               <asp:Label ID="lblTripulacionDescripcion" runat="server" Text="Descripción" Font-Bold="true"></asp:Label>
-                                           </th>
-                                       </tr>
-                                       <tr>
-                                           <td>
-                                               <asp:Label ID="lblFechaHoraInicioRes" runat="server" Text="---" Font-Bold="true"></asp:Label>
-                                           </td>
-                                           <td>
-                                               <asp:Label ID="lblFechaHoraFinRes" runat="server" Text="---" Font-Bold="true"></asp:Label>
-                                           </td>
-                                           <td>
-                                               <asp:Label ID="lblMiembroTripulacionRes" runat="server" Text="---" Font-Bold="true"></asp:Label>
-                                           </td>
-                                           <td>
-                                               <asp:Label ID="lblTripulacionTipoRes" runat="server" Text="---" Font-Bold="true"></asp:Label>
-                                           </td>
-                                           <td>
-                                               <asp:Label ID="lblTripulacionDescripcionRes" runat="server" Text="---" Font-Bold="true"></asp:Label>
-                                           </td>
-                                       </tr>
-                               </table>
-                           </div>
+                                <div class="card-box table-responsive">
+                                    <asp:GridView ID="gvEventos" runat="server" AutoGenerateColumns="false" CssClass="table table-striped table-bordered table-hover" AllowPaging="true"
+                                        OnPageIndexChanging="gvEventos_PageIndexChanging" OnRowDataBound="gvEventos_RowDataBound" EmptyDataText="No Registros">
+                                        <Columns>
+                                            <asp:BoundField DataField="fechaInicio" />
+                                            <asp:BoundField DataField="fechaFin" />
+                                            <asp:BoundField DataField="codigoPiloto" />
+                                            <asp:BoundField DataField="piloto" />
+                                            <asp:BoundField DataField="temaESP" />
+                                            <asp:BoundField DataField="temaENG" />
+                                            <asp:BoundField DataField="descripcion" />
+                                        </Columns>
+                                    </asp:GridView>
+                                </div>
+                            </div>
                       </div>
                       <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-                            <div class="table-responsive">
-                               <table class="table table-striped table-bordered table-hover">
-                                       <tr>
-                                           <th>
-                                               <asp:Label ID="lblCodigo" runat="server" Text="Código Piloto" Font-Bold="true"></asp:Label>
-                                           </th>
-                                           <th>
-                                               <asp:Label ID="lblNombre" runat="server" Text="Nombre" Font-Bold="true"></asp:Label>
-                                           </th>
-                                           <th>
-                                               <asp:Label ID="lblLicencia" runat="server" Text="Licencia" Font-Bold="true"></asp:Label>
-                                           </th>
-                                           <th>
-                                               <asp:Label ID="lblTipo" runat="server" Text="Tipo" Font-Bold="true"></asp:Label>
-                                           </th>
-                                           <th>
-                                               <asp:Label ID="lblLugarTrabajo" runat="server" Text="Lugar de Trabajo" Font-Bold="true"></asp:Label>
-                                           </th>
-                                           <th>
-                                               <asp:Label ID="lblNumeroVisa" runat="server" Text="No. de Visa" Font-Bold="true"></asp:Label>
-                                           </th>
-                                           <th>
-                                               <asp:Label ID="lblExpiracionVisa" runat="server" Text="Expiración Visa" Font-Bold="true"></asp:Label>
-                                           </th>
-                                           <th>
-                                               <asp:Label ID="lblPaisVisa" runat="server" Text="País Visa" Font-Bold="true"></asp:Label>
-                                           </th>
-                                           <th>
-                                               <asp:Label ID="lblPasaporte" runat="server" Text="No. Pasaporte" Font-Bold="true"></asp:Label>
-                                           </th>
-                                           <th>
-                                               <asp:Label ID="lblExpiracionPasaporte" runat="server" Text="Expiración Pasaporte" Font-Bold="true"></asp:Label>
-                                           </th>
-                                       </tr>
-                                       <tr>
-                                           <td>
-                                               <asp:Label ID="lblCodigoRes" runat="server" Text="---" Font-Bold="true"></asp:Label>
-                                           </td>
-                                           <td>
-                                               <asp:Label ID="lblNombreRes" runat="server" Text="---" Font-Bold="true"></asp:Label>
-                                           </td>
-                                           <td>
-                                               <asp:Label ID="lblLicenciaRes" runat="server" Text="---" Font-Bold="true"></asp:Label>
-                                           </td>
-                                           <td>
-                                               <asp:Label ID="lblTipoRes" runat="server" Text="---" Font-Bold="true"></asp:Label>
-                                           </td>
-                                           <td>
-                                               <asp:Label ID="lblLugarTrabajoRes" runat="server" Text="---" Font-Bold="true"></asp:Label>
-                                           </td>
-                                           <td>
-                                               <asp:Label ID="lblNumeroVisaRes" runat="server" Text="---" Font-Bold="true"></asp:Label>
-                                           </td>
-                                           <td>
-                                               <asp:Label ID="lblExpiracionVisaRes" runat="server" Text="---" Font-Bold="true"></asp:Label>
-                                           </td>
-                                           <td>
-                                               <asp:Label ID="lblPaisVisaRes" runat="server" Text="---" Font-Bold="true"></asp:Label>
-                                           </td>
-                                           <td>
-                                               <asp:Label ID="lblPasaporteRes" runat="server" Text="---" Font-Bold="true"></asp:Label>
-                                           </td>
-                                           <td>
-                                               <asp:Label ID="lblExpiracionPasaporteRes" runat="server" Text="---" Font-Bold="true"></asp:Label>
-                                           </td>
-                                       </tr>
-                               </table>
-                           </div>
+                          <div class="table-responsive">
+                                <div class="card-box table-responsive">
+                                    <asp:GridView ID="gvPilotos" runat="server" AutoGenerateColumns="false" CssClass="table table-striped table-bordered table-hover" AllowPaging="true"
+                                        OnPageIndexChanging="gvPilotos_PageIndexChanging" OnRowDataBound="gvPilotos_RowDataBound" EmptyDataText="No Registros">
+                                        <Columns>
+                                            <asp:BoundField DataField="codigoPiloto" />
+                                            <asp:BoundField DataField="piloto" />
+                                            <asp:BoundField DataField="licenciaVuelo" />
+                                            <asp:BoundField DataField="tipoLicencia" />
+                                            <asp:BoundField DataField="lugarTrabajo" />
+                                            <asp:BoundField DataField="noVisa" />
+                                            <asp:BoundField DataField="fechaExpiraVisa" />
+                                            <asp:BoundField DataField="paisVisa" />
+                                            <asp:BoundField DataField="noPassport" />
+                                            <asp:BoundField DataField="fechaExpiraPass" />
+                                        </Columns>
+                                    </asp:GridView>
+                                </div>
+                            </div>
                       </div>
                     </div>
                 </div>

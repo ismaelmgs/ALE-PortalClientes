@@ -507,4 +507,52 @@
   <data name="ME_Titulo" xml:space="preserve">
     <value>Métricas y Estadísticas</value>
   </data>
+  <data name="TabEventTri_CodPiloto" xml:space="preserve">
+    <value>Código Piloto</value>
+  </data>
+  <data name="TabEventTri_Desc" xml:space="preserve">
+    <value>Descripción</value>
+  </data>
+  <data name="TabEventTri_FechaFin" xml:space="preserve">
+    <value>Fecha y hora de término</value>
+  </data>
+  <data name="TabEventTri_FechaInicio" xml:space="preserve">
+    <value>Fecha y hora de inicio</value>
+  </data>
+  <data name="TabEventTri_MiembroTri" xml:space="preserve">
+    <value>Miembro de la tripulación</value>
+  </data>
+  <data name="TabEventTri_Tipo" xml:space="preserve">
+    <value>Tipo</value>
+  </data>
+  <data name="TabPilTri_CodPiloto" xml:space="preserve">
+    <value>Código Piloto</value>
+  </data>
+  <data name="TabPilTri_ExpVisa" xml:space="preserve">
+    <value>Expiración Visa</value>
+  </data>
+  <data name="TabPilTri_FechaExpiraPass" xml:space="preserve">
+    <value>Expiración Pasaporte</value>
+  </data>
+  <data name="TabPilTri_Licencia" xml:space="preserve">
+    <value>Licencia</value>
+  </data>
+  <data name="TabPilTri_LugarTrabajo" xml:space="preserve">
+    <value>Lugar de Trabajo</value>
+  </data>
+  <data name="TabPilTri_Nombre" xml:space="preserve">
+    <value>Nombre</value>
+  </data>
+  <data name="TabPilTri_NoPassport" xml:space="preserve">
+    <value>No. Pasaporte</value>
+  </data>
+  <data name="TabPilTri_NoVisa" xml:space="preserve">
+    <value>No. de Visa</value>
+  </data>
+  <data name="TabPilTri_PaisVisa" xml:space="preserve">
+    <value>País Visa</value>
+  </data>
+  <data name="TabPilTri_TipoLicencia" xml:space="preserve">
+    <value>Tipo</value>
+  </data>
 </root>

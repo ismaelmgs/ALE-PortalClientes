@@ -29,4 +29,17 @@ namespace PortalClientes.Objetos
         public string idioma { get; set; }
         public int tipoRubro { get; set; } // 1.fijo 2. var 3. todos
     }
+
+    [Serializable]
+    public class FiltroEvent
+    {
+        public string matricula { get; set; }
+        public int meses { get; set; }
+    }
+
+    [Serializable]
+    public class FiltroPilotos
+    {
+        public string matricula { get; set; }
+    }
 }

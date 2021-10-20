@@ -41,5 +41,8 @@ namespace PortalClientes.Clases
         public const string D_UrlObbtenerGastoRubros = "http://201.163.208.231/" + DominioWS + "/ws/pc/obtieneGastoRubroDetalle";
         public const string D_UrlObtenerImagenesAeronave = "http://201.163.208.231/" + DominioWS + "/ws/pc/consultaImagenesAeronave";
 
+        public const string D_UrlObbtenerEventosPiloto = "http://201.163.208.231/" + DominioWS + "/ws/pc/obtieneEventosPilotos";
+        public const string D_UrlObtenerPilotos = "http://201.163.208.231/" + DominioWS + "/ws/pc/obtieneInfoPilotos";
+
     }
 }

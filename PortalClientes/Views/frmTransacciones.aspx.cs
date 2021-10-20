@@ -71,24 +71,7 @@ namespace PortalClientes.Views
                 e.Row.Cells[5].Text = Properties.Resources.TabTran_Categoria;
                 e.Row.Cells[6].Text = Properties.Resources.TabTran_TGasto;
                 e.Row.Cells[7].Text = Properties.Resources.TabTran_Comentario;
-
-
-                //e.Row.Cells[1].Text = Properties.Resources.TabTran_Mes;
-                //e.Row.Cells[2].Text = Properties.Resources.TabTran_Mes;
             }
-
-            //if (e.Row.RowType == DataControlRowType.DataRow)
-            //{
-            //    GridView gvDetalle = (GridView)e.Row.FindControl("gvGastosDetalle");
-            //    if (gvDetalle != null)
-            //    {
-            //        List<gvGastos> olsGastos = (List<gvGastos>)Session["gvGastos"];
-            //        string smes = olsGastos[e.Row.RowIndex].mes.S();
-
-            //        gvDetalle.DataSource = olsGastos.Where(r => r.mes == smes);
-            //        gvDetalle.DataBind();
-            //    }
-            //}
         }
 
         protected void gvGastos_PageIndexChanging(object sender, GridViewPageEventArgs e)

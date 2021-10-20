@@ -844,6 +844,150 @@ namespace PortalClientes.Properties {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Código Piloto.
+        /// </summary>
+        internal static string TabEventTri_CodPiloto {
+            get {
+                return ResourceManager.GetString("TabEventTri_CodPiloto", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Descripción.
+        /// </summary>
+        internal static string TabEventTri_Desc {
+            get {
+                return ResourceManager.GetString("TabEventTri_Desc", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Fecha y hora de término.
+        /// </summary>
+        internal static string TabEventTri_FechaFin {
+            get {
+                return ResourceManager.GetString("TabEventTri_FechaFin", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Fecha y hora de inicio.
+        /// </summary>
+        internal static string TabEventTri_FechaInicio {
+            get {
+                return ResourceManager.GetString("TabEventTri_FechaInicio", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Miembro de la tripulación.
+        /// </summary>
+        internal static string TabEventTri_MiembroTri {
+            get {
+                return ResourceManager.GetString("TabEventTri_MiembroTri", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Tipo.
+        /// </summary>
+        internal static string TabEventTri_Tipo {
+            get {
+                return ResourceManager.GetString("TabEventTri_Tipo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Código Piloto.
+        /// </summary>
+        internal static string TabPilTri_CodPiloto {
+            get {
+                return ResourceManager.GetString("TabPilTri_CodPiloto", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Expiración Visa.
+        /// </summary>
+        internal static string TabPilTri_ExpVisa {
+            get {
+                return ResourceManager.GetString("TabPilTri_ExpVisa", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Expiración Pasaporte.
+        /// </summary>
+        internal static string TabPilTri_FechaExpiraPass {
+            get {
+                return ResourceManager.GetString("TabPilTri_FechaExpiraPass", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Licencia.
+        /// </summary>
+        internal static string TabPilTri_Licencia {
+            get {
+                return ResourceManager.GetString("TabPilTri_Licencia", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Lugar de Trabajo.
+        /// </summary>
+        internal static string TabPilTri_LugarTrabajo {
+            get {
+                return ResourceManager.GetString("TabPilTri_LugarTrabajo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Nombre.
+        /// </summary>
+        internal static string TabPilTri_Nombre {
+            get {
+                return ResourceManager.GetString("TabPilTri_Nombre", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a No. Pasaporte.
+        /// </summary>
+        internal static string TabPilTri_NoPassport {
+            get {
+                return ResourceManager.GetString("TabPilTri_NoPassport", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a No. de Visa.
+        /// </summary>
+        internal static string TabPilTri_NoVisa {
+            get {
+                return ResourceManager.GetString("TabPilTri_NoVisa", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a País Visa.
+        /// </summary>
+        internal static string TabPilTri_PaisVisa {
+            get {
+                return ResourceManager.GetString("TabPilTri_PaisVisa", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Tipo.
+        /// </summary>
+        internal static string TabPilTri_TipoLicencia {
+            get {
+                return ResourceManager.GetString("TabPilTri_TipoLicencia", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Categoria.
         /// </summary>
         internal static string TabTran_Categoria {
