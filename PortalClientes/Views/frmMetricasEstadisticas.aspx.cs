@@ -359,7 +359,22 @@ namespace PortalClientes.Views
                 ddlTipoRubro.SelectedValue = vTR;
             }
 
-            //lblCostosCat.Text = Properties.Resources.Das_CostoCategoria;
+            var v = ddlFiltroResumenPeriodo.SelectedValue;
+            // llenar dropdown Tipo Rubro
+            ddlFiltroResumenPeriodo.Items.Clear();
+            ddlFiltroResumenPeriodo.Items.Add(new ListItem(Properties.Resources.FiltroEvenTri_MA, "0"));
+            ddlFiltroResumenPeriodo.Items.Add(new ListItem(Properties.Resources.FiltroEvenTri_1M, "1"));
+            ddlFiltroResumenPeriodo.Items.Add(new ListItem(Properties.Resources.FiltroEvenTri_2M, "2"));
+            ddlFiltroResumenPeriodo.Items.Add(new ListItem(Properties.Resources.FiltroEvenTri_3M, "3"));
+
+            if (v == "")
+            {
+                ddlFiltroResumenPeriodo.SelectedIndex = 0;
+            }
+            else
+            {
+                ddlFiltroResumenPeriodo.SelectedValue = v;
+            }
         }
 
         [WebMethod]

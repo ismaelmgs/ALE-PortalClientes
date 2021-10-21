@@ -42,9 +42,6 @@
                 </div>
                 <div class="col-md-3" style="text-align:right;">
                     <asp:DropDownList id="ddlFiltroResumenPeriodo" runat="server" CssClass="form-control">
-                        <asp:ListItem Selected="True" Value="Últimos tres meses"> Últimos 3 meses </asp:ListItem>
-                        <asp:ListItem Value="Últimos dos meses"> Últimos 2 meses </asp:ListItem>
-                        <asp:ListItem Value="Último mes"> Último mes </asp:ListItem>
                     </asp:DropDownList>
                 </div>
                 <div class="col-md-2" style="text-align:center;">
