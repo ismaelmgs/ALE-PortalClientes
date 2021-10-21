@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="dsDetalleGastosUSD" targetNamespace="http://tempuri.org/dsDetalleGastosUSD.xsd" xmlns:mstns="http://tempuri.org/dsDetalleGastosUSD.xsd" xmlns="http://tempuri.org/dsDetalleGastosUSD.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="dsDetalleGastosUSD" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="dsDetalleGastosUSD" msprop:Generator_UserDSName="dsDetalleGastosUSD">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="USD" msprop:Generator_TableClassName="USDDataTable" msprop:Generator_TableVarName="tableUSD" msprop:Generator_TablePropName="USD" msprop:Generator_RowDeletingName="USDRowDeleting" msprop:Generator_RowChangingName="USDRowChanging" msprop:Generator_RowEvHandlerName="USDRowChangeEventHandler" msprop:Generator_RowDeletedName="USDRowDeleted" msprop:Generator_UserTableName="USD" msprop:Generator_RowChangedName="USDRowChanged" msprop:Generator_RowEvArgName="USDRowChangeEvent" msprop:Generator_RowClassName="USDRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Rubro" msprop:Generator_ColumnVarNameInTable="columnRubro" msprop:Generator_ColumnPropNameInRow="Rubro" msprop:Generator_ColumnPropNameInTable="RubroColumn" msprop:Generator_UserColumnName="Rubro" type="xs:string" minOccurs="0" />
+              <xs:element name="TotalMXM" msprop:Generator_ColumnVarNameInTable="columnTotalMXM" msprop:Generator_ColumnPropNameInRow="TotalMXM" msprop:Generator_ColumnPropNameInTable="TotalMXMColumn" msprop:Generator_UserColumnName="TotalMXM" type="xs:double" minOccurs="0" />
+              <xs:element name="TotalUSD" msprop:Generator_ColumnVarNameInTable="columnTotalUSD" msprop:Generator_ColumnPropNameInRow="TotalUSD" msprop:Generator_ColumnPropNameInTable="TotalUSDColumn" msprop:Generator_UserColumnName="TotalUSD" type="xs:double" minOccurs="0" />
+              <xs:element name="Categoria" msprop:Generator_ColumnVarNameInTable="columnCategoria" msprop:Generator_ColumnPropNameInRow="Categoria" msprop:Generator_ColumnPropNameInTable="CategoriaColumn" msprop:Generator_UserColumnName="Categoria" type="xs:string" minOccurs="0" />
+              <xs:element name="Comentarios" msprop:Generator_ColumnVarNameInTable="columnComentarios" msprop:Generator_ColumnPropNameInRow="Comentarios" msprop:Generator_ColumnPropNameInTable="ComentariosColumn" msprop:Generator_UserColumnName="Comentarios" type="xs:string" minOccurs="0" />
+              <xs:element name="Fecha" msprop:Generator_ColumnVarNameInTable="columnFecha" msprop:Generator_ColumnPropNameInRow="Fecha" msprop:Generator_ColumnPropNameInTable="FechaColumn" msprop:Generator_UserColumnName="Fecha" type="xs:string" minOccurs="0" />
+              <xs:element name="Mes" msprop:Generator_ColumnVarNameInTable="columnMes" msprop:Generator_ColumnPropNameInRow="Mes" msprop:Generator_ColumnPropNameInTable="MesColumn" msprop:Generator_UserColumnName="Mes" type="xs:string" minOccurs="0" />
+              <xs:element name="RubroG" msprop:Generator_ColumnVarNameInTable="columnRubroG" msprop:Generator_ColumnPropNameInRow="RubroG" msprop:Generator_ColumnPropNameInTable="RubroGColumn" msprop:Generator_UserColumnName="RubroG" type="xs:string" minOccurs="0" />
+              <xs:element name="TotalGMXN" msprop:Generator_ColumnVarNameInTable="columnTotalGMXN" msprop:Generator_ColumnPropNameInRow="TotalGMXN" msprop:Generator_ColumnPropNameInTable="TotalGMXNColumn" msprop:Generator_UserColumnName="TotalGMXN" type="xs:double" minOccurs="0" />
+              <xs:element name="TotalGUSD" msprop:Generator_ColumnVarNameInTable="columnTotalGUSD" msprop:Generator_ColumnPropNameInRow="TotalGUSD" msprop:Generator_ColumnPropNameInTable="TotalGUSDColumn" msprop:Generator_UserColumnName="TotalGUSD" type="xs:double" minOccurs="0" />
+              <xs:element name="Idioma" msprop:Generator_ColumnVarNameInTable="columnIdioma" msprop:Generator_ColumnPropNameInRow="Idioma" msprop:Generator_ColumnPropNameInTable="IdiomaColumn" msprop:Generator_UserColumnName="Idioma" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
