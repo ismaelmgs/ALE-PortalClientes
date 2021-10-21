@@ -220,8 +220,10 @@
                                 <div class="col-md-5" style="text-align:left;">
                                     <%--<asp:Label ID="lblNombre" runat="server" style="width:550px;"></asp:Label><br />
                                     <asp:TextBox ID="txtNombre" runat="server" CssClass="form-control"></asp:TextBox>--%>
-                                    <dx:bootstraptextbox ID="txtNombre" runat="server">
-                                    </dx:bootstraptextbox>
+<%--                                    <dx:bootstraptextbox ID="" runat="server">
+                                    </dx:bootstraptextbox>--%>
+                                    <asp:Label ID="lblNombre" runat="server"></asp:Label><asp:Label runat="server" ForeColor="Red" Text=" *"></asp:Label><br />
+                                    <asp:TextBox ID="txtNombre" runat="server" CssClass="form-control"></asp:TextBox>
                                     <asp:Label ID="lblReqNombre" runat="server" ForeColor="Red" Visible="false"></asp:Label>
                                 </div>
                                 <div class="col-md-5" style="text-align:left;">
@@ -255,7 +257,7 @@
                             <div class="row">
                                 <div class="col-md-1"></div>
                                 <div class="col-md-5" style="text-align:left;">
-                                    <asp:Label ID="lblCorreo" runat="server"></asp:Label><br />
+                                    <asp:Label ID="lblCorreo" runat="server"></asp:Label><asp:Label runat="server" ForeColor="Red" Text=" *"></asp:Label><br />
                                     <asp:TextBox ID="txtCorreo" runat="server" CssClass="form-control"></asp:TextBox>
                                     <asp:Label ID="lblReqCorreo" runat="server" ForeColor="Red" Visible="false"></asp:Label>
                                 </div>
@@ -292,12 +294,12 @@
                             <div class="row">
                                 <div class="col-md-1"></div>
                                 <div class="col-md-5" style="text-align:left;">
-                                    <asp:Label ID="lblPass" runat="server"></asp:Label><br />
+                                    <asp:Label ID="lblPass" runat="server"></asp:Label><asp:Label runat="server" ForeColor="Red" Text=" *"></asp:Label><br />
                                     <asp:TextBox ID="txtPass" runat="server" TextMode="Password" CssClass="form-control"></asp:TextBox>
                                     <asp:Label ID="lblReqPass" runat="server" ForeColor="Red" Visible="false"></asp:Label>
                                 </div>
                                 <div class="col-md-5" style="text-align:left;">
-                                    <asp:Label ID="lblConfirPass" runat="server"></asp:Label><br />
+                                    <asp:Label ID="lblConfirPass" runat="server"></asp:Label><asp:Label runat="server" ForeColor="Red" Text=" *"></asp:Label><br />
                                     <asp:TextBox ID="txtConfirPass" runat="server" TextMode="Password" CssClass="form-control"></asp:TextBox>
                                     <asp:Label ID="lblReqConfirPass" runat="server" ForeColor="Red" Visible="false"></asp:Label>
                                 </div>

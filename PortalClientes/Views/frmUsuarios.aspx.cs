@@ -370,7 +370,7 @@ namespace PortalClientes.Views
 
             lblTituloPagina.Text = Properties.Resources.Us_TituloPagUsuarios;
             lblSubTituloPagina.Text = Properties.Resources.Us_SubTituloPagUsuarios;
-            txtNombre.Caption = Properties.Resources.Us_Nombre;
+            lblNombre.Text = Properties.Resources.Us_Nombre;
             lblApellidoPat.Text = Properties.Resources.Us_ApePat;
             lblApellidoMat.Text = Properties.Resources.Us_ApeMat;
             lblCorreo.Text = Properties.Resources.Correo;
@@ -431,7 +431,6 @@ namespace PortalClientes.Views
 
             if (txtNombre.Text.S() == string.Empty)
             {
-                txtNombre.IsValid = false;
                 lblReqNombre.Visible = true;
                 lblReqNombre.Text = Properties.Resources.Cm_CampoReq;
                 ban = false;
