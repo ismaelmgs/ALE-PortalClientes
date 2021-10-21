@@ -52,6 +52,9 @@
     <Reference Include="BouncyCastle.Crypto, Version=1.8.6.0, Culture=neutral, PublicKeyToken=0e99375e54769942">
       <HintPath>packages\BouncyCastle.1.8.6.1\lib\BouncyCastle.Crypto.dll</HintPath>
     </Reference>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Charts.v18.1.Core, Version=18.1.15.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>ReferenciasDll\DevExpress.Charts.v18.1.Core.dll</HintPath>
@@ -1537,6 +1540,7 @@
     <Compile Include="Clases\Utils.cs" />
     <Compile Include="DomainModel\DBAeronave.cs" />
     <Compile Include="DomainModel\DBBase.cs" />
+    <Compile Include="DomainModel\DBMetricasEstatics.cs" />
     <Compile Include="DomainModel\DBTripulacion.cs" />
     <Compile Include="DomainModel\DBDashboard.cs" />
     <Compile Include="DomainModel\DBLogin.cs" />
@@ -1548,6 +1552,39 @@
     <Compile Include="Objetos\responseGraficaGastos.cs" />
     <Compile Include="Objetos\Tripulacion.cs" />
     <Compile Include="Presenter\Tripulacion_Presenter.cs" />
+    <Compile Include="RPT\dsDetalleGastosMXN.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsDetalleGastosMXN.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="RPT\dsDetalleGastosUSD.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsDetalleGastosUSD.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="RPT\dsFiltrosGastos.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsFiltrosGastos.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="RPT\rptDetalleGastos.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptDetalleGastos.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="RPT\rptSUBGastosMXN.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptSUBGastosMXN.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="RPT\rptSUBGastosUSD.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptSUBGastosUSD.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Views\frmDefault.aspx.cs">
       <DependentUpon>frmDefault.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1769,6 +1806,39 @@
     <Content Include="vendors\jquery\dist\jquery.min.map" />
     <Content Include="vendors\mjolnic-bootstrap-colorpicker\dist\css\bootstrap-colorpicker.css.map" />
     <Content Include="vendors\mjolnic-bootstrap-colorpicker\dist\css\bootstrap-colorpicker.min.css.map" />
+    <Content Include="RPT\dsDetalleGastosMXN.xsc">
+      <DependentUpon>dsDetalleGastosMXN.xsd</DependentUpon>
+    </Content>
+    <None Include="RPT\dsDetalleGastosMXN.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsDetalleGastosMXN.Designer.cs</LastGenOutput>
+    </None>
+    <Content Include="RPT\dsDetalleGastosMXN.xss">
+      <DependentUpon>dsDetalleGastosMXN.xsd</DependentUpon>
+    </Content>
+    <Content Include="RPT\dsDetalleGastosUSD.xsc">
+      <DependentUpon>dsDetalleGastosUSD.xsd</DependentUpon>
+    </Content>
+    <None Include="RPT\dsDetalleGastosUSD.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsDetalleGastosUSD.Designer.cs</LastGenOutput>
+    </None>
+    <Content Include="RPT\dsDetalleGastosUSD.xss">
+      <DependentUpon>dsDetalleGastosUSD.xsd</DependentUpon>
+    </Content>
+    <Content Include="RPT\dsFiltrosGastos.xsc">
+      <DependentUpon>dsFiltrosGastos.xsd</DependentUpon>
+    </Content>
+    <None Include="RPT\dsFiltrosGastos.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsFiltrosGastos.Designer.cs</LastGenOutput>
+    </None>
+    <Content Include="RPT\dsFiltrosGastos.xss">
+      <DependentUpon>dsFiltrosGastos.xsd</DependentUpon>
+    </Content>
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -1781,15 +1851,30 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Properties\Resources.en-US.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.en-US.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RPT\rptDetalleGastos.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptDetalleGastos.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RPT\rptSUBGastosMXN.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptSUBGastosMXN.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RPT\rptSUBGastosUSD.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptSUBGastosUSD.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -252,13 +252,22 @@
                                     <asp:Label ID="lblDescargar" runat="server" Text=" Descargar" Font-Bold="false"></asp:Label>
                                 </th>
                             </tr>
+                             <tr>
+                                <td>
+                                    <asp:Label ID="lblResumenGastos" runat="server" Text=" Resumen de Gastos" Font-Bold="false"></asp:Label>
+                                </td>
+                                <td>
+                                    <asp:LinkButton ID="LinkButton1" runat="server" Text="<i class='fa fa-file-excel-o' style='color:#ffffff;font-size:22px;'></i>" CssClass="btn btn-primary" />
+                                    <asp:LinkButton ID="LinkButton2" runat="server" Text="<i class='fa fa-file-pdf-o' style='color:#ffffff;font-size:22px;' ></i>" CssClass="btn btn-primary" />
+                                </td>
+                            </tr>
                             <tr>
                                 <td>
-                                    Contenido
+                                    <asp:Label ID="lblRepDetGastos" runat="server" Text=" Detalle de Gastos" Font-Bold="false"></asp:Label>
                                 </td>
                                 <td>
                                     <asp:LinkButton ID="btnExcel" runat="server" Text="<i class='fa fa-file-excel-o' style='color:#ffffff;font-size:22px;'></i>" CssClass="btn btn-primary" />
-                                    <asp:LinkButton ID="btnPDF" runat="server" Text="<i class='fa fa-file-pdf-o' style='color:#ffffff;font-size:22px;'></i>" CssClass="btn btn-primary" />
+                                    <asp:LinkButton ID="btnPDF" runat="server" Text="<i class='fa fa-file-pdf-o' style='color:#ffffff;font-size:22px;' ></i>" CssClass="btn btn-primary" OnClick="lkbExpPDF_Click" />
                                 </td>
                             </tr>
                         </table>
