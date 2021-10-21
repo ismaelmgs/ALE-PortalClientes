@@ -555,4 +555,28 @@
   <data name="TabPilTri_TipoLicencia" xml:space="preserve">
     <value>Tipo</value>
   </data>
+  <data name="FiltroEvenTri_1M" xml:space="preserve">
+    <value>Próximo mes</value>
+  </data>
+  <data name="FiltroEvenTri_2M" xml:space="preserve">
+    <value>Próximos 2 meses</value>
+  </data>
+  <data name="FiltroEvenTri_3M" xml:space="preserve">
+    <value>Próximos 3  meses</value>
+  </data>
+  <data name="FiltroEvenTri_MA" xml:space="preserve">
+    <value>Mes Actual</value>
+  </data>
+  <data name="PTEventos" xml:space="preserve">
+    <value>Eventos</value>
+  </data>
+  <data name="PTListado" xml:space="preserve">
+    <value>Listado</value>
+  </data>
+  <data name="TitleTripulacion" xml:space="preserve">
+    <value>Tripulación</value>
+  </data>
+  <data name="BTFiltro" xml:space="preserve">
+    <value>Flitrar</value>
+  </data>
 </root>

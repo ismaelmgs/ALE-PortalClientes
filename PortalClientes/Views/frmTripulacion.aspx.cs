@@ -5,13 +5,14 @@ using PortalClientes.Presenter;
 using PortalClientes.Clases;
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using System.Web.Services;
-using System.Web.Script.Services;
-using System.Globalization;
+using System.IO;
+using System.Drawing;
+using iTextSharp.text.html.simpleparser;
+using iTextSharp.text.pdf;
+using NucleoBase.Core;
 
 namespace PortalClientes.Views
 {
@@ -39,97 +40,6 @@ namespace PortalClientes.Views
             {
                 LlenarTripulacion();
             }
-        }
-
-        #endregion
-
-        #region METODOS
-
-        public void LlenarTripulacion()
-        {
-            if (eSearchObj != null)
-                eSearchObj(null, EventArgs.Empty);
-        }
-
-        private void ArmarTripulacion()
-        {
-            txtBusqueda.Attributes.Add("placeholder", Properties.Resources.Cm_Buscador);
-
-        //    lblEstadoDeVuelo.Text = Properties.Resources.Das_EstadoVuelo;
-        //    lblSalida.Text = Properties.Resources.Das_Salida;
-        //    lblLlego.Text = Properties.Resources.Das_Llego;
-        //    lblCompleto.Text = Properties.Resources.Das_Completo;
-        //    lblVuelos.Text = Properties.Resources.Das_Vuelos;
-        //    lblHorasVuelo.Text = Properties.Resources.Das_HorasVuelo;
-        //    lblNMVuelo.Text = Properties.Resources.Das_NMVuelo;
-        //    lblResumenDeCuenta.Text = Properties.Resources.Das_ResumenCuenta;
-        //    lblSaldo.Text = Properties.Resources.Das_Saldo;
-        //    lblIncVenc90Dias.Text = Properties.Resources.Das_Ven90dias;
-        //    lblUltimaDeclaracion.Text = Properties.Resources.Das_UltimaDeclaracion;
-        //    lblDeclaracionPara.Text = Properties.Resources.Das_DeclaracionPara;
-        //    lblVence.Text = Properties.Resources.Das_Vence;
-
-        //    var vPeriodo = ddlPeriodo.SelectedValue;
-        //    // llenar dropdown Periodo
-        //    ddlPeriodo.Items.Clear();
-        //    ddlPeriodo.Items.Add(new ListItem(Properties.Resources.Das_Manual, "0"));
-        //    ddlPeriodo.Items.Add(new ListItem(Properties.Resources.Das_Mensual, "1"));
-        //    ddlPeriodo.Items.Add(new ListItem(Properties.Resources.Das_Trimestral, "3"));
-        //    ddlPeriodo.Items.Add(new ListItem(Properties.Resources.Das_Semestral, "6"));
-        //    ddlPeriodo.Items.Add(new ListItem(Properties.Resources.Das_Anual, "12"));
-
-        //    if (vPeriodo == "")
-        //    {
-        //        ddlPeriodo.SelectedIndex = 3;
-        //    }
-        //    else
-        //    {
-        //        ddlPeriodo.SelectedValue = vPeriodo;
-        //    }
-
-        //    var vTR = ddlTipoRubro.SelectedValue;
-        //    // llenar dropdown Tipo Rubro
-        //    ddlTipoRubro.Items.Clear();
-        //    ddlTipoRubro.Items.Add(new ListItem(Properties.Resources.Das_Fijo, "1"));
-        //    ddlTipoRubro.Items.Add(new ListItem(Properties.Resources.Das_Variable, "2"));
-        //    ddlTipoRubro.Items.Add(new ListItem(Properties.Resources.Das_Todos, "3"));
-
-        //    if (vPeriodo == "")
-        //    {
-        //        ddlTipoRubro.SelectedIndex = 2;
-        //    }
-        //    else
-        //    {
-        //        ddlTipoRubro.SelectedValue = vTR;
-        //    }
-
-        //    lblCostosCat.Text = Properties.Resources.Das_CostoCategoria;
-        }
-
-        public void CargarEventosTripulacion(List<EventosPiloto> oEP)
-        {
-            oLstEventosPiloto = oEP;
-            gvEventos.DataSource = oEP;
-            gvEventos.DataBind();
-        }
-
-        public void CargarPilotosTripulacion(List<Piloto> oPT)
-        {
-            oLstPilotos = oPT;
-            gvPilotos.DataSource = oPT;
-            gvPilotos.DataBind();
-        }
-
-        private void LlenaGridEventosLocal()
-        {
-            gvEventos.DataSource = oLstEventosPiloto;
-            gvEventos.DataBind();
-        }
-
-        private void LlenaGridPilotosLocal()
-        {
-            gvPilotos.DataSource = oLstPilotos;
-            gvPilotos.DataBind();
         }
 
         protected void gvEventos_PageIndexChanging(object sender, GridViewPageEventArgs e)
@@ -201,6 +111,245 @@ namespace PortalClientes.Views
             }
         }
 
+        protected void btnPDFEvent_Click(object sender, EventArgs e)
+        {
+            exportarPDF("Evento");
+        }
+
+        protected void btnExcelEvent_Click(object sender, EventArgs e)
+        {
+            exportarExcel("Evento");
+        }
+
+        protected void btnExcelPilotos_Click(object sender, EventArgs e)
+        {
+            exportarExcel("Piloto");
+        }
+
+        protected void btnPDFPilotos_Click(object sender, EventArgs e)
+        {
+            exportarPDF("Piloto");
+        }
+
+        protected void btnFiltrar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (eSearchObj != null)
+                    eSearchObj(null, EventArgs.Empty);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        #endregion
+
+        #region METODOS
+
+        public override void VerifyRenderingInServerForm(Control control)
+        {
+            return;
+        }
+
+        public void LlenarTripulacion()
+        {
+            if (eSearchObj != null)
+                eSearchObj(null, EventArgs.Empty);
+        }
+
+        private void ArmarTripulacion()
+        {
+            txtBusqueda.Attributes.Add("placeholder", Properties.Resources.Cm_Buscador);
+
+            lblTripulacion.Text = Properties.Resources.TitleTripulacion;
+            lblTitleTripulacion.Text = Properties.Resources.TitleTripulacion;
+            lblPanelEventos.Text = Properties.Resources.PTEventos;
+            lblPanelListado.Text = Properties.Resources.PTListado;
+            btnFiltrarTripulacion.Text = Properties.Resources.BTFiltro;
+
+            var v = ddlFiltro.SelectedValue;
+            // llenar dropdown Tipo Rubro
+            ddlFiltro.Items.Clear();
+            ddlFiltro.Items.Add(new ListItem(Properties.Resources.FiltroEvenTri_MA, "0"));
+            ddlFiltro.Items.Add(new ListItem(Properties.Resources.FiltroEvenTri_1M, "1"));
+            ddlFiltro.Items.Add(new ListItem(Properties.Resources.FiltroEvenTri_2M, "2"));
+            ddlFiltro.Items.Add(new ListItem(Properties.Resources.FiltroEvenTri_3M, "3"));
+
+            if (v == "")
+            {
+                ddlFiltro.SelectedIndex = 0;
+            }
+            else
+            {
+                ddlFiltro.SelectedValue = v;
+            }
+
+        }
+
+        public void CargarEventosTripulacion(List<EventosPiloto> oEP)
+        {
+            oLstEventosPiloto = oEP;
+            gvEventos.DataSource = oEP;
+            gvEventos.DataBind();
+        }
+
+        public void CargarPilotosTripulacion(List<Piloto> oPT)
+        {
+            oLstPilotos = oPT;
+            gvPilotos.DataSource = oPT;
+            gvPilotos.DataBind();
+        }
+
+        private void LlenaGridEventosLocal()
+        {
+            gvEventos.DataSource = oLstEventosPiloto;
+            gvEventos.DataBind();
+        }
+
+        private void LlenaGridPilotosLocal()
+        {
+            gvPilotos.DataSource = oLstPilotos;
+            gvPilotos.DataBind();
+        }
+
+        private void exportarExcel(string tipo)
+        {
+            var nameFile = "";
+            if (tipo == "Piloto")
+            {
+                nameFile = "TripulacionPilotosMat-" + Utils.MatriculaActual + ".xls";
+            }
+            else
+            {
+                nameFile = "TripulacionEventosMat-" + Utils.MatriculaActual + ".xls";
+            }
+                
+            Response.Clear();
+            Response.Buffer = true;
+            Response.AddHeader("content-disposition", string.Format("attachment;filename={0}", nameFile));
+            Response.Charset = "";
+            Response.ContentType = "application/vnd.ms-excel";
+            using (StringWriter sw = new StringWriter())
+            {
+                HtmlTextWriter hw = new HtmlTextWriter(sw);
+                GridView gv = null;
+
+                if (tipo == "Piloto")
+                {
+                    gv = gvPilotos;
+                    LlenaGridPilotosLocal();
+                }
+                else
+                {
+                    gv = gvEventos;
+                    LlenaGridEventosLocal();
+                }
+
+                gv.AllowPaging = false;
+
+                gv.HeaderRow.BackColor = Color.White;
+                foreach (TableCell cell in gv.HeaderRow.Cells)
+                {
+                    cell.BackColor = gv.HeaderStyle.BackColor;
+                }
+                foreach (GridViewRow row in gv.Rows)
+                {
+                    row.BackColor = Color.White;
+                    foreach (TableCell cell in row.Cells)
+                    {
+                        if (row.RowIndex % 2 == 0)
+                        {
+                            cell.BackColor = gv.AlternatingRowStyle.BackColor;
+                        }
+                        else
+                        {
+                            cell.BackColor = gv.RowStyle.BackColor;
+                        }
+                        cell.CssClass = "textmode";
+                    }
+                }
+
+                gv.RenderControl(hw);
+
+                string style = @"<style> .textmode { } </style>";
+                Response.Write(sw.ToString());
+                Response.End();
+            }
+        }
+
+        private void exportarPDF(string tipo)
+        {
+            var nameFile = "";
+            if (tipo == "Piloto")
+            {
+                nameFile = "TripulacionPilotosMat-"+ Utils.MatriculaActual +".pdf";
+            }
+            else
+            {
+                nameFile = "TripulacionEventosMat-" + Utils.MatriculaActual + ".pdf";
+            }
+
+            Response.Clear();
+            Response.Buffer = true;
+            Response.AddHeader("content-disposition", string.Format("attachment;filename={0}", nameFile));
+            Response.Charset = "";
+            Response.ContentType = "application/octet-stream";
+            Response.Cache.SetCacheability(HttpCacheability.NoCache);
+            using (StringWriter sw = new StringWriter())
+            {
+                HtmlTextWriter hw = new HtmlTextWriter(sw);
+                GridView gv = null;
+                if (tipo == "Piloto")
+                {
+                    gv = gvPilotos;
+                    LlenaGridPilotosLocal();
+                }
+                else
+                {
+                    gv = gvEventos;
+                    LlenaGridEventosLocal();
+                }
+
+                gv.AllowPaging = false;
+
+                gv.HeaderRow.BackColor = Color.White;
+                foreach (TableCell cell in gv.HeaderRow.Cells)
+                {
+                    cell.BackColor = gv.HeaderStyle.BackColor;
+                }
+                foreach (GridViewRow row in gv.Rows)
+                {
+                    row.BackColor = Color.White;
+                    foreach (TableCell cell in row.Cells)
+                    {
+                        if (row.RowIndex % 2 == 0)
+                        {
+                            cell.BackColor = gv.AlternatingRowStyle.BackColor;
+                        }
+                        else
+                        {
+                            cell.BackColor = gv.RowStyle.BackColor;
+                        }
+                        cell.CssClass = "textmode";
+                    }
+                }
+
+                gv.RenderControl(hw);
+
+                StringReader sr = new StringReader(sw.ToString());
+                iTextSharp.text.Document pdfDoc = new iTextSharp.text.Document(iTextSharp.text.PageSize.A4.Rotate(), 10f, 10f, 100f, 0f);
+                HTMLWorker htmlparser = new HTMLWorker(pdfDoc);
+                PdfWriter.GetInstance(pdfDoc, Response.OutputStream);
+                pdfDoc.Open();
+                htmlparser.Parse(sr);
+                pdfDoc.Close();
+                Response.Write(pdfDoc);
+                Response.End();
+            }
+        }
+
         #endregion
 
         #region VARIABLES Y PROPIEDADES
@@ -212,6 +361,8 @@ namespace PortalClientes.Views
         public event EventHandler eNewObj;
         public event EventHandler eSaveObj;
         public event EventHandler eDeleteObj;
+        public event EventHandler eSearchObjEventos;
+
 
         public List<Piloto> oLstPilotos
         {
@@ -225,7 +376,14 @@ namespace PortalClientes.Views
             set { ViewState["VSEventosPiloto"] = value; }
         }
 
-        #endregion
+        public int iMeses
+        {
+            get
+            {
+                return ddlFiltro.SelectedValue.S().I();
+            }
+        }
 
+        #endregion
     }
 }

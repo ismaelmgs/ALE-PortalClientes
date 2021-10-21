@@ -12,13 +12,13 @@ namespace PortalClientes.DomainModel
 {
     public class DBTripulacion
     {
-        public List<EventosPiloto> ObtenerEventos()
+        public List<EventosPiloto> ObtenerEventos(int meses)
         {
             JavaScriptSerializer ser = new JavaScriptSerializer();
             List<EventosPiloto> ep = new List<EventosPiloto>();
             FiltroEvent oLog = new FiltroEvent();
             oLog.matricula = Utils.MatriculaActual;
-            oLog.meses = 3;
+            oLog.meses = meses;
 
             TokenWS oToken = Utils.ObtieneToken;
 

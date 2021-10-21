@@ -79,6 +79,15 @@ namespace PortalClientes.Properties {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Flitrar.
+        /// </summary>
+        internal static string BTFiltro {
+            get {
+                return ResourceManager.GetString("BTFiltro", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Cancelar.
         /// </summary>
         internal static string Cancelar {
@@ -367,6 +376,42 @@ namespace PortalClientes.Properties {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Próximo mes.
+        /// </summary>
+        internal static string FiltroEvenTri_1M {
+            get {
+                return ResourceManager.GetString("FiltroEvenTri_1M", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Próximos 2 meses.
+        /// </summary>
+        internal static string FiltroEvenTri_2M {
+            get {
+                return ResourceManager.GetString("FiltroEvenTri_2M", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Próximos 3  meses.
+        /// </summary>
+        internal static string FiltroEvenTri_3M {
+            get {
+                return ResourceManager.GetString("FiltroEvenTri_3M", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Mes Actual.
+        /// </summary>
+        internal static string FiltroEvenTri_MA {
+            get {
+                return ResourceManager.GetString("FiltroEvenTri_MA", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Contraseña.
         /// </summary>
         internal static string Lo_Contrasena {
@@ -570,6 +615,24 @@ namespace PortalClientes.Properties {
         internal static string ME_Titulo {
             get {
                 return ResourceManager.GetString("ME_Titulo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Eventos.
+        /// </summary>
+        internal static string PTEventos {
+            get {
+                return ResourceManager.GetString("PTEventos", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Listado.
+        /// </summary>
+        internal static string PTListado {
+            get {
+                return ResourceManager.GetString("PTListado", resourceCulture);
             }
         }
         
@@ -1092,6 +1155,15 @@ namespace PortalClientes.Properties {
         internal static string TabTransacciones {
             get {
                 return ResourceManager.GetString("TabTransacciones", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Tripulación.
+        /// </summary>
+        internal static string TitleTripulacion {
+            get {
+                return ResourceManager.GetString("TitleTripulacion", resourceCulture);
             }
         }
         

@@ -20,13 +20,13 @@ namespace PortalClientes.Presenter
 
         protected override void SearchObj_Presenter(object sender, EventArgs e)
         {
-            oIView.CargarEventosTripulacion(oIGesCat.ObtenerEventos());
+            oIView.CargarEventosTripulacion(oIGesCat.ObtenerEventos(oIView.iMeses));
             oIView.CargarPilotosTripulacion(oIGesCat.ObtenerPilotos());
         }
 
         protected void eSearchObjEventos_Presenter(object sender, EventArgs e)
         {
-            oIView.CargarEventosTripulacion(oIGesCat.ObtenerEventos());
+            oIView.CargarEventosTripulacion(oIGesCat.ObtenerEventos(oIView.iMeses));
         }
 
         protected void eSearchObjPilotos_Presenter(object sender, EventArgs e)

@@ -9,7 +9,11 @@ namespace PortalClientes.Interfaces
 {
     public interface IViewTripulacion : IBaseView
     {
+        int iMeses { get; }
         void CargarEventosTripulacion(List<EventosPiloto> oEP);
         void CargarPilotosTripulacion(List<Piloto> oPT);
+
+        event EventHandler eSearchObjEventos;
+        
     }
 }

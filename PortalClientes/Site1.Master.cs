@@ -274,6 +274,10 @@ namespace PortalClientes
             {
                 Response.Redirect("~/Views/frmTuAeronave.aspx");
             }
+            else if (path == Enums.Tripulacion)
+            {
+                Response.Redirect("~/Views/frmTripulacion.aspx");
+            }
         }
     }
 }
