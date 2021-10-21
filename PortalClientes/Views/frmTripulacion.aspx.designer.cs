@@ -58,24 +58,6 @@ namespace PortalClientes.Views {
         protected global::System.Web.UI.WebControls.Label lblPanelListado;
         
         /// <summary>
-        /// Control btnExcelEvent.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton btnExcelEvent;
-        
-        /// <summary>
-        /// Control btnPDFEvent.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton btnPDFEvent;
-        
-        /// <summary>
         /// Control ddlFiltro.
         /// </summary>
         /// <remarks>
@@ -92,6 +74,24 @@ namespace PortalClientes.Views {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnFiltrarTripulacion;
+        
+        /// <summary>
+        /// Control btnExcelEvent.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton btnExcelEvent;
+        
+        /// <summary>
+        /// Control btnPDFEvent.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton btnPDFEvent;
         
         /// <summary>
         /// Control gvEventos.

@@ -52,11 +52,8 @@
                             <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
                                 <br />
                                 <div class="row">
-                                    <div class="col-md-2 offset-5" style="text-align: center;">
-                                       <asp:LinkButton ID="btnExcelEvent" runat="server" Text="<i class='fa fa-file-excel-o' style='color:#ffffff;font-size:22px;'></i>" CssClass="btn btn-primary" OnClick="btnExcelEvent_Click"/>
-                                       <asp:LinkButton ID="btnPDFEvent" runat="server" Text="<i class='fa fa-file-pdf-o' style='color:#ffffff;font-size:22px;'></i>" CssClass="btn btn-primary" OnClick="btnPDFEvent_Click"/>
-                                    </div>
-                                    <div class="col-md-3">
+                                    
+                                    <div class="col-md-3 offset-5"> 
                                         <asp:DropDownList ID="ddlFiltro" runat="server" CssClass="form-control">
                                         </asp:DropDownList>
                                     </div>
@@ -65,6 +62,10 @@
                                         <%--<button id="btnFiltrarTripulacion" class="btn btn-sm btn-primary" type="button"  OnClick="">
                                             <i class="fa fa-filter" aria-hidden="true"></i>Filtrar
                                         </button>--%>
+                                    </div>
+                                    <div class="col-md-2" style="text-align: center;">
+                                       <asp:LinkButton ID="btnExcelEvent" runat="server" Text="<i class='fa fa-file-excel-o' style='color:#ffffff;font-size:22px;'></i>" CssClass="btn btn-primary" OnClick="btnExcelEvent_Click"/>
+                                       <asp:LinkButton ID="btnPDFEvent" runat="server" Text="<i class='fa fa-file-pdf-o' style='color:#ffffff;font-size:22px;'></i>" CssClass="btn btn-primary" OnClick="btnPDFEvent_Click"/>
                                     </div>
                                 </div>
                                 <br />
