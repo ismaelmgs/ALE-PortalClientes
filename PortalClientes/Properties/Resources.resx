@@ -462,8 +462,8 @@
   <data name="ME_CostoMilla" xml:space="preserve">
     <value>Costo por Milla</value>
   </data>
-  <data name="ME_CostoPromedio" xml:space="preserve">
-    <value>Costo Promedio</value>
+  <data name="ME_CostoPromedioMXN" xml:space="preserve">
+    <value>Costo Promedio Pesos</value>
   </data>
   <data name="ME_DistanciaPromedio" xml:space="preserve">
     <value>Distancia Promedio</value>
@@ -484,7 +484,7 @@
     <value>Número de Vuelos</value>
   </data>
   <data name="ME_PeriodoVuelo" xml:space="preserve">
-    <value>Promedio de Vuelo</value>
+    <value>Promedio por Vuelo</value>
   </data>
   <data name="ME_PromedioPasajeros" xml:space="preserve">
     <value>Promedio de Pasajeros</value>
@@ -493,7 +493,7 @@
     <value>Reportes</value>
   </data>
   <data name="ME_ResumeenPeriodo" xml:space="preserve">
-    <value>Resumen del período</value>
+    <value>Resumen del periodo USD</value>
   </data>
   <data name="ME_TabDescarga" xml:space="preserve">
     <value>Descarga</value>
@@ -578,5 +578,14 @@
   </data>
   <data name="BTFiltro" xml:space="preserve">
     <value>Flitrar</value>
+  </data>
+  <data name="ME_CostoPromedioUSD" xml:space="preserve">
+    <value>Costo promedio Dlls</value>
+  </data>
+  <data name="ME_NumeroPasajeros" xml:space="preserve">
+    <value>Numero pasajeros</value>
+  </data>
+  <data name="ME_ResumeenPeriodoMXN" xml:space="preserve">
+    <value>Resumen del periodo MXN</value>
   </data>
 </root>

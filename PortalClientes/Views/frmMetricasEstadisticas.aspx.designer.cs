@@ -7,13 +7,11 @@
 // </generado automáticamente>
 //------------------------------------------------------------------------------
 
-namespace PortalClientes.Views
-{
-
-
-    public partial class frmMetricasEstadisticas
-    {
-
+namespace PortalClientes.Views {
+    
+    
+    public partial class frmMetricasEstadisticas {
+        
         /// <summary>
         /// Control lbltitulometricasEstadisticas.
         /// </summary>
@@ -22,7 +20,7 @@ namespace PortalClientes.Views
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lbltitulometricasEstadisticas;
-
+        
         /// <summary>
         /// Control txtBusqueda.
         /// </summary>
@@ -31,7 +29,7 @@ namespace PortalClientes.Views
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtBusqueda;
-
+        
         /// <summary>
         /// Control lblResumenPeriodo.
         /// </summary>
@@ -40,7 +38,7 @@ namespace PortalClientes.Views
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblResumenPeriodo;
-
+        
         /// <summary>
         /// Control ddlFiltroResumenPeriodo.
         /// </summary>
@@ -49,7 +47,7 @@ namespace PortalClientes.Views
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList ddlFiltroResumenPeriodo;
-
+        
         /// <summary>
         /// Control lblfiltrar.
         /// </summary>
@@ -58,7 +56,7 @@ namespace PortalClientes.Views
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblfiltrar;
-
+        
         /// <summary>
         /// Control lblGastoTotalFijo.
         /// </summary>
@@ -67,7 +65,7 @@ namespace PortalClientes.Views
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblGastoTotalFijo;
-
+        
         /// <summary>
         /// Control lblGastoTotalFijoS.
         /// </summary>
@@ -76,7 +74,7 @@ namespace PortalClientes.Views
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblGastoTotalFijoS;
-
+        
         /// <summary>
         /// Control lblGastoTotalRes.
         /// </summary>
@@ -85,7 +83,7 @@ namespace PortalClientes.Views
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblGastoTotalRes;
-
+        
         /// <summary>
         /// Control lblGastoTotalVariable.
         /// </summary>
@@ -94,7 +92,7 @@ namespace PortalClientes.Views
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblGastoTotalVariable;
-
+        
         /// <summary>
         /// Control lblGastoTotalVariableS.
         /// </summary>
@@ -103,7 +101,7 @@ namespace PortalClientes.Views
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblGastoTotalVariableS;
-
+        
         /// <summary>
         /// Control lblCostoHoraRes.
         /// </summary>
@@ -112,7 +110,7 @@ namespace PortalClientes.Views
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblCostoHoraRes;
-
+        
         /// <summary>
         /// Control lblCostoHora.
         /// </summary>
@@ -121,7 +119,7 @@ namespace PortalClientes.Views
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblCostoHora;
-
+        
         /// <summary>
         /// Control lblCostoHoraS.
         /// </summary>
@@ -130,7 +128,7 @@ namespace PortalClientes.Views
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblCostoHoraS;
-
+        
         /// <summary>
         /// Control lblCostoMillaRes.
         /// </summary>
@@ -139,7 +137,7 @@ namespace PortalClientes.Views
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblCostoMillaRes;
-
+        
         /// <summary>
         /// Control lblCostoMilla.
         /// </summary>
@@ -148,7 +146,7 @@ namespace PortalClientes.Views
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblCostoMilla;
-
+        
         /// <summary>
         /// Control lblCostoMillaS.
         /// </summary>
@@ -157,7 +155,7 @@ namespace PortalClientes.Views
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblCostoMillaS;
-
+        
         /// <summary>
         /// Control lblCostoMillaPAXRes.
         /// </summary>
@@ -166,70 +164,16 @@ namespace PortalClientes.Views
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblCostoMillaPAXRes;
-
+        
         /// <summary>
-        /// Control lblNumeroVuelos.
+        /// Control lblResumenPeriodoMXN.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblNumeroVuelos;
-
-        /// <summary>
-        /// Control lblNumeroVuelosRes.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblNumeroVuelosRes;
-
-        /// <summary>
-        /// Control lblHorasVoladas.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblHorasVoladas;
-
-        /// <summary>
-        /// Control lblHorasVoladasRes.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblHorasVoladasRes;
-
-        /// <summary>
-        /// Control lblPromedioDePasajeros.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblPromedioDePasajeros;
-
-        /// <summary>
-        /// Control lblPromedioDePasajerosRes.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblPromedioDePasajerosRes;
-
-        /// <summary>
-        /// Control Label1.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label1;
-
+        protected global::System.Web.UI.WebControls.Label lblResumenPeriodoMXN;
+        
         /// <summary>
         /// Control lblGastoTotalFijoMXN.
         /// </summary>
@@ -238,7 +182,7 @@ namespace PortalClientes.Views
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblGastoTotalFijoMXN;
-
+        
         /// <summary>
         /// Control lblGastoTotalFijoSMXN.
         /// </summary>
@@ -247,7 +191,7 @@ namespace PortalClientes.Views
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblGastoTotalFijoSMXN;
-
+        
         /// <summary>
         /// Control lblGastoTotalResMXN.
         /// </summary>
@@ -256,7 +200,7 @@ namespace PortalClientes.Views
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblGastoTotalResMXN;
-
+        
         /// <summary>
         /// Control lblGastoTotalVariableMXN.
         /// </summary>
@@ -265,7 +209,7 @@ namespace PortalClientes.Views
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblGastoTotalVariableMXN;
-
+        
         /// <summary>
         /// Control lblGastoTotalVariableSMXN.
         /// </summary>
@@ -274,7 +218,7 @@ namespace PortalClientes.Views
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblGastoTotalVariableSMXN;
-
+        
         /// <summary>
         /// Control lblCostoHoraResMXN.
         /// </summary>
@@ -283,7 +227,7 @@ namespace PortalClientes.Views
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblCostoHoraResMXN;
-
+        
         /// <summary>
         /// Control lblCostoHoraMXN.
         /// </summary>
@@ -292,7 +236,7 @@ namespace PortalClientes.Views
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblCostoHoraMXN;
-
+        
         /// <summary>
         /// Control lblCostoHoraSMXN.
         /// </summary>
@@ -301,7 +245,7 @@ namespace PortalClientes.Views
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblCostoHoraSMXN;
-
+        
         /// <summary>
         /// Control lblCostoMillaResMXN.
         /// </summary>
@@ -310,7 +254,7 @@ namespace PortalClientes.Views
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblCostoMillaResMXN;
-
+        
         /// <summary>
         /// Control lblCostoMillaMXN.
         /// </summary>
@@ -319,7 +263,7 @@ namespace PortalClientes.Views
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblCostoMillaMXN;
-
+        
         /// <summary>
         /// Control lblCostoMillaSMXN.
         /// </summary>
@@ -328,7 +272,7 @@ namespace PortalClientes.Views
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblCostoMillaSMXN;
-
+        
         /// <summary>
         /// Control lblCostoMillaPAXResMXN.
         /// </summary>
@@ -337,61 +281,70 @@ namespace PortalClientes.Views
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblCostoMillaPAXResMXN;
-
+        
         /// <summary>
-        /// Control lblNumeroVuelosMXN.
+        /// Control Label2.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblNumeroVuelosMXN;
-
+        protected global::System.Web.UI.WebControls.Label Label2;
+        
         /// <summary>
-        /// Control lblNumeroVuelosResMXN.
+        /// Control lblNumeroVuelos.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblNumeroVuelosResMXN;
-
+        protected global::System.Web.UI.WebControls.Label lblNumeroVuelos;
+        
         /// <summary>
-        /// Control lblHorasVoladasMXN.
+        /// Control lblNumeroVuelosRes.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblHorasVoladasMXN;
-
+        protected global::System.Web.UI.WebControls.Label lblNumeroVuelosRes;
+        
         /// <summary>
-        /// Control lblHorasVoladasResMXN.
+        /// Control lblHorasVoladas.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblHorasVoladasResMXN;
-
+        protected global::System.Web.UI.WebControls.Label lblHorasVoladas;
+        
         /// <summary>
-        /// Control lblPromedioDePasajerosMXN.
+        /// Control lblHorasVoladasRes.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblPromedioDePasajerosMXN;
-
+        protected global::System.Web.UI.WebControls.Label lblHorasVoladasRes;
+        
         /// <summary>
-        /// Control lblPromedioDePasajerosResMXN.
+        /// Control lblPromedioDePasajeros.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblPromedioDePasajerosResMXN;
-
+        protected global::System.Web.UI.WebControls.Label lblPromedioDePasajeros;
+        
+        /// <summary>
+        /// Control lblPromedioDePasajerosRes.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblPromedioDePasajerosRes;
+        
         /// <summary>
         /// Control lblPeriodoVuelo.
         /// </summary>
@@ -400,16 +353,7 @@ namespace PortalClientes.Views
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblPeriodoVuelo;
-
-        /// <summary>
-        /// Control ddlPromedioVuelo.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlPromedioVuelo;
-
+        
         /// <summary>
         /// Control lblTiempoPromedio.
         /// </summary>
@@ -418,7 +362,7 @@ namespace PortalClientes.Views
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblTiempoPromedio;
-
+        
         /// <summary>
         /// Control lblTiempoPromedioRes.
         /// </summary>
@@ -427,7 +371,7 @@ namespace PortalClientes.Views
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblTiempoPromedioRes;
-
+        
         /// <summary>
         /// Control lblDistanciaPromedio.
         /// </summary>
@@ -436,7 +380,7 @@ namespace PortalClientes.Views
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblDistanciaPromedio;
-
+        
         /// <summary>
         /// Control lblDistanciaPromedioRes.
         /// </summary>
@@ -445,7 +389,7 @@ namespace PortalClientes.Views
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblDistanciaPromedioRes;
-
+        
         /// <summary>
         /// Control lblPromedioPasajeros.
         /// </summary>
@@ -454,7 +398,7 @@ namespace PortalClientes.Views
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblPromedioPasajeros;
-
+        
         /// <summary>
         /// Control lblPromedioPasajerosRes.
         /// </summary>
@@ -463,16 +407,16 @@ namespace PortalClientes.Views
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblPromedioPasajerosRes;
-
+        
         /// <summary>
-        /// Control lblCostoPromedio.
+        /// Control lblCostoPromedioMXN.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblCostoPromedio;
-
+        protected global::System.Web.UI.WebControls.Label lblCostoPromedioMXN;
+        
         /// <summary>
         /// Control lblCostoPromedioRes.
         /// </summary>
@@ -481,7 +425,7 @@ namespace PortalClientes.Views
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblCostoPromedioRes;
-
+        
         /// <summary>
         /// Control Label9.
         /// </summary>
@@ -490,7 +434,34 @@ namespace PortalClientes.Views
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label Label9;
-
+        
+        /// <summary>
+        /// Control lblCostoPromedioUSD.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblCostoPromedioUSD;
+        
+        /// <summary>
+        /// Control Label4.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label4;
+        
+        /// <summary>
+        /// Control Label5.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label5;
+        
         /// <summary>
         /// Control lblCostosCat.
         /// </summary>
@@ -499,7 +470,7 @@ namespace PortalClientes.Views
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblCostosCat;
-
+        
         /// <summary>
         /// Control ddlPeriodo.
         /// </summary>
@@ -508,7 +479,7 @@ namespace PortalClientes.Views
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList ddlPeriodo;
-
+        
         /// <summary>
         /// Control txtFechaInicioGrafica.
         /// </summary>
@@ -517,7 +488,7 @@ namespace PortalClientes.Views
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtFechaInicioGrafica;
-
+        
         /// <summary>
         /// Control txtFechaFinGrafica.
         /// </summary>
@@ -526,7 +497,7 @@ namespace PortalClientes.Views
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtFechaFinGrafica;
-
+        
         /// <summary>
         /// Control ddlTipoRubro.
         /// </summary>
@@ -535,7 +506,7 @@ namespace PortalClientes.Views
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList ddlTipoRubro;
-
+        
         /// <summary>
         /// Control lblReportes.
         /// </summary>
@@ -544,7 +515,7 @@ namespace PortalClientes.Views
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblReportes;
-
+        
         /// <summary>
         /// Control lblDescripcion.
         /// </summary>
@@ -553,7 +524,7 @@ namespace PortalClientes.Views
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblDescripcion;
-
+        
         /// <summary>
         /// Control lblDescargar.
         /// </summary>
@@ -562,7 +533,7 @@ namespace PortalClientes.Views
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblDescargar;
-
+        
         /// <summary>
         /// Control lblResumenGastos.
         /// </summary>
@@ -571,7 +542,7 @@ namespace PortalClientes.Views
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblResumenGastos;
-
+        
         /// <summary>
         /// Control LinkButton1.
         /// </summary>
@@ -580,7 +551,7 @@ namespace PortalClientes.Views
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.LinkButton LinkButton1;
-
+        
         /// <summary>
         /// Control LinkButton2.
         /// </summary>
@@ -589,7 +560,7 @@ namespace PortalClientes.Views
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.LinkButton LinkButton2;
-
+        
         /// <summary>
         /// Control lblRepDetGastos.
         /// </summary>
@@ -598,7 +569,7 @@ namespace PortalClientes.Views
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblRepDetGastos;
-
+        
         /// <summary>
         /// Control btnExcel.
         /// </summary>
@@ -607,7 +578,7 @@ namespace PortalClientes.Views
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.LinkButton btnExcel;
-
+        
         /// <summary>
         /// Control btnPDF.
         /// </summary>

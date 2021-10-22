@@ -484,11 +484,20 @@ namespace PortalClientes.Properties {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Costo Promedio.
+        ///   Busca una cadena traducida similar a Costo Promedio Pesos.
         /// </summary>
-        internal static string ME_CostoPromedio {
+        internal static string ME_CostoPromedioMXN {
             get {
-                return ResourceManager.GetString("ME_CostoPromedio", resourceCulture);
+                return ResourceManager.GetString("ME_CostoPromedioMXN", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Costo promedio Dlls.
+        /// </summary>
+        internal static string ME_CostoPromedioUSD {
+            get {
+                return ResourceManager.GetString("ME_CostoPromedioUSD", resourceCulture);
             }
         }
         
@@ -538,6 +547,15 @@ namespace PortalClientes.Properties {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Numero pasajeros.
+        /// </summary>
+        internal static string ME_NumeroPasajeros {
+            get {
+                return ResourceManager.GetString("ME_NumeroPasajeros", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Número de Vuelos.
         /// </summary>
         internal static string ME_NumeroVuelos {
@@ -547,7 +565,7 @@ namespace PortalClientes.Properties {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Promedio de Vuelo.
+        ///   Busca una cadena traducida similar a Promedio por Vuelo.
         /// </summary>
         internal static string ME_PeriodoVuelo {
             get {
@@ -574,11 +592,20 @@ namespace PortalClientes.Properties {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Resumen del período.
+        ///   Busca una cadena traducida similar a Resumen del periodo USD.
         /// </summary>
         internal static string ME_ResumeenPeriodo {
             get {
                 return ResourceManager.GetString("ME_ResumeenPeriodo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Resumen del periodo MXN.
+        /// </summary>
+        internal static string ME_ResumeenPeriodoMXN {
+            get {
+                return ResourceManager.GetString("ME_ResumeenPeriodoMXN", resourceCulture);
             }
         }
         

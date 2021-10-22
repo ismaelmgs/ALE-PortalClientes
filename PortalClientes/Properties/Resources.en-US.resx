@@ -463,7 +463,7 @@
     <value>Cost per Mile</value>
   </data>
   <data name="ME_CostoPromedio" xml:space="preserve">
-    <value>Average cost</value>
+    <value>Average cost MXN</value>
   </data>
   <data name="ME_DistanciaPromedio" xml:space="preserve">
     <value>Average Distance</value>
@@ -484,7 +484,7 @@
     <value>Number of Flights</value>
   </data>
   <data name="ME_PeriodoVuelo" xml:space="preserve">
-    <value>Average Flight</value>
+    <value>Average per Flight</value>
   </data>
   <data name="ME_PromedioPasajeros" xml:space="preserve">
     <value>Average Passengers</value>
@@ -493,7 +493,7 @@
     <value>Reports</value>
   </data>
   <data name="ME_ResumeenPeriodo" xml:space="preserve">
-    <value>Period summary</value>
+    <value>Period summary USD</value>
   </data>
   <data name="ME_TabDescarga" xml:space="preserve">
     <value>Download</value>
@@ -578,5 +578,14 @@
   </data>
   <data name="BTFiltro" xml:space="preserve">
     <value>Filter</value>
+  </data>
+  <data name="ME_CostoPromedioUSD" xml:space="preserve">
+    <value>Average cost USD</value>
+  </data>
+  <data name="ME_NumeroPasajeros" xml:space="preserve">
+    <value>Number passengers</value>
+  </data>
+  <data name="ME_ResumeenPeriodoMXN" xml:space="preserve">
+    <value>Period summary MXN</value>
   </data>
 </root>

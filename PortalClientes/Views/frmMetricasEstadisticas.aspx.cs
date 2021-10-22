@@ -493,7 +493,8 @@ namespace PortalClientes.Views
             txtBusqueda.Attributes.Add("placeholder", Properties.Resources.Cm_Buscador);
 
             lbltitulometricasEstadisticas.Text = Properties.Resources.ME_Titulo;
-            lblResumenPeriodo.Text = Properties.Resources.ME_ResumeenPeriodo; ;
+            lblResumenPeriodo.Text = Properties.Resources.ME_ResumeenPeriodo;
+            lblResumenPeriodoMXN.Text = Properties.Resources.ME_ResumeenPeriodoMXN;
             lblfiltrar.Text = Properties.Resources.ME_Filtrar;
             lblGastoTotalFijo.Text = Properties.Resources.Me_GastoTotalFijo;
             lblGastoTotalVariable.Text = Properties.Resources.ME_GastoTotalVariable;
@@ -501,12 +502,13 @@ namespace PortalClientes.Views
             lblCostoMilla.Text = Properties.Resources.ME_CostoMilla;
             lblNumeroVuelos.Text = Properties.Resources.ME_NumeroVuelos;
             lblHorasVoladas.Text = Properties.Resources.ME_HorasVoladas;
-            lblPromedioDePasajeros.Text = Properties.Resources.ME_PromedioPasajeros;
+            lblPromedioDePasajeros.Text = Properties.Resources.ME_NumeroPasajeros;
             lblPeriodoVuelo.Text = Properties.Resources.ME_PeriodoVuelo;
             lblTiempoPromedio.Text = Properties.Resources.ME_TiempoPromedio;
             lblDistanciaPromedio.Text = Properties.Resources.ME_DistanciaPromedio;
             lblPromedioPasajeros.Text = Properties.Resources.ME_PromedioPasajeros;
-            lblCostoPromedio.Text = Properties.Resources.ME_CostoPromedio;
+            lblCostoPromedioMXN.Text = Properties.Resources.ME_CostoPromedioMXN;
+            lblCostoPromedioUSD.Text = Properties.Resources.ME_CostoPromedioUSD;
             lblCostosCat.Text = Properties.Resources.ME_CostoCat;
             lblReportes.Text = Properties.Resources.ME_Reportes;
 
