@@ -231,7 +231,7 @@ namespace PortalClientes.Views
             if (Utils.Idioma == "es-MX")
                 strFecha = dt.ToLongDateString().ToString(CultureInfo.CreateSpecificCulture("es-MX"));
             else
-                strFecha = dt.ToLongDateString().ToString(CultureInfo.CreateSpecificCulture("en-US"));
+                strFecha = DevuelveFechaIngles(DateTime.Now.Day, DateTime.Now.Month, DateTime.Now.Year);
             row["Fecha"] = strFecha;
             dtFiltros.Rows.Add(row);
             dtFiltros.TableName = "Filtros";
@@ -312,7 +312,7 @@ namespace PortalClientes.Views
             if (Utils.Idioma == "es-MX")
                 strFecha = dt.ToLongDateString().ToString(CultureInfo.CreateSpecificCulture("es-MX"));
             else
-                strFecha = dt.ToLongDateString().ToString(CultureInfo.CreateSpecificCulture("en-US"));
+                strFecha = DevuelveFechaIngles(DateTime.Now.Day, DateTime.Now.Month, DateTime.Now.Year);
             row["Fecha"] = strFecha;
             dtFiltros.Rows.Add(row);
             dtFiltros.TableName = "Filtros";
@@ -465,7 +465,10 @@ namespace PortalClientes.Views
                         row["Comentarios"] = G.comentarios;
                         row["Fecha"] = G.fecha;
                         row["Mes"] = G.mes;
-                        row["TotalGMXN"] = G.totalMXN;
+                        strTotalesMX = G.totalMXN.ToString();
+                        dbTotales = double.Parse(strTotalesMX);
+                        strTotalesMX = dbTotales.ToString("c", CultureInfo.CreateSpecificCulture("es-MX"));
+                        row["TotalGMXN"] = strTotalesMX;
                         dtGastosMXN.Rows.Add(row);
                     }
                     else
@@ -473,7 +476,9 @@ namespace PortalClientes.Views
                         if ((G.totalMXN == 0) && (G.totalUSD > 0))  //USD
                         {
                             rowUSD = dtGastosUSD.NewRow();
-                            strTotalesUS = L.totalUSD.ToString().Replace(',', '.');
+                            strTotalesUS = L.totalUSD.ToString();
+                            dbTotales = double.Parse(strTotalesUS);
+                            strTotalesUS = dbTotales.ToString("c", CultureInfo.CreateSpecificCulture("es-MX"));
                             rowUSD["TotalUSD"] = strTotalesUS;
                             if (Utils.Idioma == "es-MX")
                             {
@@ -491,7 +496,12 @@ namespace PortalClientes.Views
                             rowUSD["Comentarios"] = G.comentarios;
                             rowUSD["Fecha"] = G.fecha;
                             rowUSD["Mes"] = G.mes;
-                            rowUSD["TotalGUSD"] = G.totalUSD;
+
+                            strTotalesUS = G.totalUSD.ToString();
+                            dbTotales = double.Parse(strTotalesUS);
+                            strTotalesUS = dbTotales.ToString("c", CultureInfo.CreateSpecificCulture("es-MX"));
+
+                            rowUSD["TotalGUSD"] = strTotalesUS;
                             dtGastosUSD.Rows.Add(rowUSD);
                         }
                     }
@@ -586,6 +596,76 @@ namespace PortalClientes.Views
             dsRgastos.Tables.Add(dtGastos);
             dsRgastos.Tables.Add(dtTotales);
             return dsRgastos;
+        }
+
+        public string DevuelveFechaIngles(int iDia, int iMes, int iAnio)
+        {
+            string sFecha = string.Empty;
+            string sDia = string.Empty;
+            string sMes = string.Empty;
+
+            switch (iDia)
+            {
+                case 1:
+                    sDia = "1st";
+                    break;
+                case 2:
+                    sDia = "2nd";
+                    break;
+                case 3:
+                    sDia = "3rd";
+                    break;
+                case 4:
+                    sDia = "4th";
+                    break;
+                default:
+                    sDia = iDia.ToString() + "th";
+                    break;
+            }
+
+            switch (iMes)
+            {
+                case 1:
+                    sMes = "January";
+                    break;
+                case 2:
+                    sMes = "February";
+                    break;
+                case 3:
+                    sMes = "March";
+                    break;
+                case 4:
+                    sMes = "April";
+                    break;
+                case 5:
+                    sMes = "May";
+                    break;
+                case 6:
+                    sMes = "June";
+                    break;
+                case 7:
+                    sMes = "July";
+                    break;
+                case 8:
+                    sMes = "August";
+                    break;
+                case 9:
+                    sMes = "September";
+                    break;
+                case 10:
+                    sMes = "October";
+                    break;
+                case 11:
+                    sMes = "November";
+                    break;
+                case 12:
+                    sMes = "December";
+                    break;
+            }
+
+            sFecha = sMes + " " + sDia + ", " + iAnio.ToString();
+
+            return sFecha;
         }
 
         [WebMethod]
