@@ -1,5 +1,5 @@
 $(document).ready(function () {
-    const url = "http://192.168.1.250/PortalClientes/Views/frmMetricasEstadisticas.aspx"; // API URL
+    const url = "http://192.168.1.250/PortalClientes/Views/frmMetricasEstadisticas.aspx/GetGastos"; // API URL
     //const url =
     ResolveUrl("~/"); // API URL
     var URLactual = window.location.pathname;

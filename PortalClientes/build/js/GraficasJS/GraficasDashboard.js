@@ -1,7 +1,7 @@
 ﻿$(document).ready(function () {
     //const url =
     ResolveUrl("~/"); // API URL
-    const url = "http://192.168.1.250/PortalClientes/Views/frmDashboard.aspx"; // API URL
+    const url = "http://192.168.1.250/PortalClientes/Views/frmDashboard.aspx/GetGastos"; // API URL
     var URLactual = window.location.pathname;
 
     if (URLactual == "/Views/frmDashboard.aspx") {
