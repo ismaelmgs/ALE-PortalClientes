@@ -48,10 +48,11 @@
                         </asp:DropDownList>
                     </div>
                     <div class="col-md-2" style="text-align: center;">
-                        <button id="btnFiltrarMetricasEstadisticas" class="btn btn-primary" type="button">
+                        <%--<button id="btnFiltrarMetricasEstadisticas" class="btn btn-primary" type="button">
                             <i class="fa fa-filter" aria-hidden="true"></i>
                             <asp:Label ID="lblfiltrar" runat="server" Text="Filtrar" Font-Bold="true"></asp:Label>
-                        </button>
+                        </button>--%>
+                         <asp:Button ID="btnFiltrarMetricasEstadisticas" runat="server" Text="Filtrar" CssClass="btn btn-primary" OnClick="btnFiltrar_Click" />
                     </div>
                 </div>
                 <div>
@@ -160,7 +161,7 @@
             <div class="x_panel">
                 <div class="x_title">
                     <h2>
-                        <asp:Label ID="Label2" runat="server" Text="Informacion General" Font-Bold="true"></asp:Label></h2>
+                        <asp:Label ID="lblInformacionGeneral" runat="server" Text="Informacion General" Font-Bold="true"></asp:Label></h2>
                     <div class="clearfix"></div>
                 </div>
                 <div class="row" style="margin: 5px;">

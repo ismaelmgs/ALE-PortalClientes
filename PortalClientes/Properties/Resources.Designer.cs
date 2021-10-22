@@ -547,6 +547,15 @@ namespace PortalClientes.Properties {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Informacion General.
+        /// </summary>
+        internal static string ME_InfoGeneral {
+            get {
+                return ResourceManager.GetString("ME_InfoGeneral", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Numero pasajeros.
         /// </summary>
         internal static string ME_NumeroPasajeros {
@@ -624,6 +633,42 @@ namespace PortalClientes.Properties {
         internal static string ME_TabDescripcion {
             get {
                 return ResourceManager.GetString("ME_TabDescripcion", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Descarga.
+        /// </summary>
+        internal static string ME_TabDocDescarga {
+            get {
+                return ResourceManager.GetString("ME_TabDocDescarga", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Tipo Reporte.
+        /// </summary>
+        internal static string ME_TabDocDescripcion {
+            get {
+                return ResourceManager.GetString("ME_TabDocDescripcion", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Detalle de Gastos.
+        /// </summary>
+        internal static string Me_TabDocDetGastos {
+            get {
+                return ResourceManager.GetString("Me_TabDocDetGastos", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Resumen de Gastos.
+        /// </summary>
+        internal static string ME_TabDocResumenGastos {
+            get {
+                return ResourceManager.GetString("ME_TabDocResumenGastos", resourceCulture);
             }
         }
         

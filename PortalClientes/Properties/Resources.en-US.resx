@@ -588,4 +588,19 @@
   <data name="ME_ResumeenPeriodoMXN" xml:space="preserve">
     <value>Period summary MXN</value>
   </data>
+  <data name="ME_InfoGeneral" xml:space="preserve">
+    <value>General Information</value>
+  </data>
+  <data name="ME_TabDocDescarga" xml:space="preserve">
+    <value>Download</value>
+  </data>
+  <data name="ME_TabDocDescripcion" xml:space="preserve">
+    <value>Type Report</value>
+  </data>
+  <data name="Me_TabDocDetGastos" xml:space="preserve">
+    <value>Expense Detail</value>
+  </data>
+  <data name="ME_TabDocResumenGastos" xml:space="preserve">
+    <value>Expense summary</value>
+  </data>
 </root>

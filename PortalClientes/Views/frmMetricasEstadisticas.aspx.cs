@@ -64,6 +64,19 @@ namespace PortalClientes.Views
             GeneraRepResumen(2);
         }
 
+        protected void btnFiltrar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (eSearchObj != null)
+                    eSearchObj(null, EventArgs.Empty);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
         #endregion
 
         #region METODOS
@@ -81,7 +94,7 @@ namespace PortalClientes.Views
             lbltitulometricasEstadisticas.Text = Properties.Resources.ME_Titulo;
             lblResumenPeriodo.Text = Properties.Resources.ME_ResumeenPeriodo;
             lblResumenPeriodoMXN.Text = Properties.Resources.ME_ResumeenPeriodoMXN;
-            lblfiltrar.Text = Properties.Resources.ME_Filtrar;
+            btnFiltrarMetricasEstadisticas.Text = Properties.Resources.ME_Filtrar;
             lblGastoTotalFijo.Text = Properties.Resources.Me_GastoTotalFijo;
             lblGastoTotalFijoMXN.Text = Properties.Resources.Me_GastoTotalFijo;
             lblGastoTotalVariable.Text = Properties.Resources.ME_GastoTotalVariable;
@@ -101,6 +114,12 @@ namespace PortalClientes.Views
             lblCostoPromedioUSD.Text = Properties.Resources.ME_CostoPromedioUSD;
             lblCostosCat.Text = Properties.Resources.ME_CostoCat;
             lblReportes.Text = Properties.Resources.ME_Reportes;
+
+            lblInformacionGeneral.Text = Properties.Resources.ME_InfoGeneral;
+            lblDescripcion.Text = Properties.Resources.ME_TabDocDescripcion;
+            lblDescargar.Text = Properties.Resources.ME_TabDocDescarga;
+            lblResumenGastos.Text = Properties.Resources.ME_TabDocResumenGastos;
+            lblInformacionGeneral.Text = Properties.Resources.Me_TabDocDetGastos;
 
             var vPeriodo = ddlPeriodo.SelectedValue;
             // llenar dropdown Periodo
