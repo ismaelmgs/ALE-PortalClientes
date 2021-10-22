@@ -1567,10 +1567,21 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>dsFiltrosGastos.xsd</DependentUpon>
     </Compile>
+    <Compile Include="RPT\dsResumenGastos.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsResumenGastos.xsd</DependentUpon>
+    </Compile>
     <Compile Include="RPT\rptDetalleGastos.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>rptDetalleGastos.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="RPT\rptResumenGastos.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptResumenGastos.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="RPT\rptSUBGastosMXN.cs">
@@ -1839,6 +1850,17 @@
     <Content Include="RPT\dsFiltrosGastos.xss">
       <DependentUpon>dsFiltrosGastos.xsd</DependentUpon>
     </Content>
+    <Content Include="RPT\dsResumenGastos.xsc">
+      <DependentUpon>dsResumenGastos.xsd</DependentUpon>
+    </Content>
+    <None Include="RPT\dsResumenGastos.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsResumenGastos.Designer.cs</LastGenOutput>
+    </None>
+    <Content Include="RPT\dsResumenGastos.xss">
+      <DependentUpon>dsResumenGastos.xsd</DependentUpon>
+    </Content>
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -1867,6 +1889,10 @@
     <EmbeddedResource Include="RPT\rptDetalleGastos.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>rptDetalleGastos.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RPT\rptResumenGastos.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptResumenGastos.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="RPT\rptSUBGastosMXN.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>

@@ -44,11 +44,110 @@ namespace PortalClientes.Views
             }
         }
 
+        protected void lkbExpExcel_Click(object sender, EventArgs e)
+        {
+            GeneraReportes(2);
+        }
         protected void lkbExpPDF_Click(object sender, EventArgs e)
+        {
+            GeneraReportes(1);
+        }
+
+        protected void lkbExpPDFRes_Click(object sender, EventArgs e)
+        {
+            GeneraRepResumen(1);
+        }
+
+        protected void lkbExpExcelRes_Click(object sender, EventArgs e)
+        {
+            GeneraRepResumen(2);
+        }
+
+        public void GeneraRepResumen(int iTipoReporte)
         {
             DataSet dsGastos = new DataSet();
             DBMetricasEstatics oIGesCat = new DBMetricasEstatics();
-            //DateTime dtFechaI = new DateTime();
+            
+            FiltroGraficaGastos fg = new FiltroGraficaGastos();
+            fg.meses = ddlPeriodo.SelectedValue;
+
+            if (txtFechaInicioGrafica.Text != "")
+                fg.fechaInicial = DateTime.Parse(txtFechaInicioGrafica.Text);
+            else
+                fg.fechaInicial = null;
+            if (txtFechaFinGrafica.Text != "")
+                fg.fechaFinal = DateTime.Parse(txtFechaFinGrafica.Text);
+            else
+                fg.fechaFinal = null;
+            fg.rubro = 5; // modificar despues
+            fg.tipoRubro = int.Parse(ddlTipoRubro.SelectedValue);
+
+            List<responseGraficaGastos> lrg = new List<responseGraficaGastos>();
+            lrg = oIGesCat.ObtenerGastos(fg);
+
+            dsGastos = ObtieneResumenGastosT(lrg);
+
+            #region
+            DataTable dtFiltros = new DataTable();
+            DataColumn column;
+            DataRow row;
+            column = new DataColumn();
+            column.ColumnName = "Periodo";
+            dtFiltros.Columns.Add(column);
+
+            column = new DataColumn();
+            column.ColumnName = "Tipo";
+            dtFiltros.Columns.Add(column);
+
+            column = new DataColumn();
+            column.ColumnName = "Idioma";
+            dtFiltros.Columns.Add(column);
+
+            column = new DataColumn();
+            column.ColumnName = "Fecha";
+            dtFiltros.Columns.Add(column);
+
+            row = dtFiltros.NewRow();
+            row["Periodo"] = ddlPeriodo.SelectedItem.Text;
+            row["Tipo"] = ddlTipoRubro.SelectedItem.Text;
+            if (Utils.Idioma == "es-MX")
+                row["Idioma"] = "MX";
+            else
+                row["Idioma"] = "US";
+
+            DateTime dt = new DateTime();
+            dt = DateTime.Now;
+            string strFecha = string.Empty;
+            if (Utils.Idioma == "es-MX")
+                strFecha = dt.ToLongDateString().ToString(CultureInfo.CreateSpecificCulture("es-MX"));
+            else
+                strFecha = dt.ToLongDateString().ToString(CultureInfo.CreateSpecificCulture("en-US"));
+            row["Fecha"] = strFecha;
+            dtFiltros.Rows.Add(row);
+            dtFiltros.TableName = "Filtros";
+            #endregion
+
+            dsGastos.Tables.Add(dtFiltros);
+
+            string strPath = string.Empty;
+            ReportDocument rd = new ReportDocument();
+            strPath = Server.MapPath("RPT\\rptResumenGastos.rpt");
+            strPath = strPath.Replace("\\Views", "");
+            rd.Load(strPath, OpenReportMethod.OpenReportByDefault);
+            rd.SetDataSource(dsGastos);
+
+            if (iTipoReporte == 1)
+                rd.ExportToHttpResponse(ExportFormatType.PortableDocFormat, Response, true, "ResumenGastos");
+            else
+                rd.ExportToHttpResponse(ExportFormatType.Excel, Response, true, "ResumenGastos");
+
+        }
+
+        public void GeneraReportes( int iTipoReporte)
+        {
+            DataSet dsGastos = new DataSet();
+            DBMetricasEstatics oIGesCat = new DBMetricasEstatics();
+            
             FiltroGraficaGastos fg = new FiltroGraficaGastos();
             fg.meses = ddlPeriodo.SelectedValue;
 
@@ -73,7 +172,7 @@ namespace PortalClientes.Views
             DataColumn column;
             DataRow row;
             column = new DataColumn();
-            //column.DataType = System.Type.GetType("System.Int32");
+            
             column.ColumnName = "Periodo";
             dtFiltros.Columns.Add(column);
 
@@ -92,7 +191,7 @@ namespace PortalClientes.Views
             row = dtFiltros.NewRow();
             row["Periodo"] = ddlPeriodo.SelectedItem.Text;
             row["Tipo"] = ddlTipoRubro.SelectedItem.Text;
-            if(Utils.Idioma == "es-MX")
+            if (Utils.Idioma == "es-MX")
                 row["Idioma"] = "MX";
             else
                 row["Idioma"] = "US";
@@ -109,18 +208,20 @@ namespace PortalClientes.Views
             dtFiltros.TableName = "Filtros";
             #endregion
 
-            
+
             string strPath = string.Empty;
             ReportDocument rd = new ReportDocument();
             strPath = Server.MapPath("RPT\\rptDetalleGastos.rpt");
             strPath = strPath.Replace("\\Views", "");
             rd.Load(strPath, OpenReportMethod.OpenReportByDefault);
-                rd.SetDataSource(dtFiltros);
+            rd.SetDataSource(dtFiltros);
             rd.Subreports["rptSUBGastosMXN.rpt"].SetDataSource(dsGastos.Tables[0]);
             rd.Subreports["rptSUBGastosUSD.rpt"].SetDataSource(dsGastos.Tables[1]);
 
-            rd.ExportToHttpResponse(ExportFormatType.PortableDocFormat, Response, true, "DetalleGastos");
-
+            if(iTipoReporte == 1)
+                rd.ExportToHttpResponse(ExportFormatType.PortableDocFormat, Response, true, "DetalleGastos");
+            else
+                rd.ExportToHttpResponse(ExportFormatType.Excel, Response, true, "DetalleGastos");
         }
 
         public DataSet ObtieneGastosTabla(List<responseGraficaGastos> lrg)
@@ -234,7 +335,7 @@ namespace PortalClientes.Views
                     if ((G.totalMXN > 0) && (G.totalUSD == 0))  //MXN
                     {
                         row = dtGastosMXN.NewRow();
-                        strTotalesMX = L.totalMXN.ToString();//.Replace(',', '.');
+                        strTotalesMX = L.totalMXN.ToString();
                         dbTotales = double.Parse(strTotalesMX);
                         strTotalesMX = dbTotales.ToString("c", CultureInfo.CreateSpecificCulture("es-MX"));
                         row["TotalMXM"] = strTotalesMX;
@@ -291,6 +392,90 @@ namespace PortalClientes.Views
             dsGastos.Tables.Add(dtGastosMXN);
             dsGastos.Tables.Add(dtGastosUSD);
             return dsGastos;
+        }
+
+        public DataSet ObtieneResumenGastosT(List<responseGraficaGastos> lrg)
+        {
+            double dbTotales = 0;
+            double dbTMXN = 0;
+            double dbTUSD = 0;
+            string strTotales = string.Empty;
+            string strT = string.Empty;
+            DataSet dsRgastos = new DataSet();
+            DataTable dtGastos = new DataTable();
+            DataColumn column;
+            DataRow row;
+            column = new DataColumn();
+            column.ColumnName = "Rubro";
+            dtGastos.Columns.Add(column);
+
+            column = new DataColumn();
+            column.ColumnName = "TotalMXM";
+            dtGastos.Columns.Add(column);
+
+            column = new DataColumn();
+            column.ColumnName = "TotalUSD";
+            dtGastos.Columns.Add(column);
+
+            column = new DataColumn();
+            column.ColumnName = "Idioma";
+            dtGastos.Columns.Add(column);
+
+
+            DataTable dtTotales = new DataTable();
+            DataColumn columnT;
+            DataRow rowT;
+            columnT = new DataColumn();
+            columnT.ColumnName = "TMXN";
+            dtTotales.Columns.Add(columnT);
+
+            columnT = new DataColumn();
+            columnT.ColumnName = "TUSD";
+            dtTotales.Columns.Add(columnT);
+
+            
+
+            foreach (responseGraficaGastos L in lrg)
+            {
+                row = dtGastos.NewRow();
+
+
+                strTotales = L.totalMXN.ToString();
+                dbTotales = double.Parse(strTotales);
+                dbTMXN += dbTotales;
+                strTotales = dbTotales.ToString("c", CultureInfo.CreateSpecificCulture("es-MX"));
+                row["TotalMXM"] = strTotales;
+
+                strTotales = L.totalUSD.ToString();
+                dbTotales = double.Parse(strTotales);
+                dbTUSD += dbTotales;
+                strTotales = dbTotales.ToString("c", CultureInfo.CreateSpecificCulture("es-MX"));
+                row["TotalUSD"] = strTotales;
+
+                if (Utils.Idioma == "es-MX")
+                {
+                    row["Rubro"] = L.rubroESP;
+                    row["Idioma"] = "MX";
+                }
+                else
+                {
+                    row["Rubro"] = L.rubroENG;
+                    row["Idioma"] = "US";
+                }
+                dtGastos.Rows.Add(row);
+            }
+            rowT = dtTotales.NewRow();
+            strT = dbTMXN.ToString("c", CultureInfo.CreateSpecificCulture("es-MX"));
+            rowT["TMXN"] = strT;
+            strT = dbTUSD.ToString("c", CultureInfo.CreateSpecificCulture("es-MX"));
+            rowT["TUSD"] = strT;
+            dtTotales.Rows.Add(rowT);
+            dtTotales.TableName = "TOTALES";
+
+            dtGastos.TableName = "RESUMEN";
+            dsRgastos.Tables.Add(dtGastos);
+            dsRgastos.Tables.Add(dtTotales);
+            return dsRgastos;
         }
 
             #endregion

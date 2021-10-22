@@ -294,11 +294,11 @@
                     &nbsp;
                 </div>
                 <div class="col-md-6" style="text-align:right;">
-                    <asp:DropDownList id="ddlReportes" runat="server" CssClass="form-control">
+                    <%--<asp:DropDownList id="ddlReportes" runat="server" CssClass="form-control">
                         <asp:ListItem Selected="True" Value="Valor 1"> Valor 1 </asp:ListItem>
                         <asp:ListItem Value="Valor 2"> Valor 2 </asp:ListItem>
                         <asp:ListItem Value="Valor 3"> Valor 3 </asp:ListItem>
-                    </asp:DropDownList>
+                    </asp:DropDownList>--%>
                 </div>
             </div>
             <div>
@@ -308,7 +308,7 @@
                         <table class="table table-striped table-bordered table-hover">
                             <tr>
                                 <th style="width:70%;">
-                                    <asp:Label ID="lblDescripcion" runat="server" Text=" Descripción" Font-Bold="false"></asp:Label>
+                                    <asp:Label ID="lblDescripcion" runat="server" Text="Tipo Reporte" Font-Bold="false"></asp:Label>
                                 </th>
                                 <th>
                                     <asp:Label ID="lblDescargar" runat="server" Text=" Descargar" Font-Bold="false"></asp:Label>
@@ -319,8 +319,8 @@
                                     <asp:Label ID="lblResumenGastos" runat="server" Text=" Resumen de Gastos" Font-Bold="false"></asp:Label>
                                 </td>
                                 <td>
-                                    <asp:LinkButton ID="LinkButton1" runat="server" Text="<i class='fa fa-file-excel-o' style='color:#ffffff;font-size:22px;'></i>" CssClass="btn btn-primary" />
-                                    <asp:LinkButton ID="LinkButton2" runat="server" Text="<i class='fa fa-file-pdf-o' style='color:#ffffff;font-size:22px;' ></i>" CssClass="btn btn-primary" />
+                                    <asp:LinkButton ID="LinkButton1" runat="server" Text="<i class='fa fa-file-excel-o' style='color:#ffffff;font-size:22px;'></i>" CssClass="btn btn-primary" OnClick="lkbExpExcelRes_Click"/>
+                                    <asp:LinkButton ID="LinkButton2" runat="server" Text="<i class='fa fa-file-pdf-o' style='color:#ffffff;font-size:22px;' ></i>" CssClass="btn btn-primary" OnClick="lkbExpPDFRes_Click"/>
                                 </td>
                             </tr>
                             <tr>
@@ -328,7 +328,7 @@
                                     <asp:Label ID="lblRepDetGastos" runat="server" Text=" Detalle de Gastos" Font-Bold="false"></asp:Label>
                                 </td>
                                 <td>
-                                    <asp:LinkButton ID="btnExcel" runat="server" Text="<i class='fa fa-file-excel-o' style='color:#ffffff;font-size:22px;'></i>" CssClass="btn btn-primary" />
+                                    <asp:LinkButton ID="btnExcel" runat="server" Text="<i class='fa fa-file-excel-o' style='color:#ffffff;font-size:22px;'></i>" CssClass="btn btn-primary" OnClick="lkbExpExcel_Click"/>
                                     <asp:LinkButton ID="btnPDF" runat="server" Text="<i class='fa fa-file-pdf-o' style='color:#ffffff;font-size:22px;' ></i>" CssClass="btn btn-primary" OnClick="lkbExpPDF_Click" />
                                 </td>
                             </tr>
