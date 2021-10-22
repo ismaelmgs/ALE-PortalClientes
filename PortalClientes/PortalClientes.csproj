@@ -1546,11 +1546,14 @@
     <Compile Include="DomainModel\DBLogin.cs" />
     <Compile Include="DomainModel\DBUsuarios.cs" />
     <Compile Include="DomainModel\DBUtils.cs" />
+    <Compile Include="Interfaces\IViewMetricasEstadisticas.cs" />
     <Compile Include="Interfaces\IViewTripulacion.cs" />
     <Compile Include="Objetos\Calendario.cs" />
+    <Compile Include="Objetos\DatosMetricas.cs" />
     <Compile Include="Objetos\MatriculasUsuario.cs" />
     <Compile Include="Objetos\responseGraficaGastos.cs" />
     <Compile Include="Objetos\Tripulacion.cs" />
+    <Compile Include="Presenter\MetricasEstadisticas_Presenter.cs" />
     <Compile Include="Presenter\Tripulacion_Presenter.cs" />
     <Compile Include="RPT\dsDetalleGastosMXN.Designer.cs">
       <AutoGen>True</AutoGen>

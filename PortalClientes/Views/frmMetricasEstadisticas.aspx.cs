@@ -15,15 +15,16 @@ using System.Globalization;
 using System.Data;
 using CrystalDecisions.CrystalReports.Engine;
 using CrystalDecisions.Shared;
+using NucleoBase.Core;
 
 namespace PortalClientes.Views
 {
-    public partial class frmMetricasEstadisticas : System.Web.UI.Page
+    public partial class frmMetricasEstadisticas : System.Web.UI.Page, IViewMetricasEstadisticas
     {
         #region EVENTOS
         protected void Page_Load(object sender, EventArgs e)
         {
-            //oPresenter = new Dashboard_Presenter(this, new DBDashboard());
+            oPresenter = new MetricasEstadisticas_Presenter(this, new DBMetricasEstatics());
 
             TextBox milabel = (TextBox)this.Master.FindControl("txtLang");
             if (milabel.Text != Utils.Idioma && milabel.Text != string.Empty)
@@ -40,7 +41,7 @@ namespace PortalClientes.Views
 
             if (!IsPostBack)
             {
-                //LlenarDashboard();
+                LlenarMetricasEstadisticas();
             }
         }
 
@@ -63,11 +64,101 @@ namespace PortalClientes.Views
             GeneraRepResumen(2);
         }
 
+        #endregion
+
+        #region METODOS
+
+        public void LlenarMetricasEstadisticas()
+        {
+            if (eSearchObj != null)
+                eSearchObj(null, EventArgs.Empty);
+        }
+
+        private void ArmarMetricasEstadisticas()
+        {
+            txtBusqueda.Attributes.Add("placeholder", Properties.Resources.Cm_Buscador);
+
+            lbltitulometricasEstadisticas.Text = Properties.Resources.ME_Titulo;
+            lblResumenPeriodo.Text = Properties.Resources.ME_ResumeenPeriodo;
+            lblResumenPeriodoMXN.Text = Properties.Resources.ME_ResumeenPeriodoMXN;
+            lblfiltrar.Text = Properties.Resources.ME_Filtrar;
+            lblGastoTotalFijo.Text = Properties.Resources.Me_GastoTotalFijo;
+            lblGastoTotalFijoMXN.Text = Properties.Resources.Me_GastoTotalFijo;
+            lblGastoTotalVariable.Text = Properties.Resources.ME_GastoTotalVariable;
+            lblGastoTotalVariableMXN.Text = Properties.Resources.ME_GastoTotalVariable;
+            lblCostoHora.Text = Properties.Resources.ME_CostoHora;
+            lblCostoHoraMXN.Text = Properties.Resources.ME_CostoHora;
+            lblCostoMilla.Text = Properties.Resources.ME_CostoMilla;
+            lblCostoMillaMXN.Text = Properties.Resources.ME_CostoMilla;
+            lblNumeroVuelos.Text = Properties.Resources.ME_NumeroVuelos;
+            lblHorasVoladas.Text = Properties.Resources.ME_HorasVoladas;
+            lblPromedioDePasajeros.Text = Properties.Resources.ME_NumeroPasajeros;
+            lblPeriodoVuelo.Text = Properties.Resources.ME_PeriodoVuelo;
+            lblTiempoPromedio.Text = Properties.Resources.ME_TiempoPromedio;
+            lblDistanciaPromedio.Text = Properties.Resources.ME_DistanciaPromedio;
+            lblPromedioPasajeros.Text = Properties.Resources.ME_PromedioPasajeros;
+            lblCostoPromedioMXN.Text = Properties.Resources.ME_CostoPromedioMXN;
+            lblCostoPromedioUSD.Text = Properties.Resources.ME_CostoPromedioUSD;
+            lblCostosCat.Text = Properties.Resources.ME_CostoCat;
+            lblReportes.Text = Properties.Resources.ME_Reportes;
+
+            var vPeriodo = ddlPeriodo.SelectedValue;
+            // llenar dropdown Periodo
+            ddlPeriodo.Items.Clear();
+            ddlPeriodo.Items.Add(new ListItem(Properties.Resources.Das_Manual, "0"));
+            ddlPeriodo.Items.Add(new ListItem(Properties.Resources.Das_Mensual, "1"));
+            ddlPeriodo.Items.Add(new ListItem(Properties.Resources.Das_Trimestral, "3"));
+            ddlPeriodo.Items.Add(new ListItem(Properties.Resources.Das_Semestral, "6"));
+            ddlPeriodo.Items.Add(new ListItem(Properties.Resources.Das_Anual, "12"));
+
+            if (vPeriodo == "")
+            {
+                ddlPeriodo.SelectedIndex = 3;
+            }
+            else
+            {
+                ddlPeriodo.SelectedValue = vPeriodo;
+            }
+
+            var vTR = ddlTipoRubro.SelectedValue;
+            // llenar dropdown Tipo Rubro
+            ddlTipoRubro.Items.Clear();
+            ddlTipoRubro.Items.Add(new ListItem(Properties.Resources.Das_Fijo, "1"));
+            ddlTipoRubro.Items.Add(new ListItem(Properties.Resources.Das_Variable, "2"));
+            ddlTipoRubro.Items.Add(new ListItem(Properties.Resources.Das_Todos, "3"));
+
+            if (vPeriodo == "")
+            {
+                ddlTipoRubro.SelectedIndex = 2;
+            }
+            else
+            {
+                ddlTipoRubro.SelectedValue = vTR;
+            }
+
+            var v = ddlFiltroResumenPeriodo.SelectedValue;
+            // llenar dropdown Tipo Rubro
+            ddlFiltroResumenPeriodo.Items.Clear();
+            ddlFiltroResumenPeriodo.Items.Add(new ListItem(Properties.Resources.FiltroEvenTri_MA, "0"));
+            ddlFiltroResumenPeriodo.Items.Add(new ListItem(Properties.Resources.FiltroEvenTri_1M, "1"));
+            ddlFiltroResumenPeriodo.Items.Add(new ListItem(Properties.Resources.FiltroEvenTri_2M, "2"));
+            ddlFiltroResumenPeriodo.Items.Add(new ListItem(Properties.Resources.FiltroEvenTri_3M, "3"));
+
+            if (v == "")
+            {
+                ddlFiltroResumenPeriodo.SelectedIndex = 1;
+            }
+            else
+            {
+                ddlFiltroResumenPeriodo.SelectedValue = v;
+            }
+        }
+
         public void GeneraRepResumen(int iTipoReporte)
         {
             DataSet dsGastos = new DataSet();
             DBMetricasEstatics oIGesCat = new DBMetricasEstatics();
-            
+
             FiltroGraficaGastos fg = new FiltroGraficaGastos();
             fg.meses = ddlPeriodo.SelectedValue;
 
@@ -143,11 +234,11 @@ namespace PortalClientes.Views
 
         }
 
-        public void GeneraReportes( int iTipoReporte)
+        public void GeneraReportes(int iTipoReporte)
         {
             DataSet dsGastos = new DataSet();
             DBMetricasEstatics oIGesCat = new DBMetricasEstatics();
-            
+
             FiltroGraficaGastos fg = new FiltroGraficaGastos();
             fg.meses = ddlPeriodo.SelectedValue;
 
@@ -172,7 +263,7 @@ namespace PortalClientes.Views
             DataColumn column;
             DataRow row;
             column = new DataColumn();
-            
+
             column.ColumnName = "Periodo";
             dtFiltros.Columns.Add(column);
 
@@ -218,7 +309,7 @@ namespace PortalClientes.Views
             rd.Subreports["rptSUBGastosMXN.rpt"].SetDataSource(dsGastos.Tables[0]);
             rd.Subreports["rptSUBGastosUSD.rpt"].SetDataSource(dsGastos.Tables[1]);
 
-            if(iTipoReporte == 1)
+            if (iTipoReporte == 1)
                 rd.ExportToHttpResponse(ExportFormatType.PortableDocFormat, Response, true, "DetalleGastos");
             else
                 rd.ExportToHttpResponse(ExportFormatType.Excel, Response, true, "DetalleGastos");
@@ -433,7 +524,7 @@ namespace PortalClientes.Views
             columnT.ColumnName = "TUSD";
             dtTotales.Columns.Add(columnT);
 
-            
+
 
             foreach (responseGraficaGastos L in lrg)
             {
@@ -478,92 +569,6 @@ namespace PortalClientes.Views
             return dsRgastos;
         }
 
-            #endregion
-
-            #region METODOS
-
-            public void LlenarMetricasEstadisticas()
-        {
-            if (eSearchObj != null)
-                eSearchObj(null, EventArgs.Empty);
-        }
-
-        private void ArmarMetricasEstadisticas()
-        {
-            txtBusqueda.Attributes.Add("placeholder", Properties.Resources.Cm_Buscador);
-
-            lbltitulometricasEstadisticas.Text = Properties.Resources.ME_Titulo;
-            lblResumenPeriodo.Text = Properties.Resources.ME_ResumeenPeriodo;
-            lblResumenPeriodoMXN.Text = Properties.Resources.ME_ResumeenPeriodoMXN;
-            lblfiltrar.Text = Properties.Resources.ME_Filtrar;
-            lblGastoTotalFijo.Text = Properties.Resources.Me_GastoTotalFijo;
-            lblGastoTotalVariable.Text = Properties.Resources.ME_GastoTotalVariable;
-            lblCostoHora.Text = Properties.Resources.ME_CostoHora;
-            lblCostoMilla.Text = Properties.Resources.ME_CostoMilla;
-            lblNumeroVuelos.Text = Properties.Resources.ME_NumeroVuelos;
-            lblHorasVoladas.Text = Properties.Resources.ME_HorasVoladas;
-            lblPromedioDePasajeros.Text = Properties.Resources.ME_NumeroPasajeros;
-            lblPeriodoVuelo.Text = Properties.Resources.ME_PeriodoVuelo;
-            lblTiempoPromedio.Text = Properties.Resources.ME_TiempoPromedio;
-            lblDistanciaPromedio.Text = Properties.Resources.ME_DistanciaPromedio;
-            lblPromedioPasajeros.Text = Properties.Resources.ME_PromedioPasajeros;
-            lblCostoPromedioMXN.Text = Properties.Resources.ME_CostoPromedioMXN;
-            lblCostoPromedioUSD.Text = Properties.Resources.ME_CostoPromedioUSD;
-            lblCostosCat.Text = Properties.Resources.ME_CostoCat;
-            lblReportes.Text = Properties.Resources.ME_Reportes;
-
-            var vPeriodo = ddlPeriodo.SelectedValue;
-            // llenar dropdown Periodo
-            ddlPeriodo.Items.Clear();
-            ddlPeriodo.Items.Add(new ListItem(Properties.Resources.Das_Manual, "0"));
-            ddlPeriodo.Items.Add(new ListItem(Properties.Resources.Das_Mensual, "1"));
-            ddlPeriodo.Items.Add(new ListItem(Properties.Resources.Das_Trimestral, "3"));
-            ddlPeriodo.Items.Add(new ListItem(Properties.Resources.Das_Semestral, "6"));
-            ddlPeriodo.Items.Add(new ListItem(Properties.Resources.Das_Anual, "12"));
-
-            if (vPeriodo == "")
-            {
-                ddlPeriodo.SelectedIndex = 3;
-            }
-            else
-            {
-                ddlPeriodo.SelectedValue = vPeriodo;
-            }
-
-            var vTR = ddlTipoRubro.SelectedValue;
-            // llenar dropdown Tipo Rubro
-            ddlTipoRubro.Items.Clear();
-            ddlTipoRubro.Items.Add(new ListItem(Properties.Resources.Das_Fijo, "1"));
-            ddlTipoRubro.Items.Add(new ListItem(Properties.Resources.Das_Variable, "2"));
-            ddlTipoRubro.Items.Add(new ListItem(Properties.Resources.Das_Todos, "3"));
-
-            if (vPeriodo == "")
-            {
-                ddlTipoRubro.SelectedIndex = 2;
-            }
-            else
-            {
-                ddlTipoRubro.SelectedValue = vTR;
-            }
-
-            var v = ddlFiltroResumenPeriodo.SelectedValue;
-            // llenar dropdown Tipo Rubro
-            ddlFiltroResumenPeriodo.Items.Clear();
-            ddlFiltroResumenPeriodo.Items.Add(new ListItem(Properties.Resources.FiltroEvenTri_MA, "0"));
-            ddlFiltroResumenPeriodo.Items.Add(new ListItem(Properties.Resources.FiltroEvenTri_1M, "1"));
-            ddlFiltroResumenPeriodo.Items.Add(new ListItem(Properties.Resources.FiltroEvenTri_2M, "2"));
-            ddlFiltroResumenPeriodo.Items.Add(new ListItem(Properties.Resources.FiltroEvenTri_3M, "3"));
-
-            if (v == "")
-            {
-                ddlFiltroResumenPeriodo.SelectedIndex = 0;
-            }
-            else
-            {
-                ddlFiltroResumenPeriodo.SelectedValue = v;
-            }
-        }
-
         [WebMethod]
         public static List<responseGraficaGastos> GetGastos(string meses, DateTime? fechaInicial, DateTime? fechaFinal, string rubro, int tipoRubro)
         {
@@ -586,11 +591,65 @@ namespace PortalClientes.Views
 
             return lrg;
         }
+
+        public void CargarMetricasEstadisticas(List<DatosMetricas> oME)
+        {
+            oMetEsta = oME[0];
+
+            lblGastoTotalRes.Text = oMetEsta.GastoTotalFijoUSD.ToString("C", CultureInfo.CreateSpecificCulture("es-MX"));
+            lblGastoTotalVariableRes.Text = oMetEsta.GastoTotalVarUSD.ToString("C", CultureInfo.CreateSpecificCulture("es-MX"));
+            lblCostoHoraRes.Text = oMetEsta.CostoPorHoraUSD.ToString("C", CultureInfo.CreateSpecificCulture("es-MX"));
+            lblCostoMillaRes.Text = oMetEsta.CostoPorMillaUSD.ToString("C", CultureInfo.CreateSpecificCulture("es-MX"));
+
+            lblGastoTotalResMXN.Text = oMetEsta.GastoTotalFijoMXN.ToString("C", CultureInfo.CreateSpecificCulture("es-MX"));
+            lblGastoTotalVariableMXNRes.Text = oMetEsta.GastoTotalVarMXN.ToString("C", CultureInfo.CreateSpecificCulture("es-MX"));
+            lblCostoHoraMXNRes.Text = oMetEsta.CostoPorHoraMXN.ToString("C", CultureInfo.CreateSpecificCulture("es-MX"));
+            lblCostoMillaMXNRes.Text = oMetEsta.CostoPorMillaMXN.ToString("C", CultureInfo.CreateSpecificCulture("es-MX"));
+
+            lblNumeroVuelosRes.Text = oMetEsta.NumeroVuelos.ToString();
+            lblHorasVoladasRes.Text = oMetEsta.HorasVoladas.ToString();
+            lblPromedioDePasajerosRes.Text = oMetEsta.TotalPasajeros.ToString();
+
+
+            lblTiempoPromedioRes.Text = oMetEsta.TiempoPromedio.ToString();
+            lblDistanciaPromedioRes.Text = oMetEsta.DistanciaPromedio.ToString();
+            lblPromedioPasajerosRes.Text = oMetEsta.PaxPromedio.ToString();
+            lblCostoPromedioRes.Text = oMetEsta.PromedioMXN.ToString("C", CultureInfo.CreateSpecificCulture("es-MX"));
+            lblCostoPromedioUSDRes.Text = oMetEsta.PromedioUSD.ToString("C", CultureInfo.CreateSpecificCulture("es-MX"));
+
+        }
         #endregion
 
         #region VARIABLES Y PROPIEDADES
 
+        MetricasEstadisticas_Presenter oPresenter;
         public event EventHandler eSearchObj;
+        public event EventHandler eNewObj;
+        public event EventHandler eObjSelected;
+        public event EventHandler eSaveObj;
+        public event EventHandler eDeleteObj;
+
+        public int iMeses
+        {
+            get
+            {
+                return ddlFiltroResumenPeriodo.SelectedValue.S().I();
+            }
+        }
+
+        public string sMatricula
+        {
+            get
+            {
+                return Utils.MatriculaActual;
+            }
+        }
+
+        public DatosMetricas oMetEsta
+        {
+            get { return (DatosMetricas)ViewState["VSMetricasEstadisticas"]; }
+            set { ViewState["VSMetricasEstadisticas"] = value; }
+        }
 
         #endregion
     }

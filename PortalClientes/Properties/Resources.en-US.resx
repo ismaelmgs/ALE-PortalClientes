@@ -462,7 +462,7 @@
   <data name="ME_CostoMilla" xml:space="preserve">
     <value>Cost per Mile</value>
   </data>
-  <data name="ME_CostoPromedio" xml:space="preserve">
+  <data name="ME_CostoPromedioMXN" xml:space="preserve">
     <value>Average cost MXN</value>
   </data>
   <data name="ME_DistanciaPromedio" xml:space="preserve">

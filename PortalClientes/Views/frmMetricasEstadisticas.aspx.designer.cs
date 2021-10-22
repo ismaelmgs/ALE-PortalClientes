@@ -67,15 +67,6 @@ namespace PortalClientes.Views {
         protected global::System.Web.UI.WebControls.Label lblGastoTotalFijo;
         
         /// <summary>
-        /// Control lblGastoTotalFijoS.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblGastoTotalFijoS;
-        
-        /// <summary>
         /// Control lblGastoTotalRes.
         /// </summary>
         /// <remarks>
@@ -94,22 +85,13 @@ namespace PortalClientes.Views {
         protected global::System.Web.UI.WebControls.Label lblGastoTotalVariable;
         
         /// <summary>
-        /// Control lblGastoTotalVariableS.
+        /// Control lblGastoTotalVariableRes.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblGastoTotalVariableS;
-        
-        /// <summary>
-        /// Control lblCostoHoraRes.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblCostoHoraRes;
+        protected global::System.Web.UI.WebControls.Label lblGastoTotalVariableRes;
         
         /// <summary>
         /// Control lblCostoHora.
@@ -121,22 +103,13 @@ namespace PortalClientes.Views {
         protected global::System.Web.UI.WebControls.Label lblCostoHora;
         
         /// <summary>
-        /// Control lblCostoHoraS.
+        /// Control lblCostoHoraRes.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblCostoHoraS;
-        
-        /// <summary>
-        /// Control lblCostoMillaRes.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblCostoMillaRes;
+        protected global::System.Web.UI.WebControls.Label lblCostoHoraRes;
         
         /// <summary>
         /// Control lblCostoMilla.
@@ -148,22 +121,13 @@ namespace PortalClientes.Views {
         protected global::System.Web.UI.WebControls.Label lblCostoMilla;
         
         /// <summary>
-        /// Control lblCostoMillaS.
+        /// Control lblCostoMillaRes.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblCostoMillaS;
-        
-        /// <summary>
-        /// Control lblCostoMillaPAXRes.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblCostoMillaPAXRes;
+        protected global::System.Web.UI.WebControls.Label lblCostoMillaRes;
         
         /// <summary>
         /// Control lblResumenPeriodoMXN.
@@ -184,15 +148,6 @@ namespace PortalClientes.Views {
         protected global::System.Web.UI.WebControls.Label lblGastoTotalFijoMXN;
         
         /// <summary>
-        /// Control lblGastoTotalFijoSMXN.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblGastoTotalFijoSMXN;
-        
-        /// <summary>
         /// Control lblGastoTotalResMXN.
         /// </summary>
         /// <remarks>
@@ -211,22 +166,13 @@ namespace PortalClientes.Views {
         protected global::System.Web.UI.WebControls.Label lblGastoTotalVariableMXN;
         
         /// <summary>
-        /// Control lblGastoTotalVariableSMXN.
+        /// Control lblGastoTotalVariableMXNRes.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblGastoTotalVariableSMXN;
-        
-        /// <summary>
-        /// Control lblCostoHoraResMXN.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblCostoHoraResMXN;
+        protected global::System.Web.UI.WebControls.Label lblGastoTotalVariableMXNRes;
         
         /// <summary>
         /// Control lblCostoHoraMXN.
@@ -238,22 +184,13 @@ namespace PortalClientes.Views {
         protected global::System.Web.UI.WebControls.Label lblCostoHoraMXN;
         
         /// <summary>
-        /// Control lblCostoHoraSMXN.
+        /// Control lblCostoHoraMXNRes.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblCostoHoraSMXN;
-        
-        /// <summary>
-        /// Control lblCostoMillaResMXN.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblCostoMillaResMXN;
+        protected global::System.Web.UI.WebControls.Label lblCostoHoraMXNRes;
         
         /// <summary>
         /// Control lblCostoMillaMXN.
@@ -265,22 +202,13 @@ namespace PortalClientes.Views {
         protected global::System.Web.UI.WebControls.Label lblCostoMillaMXN;
         
         /// <summary>
-        /// Control lblCostoMillaSMXN.
+        /// Control lblCostoMillaMXNRes.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblCostoMillaSMXN;
-        
-        /// <summary>
-        /// Control lblCostoMillaPAXResMXN.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblCostoMillaPAXResMXN;
+        protected global::System.Web.UI.WebControls.Label lblCostoMillaMXNRes;
         
         /// <summary>
         /// Control Label2.
@@ -427,15 +355,6 @@ namespace PortalClientes.Views {
         protected global::System.Web.UI.WebControls.Label lblCostoPromedioRes;
         
         /// <summary>
-        /// Control Label9.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label9;
-        
-        /// <summary>
         /// Control lblCostoPromedioUSD.
         /// </summary>
         /// <remarks>
@@ -445,22 +364,13 @@ namespace PortalClientes.Views {
         protected global::System.Web.UI.WebControls.Label lblCostoPromedioUSD;
         
         /// <summary>
-        /// Control Label4.
+        /// Control lblCostoPromedioUSDRes.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label4;
-        
-        /// <summary>
-        /// Control Label5.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label5;
+        protected global::System.Web.UI.WebControls.Label lblCostoPromedioUSDRes;
         
         /// <summary>
         /// Control lblCostosCat.

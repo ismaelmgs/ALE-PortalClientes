@@ -6,11 +6,16 @@ using RestSharp;
 using System.Web.Script.Serialization;
 using PortalClientes.Clases;
 using PortalClientes.Objetos;
+using NucleoBase.BaseDeDatos;
+using System.Data;
+using NucleoBase.Core;
 
 namespace PortalClientes.DomainModel
 {
     public class DBMetricasEstatics
     {
+        public BD_SP oDB_SP = new BD_SP();
+
         public List<responseGraficaGastos> ObtenerGastos(FiltroGraficaGastos filtro)
         {
             JavaScriptSerializer ser = new JavaScriptSerializer();
@@ -34,6 +39,41 @@ namespace PortalClientes.DomainModel
             d = ser.Deserialize<List<responseGraficaGastos>>(resp);
 
             return d;
+        }
+
+        public List<DatosMetricas> DBGetMetricasEstadisticas(string sMatricula, int iMeses)
+        {
+            oDB_SP.sConexionSQL = "Data Source=192.168.1.219;Initial Catalog=MexJet360;User ID=sa;Password=SYS.*2015%SQL";
+
+            var res = oDB_SP.EjecutarDT("[PortalClientes].[spS_PC_ObtieneMetricasEstadisticas]", "@matricula", sMatricula, "@meses", iMeses);
+
+            if(res.Rows.Count > 0)
+            {
+                return res.AsEnumerable().Select(r => new DatosMetricas()
+                {
+                    GastoTotalFijoMXN = r["GastoTotalFijoMXN"].S().Db(),
+                    GastoTotalFijoUSD = r["GastoTotalFijoUSD"].S().Db(),
+                    GastoTotalVarMXN = r["GastoTotalVarMXN"].S().Db(),
+                    GastoTotalVarUSD = r["GastoTotalVarUSD"].S().Db(),
+                    NumeroVuelos = r["NumeroVuelos"].S().I(),
+                    TotalPasajeros = r["TotalPasajeros"].S().I(),
+                    HorasVoladas = r["HorasVoladas"].S().Db(),
+                    CostoPorHoraMXN = r["CostoPorHoraMXN"].S().Db(),
+                    CostoPorHoraUSD = r["CostoPorHoraUSD"].S().Db(),
+                    CostoPorMillaMXN = r["CostoPorMillaMXN"].S().Db(),
+                    CostoPorMillaUSD = r["CostoPorMillaUSD"].S().Db(),
+                    TiempoPromedio = r["TiempoPromedio"].S(),
+                    DistanciaPromedio = r["DistanciaPromedio"].S().Db(),
+                    PaxPromedio = r["PaxPromedio"].S().Db(),
+                    PromedioMXN = r["PromedioMXN"].S().Db(),
+                    PromedioUSD = r["PromedioUSD"].S().Db(),
+                }).ToList();
+            }
+            else
+            {
+                return null;
+            }
+            
         }
     }
 }
