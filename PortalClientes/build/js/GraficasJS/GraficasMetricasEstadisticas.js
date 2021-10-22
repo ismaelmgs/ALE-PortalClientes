@@ -1,6 +1,7 @@
 $(document).ready(function () {
-    //const url = "http://192.168.1.250/PortalClientes/Views/frmMetricasEstadisticas.aspx"; // API URL
-    const url = ResolveUrl("~/Views/frmMetricasEstadisticas.aspx"); // API URL
+    const url = "http://192.168.1.250/PortalClientes/Views/frmMetricasEstadisticas.aspx"; // API URL
+    //const url =
+    ResolveUrl("~/"); // API URL
     var URLactual = window.location.pathname;
 
     if (URLactual == "/Views/frmMetricasEstadisticas.aspx") {
@@ -26,7 +27,8 @@ $(document).ready(function () {
 });
 
 function ResolveUrl(url) {
-    return url.replace("~/", window.location.origin + "/") + "/GetGastos";
+    console.log(url.replace("~/", window.location + "/GetGastos"));
+    //return url.replace("~/", window.location + "/GetGastos");
 }
 
 $('#btnGraficasBuscar').click(function (event) {

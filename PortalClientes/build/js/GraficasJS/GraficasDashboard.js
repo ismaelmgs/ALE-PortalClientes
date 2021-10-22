@@ -1,6 +1,7 @@
 ﻿$(document).ready(function () {
-     const url = ResolveUrl("~/Views/frmDashboard.aspx"); // API URL
-     //const url = "http://192.168.1.250/PortalClientes/Views/frmDashboard.aspx"; // API URL
+    //const url =
+    ResolveUrl("~/"); // API URL
+    const url = "http://192.168.1.250/PortalClientes/Views/frmDashboard.aspx"; // API URL
     var URLactual = window.location.pathname;
 
     if (URLactual == "/Views/frmDashboard.aspx") {
@@ -26,7 +27,8 @@
 });
 
 function ResolveUrl(url) {
-    return url.replace("~/", window.location.origin + "/") + "/GetGastos";
+    console.log(url.replace("~/", window.location + "/GetGastos"));
+    //return url.replace("~/", window.location + "/GetGastos");
 }
 
 $('#btnGraficasBuscar').click(function (event) {
