@@ -119,7 +119,7 @@ namespace PortalClientes.Views
             lblDescripcion.Text = Properties.Resources.ME_TabDocDescripcion;
             lblDescargar.Text = Properties.Resources.ME_TabDocDescarga;
             lblResumenGastos.Text = Properties.Resources.ME_TabDocResumenGastos;
-            lblInformacionGeneral.Text = Properties.Resources.Me_TabDocDetGastos;
+            lblRepDetGastos.Text = Properties.Resources.Me_TabDocDetGastos;
 
             var vPeriodo = ddlPeriodo.SelectedValue;
             // llenar dropdown Periodo
