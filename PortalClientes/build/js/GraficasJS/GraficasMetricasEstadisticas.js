@@ -2,9 +2,7 @@ $(document).ready(function () {
     const url = "http://192.168.1.250/PortalClientes/Views/frmMetricasEstadisticas.aspx/GetGastos"; // API URL
     //const url =
     ResolveUrl("~/"); // API URL
-    var URLactual = window.location.pathname;
 
-    if (URLactual == "/Views/frmMetricasEstadisticas.aspx") {
 
         let obj = JSON.stringify({
             meses: $("#ContentPlaceHolder1_ddlPeriodo").val(),
@@ -23,7 +21,7 @@ $(document).ready(function () {
                 charts(data, "PieChart"); // Pie Charts
             });
         };
-    }
+    
 });
 
 function ResolveUrl(url) {

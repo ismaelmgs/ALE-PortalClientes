@@ -2,9 +2,6 @@
     //const url =
     ResolveUrl("~/"); // API URL
     const url = "http://192.168.1.250/PortalClientes/Views/frmDashboard.aspx/GetGastos"; // API URL
-    var URLactual = window.location.pathname;
-
-    if (URLactual == "/Views/frmDashboard.aspx") {
 
         let obj = JSON.stringify({
             meses: $("#ContentPlaceHolder1_ddlPeriodo").val(),
@@ -23,7 +20,7 @@
                 charts(data, "PieChart"); // Pie Charts
             });
         };
-    }
+    
 });
 
 function ResolveUrl(url) {
