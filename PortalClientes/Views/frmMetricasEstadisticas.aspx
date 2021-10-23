@@ -228,7 +228,7 @@
                     <br />
                     <%--                <h2></h2>--%>
                     <div class="row" style="margin: 5px;">
-                        <div class="col-md-1 tile_count"></div>
+                        
                         <div class="col-md-2 tile_count">
                             <div class="tile_stats_count" style="text-align: center;">
                                 <span class="count_top">
@@ -253,7 +253,7 @@
                                     <asp:Label ID="lblPromedioPasajerosRes" runat="server" Text=" 2500" Font-Bold="true" CssClass="count"></asp:Label></div>
                             </div>
                         </div>
-                        <div class="col-md-2 tile_count">
+                        <div class="col-md-3 tile_count">
                             <div class="tile_stats_count" style="text-align: center;">
                                 <span class="count_top">
                                     <asp:Label ID="lblCostoPromedioMXN" runat="server" Text=" Costo Promedio Pesos" Font-Bold="false"></asp:Label></span>
@@ -262,7 +262,7 @@
                                     <asp:Label ID="lblCostoPromedioRes" runat="server" Text=" 2500" Font-Bold="true" CssClass="count"></asp:Label></div>
                             </div>
                         </div>
-                        <div class="col-md-2 tile_count">
+                        <div class="col-md-3 tile_count">
                             <div class="tile_stats_count" style="text-align: center;">
                                 <span class="count_top">
                                     <asp:Label ID="lblCostoPromedioUSD" runat="server" Text=" Costo Promedio Dlls" Font-Bold="false"></asp:Label></span>
@@ -271,7 +271,6 @@
                                     <asp:Label ID="lblCostoPromedioUSDRes" runat="server" Text=" 2500" Font-Bold="true" CssClass="count"></asp:Label></div>
                             </div>
                         </div>
-                        <div class="col-md-1 tile_count"></div>
                     </div>
                 </div>
             </div>
