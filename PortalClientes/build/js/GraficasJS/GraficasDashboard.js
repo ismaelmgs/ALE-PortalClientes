@@ -1,31 +1,30 @@
 ﻿$(document).ready(function () {
-    //const url =
-    ResolveUrl("~/"); // API URL
-    const url = "http://192.168.1.250/PortalClientes/Views/frmDashboard.aspx/GetGastos"; // API URL
+    //const url = "http://192.168.1.250/PortalClientes/Views/frmDashboard.aspx/GetGastos"; // API URL
+    const url = getUrl(); // API URL
+    
+    let obj = JSON.stringify({
+        meses: $("#ContentPlaceHolder1_ddlPeriodo").val(),
+        fechaInicial: $("#ContentPlaceHolder1_txtFechaInicioGrafica").val(),
+        fechaFinal: $("#ContentPlaceHolder1_txtFechaFinGrafica").val(),
+        rubro: '',
+        tipoRubro: $("#ContentPlaceHolder1_ddlTipoRubro").val() // 1.fijo 2. var 3. todos
+    });
 
-        let obj = JSON.stringify({
-            meses: $("#ContentPlaceHolder1_ddlPeriodo").val(),
-            fechaInicial: $("#ContentPlaceHolder1_txtFechaInicioGrafica").val(),
-            fechaFinal: $("#ContentPlaceHolder1_txtFechaFinGrafica").val(),
-            rubro: '',
-            tipoRubro: $("#ContentPlaceHolder1_ddlTipoRubro").val() // 1.fijo 2. var 3. todos
-        });
+    ajax_data(obj, url, function (data) {
+        charts(data, "PieChart"); // Pie Charts
+    });
 
+    window.onresize = function () {
         ajax_data(obj, url, function (data) {
             charts(data, "PieChart"); // Pie Charts
         });
-
-        window.onresize = function () {
-            ajax_data(obj, url, function (data) {
-                charts(data, "PieChart"); // Pie Charts
-            });
-        };
-    
+    };
 });
 
-function ResolveUrl(url) {
-    console.log(url.replace("~/", window.location + "/GetGastos"));
-    //return url.replace("~/", window.location + "/GetGastos");
+function getUrl() {
+    let value = window.location + "/GetGastos";
+    console.log(value);
+    return value;
 }
 
 $('#btnGraficasBuscar').click(function (event) {
@@ -73,6 +72,28 @@ function charts(data, ChartType) {
     var jsonData = data;
     google.charts.load("current", { packages: ["corechart"] });
     google.charts.setOnLoadCallback(drawVisualization)
+
+    function generarUrl(obtiene) {
+        var url = "";
+
+        if (obtiene) {
+            if (window.location.host.includes("localhost")) {
+                url = "/Views/frmTransacciones.aspx/ObtenerTransacciones";
+            } else {
+                url = "/PortalClientes/Views/frmTransacciones.aspx/ObtenerTransacciones";
+            }
+        }
+        else {
+            if (window.location.host.includes("localhost")) {
+                url = "/Views/frmTransacciones.aspx";
+            } else {
+                url = "/PortalClientes/Views/frmTransacciones.aspx";
+            }
+        }
+       
+        return url;
+    }
+
 
     function drawVisualization() {
 
@@ -174,10 +195,10 @@ function charts(data, ChartType) {
                     contentType: "Application/json; charset=utf-8",
                     responseType: "json",
                     method: 'POST',
-                    url: "/Views/frmTransacciones.aspx/ObtenerTransacciones",
+                    url: generarUrl(true),
                     dataType: "json",
                     success: function (response) {
-                        window.location.pathname = '/Views/frmTransacciones.aspx';
+                        window.location.pathname = generarUrl(false);
                     },
                     error: function (err) {
                         console.log("Error In Connecting", err);
@@ -206,10 +227,10 @@ function charts(data, ChartType) {
                     contentType: "Application/json; charset=utf-8",
                     responseType: "json",
                     method: 'POST',
-                    url: "/Views/frmTransacciones.aspx/ObtenerTransacciones",
+                    url: generarUrl(true),
                     dataType: "json",
                     success: function (response) {
-                        window.location.pathname = '/Views/frmTransacciones.aspx';
+                        window.location.pathname = generarUrl(false);
                     },
                     error: function (err) {
                         console.log("Error In Connecting", err);
