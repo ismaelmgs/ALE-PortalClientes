@@ -154,7 +154,7 @@ namespace PortalClientes.Views
 
         private void ArmarDashboard()
         {
-            txtBusqueda.Attributes.Add("placeholder", Properties.Resources.Cm_Buscador);
+           // txtBusqueda.Attributes.Add("placeholder", Properties.Resources.Cm_Buscador);
 
             lblEstadoDeVuelo.Text = Properties.Resources.Das_EstadoVuelo;
             lblSalida.Text = Properties.Resources.Das_Salida;

@@ -161,7 +161,7 @@ namespace PortalClientes.Views
 
         private void ArmarTripulacion()
         {
-            txtBusqueda.Attributes.Add("placeholder", Properties.Resources.Cm_Buscador);
+            //txtBusqueda.Attributes.Add("placeholder", Properties.Resources.Cm_Buscador);
 
             lblTripulacion.Text = Properties.Resources.TitleTripulacion;
             lblTitleTripulacion.Text = Properties.Resources.TitleTripulacion;

@@ -13,12 +13,12 @@
             <div class="title_right">
                 <div class="col-md-5 col-sm-5   form-group pull-right top_search">
                     <div class="input-group">
-                        <asp:TextBox ID="txtBusqueda" runat="server" CssClass="form-control" placeholder="Buscar..."></asp:TextBox>
+                        <%--<asp:TextBox ID="txtBusqueda" runat="server" CssClass="form-control" placeholder="Buscar..."></asp:TextBox>
                         <span class="input-group-btn">
                             <button id="btnBuscar" class="btn btn-default" type="button">
                                 <i class="fa fa-search" aria-hidden="true"></i>
                             </button>
-                        </span>
+                        </span>--%>
                     </div>
                 </div>
             </div>
@@ -52,18 +52,18 @@
                             <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
                                 <br />
                                 <div class="row">
-                                    
-                                    <div class="col-md-3 offset-5"> 
+                                    <div class="col-md-6">&nbsp;</div>
+                                    <div class="col-md-3"> 
                                         <asp:DropDownList ID="ddlFiltro" runat="server" CssClass="form-control">
                                         </asp:DropDownList>
                                     </div>
-                                    <div class="col-md-2" style="text-align: center;">
-                                         <asp:Button ID="btnFiltrarTripulacion" runat="server" Text="Filtrar" CssClass="btn btn-success" OnClick="btnFiltrar_Click" />
+                                    <div class="col-md-1" style="text-align:right;">
+                                         <asp:Button ID="btnFiltrarTripulacion" runat="server" Text="Filtrar" CssClass="btn btn-success" OnClick="btnFiltrar_Click" style="margin-left:10px;" />
                                         <%--<button id="btnFiltrarTripulacion" class="btn btn-sm btn-primary" type="button"  OnClick="">
                                             <i class="fa fa-filter" aria-hidden="true"></i>Filtrar
                                         </button>--%>
                                     </div>
-                                    <div class="col-md-2" style="text-align: center;">
+                                    <div class="col" style="text-align: center;">
                                        <asp:LinkButton ID="btnExcelEvent" runat="server" Text="<i class='fa fa-file-excel-o' style='color:#ffffff;font-size:22px;'></i>" CssClass="btn btn-primary" OnClick="btnExcelEvent_Click"/>
                                        <asp:LinkButton ID="btnPDFEvent" runat="server" Text="<i class='fa fa-file-pdf-o' style='color:#ffffff;font-size:22px;'></i>" CssClass="btn btn-primary" OnClick="btnPDFEvent_Click"/>
                                     </div>
