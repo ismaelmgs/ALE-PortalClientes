@@ -13,12 +13,12 @@
         <div class="title_right">
                 <div class="col-md-5 col-sm-5   form-group pull-right top_search">
                     <div class="input-group">
-                        <asp:TextBox ID="txtBusqueda" runat="server" CssClass="form-control" placeholder="Buscar..."></asp:TextBox>
+                        <%--<asp:TextBox ID="txtBusqueda" runat="server" CssClass="form-control" placeholder="Buscar..."></asp:TextBox>
                         <span class="input-group-btn">
                             <button id="btnBuscar" class="btn btn-default" type="button">
                                 <i class="fa fa-search" aria-hidden="true"></i>
                             </button>
-                        </span>
+                        </span>--%>
                     </div>
                 </div>
             </div>
@@ -221,8 +221,8 @@
                 </div>
                 <div class="row">
                     <div class="col-md-6">
-                        <asp:Label ID="lblSaldo" runat="server" Text="Saldo Actual" Font-Bold="true"></asp:Label>
-                        <h1><asp:Label ID="lblSaldoNumber" runat="server" Text="181,011.65" Font-Bold="true"></asp:Label></h1>
+                        <asp:Label ID="lblSaldo" runat="server" Text="Saldo Actual" Font-Bold="true"></asp:Label><br />
+                        <span style="font-size:30px;"><asp:Label ID="lblSaldoNumber" runat="server" Text="181,011.65" Font-Bold="true"></asp:Label></span>
                         <br />
                         <div class="row">
                             <div class="col-md-12">
@@ -232,8 +232,8 @@
                         </div>
                     </div>
                     <div class="col-md-6">
-                        <asp:Label ID="lblUltimaDeclaracion" runat="server" Text="Ultima declaración" Font-Bold="true"></asp:Label>
-                        <h1><asp:Label ID="lblultimaDeclaracionText" runat="server" Text="58,182.87" Font-Bold="true"></asp:Label></h1>
+                        <asp:Label ID="lblUltimaDeclaracion" runat="server" Text="Ultima declaración" Font-Bold="true"></asp:Label><br />
+                        <span style="font-size:30px;"><asp:Label ID="lblultimaDeclaracionText" runat="server" Text="58,182.87" Font-Bold="true"></asp:Label></span>
                         <br />
                         <div class="row">
                             <div class="col-md-12">

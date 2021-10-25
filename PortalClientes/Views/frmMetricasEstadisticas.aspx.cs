@@ -89,7 +89,7 @@ namespace PortalClientes.Views
 
         private void ArmarMetricasEstadisticas()
         {
-            txtBusqueda.Attributes.Add("placeholder", Properties.Resources.Cm_Buscador);
+            //txtBusqueda.Attributes.Add("placeholder", Properties.Resources.Cm_Buscador);
 
             lbltitulometricasEstadisticas.Text = Properties.Resources.ME_Titulo;
             lblResumenPeriodo.Text = Properties.Resources.ME_ResumeenPeriodo;

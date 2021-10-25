@@ -241,7 +241,7 @@ namespace PortalClientes.Views
 
         private void ArmaFormulario()
         {
-            txtBusqueda.Attributes.Add("placeholder", Properties.Resources.Cm_Buscador);
+            //txtBusqueda.Attributes.Add("placeholder", Properties.Resources.Cm_Buscador);
 
             lblTitulo.Text = Properties.Resources.Ta_Titulo;
             lblTuAeronave.Text = Properties.Resources.Ta_Subtitulo;

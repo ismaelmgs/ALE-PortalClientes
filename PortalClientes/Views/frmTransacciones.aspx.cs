@@ -147,7 +147,7 @@ namespace PortalClientes.Views
 
         private void ArmarTransacciones()
         {
-            txtBusqueda.Attributes.Add("placeholder", Properties.Resources.Cm_Buscador);
+            //txtBusqueda.Attributes.Add("placeholder", Properties.Resources.Cm_Buscador);
 
             lblTransacciones.Text = Properties.Resources.TabTransacciones + " - " + Session["titleGastos"];
             lblTitulo.Text = Properties.Resources.TabTransacciones;
