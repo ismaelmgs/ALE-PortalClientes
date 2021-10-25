@@ -42,4 +42,10 @@ namespace PortalClientes.Objetos
     {
         public string matricula { get; set; }
     }
+
+    [Serializable]
+    public class FiltroMatUsuario
+    {
+        public int IdUsuario { get; set; }
+    }
 }

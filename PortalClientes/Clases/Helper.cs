@@ -46,6 +46,9 @@ namespace PortalClientes.Clases
 
         public const string D_UrlobtieneMetricasEstadisticas = "http://201.163.208.231/" + DominioWS + "/ws/pc/obtieneMetricasEstadisticas";
 
+        public const string D_UrlObtenerMatriculasPorUsuario = "http://201.163.208.231/" + DominioWS + "/ws/pc/ObtenerMatriculasPorUsuario";
+
+
 
     }
 }

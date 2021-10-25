@@ -46,7 +46,7 @@ namespace PortalClientes.Presenter
         protected void eSearchMatriculas_Presenter(object sender, EventArgs e)
         {
             List<MatriculasUsuario> olstMats = new List<MatriculasUsuario>();
-            List<Matriculas> olstMU = oIGesCat.DBGetObtieneMatricuasPorUsuario(oIView.iIdUsuario);
+            List<Matriculas> olstMU = oIGesCat.DBGetObtieneMatriculasPorUsuario(oIView.iIdUsuario);
             List<Matriculas> olst = oIGesCat.ObtieneMatriculas();
 
             foreach (Matriculas item in olst)
