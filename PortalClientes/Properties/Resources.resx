@@ -603,4 +603,16 @@
   <data name="ME_TabDocResumenGastos" xml:space="preserve">
     <value>Resumen de Gastos</value>
   </data>
+  <data name="FiltroME_1M" xml:space="preserve">
+    <value>Ultimo Mes</value>
+  </data>
+  <data name="FiltroME_2M" xml:space="preserve">
+    <value>Ultimos 2 Meses</value>
+  </data>
+  <data name="FiltroME_3M" xml:space="preserve">
+    <value>Ultimos 3 Meses</value>
+  </data>
+  <data name="FiltroME_MA" xml:space="preserve">
+    <value>Mes Actual</value>
+  </data>
 </root>

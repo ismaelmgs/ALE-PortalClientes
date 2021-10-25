@@ -156,12 +156,12 @@ namespace PortalClientes.Views
             }
 
             var v = ddlFiltroResumenPeriodo.SelectedValue;
-            // llenar dropdown Tipo Rubro
+            // llenar dropdown filtro
             ddlFiltroResumenPeriodo.Items.Clear();
-            ddlFiltroResumenPeriodo.Items.Add(new ListItem(Properties.Resources.FiltroEvenTri_MA, "0"));
-            ddlFiltroResumenPeriodo.Items.Add(new ListItem(Properties.Resources.FiltroEvenTri_1M, "1"));
-            ddlFiltroResumenPeriodo.Items.Add(new ListItem(Properties.Resources.FiltroEvenTri_2M, "2"));
-            ddlFiltroResumenPeriodo.Items.Add(new ListItem(Properties.Resources.FiltroEvenTri_3M, "3"));
+            ddlFiltroResumenPeriodo.Items.Add(new ListItem(Properties.Resources.FiltroME_MA, "0"));
+            ddlFiltroResumenPeriodo.Items.Add(new ListItem(Properties.Resources.FiltroME_1M, "1"));
+            ddlFiltroResumenPeriodo.Items.Add(new ListItem(Properties.Resources.FiltroME_2M, "2"));
+            ddlFiltroResumenPeriodo.Items.Add(new ListItem(Properties.Resources.FiltroME_3M, "3"));
 
             if (v == "")
             {
@@ -691,9 +691,9 @@ namespace PortalClientes.Views
             return lrg;
         }
 
-        public void CargarMetricasEstadisticas(List<DatosMetricas> oME)
+        public void CargarMetricasEstadisticas(DatosMetricas oME)
         {
-            oMetEsta = oME[0];
+            oMetEsta = oME;
 
             lblGastoTotalRes.Text = oMetEsta.GastoTotalFijoUSD.ToString("C", CultureInfo.CreateSpecificCulture("es-MX"));
             lblGastoTotalVariableRes.Text = oMetEsta.GastoTotalVarUSD.ToString("C", CultureInfo.CreateSpecificCulture("es-MX"));

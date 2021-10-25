@@ -9,7 +9,7 @@ namespace PortalClientes.Interfaces
     public interface IViewMetricasEstadisticas : IBaseView
     {
         DatosMetricas oMetEsta { get; }
-        void CargarMetricasEstadisticas(List<DatosMetricas> oLMetEsta);
+        void CargarMetricasEstadisticas(DatosMetricas oLMetEsta);
 
         int iMeses { get; }
         string sMatricula { get; }

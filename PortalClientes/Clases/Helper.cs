@@ -44,5 +44,8 @@ namespace PortalClientes.Clases
         public const string D_UrlObbtenerEventosPiloto = "http://201.163.208.231/" + DominioWS + "/ws/pc/obtieneEventosPilotos";
         public const string D_UrlObtenerPilotos = "http://201.163.208.231/" + DominioWS + "/ws/pc/obtieneInfoPilotos";
 
+        public const string D_UrlobtieneMetricasEstadisticas = "http://201.163.208.231/" + DominioWS + "/ws/pc/obtieneMetricasEstadisticas";
+
+
     }
 }

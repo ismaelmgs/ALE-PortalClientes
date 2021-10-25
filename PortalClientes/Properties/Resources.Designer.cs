@@ -412,6 +412,42 @@ namespace PortalClientes.Properties {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Ultimo Mes.
+        /// </summary>
+        internal static string FiltroME_1M {
+            get {
+                return ResourceManager.GetString("FiltroME_1M", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Ultimos 2 Meses.
+        /// </summary>
+        internal static string FiltroME_2M {
+            get {
+                return ResourceManager.GetString("FiltroME_2M", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Ultimos 3 Meses.
+        /// </summary>
+        internal static string FiltroME_3M {
+            get {
+                return ResourceManager.GetString("FiltroME_3M", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Mes Actual.
+        /// </summary>
+        internal static string FiltroME_MA {
+            get {
+                return ResourceManager.GetString("FiltroME_MA", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Contraseña.
         /// </summary>
         internal static string Lo_Contrasena {

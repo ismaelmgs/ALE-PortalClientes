@@ -41,39 +41,28 @@ namespace PortalClientes.DomainModel
             return d;
         }
 
-        public List<DatosMetricas> DBGetMetricasEstadisticas(string sMatricula, int iMeses)
+        public DatosMetricas DBGetMetricasEstadisticas(string sMatricula, int iMeses)
         {
-            oDB_SP.sConexionSQL = "Data Source=192.168.1.219;Initial Catalog=MexJet360;User ID=sa;Password=SYS.*2015%SQL";
+            JavaScriptSerializer ser = new JavaScriptSerializer();
+            ser.MaxJsonLength = 500000000;
+            DatosMetricas dm = new DatosMetricas();
+            FiltroEvent oLog = new FiltroEvent();
+            oLog.matricula = sMatricula;
+            oLog.meses = iMeses;
 
-            var res = oDB_SP.EjecutarDT("[PortalClientes].[spS_PC_ObtieneMetricasEstadisticas]", "@matricula", sMatricula, "@meses", iMeses);
+            TokenWS oToken = Utils.ObtieneToken;
 
-            if(res.Rows.Count > 0)
-            {
-                return res.AsEnumerable().Select(r => new DatosMetricas()
-                {
-                    GastoTotalFijoMXN = r["GastoTotalFijoMXN"].S().Db(),
-                    GastoTotalFijoUSD = r["GastoTotalFijoUSD"].S().Db(),
-                    GastoTotalVarMXN = r["GastoTotalVarMXN"].S().Db(),
-                    GastoTotalVarUSD = r["GastoTotalVarUSD"].S().Db(),
-                    NumeroVuelos = r["NumeroVuelos"].S().I(),
-                    TotalPasajeros = r["TotalPasajeros"].S().I(),
-                    HorasVoladas = r["HorasVoladas"].S().Db(),
-                    CostoPorHoraMXN = r["CostoPorHoraMXN"].S().Db(),
-                    CostoPorHoraUSD = r["CostoPorHoraUSD"].S().Db(),
-                    CostoPorMillaMXN = r["CostoPorMillaMXN"].S().Db(),
-                    CostoPorMillaUSD = r["CostoPorMillaUSD"].S().Db(),
-                    TiempoPromedio = r["TiempoPromedio"].S(),
-                    DistanciaPromedio = r["DistanciaPromedio"].S().Db(),
-                    PaxPromedio = r["PaxPromedio"].S().Db(),
-                    PromedioMXN = r["PromedioMXN"].S().Db(),
-                    PromedioUSD = r["PromedioUSD"].S().Db(),
-                }).ToList();
-            }
-            else
-            {
-                return null;
-            }
-            
+            var client = new RestClient(Helper.D_UrlobtieneMetricasEstadisticas);
+            var request = new RestRequest(Method.POST);
+            request.AddHeader("Authorization", oToken.token);
+            request.AddJsonBody(oLog);
+
+            IRestResponse response = client.Execute(request);
+            var resp = response.Content;
+
+            dm = ser.Deserialize<DatosMetricas>(resp);
+
+            return dm;            
         }
     }
 }
