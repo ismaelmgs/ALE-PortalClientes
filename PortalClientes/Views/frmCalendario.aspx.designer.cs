@@ -7,11 +7,13 @@
 // </generado automáticamente>
 //------------------------------------------------------------------------------
 
-namespace PortalClientes.Views {
-    
-    
-    public partial class frmCalendario {
-        
+namespace PortalClientes.Views
+{
+
+
+    public partial class frmCalendario
+    {
+
         /// <summary>
         /// Control txtBusqueda.
         /// </summary>
@@ -20,7 +22,7 @@ namespace PortalClientes.Views {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtBusqueda;
-        
+
         /// <summary>
         /// Control lblCalendario.
         /// </summary>
@@ -29,7 +31,7 @@ namespace PortalClientes.Views {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblCalendario;
-        
+
         /// <summary>
         /// Control SchedulerRecurenceInfo.
         /// </summary>
@@ -38,7 +40,7 @@ namespace PortalClientes.Views {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::DevExpress.Web.Bootstrap.BootstrapScheduler SchedulerRecurenceInfo;
-        
+
         /// <summary>
         /// Control ObjectDataSource1.
         /// </summary>

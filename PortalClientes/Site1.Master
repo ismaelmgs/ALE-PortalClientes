@@ -72,6 +72,7 @@
     </script>--%>
 </head>
 <body class="nav-md">
+    <div class='flotante'><i class="fa fa-user"></i> <asp:Label ID="lblNombreUsuario" runat="server" Text="Nombre ApellidoP ApellidoM" Font-Bold="true"></asp:Label></div>
 <form id="form1" runat="server">
     <div class="container body" id="ventana">
         <div class="main_container">
@@ -131,7 +132,6 @@
                     <!-- /menu footer buttons -->
                 </div>
             </div>
-
             <!-- top navigation -->
             <div class="top_nav">
                 <div class="nav_menu">
@@ -139,7 +139,7 @@
                         <a id="menu_toggle"><i class="fa fa-bars"></i></a>
                     </div>
                     <nav class="nav navbar-nav">
-                        <ul class=" navbar-right">
+                        <ul class="navbar-right">
                             <li class="nav-item dropdown open" style="padding-left: 15px;">
                                 <a href="javascript:;" class="user-profile dropdown-toggle" aria-haspopup="true" id="navbarDropdown" data-toggle="dropdown" aria-expanded="false">
                                     <img src='<%=ResolveUrl("~/build/images/img.jpg")%>' alt=""><asp:Label ID="lblAeronave" runat="server" Text="" Font-Bold="true"></asp:Label>
@@ -191,18 +191,21 @@
                                         <asp:Label ID="lblSalir" runat="server" Text="Salir" Font-Bold="true"></asp:Label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i class="fa fa-sign-out pull-right"></i> </a>--%>
                                 </div>
                             </li>
-
+                           
                             <li role="presentation" class="nav-item dropdown open">
+                                
                                 <a href="javascript:;" class="dropdown-toggle info-number" id="navbarDropdown1" data-toggle="dropdown" aria-expanded="false">
                                     <br />
-                                    <i class="fa fa-globe" style="font-size: 30px; margin-top: -20px;"></i>
+                                    <asp:Image ID="imgIconoEspanol" runat="server" ImageUrl="Images/ico_mx.jpg" AlternateText="Español" style="margin-bottom:15px;" /> <i class="fa fa-globe" style="font-size: 30px; margin-top: -20px;"></i>
                                     <!-- <span class="badge bg-green">6</span> -->
                                 </a>
                                 <%--onclick="SeleccionaIdioma();"--%>
                                 <ul class="dropdown-menu list-unstyled msg_list" role="menu" aria-labelledby="navbarDropdown1" id="idiomaoption" onclick="CambiaIdioma();">
+                                
                                     <li class="nav-item">
                                         <a class="dropdown-item">
                                             <span>
+                                                
                                                 <span>
                                                     <asp:LinkButton ID="lblIdiomaEspanol" runat="server" Text="<i class='fa fa-globe'></i>&nbsp;&nbsp;&nbsp; Español" Font-Bold="true" CommandArgument="es-MX"
                                                         ClientIDMode="Static" OnClientClick="AsignaEspanol(this);" OnClick="lblIdiomaEspanol_Click"></asp:LinkButton>
