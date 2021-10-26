@@ -144,7 +144,7 @@
                                 <a href="javascript:;" class="user-profile dropdown-toggle" aria-haspopup="true" id="navbarDropdown" data-toggle="dropdown" aria-expanded="false">
                                     <img src='<%=ResolveUrl("~/build/images/img.jpg")%>' alt=""><asp:Label ID="lblAeronave" runat="server" Text="" Font-Bold="true"></asp:Label>
                                 </a>
-                                <div class="dropdown-menu dropdown-usermenu pull-right" aria-labelledby="navbarDropdown" style="width: 320px;">
+                                <div class="dropdown-menu dropdown-usermenu pull-right" aria-labelledby="navbarDropdown" style="width: 320px; margin-top:25px;">
                                     <%--<a class="dropdown-item" href="javascript:;">
                                         <asp:Label ID="lblUsuario" runat="server" Text="Usuario" Font-Bold="true"></asp:Label>
                                         <i class="fa fa-user" style="position: absolute; right: 22px;"></i></a>--%>
@@ -196,11 +196,11 @@
                                 
                                 <a href="javascript:;" class="dropdown-toggle info-number" id="navbarDropdown1" data-toggle="dropdown" aria-expanded="false">
                                     <br />
-                                    <asp:Image ID="imgIconoEspanol" runat="server" ImageUrl="Images/ico_mx.jpg" AlternateText="Español" style="margin-bottom:15px;" /> <i class="fa fa-globe" style="font-size: 30px; margin-top: -20px;"></i>
+                                    <asp:Image ID="imgIconoEspanol" runat="server" ImageUrl="Images/ico_mx.jpg" AlternateText="Español" style="margin-bottom:15px;" /> <asp:Image ID="imgIconoEnglish" runat="server" ImageUrl="Images/ico_eu.jpg" AlternateText="English" style="margin-bottom:15px;" /><%--<i class="fa fa-globe" style="font-size: 30px; margin-top: -20px;"></i>--%>
                                     <!-- <span class="badge bg-green">6</span> -->
                                 </a>
                                 <%--onclick="SeleccionaIdioma();"--%>
-                                <ul class="dropdown-menu list-unstyled msg_list" role="menu" aria-labelledby="navbarDropdown1" id="idiomaoption" onclick="CambiaIdioma();">
+                                <ul class="dropdown-menu list-unstyled msg_list" role="menu" aria-labelledby="navbarDropdown1" id="idiomaoption" onclick="CambiaIdioma();" style=" margin-top:10px;">
                                 
                                     <li class="nav-item">
                                         <a class="dropdown-item">
