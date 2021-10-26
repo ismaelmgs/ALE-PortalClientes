@@ -258,12 +258,17 @@ namespace PortalClientes
 
             if (e.Item.GroupName == "Group4")
             {
-                if(Utils.MatriculaActual != e.Item.Text)
+                if(Utils.MatriculaActual != e.Item.Text && e.Item.Text != "Matrículas ⏷")
                 {
                     Utils.MatriculaActual = e.Item.Text;
                     lblAeronave.Text = e.Item.Text;
                     lblAeronaveLat.Text = e.Item.Text;
-                } 
+                }
+                else
+                {
+                    lblAeronave.Text = Utils.MatriculaActual;
+                    lblAeronaveLat.Text = Utils.MatriculaActual;
+                }
             }
 
             if (path == Enums.Dashboard)

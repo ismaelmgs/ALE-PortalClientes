@@ -13,6 +13,7 @@ using System.Drawing;
 using iTextSharp.text.html.simpleparser;
 using iTextSharp.text.pdf;
 using NucleoBase.Core;
+using System.Linq;
 
 namespace PortalClientes.Views
 {
@@ -190,8 +191,8 @@ namespace PortalClientes.Views
 
         public void CargarEventosTripulacion(List<EventosPiloto> oEP)
         {
-            oLstEventosPiloto = oEP;
-            gvEventos.DataSource = oEP;
+            oLstEventosPiloto = oEP.OrderByDescending(x => x.fechaInicio).ToList();
+            gvEventos.DataSource = oEP.OrderByDescending(x => x.fechaInicio).ToList();
             gvEventos.DataBind();
         }
 
