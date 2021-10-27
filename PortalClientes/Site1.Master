@@ -196,8 +196,8 @@
                                 
                                 <a href="javascript:;" class="dropdown-toggle info-number" id="navbarDropdown1" data-toggle="dropdown" aria-expanded="false">
                                     <br />
-                                    <asp:Image ID="imgIconoEspanol" runat="server" ImageUrl="Images/ico_mx.jpg" AlternateText="Español" style="margin-bottom:15px;" /> <asp:Image ID="imgIconoEnglish" runat="server" ImageUrl="Images/ico_eu.jpg" AlternateText="English" style="margin-bottom:15px;" /><%--<i class="fa fa-globe" style="font-size: 30px; margin-top: -20px;"></i>--%>
-                                    <!-- <span class="badge bg-green">6</span> -->
+                                    <asp:Image ID="imgIconoEspanol"  Visible="false" runat="server" ImageUrl="Images/ico_mx.jpg" AlternateText="Español" style="margin-bottom:15px;" /> 
+                                    <asp:Image ID="imgIconoEnglish" Visible="false" runat="server" ImageUrl="Images/ico_eu.jpg" AlternateText="English" style="margin-bottom:15px;" />
                                 </a>
                                 <%--onclick="SeleccionaIdioma();"--%>
                                 <ul class="dropdown-menu list-unstyled msg_list" role="menu" aria-labelledby="navbarDropdown1" id="idiomaoption" onclick="CambiaIdioma();" style=" margin-top:10px;">

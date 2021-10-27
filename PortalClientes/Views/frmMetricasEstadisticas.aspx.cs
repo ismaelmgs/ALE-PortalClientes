@@ -691,6 +691,75 @@ namespace PortalClientes.Views
             return lrg;
         }
 
+        [WebMethod]
+        public static List<responseGraficaGastos> GetGastosProveedor(string meses, DateTime? fechaInicial, DateTime? fechaFinal, string rubro, int tipoRubro)
+        {
+            DBDashboard oIGesCat = new DBDashboard();
+
+            FiltroGraficaGastos fg = new FiltroGraficaGastos();
+            fg.meses = meses;
+            fg.fechaInicial = fechaInicial;
+            fg.fechaFinal = fechaFinal;
+            fg.rubro = 5; // modificar despues
+            fg.tipoRubro = tipoRubro;
+
+            List<responseGraficaGastos> lrg = new List<responseGraficaGastos>();
+            lrg = oIGesCat.ObtenerGastos(fg);
+
+            if (lrg.Count() > 0)
+            {
+                lrg[0].idioma = Utils.Idioma;
+            }
+
+            return lrg;
+        }
+
+        [WebMethod]
+        public static List<responseGraficaGastos> GetGastosAeropuerto(string meses, DateTime? fechaInicial, DateTime? fechaFinal, string rubro, int tipoRubro)
+        {
+            DBDashboard oIGesCat = new DBDashboard();
+
+            FiltroGraficaGastos fg = new FiltroGraficaGastos();
+            fg.meses = meses;
+            fg.fechaInicial = fechaInicial;
+            fg.fechaFinal = fechaFinal;
+            fg.rubro = 5; // modificar despues
+            fg.tipoRubro = tipoRubro;
+
+            List<responseGraficaGastos> lrg = new List<responseGraficaGastos>();
+            lrg = oIGesCat.ObtenerGastos(fg);
+
+            if (lrg.Count() > 0)
+            {
+                lrg[0].idioma = Utils.Idioma;
+            }
+
+            return lrg;
+        }
+
+        [WebMethod]
+        public static List<responseGraficaGastos> GetDuracionVuelos(string meses, DateTime? fechaInicial, DateTime? fechaFinal, string rubro, int tipoRubro)
+        {
+            DBDashboard oIGesCat = new DBDashboard();
+
+            FiltroGraficaGastos fg = new FiltroGraficaGastos();
+            fg.meses = meses;
+            fg.fechaInicial = fechaInicial;
+            fg.fechaFinal = fechaFinal;
+            fg.rubro = 5; // modificar despues
+            fg.tipoRubro = tipoRubro;
+
+            List<responseGraficaGastos> lrg = new List<responseGraficaGastos>();
+            lrg = oIGesCat.ObtenerGastos(fg);
+
+            if (lrg.Count() > 0)
+            {
+                lrg[0].idioma = Utils.Idioma;
+            }
+
+            return lrg;
+        }
+
         public void CargarMetricasEstadisticas(DatosMetricas oME)
         {
             oMetEsta = oME;

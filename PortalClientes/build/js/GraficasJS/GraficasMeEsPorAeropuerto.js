@@ -1,13 +1,9 @@
-﻿$(document).ready(function () {
-    //const url = "http://192.168.1.250/PortalClientes/Views/frmDashboard.aspx/GetGastos"; // API URL
+$(document).ready(function () {
+    //const url = "http://192.168.1.250/PortalClientes/Views/frmMetricasEstadisticas.aspx/GetGastos"; // API URL
     const url = getUrl(); // API URL
-    
+
     let obj = JSON.stringify({
-        meses: $("#ContentPlaceHolder1_ddlPeriodo").val(),
-        fechaInicial: $("#ContentPlaceHolder1_txtFechaInicioGrafica").val(),
-        fechaFinal: $("#ContentPlaceHolder1_txtFechaFinGrafica").val(),
-        rubro: '',
-        tipoRubro: $("#ContentPlaceHolder1_ddlTipoRubro").val() // 1.fijo 2. var 3. todos
+        meses: $("#ContentPlaceHolder1_DDFiltroMesesPA").val(),
     });
 
     ajax_data(obj, url, function (data) {
@@ -22,12 +18,12 @@
 });
 
 function getUrl() {
-    let value = window.location + "/GetGastos";
-    //console.log(value);
+    let value = window.location + "/GetGastosAeropuerto";
+    console.log(value);
     return value;
 }
 
-$('#btnGraficasBuscar').click(function (event) {
+$('#btnGraficasBuscarPA').click(function (event) {
 
     event.preventDefault();
     ActualizarGrafica();
@@ -37,11 +33,7 @@ $('#btnGraficasBuscar').click(function (event) {
 function ActualizarGrafica() {
     const url = getUrl(); // API URL
     let obj = JSON.stringify({
-        meses: $("#ContentPlaceHolder1_ddlPeriodo").val(),
-        fechaInicial: $("#ContentPlaceHolder1_txtFechaInicioGrafica").val(),
-        fechaFinal: $("#ContentPlaceHolder1_txtFechaFinGrafica").val(),
-        rubro: '',
-        tipoRubro: $("#ContentPlaceHolder1_ddlTipoRubro").val() // 1.fijo 2. var 3. todos
+        meses: $("#ContentPlaceHolder1_DDFiltroMesesPA").val(),
     });
 
     ajax_data(obj, url, function (data) {
@@ -90,10 +82,9 @@ function charts(data, ChartType) {
                 url = "/PortalClientes/Views/frmTransacciones.aspx";
             }
         }
-       
+
         return url;
     }
-
 
     function drawVisualization() {
 
@@ -103,11 +94,6 @@ function charts(data, ChartType) {
         data.addColumn('string', 'Categoria');
         data.addColumn('number', 'Costos');
         data.addColumn({ type: 'string', role: 'tooltip' });
-
-        var dataE = new google.visualization.DataTable();
-        dataE.addColumn('string', 'Category');
-        dataE.addColumn('number', 'Costs');
-        dataE.addColumn({ type: 'string', role: 'tooltip' });
 
         const opt = { style: 'currency', currency: 'MXN' };
         var numberFormat = new Intl.NumberFormat('es-MX', opt);
@@ -119,16 +105,14 @@ function charts(data, ChartType) {
 
             if (jsonData[0].idioma == "es-MX") {
                 data.addRows([[item.rubroESP, item.totalMXN, `${item.rubroESP} - ${numberFormat.format(item.totalMXN)} MXN`,]]);
-                dataE.addRows([[item.rubroESP, item.totalUSD, `${item.rubroESP} - ${numberFormat2.format(item.totalUSD)} USD`,]]);
             } else {
                 data.addRows([[item.rubroENG, item.totalMXN, `${item.rubroENG} - ${numberFormat.format(item.totalMXN)} MXN`,]]);
-                dataE.addRows([[item.rubroENG, item.totalUSD, `${item.rubroENG} - ${numberFormat2.format(item.totalUSD)} USD`,]]);
             }
-            
+
         });
 
         var options = {
-            title: jsonData[0].idioma == "es-MX" ? "Costos por Categoria MXN" : "Costs by Category MXN",
+            title: jsonData[0].idioma == "es-MX" ? "Gastos por Aeropuerto" : "Exoenses by Airport",
             is3D: true, //Pie Charts
             fontSize: 9,
             chartArea: {
@@ -148,32 +132,8 @@ function charts(data, ChartType) {
             },
         };
 
-        var optionsE = {
-            title: jsonData[0].idioma == "es-MX" ? "Costos por Categoria USD" : "Costs by Category USD",
-            is3D: true, //Pie Charts
-            fontSize: 9,
-            chartArea: {
-                left: screenWidth > 500 ? 30 : 10,
-                top: 30,
-                width: '100%',
-                height: '75%'
-            },
-            animation: {
-                duration: 3000,
-                easing: 'out',
-                startup: true
-            },
-            legend: {
-                position: 'rigth',
-                alignment: 'center',
-            },
-        };
-
-        var chart = new google.visualization.PieChart(document.getElementById('piechart_3d_1'));
+        var chart = new google.visualization.PieChart(document.getElementById('piechart_3d_4'));
         chart.draw(data, options);
-
-        var chartE = new google.visualization.PieChart(document.getElementById('piechart_3d_2'));
-        chartE.draw(dataE, optionsE);
 
         google.visualization.events.addListener(chart, 'select', function () {
             var selection = chart.getSelection();
@@ -186,38 +146,6 @@ function charts(data, ChartType) {
                 let obj = JSON.stringify({
                     gastos: gastos,
                     tipoDet: "MXN",
-                    rubroEsp: array.rubroESP,
-                    rubroEng: array.rubroENG
-                });
-
-                $.ajax({
-                    data: obj,
-                    contentType: "Application/json; charset=utf-8",
-                    responseType: "json",
-                    method: 'POST',
-                    url: generarUrl(true),
-                    dataType: "json",
-                    success: function (response) {
-                        window.location.pathname = generarUrl(false);
-                    },
-                    error: function (err) {
-                        console.log("Error In Connecting", err);
-                    }
-                }); 
-            }
-        });
-
-        google.visualization.events.addListener(chartE, 'select', function () {
-            var selection = chartE.getSelection();
-            if (selection.length) {
-                var row = selection[0].row;
-
-                let array = jsonData[row];
-                const gastos = array.Gastos
-
-                let obj = JSON.stringify({
-                    gastos: gastos,
-                    tipoDet: "USD",
                     rubroEsp: array.rubroESP,
                     rubroEng: array.rubroENG
                 });

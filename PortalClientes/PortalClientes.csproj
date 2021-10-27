@@ -222,7 +222,10 @@
     <Content Include="build\images\user.png" />
     <Content Include="build\images\visa.png" />
     <Content Include="build\js\datepicker\daterangepicker.js" />
-    <Content Include="build\js\GraficasJS\GraficasMetricasEstadisticas.js" />
+    <Content Include="build\js\GraficasJS\GraficasMeEsPorDuracionVuelos.js" />
+    <Content Include="build\js\GraficasJS\GraficasMeEsPorAeropuerto.js" />
+    <Content Include="build\js\GraficasJS\GraficasMeEsPorProveedor.js" />
+    <Content Include="build\js\GraficasJS\GraficasMeEs.js" />
     <Content Include="build\js\GraficasJS\GraficasDashboard.js" />
     <Content Include="build\js\moment\moment.min.js" />
     <Content Include="build\images\no_image.jpg" />

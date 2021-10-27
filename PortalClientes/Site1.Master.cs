@@ -34,6 +34,17 @@ namespace PortalClientes
                 ArmaFormulario();
             }
 
+            if(Utils.Idioma == "es-MX")
+            {
+                imgIconoEspanol.Visible = true;
+                imgIconoEnglish.Visible = false;
+            }
+            else
+            {
+                imgIconoEspanol.Visible = false;
+                imgIconoEnglish.Visible = true;
+            }
+
             ArmaMenu();
 
             if (!IsPostBack)

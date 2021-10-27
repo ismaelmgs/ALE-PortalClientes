@@ -1,7 +1,7 @@
-﻿$(document).ready(function () {
-    //const url = "http://192.168.1.250/PortalClientes/Views/frmDashboard.aspx/GetGastos"; // API URL
+$(document).ready(function () {
+    //const url = "http://192.168.1.250/PortalClientes/Views/frmMetricasEstadisticas.aspx/GetGastos"; // API URL
     const url = getUrl(); // API URL
-    
+
     let obj = JSON.stringify({
         meses: $("#ContentPlaceHolder1_ddlPeriodo").val(),
         fechaInicial: $("#ContentPlaceHolder1_txtFechaInicioGrafica").val(),
@@ -23,7 +23,7 @@
 
 function getUrl() {
     let value = window.location + "/GetGastos";
-    //console.log(value);
+    console.log(value);
     return value;
 }
 
@@ -90,7 +90,7 @@ function charts(data, ChartType) {
                 url = "/PortalClientes/Views/frmTransacciones.aspx";
             }
         }
-       
+
         return url;
     }
 
@@ -124,7 +124,7 @@ function charts(data, ChartType) {
                 data.addRows([[item.rubroENG, item.totalMXN, `${item.rubroENG} - ${numberFormat.format(item.totalMXN)} MXN`,]]);
                 dataE.addRows([[item.rubroENG, item.totalUSD, `${item.rubroENG} - ${numberFormat2.format(item.totalUSD)} USD`,]]);
             }
-            
+
         });
 
         var options = {
@@ -203,7 +203,7 @@ function charts(data, ChartType) {
                     error: function (err) {
                         console.log("Error In Connecting", err);
                     }
-                }); 
+                });
             }
         });
 

@@ -31,12 +31,6 @@
                 <div class="x_title">
                     <h2>
                         <asp:Label ID="lblResumenPeriodo" runat="server" Text="Resumen del período $USD" Font-Bold="true"></asp:Label></h2>
-                    <%--<ul class="nav navbar-right panel_toolbox">
-                    <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
-                    </li>
-                    <li><a class="close-link"><i class="fa fa-close"></i></a>
-                    </li>
-                </ul>--%>
                     <div class="clearfix"></div>
                 </div>
                 <div class="row">
@@ -48,10 +42,6 @@
                         </asp:DropDownList>
                     </div>
                     <div class="col-md-2" style="text-align: center;">
-                        <%--<button id="btnFiltrarMetricasEstadisticas" class="btn btn-primary" type="button">
-                            <i class="fa fa-filter" aria-hidden="true"></i>
-                            <asp:Label ID="lblfiltrar" runat="server" Text="Filtrar" Font-Bold="true"></asp:Label>
-                        </button>--%>
                         <asp:Button ID="btnFiltrarMetricasEstadisticas" runat="server" Text="Filtrar" CssClass="btn btn-primary" OnClick="btnFiltrar_Click" />
                     </div>
                 </div>
@@ -197,24 +187,9 @@
                         <asp:Label ID="lblPeriodoVuelo" runat="server" Text="Promedio por Vuelo" Font-Bold="true"></asp:Label></h2>
                     <div class="clearfix"></div>
                 </div>
-                <%--<div class="row">
-                    <div class="col-md-7">
-                        &nbsp;
-                    </div>
-                    <div class="col-md-2" style="text-align: center;">
-                        &nbsp;
-                    </div>
-                    <div class="col-md-3" style="text-align: right;">
-                        <asp:DropDownList ID="ddlPromedioVuelo" runat="server" CssClass="form-control">
-                            <asp:ListItem Selected="True" Value="Últimos tres meses"> Últimos 3 meses </asp:ListItem>
-                            <asp:ListItem Value="Últimos dos meses"> Últimos 2 meses </asp:ListItem>
-                            <asp:ListItem Value="Último mes"> Último mes </asp:ListItem>
-                        </asp:DropDownList>
-                    </div>
-                </div>--%>
+
                 <div>
                     <br />
-                    <%--                <h2></h2>--%>
                     <div class="row" style="margin: 5px;">
 
                         <div class="col-md-2 tile_count">
@@ -351,66 +326,48 @@
 
                 <div class="x_title">
                     <h2>
-                        <asp:Label ID="Label1" runat="server" Text="Costos Por Categoría" Font-Bold="true"></asp:Label>
+                        <asp:Label ID="Label1" runat="server" Text="Costos Por Proveedor y Aeropuerto" Font-Bold="true"></asp:Label>
                     </h2>
                     <div class="clearfix"></div>
                 </div>
-                <%--<div class="row">
-                    <div class="col-md-2">
-                        <asp:DropDownList ID="DropDownList1" runat="server" CssClass="form-control" Width="100%"></asp:DropDownList>
-                    </div>
-                    <div class="col-md-3">
-                        <asp:TextBox ID="TextBox1" runat="server" CssClass="form-control" Type="date" Width="100%"></asp:TextBox>
-                    </div>
-                    <div class="col-md-3">
-                        <asp:TextBox ID="TextBox2" runat="server" CssClass="form-control" Type="date" Width="100%"></asp:TextBox>
+                <div class="row">
+                    <div class="col-md-2 offset-8">
+                        <asp:DropDownList ID="DDFiltroMesesPA" runat="server" CssClass="form-control" Width="100%"></asp:DropDownList>
                     </div>
                     <div class="col-md-2">
-                        <asp:DropDownList ID="DropDownList2" runat="server" CssClass="form-control" Width="100%"></asp:DropDownList>
+                        <button id="btnGraficasBuscarPA" class="btn btn-primary"><i class='fa fa-undo' style='color: #ffffff; font-size: 14px;'></i></button>
                     </div>
-                    <div class="col-md-2">
-                        <button id="btnGraficasBuscar" class="btn btn-primary"><i class='fa fa-undo' style='color: #ffffff; font-size: 14px;'></i></button>
-                    </div>
-                </div>--%>
+                </div>
                 <div class="row">
                     <div class="col-md-6">
-                        <div id="piechart_3d_1" style="min-height: 400px;"></div>
+                        <div id="piechart_3d_3" style="min-height: 400px;"></div>
                     </div>
                     <div class="col-md-6">
-                        <div id="piechart_3d_2" style="min-height: 400px;">
+                        <div id="piechart_3d_4" style="min-height: 400px;">
                         </div>
                     </div>
                 </div>
 
                 <div class="x_title">
                     <h2>
-                        <asp:Label ID="Label2" runat="server" Text="Costos Por Categoría" Font-Bold="true"></asp:Label>
+                        <asp:Label ID="Label2" runat="server" Text="Horas de Vuelo por Tipo y Duracion de vuelos" Font-Bold="true"></asp:Label>
                     </h2>
                     <div class="clearfix"></div>
                 </div>
-                <%--<div class="row">
-                    <div class="col-md-2">
-                        <asp:DropDownList ID="DropDownList1" runat="server" CssClass="form-control" Width="100%"></asp:DropDownList>
-                    </div>
-                    <div class="col-md-3">
-                        <asp:TextBox ID="TextBox1" runat="server" CssClass="form-control" Type="date" Width="100%"></asp:TextBox>
-                    </div>
-                    <div class="col-md-3">
-                        <asp:TextBox ID="TextBox2" runat="server" CssClass="form-control" Type="date" Width="100%"></asp:TextBox>
+                <div class="row">
+                    <div class="col-md-2 offset-8">
+                        <asp:DropDownList ID="DDFiltroMesesV" runat="server" CssClass="form-control" Width="100%"></asp:DropDownList>
                     </div>
                     <div class="col-md-2">
-                        <asp:DropDownList ID="DropDownList2" runat="server" CssClass="form-control" Width="100%"></asp:DropDownList>
+                        <button id="btnGraficasBuscarHvDv" class="btn btn-primary"><i class='fa fa-undo' style='color: #ffffff; font-size: 14px;'></i></button>
                     </div>
-                    <div class="col-md-2">
-                        <button id="btnGraficasBuscar" class="btn btn-primary"><i class='fa fa-undo' style='color: #ffffff; font-size: 14px;'></i></button>
-                    </div>
-                </div>--%>
+                </div>
                 <div class="row">
                     <div class="col-md-6">
-                        <div id="piechart_3d_1" style="min-height: 400px;"></div>
+                        <div id="piechart_3d_5" style="min-height: 400px;"></div>
                     </div>
                     <div class="col-md-6">
-                        <div id="piechart_3d_2" style="min-height: 400px;">
+                        <div id="piechart_3d_6" style="min-height: 400px;">
                         </div>
                     </div>
                 </div>
@@ -420,5 +377,5 @@
 
     <script src='<%=ResolveUrl("~/vendors/jquery/dist/jquery.min.js")%>'></script>
     <script src='<%=ResolveUrl("~/vendors/jquery/dist/jquery.js")%>'></script>
-    <script src='<%=ResolveUrl("~/build/js/GraficasJS/GraficasMetricasEstadisticas.js")%>'></script>
+    <script src='<%=ResolveUrl("~/build/js/GraficasJS/GraficasMeEs.js")%>'></script>
 </asp:Content>
