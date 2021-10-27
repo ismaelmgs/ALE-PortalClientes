@@ -72,7 +72,6 @@
     </script>--%>
 </head>
 <body class="nav-md">
-    <div class='flotante'><i class="fa fa-user"></i> <asp:Label ID="lblNombreUsuario" runat="server" Text="Nombre ApellidoP ApellidoM" Font-Bold="true"></asp:Label></div>
 <form id="form1" runat="server">
     <div class="container body" id="ventana">
         <div class="main_container">
@@ -122,10 +121,10 @@
 
                     <!-- /menu footer buttons -->
                     <div class="sidebar-footer hidden-small" style="text-align: center;">
-                        <a data-toggle="tooltip" data-placement="top" title="Full Screen" onclick="openFullscreen();">
+                        <%--<a data-toggle="tooltip" data-placement="top" title="Full Screen" onclick="openFullscreen();">
                             <span class="glyphicon glyphicon-fullscreen" aria-hidden="true"></span>
-                        </a>
-                        <a data-toggle="tooltip" data-placement="top" title="Salir" href="">
+                        </a>--%>
+                        <a data-toggle="tooltip" data-placement="top" title="Salir" href="" style="width:100%;">
                             <span class="glyphicon glyphicon-off" aria-hidden="true"></span>
                         </a>
                     </div>
@@ -191,9 +190,7 @@
                                         <asp:Label ID="lblSalir" runat="server" Text="Salir" Font-Bold="true"></asp:Label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i class="fa fa-sign-out pull-right"></i> </a>--%>
                                 </div>
                             </li>
-                           
                             <li role="presentation" class="nav-item dropdown open">
-                                
                                 <a href="javascript:;" class="dropdown-toggle info-number" id="navbarDropdown1" data-toggle="dropdown" aria-expanded="false">
                                     <br />
                                     <asp:Image ID="imgIconoEspanol" runat="server" ImageUrl="Images/ico_mx.jpg" AlternateText="Español" style="margin-bottom:15px;" /> <asp:Image ID="imgIconoEnglish" runat="server" ImageUrl="Images/ico_eu.jpg" AlternateText="English" style="margin-bottom:15px;" /><%--<i class="fa fa-globe" style="font-size: 30px; margin-top: -20px;"></i>--%>
@@ -224,6 +221,9 @@
                                         </a>
                                     </li>
                                 </ul>
+                            </li>
+                            <li role="presentation" class="nav-item item_usuario">
+                                <span class="usuario"><i class="fa fa-user"></i> <asp:Label ID="lblNombreUsuario" runat="server" Text="Nombre ApellidoP ApellidoM" Font-Bold="true"></asp:Label></span>
                             </li>
                         </ul>
                     </nav>
