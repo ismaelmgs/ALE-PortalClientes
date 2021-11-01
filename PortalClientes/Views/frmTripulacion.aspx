@@ -64,8 +64,8 @@
                                         </button>--%>
                                     </div>
                                     <div class="col" style="text-align: center;">
-                                       <asp:LinkButton ID="btnExcelEvent" runat="server" Text="<i class='fa fa-file-excel-o' style='color:#ffffff;font-size:22px;'></i>" CssClass="btn btn-primary" OnClick="btnExcelEvent_Click"/>
-                                       <asp:LinkButton ID="btnPDFEvent" runat="server" Text="<i class='fa fa-file-pdf-o' style='color:#ffffff;font-size:22px;'></i>" CssClass="btn btn-primary" OnClick="btnPDFEvent_Click"/>
+                                       <asp:LinkButton ID="btnExcelEvent" runat="server" Text="<i class='fa fa-file-excel-o' style='color:#73879c;font-size:28px;'></i>" CssClass="btn" OnClick="btnExcelEvent_Click"/>
+                                       <asp:LinkButton ID="btnPDFEvent" runat="server" Text="<i class='fa fa-file-pdf-o' style='color:#73879c;font-size:28px;'></i>" CssClass="btn" OnClick="btnPDFEvent_Click"/>
                                     </div>
                                 </div>
                                 <br />
@@ -94,8 +94,8 @@
                                 <br />
                                 <div class="row">
                                     <div class="col-md-2 offset-10" style="text-align: center;">
-                                       <asp:LinkButton ID="btnExcelPilotos" runat="server" Text="<i class='fa fa-file-excel-o' style='color:#ffffff;font-size:22px;'></i>" CssClass="btn btn-primary" OnClick="btnExcelPilotos_Click"/>
-                                       <asp:LinkButton ID="btnPDFPilotos" runat="server" Text="<i class='fa fa-file-pdf-o' style='color:#ffffff;font-size:22px;'></i>" CssClass="btn btn-primary" OnClick="btnPDFPilotos_Click"/>
+                                       <asp:LinkButton ID="btnExcelPilotos" runat="server" Text="<i class='fa fa-file-excel-o' style='color:#73879c;font-size:28px;'></i>" CssClass="btn" OnClick="btnExcelPilotos_Click"/>
+                                       <asp:LinkButton ID="btnPDFPilotos" runat="server" Text="<i class='fa fa-file-pdf-o' style='color:#73879c;font-size:28px;'></i>" CssClass="btn" OnClick="btnPDFPilotos_Click"/>
                                     </div>
                                 </div>
                                 <br />
