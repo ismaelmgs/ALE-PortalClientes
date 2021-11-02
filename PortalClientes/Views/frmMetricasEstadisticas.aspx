@@ -261,7 +261,7 @@
                         <asp:DropDownList ID="ddlTipoRubro" runat="server" CssClass="form-control" Width="100%"></asp:DropDownList>
                     </div>
                     <div class="col-md-2">
-                        <button id="btnGraficasBuscar" class="btn btn-primary"><i class='fa fa-undo' style='color: #ffffff; font-size: 14px;'></i></button>
+                        <button id="btnGraficasBuscar" class="btn"><i class='fa fa-undo' style='color:#73879c;font-size:23px;'></i></button>
                     </div>
                 </div>
                 <div class="row">
@@ -296,7 +296,7 @@
                                     <th style="width: 70%;">
                                         <asp:Label ID="lblDescripcion" runat="server" Text="Tipo Reporte" Font-Bold="false"></asp:Label>
                                     </th>
-                                    <th>
+                                    <th style="text-align:center;">
                                         <asp:Label ID="lblDescargar" runat="server" Text=" Descargar" Font-Bold="false"></asp:Label>
                                     </th>
                                 </tr>
@@ -304,7 +304,7 @@
                                     <td>
                                         <asp:Label ID="lblResumenGastos" runat="server" Text=" Resumen de Gastos" Font-Bold="false"></asp:Label>
                                     </td>
-                                    <td>
+                                    <td align="center">
                                         <asp:LinkButton ID="LinkButton1" runat="server" Text="<i class='fa fa-file-excel-o' style='color:#73879c;font-size:25px;'></i>" CssClass="btn" OnClick="lkbExpExcelRes_Click" />
                                         <asp:LinkButton ID="LinkButton2" runat="server" Text="<i class='fa fa-file-pdf-o' style='color:#73879c;font-size:25px;' ></i>" CssClass="btn" OnClick="lkbExpPDFRes_Click" />
                                     </td>
@@ -313,7 +313,7 @@
                                     <td>
                                         <asp:Label ID="lblRepDetGastos" runat="server" Text=" Detalle de Gastos" Font-Bold="false"></asp:Label>
                                     </td>
-                                    <td>
+                                    <td align="center">
                                         <asp:LinkButton ID="btnExcel" runat="server" Text="<i class='fa fa-file-excel-o' style='color:#73879c;font-size:25px;'></i>" CssClass="btn" OnClick="lkbExpExcel_Click" />
                                         <asp:LinkButton ID="btnPDF" runat="server" Text="<i class='fa fa-file-pdf-o' style='color:#73879c;font-size:25px;' ></i>" CssClass="btn" OnClick="lkbExpPDF_Click" />
                                     </td>
@@ -335,7 +335,7 @@
                         <asp:DropDownList ID="DDFiltroMesesPA" runat="server" CssClass="form-control" Width="100%"></asp:DropDownList>
                     </div>
                     <div class="col-md-2">
-                        <button id="btnGraficasBuscarPA" class="btn btn-primary"><i class='fa fa-undo' style='color: #ffffff; font-size: 14px;'></i></button>
+                        <button id="btnGraficasBuscarPA" class="btn"><i class='fa fa-undo' style='color:#73879c;font-size:23px;'></i></button>
                     </div>
                 </div>
                 <div class="row">
@@ -359,7 +359,7 @@
                         <asp:DropDownList ID="DDFiltroMesesV" runat="server" CssClass="form-control" Width="100%"></asp:DropDownList>
                     </div>
                     <div class="col-md-2">
-                        <button id="btnGraficasBuscarHvDv" class="btn btn-primary"><i class='fa fa-undo' style='color: #ffffff; font-size: 14px;'></i></button>
+                        <button id="btnGraficasBuscarHvDv" class="btn"><i class='fa fa-undo' style='color:#73879c;font-size:23px;'></i></button>
                     </div>
                 </div>
                 <div class="row">
