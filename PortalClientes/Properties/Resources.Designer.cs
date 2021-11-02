@@ -331,7 +331,7 @@ namespace PortalClientes.Properties {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Ultima declaración.
+        ///   Busca una cadena traducida similar a Ultimo Pago.
         /// </summary>
         internal static string Das_UltimaDeclaracion {
             get {

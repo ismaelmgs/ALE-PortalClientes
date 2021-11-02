@@ -20,6 +20,7 @@ namespace PortalClientes
             {
                 UserIdentity oUI = (UserIdentity)Session["UserIdentity"];
                 txtLang.Text = oUI.sIdioma;
+                lblNombreUsuario.Text = oUI.sNombre;
             }
 
             if (txtLang.Text != Utils.Idioma)

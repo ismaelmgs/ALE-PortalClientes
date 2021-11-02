@@ -232,7 +232,7 @@
     <value>Departed:</value>
   </data>
   <data name="Das_UltimaDeclaracion" xml:space="preserve">
-    <value>Last Statement</value>
+    <value>Last payment</value>
   </data>
   <data name="Das_Ven90dias" xml:space="preserve">
     <value>Including past due (+ 90 days)</value>

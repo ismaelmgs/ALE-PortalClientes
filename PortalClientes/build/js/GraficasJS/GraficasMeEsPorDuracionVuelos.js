@@ -97,9 +97,9 @@ function chartsDV(dataDV, ChartType) {
         jsonDataDV.forEach((item, index) => {
 
             if (jsonDataDV[0].idioma == "es-MX") {
-                dataDV_.addRows([[item.DescripcionESP, item.noVuelos, `Vuelo ${item.DescripcionESP}: Total ${item.noVuelos}`,]]);
+                dataDV_.addRows([[item.descripcionESP, item.noVuelos, `Vuelo ${item.descripcionESP}: Total ${item.noVuelos}`,]]);
             } else {
-                dataDV_.addRows([[item.DescripcionENG, item.noVuelos, `Vuelo ${item.DescripcionESP}: Total ${item.noVuelos}`,]]);
+                dataDV_.addRows([[item.descripcionENG, item.noVuelos, `Vuelo ${item.descripcionESP}: Total ${item.noVuelos}`,]]);
             }
 
         });
