@@ -377,5 +377,21 @@
 
     <script src='<%=ResolveUrl("~/vendors/jquery/dist/jquery.min.js")%>'></script>
     <script src='<%=ResolveUrl("~/vendors/jquery/dist/jquery.js")%>'></script>
+    <script src='<%=ResolveUrl("~/build/js/GraficasJS/GraficasMeEsPorDuracionVuelos.js")%>'></script>
+    <script src='<%=ResolveUrl("~/build/js/GraficasJS/GraficasMeEsPorAeropuerto.js")%>'></script>
+    <script src='<%=ResolveUrl("~/build/js/GraficasJS/GraficasMeEsPorProveedor.js")%>'></script>
     <script src='<%=ResolveUrl("~/build/js/GraficasJS/GraficasMeEs.js")%>'></script>
+
+
+    <asp:UpdateProgress ID="prgLoadingStatus" runat="server" DynamicLayout="true">
+        <ProgressTemplate>
+            <div id="overlay">
+                <div id="modalprogress">
+                    <div id="theprogress">
+                        <asp:Image ID="imgWaitIcon" runat="server" ImageAlign="AbsMiddle" ImageUrl="~/Images/loading.gif" Width="150" Height="130" />
+                    </div>
+                </div>
+            </div>
+        </ProgressTemplate>
+    </asp:UpdateProgress>
 </asp:Content>

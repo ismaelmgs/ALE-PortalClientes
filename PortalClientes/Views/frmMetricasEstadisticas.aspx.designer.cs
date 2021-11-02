@@ -524,5 +524,14 @@ namespace PortalClientes.Views {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList DDFiltroMesesV;
+        
+        /// <summary>
+        /// Control prgLoadingStatus.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.UpdateProgress prgLoadingStatus;
     }
 }

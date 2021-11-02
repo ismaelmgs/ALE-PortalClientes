@@ -23,7 +23,6 @@ $(document).ready(function () {
 
 function getUrl() {
     let value = window.location + "/GetGastos";
-    console.log(value);
     return value;
 }
 
@@ -146,6 +145,7 @@ function charts(data, ChartType) {
                 position: 'rigth',
                 alignment: 'center',
             },
+            colors: ['#3276ae', '#6aabc0', '#cf575e', '#eb924f', '#f6c543', '#d578a9', '#9889d1', '#89d193']
         };
 
         var optionsE = {
@@ -167,6 +167,7 @@ function charts(data, ChartType) {
                 position: 'rigth',
                 alignment: 'center',
             },
+            colors: ['#3276ae', '#6aabc0', '#cf575e', '#eb924f', '#f6c543', '#d578a9', '#9889d1', '#89d193']
         };
 
         var chart = new google.visualization.PieChart(document.getElementById('piechart_3d_1'));

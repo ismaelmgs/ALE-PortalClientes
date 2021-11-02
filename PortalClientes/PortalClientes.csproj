@@ -1554,7 +1554,10 @@
     <Compile Include="Objetos\Calendario.cs" />
     <Compile Include="Objetos\DatosMetricas.cs" />
     <Compile Include="Objetos\MatriculasUsuario.cs" />
+    <Compile Include="Objetos\responseGraficaAeropuerto.cs" />
+    <Compile Include="Objetos\responseGraficaDuracionVuelos.cs" />
     <Compile Include="Objetos\responseGraficaGastos.cs" />
+    <Compile Include="Objetos\responseGraficaProveedores.cs" />
     <Compile Include="Objetos\Tripulacion.cs" />
     <Compile Include="Presenter\MetricasEstadisticas_Presenter.cs" />
     <Compile Include="Presenter\Tripulacion_Presenter.cs" />

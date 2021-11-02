@@ -171,6 +171,40 @@ namespace PortalClientes.Views
             {
                 ddlFiltroResumenPeriodo.SelectedValue = v;
             }
+
+            var v2 = DDFiltroMesesPA.SelectedValue;
+            // llenar dropdown filtro
+            DDFiltroMesesPA.Items.Clear();
+            DDFiltroMesesPA.Items.Add(new ListItem(Properties.Resources.FiltroME_MA, "0"));
+            DDFiltroMesesPA.Items.Add(new ListItem(Properties.Resources.FiltroME_1M, "1"));
+            DDFiltroMesesPA.Items.Add(new ListItem(Properties.Resources.FiltroME_2M, "2"));
+            DDFiltroMesesPA.Items.Add(new ListItem(Properties.Resources.FiltroME_3M, "3"));
+
+            if (v2 == "")
+            {
+                DDFiltroMesesPA.SelectedIndex = 1;
+            }
+            else
+            {
+                DDFiltroMesesPA.SelectedValue = v;
+            }
+
+            var v3 = DDFiltroMesesV.SelectedValue;
+            // llenar dropdown filtro
+            DDFiltroMesesV.Items.Clear();
+            DDFiltroMesesV.Items.Add(new ListItem(Properties.Resources.FiltroME_MA, "0"));
+            DDFiltroMesesV.Items.Add(new ListItem(Properties.Resources.FiltroME_1M, "1"));
+            DDFiltroMesesV.Items.Add(new ListItem(Properties.Resources.FiltroME_2M, "2"));
+            DDFiltroMesesV.Items.Add(new ListItem(Properties.Resources.FiltroME_3M, "3"));
+
+            if (v3 == "")
+            {
+                DDFiltroMesesV.SelectedIndex = 1;
+            }
+            else
+            {
+                DDFiltroMesesV.SelectedValue = v;
+            }
         }
 
         public void GeneraRepResumen(int iTipoReporte)
@@ -671,7 +705,7 @@ namespace PortalClientes.Views
         [WebMethod]
         public static List<responseGraficaGastos> GetGastos(string meses, DateTime? fechaInicial, DateTime? fechaFinal, string rubro, int tipoRubro)
         {
-            DBDashboard oIGesCat = new DBDashboard();
+            DBMetricasEstatics oIGesCat = new DBMetricasEstatics();
 
             FiltroGraficaGastos fg = new FiltroGraficaGastos();
             fg.meses = meses;
@@ -692,19 +726,15 @@ namespace PortalClientes.Views
         }
 
         [WebMethod]
-        public static List<responseGraficaGastos> GetGastosProveedor(string meses, DateTime? fechaInicial, DateTime? fechaFinal, string rubro, int tipoRubro)
+        public static List<responseGraficaProveedores> GetGastosProveedor(string meses)
         {
-            DBDashboard oIGesCat = new DBDashboard();
+            DBMetricasEstatics oIGesCat = new DBMetricasEstatics();
 
-            FiltroGraficaGastos fg = new FiltroGraficaGastos();
+            FiltroGrafica fg = new FiltroGrafica();
             fg.meses = meses;
-            fg.fechaInicial = fechaInicial;
-            fg.fechaFinal = fechaFinal;
-            fg.rubro = 5; // modificar despues
-            fg.tipoRubro = tipoRubro;
 
-            List<responseGraficaGastos> lrg = new List<responseGraficaGastos>();
-            lrg = oIGesCat.ObtenerGastos(fg);
+            List<responseGraficaProveedores> lrg = new List<responseGraficaProveedores>();
+            lrg = oIGesCat.ObtenerGastosProveedor(fg);
 
             if (lrg.Count() > 0)
             {
@@ -715,19 +745,15 @@ namespace PortalClientes.Views
         }
 
         [WebMethod]
-        public static List<responseGraficaGastos> GetGastosAeropuerto(string meses, DateTime? fechaInicial, DateTime? fechaFinal, string rubro, int tipoRubro)
+        public static List<responseGraficaAeropuerto> GetGastosAeropuerto(string meses)
         {
-            DBDashboard oIGesCat = new DBDashboard();
+            DBMetricasEstatics oIGesCat = new DBMetricasEstatics();
 
-            FiltroGraficaGastos fg = new FiltroGraficaGastos();
+            FiltroGrafica fg = new FiltroGrafica();
             fg.meses = meses;
-            fg.fechaInicial = fechaInicial;
-            fg.fechaFinal = fechaFinal;
-            fg.rubro = 5; // modificar despues
-            fg.tipoRubro = tipoRubro;
 
-            List<responseGraficaGastos> lrg = new List<responseGraficaGastos>();
-            lrg = oIGesCat.ObtenerGastos(fg);
+            List<responseGraficaAeropuerto> lrg = new List<responseGraficaAeropuerto>();
+            lrg = oIGesCat.ObtenerGastosAeropuerto(fg);
 
             if (lrg.Count() > 0)
             {
@@ -738,19 +764,15 @@ namespace PortalClientes.Views
         }
 
         [WebMethod]
-        public static List<responseGraficaGastos> GetDuracionVuelos(string meses, DateTime? fechaInicial, DateTime? fechaFinal, string rubro, int tipoRubro)
+        public static List<responseGraficaDuracionVuelos> GetDuracionVuelos(string meses)
         {
-            DBDashboard oIGesCat = new DBDashboard();
+            DBMetricasEstatics oIGesCat = new DBMetricasEstatics();
 
-            FiltroGraficaGastos fg = new FiltroGraficaGastos();
+            FiltroGrafica fg = new FiltroGrafica();
             fg.meses = meses;
-            fg.fechaInicial = fechaInicial;
-            fg.fechaFinal = fechaFinal;
-            fg.rubro = 5; // modificar despues
-            fg.tipoRubro = tipoRubro;
 
-            List<responseGraficaGastos> lrg = new List<responseGraficaGastos>();
-            lrg = oIGesCat.ObtenerGastos(fg);
+            List<responseGraficaDuracionVuelos> lrg = new List<responseGraficaDuracionVuelos>();
+            lrg = oIGesCat.ObtenerDuracionVuelos(fg);
 
             if (lrg.Count() > 0)
             {
@@ -779,7 +801,7 @@ namespace PortalClientes.Views
             lblPromedioDePasajerosRes.Text = oMetEsta.TotalPasajeros.ToString();
 
 
-            lblTiempoPromedioRes.Text = oMetEsta.TiempoPromedio.ToString();
+            lblTiempoPromedioRes.Text = oMetEsta.TiempoPromedio != null ? oMetEsta.TiempoPromedio.ToString() : "00:00";
             lblDistanciaPromedioRes.Text = oMetEsta.DistanciaPromedio.ToString();
             lblPromedioPasajerosRes.Text = oMetEsta.PaxPromedio.ToString();
             lblCostoPromedioRes.Text = oMetEsta.PromedioMXN.ToString("C", CultureInfo.CreateSpecificCulture("es-MX"));

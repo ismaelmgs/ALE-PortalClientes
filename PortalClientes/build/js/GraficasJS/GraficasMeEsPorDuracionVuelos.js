@@ -1,49 +1,48 @@
 $(document).ready(function () {
     //const url = "http://192.168.1.250/PortalClientes/Views/frmMetricasEstadisticas.aspx/GetGastos"; // API URL
-    const url = getUrl(); // API URL
+    const url = getUrlDV(); // API URL
 
-    let obj = JSON.stringify({
+    let objDV = JSON.stringify({
         meses: $("#ContentPlaceHolder1_DDFiltroMesesV").val(),
     });
 
-    ajax_data(obj, url, function (data) {
-        charts(data, "PieChart"); // Pie Charts
+    ajax_data(objDV, url, function (dataDV) {
+        chartsDV(dataDV, "PieChart"); // Pie Charts
     });
 
     window.onresize = function () {
-        ajax_data(obj, url, function (data) {
-            charts(data, "PieChart"); // Pie Charts
+        ajax_data(objDV, url, function (dataDV) {
+            chartsDV(dataDV, "PieChart"); // Pie Charts
         });
     };
 });
 
-function getUrl() {
+function getUrlDV() {
     let value = window.location + "/GetDuracionVuelos";
-    console.log(value);
     return value;
 }
 
 $('#btnGraficasBuscar').click(function (event) {
 
     event.preventDefault();
-    ActualizarGrafica();
+    ActualizarGraficaDV();
 
 });
 
-function ActualizarGrafica() {
-    const url = getUrl(); // API URL
-    let obj = JSON.stringify({
+function ActualizarGraficaDV() {
+    const url = getUrlDV(); // API URL
+    let objDV = JSON.stringify({
         meses: $("#ContentPlaceHolder1_DDFiltroMesesV").val(),
     });
 
-    ajax_data(obj, url, function (data) {
-        charts(data, "PieChart"); // Pie Charts
+    ajax_data(objDV, url, function (dataDV) {
+        chartsDV(dataDV, "PieChart"); // Pie Charts
     });
 }
 
-function ajax_data(obj, url, success) {
+function ajax_data(objDV, url, success) {
     $.ajax({
-        data: obj,
+        data: objDV,
         contentType: "Application/json; charset=utf-8",
         responseType: "json",
         method: 'POST',
@@ -59,11 +58,11 @@ function ajax_data(obj, url, success) {
     });
 }
 
-function charts(data, ChartType) {
+function chartsDV(dataDV, ChartType) {
     var c = ChartType;
-    var jsonData = data;
+    var jsonDataDV = dataDV;
     google.charts.load("current", { packages: ["corechart"] });
-    google.charts.setOnLoadCallback(drawVisualization)
+    google.charts.setOnLoadCallback(drawVisualizationDV)
 
     function generarUrl(obtiene) {
         var url = "";
@@ -86,34 +85,27 @@ function charts(data, ChartType) {
         return url;
     }
 
-
-    function drawVisualization() {
+    function drawVisualizationDV() {
 
         var screenWidth = screen.width;
 
-        var data = new google.visualization.DataTable();
-        data.addColumn('string', 'Categoria');
-        data.addColumn('number', 'Costos');
-        data.addColumn({ type: 'string', role: 'tooltip' });
+        var dataDV_ = new google.visualization.DataTable();
+        dataDV_.addColumn('string', 'tipo');
+        dataDV_.addColumn('number', 'vuelos');
+        dataDV_.addColumn({ type: 'string', role: 'tooltip' });
 
-        const opt = { style: 'currency', currency: 'MXN' };
-        var numberFormat = new Intl.NumberFormat('es-MX', opt);
+        jsonDataDV.forEach((item, index) => {
 
-        const opt2 = { style: 'currency', currency: 'USD' };
-        const numberFormat2 = new Intl.NumberFormat('en-US', opt2);
-
-        jsonData.forEach((item, index) => {
-
-            if (jsonData[0].idioma == "es-MX") {
-                data.addRows([[item.rubroESP, item.totalMXN, `${item.rubroESP} - ${numberFormat.format(item.totalMXN)} MXN`,]]);
+            if (jsonDataDV[0].idioma == "es-MX") {
+                dataDV_.addRows([[item.DescripcionESP, item.noVuelos, `Vuelo ${item.DescripcionESP}: Total ${item.noVuelos}`,]]);
             } else {
-                data.addRows([[item.rubroENG, item.totalMXN, `${item.rubroENG} - ${numberFormat.format(item.totalMXN)} MXN`,]]);
+                dataDV_.addRows([[item.DescripcionENG, item.noVuelos, `Vuelo ${item.DescripcionESP}: Total ${item.noVuelos}`,]]);
             }
 
         });
 
-        var options = {
-            title: jsonData[0].idioma == "es-MX" ? "Vuelos por Duración" : "Filghts by Duration",
+        var optionsDV = {
+            title: jsonDataDV[0].idioma == "es-MX" ? "Vuelos por Duracion" : "Filghts by Duration",
             is3D: true, //Pie Charts
             fontSize: 9,
             chartArea: {
@@ -131,17 +123,18 @@ function charts(data, ChartType) {
                 position: 'rigth',
                 alignment: 'center',
             },
+            colors: ['#3276ae', '#6aabc0', '#cf575e', '#eb924f', '#f6c543', '#d578a9', '#9889d1', '#89d193']
         };
 
-        var chart = new google.visualization.PieChart(document.getElementById('piechart_3d_1'));
-        chart.draw(data, options);
+        var chartDV = new google.visualization.PieChart(document.getElementById('piechart_3d_5'));
+        chartDV.draw(dataDV_, optionsDV);
 
-        google.visualization.events.addListener(chart, 'select', function () {
-            var selection = chart.getSelection();
+        google.visualization.events.addListener(chartDV, 'select', function () {
+            var selection = chartDV.getSelection();
             if (selection.length) {
                 var row = selection[0].row;
 
-                let array = jsonData[row];
+                let array = jsonDataDV[row];
                 const gastos = array.Gastos
 
                 let obj = JSON.stringify({

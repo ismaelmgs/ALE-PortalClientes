@@ -1,49 +1,48 @@
 $(document).ready(function () {
     //const url = "http://192.168.1.250/PortalClientes/Views/frmMetricasEstadisticas.aspx/GetGastos"; // API URL
-    const url = getUrl(); // API URL
+    const url = getUrlA(); // API URL
 
-    let obj = JSON.stringify({
+    let objAe = JSON.stringify({
         meses: $("#ContentPlaceHolder1_DDFiltroMesesPA").val(),
     });
 
-    ajax_data(obj, url, function (data) {
-        charts(data, "PieChart"); // Pie Charts
+    ajax_data(objAe, url, function (dataAe) {
+        chartsAe(dataAe, "PieChart"); // Pie Charts
     });
 
     window.onresize = function () {
-        ajax_data(obj, url, function (data) {
-            charts(data, "PieChart"); // Pie Charts
+        ajax_data(objAe, url, function (dataAe) {
+            chartsAe(dataAe, "PieChart"); // Pie Charts
         });
     };
 });
 
-function getUrl() {
+function getUrlA() {
     let value = window.location + "/GetGastosAeropuerto";
-    console.log(value);
     return value;
 }
 
 $('#btnGraficasBuscarPA').click(function (event) {
 
     event.preventDefault();
-    ActualizarGrafica();
+    ActualizarGraficaAe();
 
 });
 
-function ActualizarGrafica() {
-    const url = getUrl(); // API URL
-    let obj = JSON.stringify({
+function ActualizarGraficaAe() {
+    const url = getUrlA(); // API URL
+    let objAe = JSON.stringify({
         meses: $("#ContentPlaceHolder1_DDFiltroMesesPA").val(),
     });
 
-    ajax_data(obj, url, function (data) {
-        charts(data, "PieChart"); // Pie Charts
+    ajax_data(objAe, url, function (dataAe) {
+        chartsAe(dataAe, "PieChart"); // Pie Charts
     });
 }
 
-function ajax_data(obj, url, success) {
+function ajax_data(objAe, url, success) {
     $.ajax({
-        data: obj,
+        data: objAe,
         contentType: "Application/json; charset=utf-8",
         responseType: "json",
         method: 'POST',
@@ -59,11 +58,11 @@ function ajax_data(obj, url, success) {
     });
 }
 
-function charts(data, ChartType) {
+function chartsAe(dataAe, ChartType) {
     var c = ChartType;
-    var jsonData = data;
+    var jsonDataAe = dataAe;
     google.charts.load("current", { packages: ["corechart"] });
-    google.charts.setOnLoadCallback(drawVisualization)
+    google.charts.setOnLoadCallback(drawVisualizationAe)
 
     function generarUrl(obtiene) {
         var url = "";
@@ -86,14 +85,14 @@ function charts(data, ChartType) {
         return url;
     }
 
-    function drawVisualization() {
+    function drawVisualizationAe() {
 
         var screenWidth = screen.width;
 
-        var data = new google.visualization.DataTable();
-        data.addColumn('string', 'Categoria');
-        data.addColumn('number', 'Costos');
-        data.addColumn({ type: 'string', role: 'tooltip' });
+        var dataAe_ = new google.visualization.DataTable();
+        dataAe_.addColumn('string', 'Aeropuertos');
+        dataAe_.addColumn('number', 'Costos');
+        dataAe_.addColumn({ type: 'string', role: 'tooltip' });
 
         const opt = { style: 'currency', currency: 'MXN' };
         var numberFormat = new Intl.NumberFormat('es-MX', opt);
@@ -101,18 +100,12 @@ function charts(data, ChartType) {
         const opt2 = { style: 'currency', currency: 'USD' };
         const numberFormat2 = new Intl.NumberFormat('en-US', opt2);
 
-        jsonData.forEach((item, index) => {
-
-            if (jsonData[0].idioma == "es-MX") {
-                data.addRows([[item.rubroESP, item.totalMXN, `${item.rubroESP} - ${numberFormat.format(item.totalMXN)} MXN`,]]);
-            } else {
-                data.addRows([[item.rubroENG, item.totalMXN, `${item.rubroENG} - ${numberFormat.format(item.totalMXN)} MXN`,]]);
-            }
-
+        jsonDataAe.forEach((item, index) => {
+            dataAe_.addRows([[item.aeropuerto, item.totalMXN, `${item.aeropuerto} - ${numberFormat.format(item.totalMXN)} MXN`,]]);
         });
 
-        var options = {
-            title: jsonData[0].idioma == "es-MX" ? "Gastos por Aeropuerto" : "Exoenses by Airport",
+        var optionsAe = {
+            title: jsonDataAe[0].idioma == "es-MX" ? "Gastos por Aeropuerto" : "Expenses by Airport",
             is3D: true, //Pie Charts
             fontSize: 9,
             chartArea: {
@@ -130,13 +123,14 @@ function charts(data, ChartType) {
                 position: 'rigth',
                 alignment: 'center',
             },
+            colors: ['#3276ae', '#6aabc0', '#cf575e', '#eb924f', '#f6c543', '#d578a9', '#9889d1', '#89d193']
         };
 
-        var chart = new google.visualization.PieChart(document.getElementById('piechart_3d_4'));
-        chart.draw(data, options);
+        var chartAero = new google.visualization.PieChart(document.getElementById('piechart_3d_4'));
+        chartAero.draw(dataAe_, optionsAe);
 
-        google.visualization.events.addListener(chart, 'select', function () {
-            var selection = chart.getSelection();
+        google.visualization.events.addListener(chartAero, 'select', function () {
+            var selection = chartAero.getSelection();
             if (selection.length) {
                 var row = selection[0].row;
 

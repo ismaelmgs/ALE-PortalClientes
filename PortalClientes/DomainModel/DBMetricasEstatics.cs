@@ -41,19 +41,21 @@ namespace PortalClientes.DomainModel
             return d;
         }
 
-        public List<responseGraficaGastos> ObtenerGastosProveedor(FiltroGraficaGastos filtro)
+        public List<responseGraficaProveedores> ObtenerGastosProveedor(FiltroGrafica filtro)
         {
             JavaScriptSerializer ser = new JavaScriptSerializer();
             ser.MaxJsonLength = 500000000;
-            List<responseGraficaGastos> d = new List<responseGraficaGastos>();
-            FiltroGraficaGastos oLog = new FiltroGraficaGastos();
+            List<responseGraficaProveedores> d = new List<responseGraficaProveedores>();
+            FiltroGrafica oLog = new FiltroGrafica();
             oLog = filtro;
             oLog.matricula = Utils.MatriculaActual;
-            oLog.idioma = Utils.Idioma;
+
+            oLog.matricula = "XA-CHY";
+            oLog.meses = "3";
 
             TokenWS oToken = Utils.ObtieneToken;
 
-            var client = new RestClient(Helper.D_UrlObbtenerGastoRubros);
+            var client = new RestClient(Helper.D_UrlObbtenerGastoProveedor);
             var request = new RestRequest(Method.POST);
             request.AddHeader("Authorization", oToken.token);
             request.AddJsonBody(oLog);
@@ -61,24 +63,26 @@ namespace PortalClientes.DomainModel
             IRestResponse response = client.Execute(request);
             var resp = response.Content;
 
-            d = ser.Deserialize<List<responseGraficaGastos>>(resp);
+            d = ser.Deserialize<List<responseGraficaProveedores>>(resp);
 
             return d;
         }
 
-        public List<responseGraficaGastos> ObtenerGastosAeropuerto(FiltroGraficaGastos filtro)
+        public List<responseGraficaAeropuerto> ObtenerGastosAeropuerto(FiltroGrafica filtro)
         {
             JavaScriptSerializer ser = new JavaScriptSerializer();
             ser.MaxJsonLength = 500000000;
-            List<responseGraficaGastos> d = new List<responseGraficaGastos>();
-            FiltroGraficaGastos oLog = new FiltroGraficaGastos();
+            List<responseGraficaAeropuerto> d = new List<responseGraficaAeropuerto>();
+            FiltroGrafica oLog = new FiltroGrafica();
             oLog = filtro;
             oLog.matricula = Utils.MatriculaActual;
-            oLog.idioma = Utils.Idioma;
+
+            oLog.matricula = "XA-CHY";
+            oLog.meses = "3";
 
             TokenWS oToken = Utils.ObtieneToken;
 
-            var client = new RestClient(Helper.D_UrlObbtenerGastoRubros);
+            var client = new RestClient(Helper.D_UrlObbtenerGastoAeropuerto);
             var request = new RestRequest(Method.POST);
             request.AddHeader("Authorization", oToken.token);
             request.AddJsonBody(oLog);
@@ -86,24 +90,26 @@ namespace PortalClientes.DomainModel
             IRestResponse response = client.Execute(request);
             var resp = response.Content;
 
-            d = ser.Deserialize<List<responseGraficaGastos>>(resp);
+            d = ser.Deserialize<List<responseGraficaAeropuerto>>(resp);
 
             return d;
         }
 
-        public List<responseGraficaGastos> ObtenerDuracionVuelos(FiltroGraficaGastos filtro)
+        public List<responseGraficaDuracionVuelos> ObtenerDuracionVuelos(FiltroGrafica filtro)
         {
             JavaScriptSerializer ser = new JavaScriptSerializer();
             ser.MaxJsonLength = 500000000;
-            List<responseGraficaGastos> d = new List<responseGraficaGastos>();
-            FiltroGraficaGastos oLog = new FiltroGraficaGastos();
+            List<responseGraficaDuracionVuelos> d = new List<responseGraficaDuracionVuelos>();
+            FiltroGrafica oLog = new FiltroGrafica();
             oLog = filtro;
             oLog.matricula = Utils.MatriculaActual;
-            oLog.idioma = Utils.Idioma;
+
+            oLog.matricula = "XA-CHY";
+            oLog.meses = "3";
 
             TokenWS oToken = Utils.ObtieneToken;
 
-            var client = new RestClient(Helper.D_UrlObbtenerGastoRubros);
+            var client = new RestClient(Helper.D_UrlObbtenerTiemposVuelo);
             var request = new RestRequest(Method.POST);
             request.AddHeader("Authorization", oToken.token);
             request.AddJsonBody(oLog);
@@ -111,7 +117,7 @@ namespace PortalClientes.DomainModel
             IRestResponse response = client.Execute(request);
             var resp = response.Content;
 
-            d = ser.Deserialize<List<responseGraficaGastos>>(resp);
+            d = ser.Deserialize<List<responseGraficaDuracionVuelos>>(resp);
 
             return d;
         }
