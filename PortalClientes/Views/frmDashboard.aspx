@@ -61,18 +61,18 @@
                     </div>
                     <br />
                     <div class="row">
-                        <div class="col-md-4">
+                        <div class="col-md-2">
                             <asp:Label ID="lblSalida" runat="server" Text=""></asp:Label>
                         </div>
-                        <div class="col-md-8">
+                        <div class="col-md-10">
                             <asp:Label ID="lblSalidaText" runat="server" Text="---" Font-Bold="true"></asp:Label>
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-md-4">
+                        <div class="col-md-2">
                             <asp:Label ID="lblLlego" runat="server" Text=""></asp:Label>
                         </div>
-                        <div class="col-md-8">
+                        <div class="col-md-10">
                             <asp:Label ID="lblLlegoText" runat="server" Text="---" Font-Bold="true"></asp:Label>
                         </div>
                     </div>
@@ -248,9 +248,18 @@
                                         <td>
                                             <span style="font-weight:bold;">
                                                 <asp:Label ID="lblDeclaracionMesAno1" runat="server" Text="Marzo 2021" Font-Bold="true"></asp:Label>
-                                                    <br />
-                                                <asp:Label ID="lblVence" runat="server" Text="Vence:" Font-Bold="true"></asp:Label>
-                                                    <br />
+                                            </span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td valign="top">
+                                            <asp:Label ID="lblVence" runat="server" Text="Vence:" Font-Bold="true"></asp:Label>
+                                        </td>
+                                        <td>
+                                            &nbsp;&nbsp;&nbsp;
+                                        </td>
+                                        <td>
+                                            <span style="font-weight:bold;">
                                                 <asp:Label ID="lblDeclaracionMesAno2" runat="server" Text="Abril 15 2020" Font-Bold="true"></asp:Label>
                                             </span>
                                         </td>
@@ -291,7 +300,7 @@
                         <asp:DropDownList ID="ddlTipoRubro" runat="server" CssClass="form-control" Width="100%"></asp:DropDownList>
                     </div>
                     <div class="col-md-2">
-                        <button id="btnGraficasBuscar" class="btn btn-primary"><i class='fa fa-undo' style='color:#ffffff;font-size:14px;'></i></button>
+                        <button id="btnGraficasBuscar" class="btn">&nbsp;&nbsp;<i class='fa fa-undo' style='color:#73879c;font-size:23px;'></i>&nbsp;&nbsp;</button>
                     </div>
                 </div>
                 <div class="row">

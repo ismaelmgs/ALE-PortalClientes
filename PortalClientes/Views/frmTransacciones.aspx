@@ -91,10 +91,10 @@
                         </asp:dropdownlist>
                     </li>--%>
                     <li style="padding-left:5px;">
-                        <asp:LinkButton ID="btnExcel" runat="server" Text="<i class='fa fa-file-excel-o' style='color:#ffffff;font-size:22px;'></i>" CssClass="btn btn-primary" OnClick="btnExcel_Click"/>
+                        <asp:LinkButton ID="btnExcel" runat="server" Text="<i class='fa fa-file-excel-o' style='color:#73879c;font-size:25px;'></i>" CssClass="btn" OnClick="btnExcel_Click"/>
                     </li>
                     <li>
-                        <asp:LinkButton ID="btnPDF" runat="server" Text="<i class='fa fa-file-pdf-o' style='color:#ffffff;font-size:22px;'></i>" CssClass="btn btn-primary" OnClick="btnPDF_Click"/>
+                        <asp:LinkButton ID="btnPDF" runat="server" Text="<i class='fa fa-file-pdf-o' style='color:#73879c;font-size:25px;'></i>" CssClass="btn" OnClick="btnPDF_Click"/>
                     </li>
                     <%--<li>
                         <a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
@@ -166,7 +166,7 @@
             </div>
             <hr style="border:1px solid #efefef;" />
             <div style="width:100%; text-align:center;">
-                <asp:LinkButton ID="btnRegresar" runat="server" Text="<i class='fa fa-undo' style='color:#ffffff;font-size:14px;'></i> Dashboard <i class='fa fa-th-large' style='color:#ffffff;font-size:14px;'></i>" CssClass="btn btn-primary" href="frmDashboard.aspx" />
+                <asp:LinkButton ID="btnRegresar" runat="server" Text="<i class='fa fa-undo' style='color:#73879C;font-size:14px;'></i> Dashboard <i class='fa fa-th-large' style='color:#73879C;font-size:14px;'></i>" CssClass="btn" href="frmDashboard.aspx" />
             </div>
         </div>
     </div>
