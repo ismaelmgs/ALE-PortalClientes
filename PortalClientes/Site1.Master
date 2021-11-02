@@ -94,7 +94,7 @@
                         <div class="profile_info">
                             <!-- <span>Welcome,</span> -->
                             <br />
-                            <asp:Label ID="lblAeronaveLat" runat="server" Text="" Font-Bold="true" Style="font-size: 25px;"></asp:Label>
+                            <asp:Label ID="lblAeronaveLat" runat="server" Text="" Font-Bold="true" Style="font-size: 20px;"></asp:Label>
                         </div>
                     </div>
                     <!-- /menu profile quick info -->
