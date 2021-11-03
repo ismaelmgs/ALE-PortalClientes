@@ -138,13 +138,24 @@ function chartsProv(dataProve, ChartType) {
                 var row = selection[0].row;
 
                 let array = jsonData[row];
-                const gastos = array.Gastos
+                const gastosProv = array.gastos
+
+                let vuelos = []
+
+                let gastos = []
+
+                let gastosAe = []
 
                 let obj = JSON.stringify({
-                    gastos: gastos,
+                    vuelos,
+                    gastos,
+                    gastosAe,
+                    gastosProv,
+                    tipoTrans: 3,
                     tipoDet: "MXN",
-                    rubroEsp: array.rubroESP,
-                    rubroEng: array.rubroENG
+                    descES: array.proveedor,
+                    descEN: "",
+                    origen: 2,
                 });
 
                 $.ajax({

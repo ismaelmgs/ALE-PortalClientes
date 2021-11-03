@@ -185,11 +185,22 @@ function charts(data, ChartType) {
                 let array = jsonData[row];
                 const gastos = array.Gastos
 
+                let vuelos = []
+
+                let gastosProv = []
+
+                let gastosAe = []
+
                 let obj = JSON.stringify({
-                    gastos: gastos,
+                    vuelos,
+                    gastos,
+                    gastosAe,
+                    gastosProv,
+                    tipoTrans: 1,
                     tipoDet: "MXN",
-                    rubroEsp: array.rubroESP,
-                    rubroEng: array.rubroENG
+                    descES: array.rubroESP,
+                    descEN: array.rubroENG,
+                    origen: 1,
                 });
 
                 $.ajax({
@@ -205,7 +216,7 @@ function charts(data, ChartType) {
                     error: function (err) {
                         console.log("Error In Connecting", err);
                     }
-                }); 
+                });
             }
         });
 
@@ -217,11 +228,22 @@ function charts(data, ChartType) {
                 let array = jsonData[row];
                 const gastos = array.Gastos
 
+                let vuelos = []
+
+                let gastosProv = []
+
+                let gastosAe = []
+
                 let obj = JSON.stringify({
-                    gastos: gastos,
+                    vuelos,
+                    gastos,
+                    gastosAe,
+                    gastosProv,
+                    tipoTrans: 1,
                     tipoDet: "USD",
-                    rubroEsp: array.rubroESP,
-                    rubroEng: array.rubroENG
+                    descES: array.rubroESP,
+                    descEN: array.rubroENG,
+                    origen: 1,
                 });
 
                 $.ajax({

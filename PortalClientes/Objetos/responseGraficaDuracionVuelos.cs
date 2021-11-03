@@ -21,8 +21,8 @@ namespace PortalClientes.Objetos
         public int anio { get; set; }
         public string origen { get; set; }
         public string destino { get; set; }
-        public DateTime origenVuelo { get; set; }
-        public DateTime destinoVuelo { get; set; }
+        public string origenVuelo { get; set; }
+        public string destinoVuelo { get; set; }
         public string tiempoVlo { get; set; }
         public int categoria { get; set; }
     }

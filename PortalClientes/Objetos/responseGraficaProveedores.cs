@@ -42,7 +42,7 @@ namespace PortalClientes.Objetos
         public string TipoMoneda { get; set; }
         public int Mes { get; set; }
         public int Anio { get; set; }
-        public int NoPiema { get; set; }
+        public int NoPierna { get; set; }
         public string Proveedor { get; set; }
         public string Categoria { get; set; }
         public string Origen { get; set; }

@@ -143,7 +143,7 @@
                         <div class="card-box table-responsive">
                             <asp:GridView ID="gvGastos" runat="server" AutoGenerateColumns="false" CssClass="table table-striped table-bordered table-hover" AllowPaging="true"
                                 OnPageIndexChanging="gvGastos_PageIndexChanging" OnRowDataBound="gvGastos_RowDataBound" EmptyDataText="No Registros">
-                                <Columns>
+                                <%--<Columns>
                                     <asp:BoundField DataField="mes" />
                                     <asp:BoundField DataField="idRubro" />
                                     <asp:BoundField DataField="Rubro" />
@@ -152,12 +152,12 @@
                                             <asp:Label runat="server" ID="lblTotal" Text='<%# String.Format("{0:C}",DataBinder.Eval(Container.DataItem,"Total"))%>'></asp:Label>
                                         </ItemTemplate>
                                     </asp:TemplateField>
-                                    <%--<asp:BoundField DataField="Total" DataFormatString="{0:c}" />--%>
+                                    <%--<asp:BoundField DataField="Total" DataFormatString="{0:c}" />--%
                                     <asp:BoundField DataField="Fecha" />
                                     <asp:BoundField DataField="Categoria" />
                                     <asp:BoundField DataField="tipodeGasto" />
                                     <asp:BoundField DataField="comentarios" />
-                                </Columns>
+                                </Columns>--%>
                             </asp:GridView>
                         </div>
                     </div>
@@ -166,7 +166,8 @@
             </div>
             <hr style="border:1px solid #efefef;" />
             <div style="width:100%; text-align:center;">
-                <asp:LinkButton ID="btnRegresar" runat="server" Text="<i class='fa fa-undo' style='color:#73879C;font-size:14px;'></i> Dashboard <i class='fa fa-th-large' style='color:#73879C;font-size:14px;'></i>" CssClass="btn" href="frmDashboard.aspx" />
+                <asp:LinkButton ID="btnRegresarMeEs" runat="server" Text="<i class='fa fa-undo' style='color:#73879C;font-size:14px;'></i> Metricas y Estadisticas <i class='fa fa-th-large' style='color:#73879C;font-size:14px;'></i>" CssClass="btn" href="frmMetricasEstadisticas.aspx" />
+                <asp:LinkButton ID="btnRegresarDash" runat="server" Text="<i class='fa fa-undo' style='color:#73879C;font-size:14px;'></i> Dashboard <i class='fa fa-th-large' style='color:#73879C;font-size:14px;'></i>" CssClass="btn" href="frmDashboard.aspx" />
             </div>
         </div>
     </div>

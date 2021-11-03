@@ -7,13 +7,11 @@
 // </generado automáticamente>
 //------------------------------------------------------------------------------
 
-namespace PortalClientes.Views
-{
-
-
-    public partial class frmTransacciones
-    {
-
+namespace PortalClientes.Views {
+    
+    
+    public partial class frmTransacciones {
+        
         /// <summary>
         /// Control lblTitulo.
         /// </summary>
@@ -22,7 +20,7 @@ namespace PortalClientes.Views
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblTitulo;
-
+        
         /// <summary>
         /// Control lblTotalTrasn.
         /// </summary>
@@ -31,7 +29,7 @@ namespace PortalClientes.Views
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblTotalTrasn;
-
+        
         /// <summary>
         /// Control lblTotalTrasnRes.
         /// </summary>
@@ -40,7 +38,7 @@ namespace PortalClientes.Views
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblTotalTrasnRes;
-
+        
         /// <summary>
         /// Control lblTotal.
         /// </summary>
@@ -49,7 +47,7 @@ namespace PortalClientes.Views
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblTotal;
-
+        
         /// <summary>
         /// Control lblTotalRes.
         /// </summary>
@@ -58,7 +56,7 @@ namespace PortalClientes.Views
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblTotalRes;
-
+        
         /// <summary>
         /// Control lblPromedio.
         /// </summary>
@@ -67,7 +65,7 @@ namespace PortalClientes.Views
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblPromedio;
-
+        
         /// <summary>
         /// Control lblPromedioRes.
         /// </summary>
@@ -76,7 +74,7 @@ namespace PortalClientes.Views
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblPromedioRes;
-
+        
         /// <summary>
         /// Control lblTransacciones.
         /// </summary>
@@ -85,7 +83,7 @@ namespace PortalClientes.Views
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblTransacciones;
-
+        
         /// <summary>
         /// Control btnExcel.
         /// </summary>
@@ -94,7 +92,7 @@ namespace PortalClientes.Views
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.LinkButton btnExcel;
-
+        
         /// <summary>
         /// Control btnPDF.
         /// </summary>
@@ -103,7 +101,7 @@ namespace PortalClientes.Views
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.LinkButton btnPDF;
-
+        
         /// <summary>
         /// Control gvGastos.
         /// </summary>
@@ -112,14 +110,23 @@ namespace PortalClientes.Views
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.GridView gvGastos;
-
+        
         /// <summary>
-        /// Control btnRegresar.
+        /// Control btnRegresarMeEs.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton btnRegresar;
+        protected global::System.Web.UI.WebControls.LinkButton btnRegresarMeEs;
+        
+        /// <summary>
+        /// Control btnRegresarDash.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton btnRegresarDash;
     }
 }

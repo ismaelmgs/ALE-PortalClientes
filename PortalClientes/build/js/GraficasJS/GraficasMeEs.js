@@ -182,13 +182,24 @@ function charts(data, ChartType) {
                 var row = selection[0].row;
 
                 let array = jsonData[row];
-                const gastos = array.Gastos
+                const gastos= array.Gastos
+
+                let vuelos = []
+
+                let gastosProv = []
+
+                let gastosAe = []
 
                 let obj = JSON.stringify({
-                    gastos: gastos,
+                    vuelos,
+                    gastos,
+                    gastosAe,
+                    gastosProv,
+                    tipoTrans: 1,
                     tipoDet: "MXN",
-                    rubroEsp: array.rubroESP,
-                    rubroEng: array.rubroENG
+                    descES: array.rubroESP,
+                    descEN: array.rubroENG,
+                    origen: 2,
                 });
 
                 $.ajax({
@@ -216,11 +227,22 @@ function charts(data, ChartType) {
                 let array = jsonData[row];
                 const gastos = array.Gastos
 
+                let vuelos = []
+
+                let gastosProv = []
+
+                let gastosAe = []
+
                 let obj = JSON.stringify({
-                    gastos: gastos,
+                    vuelos,
+                    gastos,
+                    gastosAe,
+                    gastosProv,
+                    tipoTrans: 1,
                     tipoDet: "USD",
-                    rubroEsp: array.rubroESP,
-                    rubroEng: array.rubroENG
+                    descES: array.rubroESP,
+                    descEN: array.rubroENG,
+                    origen: 2,
                 });
 
                 $.ajax({

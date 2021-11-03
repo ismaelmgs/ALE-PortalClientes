@@ -64,7 +64,7 @@ function chartsAe(dataAe, ChartType) {
     google.charts.load("current", { packages: ["corechart"] });
     google.charts.setOnLoadCallback(drawVisualizationAe)
 
-    function generarUrl(obtiene) {
+    function generarUrlAe(obtiene) {
         var url = "";
 
         if (obtiene) {
@@ -134,14 +134,25 @@ function chartsAe(dataAe, ChartType) {
             if (selection.length) {
                 var row = selection[0].row;
 
-                let array = jsonData[row];
-                const gastos = array.Gastos
+                let array = jsonDataAe[row];
+                const gastosAe = array.gastos
+
+                let vuelos = []
+
+                let gastos = []
+
+                let gastosProv = []
 
                 let obj = JSON.stringify({
-                    gastos: gastos,
+                    vuelos,
+                    gastos,
+                    gastosAe,
+                    gastosProv,
+                    tipoTrans: 2,
                     tipoDet: "MXN",
-                    rubroEsp: array.rubroESP,
-                    rubroEng: array.rubroENG
+                    descES: array.aeropuerto,
+                    descEN: "",
+                    origen: 2,
                 });
 
                 $.ajax({
@@ -149,10 +160,10 @@ function chartsAe(dataAe, ChartType) {
                     contentType: "Application/json; charset=utf-8",
                     responseType: "json",
                     method: 'POST',
-                    url: generarUrl(true),
+                    url: generarUrlAe(true),
                     dataType: "json",
                     success: function (response) {
-                        window.location.pathname = generarUrl(false);
+                        window.location.pathname = generarUrlAe(false);
                     },
                     error: function (err) {
                         console.log("Error In Connecting", err);
