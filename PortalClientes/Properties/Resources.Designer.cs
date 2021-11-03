@@ -19,7 +19,7 @@ namespace PortalClientes.Properties {
     // a través de una herramienta como ResGen o Visual Studio.
     // Para agregar o quitar un miembro, edite el archivo .ResX y, a continuación, vuelva a ejecutar ResGen
     // con la opción /str o recompile su proyecto de VS.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "15.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "16.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     internal class Resources {
@@ -331,7 +331,7 @@ namespace PortalClientes.Properties {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Ultimo Pago.
+        ///   Busca una cadena traducida similar a Último Pago.
         /// </summary>
         internal static string Das_UltimaDeclaracion {
             get {
@@ -412,7 +412,7 @@ namespace PortalClientes.Properties {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Ultimo Mes.
+        ///   Busca una cadena traducida similar a Último Mes.
         /// </summary>
         internal static string FiltroME_1M {
             get {
@@ -421,7 +421,7 @@ namespace PortalClientes.Properties {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Ultimos 2 Meses.
+        ///   Busca una cadena traducida similar a Últimos 2 Meses.
         /// </summary>
         internal static string FiltroME_2M {
             get {
@@ -430,7 +430,7 @@ namespace PortalClientes.Properties {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Ultimos 3 Meses.
+        ///   Busca una cadena traducida similar a Últimos 3 Meses.
         /// </summary>
         internal static string FiltroME_3M {
             get {
@@ -493,7 +493,7 @@ namespace PortalClientes.Properties {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Costo por Categoria.
+        ///   Busca una cadena traducida similar a Costo por Categoría.
         /// </summary>
         internal static string ME_CostoCat {
             get {
@@ -583,7 +583,7 @@ namespace PortalClientes.Properties {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Informacion General.
+        ///   Busca una cadena traducida similar a Información General.
         /// </summary>
         internal static string ME_InfoGeneral {
             get {
@@ -592,7 +592,7 @@ namespace PortalClientes.Properties {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Numero pasajeros.
+        ///   Busca una cadena traducida similar a Número pasajeros.
         /// </summary>
         internal static string ME_NumeroPasajeros {
             get {
@@ -1159,7 +1159,7 @@ namespace PortalClientes.Properties {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Categoria.
+        ///   Busca una cadena traducida similar a Categoría.
         /// </summary>
         internal static string TabTran_Categoria {
             get {
@@ -1312,7 +1312,7 @@ namespace PortalClientes.Properties {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Asignar modulos.
+        ///   Busca una cadena traducida similar a Asignar módulos.
         /// </summary>
         internal static string Us_AsignarModulos {
             get {
@@ -1366,7 +1366,7 @@ namespace PortalClientes.Properties {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Matricula.
+        ///   Busca una cadena traducida similar a Matrícula.
         /// </summary>
         internal static string Us_Matricula {
             get {
@@ -1375,7 +1375,7 @@ namespace PortalClientes.Properties {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Modulo.
+        ///   Busca una cadena traducida similar a Módulo.
         /// </summary>
         internal static string Us_Modulo {
             get {
@@ -1429,7 +1429,7 @@ namespace PortalClientes.Properties {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Telefono oficina:.
+        ///   Busca una cadena traducida similar a Teléfono oficina:.
         /// </summary>
         internal static string Us_TelefonoOficina {
             get {
@@ -1456,7 +1456,7 @@ namespace PortalClientes.Properties {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Asignación de matriculas.
+        ///   Busca una cadena traducida similar a Asignación de matrículas.
         /// </summary>
         internal static string Us_TituloMats {
             get {
@@ -1465,7 +1465,7 @@ namespace PortalClientes.Properties {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Asignación de modulos.
+        ///   Busca una cadena traducida similar a Asignación de módulos.
         /// </summary>
         internal static string Us_TituloModulos {
             get {
@@ -1492,7 +1492,7 @@ namespace PortalClientes.Properties {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Asignar matriculas.
+        ///   Busca una cadena traducida similar a Asignar matrículas.
         /// </summary>
         internal static string Us_TtipMats {
             get {
