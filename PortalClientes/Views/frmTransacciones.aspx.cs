@@ -17,6 +17,7 @@ using System.Drawing;
 using iTextSharp.text;
 using iTextSharp.text.html.simpleparser;
 using iTextSharp.text.pdf;
+using System.Threading;
 
 namespace PortalClientes.Views
 {
@@ -82,11 +83,22 @@ namespace PortalClientes.Views
                     if (od == 1)
                     {
                         btnRegresarMeEs.Visible = false;
+                        btnRegresarMeEsEng.Visible = false;
                         btnRegresarDash.Visible = true;
                     }
                     else
                     {
-                        btnRegresarMeEs.Visible = true;
+                        
+                        if (Utils.Idioma == "es-MX")
+                        {
+                            btnRegresarMeEs.Visible = true;
+                            btnRegresarMeEsEng.Visible = false;
+                        }
+                        else
+                        {
+                            btnRegresarMeEs.Visible = false;
+                            btnRegresarMeEsEng.Visible = true;
+                        }
                         btnRegresarDash.Visible = false;
                     }
                 } 
@@ -154,6 +166,7 @@ namespace PortalClientes.Views
         {
             var tipo = Convert.ToInt32(Session["tipoTransaccion"]);
             Transacciones transacciones = new Transacciones();
+            gvGastos.Columns.Clear();
             gvGastos.PageIndex = e.NewPageIndex;
             if (tipo == 1)
             {
@@ -401,12 +414,6 @@ namespace PortalClientes.Views
             lblPromedio.Text = Properties.Resources.TabTran_PromedioMens;
         }
 
-        public string MonthName(int month)
-        {
-            DateTimeFormatInfo dtinfo = new CultureInfo("es-ES", false).DateTimeFormat;
-            return dtinfo.GetMonthName(month);
-        }
-
         [WebMethod]
         public static void ObtenerTransacciones(List<gasto> gastos, List<gastoAeropuerto> gastosAe, List<gastoProveedor> gastosProv, List<vuelo> vuelos, int tipoTrans, string tipoDet, string descES, string descEN, int origen)
         {
@@ -421,8 +428,10 @@ namespace PortalClientes.Views
             List<vuelo> gvv = new List<vuelo>();
 
             DateTimeFormatInfo month = null;
+            CultureInfo cultureInfo = Thread.CurrentThread.CurrentCulture;
+            TextInfo textInfo = cultureInfo.TextInfo;
 
-            if(Utils.Idioma == "es-MX")
+            if (Utils.Idioma == "es-MX")
             {
                 month = new CultureInfo("es-ES", false).DateTimeFormat;
             }
@@ -478,7 +487,7 @@ namespace PortalClientes.Views
                     g.IdRubro = item.idRubro.Value;
                     g.Rubro = Utils.Idioma == "es-MX" ? item.rubroESP : item.rubroENG;
                     g.Total = item.totalMXN;
-                    g.Mes = month.GetMonthName(item.mes.Value);
+                    g.Mes = textInfo.ToTitleCase(month.GetMonthName(item.mes.Value));
                     g.Anio = item.anio.HasValue ? item.anio.Value : 0;
                     g.NoPierna = item.noPierna.HasValue ? item.noPierna.Value : 0;
                     g.Proveedor = item.proveedor;
@@ -501,7 +510,7 @@ namespace PortalClientes.Views
                     g.IdRubro = item.idRubro.Value;
                     g.Rubro = Utils.Idioma == "es-MX" ? item.rubroESP : item.rubroENG;
                     g.Total = item.totalMXN;
-                    g.Mes = month.GetMonthName(item.mes.Value);
+                    g.Mes = textInfo.ToTitleCase(month.GetMonthName(item.mes.Value));
                     g.Anio = item.anio.HasValue ? item.anio.Value : 0;
                     g.NoPierna = item.noPierna.HasValue ? item.noPierna.Value : 0;
                     g.Proveedor = item.proveedor;
@@ -521,7 +530,7 @@ namespace PortalClientes.Views
                 foreach (var item in vuelos)
                 {
                     vuelo g = new vuelo();
-                    g.mes = month.GetMonthName(Convert.ToInt32(item.mes));
+                    g.mes = textInfo.ToTitleCase(month.GetMonthName(Convert.ToInt32(item.mes)));
                     g.anio = item.anio;
                     g.origen = item.origen;
                     g.destino = item.destino;

@@ -154,7 +154,7 @@ function chartsProv(dataProve, ChartType) {
                     tipoTrans: 3,
                     tipoDet: "MXN",
                     descES: array.proveedor,
-                    descEN: "",
+                    descEN: array.proveedor,
                     origen: 2,
                 });
 

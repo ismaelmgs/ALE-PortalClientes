@@ -151,7 +151,7 @@ function chartsAe(dataAe, ChartType) {
                     tipoTrans: 2,
                     tipoDet: "MXN",
                     descES: array.aeropuerto,
-                    descEN: "",
+                    descEN: array.aeropuerto,
                     origen: 2,
                 });
 
