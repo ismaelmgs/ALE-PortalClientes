@@ -648,4 +648,178 @@
   <data name="Ca_DetalleVuelo" xml:space="preserve">
     <value>Detalle de vuelo</value>
   </data>
+  <data name="Ca_Aeronave" xml:space="preserve">
+    <value>Aeronave</value>
+  </data>
+  <data name="Ca_AeropuertoLlegada" xml:space="preserve">
+    <value>Aeropuerto de Llegada</value>
+  </data>
+  <data name="Ca_AeropuertoSalida" xml:space="preserve">
+    <value>Aeropuerto de Salida</value>
+  </data>
+  <data name="Ca_BloqueTiempo" xml:space="preserve">
+    <value>Bloque de Tiempo</value>
+  </data>
+  <data name="Ca_Catering" xml:space="preserve">
+    <value>Catering</value>
+  </data>
+  <data name="Ca_DatosVuelo" xml:space="preserve">
+    <value>Datos de Vuelos</value>
+  </data>
+  <data name="Ca_Descripcion" xml:space="preserve">
+    <value>Descripción</value>
+  </data>
+  <data name="Ca_Direccion" xml:space="preserve">
+    <value>Dirección</value>
+  </data>
+  <data name="Ca_Distancia" xml:space="preserve">
+    <value>Distancia</value>
+  </data>
+  <data name="Ca_Email" xml:space="preserve">
+    <value>Email</value>
+  </data>
+  <data name="Ca_EmailCatering" xml:space="preserve">
+    <value>Email</value>
+  </data>
+  <data name="Ca_Estatus" xml:space="preserve">
+    <value>Estatus</value>
+  </data>
+  <data name="Ca_FBO" xml:space="preserve">
+    <value>FBO</value>
+  </data>
+  <data name="Ca_FechaArrivo" xml:space="preserve">
+    <value>Fecha de Arribo</value>
+  </data>
+  <data name="Ca_FechaBloque" xml:space="preserve">
+    <value>Fecha de Bloque</value>
+  </data>
+  <data name="Ca_FechaFueraBloque" xml:space="preserve">
+    <value>Fecha Fuera del Bloque</value>
+  </data>
+  <data name="Ca_FechaSalida" xml:space="preserve">
+    <value>Fecha de Salida</value>
+  </data>
+  <data name="Ca_HoraArrivo" xml:space="preserve">
+    <value>Hora de Arribo</value>
+  </data>
+  <data name="Ca_HoraBloque" xml:space="preserve">
+    <value>Hora de Bloque</value>
+  </data>
+  <data name="Ca_HoraSalida" xml:space="preserve">
+    <value>Hora de Salida</value>
+  </data>
+  <data name="Ca_InformacionGeneral" xml:space="preserve">
+    <value>Información General</value>
+  </data>
+  <data name="Ca_LlegadaFBO" xml:space="preserve">
+    <value>Llegada FBO</value>
+  </data>
+  <data name="Ca_LlegadaTransporte" xml:space="preserve">
+    <value>Llegada Transporte</value>
+  </data>
+  <data name="Ca_LlegadaTransporteEmail" xml:space="preserve">
+    <value>Email</value>
+  </data>
+  <data name="Ca_LlegadaTransporteNotas" xml:space="preserve">
+    <value>Notas</value>
+  </data>
+  <data name="Ca_LlegadaTransporteTelefono" xml:space="preserve">
+    <value>Teléfono</value>
+  </data>
+  <data name="Ca_MiembrosTripulacion" xml:space="preserve">
+    <value>Miembros Tripulación</value>
+  </data>
+  <data name="Ca_NombreContacto" xml:space="preserve">
+    <value>Nombre de Contacto</value>
+  </data>
+  <data name="Ca_Notas" xml:space="preserve">
+    <value>Notas</value>
+  </data>
+  <data name="Ca_NotasCatering" xml:space="preserve">
+    <value>Notas</value>
+  </data>
+  <data name="Ca_NumeroPasajeros" xml:space="preserve">
+    <value>Número Pasajeros</value>
+  </data>
+  <data name="Ca_Objetivo" xml:space="preserve">
+    <value>Objetivo</value>
+  </data>
+  <data name="Ca_Pasajeros" xml:space="preserve">
+    <value>Pasajeros</value>
+  </data>
+  <data name="Ca_Regulacion" xml:space="preserve">
+    <value>Regulación</value>
+  </data>
+  <data name="Ca_SalidaFBO" xml:space="preserve">
+    <value>Salida FBO</value>
+  </data>
+  <data name="Ca_SalidaLlegada" xml:space="preserve">
+    <value>Salida de: &amp;#x2794; Llegada a:</value>
+  </data>
+  <data name="Ca_SalidaTransporte" xml:space="preserve">
+    <value>Salida Trasporte</value>
+  </data>
+  <data name="Ca_SalidaTransporteEmail" xml:space="preserve">
+    <value>Email</value>
+  </data>
+  <data name="Ca_SalidaTransporteNotas" xml:space="preserve">
+    <value>Notas</value>
+  </data>
+  <data name="Ca_SalidaTransporteTelefono" xml:space="preserve">
+    <value>Teléfono</value>
+  </data>
+  <data name="Ca_SegundaDireccion" xml:space="preserve">
+    <value>Dirección</value>
+  </data>
+  <data name="Ca_SegundaNotas" xml:space="preserve">
+    <value>Notas</value>
+  </data>
+  <data name="Ca_SegundoEmail" xml:space="preserve">
+    <value>Email</value>
+  </data>
+  <data name="Ca_SegundoTelefono" xml:space="preserve">
+    <value>Teléfono</value>
+  </data>
+  <data name="Ca_Solicitante" xml:space="preserve">
+    <value>Solicitante</value>
+  </data>
+  <data name="Ca_SubCatering" xml:space="preserve">
+    <value>Catering</value>
+  </data>
+  <data name="Ca_SubPasajeros" xml:space="preserve">
+    <value>Pasajeros</value>
+  </data>
+  <data name="Ca_Telefono" xml:space="preserve">
+    <value>Teléfono</value>
+  </data>
+  <data name="Ca_TelefonoCatering" xml:space="preserve">
+    <value>Teléfono</value>
+  </data>
+  <data name="Ca_TiempoFueraBloque" xml:space="preserve">
+    <value>Tiempo Fuera Bloque</value>
+  </data>
+  <data name="Ca_TiempoVuelo" xml:space="preserve">
+    <value>Tiempo de Vuelo</value>
+  </data>
+  <data name="Ca_TipoEvento" xml:space="preserve">
+    <value>Tipo de Evento</value>
+  </data>
+  <data name="Ca_TipoVuelo" xml:space="preserve">
+    <value>Tipo de Vuelo</value>
+  </data>
+  <data name="Ca_Transporte" xml:space="preserve">
+    <value>Transporte</value>
+  </data>
+  <data name="Ca_Tripulacion" xml:space="preserve">
+    <value>Tripulación</value>
+  </data>
+  <data name="Ca_ViajeNumero" xml:space="preserve">
+    <value>Viaje Número</value>
+  </data>
+  <data name="Ca_ZonaHoraria" xml:space="preserve">
+    <value>Zona Horaria</value>
+  </data>
+  <data name="Ca_ZonaHorariaLlegada" xml:space="preserve">
+    <value>Zona Horaria</value>
+  </data>
 </root>
