@@ -232,7 +232,7 @@
     <value>Salida:</value>
   </data>
   <data name="Das_UltimaDeclaracion" xml:space="preserve">
-    <value>Ultimo Pago</value>
+    <value>Último Pago</value>
   </data>
   <data name="Das_Ven90dias" xml:space="preserve">
     <value>incluido el vencimiento (+ de 90 días)</value>
@@ -313,7 +313,7 @@
     <value>Asignar matriculas</value>
   </data>
   <data name="Us_AsignarModulos" xml:space="preserve">
-    <value>Asignar modulos</value>
+    <value>Asignar módulos</value>
   </data>
   <data name="Us_ClonarPermisos" xml:space="preserve">
     <value>Clonar permisos de otro usuario</value>
@@ -322,22 +322,22 @@
     <value>Clonar usuario</value>
   </data>
   <data name="Us_TtipMats" xml:space="preserve">
-    <value>Asignar matriculas</value>
+    <value>Asignar matrículas</value>
   </data>
   <data name="Us_TtipModulos" xml:space="preserve">
     <value>Asignar módulos</value>
   </data>
   <data name="Us_Matricula" xml:space="preserve">
-    <value>Matricula</value>
+    <value>Matrícula</value>
   </data>
   <data name="Us_TituloMats" xml:space="preserve">
-    <value>Asignación de matriculas</value>
+    <value>Asignación de matrículas</value>
   </data>
   <data name="Us_Modulo" xml:space="preserve">
-    <value>Modulo</value>
+    <value>Módulo</value>
   </data>
   <data name="Us_TituloModulos" xml:space="preserve">
-    <value>Asignación de modulos</value>
+    <value>Asignación de módulos</value>
   </data>
   <data name="Us_Clave" xml:space="preserve">
     <value>Clave</value>
@@ -358,7 +358,7 @@
     <value>Correo secundario:</value>
   </data>
   <data name="Us_TelefonoOficina" xml:space="preserve">
-    <value>Telefono oficina:</value>
+    <value>Teléfono oficina:</value>
   </data>
   <data name="Us_ModuloEng" xml:space="preserve">
     <value>Module</value>
@@ -400,7 +400,7 @@
     <value>Variable</value>
   </data>
   <data name="TabTran_Categoria" xml:space="preserve">
-    <value>Categoria</value>
+    <value>Categoría</value>
   </data>
   <data name="TabTran_Comentario" xml:space="preserve">
     <value>Comentarios</value>
@@ -454,7 +454,7 @@
     <value>Promedio Mensual</value>
   </data>
   <data name="ME_CostoCat" xml:space="preserve">
-    <value>Costo por Categoria</value>
+    <value>Costo por Categoría</value>
   </data>
   <data name="ME_CostoHora" xml:space="preserve">
     <value>Costo por Hora</value>
@@ -583,13 +583,13 @@
     <value>Costo promedio Dlls</value>
   </data>
   <data name="ME_NumeroPasajeros" xml:space="preserve">
-    <value>Numero pasajeros</value>
+    <value>Número pasajeros</value>
   </data>
   <data name="ME_ResumeenPeriodoMXN" xml:space="preserve">
     <value>Resumen del periodo MXN</value>
   </data>
   <data name="ME_InfoGeneral" xml:space="preserve">
-    <value>Informacion General</value>
+    <value>Información General</value>
   </data>
   <data name="ME_TabDocDescarga" xml:space="preserve">
     <value>Descarga</value>
@@ -604,13 +604,13 @@
     <value>Resumen de Gastos</value>
   </data>
   <data name="FiltroME_1M" xml:space="preserve">
-    <value>Ultimo Mes</value>
+    <value>Último Mes</value>
   </data>
   <data name="FiltroME_2M" xml:space="preserve">
-    <value>Ultimos 2 Meses</value>
+    <value>Últimos 2 Meses</value>
   </data>
   <data name="FiltroME_3M" xml:space="preserve">
-    <value>Ultimos 3 Meses</value>
+    <value>Últimos 3 Meses</value>
   </data>
   <data name="FiltroME_MA" xml:space="preserve">
     <value>Mes Actual</value>
