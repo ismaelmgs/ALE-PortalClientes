@@ -136,7 +136,7 @@
         <div class="row">
             <div class="col-md-9">
                 <h2 style="color:#BDBDBD;">
-                    <asp:Label ID="Label1" runat="server" Text="Detalles de Vuelo" Font-Bold="true"></asp:Label>
+                    <asp:Label ID="lblDetallesVuelo" runat="server" Text="Detalles de Vuelo" Font-Bold="true"></asp:Label>
                 </h2>
             </div>
             <div class="col-md-3" style="text-align:right;">

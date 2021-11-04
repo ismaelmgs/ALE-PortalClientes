@@ -10,6 +10,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using Appointment = PortalClientes.Objetos.Appointment;
+using PortalClientes.Clases;
 
 namespace PortalClientes.Views
 {
@@ -17,6 +18,20 @@ namespace PortalClientes.Views
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            TextBox milabel = (TextBox)this.Master.FindControl("txtLang");
+            if (milabel.Text != Utils.Idioma && milabel.Text != string.Empty)
+            {
+                Utils.Idioma = milabel.Text;
+                System.Threading.Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo(Utils.Idioma);
+                ArmaCalendario();
+            }
+            else
+            {
+                System.Threading.Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo(Utils.Idioma);
+                ArmaCalendario();
+            }
+
+
             SchedulerRecurenceInfo.Start = DateTime.Now;
 
             //SchedulerRecurenceInfo.Storage.Appointments.Clear();
@@ -45,7 +60,6 @@ namespace PortalClientes.Views
                 status.SetColor(PaymentColorStatuses[i]);
                 statusColl.Add(status);
             }
-
         }
 
         protected void btnAlerta2_Click(object sender, EventArgs e)
@@ -57,6 +71,11 @@ namespace PortalClientes.Views
         {
             sMensaje = "alertexito('" + sMensaje + "');";
             ScriptManager.RegisterClientScriptBlock(this, typeof(Page), "alertexito", sMensaje, true);
+        }
+
+        private void ArmaCalendario()
+        {
+            lblDetallesVuelo.Text = Properties.Resources.Ca_DetalleVuelo;
         }
 
         public static List<Appointment> getAllAppoinments()

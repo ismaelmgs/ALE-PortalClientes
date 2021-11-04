@@ -645,4 +645,7 @@
   <data name="TabTran_TVuelo" xml:space="preserve">
     <value>Flight time</value>
   </data>
+  <data name="Ca_DetalleVuelo" xml:space="preserve">
+    <value>Flight details</value>
+  </data>
 </root>
