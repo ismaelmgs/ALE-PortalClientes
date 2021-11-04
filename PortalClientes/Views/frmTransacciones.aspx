@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="frmTransacciones.aspx.cs" Inherits="PortalClientes.Views.frmTransacciones" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" UICulture="es" Culture="es-MX"  AutoEventWireup="true" CodeBehind="frmTransacciones.aspx.cs" Inherits="PortalClientes.Views.frmTransacciones" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <script src="../vendors/jquery/dist/jquery.js"></script>

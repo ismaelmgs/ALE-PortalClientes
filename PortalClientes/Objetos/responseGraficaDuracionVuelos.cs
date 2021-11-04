@@ -17,7 +17,7 @@ namespace PortalClientes.Objetos
 
     public class vuelo
     {
-        public int mes { get; set; }
+        public string mes { get; set; }
         public int anio { get; set; }
         public string origen { get; set; }
         public string destino { get; set; }

@@ -615,4 +615,34 @@
   <data name="FiltroME_MA" xml:space="preserve">
     <value>Current Month</value>
   </data>
+  <data name="ME_DuracionVuelos" xml:space="preserve">
+    <value>Flight Duration</value>
+  </data>
+  <data name="ME_ProveedorAeropuerto" xml:space="preserve">
+    <value>Expenses By Supplier and Airport</value>
+  </data>
+  <data name="TabTran_Anio" xml:space="preserve">
+    <value>Year</value>
+  </data>
+  <data name="TabTran_Destino" xml:space="preserve">
+    <value>Destiny</value>
+  </data>
+  <data name="TabTran_FVuelo" xml:space="preserve">
+    <value>End of Flight</value>
+  </data>
+  <data name="TabTran_IVuelo" xml:space="preserve">
+    <value>Flight Start</value>
+  </data>
+  <data name="TabTran_NoPierna" xml:space="preserve">
+    <value>No. Leg</value>
+  </data>
+  <data name="TabTran_Origen" xml:space="preserve">
+    <value>Origin</value>
+  </data>
+  <data name="TabTran_Proveedor" xml:space="preserve">
+    <value>Supplier</value>
+  </data>
+  <data name="TabTran_TVuelo" xml:space="preserve">
+    <value>Flight time</value>
+  </data>
 </root>

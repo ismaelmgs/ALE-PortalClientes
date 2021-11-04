@@ -1543,6 +1543,7 @@
     <Compile Include="Clases\Utils.cs" />
     <Compile Include="DomainModel\DBAeronave.cs" />
     <Compile Include="DomainModel\DBBase.cs" />
+    <Compile Include="DomainModel\DBCalendario.cs" />
     <Compile Include="DomainModel\DBMetricasEstatics.cs" />
     <Compile Include="DomainModel\DBTripulacion.cs" />
     <Compile Include="DomainModel\DBDashboard.cs" />

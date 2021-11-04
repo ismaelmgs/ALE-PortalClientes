@@ -326,7 +326,7 @@
 
                 <div class="x_title">
                     <h2>
-                        <asp:Label ID="Label1" runat="server" Text="Costos Por Proveedor y Aeropuerto" Font-Bold="true"></asp:Label>
+                        <asp:Label ID="lblprovaero" runat="server" Text="Gastos Por Proveedor y Aeropuerto" Font-Bold="true"></asp:Label>
                     </h2>
                     <div class="clearfix"></div>
                 </div>
@@ -350,7 +350,7 @@
 
                 <div class="x_title">
                     <h2>
-                        <asp:Label ID="Label2" runat="server" Text="Horas de Vuelo por Tipo y Duracion de vuelos" Font-Bold="true"></asp:Label>
+                        <asp:Label ID="lblDuracionVuelos" runat="server" Text="Duracion de vuelos" Font-Bold="true"></asp:Label>
                     </h2>
                     <div class="clearfix"></div>
                 </div>

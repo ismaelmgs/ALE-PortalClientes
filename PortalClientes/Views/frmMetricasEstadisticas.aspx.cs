@@ -114,6 +114,8 @@ namespace PortalClientes.Views
             lblCostoPromedioUSD.Text = Properties.Resources.ME_CostoPromedioUSD;
             lblCostosCat.Text = Properties.Resources.ME_CostoCat;
             lblReportes.Text = Properties.Resources.ME_Reportes;
+            lblprovaero.Text = Properties.Resources.ME_ProveedorAeropuerto;
+            lblDuracionVuelos.Text = Properties.Resources.ME_DuracionVuelos;
 
             lblInformacionGeneral.Text = Properties.Resources.ME_InfoGeneral;
             lblDescripcion.Text = Properties.Resources.ME_TabDocDescripcion;

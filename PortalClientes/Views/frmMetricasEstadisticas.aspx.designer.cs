@@ -490,13 +490,13 @@ namespace PortalClientes.Views {
         protected global::System.Web.UI.WebControls.LinkButton btnPDF;
         
         /// <summary>
-        /// Control Label1.
+        /// Control lblprovaero.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label1;
+        protected global::System.Web.UI.WebControls.Label lblprovaero;
         
         /// <summary>
         /// Control DDFiltroMesesPA.
@@ -508,13 +508,13 @@ namespace PortalClientes.Views {
         protected global::System.Web.UI.WebControls.DropDownList DDFiltroMesesPA;
         
         /// <summary>
-        /// Control Label2.
+        /// Control lblDuracionVuelos.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label2;
+        protected global::System.Web.UI.WebControls.Label lblDuracionVuelos;
         
         /// <summary>
         /// Control DDFiltroMesesV.

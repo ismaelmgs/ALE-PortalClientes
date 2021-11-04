@@ -102,54 +102,49 @@ namespace PortalClientes.Views
                 if (tipo == 1)
                 {
                     e.Row.Cells[0].Text = Properties.Resources.TabTran_Mes;
-                    e.Row.Cells[1].Text = Properties.Resources.TabTran_idRubro;
-                    e.Row.Cells[2].Text = Properties.Resources.TabTran_Rubro;
-                    e.Row.Cells[3].Text = Properties.Resources.TabTran_Total;
-                    e.Row.Cells[4].Text = Properties.Resources.TabTran_Fecha;
-                    e.Row.Cells[5].Text = Properties.Resources.TabTran_Categoria;
-                    e.Row.Cells[6].Text = Properties.Resources.TabTran_TGasto;
-                    e.Row.Cells[7].Text = Properties.Resources.TabTran_Comentario;
+                    e.Row.Cells[1].Text = Properties.Resources.TabTran_Rubro;
+                    e.Row.Cells[2].Text = Properties.Resources.TabTran_Total;
+                    e.Row.Cells[3].Text = Properties.Resources.TabTran_Fecha;
+                    e.Row.Cells[4].Text = Properties.Resources.TabTran_Categoria;
+                    e.Row.Cells[5].Text = Properties.Resources.TabTran_TGasto;
+                    e.Row.Cells[6].Text = Properties.Resources.TabTran_Comentario;
                 }
 
                 else if (tipo == 2)
                 {
                     e.Row.Cells[0].Text = Properties.Resources.TabTran_Mes;
-                    e.Row.Cells[1].Text = Properties.Resources.TabTran_idRubro;
-                    e.Row.Cells[2].Text = Properties.Resources.TabTran_Rubro;
-                    e.Row.Cells[3].Text = Properties.Resources.TabTran_Total;
-                    //e.Row.Cells[4].Text = "Tipo Moneda";
-                    e.Row.Cells[4].Text = "Año";
-                    e.Row.Cells[5].Text = "No Pierna";
-                    e.Row.Cells[6].Text = "Proveedor";
-                    e.Row.Cells[7].Text = Properties.Resources.TabTran_Categoria;
-                    e.Row.Cells[8].Text = "Origen";
-                    e.Row.Cells[9].Text = "Destino";
+                    e.Row.Cells[1].Text = Properties.Resources.TabTran_Rubro;
+                    e.Row.Cells[2].Text = Properties.Resources.TabTran_Total;
+                    e.Row.Cells[3].Text = Properties.Resources.TabTran_Anio;
+                    e.Row.Cells[4].Text = Properties.Resources.TabTran_NoPierna;
+                    e.Row.Cells[5].Text = Properties.Resources.TabTran_Proveedor;
+                    e.Row.Cells[6].Text = Properties.Resources.TabTran_Categoria;
+                    e.Row.Cells[7].Text = Properties.Resources.TabTran_Origen;
+                    e.Row.Cells[8].Text = Properties.Resources.TabTran_Destino;
                 }
 
                 else if (tipo == 3)
                 {
                     e.Row.Cells[0].Text = Properties.Resources.TabTran_Mes;
-                    e.Row.Cells[1].Text = Properties.Resources.TabTran_idRubro;
-                    e.Row.Cells[2].Text = Properties.Resources.TabTran_Rubro;
-                    e.Row.Cells[3].Text = Properties.Resources.TabTran_Total;
-                    //e.Row.Cells[4].Text = "Tipo Moneda";
-                    e.Row.Cells[4].Text = "Año";
-                    e.Row.Cells[5].Text = "No Pierna";
-                    e.Row.Cells[6].Text = "Proveedor";
-                    e.Row.Cells[7].Text = Properties.Resources.TabTran_Categoria;
-                    e.Row.Cells[8].Text = "Origen";
-                    e.Row.Cells[9].Text = "Destino";
+                    e.Row.Cells[1].Text = Properties.Resources.TabTran_Rubro;
+                    e.Row.Cells[2].Text = Properties.Resources.TabTran_Total;
+                    e.Row.Cells[3].Text = Properties.Resources.TabTran_Anio;
+                    e.Row.Cells[4].Text = Properties.Resources.TabTran_NoPierna;
+                    e.Row.Cells[5].Text = Properties.Resources.TabTran_Proveedor;
+                    e.Row.Cells[6].Text = Properties.Resources.TabTran_Categoria;
+                    e.Row.Cells[7].Text = Properties.Resources.TabTran_Origen;
+                    e.Row.Cells[8].Text = Properties.Resources.TabTran_Destino;
                 }
 
                 else if (tipo == 4)
                 {
                     e.Row.Cells[0].Text = Properties.Resources.TabTran_Mes;
-                    e.Row.Cells[1].Text = "Año";
-                    e.Row.Cells[2].Text = "Origen";
-                    e.Row.Cells[3].Text = "Destino";
-                    e.Row.Cells[4].Text = "Inicio Vuelo";
-                    e.Row.Cells[5].Text = "Fin Vuelo";
-                    e.Row.Cells[6].Text = "Tiempo Vuelo";
+                    e.Row.Cells[1].Text = Properties.Resources.TabTran_Anio;
+                    e.Row.Cells[2].Text = Properties.Resources.TabTran_Origen;
+                    e.Row.Cells[3].Text = Properties.Resources.TabTran_Destino;
+                    e.Row.Cells[4].Text = Properties.Resources.TabTran_IVuelo; 
+                    e.Row.Cells[5].Text = Properties.Resources.TabTran_FVuelo;
+                    e.Row.Cells[6].Text = Properties.Resources.TabTran_TVuelo;
                     e.Row.Cells[7].Text = Properties.Resources.TabTran_Categoria;
                 }             
             }
@@ -225,17 +220,13 @@ namespace PortalClientes.Views
                 clm.DataField = "mes";
                 gvGastos.Columns.Add(clm);
 
-                BoundField clm2 = new BoundField();
-                clm2.DataField = "idRubro";
-                gvGastos.Columns.Add(clm2);
-
                 BoundField clm3 = new BoundField();
                 clm3.DataField = "Rubro";
                 gvGastos.Columns.Add(clm3);
 
                 BoundField clm4 = new BoundField();
                 clm4.DataField = "Total";
-                clm4.DataFormatString = "{0:c}";
+                clm4.DataFormatString = "{0:C2}";
                 gvGastos.Columns.Add(clm4);
 
                 BoundField clm5 = new BoundField();
@@ -268,10 +259,6 @@ namespace PortalClientes.Views
                 clm.DataField = "mes";
                 gvGastos.Columns.Add(clm);
 
-                BoundField clm2 = new BoundField();
-                clm2.DataField = "idRubro";
-                gvGastos.Columns.Add(clm2);
-
                 BoundField clm3 = new BoundField();
                 clm3.DataField = "Rubro";
                 gvGastos.Columns.Add(clm3);
@@ -280,10 +267,6 @@ namespace PortalClientes.Views
                 clm4.DataField = "Total";
                 clm4.DataFormatString = "{0:c}";
                 gvGastos.Columns.Add(clm4);
-
-                //BoundField clm5 = new BoundField();
-                //clm5.DataField = "TipoMoneda";
-                //gvGastos.Columns.Add(clm5);
 
                 BoundField clm6 = new BoundField();
                 clm6.DataField = "Anio";
@@ -323,10 +306,6 @@ namespace PortalClientes.Views
                 clm.DataField = "mes";
                 gvGastos.Columns.Add(clm);
 
-                BoundField clm2 = new BoundField();
-                clm2.DataField = "idRubro";
-                gvGastos.Columns.Add(clm2);
-
                 BoundField clm3 = new BoundField();
                 clm3.DataField = "Rubro";
                 gvGastos.Columns.Add(clm3);
@@ -335,10 +314,6 @@ namespace PortalClientes.Views
                 clm4.DataField = "Total";
                 clm4.DataFormatString = "{0:c}";
                 gvGastos.Columns.Add(clm4);
-
-                //BoundField clm5 = new BoundField();
-                //clm5.DataField = "TipoMoneda";
-                //gvGastos.Columns.Add(clm5);
 
                 BoundField clm6 = new BoundField();
                 clm6.DataField = "Anio";
@@ -426,6 +401,12 @@ namespace PortalClientes.Views
             lblPromedio.Text = Properties.Resources.TabTran_PromedioMens;
         }
 
+        public string MonthName(int month)
+        {
+            DateTimeFormatInfo dtinfo = new CultureInfo("es-ES", false).DateTimeFormat;
+            return dtinfo.GetMonthName(month);
+        }
+
         [WebMethod]
         public static void ObtenerTransacciones(List<gasto> gastos, List<gastoAeropuerto> gastosAe, List<gastoProveedor> gastosProv, List<vuelo> vuelos, int tipoTrans, string tipoDet, string descES, string descEN, int origen)
         {
@@ -438,6 +419,18 @@ namespace PortalClientes.Views
             List<gvGastosAeropuerto> gva = new List<gvGastosAeropuerto>();
             List<gvGastosProveedor> gvp = new List<gvGastosProveedor>();
             List<vuelo> gvv = new List<vuelo>();
+
+            DateTimeFormatInfo month = null;
+
+            if(Utils.Idioma == "es-MX")
+            {
+                month = new CultureInfo("es-ES", false).DateTimeFormat;
+            }
+            else
+            {
+                month = new CultureInfo("en-US", false).DateTimeFormat;
+            }
+                
 
             if (tipoTrans == 1)
             {
@@ -485,7 +478,7 @@ namespace PortalClientes.Views
                     g.IdRubro = item.idRubro.Value;
                     g.Rubro = Utils.Idioma == "es-MX" ? item.rubroESP : item.rubroENG;
                     g.Total = item.totalMXN;
-                    g.Mes = item.mes.Value;
+                    g.Mes = month.GetMonthName(item.mes.Value);
                     g.Anio = item.anio.HasValue ? item.anio.Value : 0;
                     g.NoPierna = item.noPierna.HasValue ? item.noPierna.Value : 0;
                     g.Proveedor = item.proveedor;
@@ -508,7 +501,7 @@ namespace PortalClientes.Views
                     g.IdRubro = item.idRubro.Value;
                     g.Rubro = Utils.Idioma == "es-MX" ? item.rubroESP : item.rubroENG;
                     g.Total = item.totalMXN;
-                    g.Mes = item.mes.Value;
+                    g.Mes = month.GetMonthName(item.mes.Value);
                     g.Anio = item.anio.HasValue ? item.anio.Value : 0;
                     g.NoPierna = item.noPierna.HasValue ? item.noPierna.Value : 0;
                     g.Proveedor = item.proveedor;
@@ -528,7 +521,7 @@ namespace PortalClientes.Views
                 foreach (var item in vuelos)
                 {
                     vuelo g = new vuelo();
-                    g.mes = item.mes;
+                    g.mes = month.GetMonthName(Convert.ToInt32(item.mes));
                     g.anio = item.anio;
                     g.origen = item.origen;
                     g.destino = item.destino;
@@ -588,7 +581,7 @@ namespace PortalClientes.Views
 
                 else if (tipo == 4)
                 {
-                    transacciones.gastos = (List<gvGastos>)Session["data"];
+                    transacciones.vuelos = (List<vuelo>)Session["data"];
                     LlenarGV(transacciones, tipo);
                 }
 
@@ -662,7 +655,7 @@ namespace PortalClientes.Views
 
                 else if (tipo == 4)
                 {
-                    transacciones.gastos = (List<gvGastos>)Session["data"];
+                    transacciones.vuelos = (List<vuelo>)Session["data"];
                     LlenarGV(transacciones, tipo);
                 }
 

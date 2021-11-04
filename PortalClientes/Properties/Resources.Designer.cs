@@ -547,6 +547,15 @@ namespace PortalClientes.Properties {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Duracion de vuelos.
+        /// </summary>
+        internal static string ME_DuracionVuelos {
+            get {
+                return ResourceManager.GetString("ME_DuracionVuelos", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Filtrar.
         /// </summary>
         internal static string ME_Filtrar {
@@ -624,6 +633,15 @@ namespace PortalClientes.Properties {
         internal static string ME_PromedioPasajeros {
             get {
                 return ResourceManager.GetString("ME_PromedioPasajeros", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Gastos Por Proveedor y Aeropuerto.
+        /// </summary>
+        internal static string ME_ProveedorAeropuerto {
+            get {
+                return ResourceManager.GetString("ME_ProveedorAeropuerto", resourceCulture);
             }
         }
         
@@ -1159,6 +1177,15 @@ namespace PortalClientes.Properties {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Año.
+        /// </summary>
+        internal static string TabTran_Anio {
+            get {
+                return ResourceManager.GetString("TabTran_Anio", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Categoria.
         /// </summary>
         internal static string TabTran_Categoria {
@@ -1177,6 +1204,15 @@ namespace PortalClientes.Properties {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Destino.
+        /// </summary>
+        internal static string TabTran_Destino {
+            get {
+                return ResourceManager.GetString("TabTran_Destino", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Fecha.
         /// </summary>
         internal static string TabTran_Fecha {
@@ -1186,11 +1222,29 @@ namespace PortalClientes.Properties {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Fin del Vuelo.
+        /// </summary>
+        internal static string TabTran_FVuelo {
+            get {
+                return ResourceManager.GetString("TabTran_FVuelo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Id.
         /// </summary>
         internal static string TabTran_idRubro {
             get {
                 return ResourceManager.GetString("TabTran_idRubro", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Inicio del Vuelo.
+        /// </summary>
+        internal static string TabTran_IVuelo {
+            get {
+                return ResourceManager.GetString("TabTran_IVuelo", resourceCulture);
             }
         }
         
@@ -1222,11 +1276,38 @@ namespace PortalClientes.Properties {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a No. Pierna.
+        /// </summary>
+        internal static string TabTran_NoPierna {
+            get {
+                return ResourceManager.GetString("TabTran_NoPierna", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Origen.
+        /// </summary>
+        internal static string TabTran_Origen {
+            get {
+                return ResourceManager.GetString("TabTran_Origen", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Promedio Mensual.
         /// </summary>
         internal static string TabTran_PromedioMens {
             get {
                 return ResourceManager.GetString("TabTran_PromedioMens", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Proveedor.
+        /// </summary>
+        internal static string TabTran_Proveedor {
+            get {
+                return ResourceManager.GetString("TabTran_Proveedor", resourceCulture);
             }
         }
         
@@ -1254,6 +1335,15 @@ namespace PortalClientes.Properties {
         internal static string TabTran_Total {
             get {
                 return ResourceManager.GetString("TabTran_Total", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Tiempo de Vuelo.
+        /// </summary>
+        internal static string TabTran_TVuelo {
+            get {
+                return ResourceManager.GetString("TabTran_TVuelo", resourceCulture);
             }
         }
         

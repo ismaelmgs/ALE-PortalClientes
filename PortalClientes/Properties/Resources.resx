@@ -615,4 +615,34 @@
   <data name="FiltroME_MA" xml:space="preserve">
     <value>Mes Actual</value>
   </data>
+  <data name="ME_DuracionVuelos" xml:space="preserve">
+    <value>Duracion de vuelos</value>
+  </data>
+  <data name="ME_ProveedorAeropuerto" xml:space="preserve">
+    <value>Gastos Por Proveedor y Aeropuerto</value>
+  </data>
+  <data name="TabTran_Anio" xml:space="preserve">
+    <value>Año</value>
+  </data>
+  <data name="TabTran_Destino" xml:space="preserve">
+    <value>Destino</value>
+  </data>
+  <data name="TabTran_FVuelo" xml:space="preserve">
+    <value>Fin del Vuelo</value>
+  </data>
+  <data name="TabTran_IVuelo" xml:space="preserve">
+    <value>Inicio del Vuelo</value>
+  </data>
+  <data name="TabTran_NoPierna" xml:space="preserve">
+    <value>No. Pierna</value>
+  </data>
+  <data name="TabTran_Origen" xml:space="preserve">
+    <value>Origen</value>
+  </data>
+  <data name="TabTran_Proveedor" xml:space="preserve">
+    <value>Proveedor</value>
+  </data>
+  <data name="TabTran_TVuelo" xml:space="preserve">
+    <value>Tiempo de Vuelo</value>
+  </data>
 </root>

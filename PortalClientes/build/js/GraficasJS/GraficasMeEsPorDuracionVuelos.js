@@ -99,13 +99,13 @@ function chartsDV(dataDV, ChartType) {
             if (jsonDataDV[0].idioma == "es-MX") {
                 dataDV_.addRows([[item.descripcionESP, item.noVuelos, `Vuelo ${item.descripcionESP}: Total ${item.noVuelos}`,]]);
             } else {
-                dataDV_.addRows([[item.descripcionENG, item.noVuelos, `Vuelo ${item.descripcionESP}: Total ${item.noVuelos}`,]]);
+                dataDV_.addRows([[item.descripcionENG, item.noVuelos, `Flight ${item.descripcionENG}: Total ${item.noVuelos}`,]]);
             }
 
         });
 
         var optionsDV = {
-            title: jsonDataDV[0].idioma == "es-MX" ? "Vuelos por Duracion" : "Filghts by Duration",
+            title: jsonDataDV[0].idioma == "es-MX" ? "Vuelos por Duracion" : "Flight Duration",
             is3D: true, //Pie Charts
             fontSize: 9,
             chartArea: {

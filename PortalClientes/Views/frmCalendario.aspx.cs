@@ -1,5 +1,6 @@
 ﻿using DevExpress.Web.ASPxScheduler;
 using DevExpress.XtraScheduler;
+using PortalClientes.DomainModel;
 using PortalClientes.Objetos;
 using System;
 using System.Collections.Generic;
@@ -60,7 +61,15 @@ namespace PortalClientes.Views
 
         public static List<Appointment> getAllAppoinments()
         {
+            DBCalendario oIGesCat = new DBCalendario();
+
+            FiltroEvent fg = new FiltroEvent();
+            fg.meses = Convert.ToInt32(DateTime.Now.Month.ToString());
+
             List<Appointment> ap = new List<Appointment>();
+            ap = oIGesCat.ObtenerCalendario(fg);
+
+            //List<Appointment> ap = new List<Appointment>();
 
             Appointment a = new Appointment();
             a.ID = 1.ToString();
@@ -72,7 +81,7 @@ namespace PortalClientes.Views
             a.Status = 1;
             a.AllDay = false;
             a.EventType = "vuelo";
-            a.Label =1;
+            a.Label = 1;
             ap.Add(a);
 
             return ap;

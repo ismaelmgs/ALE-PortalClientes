@@ -41,7 +41,7 @@ namespace PortalClientes.Objetos
         public string Rubro { get; set; }
         public double Total { get; set; }
         public string TipoMoneda { get; set; }
-        public int Mes { get; set; }
+        public string Mes { get; set; }
         public int Anio { get; set; }
         public int NoPierna { get; set; }
         public string Proveedor { get; set; }
