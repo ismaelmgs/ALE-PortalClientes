@@ -81,7 +81,7 @@
                       </div>
                   </div>
                 <div><br />
-                  <h2><img src="build/images/logo-ale_azul2.png" width="150" alt="ALE" /> <!-- Aerolíneas Ejecutivas --></h2>
+                  <h2><img src="build/images/logo-ale_azul2.png" width="100%" alt="ALE" /> <!-- Aerolíneas Ejecutivas --></h2>
                   <p><script>
                             document.write(new Date().getFullYear())
                   </script>

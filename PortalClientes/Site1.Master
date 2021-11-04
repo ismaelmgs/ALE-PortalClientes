@@ -81,7 +81,7 @@
                 <div class="left_col scroll-view">
                     <div class="navbar nav_title" style="border: 0;">
                         <a href="frmDefault.aspx" class="site_title">
-                            <img src='<%=ResolveUrl("~/build/images/logo-ale_blanco.png")%>' width="91" alt="ALE"></a>
+                            <img src='<%=ResolveUrl("~/build/images/logo-ale_blanco.png")%>' width="100%" alt="ALE"></a>
                     </div>
 
                     <div class="clearfix"></div>
