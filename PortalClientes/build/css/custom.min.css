@@ -133,6 +133,15 @@
 .btn:hover {
 	background-color:#ededed;
 }
+.btn-secondary:hover {
+	border-color: #fff !important;
+}
+.btn-primary:hover {
+	border-color: #fff !important;
+}
+.card {
+	margin-top: 10px;
+}
 @media (min-width: 280px) {
 	.flotante {
 		top: 112px;
