@@ -109,7 +109,7 @@
         <div class="row">
             <div class="col-md-9">
                 <h2 style="color:#BDBDBD;">
-                    <asp:Label ID="Label1" runat="server" Text="Detalles de Vuelo" Font-Bold="true"></asp:Label>
+                    <asp:Label ID="lblDetallesVuelo" runat="server" Text="Detalles de Vuelo" Font-Bold="true"></asp:Label>
                 </h2>
             </div>
             <div class="col-md-3" style="text-align:right;">
@@ -337,7 +337,7 @@
             </div>
             <div class="row" style="background-color:#00000008;">
                 <div class="col-md-4" style="text-align:left; border:1px solid #ffffff;">
-                    <asp:Label ID="Label12" runat="server" Text="Zona Horaria" Font-Bold="false" style=""></asp:Label> <i class="fa fa-globe"></i>
+                    <asp:Label ID="lblZonaHorariaLlegada" runat="server" Text="Zona Horaria" Font-Bold="false" style=""></asp:Label> <i class="fa fa-globe"></i>
                 </div>
                 <div class="col-md-8" style="text-align:left; border:1px solid #ffffff;">
                     <asp:Label ID="Label13" runat="server" Text="Tiempo Local" Font-Bold="true" style=""></asp:Label>
