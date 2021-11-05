@@ -88,6 +88,51 @@ namespace PortalClientes.Properties {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Agenda.
+        /// </summary>
+        internal static string Ca_ActiveAgenda {
+            get {
+                return ResourceManager.GetString("Ca_ActiveAgenda", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Hoy.
+        /// </summary>
+        internal static string Ca_ActiveDay {
+            get {
+                return ResourceManager.GetString("Ca_ActiveDay", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Mensual.
+        /// </summary>
+        internal static string Ca_ActiveMonth {
+            get {
+                return ResourceManager.GetString("Ca_ActiveMonth", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a TimeLine.
+        /// </summary>
+        internal static string Ca_ActiveTimeLine {
+            get {
+                return ResourceManager.GetString("Ca_ActiveTimeLine", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Semanal.
+        /// </summary>
+        internal static string Ca_ActiveWorkWeek {
+            get {
+                return ResourceManager.GetString("Ca_ActiveWorkWeek", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Aeronave.
         /// </summary>
         internal static string Ca_Aeronave {
