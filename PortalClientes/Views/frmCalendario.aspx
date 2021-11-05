@@ -3,6 +3,7 @@
 <%@ Register Assembly="DevExpress.Web.Bootstrap.v18.1, Version=18.1.15.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Namespace="DevExpress.Web.Bootstrap" TagPrefix="dx" %>
 <%@ Register TagPrefix="cc1" Namespace="DevExpress.XtraScheduler" Assembly="DevExpress.XtraScheduler.v18.1.Core, Version=18.1.15.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" %>
 <%@ Register TagPrefix="dxwschs" Namespace="DevExpress.Web.ASPxScheduler" Assembly="DevExpress.Web.ASPxScheduler.v18.1, Version=18.1.15.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" %>
+<%@ Register TagPrefix="dx" Namespace="DevExpress.Web" Assembly="DevExpress.Web.v18.1, Version=18.1.15.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <%--<link href="../toastr/toastr.min.css" rel="stylesheet" />--%>
 </asp:Content>
@@ -113,8 +114,8 @@
                 </h2>
             </div>
             <div class="col-md-3" style="text-align:right;">
-                <asp:LinkButton ID="btnExcel" runat="server" Text="<i class='fa fa-file-pdf-o' style='color:#ffffff;font-size:22px;'></i>" CssClass="btn btn-primary" />
-                <asp:LinkButton ID="btnPDF" runat="server" Text="<i class='fa fa-print' style='color:#ffffff;font-size:23px;'></i>" CssClass="btn btn-primary" />
+                <asp:LinkButton ID="btnExcel" runat="server" Text="<i class='fa fa-file-pdf-o' style='color:#73879c;font-size:25px;'></i>" CssClass="btn" />
+                <asp:LinkButton ID="btnPDF" runat="server" Text="<i class='fa fa-print' style='color:#73879c;font-size:25px;'></i>" CssClass="btn" />
             </div>
         </div>
         <hr style="border-bottom: 2px solid #E6E9ED; margin-top:-1px;" />
@@ -449,14 +450,14 @@
                     <i class="fa fa-phone"></i> <asp:Label ID="lblTelRes" runat="server" Text="415.849.1909" Font-Bold="true" style=""></asp:Label>
                 </div>
             </div>
-            <div class="row" style="background-color:#00000008;">
+            <%--<div class="row" style="background-color:#00000008;">
                 <div class="col-md-4" style="text-align:left; border:1px solid #ffffff;">
                     <asp:Label ID="lblEmail" runat="server" Text="Email" Font-Bold="false" style=""></asp:Label>
                 </div>
                 <div class="col-md-8" style="text-align:left; border:1px solid #ffffff;">
                     <i class="fa fa-envelope-o"></i> <asp:Label ID="lblEmailRes" runat="server" Text="support@ale.com" Font-Bold="true" style=""></asp:Label>
                 </div>
-            </div>
+            </div>--%>
             <div class="row" style="background-color:#00000008;">
                 <div class="col-md-4" style="text-align:left; border:1px solid #ffffff;">
                     <asp:Label ID="lblDireccion" runat="server" Text="Dirección" Font-Bold="false" style=""></asp:Label>
@@ -465,14 +466,14 @@
                     <asp:Label ID="lblDireccionRes" runat="server" Text="Dirección completa" Font-Bold="true" style=""></asp:Label>
                 </div>
             </div>
-            <div class="row" style="background-color:#00000008;">
+            <%--<div class="row" style="background-color:#00000008;">
                 <div class="col-md-4" style="text-align:left; border:1px solid #ffffff;">
                     <asp:Label ID="lblNotas" runat="server" Text="Notas" Font-Bold="false" style=""></asp:Label>
                 </div>
                 <div class="col-md-8" style="text-align:left; border:1px solid #ffffff;">
                     <asp:Label ID="lblNotasRes" runat="server" Text="---" Font-Bold="true" style=""></asp:Label>
                 </div>
-            </div>
+            </div>--%>
             <br />
             <div class="row" style="background-color:#00000008;">
                 <div class="col-md-4" style="text-align:left; border:1px solid #ffffff;">
@@ -490,14 +491,14 @@
                     <i class="fa fa-phone"></i> <asp:Label ID="lblTelLLegadaRes" runat="server" Text="415.849.1909" Font-Bold="true" style=""></asp:Label>
                 </div>
             </div>
-            <div class="row" style="background-color:#00000008;">
+            <%--<div class="row" style="background-color:#00000008;">
                 <div class="col-md-4" style="text-align:left; border:1px solid #ffffff;">
                     <asp:Label ID="lblEmailLLegada" runat="server" Text="Email" Font-Bold="false" style=""></asp:Label>
                 </div>
                 <div class="col-md-8" style="text-align:left; border:1px solid #ffffff;">
                     <i class="fa fa-envelope-o"></i> <asp:Label ID="lblEmailLLegadaRes" runat="server" Text="support@ale.com" Font-Bold="true" style=""></asp:Label>
                 </div>
-            </div>
+            </div>--%>
             <div class="row" style="background-color:#00000008;">
                 <div class="col-md-4" style="text-align:left; border:1px solid #ffffff;">
                     <asp:Label ID="lblDireccioLLegada" runat="server" Text="Dirección" Font-Bold="false" style=""></asp:Label>
@@ -506,24 +507,24 @@
                     <asp:Label ID="lblDireccioLLegadaRes" runat="server" Text="Dirección completa" Font-Bold="true" style=""></asp:Label>
                 </div>
             </div>
-            <div class="row" style="background-color:#00000008;">
+            <%--<div class="row" style="background-color:#00000008;">
                 <div class="col-md-4" style="text-align:left; border:1px solid #ffffff;">
                     <asp:Label ID="lblNotasLLegada" runat="server" Text="Notas" Font-Bold="false" style=""></asp:Label>
                 </div>
                 <div class="col-md-8" style="text-align:left; border:1px solid #ffffff;">
                     <asp:Label ID="lblNotasLLegadaRes" runat="server" Text="---" Font-Bold="true" style=""></asp:Label>
                 </div>
-            </div>
+            </div>--%>
             <br />
              <div class="row">
                 <div class="col-md-12">
                     <h2 style="color:#BDBDBD;">
-                        <asp:Label ID="lblCatering" runat="server" Text="Catering" Font-Bold="true"></asp:Label>
+                        <asp:Label ID="lblCatering" runat="server" Text="Catering y Transporte" Font-Bold="true"></asp:Label>
                     </h2>
                     <hr style="border-bottom: 1px solid #E6E9ED; margin-top:-1px;" />
                 </div>
             </div>
-            <div class="row" style="background-color:#00000008;">
+            <%--<div class="row" style="background-color:#00000008;">
                 <div class="col-md-4" style="text-align:left; border:1px solid #ffffff;">
                     <i class="fa fa-cutlery"></i> <asp:Label ID="lblcateringDos" runat="server" Text="Catering" Font-Bold="false" style=""></asp:Label>
                 </div>
@@ -546,16 +547,16 @@
                 <div class="col-md-8" style="text-align:left; border:1px solid #ffffff;">
                     <i class="fa fa-envelope-o"></i> <asp:Label ID="lblCateringTelEmailRes" runat="server" Text="support@ale.com" Font-Bold="true" style=""></asp:Label>
                 </div>
-            </div>
+            </div>--%>
             <div class="row" style="background-color:#00000008;">
                 <div class="col-md-4" style="text-align:left; border:1px solid #ffffff;">
-                    <asp:Label ID="lblCateringTelNotas" runat="server" Text="Notas" Font-Bold="false" style=""></asp:Label>
+                   <i class="fa fa-cutlery"></i> - <i class="fa fa-car"></i> <asp:Label ID="lblCateringTelNotas" runat="server" Text="Notas" Font-Bold="false" style=""></asp:Label>
                 </div>
                 <div class="col-md-8" style="text-align:left; border:1px solid #ffffff;">
                     <asp:Label ID="lblCateringTelNotasRes" runat="server" Text="---" Font-Bold="true" style=""></asp:Label>
                 </div>
             </div>
-            <br />
+            <%--<br />
             <div class="row">
                 <div class="col-md-12">
                     <h2 style="color:#BDBDBD;">
@@ -628,7 +629,7 @@
                 <div class="col-md-8" style="text-align:left; border:1px solid #ffffff;">
                     <asp:Label ID="lblTransporteLLegadaNotasRes" runat="server" Text="---" Font-Bold="true" style=""></asp:Label>
                 </div>
-            </div>
+            </div>--%>
             <br />
         </div>
 <!-- fin contenido modal RLR-->
