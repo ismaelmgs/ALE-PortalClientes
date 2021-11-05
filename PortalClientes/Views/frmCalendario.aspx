@@ -53,7 +53,8 @@
                         <asp:Button runat="server" ID="btnActiveMonth" OnClick="btnActiveView_Click" data-view="Month" Text="Mensual" CssClass="btn btn-secondary"/>
                         <asp:Button runat="server" ID="btnActiveTimeLine" OnClick="btnActiveView_Click" data-view="Timeline" Text="TimeLine" CssClass="btn btn-secondary"/>
                         <asp:Button runat="server" ID="btnActiveAgenda" OnClick="btnActiveView_Click" data-view="Agenda" Text="Agenda" CssClass="btn btn-secondary"/>
-                        <dx:BootstrapScheduler ID="Scheduler" AppointmentDataSourceID="ObjectDataSource" runat="server" ActiveViewType="day">
+                        <dx:BootstrapScheduler ID="Scheduler" AppointmentDataSourceID="ObjectDataSource" runat="server" ActiveViewType="day"
+                            OnPopupMenuShowing="Scheduler_PopupMenuShowing">
                             <Storage>
                                 <Appointments AutoRetrieveId="true">
                                     <Mappings AppointmentId="ID" Start="StartTime" End="EndTime" Subject="Subject"
