@@ -648,6 +648,21 @@
   <data name="Ca_DetalleVuelo" xml:space="preserve">
     <value>Detalle de vuelo</value>
   </data>
+  <data name="Ca_ActiveAgenda" xml:space="preserve">
+    <value>Agenda</value>
+  </data>
+  <data name="Ca_ActiveDay" xml:space="preserve">
+    <value>Hoy</value>
+  </data>
+  <data name="Ca_ActiveMonth" xml:space="preserve">
+    <value>Mensual</value>
+  </data>
+  <data name="Ca_ActiveTimeLine" xml:space="preserve">
+    <value>TimeLine</value>
+  </data>
+  <data name="Ca_ActiveWorkWeek" xml:space="preserve">
+    <value>Semanal</value>
+  </data>
   <data name="Ca_Aeronave" xml:space="preserve">
     <value>Aeronave</value>
   </data>

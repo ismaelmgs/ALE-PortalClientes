@@ -264,6 +264,11 @@ namespace PortalClientes.Views
             lblTransporteLLegadaTel.Text = Properties.Resources.Ca_LlegadaTransporteTelefono;
             lblTransporteLLegadaEmail.Text = Properties.Resources.Ca_LlegadaTransporteEmail;
             lblTransporteLLegadaNotas.Text = Properties.Resources.Ca_LlegadaTransporteNotas;
+            btnActiveDay.Text = Properties.Resources.Ca_ActiveDay;
+            btnActiveWorkWeek.Text = Properties.Resources.Ca_ActiveWorkWeek;
+            btnActiveMonth.Text = Properties.Resources.Ca_ActiveMonth;
+            btnActiveTimeLine.Text = Properties.Resources.Ca_ActiveTimeLine;
+            btnActiveAgenda.Text = Properties.Resources.Ca_ActiveAgenda;
         }
 
         public static List<Appointment> getAllAppoinments()
