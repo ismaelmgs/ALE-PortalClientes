@@ -61,7 +61,7 @@ namespace PortalClientes.Views
                 dayView.ShowDayHeaders = true;
                 dayView.DayCount = 1;
 
-                dayView.AppointmentDisplayOptions.SnapToCellsMode = 0;
+                dayView.AppointmentDisplayOptions.SnapToCellsMode = AppointmentSnapToCellsMode.Auto;
                 dayView.AppointmentDisplayOptions.StartTimeVisibility = AppointmentTimeVisibility.Always;
                 dayView.AppointmentDisplayOptions.EndTimeVisibility = AppointmentTimeVisibility.Always;
                 dayView.AppointmentDisplayOptions.ShowRecurrence = false;
