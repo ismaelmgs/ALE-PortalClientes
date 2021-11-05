@@ -23,7 +23,17 @@ namespace PortalClientes.Objetos
 
     public class DatosCalendario
     {
-        
+        public string ID { get; set; } // diferenciar eventos
+        public DateTime StartTime { get; set; } // cuando inicia
+        public int Label { get; set; } // n/a
+        public bool AllDay { get; set; } // si abarca todo el dia
+        public DateTime EndTime { get; set; } // cuando finaliza
+        public string Description { get; set; } // descripcion
+        public string Location { get; set; } // localizacion
+        public string Subject { get; set; } // asunto
+        public int Status { get; set; } // estado del evento
+        public string EventType { get; set; } // tipo de evento
+
         public int tripNum { get; set; }
         public int legNum { get; set; }
         public string dutyType { get; set; }

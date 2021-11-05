@@ -167,17 +167,22 @@ namespace PortalClientes.Views
             Scheduler.OptionsDialogs.RecurrentAppointmentEditDialog.Visibility = SchedulerFormVisibility.None;
             Scheduler.OptionsDialogs.RecurrentAppointmentDeleteDialog.Visibility = SchedulerFormVisibility.None;
 
+            Scheduler.OptionsForms.RecurrentAppointmentEditFormVisibility = SchedulerFormVisibility.None;
+            Scheduler.OptionsForms.RecurrentAppointmentDeleteFormVisibility = SchedulerFormVisibility.None;
+            Scheduler.OptionsToolTips.ShowAppointmentToolTip = false; // bloquear boton izquierdo de eventos
+
 
             // comportamiento del calendario
             Scheduler.OptionsBehavior.HighlightSelectionHeaders = true;
             Scheduler.OptionsBehavior.ShowViewNavigator = true;
             Scheduler.OptionsBehavior.ShowViewVisibleInterval = false;
+            Scheduler.OptionsBehavior.ShowViewSelector = false;
 
 
             Scheduler.OptionsLoadingPanel.Text = "Cargando eventos";// se puede cambiar con el idioma
 
             string[] IssueList = { "Completo", "Cancelado", "En Espera" };
-            Color[] IssueColorList = { Color.Ivory, Color.Blue, Color.Plum };
+            Color[] IssueColorList = { Color.Ivory, Color.White, Color.Plum };
 
             IAppointmentLabelStorage labelStorage = Scheduler.Storage.Appointments.Labels;
             labelStorage.Clear();
@@ -190,7 +195,7 @@ namespace PortalClientes.Views
             }
 
             string[] PaymentStatuses = { "Paid", "Unpaid" };
-            Color[] PaymentColorStatuses = { Color.Green, Color.Red };
+            Color[] PaymentColorStatuses = { Color.Red, Color.Green };
             
             AppointmentStatusCollection statusColl = Scheduler.Storage.Appointments.Statuses;
             statusColl.Clear();
@@ -279,22 +284,25 @@ namespace PortalClientes.Views
             fg.meses = Convert.ToInt32(DateTime.Now.Month.ToString());
 
             List<Appointment> ap = new List<Appointment>();
+            List<DatosCalendario> dc = new List<DatosCalendario>();
+
+            
             ap = oIGesCat.ObtenerCalendario(fg);
 
             //List<Appointment> ap = new List<Appointment>();
 
-            Appointment a = new Appointment();
-            a.ID = 1.ToString();
-            a.StartTime = DateTime.Now;
-            a.EndTime = DateTime.Now.AddHours(1);
-            a.Description = "una descripcion del vuelo";
-            a.Location = "de donde a donde va";
-            a.Subject = "de quien proviene";
-            a.Status = 1;
-            a.AllDay = false;
-            a.EventType = "vuelo";
-            a.Label = 1;
-            ap.Add(a);
+            //Appointment a = new Appointment();
+            //a.ID = 1.ToString();
+            //a.StartTime = DateTime.Now;
+            //a.EndTime = DateTime.Now.AddHours(1);
+            //a.Description = "una descripcion del vuelo";
+            //a.Location = "de donde a donde va";
+            //a.Subject = "de quien proviene";
+            //a.Status = 1;
+            //a.AllDay = false;
+            //a.EventType = "vuelo";
+            //a.Label = 1;
+            //ap.Add(a);
 
             return ap;
         }
@@ -322,6 +330,21 @@ namespace PortalClientes.Views
                     break;
             }
        
+        }
+
+        protected void Scheduler_PopupMenuShowing(object sender, DevExpress.Web.Bootstrap.BootstrapSchedulerPopupMenuShowingEventArgs e)
+        {
+            //e.Menu.ClientSideEvents.PopUp = "OnClientPopupMenuShowing";
+
+            if (e.Menu.MenuId == DevExpress.XtraScheduler.SchedulerMenuItemId.DefaultMenu)
+            {
+                e.Menu.Visible = false;
+            }
+
+            if (e.Menu.MenuId == DevExpress.XtraScheduler.SchedulerMenuItemId.AppointmentMenu)
+            {
+                e.Menu.Visible = false;
+            }
         }
     }
 }

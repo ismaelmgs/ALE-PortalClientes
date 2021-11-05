@@ -51,7 +51,9 @@
                         <asp:Button runat="server" ID="btnActiveMonth" OnClick="btnActiveView_Click" data-view="Month" Text="Mensual"/>
                         <asp:Button runat="server" ID="btnActiveTimeLine" OnClick="btnActiveView_Click" data-view="Timeline" Text="TimeLine"/>
                         <asp:Button runat="server" ID="btnActiveAgenda" OnClick="btnActiveView_Click" data-view="Agenda" Text="Agenda"/>
-                        <dx:BootstrapScheduler ID="Scheduler" AppointmentDataSourceID="ObjectDataSource" runat="server" ActiveViewType="day">
+                        <dx:BootstrapScheduler ID="Scheduler" AppointmentDataSourceID="ObjectDataSource" runat="server" ActiveViewType="day"
+                            formshowing
+                            OnPopupMenuShowing="Scheduler_PopupMenuShowing">
                             <Storage>
                                 <Appointments AutoRetrieveId="true">
                                     <Mappings AppointmentId="ID" Start="StartTime" End="EndTime" Subject="Subject"
@@ -61,10 +63,10 @@
                             </Storage>
                             <Views>
                                 <DayView>
-                                    <WorkTime Start="12:00:00" End="23:00:00" />
+                                    <WorkTime Start="00:00:00" End="23:59:59" />
                                 </DayView>
                                 <WorkWeekView ResourcesPerPage="1">
-                                    <WorkTime Start="12:00:00" End="23:00:00" />
+                                    <WorkTime Start="00:00:00" End="23:59:59" />
                                 </WorkWeekView>
                                 <WeekView Enabled="false" />
                                 <FullWeekView Enabled="false">
@@ -80,7 +82,6 @@
                                     </AgendaViewStyles>--%>
                                 </AgendaView>
                             </Views>
-                            <OptionsBehavior ShowViewSelector="false" />
                             <Storage EnableReminders="false" />
                         </dx:BootstrapScheduler>
                         <asp:ObjectDataSource

@@ -15,10 +15,11 @@ namespace PortalClientes.DomainModel
         public List<Appointment> ObtenerCalendario(FiltroEvent ev)
         {
             JavaScriptSerializer ser = new JavaScriptSerializer();
-            List<Appointment> d = new List<Appointment>();
+            List<DatosCalendario> d = new List<DatosCalendario>();
+            List<Appointment> dc = new List<Appointment>();
             FiltroEvent oLog = new FiltroEvent();
             oLog = ev;
-            oLog.matricula = Utils.MatriculaActual;
+            oLog.matricula = "XA-CHY";// Utils.MatriculaActual;
 
             TokenWS oToken = Utils.ObtieneToken;
 
@@ -29,9 +30,26 @@ namespace PortalClientes.DomainModel
 
             IRestResponse response = client.Execute(request);
             var resp = response.Content;
-            d = ser.Deserialize<List<Appointment>>(resp);
+            d = ser.Deserialize<List<DatosCalendario>>(resp);
 
-            return d;
+            foreach(var item in d)
+            {
+                Appointment data = new Appointment();
+                data.ID = item.tripNum.S();
+                data.StartTime = item.FechaInicio;
+                data.EndTime = item.FechaFin;
+                data.Description = item.recType == "M" ? "Mantenimiento" : "Vuelo";
+                data.Location = item.origen + " - " + item.destino;
+                data.Subject = item.requestorName;
+                data.Status = 1;
+                data.AllDay = false;
+                data.EventType = item.recType;
+                data.Label = 1;
+
+                dc.Add(data);
+            }
+
+            return dc;
         }
     }
 }
