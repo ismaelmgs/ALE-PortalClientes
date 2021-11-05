@@ -17,17 +17,155 @@ namespace PortalClientes.Views
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            SchedulerRecurenceInfo.Start = DateTime.Now;
+            Scheduler.Start = DateTime.Now;
 
-            //SchedulerRecurenceInfo.Storage.Appointments.Clear();
+            ApplyOptionsDay(); // configuracion dia
+
+            ApplyOptionsWeek(); // configuracion semana laboral
+            ApplyWorkDaysWeek();
+
+            ApplyOptionsMonth(); // configuracion menusal
+
+            ApplyOptionsTimeLine(); // configuracion timeline
+
+            ApplyOptionsAgenda(); // configuracion agenda
+
+            ApplyCommonOptions();
+
+            Scheduler.ApplyChanges(ASPxSchedulerChangeAction.NotifyVisibleIntervalsChanged);
+            Scheduler.DataBind();
+        }
+
+        void ApplyOptionsDay()
+        {
+            Scheduler.BeginUpdate();
+            try
+            {
+                DevExpress.Web.ASPxScheduler.DayView dayView = Scheduler.DayView;
+                dayView.ShowWorkTimeOnly = true;
+                dayView.ShowAllDayArea = true;
+                dayView.ShowDayHeaders = true;
+                dayView.DayCount = 1;
+
+                dayView.AppointmentDisplayOptions.SnapToCellsMode = 0;
+                dayView.AppointmentDisplayOptions.StartTimeVisibility = AppointmentTimeVisibility.Always;
+                dayView.AppointmentDisplayOptions.EndTimeVisibility = AppointmentTimeVisibility.Always;
+                dayView.AppointmentDisplayOptions.ShowRecurrence = false;
+            }
+            finally
+            {
+                Scheduler.EndUpdate();
+            }
+        }
+
+        void ApplyOptionsWeek()
+        {
+            WorkWeekView workWeekView = Scheduler.WorkWeekView;
+
+            workWeekView.ShowWorkTimeOnly = true;
+            workWeekView.ShowAllDayArea = true;
+            workWeekView.ShowDayHeaders = true;
+        }
+
+        void ApplyWorkDaysWeek()
+        {
+            Scheduler.BeginUpdate();
+            try
+            {
+                WorkDaysCollection workDays = Scheduler.WorkDays;
+                workDays.Clear();
+                workDays.Add(WeekDays.EveryDay);
+            }
+            finally
+            {
+                Scheduler.EndUpdate();
+            }
+        }
+
+        void ApplyOptionsMonth()
+        {
+            Scheduler.BeginUpdate();
+            try
+            {
+                MonthView monthView = Scheduler.MonthView;
+                monthView.ShowWeekend = true;
+                monthView.CompressWeekend = false;
+                monthView.ShowMoreButtons = false;
+                monthView.WeekCount = 5;
+                Scheduler.OptionsToolTips.ShowSelectionToolTip = false;
+            }
+            finally
+            {
+                Scheduler.EndUpdate();
+            }
+
+        }
+
+        void ApplyOptionsTimeLine()
+        {
+            Scheduler.BeginUpdate();
+            try
+            {
+                TimelineView timelineView = Scheduler.TimelineView;
+                AppointmentDisplayOptions aptOptions = timelineView.AppointmentDisplayOptions;
+                aptOptions.SnapToCellsMode = AppointmentSnapToCellsMode.Always;
+                aptOptions.AppointmentAutoHeight = true;
+                aptOptions.AppointmentHeight = 40;
+                timelineView.IntervalCount = 10;
+                timelineView.DisplayedIntervalCount = 5;
+                timelineView.TimeIndicatorDisplayOptions.Visibility = TimeIndicatorVisibility.Always;
+            }
+            finally
+            {
+                Scheduler.EndUpdate();
+            }
+        }
+
+        void ApplyOptionsAgenda()
+        {
+            Scheduler.BeginUpdate();
+            try
+            {
+                Scheduler.AgendaView.DayCount = 7;
+                Scheduler.AgendaView.AllowFixedDayHeaders = true;
+                Scheduler.AgendaView.DayHeaderOrientation = AgendaDayHeaderOrientation.Horizontal;
+
+                Scheduler.AgendaView.AppointmentDisplayOptions.ShowTime = true;
+                Scheduler.AgendaView.AppointmentDisplayOptions.ShowResource = false;
+                Scheduler.AgendaView.AppointmentDisplayOptions.ShowLabel = true;
+                Scheduler.AgendaView.AppointmentDisplayOptions.ShowRecurrence = false;
+                Scheduler.AgendaView.AppointmentDisplayOptions.StatusDisplayType = AppointmentStatusDisplayType.Bounds;
+            }
+            finally
+            {
+                Scheduler.EndUpdate();
+            }
+        }
+
+        void ApplyCommonOptions()
+        {
+           // configuracion vista
+            Scheduler.OptionsView.AppointmentSelectionAppearanceMode = AppointmentSelectionAppearanceMode.BackgroundOpacity;
+
+
+            // configuracion dialogos
+            Scheduler.OptionsDialogs.AppointmentDialog.Visibility = SchedulerFormVisibility.None;
+            Scheduler.OptionsDialogs.RecurrentAppointmentEditDialog.Visibility = SchedulerFormVisibility.None;
+            Scheduler.OptionsDialogs.RecurrentAppointmentDeleteDialog.Visibility = SchedulerFormVisibility.None;
+
+
+            // comportamiento del calendario
+            Scheduler.OptionsBehavior.HighlightSelectionHeaders = true;
+            Scheduler.OptionsBehavior.ShowViewNavigator = true;
+            Scheduler.OptionsBehavior.ShowViewVisibleInterval = false;
+
+
+            Scheduler.OptionsLoadingPanel.Text = "Cargando eventos";// se puede cambiar con el idioma
 
             string[] IssueList = { "Completo", "Cancelado", "En Espera" };
             Color[] IssueColorList = { Color.Ivory, Color.Blue, Color.Plum };
-            string[] PaymentStatuses = { "Paid", "Unpaid" };
-            Color[] PaymentColorStatuses = { Color.Green, Color.Red };
 
-
-            IAppointmentLabelStorage labelStorage = SchedulerRecurenceInfo.Storage.Appointments.Labels;
+            IAppointmentLabelStorage labelStorage = Scheduler.Storage.Appointments.Labels;
             labelStorage.Clear();
             int count = IssueList.Length;
             for (int i = 0; i < count; i++)
@@ -36,7 +174,11 @@ namespace PortalClientes.Views
                 label.SetColor(IssueColorList[i]);
                 labelStorage.Add(label);
             }
-            AppointmentStatusCollection statusColl = SchedulerRecurenceInfo.Storage.Appointments.Statuses;
+
+            string[] PaymentStatuses = { "Paid", "Unpaid" };
+            Color[] PaymentColorStatuses = { Color.Green, Color.Red };
+            
+            AppointmentStatusCollection statusColl = Scheduler.Storage.Appointments.Statuses;
             statusColl.Clear();
             count = PaymentStatuses.Length;
             for (int i = 0; i < count; i++)
@@ -45,18 +187,6 @@ namespace PortalClientes.Views
                 status.SetColor(PaymentColorStatuses[i]);
                 statusColl.Add(status);
             }
-
-        }
-
-        protected void btnAlerta2_Click(object sender, EventArgs e)
-        {
-            MostrarMensaje("Mensaje de exito!", "Aviso");
-        }
-
-        public void MostrarMensaje(string sMensaje, string sCaption)
-        {
-            sMensaje = "alertexito('" + sMensaje + "');";
-            ScriptManager.RegisterClientScriptBlock(this, typeof(Page), "alertexito", sMensaje, true);
         }
 
         public static List<Appointment> getAllAppoinments()
@@ -74,7 +204,7 @@ namespace PortalClientes.Views
             Appointment a = new Appointment();
             a.ID = 1.ToString();
             a.StartTime = DateTime.Now;
-            a.EndTime = DateTime.Now.AddHours(5);
+            a.EndTime = DateTime.Now.AddHours(1);
             a.Description = "una descripcion del vuelo";
             a.Location = "de donde a donde va";
             a.Subject = "de quien proviene";
@@ -85,6 +215,31 @@ namespace PortalClientes.Views
             ap.Add(a);
 
             return ap;
+        }
+
+        protected void btnActiveView_Click(object sender, EventArgs e)
+        {
+            Button button = (Button)sender;
+            string view = button.Attributes["data-view"];
+
+            switch (view)
+            {
+                case "Day": Scheduler.ActiveViewType = SchedulerViewType.Day;
+                    break;
+                case "WorkWeek":
+                    Scheduler.ActiveViewType = SchedulerViewType.WorkWeek;
+                    break;
+                case "Month":
+                    Scheduler.ActiveViewType = SchedulerViewType.Month;
+                    break;
+                case "Timeline":
+                    Scheduler.ActiveViewType = SchedulerViewType.Timeline;
+                    break;
+                case "Agenda":
+                    Scheduler.ActiveViewType = SchedulerViewType.Agenda;
+                    break;
+            }
+       
         }
     }
 }

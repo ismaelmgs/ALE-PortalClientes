@@ -42,76 +42,49 @@
                 <div class="x_title">
                     <h2>
                         <asp:Label ID="lblCalendario" runat="server" Text="Calendario" Font-Bold="true"></asp:Label></h2>
-                    <%--<ul class="nav navbar-right panel_toolbox">
-                    <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
-                    </li>
-                    <li><a class="close-link"><i class="fa fa-close"></i></a>
-                    </li>
-                </ul>--%>
                     <div class="clearfix"></div>
                 </div>
                 <div class="row">
                     <div class="col-md-12">
-                        <dx:BootstrapScheduler ID="SchedulerRecurenceInfo" AppointmentDataSourceID="ObjectDataSource1" runat="server" ActiveViewType="month">
+                        <asp:Button runat="server" ID="btnActiveDay" OnClick="btnActiveView_Click" data-view="Day" Text="Hoy"/>
+                        <asp:Button runat="server" ID="btnActiveWorkWeek" OnClick="btnActiveView_Click" data-view="WorkWeek" Text="Semanal"/>\
+                        <asp:Button runat="server" ID="btnActiveMonth" OnClick="btnActiveView_Click" data-view="Month" Text="Mensual"/>
+                        <asp:Button runat="server" ID="btnActiveTimeLine" OnClick="btnActiveView_Click" data-view="Timeline" Text="TimeLine"/>
+                        <asp:Button runat="server" ID="btnActiveAgenda" OnClick="btnActiveView_Click" data-view="Agenda" Text="Agenda"/>
+                        <dx:BootstrapScheduler ID="Scheduler" AppointmentDataSourceID="ObjectDataSource" runat="server" ActiveViewType="day">
                             <Storage>
                                 <Appointments AutoRetrieveId="true">
                                     <Mappings AppointmentId="ID" Start="StartTime" End="EndTime" Subject="Subject"
                                         Description="Description" Location="Location"
                                         Type="EventType" Label="Label" Status="Status" />
-                                    <Labels >
-                                        <dx:BootstrapAppointmentLabel Text="None"
-                                            BackgroundCssClass="bg-primary" TextCssClass="text-dark"></dx:BootstrapAppointmentLabel>
-                                        <%--<dx:BootstrapAppointmentLabel Text="Routine"
-                                            BackgroundCssClass="bg-primary" TextCssClass="text-white"></dx:BootstrapAppointmentLabel>
-                                        <dx:BootstrapAppointmentLabel Text="Follow-Up"
-                                            BackgroundCssClass="bg-success" TextCssClass="text-white"></dx:BootstrapAppointmentLabel>
-                                        <dx:BootstrapAppointmentLabel Text="Urgent"
-                                            BackgroundCssClass="bg-danger" TextCssClass="text-white"></dx:BootstrapAppointmentLabel>
-                                        <dx:BootstrapAppointmentLabel Text="Lab Testing"
-                                            BackgroundCssClass="bg-warning" TextCssClass="text-dark"></dx:BootstrapAppointmentLabel>
-                                        <dx:BootstrapAppointmentLabel Text="Service"
-                                            BackgroundCssClass="bg-secondary" TextCssClass="text-white"></dx:BootstrapAppointmentLabel>--%>
-                                    </Labels>
-                                    <Statuses>
-                                        <dx:BootstrapAppointmentStatus Text="NotSet"
-                                            Type="Custom" CssClass="bg-white"></dx:BootstrapAppointmentStatus>
-                                        <%--<dx:BootstrapAppointmentStatus Text="Confirmed"
-                                            Type="Custom" CssClass="bg-success"></dx:BootstrapAppointmentStatus>
-                                        <dx:BootstrapAppointmentStatus Text="Awaiting Confirmation"
-                                            Type="Custom" CssClass="bg-danger"></dx:BootstrapAppointmentStatus>
-                                        <dx:BootstrapAppointmentStatus Text="Cancelled"
-                                            Type="Custom" CssClass="bg-secondary"></dx:BootstrapAppointmentStatus>--%>
-                                    </Statuses>
                                 </Appointments>
                             </Storage>
                             <Views>
-                                <DayView ResourcesPerPage="1" ShowWorkTimeOnly="false">
+                                <DayView>
+                                    <WorkTime Start="12:00:00" End="23:00:00" />
                                 </DayView>
-
-                                <WorkWeekView ShowWorkTimeOnly="false" Enabled="false">
+                                <WorkWeekView ResourcesPerPage="1">
+                                    <WorkTime Start="12:00:00" End="23:00:00" />
                                 </WorkWeekView>
-
-                                <FullWeekView ResourcesPerPage="1" Enabled="true" ShowWorkTimeOnly="false">
+                                <WeekView Enabled="false" />
+                                <FullWeekView Enabled="false">
                                 </FullWeekView>
-
-                                <WeekView ResourcesPerPage="1">
-                                </WeekView>
-
                                 <MonthView ResourcesPerPage="1">
-                                    <AppointmentDisplayOptions StartTimeVisibility="Never" EndTimeVisibility="Never" StatusDisplayType="Bounds" ShowRecurrence="true" />
-                                    <CellAutoHeightOptions Mode="LimitHeight" MinHeight="100" />
+                                    <AppointmentDisplayOptions StartTimeVisibility="Never" EndTimeVisibility="Never" StatusDisplayType="Bounds"/>
+                                    <CellAutoHeightOptions Mode="LimitHeight" MinHeight="140" />
                                 </MonthView>
-
-                                <TimelineView ResourcesPerPage="1" IntervalCount="1" Enabled="false">
+                                <TimelineView ResourcesPerPage="1">
                                 </TimelineView>
-
-                                <AgendaView Enabled="true" ScrollAreaHeight="600">
+                                <AgendaView Enabled="true">
+                                    <%--<AgendaViewStyles ScrollAreaHeight="600">
+                                    </AgendaViewStyles>--%>
                                 </AgendaView>
                             </Views>
-                            <OptionsBehavior ShowViewSelector="true" />
+                            <OptionsBehavior ShowViewSelector="false" />
+                            <Storage EnableReminders="false" />
                         </dx:BootstrapScheduler>
                         <asp:ObjectDataSource
-                            ID="ObjectDataSource1"
+                            ID="ObjectDataSource"
                             runat="server"
                             SelectMethod="getAllAppoinments"
                             TypeName="PortalClientes.Views.frmCalendario" />
