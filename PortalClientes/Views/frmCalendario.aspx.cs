@@ -11,6 +11,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using Appointment = PortalClientes.Objetos.Appointment;
 using PortalClientes.Clases;
+using DevExpress.Web.ASPxScheduler.Internal;
 
 namespace PortalClientes.Views
 {
@@ -31,7 +32,12 @@ namespace PortalClientes.Views
                 ArmaCalendario();
             }
 
-            Scheduler.Start = DateTime.Now;
+            if (!IsPostBack)
+            {
+
+            }
+
+            Scheduler.Start = DateTime.Now.AddMonths(-2);
 
             ApplyOptionsDay(); // configuracion dia
 
@@ -104,8 +110,8 @@ namespace PortalClientes.Views
                 MonthView monthView = Scheduler.MonthView;
                 monthView.ShowWeekend = true;
                 monthView.CompressWeekend = false;
-                monthView.ShowMoreButtons = false;
-                monthView.WeekCount = 5;
+                monthView.ShowMoreButtons = true;
+                monthView.WeekCount = 4;
                 Scheduler.OptionsToolTips.ShowSelectionToolTip = false;
             }
             finally
@@ -158,8 +164,8 @@ namespace PortalClientes.Views
 
         void ApplyCommonOptions()
         {
-           // configuracion vista
-            Scheduler.OptionsView.AppointmentSelectionAppearanceMode = AppointmentSelectionAppearanceMode.BackgroundOpacity;
+            // configuracion vista
+            Scheduler.OptionsView.AppointmentSelectionAppearanceMode = AppointmentSelectionAppearanceMode.Auto;
 
 
             // configuracion dialogos
@@ -170,12 +176,13 @@ namespace PortalClientes.Views
             Scheduler.OptionsForms.RecurrentAppointmentEditFormVisibility = SchedulerFormVisibility.None;
             Scheduler.OptionsForms.RecurrentAppointmentDeleteFormVisibility = SchedulerFormVisibility.None;
             Scheduler.OptionsToolTips.ShowAppointmentToolTip = false; // bloquear boton izquierdo de eventos
+            Scheduler.OptionsToolTips.ShowSelectionToolTip = false;
 
 
             // comportamiento del calendario
             Scheduler.OptionsBehavior.HighlightSelectionHeaders = true;
             Scheduler.OptionsBehavior.ShowViewNavigator = true;
-            Scheduler.OptionsBehavior.ShowViewVisibleInterval = false;
+            Scheduler.OptionsBehavior.ShowViewVisibleInterval = true;
             Scheduler.OptionsBehavior.ShowViewSelector = false;
 
 
@@ -196,7 +203,7 @@ namespace PortalClientes.Views
 
             string[] PaymentStatuses = { "Paid", "Unpaid" };
             Color[] PaymentColorStatuses = { Color.Red, Color.Green };
-            
+
             AppointmentStatusCollection statusColl = Scheduler.Storage.Appointments.Statuses;
             statusColl.Clear();
             count = PaymentStatuses.Length;
@@ -286,7 +293,7 @@ namespace PortalClientes.Views
             List<Appointment> ap = new List<Appointment>();
             List<DatosCalendario> dc = new List<DatosCalendario>();
 
-            
+
             ap = oIGesCat.ObtenerCalendario(fg);
 
             //List<Appointment> ap = new List<Appointment>();
@@ -314,7 +321,8 @@ namespace PortalClientes.Views
 
             switch (view)
             {
-                case "Day": Scheduler.ActiveViewType = SchedulerViewType.Day;
+                case "Day":
+                    Scheduler.ActiveViewType = SchedulerViewType.Day;
                     break;
                 case "WorkWeek":
                     Scheduler.ActiveViewType = SchedulerViewType.WorkWeek;
@@ -329,7 +337,7 @@ namespace PortalClientes.Views
                     Scheduler.ActiveViewType = SchedulerViewType.Agenda;
                     break;
             }
-       
+
         }
 
         protected void Scheduler_PopupMenuShowing(object sender, DevExpress.Web.Bootstrap.BootstrapSchedulerPopupMenuShowingEventArgs e)
@@ -345,6 +353,66 @@ namespace PortalClientes.Views
             {
                 e.Menu.Visible = false;
             }
+        }
+
+
+        protected void OnSchedulerBeforeExecuteCallbackCommand(object sender, DevExpress.Web.ASPxScheduler.SchedulerCallbackCommandEventArgs e)
+        {
+            if (e.CommandId == "EnableToolTipCallback")
+            {
+                e.Command = new EnableToolTipCallback(Scheduler);
+            }
+        }
+
+        public class EnableToolTipCallback : SchedulerCallbackCommand
+        {
+            public EnableToolTipCallback(ASPxScheduler control)
+                : base(control)
+            {
+            }
+            public override void Execute(string parameters)
+            {
+                base.Execute(parameters);
+                string[] args = parameters.Split(new char[] { '=' });
+                if (args[0] == "selection")
+                {
+                    if (args[1] == "false")
+                        Control.OptionsToolTips.ShowSelectionToolTip = false;
+                    else if (args[1] == "true")
+                        Control.OptionsToolTips.ShowSelectionToolTip = true;
+                }
+                else if (args[0] == "appointment")
+                {
+                    if (args[1] == "false")
+                        Control.OptionsToolTips.ShowAppointmentToolTip = false;
+                    else if (args[1] == "true")
+                        Control.OptionsToolTips.ShowAppointmentToolTip = true;
+                }
+                else if (args[0] == "drag")
+                {
+                    if (args[1] == "false")
+                        Control.OptionsToolTips.ShowAppointmentDragToolTip = false;
+                    else if (args[1] == "true")
+                        Control.OptionsToolTips.ShowAppointmentDragToolTip = true;
+                }
+                Control.ApplyChanges(ASPxSchedulerChangeAction.All);
+            }
+
+            public override string Id
+            {
+                get { return "EnableToolTipCallback"; }
+            }
+
+            protected override void ParseParameters(string parameters)
+            {
+                //do nothing
+            }
+
+            protected override void ExecuteCore()
+            {
+                //do nothing
+            }
+
         }
     }
 }
