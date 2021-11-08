@@ -289,31 +289,38 @@
                 </div>
                 <div>
                     <br />
-                    <div class="row" style="margin: 5px;">
-                        <div class="col-md-12 table-responsive">
-                            <table class="table table-striped table-bordered table-hover">
-                                <tr>
+                    <div class="row" style="margin: 0px;">
+                        <div class="col-md-12 table-responsive" style="padding-left:1px !important; padding-right:1px !important">
+                            <table class="table" style="border:0px;">
+                                <%--<tr>
                                     <th style="width: 70%;">
                                         <asp:Label ID="lblDescripcion" runat="server" Text="Tipo Reporte" Font-Bold="false"></asp:Label>
                                     </th>
                                     <th style="text-align:center;">
                                         <asp:Label ID="lblDescargar" runat="server" Text=" Descargar" Font-Bold="false"></asp:Label>
                                     </th>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <asp:Label ID="lblResumenGastos" runat="server" Text=" Resumen de Gastos" Font-Bold="false"></asp:Label>
+                                </tr>--%>
+                                <tr style="background-color:#00000003;">
+                                    <td style="border:0px; padding:6px;">
+                                        <img src="../build/images/resumen_gatos.png" style="width:32px;" />&nbsp;<span style="font-size:17px; font-weight:bold;"><asp:Label ID="lblResumenGastos" runat="server" Text=" Resumen de Gastos" Font-Bold="true"></asp:Label></span><br />
+                                        <asp:Label ID="lblResumanGastosRes" runat="server" Text=" Resumen de gastos " Font-Bold="false"></asp:Label>
                                     </td>
-                                    <td align="center">
+                                    <td align="center" style="border:0px; padding:0.1rem;">
                                         <asp:LinkButton ID="LinkButton1" runat="server" Text="<i class='fa fa-file-excel-o' style='color:#73879c;font-size:25px;'></i>" CssClass="btn" OnClick="lkbExpExcelRes_Click" />
                                         <asp:LinkButton ID="LinkButton2" runat="server" Text="<i class='fa fa-file-pdf-o' style='color:#73879c;font-size:25px;' ></i>" CssClass="btn" OnClick="lkbExpPDFRes_Click" />
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td>
-                                        <asp:Label ID="lblRepDetGastos" runat="server" Text=" Detalle de Gastos" Font-Bold="false"></asp:Label>
+                                    <td colspan="2" style="height:3px;">
+                                        
                                     </td>
-                                    <td align="center">
+                                </tr>
+                                <tr style="background-color:#00000003;">
+                                    <td style="border:0px; padding:6px;">
+                                        <img src="../build/images/detalle_gatos.png" style="width:32px;" />&nbsp;<span style="font-size:17px; font-weight:bold;"><asp:Label ID="lblRepDetGastos" runat="server" Text=" Detalle de Gastos" Font-Bold="true"></asp:Label></span><br />
+                                        <asp:Label ID="lblRepDeGastosRes" runat="server" Text=" Detalle de gastos " Font-Bold="false"></asp:Label>
+                                    </td>
+                                    <td align="center" style="border:0px;">
                                         <asp:LinkButton ID="btnExcel" runat="server" Text="<i class='fa fa-file-excel-o' style='color:#73879c;font-size:25px;'></i>" CssClass="btn" OnClick="lkbExpExcel_Click" />
                                         <asp:LinkButton ID="btnPDF" runat="server" Text="<i class='fa fa-file-pdf-o' style='color:#73879c;font-size:25px;' ></i>" CssClass="btn" OnClick="lkbExpPDF_Click" />
                                     </td>

@@ -199,7 +199,9 @@
     <Content Include="build\images\back_enabled.png" />
     <Content Include="build\images\back_enabled_hover.png" />
     <Content Include="build\images\bkg.jpg" />
+    <Content Include="build\images\bkg_cuadro.png" />
     <Content Include="build\images\cropper.jpg" />
+    <Content Include="build\images\detalle_gatos.png" />
     <Content Include="build\images\favicon.ico" />
     <Content Include="build\images\forward_disabled.png" />
     <Content Include="build\images\forward_enabled.png" />
@@ -219,6 +221,7 @@
     <Content Include="build\images\prod-3.jpg" />
     <Content Include="build\images\prod-4.jpg" />
     <Content Include="build\images\prod-5.jpg" />
+    <Content Include="build\images\resumen_gatos.png" />
     <Content Include="build\images\user.png" />
     <Content Include="build\images\visa.png" />
     <Content Include="build\js\datepicker\daterangepicker.js" />
@@ -1543,7 +1546,9 @@
     <Compile Include="Clases\Utils.cs" />
     <Compile Include="DomainModel\DBAeronave.cs" />
     <Compile Include="DomainModel\DBBase.cs" />
-    <Compile Include="DomainModel\DBCalendario.cs" />
+    <Compile Include="DomainModel\DBCalendario.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
     <Compile Include="DomainModel\DBMetricasEstatics.cs" />
     <Compile Include="DomainModel\DBTripulacion.cs" />
     <Compile Include="DomainModel\DBDashboard.cs" />
