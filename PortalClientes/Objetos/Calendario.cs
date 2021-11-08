@@ -21,6 +21,7 @@ namespace PortalClientes.Objetos
         public string EventType { get; set; } // tipo de evento
     }
 
+    [Serializable]
     public class DatosCalendario
     {
         public string ID { get; set; } // diferenciar eventos

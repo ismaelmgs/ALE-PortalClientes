@@ -118,8 +118,8 @@ namespace PortalClientes.Views
             lblDuracionVuelos.Text = Properties.Resources.ME_DuracionVuelos;
 
             lblInformacionGeneral.Text = Properties.Resources.ME_InfoGeneral;
-            lblDescripcion.Text = Properties.Resources.ME_TabDocDescripcion;
-            lblDescargar.Text = Properties.Resources.ME_TabDocDescarga;
+            //lblDescripcion.Text = Properties.Resources.ME_TabDocDescripcion;
+            //lblDescargar.Text = Properties.Resources.ME_TabDocDescarga;
             lblResumenGastos.Text = Properties.Resources.ME_TabDocResumenGastos;
             lblRepDetGastos.Text = Properties.Resources.Me_TabDocDetGastos;
 

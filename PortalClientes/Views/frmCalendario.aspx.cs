@@ -12,6 +12,7 @@ using System.Web.UI.WebControls;
 using Appointment = PortalClientes.Objetos.Appointment;
 using PortalClientes.Clases;
 using DevExpress.Web.ASPxScheduler.Internal;
+using NucleoBase.Core;
 
 namespace PortalClientes.Views
 {
@@ -54,6 +55,8 @@ namespace PortalClientes.Views
 
             Scheduler.ApplyChanges(ASPxSchedulerChangeAction.NotifyVisibleIntervalsChanged);
             Scheduler.DataBind();
+
+            LlenaModal();
         }
 
         void ApplyOptionsDay()
@@ -312,6 +315,49 @@ namespace PortalClientes.Views
             //ap.Add(a);
 
             return ap;
+        }
+
+        private void LlenaModal()
+        {
+            List<DatosCalendario> olst = (List<DatosCalendario>)Session["SSEventos"];
+
+            foreach (DatosCalendario item in olst)
+            {
+                if (item.legId == 351504)
+                {
+                    lblClaveCiudadSalida.Text = item.origen;
+                    lblClaveCiudadSalidaRes.Text = item.fboNombreOrigen;
+                    lblClaveCiudadLlegada.Text = item.destino;
+                    lblClaveCiudadLlegadaRes.Text = item.fboNombreDest;
+                    lblDMASalida.Text = item.FechaInicio.ToLongDateString();
+                    lblDMAHoraSalida.Text = item.FechaInicio.ToShortTimeString();
+                    lblDMALLegada.Text = item.FechaFin.ToLongDateString();
+                    lblDMAHoraLLegada.Text = item.FechaFin.ToShortTimeString();
+
+                    lblAeronave.Text = Utils.MatriculaActual;
+                    lblTipoEventoRes.Text = item.recType == "M" ? "Mantenimiento" : "Vuelo";
+                    lblViajeNumeroRes.Text = item.tripNum.S();
+                    lblTipoVueloRes.Text = item.requestor;
+                    lblNombreContactoRes.Text = item.requestorName;
+                    lalSolicitanteRes.Text = item.cliente;
+                    lblRegulacionRes.Text = item.farNum;
+                    lblEstatusRes.Text = item.tripStat == "X" ? "Cancelado" : "Pendiente";
+
+                    if (item.FechaInicio < DateTime.Now)
+                        lblEstatusRes.Text = "Completado";
+
+                    lblAeropuertoSalida.Text = item.origen;
+                    lblAeropuertoSalidaRes.Text = item.fboNombreOrigen;
+
+                    lblFueraFechaBloqueRes.Text = item.FechaInicio.ToShortDateString();
+                    lblFueraTiempoBloqueRes.Text = item.FechaInicio.ToShortTimeString();
+                    lblFechaDeSalidaRes.Text = item.FechaInicio.ToShortDateString();
+                    lblHoraSalidaRes.Text = item.FechaInicio.ToShortDateString();
+
+
+
+                }
+            }
         }
 
         protected void btnActiveView_Click(object sender, EventArgs e)

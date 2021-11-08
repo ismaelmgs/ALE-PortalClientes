@@ -10,7 +10,7 @@ using System.Web.Script.Serialization;
 
 namespace PortalClientes.DomainModel
 {
-    public class DBCalendario
+    public class DBCalendario : System.Web.UI.Page
     {
         public List<Appointment> ObtenerCalendario(FiltroEvent ev)
         {
@@ -32,7 +32,9 @@ namespace PortalClientes.DomainModel
             var resp = response.Content;
             d = ser.Deserialize<List<DatosCalendario>>(resp);
 
-            foreach(var item in d)
+            Session["SSEventos"] = d;
+
+            foreach (var item in d)
             {
                 Appointment data = new Appointment();
                 data.ID = item.tripNum.S();
@@ -51,5 +53,6 @@ namespace PortalClientes.DomainModel
 
             return dc;
         }
+
     }
 }
