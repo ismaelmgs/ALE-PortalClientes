@@ -95,7 +95,7 @@
 	/*min-width: 550px;*/
 	overflow-y: auto;
 	overflow-x: hidden;
-	min-width: 350px;
+	width: 650px;
 }
 .anim_RLR {
 	position: relative;
@@ -162,6 +162,12 @@
 		top: 112px;
 		right: 15%;
 	}
+	.modal-derecha {
+		width: 350px;
+	}
+	.modal-derecha {
+		width: 270px;
+	}
 }
 @media (min-width: 320px) {
 	.flotante {
@@ -171,11 +177,17 @@
 	.top_nav .navbar-right {
 		margin: 3px;
 	}
+	.modal-derecha {
+		width: 310px;
+	}
 }
 @media (min-width: 360px) {
 	.flotante {
 		top: 63px;
 		right: 22%;
+	}
+	.modal-derecha {
+		width: 350px;
 	}
 }
 @media (min-width: 375px) {
@@ -183,11 +195,17 @@
 		top: 63px;
 		right: 22%;
 	}
+	.modal-derecha {
+		width: 350px;
+	}
 }
 @media (min-width: 411px) {
 	.flotante {
 		top: 63px;
 		right: 25%;
+	}
+	.modal-derecha {
+		width: 400px;
 	}
 }
 @media (min-width: 414px) {
@@ -195,11 +213,17 @@
 		top: 63px;
 		right: 25%;
 	}
+	.modal-derecha {
+		width: 400px;
+	}
 }
 @media (min-width: 540px) {
 	.flotante {
 		top: 33px;
 		right: 230px;
+	}
+	.modal-derecha {
+		width: 530px;
 	}
 }
 @media (min-width: 768px) {
@@ -207,11 +231,17 @@
 		top: 33px;
 		right: 230px;
 	}
+	.modal-derecha {
+		width: 650px;
+	}
 }
 @media (min-width: 800px) {
 	.flotante {
 		top: 35px;
 		right: 230px;
+	}
+	.modal-derecha {
+		width: 650px;
 	}
 }
 

@@ -215,13 +215,15 @@
         Width="" CssClass="modal-derecha anim_RLR">
         <asp:UpdatePanel ID="upaUsuario" runat="server">
             <ContentTemplate>
-                <div class="modal-body">
+                
                     <asp:Button ID="Button1" runat="server" CssClass="btn" Text="X" Font-Bold="true" OnClientClick="CloseModal();" Style="z-index: 2000; right: 13px; margin-top: 10px; position: absolute; color: #ffffff;" />
-                    <!-- inicio contenido modal RLR-->
-                    <div class="row">
-                        <div class="col-md-9" style="text-align: left;">
-                            <h5>
+                    <h5 class="modal-title" style="color:#ffffff;background-color:#2a3f54;width:100%;height:70px;padding-top:15px;">
                                 <asp:Label ID="lblDetallesVuelo" runat="server" Text="Detalles de Vuelo" Font-Bold="true"></asp:Label></h5>
+                    <!-- inicio contenido modal RLR-->
+                    <div style="padding:5px;">
+                        <div class="row">
+                        <div class="col-md-9" style="text-align: left;">
+                            
                         </div>
                         <div class="col-md-3" style="text-align: right;">
                             <asp:LinkButton ID="btnExcel" runat="server" Text="<i class='fa fa-file-pdf-o' style='color:#73879c;font-size:25px;'></i>" CssClass="btn" />
