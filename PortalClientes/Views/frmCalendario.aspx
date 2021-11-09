@@ -7,27 +7,105 @@
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="cc1" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <script type="text/javascript">
-        //function OnGetAppointmentProps(values) {
-        //    var formatter = new ASPx.DateFormatter();
-        //    formatter.SetFormatString("dd.MM.yyyy HH:mm");
-        //    $("#infoSubject").html(values ? values[0] : "");
-        //    $("#infoLocation").html(values ? values[1] : "");
-        //    $("#infoStartTime").html(values ? formatter.Format(values[2]) : "");
-        //    $("#infoEndTime").html(values ? formatter.Format(values[3]) : "");
-        //    $("#infoDescription").html(values ? values[4] : "");
+        //function openModal(values) {
+        //    console.table(values)
+
         //}
+        function getUrlApp() {
+            let value = window.location + "/getDataAppointment";
+            console.log(value);
+            return value;
+        }
+
         function ClickAppointment(scheduler, a) {
-            //console.log(a.appointmentId);
-            // if (a != null) {
-            //    scheduler.GetAppointmentProperties(a.appointmentId, 'Subject;Location;Start;End;Description', OnGetAppointmentProps);
-            //} else
-            //    OnGetAppointmentProps(null);
+            let obj = JSON.stringify({
+                Id: a.appointmentId
+            });
+
+            if (a != null) {
+
+                $.ajax({
+                    data: obj,
+                    contentType: "Application/json; charset=utf-8",
+                    responseType: "json",
+                    method: 'POST',
+                    url: getUrlApp(),
+                    dataType: "json",
+                    beforeSend: function (response) {
+                        lPanel.Show();
+                    },
+                    success: function (response) {
+                        if (response.d) {
+                            InsertData(response.d)
+                        }
+                    },
+                    error: function (err) {
+                        console.log("Fallo al llenar modal", err);
+                    }
+                });
+                //$("#ContentPlaceHolder1_AppointmentID").val(a.appointmentId);
+                //$("#ContentPlaceHolder1_GetModal").val("Modal");
+                //scheduler.GetAppointmentProperties(a.appointmentId, 'Subject;Location;Start;End;Description', openModal);
+            }
+        }
+
+        function InsertData(data) {
             "use strict";
             var modalId = '<%=modalDescription.ClientID%>';
             var modal = $find(modalId);
-            modal.show();
 
+            var item = data
+            $("#ContentPlaceHolder1_lblClaveCiudadSalida").html(item.origen);
+            $("#ContentPlaceHolder1_lblClaveCiudadSalidaRes").html(item.fboNombreOrigen);
+            $("#ContentPlaceHolder1_lblClaveCiudadLlegada").html(item.destino);
+            $("#ContentPlaceHolder1_lblClaveCiudadLlegadaRes").html(item.fboNombreDest);
+            $("#ContentPlaceHolder1_lblDMASalida").html(item.FechaInicio);
+            $("#ContentPlaceHolder1_lblDMAHoraSalida").html(item.HoraInicio);
+            $("#ContentPlaceHolder1_lblDMALLegada").html(item.FechaFin);
+            $("#ContentPlaceHolder1_lblDMAHoraLLegada").html(item.HoraFin);
+            $("#ContentPlaceHolder1_lblAeronaveRes").html(item.matricula);
+            $("#ContentPlaceHolder1_lblTipoEventoRes").html(item.recType);     
+            $("#ContentPlaceHolder1_lblViajeNumeroRes").html(item.tripNum);
+            $("#ContentPlaceHolder1_lblTipoVueloRes").html(item.requestor);
+            $("#ContentPlaceHolder1_lblNombreContactoRes").html(item.requestorName);
+            $("#ContentPlaceHolder1_lalSolicitanteRes").html(item.cliente);
+            $("#ContentPlaceHolder1_lblRegulacionRes").html(item.farNum);
+            $("#ContentPlaceHolder1_lblEstatusRes").html(item.tripStat);
+            $("#ContentPlaceHolder1_lblEstatusRes").html(item.statusVuelo);
+
+
+            $("#ContentPlaceHolder1_lblAeropuertoSalida").html(item.origen);
+            $("#ContentPlaceHolder1_lblAeropuertoSalidaRes").html(item.fboNombreOrigen);
+            $("#ContentPlaceHolder1_lblFueraFechaBloqueRes").html(item.FechaInicio);
+            $("#ContentPlaceHolder1_lblFueraTiempoBloqueRes").html(item.HoraInicio);
+            $("#ContentPlaceHolder1_lblFechaDeSalidaRes").html(item.FechaInicio);
+            $("#ContentPlaceHolder1_lblHoraSalidaRes").html(item.HoraInicio);
+            $("#ContentPlaceHolder1_lblTiempoVuelo").html(item.TiempoVuelo);
+            //$("#ContentPlaceHolder1_lblObjetivoRes").html(item.);
+            $("#ContentPlaceHolder1_lblDescripcionRes").html(item.typeDesc);
+            $("#ContentPlaceHolder1_lblAeropuertoLLegadaRes").html(item.fboNombreDestino);
+            $("#ContentPlaceHolder1_lblFechaArrivoRes").html(item.FechaFin);
+            $("#ContentPlaceHolder1_lblHoraArrivoRes").html(item.HoraFin);
+            $("#ContentPlaceHolder1_lblFechaBloqueRes").html(item.FechaFin);
+            $("#ContentPlaceHolder1_lblTiempoBloqueRes").html(item.HoraFin);
+            //$("#ContentPlaceHolder1_lblPasajerosRes").html(item.);
+            //$("#ContentPlaceHolder1_lblNumeroPasajerosRes").html(item.);
+            //$("#ContentPlaceHolder1_lblTrpulacionRes").html(item.);
+            $("#ContentPlaceHolder1_lblDistanciaRes").html(item.distancia);
+            $("#ContentPlaceHolder1_lblDatosTiempoVueloRes").html(item.TiempoVuelo);
+            $("#ContentPlaceHolder1_lblDatosBloqueTiempoRes").html(item.FechaFin);
+            $("#ContentPlaceHolder1_lblSalidaFBORes").html(item.fboNombreOrigen);
+            $("#ContentPlaceHolder1_lblTelRes").html(item.fboPhoneOrigen);
+            $("#ContentPlaceHolder1_lblDireccionRes").html(item.fboDirOrigen);
+            $("#ContentPlaceHolder1_lblLLEgadaRes").html(item.fboNombreDestino);
+            $("#ContentPlaceHolder1_lblTelLLegadaRes").html(item.fboPhoneDest);
+            $("#ContentPlaceHolder1_lblDireccioLLegadaRes").html(item.fboDirDest);
+            $("#ContentPlaceHolder1_lblCateringTelNotasRes").html(item.notes);
+
+            lPanel.Hide();
+            modal.show();
         }
+
         function CloseModal() {
             "use strict";
             var modalId = '<%=modalDescription.ClientID%>';
@@ -37,7 +115,9 @@
     </script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-
+    <dx:ASPxLoadingPanel ID="loadingpanel" runat="server" ClientInstanceName="lPanel" Text="" ShowImage="true" ImageUrl="~/Images/loading.gif"
+        Modal="true">
+    </dx:ASPxLoadingPanel>
 
     <!-- Button trigger modal -->
     <%-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
@@ -127,8 +207,6 @@
             </div>
         </div>
     </div>
-
-
     <asp:HiddenField ID="hdTargetDescription" runat="server" />
     <cc1:ModalPopupExtender ID="modalDescription" runat="server" TargetControlID="hdTargetDescription"
         PopupControlID="pnlDescription" BackgroundCssClass="overlayy">
@@ -208,8 +286,6 @@
                         </div>
                         <br />
                         <div class="row" style="background-color: #00000008;">
-
-
                             <div class="col-md-3" style="text-align: left; border: 1px solid #ffffff;">
                                 <i class="fa fa-space-shuttle"></i>
                                 <asp:Label ID="lblTipoEvento" runat="server" Text="Tipo de Evento" Font-Bold="false" Style=""></asp:Label>
@@ -225,8 +301,6 @@
                             </div>
                         </div>
                         <div class="row" style="background-color: #00000008;">
-
-
                             <div class="col-md-3" style="text-align: left; border: 1px solid #ffffff;">
                                 <asp:Label ID="lblTipoVuelo" runat="server" Text="Tipo de Vuelo" Font-Bold="false" Style=""></asp:Label>
                             </div>
@@ -241,7 +315,6 @@
                             </div>
                         </div>
                         <div class="row" style="background-color: #00000008;">
-
                             <div class="col-md-3" style="text-align: left; border: 1px solid #ffffff;">
                                 <asp:Label ID="lalSolicitante" runat="server" Text="Solicitante" Font-Bold="false" Style=""></asp:Label>
                             </div>
@@ -256,7 +329,6 @@
                             </div>
                         </div>
                         <div class="row" style="background-color: #00000008;">
-
                             <div class="col-md-3" style="text-align: left; border: 1px solid #ffffff;">
                                 <asp:Label ID="lblRegulacion" runat="server" Text="Regulación" Font-Bold="false" Style=""></asp:Label>
                             </div>
@@ -357,7 +429,7 @@
                             </div>
                             <div class="col-md-2" style="text-align: left; border: 1px solid #ffffff;">
                                 <i class="fa fa-calendar"></i>
-                                <asp:Label ID="lblFhechaArrivoRes" runat="server" Text="04/04/2021" Font-Bold="true" Style=""></asp:Label>
+                                <asp:Label ID="lblFechaArrivoRes" runat="server" Text="04/04/2021" Font-Bold="true" Style=""></asp:Label>
                             </div>
                             <div class="col-md-4" style="text-align: left; border-bottom: 1px solid #ffffff;">
                                 <asp:Label ID="lblHoraArrivo" runat="server" Text="Hora de Arrivo" Font-Bold="false" Style=""></asp:Label>
@@ -380,7 +452,7 @@
                             </div>
                             <div class="col-md-2" style="text-align: left; border-bottom: 1px solid #ffffff;">
                                 <i class="fa fa-clock-o"></i>
-                                <asp:Label ID="Label11" runat="server" Text="04:00 am" Font-Bold="true" Style=""></asp:Label>
+                                <asp:Label ID="lblTiempoBloqueRes" runat="server" Text="04:00 am" Font-Bold="true" Style=""></asp:Label>
                             </div>
                         </div>
                         <div class="row" style="background-color: #00000008;">
@@ -406,7 +478,7 @@
                                 <asp:Label ID="lblPasajeros" runat="server" Text="Pasajeros" Font-Bold="false" Style=""></asp:Label>
                             </div>
                             <div class="col-md-8" style="text-align: left; border: 1px solid #ffffff;">
-                                <asp:Label ID="lblPasajerosResUno" runat="server" Text="Nombre 0" Font-Bold="true" Style=""></asp:Label>
+                                <asp:Label ID="lblPasajerosRes" runat="server" Text="Nombre 0" Font-Bold="true" Style=""></asp:Label>
                                 <asp:Label ID="lblPasajerosResDos" runat="server" Text="Nombre 2" Font-Bold="true" Style=""></asp:Label>
                                 <asp:Label ID="lblPasajerosRestres" runat="server" Text="Nombre 3" Font-Bold="true" Style=""></asp:Label>
                                 <asp:Label ID="lblPasajerosResCuatro" runat="server" Text="Nombre 4" Font-Bold="true" Style=""></asp:Label>
@@ -437,7 +509,7 @@
                                 <asp:Label ID="lblTripulacionMiembros" runat="server" Text="Miembros Tripulación" Font-Bold="false" Style=""></asp:Label>
                             </div>
                             <div class="col-md-8" style="text-align: left; border: 1px solid #ffffff;">
-                                <asp:Label ID="lblTrpulacionUno" runat="server" Text="Tripulación 0" Font-Bold="true" Style=""></asp:Label>
+                                <asp:Label ID="lblTrpulacionRes" runat="server" Text="Tripulación 0" Font-Bold="true" Style=""></asp:Label>
                                 <asp:Label ID="lblTrpulacionDos" runat="server" Text="Tripulación 2" Font-Bold="true" Style=""></asp:Label>
                                 <asp:Label ID="lblTrpulacionTres" runat="server" Text="Tripulación 3" Font-Bold="true" Style=""></asp:Label>
                             </div>
@@ -503,14 +575,6 @@
                                 <asp:Label ID="lblTelRes" runat="server" Text="415.849.1909" Font-Bold="true" Style=""></asp:Label>
                             </div>
                         </div>
-                        <%--<div class="row" style="background-color:#00000008;">
-                <div class="col-md-4" style="text-align:left; border:1px solid #ffffff;">
-                    <asp:Label ID="lblEmail" runat="server" Text="Email" Font-Bold="false" style=""></asp:Label>
-                </div>
-                <div class="col-md-8" style="text-align:left; border:1px solid #ffffff;">
-                    <i class="fa fa-envelope-o"></i> <asp:Label ID="lblEmailRes" runat="server" Text="support@ale.com" Font-Bold="true" style=""></asp:Label>
-                </div>
-            </div>--%>
                         <div class="row" style="background-color: #00000008;">
                             <div class="col-md-4" style="text-align: left; border: 1px solid #ffffff;">
                                 <asp:Label ID="lblDireccion" runat="server" Text="Dirección" Font-Bold="false" Style=""></asp:Label>
@@ -519,14 +583,6 @@
                                 <asp:Label ID="lblDireccionRes" runat="server" Text="Dirección completa" Font-Bold="true" Style=""></asp:Label>
                             </div>
                         </div>
-                        <%--<div class="row" style="background-color:#00000008;">
-                <div class="col-md-4" style="text-align:left; border:1px solid #ffffff;">
-                    <asp:Label ID="lblNotas" runat="server" Text="Notas" Font-Bold="false" style=""></asp:Label>
-                </div>
-                <div class="col-md-8" style="text-align:left; border:1px solid #ffffff;">
-                    <asp:Label ID="lblNotasRes" runat="server" Text="---" Font-Bold="true" style=""></asp:Label>
-                </div>
-            </div>--%>
                         <br />
                         <div class="row" style="background-color: #00000008;">
                             <div class="col-md-4" style="text-align: left; border: 1px solid #ffffff;">
@@ -546,14 +602,6 @@
                                 <asp:Label ID="lblTelLLegadaRes" runat="server" Text="415.849.1909" Font-Bold="true" Style=""></asp:Label>
                             </div>
                         </div>
-                        <%--<div class="row" style="background-color:#00000008;">
-                <div class="col-md-4" style="text-align:left; border:1px solid #ffffff;">
-                    <asp:Label ID="lblEmailLLegada" runat="server" Text="Email" Font-Bold="false" style=""></asp:Label>
-                </div>
-                <div class="col-md-8" style="text-align:left; border:1px solid #ffffff;">
-                    <i class="fa fa-envelope-o"></i> <asp:Label ID="lblEmailLLegadaRes" runat="server" Text="support@ale.com" Font-Bold="true" style=""></asp:Label>
-                </div>
-            </div>--%>
                         <div class="row" style="background-color: #00000008;">
                             <div class="col-md-4" style="text-align: left; border: 1px solid #ffffff;">
                                 <asp:Label ID="lblDireccioLLegada" runat="server" Text="Dirección" Font-Bold="false" Style=""></asp:Label>
@@ -562,14 +610,6 @@
                                 <asp:Label ID="lblDireccioLLegadaRes" runat="server" Text="Dirección completa" Font-Bold="true" Style=""></asp:Label>
                             </div>
                         </div>
-                        <%--<div class="row" style="background-color:#00000008;">
-                <div class="col-md-4" style="text-align:left; border:1px solid #ffffff;">
-                    <asp:Label ID="lblNotasLLegada" runat="server" Text="Notas" Font-Bold="false" style=""></asp:Label>
-                </div>
-                <div class="col-md-8" style="text-align:left; border:1px solid #ffffff;">
-                    <asp:Label ID="lblNotasLLegadaRes" runat="server" Text="---" Font-Bold="true" style=""></asp:Label>
-                </div>
-            </div>--%>
                         <br />
                         <div class="row">
                             <div class="col-md-12">
@@ -579,30 +619,6 @@
                                 <hr style="border-bottom: 1px solid #E6E9ED; margin-top: -1px;" />
                             </div>
                         </div>
-                        <%--<div class="row" style="background-color:#00000008;">
-                <div class="col-md-4" style="text-align:left; border:1px solid #ffffff;">
-                    <i class="fa fa-cutlery"></i> <asp:Label ID="lblcateringDos" runat="server" Text="Catering" Font-Bold="false" style=""></asp:Label>
-                </div>
-                <div class="col-md-8" style="text-align:left; border:1px solid #ffffff;">
-                    <asp:Label ID="lblcateringDosRes" runat="server" Text="Portside, Inc" Font-Bold="true" style=""></asp:Label>
-                </div>
-            </div>
-            <div class="row" style="background-color:#00000008;">
-                <div class="col-md-4" style="text-align:left; border:1px solid #ffffff;">
-                    <asp:Label ID="lblCateringTel" runat="server" Text="Teléfono" Font-Bold="false" style=""></asp:Label>
-                </div>
-                <div class="col-md-8" style="text-align:left; border:1px solid #ffffff;">
-                    <i class="fa fa-phone"></i> <asp:Label ID="lblCateringTelRes" runat="server" Text="415.849.1909" Font-Bold="true" style=""></asp:Label>
-                </div>
-            </div>
-            <div class="row" style="background-color:#00000008;">
-                <div class="col-md-4" style="text-align:left; border:1px solid #ffffff;">
-                    <asp:Label ID="lblCateringTelEmail" runat="server" Text="Email" Font-Bold="false" style=""></asp:Label>
-                </div>
-                <div class="col-md-8" style="text-align:left; border:1px solid #ffffff;">
-                    <i class="fa fa-envelope-o"></i> <asp:Label ID="lblCateringTelEmailRes" runat="server" Text="support@ale.com" Font-Bold="true" style=""></asp:Label>
-                </div>
-            </div>--%>
                         <div class="row" style="background-color: #00000008;">
                             <div class="col-md-4" style="text-align: left; border: 1px solid #ffffff;">
                                 <i class="fa fa-cutlery"></i>- <i class="fa fa-car"></i>
@@ -612,87 +628,12 @@
                                 <asp:Label ID="lblCateringTelNotasRes" runat="server" Text="---" Font-Bold="true" Style=""></asp:Label>
                             </div>
                         </div>
-                        <%--<br />
-            <div class="row">
-                <div class="col-md-12">
-                    <h2 style="color:#BDBDBD;">
-                        <asp:Label ID="lblTransporte" runat="server" Text="Transporte" Font-Bold="true"></asp:Label>
-                    </h2>
-                    <hr style="border-bottom: 1px solid #E6E9ED; margin-top:-1px;" />
-                </div>
-            </div>
-            <div class="row" style="background-color:#00000008;">
-                <div class="col-md-4" style="text-align:left; border:1px solid #ffffff;">
-                    <i class="fa fa-car"></i> <asp:Label ID="lblSalidaTransporte" runat="server" Text="Salida Transporte" Font-Bold="false" style=""></asp:Label>
-                </div>
-                <div class="col-md-8" style="text-align:left; border:1px solid #ffffff;">
-                    <asp:Label ID="lblSalidaTransporteRes" runat="server" Text="Portside, Inc" Font-Bold="true" style=""></asp:Label>
-                </div>
-            </div>
-            <div class="row" style="background-color:#00000008;">
-                <div class="col-md-4" style="text-align:left; border:1px solid #ffffff;">
-                    <asp:Label ID="lblTransporteTel" runat="server" Text="Teléfono" Font-Bold="false" style=""></asp:Label>
-                </div>
-                <div class="col-md-8" style="text-align:left; border:1px solid #ffffff;">
-                    <i class="fa fa-phone"></i> <asp:Label ID="lblTransporteTelRes" runat="server" Text="415.849.1909" Font-Bold="true" style=""></asp:Label>
-                </div>
-            </div>
-            <div class="row" style="background-color:#00000008;">
-                <div class="col-md-4" style="text-align:left; border:1px solid #ffffff;">
-                    <asp:Label ID="lblTransporteEmail" runat="server" Text="Email" Font-Bold="false" style=""></asp:Label>
-                </div>
-                <div class="col-md-8" style="text-align:left; border:1px solid #ffffff;">
-                    <i class="fa fa-envelope-o"></i> <asp:Label ID="lblTransporteEmailRes" runat="server" Text="support@ale.com" Font-Bold="true" style=""></asp:Label>
-                </div>
-            </div>
-            <div class="row" style="background-color:#00000008;">
-                <div class="col-md-4" style="text-align:left; border:1px solid #ffffff;">
-                    <asp:Label ID="lblTransporteNotas" runat="server" Text="Notas" Font-Bold="false" style=""></asp:Label>
-                </div>
-                <div class="col-md-8" style="text-align:left; border:1px solid #ffffff;">
-                    <asp:Label ID="lblTransporteNotasRes" runat="server" Text="---" Font-Bold="true" style=""></asp:Label>
-                </div>
-            </div>
-            <br />
-            <div class="row" style="background-color:#00000008;">
-                <div class="col-md-4" style="text-align:left; border:1px solid #ffffff;">
-                    <i class="fa fa-car"></i> <asp:Label ID="lblTransporteLLegada" runat="server" Text="LLegada Transporte" Font-Bold="false" style=""></asp:Label>
-                </div>
-                <div class="col-md-8" style="text-align:left; border:1px solid #ffffff;">
-                    <asp:Label ID="lblTransporteLLegadaRes" runat="server" Text="Portside, Inc" Font-Bold="true" style=""></asp:Label>
-                </div>
-            </div>
-            <div class="row" style="background-color:#00000008;">
-                <div class="col-md-4" style="text-align:left; border:1px solid #ffffff;">
-                    <asp:Label ID="lblTransporteLLegadaTel" runat="server" Text="Teléfono" Font-Bold="false" style=""></asp:Label>
-                </div>
-                <div class="col-md-8" style="text-align:left; border:1px solid #ffffff;">
-                    <i class="fa fa-phone"></i> <asp:Label ID="lblTransporteLLegadaTelRes" runat="server" Text="415.849.1909" Font-Bold="true" style=""></asp:Label>
-                </div>
-            </div>
-            <div class="row" style="background-color:#00000008;">
-                <div class="col-md-4" style="text-align:left; border:1px solid #ffffff;">
-                    <asp:Label ID="lblTransporteLLegadaEmail" runat="server" Text="Email" Font-Bold="false" style=""></asp:Label>
-                </div>
-                <div class="col-md-8" style="text-align:left; border:1px solid #ffffff;">
-                    <i class="fa fa-envelope-o"></i> <asp:Label ID="lblTransporteLLegadaEmailRes" runat="server" Text="support@ale.com" Font-Bold="true" style=""></asp:Label>
-                </div>
-            </div>
-            <div class="row" style="background-color:#00000008;">
-                <div class="col-md-4" style="text-align:left; border:1px solid #ffffff;">
-                    <asp:Label ID="lblTransporteLLegadaNotas" runat="server" Text="Notas" Font-Bold="false" style=""></asp:Label>
-                </div>
-                <div class="col-md-8" style="text-align:left; border:1px solid #ffffff;">
-                    <asp:Label ID="lblTransporteLLegadaNotasRes" runat="server" Text="---" Font-Bold="true" style=""></asp:Label>
-                </div>
-            </div>--%>
                         <br />
                     </div>
                     <!-- fin contenido modal RLR-->
                 </div>
                 <div class="modal-footer">
                     <asp:Button ID="Button2" runat="server" CssClass="btn btn-secondary" Text="Cerrar" Font-Bold="true" OnClientClick="CloseModal();" />
-
                 </div>
             </ContentTemplate>
         </asp:UpdatePanel>

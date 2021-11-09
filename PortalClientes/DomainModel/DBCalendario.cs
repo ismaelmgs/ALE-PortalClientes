@@ -37,7 +37,7 @@ namespace PortalClientes.DomainModel
             foreach (var item in d)
             {
                 Appointment data = new Appointment();
-                data.ID = item.tripNum.S();
+                data.ID = item.legId.S();
                 data.StartTime = item.FechaInicio;
                 data.EndTime = item.FechaFin;
                 data.Description = item.recType == "M" ? "Mantenimiento" : "Vuelo";

@@ -13,6 +13,7 @@ using Appointment = PortalClientes.Objetos.Appointment;
 using PortalClientes.Clases;
 using DevExpress.Web.ASPxScheduler.Internal;
 using NucleoBase.Core;
+using System.Web.Services;
 
 namespace PortalClientes.Views
 {
@@ -35,7 +36,13 @@ namespace PortalClientes.Views
 
             if (!IsPostBack)
             {
+                HttpContext.Current.Session["LLenarEvento"] = false;
+            }
 
+            var llenado = (bool)HttpContext.Current.Session["LLenarEvento"];
+            if (llenado)
+            {
+                LlenaModal();
             }
 
             Scheduler.Start = DateTime.Now.AddMonths(-2);
@@ -54,9 +61,7 @@ namespace PortalClientes.Views
             ApplyCommonOptions();
 
             Scheduler.ApplyChanges(ASPxSchedulerChangeAction.NotifyVisibleIntervalsChanged);
-            Scheduler.DataBind();
-
-            LlenaModal();
+            Scheduler.DataBind();      
         }
 
         void ApplyOptionsDay()
@@ -294,8 +299,6 @@ namespace PortalClientes.Views
             fg.meses = Convert.ToInt32(DateTime.Now.Month.ToString());
 
             List<Appointment> ap = new List<Appointment>();
-            List<DatosCalendario> dc = new List<DatosCalendario>();
-
 
             ap = oIGesCat.ObtenerCalendario(fg);
 
@@ -317,47 +320,90 @@ namespace PortalClientes.Views
             return ap;
         }
 
+        [WebMethod(EnableSession = true)]
+        public static DatosModal getDataAppointment(string Id)
+        {
+            try
+            {
+                List<DatosCalendario> olst = (List<DatosCalendario>)HttpContext.Current.Session["SSEventos"];
+                var item = olst.Find(x => x.legId == Convert.ToInt32(Id));
+                DatosModal dm = new DatosModal();
+
+                if(item != null)
+                {
+                    dm.origen = item.origen;
+                    dm.fboNombreOrigen = item.fboNombreOrigen;
+                    dm.destino = item.destino;
+                    dm.fboNombreDest = item.fboNombreDest;
+                    dm.TiempoVuelo = (item.FechaFin - item.FechaInicio).Hours.ToString();
+                    dm.FechaInicio = item.FechaInicio.ToLongDateString();
+                    dm.HoraInicio = item.FechaInicio.ToShortTimeString();
+                    dm.FechaFin = item.FechaFin.ToLongDateString();
+                    dm.HoraFin = item.FechaFin.ToShortTimeString();
+
+                    dm.matricula = Utils.MatriculaActual;
+                    dm.recType = item.recType == "M" ? "Mantenimiento" : "Vuelo";
+                    dm.tripNum = item.tripNum.S();
+                    dm.requestor = item.requestor;
+                    dm.requestorName = item.requestorName;
+                    dm.cliente = item.cliente;
+                    dm.farNum = item.farNum;
+                    dm.tripStat = item.tripStat == "X" ? "Cancelado" : "Pendiente";
+                    dm.statusVuelo = item.FechaInicio < DateTime.Now ? "Completado" : "En Proceso";
+                    dm.fboPhoneOrigen = item.fboPhoneOrigen;
+                    dm.fboDirOrigen = item.fboDirOrigen;
+                    dm.fboPhoneDest = item.fboPhoneDest;
+                    dm.fboDirDest = item.fboDirDest;
+                    dm.notes = item.notes;
+                    dm.distancia = item.distancia;
+                    dm.typeDesc = item.typeDesc;
+                }
+
+
+                return dm;
+            }
+            catch (Exception)
+            {
+                return null;
+            }
+            
+        }
+
+
         private void LlenaModal()
         {
             List<DatosCalendario> olst = (List<DatosCalendario>)Session["SSEventos"];
+            int id = Convert.ToInt32(HttpContext.Current.Session["id"]);
+            var item = olst.Find(x => x.legId == Convert.ToInt32(id));
 
-            foreach (DatosCalendario item in olst)
-            {
-                if (item.legId == 351504)
-                {
-                    lblClaveCiudadSalida.Text = item.origen;
-                    lblClaveCiudadSalidaRes.Text = item.fboNombreOrigen;
-                    lblClaveCiudadLlegada.Text = item.destino;
-                    lblClaveCiudadLlegadaRes.Text = item.fboNombreDest;
-                    lblDMASalida.Text = item.FechaInicio.ToLongDateString();
-                    lblDMAHoraSalida.Text = item.FechaInicio.ToShortTimeString();
-                    lblDMALLegada.Text = item.FechaFin.ToLongDateString();
-                    lblDMAHoraLLegada.Text = item.FechaFin.ToShortTimeString();
+            lblClaveCiudadSalida.Text = item.origen;
+            lblClaveCiudadSalidaRes.Text = item.fboNombreOrigen;
+            lblClaveCiudadLlegada.Text = item.destino;
+            lblClaveCiudadLlegadaRes.Text = item.fboNombreDest;
+            lblDMASalida.Text = item.FechaInicio.ToLongDateString();
+            lblDMAHoraSalida.Text = item.FechaInicio.ToShortTimeString();
+            lblDMALLegada.Text = item.FechaFin.ToLongDateString();
+            lblDMAHoraLLegada.Text = item.FechaFin.ToShortTimeString();
 
-                    lblAeronave.Text = Utils.MatriculaActual;
-                    lblTipoEventoRes.Text = item.recType == "M" ? "Mantenimiento" : "Vuelo";
-                    lblViajeNumeroRes.Text = item.tripNum.S();
-                    lblTipoVueloRes.Text = item.requestor;
-                    lblNombreContactoRes.Text = item.requestorName;
-                    lalSolicitanteRes.Text = item.cliente;
-                    lblRegulacionRes.Text = item.farNum;
-                    lblEstatusRes.Text = item.tripStat == "X" ? "Cancelado" : "Pendiente";
+            lblAeronave.Text = Utils.MatriculaActual;
+            lblTipoEventoRes.Text = item.recType == "M" ? "Mantenimiento" : "Vuelo";
+            lblViajeNumeroRes.Text = item.tripNum.S();
+            lblTipoVueloRes.Text = item.requestor;
+            lblNombreContactoRes.Text = item.requestorName;
+            lalSolicitanteRes.Text = item.cliente;
+            lblRegulacionRes.Text = item.farNum;
+            lblEstatusRes.Text = item.tripStat == "X" ? "Cancelado" : "Pendiente";
 
-                    if (item.FechaInicio < DateTime.Now)
-                        lblEstatusRes.Text = "Completado";
+            if (item.FechaInicio < DateTime.Now)
+                lblEstatusRes.Text = "Completado";
 
-                    lblAeropuertoSalida.Text = item.origen;
-                    lblAeropuertoSalidaRes.Text = item.fboNombreOrigen;
+            lblAeropuertoSalida.Text = item.origen;
+            lblAeropuertoSalidaRes.Text = item.fboNombreOrigen;
 
-                    lblFueraFechaBloqueRes.Text = item.FechaInicio.ToShortDateString();
-                    lblFueraTiempoBloqueRes.Text = item.FechaInicio.ToShortTimeString();
-                    lblFechaDeSalidaRes.Text = item.FechaInicio.ToShortDateString();
-                    lblHoraSalidaRes.Text = item.FechaInicio.ToShortDateString();
-
-
-
-                }
-            }
+            lblFueraFechaBloqueRes.Text = item.FechaInicio.ToShortDateString();
+            lblFueraTiempoBloqueRes.Text = item.FechaInicio.ToShortTimeString();
+            lblFechaDeSalidaRes.Text = item.FechaInicio.ToShortDateString();
+            lblHoraSalidaRes.Text = item.FechaInicio.ToShortDateString();
         }
 
         protected void btnActiveView_Click(object sender, EventArgs e)
@@ -399,66 +445,6 @@ namespace PortalClientes.Views
             {
                 e.Menu.Visible = false;
             }
-        }
-
-
-        protected void OnSchedulerBeforeExecuteCallbackCommand(object sender, DevExpress.Web.ASPxScheduler.SchedulerCallbackCommandEventArgs e)
-        {
-            if (e.CommandId == "EnableToolTipCallback")
-            {
-                e.Command = new EnableToolTipCallback(Scheduler);
-            }
-        }
-
-        public class EnableToolTipCallback : SchedulerCallbackCommand
-        {
-            public EnableToolTipCallback(ASPxScheduler control)
-                : base(control)
-            {
-            }
-            public override void Execute(string parameters)
-            {
-                base.Execute(parameters);
-                string[] args = parameters.Split(new char[] { '=' });
-                if (args[0] == "selection")
-                {
-                    if (args[1] == "false")
-                        Control.OptionsToolTips.ShowSelectionToolTip = false;
-                    else if (args[1] == "true")
-                        Control.OptionsToolTips.ShowSelectionToolTip = true;
-                }
-                else if (args[0] == "appointment")
-                {
-                    if (args[1] == "false")
-                        Control.OptionsToolTips.ShowAppointmentToolTip = false;
-                    else if (args[1] == "true")
-                        Control.OptionsToolTips.ShowAppointmentToolTip = true;
-                }
-                else if (args[0] == "drag")
-                {
-                    if (args[1] == "false")
-                        Control.OptionsToolTips.ShowAppointmentDragToolTip = false;
-                    else if (args[1] == "true")
-                        Control.OptionsToolTips.ShowAppointmentDragToolTip = true;
-                }
-                Control.ApplyChanges(ASPxSchedulerChangeAction.All);
-            }
-
-            public override string Id
-            {
-                get { return "EnableToolTipCallback"; }
-            }
-
-            protected override void ParseParameters(string parameters)
-            {
-                //do nothing
-            }
-
-            protected override void ExecuteCore()
-            {
-                //do nothing
-            }
-
         }
     }
 }

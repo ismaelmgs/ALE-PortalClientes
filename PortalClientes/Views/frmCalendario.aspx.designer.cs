@@ -13,6 +13,15 @@ namespace PortalClientes.Views {
     public partial class frmCalendario {
         
         /// <summary>
+        /// Control loadingpanel.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::DevExpress.Web.ASPxLoadingPanel loadingpanel;
+        
+        /// <summary>
         /// Control lblCalendario.
         /// </summary>
         /// <remarks>
@@ -571,13 +580,13 @@ namespace PortalClientes.Views {
         protected global::System.Web.UI.WebControls.Label lblFhechaArrivo;
         
         /// <summary>
-        /// Control lblFhechaArrivoRes.
+        /// Control lblFechaArrivoRes.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblFhechaArrivoRes;
+        protected global::System.Web.UI.WebControls.Label lblFechaArrivoRes;
         
         /// <summary>
         /// Control lblHoraArrivo.
@@ -625,13 +634,13 @@ namespace PortalClientes.Views {
         protected global::System.Web.UI.WebControls.Label lblTiempoBloque;
         
         /// <summary>
-        /// Control Label11.
+        /// Control lblTiempoBloqueRes.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label11;
+        protected global::System.Web.UI.WebControls.Label lblTiempoBloqueRes;
         
         /// <summary>
         /// Control lblZonaHorariaLlegada.
@@ -670,13 +679,13 @@ namespace PortalClientes.Views {
         protected global::System.Web.UI.WebControls.Label lblPasajeros;
         
         /// <summary>
-        /// Control lblPasajerosResUno.
+        /// Control lblPasajerosRes.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblPasajerosResUno;
+        protected global::System.Web.UI.WebControls.Label lblPasajerosRes;
         
         /// <summary>
         /// Control lblPasajerosResDos.
@@ -760,13 +769,13 @@ namespace PortalClientes.Views {
         protected global::System.Web.UI.WebControls.Label lblTripulacionMiembros;
         
         /// <summary>
-        /// Control lblTrpulacionUno.
+        /// Control lblTrpulacionRes.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblTrpulacionUno;
+        protected global::System.Web.UI.WebControls.Label lblTrpulacionRes;
         
         /// <summary>
         /// Control lblTrpulacionDos.
