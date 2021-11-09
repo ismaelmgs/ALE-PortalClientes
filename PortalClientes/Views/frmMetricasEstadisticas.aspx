@@ -330,7 +330,7 @@
                         </div>
                     </div>
                 </div>
-
+                <br />
                 <div class="x_title">
                     <h2>
                         <asp:Label ID="lblprovaero" runat="server" Text="Gastos Por Proveedor y Aeropuerto" Font-Bold="true"></asp:Label>
@@ -377,6 +377,153 @@
                         <div id="piechart_3d_6" style="min-height: 400px;">
                         </div>
                     </div>
+                </div>
+                <br />
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="x_title">
+                            <h2>
+                                <asp:Label ID="lblCostoFijoVariable" runat="server" Text="Costo Fijo y Variable" Font-Bold="true"></asp:Label>
+                            </h2>
+                            <div class="clearfix"></div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                ---
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="x_title">
+                            <h2>
+                                <asp:Label ID="lblCostoFijoVariableHora" runat="server" Text="Costo Fijo y Variable por Hora" Font-Bold="true"></asp:Label>
+                            </h2>
+                            <div class="clearfix"></div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                ---
+                            </div>
+                        </div>
+                    </div>
+                 </div>
+                <br />
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="x_title">
+                            <h2>
+                                <asp:Label ID="lblGastoTotal" runat="server" Text="Gasto Total" Font-Bold="true"></asp:Label>
+                            </h2>
+                            <div class="clearfix"></div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                ---
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="x_title">
+                            <h2>
+                                <asp:Label ID="lblGastoHora" runat="server" Text="Costo por Hora" Font-Bold="true"></asp:Label>
+                            </h2>
+                            <div class="clearfix"></div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                ---
+                            </div>
+                        </div>
+                    </div>
+                 </div>
+                <br />
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="x_title">
+                            <h2>
+                                <asp:Label ID="lblCoatoMilla" runat="server" Text="Costo por Milla" Font-Bold="true"></asp:Label>
+                            </h2>
+                            <div class="clearfix"></div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                ---
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="x_title">
+                            <h2>
+                                <asp:Label ID="lblCostoPaxMilla" runat="server" Text="Costo por Pax Milla" Font-Bold="true"></asp:Label>
+                            </h2>
+                            <div class="clearfix"></div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                ---
+                            </div>
+                        </div>
+                    </div>
+                 </div>
+                <br />
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="x_title">
+                            <h2>
+                                <asp:Label ID="lblNumVuelos" runat="server" Text="Número de Vuelos" Font-Bold="true"></asp:Label>
+                            </h2>
+                            <div class="clearfix"></div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                ---
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="x_title">
+                            <h2>
+                                <asp:Label ID="lblHorasVuelo" runat="server" Text="Horas de Vuelo" Font-Bold="true"></asp:Label>
+                            </h2>
+                            <div class="clearfix"></div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                ---
+                            </div>
+                        </div>
+                    </div>
+                 </div>
+                <br />
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="x_title">
+                            <h2>
+                                <asp:Label ID="lblPromedioPasajerosDos" runat="server" Text="Promedio de Pasajeros" Font-Bold="true"></asp:Label>
+                            </h2>
+                            <div class="clearfix"></div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                ---
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="x_title">
+                            <h2>
+                                <asp:Label ID="lblPRomedioCosto" runat="server" Text="Promedio de Costo" Font-Bold="true"></asp:Label>
+                            </h2>
+                            <div class="clearfix"></div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                ---
+                            </div>
+                        </div>
+                    </div>
+                 </div>
+                <br />
                 </div>
             </div>
         </div>
