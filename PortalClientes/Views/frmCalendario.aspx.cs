@@ -34,17 +34,6 @@ namespace PortalClientes.Views
                 ArmaCalendario();
             }
 
-            if (!IsPostBack)
-            {
-                HttpContext.Current.Session["LLenarEvento"] = false;
-            }
-
-            var llenado = (bool)HttpContext.Current.Session["LLenarEvento"];
-            if (llenado)
-            {
-                LlenaModal();
-            }
-
             Scheduler.Start = DateTime.Now.AddMonths(-2);
 
             ApplyOptionsDay(); // configuracion dia
@@ -335,7 +324,7 @@ namespace PortalClientes.Views
                     dm.fboNombreOrigen = item.fboNombreOrigen;
                     dm.destino = item.destino;
                     dm.fboNombreDest = item.fboNombreDest;
-                    dm.TiempoVuelo = (item.FechaFin - item.FechaInicio).Hours.ToString();
+                    dm.TiempoVuelo = (item.FechaFin - item.FechaInicio).ToString(@"hh\h\ mm\m\ ");
                     dm.FechaInicio = item.FechaInicio.ToLongDateString();
                     dm.HoraInicio = item.FechaInicio.ToShortTimeString();
                     dm.FechaFin = item.FechaFin.ToLongDateString();
@@ -357,8 +346,10 @@ namespace PortalClientes.Views
                     dm.notes = item.notes;
                     dm.distancia = item.distancia;
                     dm.typeDesc = item.typeDesc;
+                    dm.pax = item.pax;
+                    dm.pasajeros = string.Join(", ", item.pasajeros.Split('|').ToList());
+                    dm.tripulacion = item.primerNomPil + " " + item.segNomPil + " " + item.apellidosPil + ", " + item.primerNomCop + " " + item.segNomCop + " " + item.apellidosCop;
                 }
-
 
                 return dm;
             }
@@ -368,7 +359,6 @@ namespace PortalClientes.Views
             }
             
         }
-
 
         private void LlenaModal()
         {

@@ -688,51 +688,6 @@ namespace PortalClientes.Views {
         protected global::System.Web.UI.WebControls.Label lblPasajerosRes;
         
         /// <summary>
-        /// Control lblPasajerosResDos.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblPasajerosResDos;
-        
-        /// <summary>
-        /// Control lblPasajerosRestres.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblPasajerosRestres;
-        
-        /// <summary>
-        /// Control lblPasajerosResCuatro.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblPasajerosResCuatro;
-        
-        /// <summary>
-        /// Control lblPasajerosResCinco.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblPasajerosResCinco;
-        
-        /// <summary>
-        /// Control lblPasajerosResSeis.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblPasajerosResSeis;
-        
-        /// <summary>
         /// Control lblNumeroPasajeros.
         /// </summary>
         /// <remarks>
@@ -776,24 +731,6 @@ namespace PortalClientes.Views {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblTrpulacionRes;
-        
-        /// <summary>
-        /// Control lblTrpulacionDos.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblTrpulacionDos;
-        
-        /// <summary>
-        /// Control lblTrpulacionTres.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblTrpulacionTres;
         
         /// <summary>
         /// Control lblDatosVuelo.
