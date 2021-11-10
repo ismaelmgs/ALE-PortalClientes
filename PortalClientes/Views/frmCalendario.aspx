@@ -6,146 +6,22 @@
 <%@ Register TagPrefix="dx" Namespace="DevExpress.Web" Assembly="DevExpress.Web.v18.1, Version=18.1.15.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" %>
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="cc1" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-    <script type="text/javascript">
-        //function openModal(values) {
-        //    console.table(values)
-
-        //}
-        function getUrlApp() {
-            let value = window.location + "/getDataAppointment";
-            console.log(value);
-            return value;
-        }
-
-        function ClickAppointment(scheduler, a) {
-            let obj = JSON.stringify({
-                Id: a.appointmentId
-            });
-
-            if (a != null) {
-
-                $.ajax({
-                    data: obj,
-                    contentType: "Application/json; charset=utf-8",
-                    responseType: "json",
-                    method: 'POST',
-                    url: getUrlApp(),
-                    dataType: "json",
-                    beforeSend: function (response) {
-                        lPanel.Show();
-                    },
-                    success: function (response) {
-                        if (response.d) {
-                            InsertData(response.d)
-                        }
-                    },
-                    error: function (err) {
-                        console.log("Fallo al llenar modal", err);
-                    }
-                });
-                //$("#ContentPlaceHolder1_AppointmentID").val(a.appointmentId);
-                //$("#ContentPlaceHolder1_GetModal").val("Modal");
-                //scheduler.GetAppointmentProperties(a.appointmentId, 'Subject;Location;Start;End;Description', openModal);
-            }
-        }
-
-        function InsertData(data) {
-            "use strict";
-            var modalId = '<%=modalDescription.ClientID%>';
-            var modal = $find(modalId);
-
-            var item = data
-            $("#ContentPlaceHolder1_lblClaveCiudadSalida").html(item.origen);
-            $("#ContentPlaceHolder1_lblClaveCiudadSalidaRes").html(item.fboNombreOrigen);
-            $("#ContentPlaceHolder1_lblClaveCiudadLlegada").html(item.destino);
-            $("#ContentPlaceHolder1_lblClaveCiudadLlegadaRes").html(item.fboNombreDest);
-            $("#ContentPlaceHolder1_lblDMASalida").html(item.FechaInicio);
-            $("#ContentPlaceHolder1_lblDMAHoraSalida").html(item.HoraInicio);
-            $("#ContentPlaceHolder1_lblDMALLegada").html(item.FechaFin);
-            $("#ContentPlaceHolder1_lblDMAHoraLLegada").html(item.HoraFin);
-            $("#ContentPlaceHolder1_lblAeronaveRes").html(item.matricula);
-            $("#ContentPlaceHolder1_lblTipoEventoRes").html(item.recType);     
-            $("#ContentPlaceHolder1_lblViajeNumeroRes").html(item.tripNum);
-            $("#ContentPlaceHolder1_lblTipoVueloRes").html(item.requestor);
-            $("#ContentPlaceHolder1_lblNombreContactoRes").html(item.requestorName);
-            $("#ContentPlaceHolder1_lalSolicitanteRes").html(item.cliente);
-            $("#ContentPlaceHolder1_lblRegulacionRes").html(item.farNum);
-            $("#ContentPlaceHolder1_lblEstatusRes").html(item.tripStat);
-            $("#ContentPlaceHolder1_lblEstatusRes").html(item.statusVuelo);
-
-
-            $("#ContentPlaceHolder1_lblAeropuertoSalida").html(item.origen);
-            $("#ContentPlaceHolder1_lblAeropuertoSalidaRes").html(item.fboNombreOrigen);
-            $("#ContentPlaceHolder1_lblFueraFechaBloqueRes").html(item.FechaInicio);
-            $("#ContentPlaceHolder1_lblFueraTiempoBloqueRes").html(item.HoraInicio);
-            $("#ContentPlaceHolder1_lblFechaDeSalidaRes").html(item.FechaInicio);
-            $("#ContentPlaceHolder1_lblHoraSalidaRes").html(item.HoraInicio);
-            $("#ContentPlaceHolder1_lblTiempoVuelo").html(item.TiempoVuelo);
-            //$("#ContentPlaceHolder1_lblObjetivoRes").html(item.);
-            $("#ContentPlaceHolder1_lblDescripcionRes").html(item.typeDesc);
-            $("#ContentPlaceHolder1_lblAeropuertoLLegadaRes").html(item.fboNombreDestino);
-            $("#ContentPlaceHolder1_lblFechaArrivoRes").html(item.FechaFin);
-            $("#ContentPlaceHolder1_lblHoraArrivoRes").html(item.HoraFin);
-            $("#ContentPlaceHolder1_lblFechaBloqueRes").html(item.FechaFin);
-            $("#ContentPlaceHolder1_lblTiempoBloqueRes").html(item.HoraFin);
-            //$("#ContentPlaceHolder1_lblPasajerosRes").html(item.);
-            //$("#ContentPlaceHolder1_lblNumeroPasajerosRes").html(item.);
-            //$("#ContentPlaceHolder1_lblTrpulacionRes").html(item.);
-            $("#ContentPlaceHolder1_lblDistanciaRes").html(item.distancia);
-            $("#ContentPlaceHolder1_lblDatosTiempoVueloRes").html(item.TiempoVuelo);
-            $("#ContentPlaceHolder1_lblDatosBloqueTiempoRes").html(item.FechaFin);
-            $("#ContentPlaceHolder1_lblSalidaFBORes").html(item.fboNombreOrigen);
-            $("#ContentPlaceHolder1_lblTelRes").html(item.fboPhoneOrigen);
-            $("#ContentPlaceHolder1_lblDireccionRes").html(item.fboDirOrigen);
-            $("#ContentPlaceHolder1_lblLLEgadaRes").html(item.fboNombreDestino);
-            $("#ContentPlaceHolder1_lblTelLLegadaRes").html(item.fboPhoneDest);
-            $("#ContentPlaceHolder1_lblDireccioLLegadaRes").html(item.fboDirDest);
-            $("#ContentPlaceHolder1_lblCateringTelNotasRes").html(item.notes);
-
-            lPanel.Hide();
-            modal.show();
-        }
-
-        function CloseModal() {
-            "use strict";
-            var modalId = '<%=modalDescription.ClientID%>';
-            var modal = $find(modalId);
-            modal.hide();
-        }
-    </script>
+    <script type="text/javascript" src="../build/js/scheduler.js?n=1"></script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <dx:ASPxLoadingPanel ID="loadingpanel" runat="server" ClientInstanceName="lPanel" Text="" ShowImage="true" ImageUrl="~/Images/loading.gif"
+    <dx:ASPxLoadingPanel ID="loadingpanel" runat="server" ClientInstanceName="lPanel" 
+        Text=" " ShowImage="false"
+        ImagePosition="Top"
+        BackgroundImage-Repeat="NoRepeat"
+        Border-BorderStyle="None"
+        BackColor="Transparent"
+        BackgroundImage-ImageUrl="~/Images/loading.gif"
+        Image-Width="100"
+        Image-Height="100"
+        Height="200"
+        Width="200"
         Modal="true">
     </dx:ASPxLoadingPanel>
-
-    <!-- Button trigger modal -->
-    <%-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-        Modal
-    </button>
-
-
-    <div class="row">
-        <div class="col-md-6">
-            <div class="title_left">
-                <h3>Calendario</h3>
-            </div>
-        </div>
-        <div class="col-md-6">
-            <div class="title_right">
-                <div class="col-md-5 col-sm-5   form-group pull-right top_search">
-                    <div class="input-group">
-                        <asp:TextBox ID="txtBusqueda" runat="server" CssClass="form-control" placeholder="Buscar..."></asp:TextBox>
-                        <span class="input-group-btn">
-                            <button id="btnBuscar" class="btn btn-default" type="button">
-                                <i class="fa fa-search" aria-hidden="true"></i>
-                            </button>
-                        </span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>--%>
     <div class="row">
         <div class="col-md-12 col-sm-12">
             <div class="x_panel">
@@ -172,7 +48,17 @@
                                 </Appointments>
                             </Storage>
                             <ClientSideEvents
-                                AppointmentClick="function(s, e) { ClickAppointment(s, e); }" />
+                                AppointmentClick="function(s, e) { ClickAppointment(s, e); }"
+                                AppointmentDoubleClick="function(s, e) { Click(s, e,1);}"
+                                ActiveViewChanged="function(s, e) { Click(s, e,2); }"
+                                ActiveViewChanging="function(s, e) { Click(s, e,3); }"
+                                VisibleIntervalChanged="function(s, e) { Click(s, e,6); }"
+                                MenuItemClicked="function(s, e) { Click(s, e,7); }"
+                                MoreButtonClicked="function(s, e) { Click(s, e,8);}"
+                                MouseUp="function(s, e) { Click(s, e,9); }"
+                                CallbackError="function(s, e) { Click(s, e,11); }"
+
+                                />
                             <OptionsToolTips ShowAppointmentToolTip="false" />
                             <Views>
                                 <DayView>
@@ -481,11 +367,6 @@
                             </div>
                             <div class="col-md-8" style="text-align: left; border: 1px solid #ffffff;">
                                 <asp:Label ID="lblPasajerosRes" runat="server" Text="Nombre 0" Font-Bold="true" Style=""></asp:Label>
-                                <asp:Label ID="lblPasajerosResDos" runat="server" Text="Nombre 2" Font-Bold="true" Style=""></asp:Label>
-                                <asp:Label ID="lblPasajerosRestres" runat="server" Text="Nombre 3" Font-Bold="true" Style=""></asp:Label>
-                                <asp:Label ID="lblPasajerosResCuatro" runat="server" Text="Nombre 4" Font-Bold="true" Style=""></asp:Label>
-                                <asp:Label ID="lblPasajerosResCinco" runat="server" Text="Nombre 5" Font-Bold="true" Style=""></asp:Label>
-                                <asp:Label ID="lblPasajerosResSeis" runat="server" Text="Nombre 6" Font-Bold="true" Style=""></asp:Label>
                             </div>
                         </div>
                         <div class="row" style="background-color: #00000008;">
@@ -512,8 +393,6 @@
                             </div>
                             <div class="col-md-8" style="text-align: left; border: 1px solid #ffffff;">
                                 <asp:Label ID="lblTrpulacionRes" runat="server" Text="Tripulación 0" Font-Bold="true" Style=""></asp:Label>
-                                <asp:Label ID="lblTrpulacionDos" runat="server" Text="Tripulación 2" Font-Bold="true" Style=""></asp:Label>
-                                <asp:Label ID="lblTrpulacionTres" runat="server" Text="Tripulación 3" Font-Bold="true" Style=""></asp:Label>
                             </div>
                         </div>
                         <br />

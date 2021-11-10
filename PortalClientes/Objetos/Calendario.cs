@@ -120,6 +120,7 @@ namespace PortalClientes.Objetos
         public string fboNombreDest { get; set; }
         public string fboPhoneDest { get; set; }
         public string fboDirDest { get; set; }
+        public string tripulacion { get; set; }
         public string TiempoVuelo { get; set; }
 
     }
