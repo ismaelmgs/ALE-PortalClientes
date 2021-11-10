@@ -43,7 +43,7 @@
                     <%--<h2>Resumen del período</h2>--%>
                     <div class="row" style="margin: 5px;">
                         <div class="col-md-4 tile_count">
-                            <div class="tile_stats_count" style="text-align: center;background-image:none !important;">
+                            <div class="tile_stats_count" style="text-align: center;background-image:none !important; border:0px;">
                                 <span class="count_top">
                                     <asp:Label ID="lblSaldoActual" runat="server" Text=" Saldo Actual" Font-Bold="false"></asp:Label></span>
                                 <div class="count">
@@ -53,7 +53,7 @@
                             </div>
                         </div>
                         <div class="col-md-4 tile_count">
-                            <div class="tile_stats_count" style="text-align: center;background-image:none !important;">
+                            <div class="tile_stats_count" style="text-align: center;background-image:none !important; border:0px;">
                                 <span class="count_top">
                                     <asp:Label ID="lblTotalAtrasado" runat="server" Text=" Total Atrasado" Font-Bold="false"></asp:Label></span>
                                 <div class="count">
@@ -88,7 +88,7 @@
                             
                         </div>
                         <div class="col-md-4 tile_count">
-                            <div class="tile_stats_count" style="text-align: center;background-image:none !important;">
+                            <div class="tile_stats_count" style="text-align: center;background-image:none !important; border:0px;">
                                 <span class="count_top">
                                     <asp:Label ID="lblMontoRequerido" runat="server" Text=" Monto de Depósito Requerido" Font-Bold="false"></asp:Label></span>
                                 <div class="count">
