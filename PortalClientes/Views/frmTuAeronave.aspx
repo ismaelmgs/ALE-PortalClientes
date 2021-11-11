@@ -1,5 +1,10 @@
 ﻿ <%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="frmTuAeronave.aspx.cs" Inherits="PortalClientes.Views.frmTuAeronave" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+    <style>
+        .w-100 {
+	    height: 50vh;
+        }
+    </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="row">
@@ -54,14 +59,14 @@
                 <div class="tab-content" id="myTabContent">
                     <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
                         <div class="row">
-                            <div class="col-md-7">
+                            <div class="col-md-6">
                                 <div class="row">
                                     <div class="col-md-12" style="text-align: center;">
                                         <h3>
                                             <asp:Label ID="lblMatriculaTuAeronave" runat="server" Text="2015 Cessna Citation X+"></asp:Label></h3>
                                     </div>
                                 </div>
-                                <div class="row" style="background-color: #f2f2f2; padding: 5px; margin: 5px;">
+                                <div class="row" style="/*background-color: #f2f2f2;*/ padding: 5px; margin: 5px;">
                                     <div class="col-md-4">
                                         <asp:Label ID="lblFabricante" runat="server" Text="Fabricante:"></asp:Label>
                                     </div>
@@ -69,7 +74,7 @@
                                         <asp:Label ID="lblFabricanteResp" runat="server" Text="---" Font-Bold="true"></asp:Label>
                                     </div>
                                 </div>
-                                <div class="row" style="background-color: #f2f2f2; padding: 5px; margin: 5px;">
+                                <div class="row" style="/*background-color: #f2f2f2;*/ padding: 5px; margin: 5px;">
                                     <div class="col-md-4">
                                         <asp:Label ID="lblYear" runat="server" Text="Año:"></asp:Label>
                                     </div>
@@ -77,7 +82,7 @@
                                         <asp:Label ID="lblYearResp" runat="server" Text="---" Font-Bold="true"></asp:Label>
                                     </div>
                                 </div>
-                                <div class="row" style="background-color: #f2f2f2; padding: 5px; margin: 5px;">
+                                <div class="row" style="/*background-color: #f2f2f2;*/ padding: 5px; margin: 5px;">
                                     <div class="col-md-4">
                                         <asp:Label ID="lblModelo" runat="server" Text="Modelo:"></asp:Label>
                                     </div>
@@ -85,7 +90,7 @@
                                         <asp:Label ID="lblModeloResp" runat="server" Text="---" Font-Bold="true"></asp:Label>
                                     </div>
                                 </div>
-                                <div class="row" style="background-color: #f2f2f2; padding: 5px; margin: 5px;">
+                                <div class="row" style="/*background-color: #f2f2f2;*/ padding: 5px; margin: 5px;">
                                     <div class="col-md-4">
                                         <asp:Label ID="lblRegistro" runat="server" Text="Registro No.:"></asp:Label>
                                     </div>
@@ -93,7 +98,7 @@
                                         <asp:Label ID="lblRegistroResp" runat="server" Text="---" Font-Bold="true"></asp:Label>
                                     </div>
                                 </div>
-                                <div class="row" style="background-color: #f2f2f2; padding: 5px; margin: 5px;">
+                                <div class="row" style="/*background-color: #f2f2f2;*/ padding: 5px; margin: 5px;">
                                     <div class="col-md-4">
                                         <asp:Label ID="lblSerie" runat="server" Text="Serie No.:"></asp:Label>
                                     </div>
@@ -107,7 +112,7 @@
                                             <asp:Label ID="lblCapacidad" runat="server" Text="Capacidad"></asp:Label></h3>
                                     </div>
                                 </div>
-                                <div class="row" style="background-color: #f2f2f2; padding: 5px; margin: 5px;">
+                                <div class="row" style="/*background-color: #f2f2f2;*/ padding: 5px; margin: 5px;">
                                     <div class="col-md-4">
                                         <asp:Label ID="lblPasajeros" runat="server" Text="Pasajeros:"></asp:Label>
                                     </div>
@@ -115,7 +120,7 @@
                                         <asp:Label ID="lblPasajerosResp" runat="server" Text="---" Font-Bold="true"></asp:Label>
                                     </div>
                                 </div>
-                                <div class="row" style="background-color: #f2f2f2; padding: 5px; margin: 5px;">
+                                <div class="row" style="/*background-color: #f2f2f2;*/ padding: 5px; margin: 5px;">
                                     <div class="col-md-4">
                                         <asp:Label ID="lblTripulacion" runat="server" Text="Tripulación:"></asp:Label>
                                     </div>
@@ -125,7 +130,7 @@
                                 </div>
                             <div class="row">
                                 <div class="col-md-6">
-                                    <div class="row" style="background-color: #f2f2f2; padding: 5px; margin: 5px;">
+                                    <div class="row" style="/*background-color: #f2f2f2;*/ padding: 5px; margin: 5px;">
                                         <div class="col-md-9">
                                             <asp:Label ID="lblPesoMaxDespegue" runat="server" Text="Peso Máx. Despegue:"></asp:Label>
                                         </div>
@@ -135,7 +140,7 @@
                                     </div>
                                 </div>
                                 <div class="col-md-6">
-                                    <div class="row" style="background-color: #f2f2f2; padding: 5px; margin: 5px;">
+                                    <div class="row" style="/*background-color: #f2f2f2;*/ padding: 5px; margin: 5px;">
                                         <div class="col-md-9">
                                             <asp:Label ID="lblPesoMaxAterrizaje" runat="server" Text="Peso Máx. Aterrizaje:"></asp:Label>
                                         </div>
@@ -147,7 +152,7 @@
                             </div>
                             <div class="row">
                                 <div class="col-md-6">
-                                    <div class="row" style="background-color: #f2f2f2; padding: 5px; margin: 5px;">
+                                    <div class="row" style="/*background-color: #f2f2f2;*/ padding: 5px; margin: 5px;">
                                         <div class="col-md-9">
                                             <asp:Label ID="lblMaxCeroCombustible" runat="server" Text="Peso Máx. 0 combustible:"></asp:Label>
                                         </div>
@@ -157,7 +162,7 @@
                                     </div>
                                 </div>
                                 <div class="col-md-6">
-                                    <div class="row" style="background-color: #f2f2f2; padding: 5px; margin: 5px;">
+                                    <div class="row" style="/*background-color: #f2f2f2;*/ padding: 5px; margin: 5px;">
                                         <div class="col-md-9">
                                             <asp:Label ID="lblPesoBasicoOperacion" runat="server" Text="Peso Básico Operación:"></asp:Label>
                                         </div>
@@ -169,7 +174,7 @@
                             </div>
                             <div class="row">
                             <div class="col-md-6">
-                                <div class="row" style="background-color: #f2f2f2; padding: 5px; margin: 5px;">
+                                <div class="row" style="/*background-color: #f2f2f2;*/ padding: 5px; margin: 5px;">
                                     <div class="col-md-9">
                                         <asp:Label ID="lblVelocidad" runat="server" Text="Velocidad Crucero:"></asp:Label>
                                     </div>
@@ -179,7 +184,7 @@
                                 </div>
                             </div>
                             <div class="col-md-6">
-                                <div class="row" style="background-color: #f2f2f2; padding: 5px; margin: 5px;">
+                                <div class="row" style="/*background-color: #f2f2f2;*/ padding: 5px; margin: 5px;">
                                     <div class="col-md-9">
                                         <asp:Label ID="lblMaxAltura" runat="server" Text="Altitud Máxima:"></asp:Label>
                                     </div>
@@ -190,7 +195,7 @@
                             </div>
                             </div>
                         </div>
-                            <div class="col-md-5">
+                            <div class="col-md-6">
                                 <br /><br /><br />
                                 <div runat="server" id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
                                 </div>

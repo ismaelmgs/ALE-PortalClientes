@@ -11,7 +11,7 @@
         </div>
         <div class="col-md-6">
         <div class="title_right">
-                <div class="col-md-5 col-sm-5   form-group pull-right top_search">
+                <div class="col-md-5 col-sm-5 form-group pull-right top_search">
                     <div class="input-group">
                         <%--<asp:TextBox ID="txtBusqueda" runat="server" CssClass="form-control" placeholder="Buscar..."></asp:TextBox>
                         <span class="input-group-btn">
@@ -43,7 +43,7 @@
                     <br />
                     <div class="row">
                         <div class="col-md-12" style="text-align:center;">
-                            <span style="font-size:20px;color:#ffffff; background-color:#1a8ebb; padding:12px; border-radius:60%; margin:4px;"><i class="fa fa-plane"></i></span>&nbsp;&nbsp;<asp:Label ID="lblCompleto" runat="server" Text="" Font-Bold="true" Style="font-size:20px;"></asp:Label>
+                            <span style="font-size:20px;color:#ffffff; background-color:#1a8ebb; padding:8px; border-radius:60%; margin:4px;"><i class="fa fa-plane" style="padding:5px;"></i></span>&nbsp;&nbsp;<asp:Label ID="lblCompleto" runat="server" Text="" Font-Bold="true" Style="font-size:20px;"></asp:Label>
                         </div>
                     </div>
                     <br /><br />
