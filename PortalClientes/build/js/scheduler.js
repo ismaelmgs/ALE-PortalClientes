@@ -86,7 +86,6 @@ function CloseModal() {
 }
 
 function Click(s, e, evn) {
-    console.log(s);
-    console.log(e);
-    console.log(evn);
+    var y = s.GetSelectedInterval();
+    $("#ContentPlaceHolder1_hfdate").val(y.start);
 }

@@ -49,15 +49,7 @@
                             </Storage>
                             <ClientSideEvents
                                 AppointmentClick="function(s, e) { ClickAppointment(s, e); }"
-                                AppointmentDoubleClick="function(s, e) { Click(s, e,1);}"
-                                ActiveViewChanged="function(s, e) { Click(s, e,2); }"
-                                ActiveViewChanging="function(s, e) { Click(s, e,3); }"
-                                VisibleIntervalChanged="function(s, e) { Click(s, e,6); }"
-                                MenuItemClicked="function(s, e) { Click(s, e,7); }"
-                                MoreButtonClicked="function(s, e) { Click(s, e,8);}"
                                 MouseUp="function(s, e) { Click(s, e,9); }"
-                                CallbackError="function(s, e) { Click(s, e,11); }"
-
                                 />
                             <OptionsToolTips ShowAppointmentToolTip="false" />
                             <Views>
@@ -93,6 +85,7 @@
             </div>
         </div>
     </div>
+    <asp:HiddenField ID="hfdate" runat="server" />
     <asp:HiddenField ID="hdTargetDescription" runat="server" />
     <cc1:ModalPopupExtender ID="modalDescription" runat="server" TargetControlID="hdTargetDescription"
         PopupControlID="pnlDescription" BackgroundCssClass="overlayy">

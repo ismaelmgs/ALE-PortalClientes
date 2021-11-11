@@ -34,7 +34,15 @@ namespace PortalClientes.Views
                 ArmaCalendario();
             }
 
-            Scheduler.Start = DateTime.Now.AddMonths(-2);
+            Session["dateScheduler"] = 0;
+
+            if (IsPostBack)
+            {
+                var cadena = hfdate.Value.Split(' ');
+                getMonth(cadena[1]);
+            }
+
+            //Scheduler.Start = DateTime.Now.AddMonths(-2);
 
             ApplyOptionsDay(); // configuracion dia
 
@@ -51,6 +59,49 @@ namespace PortalClientes.Views
 
             Scheduler.ApplyChanges(ASPxSchedulerChangeAction.NotifyVisibleIntervalsChanged);
             Scheduler.DataBind();      
+        }
+
+        private void getMonth(string v)
+        {
+            switch (v)
+            {
+                case "Jan":
+                    Session["dateScheduler"] = 11;
+                    break;
+                case "Feb":
+                    Session["dateScheduler"] = 11;
+                    break;
+                case "Mar":
+                    Session["dateScheduler"] = 11;
+                    break;
+                case "Apr":
+                    Session["dateScheduler"] = 11;
+                    break;
+                case "May":
+                    Session["dateScheduler"] = 11;
+                    break;
+                case "Jun":
+                    Session["dateScheduler"] = 11;
+                    break;
+                case "Jul":
+                    Session["dateScheduler"] = 11;
+                    break;
+                case "Agu":
+                    Session["dateScheduler"] = 11;
+                    break;
+                case "Sep":
+                    Session["dateScheduler"] = 11;
+                    break;
+                case "Oct":
+                    Session["dateScheduler"] = 11;
+                    break;
+                case "Nov":
+                    Session["dateScheduler"] = 11;
+                    break;
+                case "Dic":
+                    Session["dateScheduler"] = 11;
+                    break;
+            }
         }
 
         void ApplyOptionsDay()
@@ -280,12 +331,21 @@ namespace PortalClientes.Views
             btnActiveAgenda.Text = Properties.Resources.Ca_ActiveAgenda;
         }
 
-        public static List<Appointment> getAllAppoinments()
+        public List<Appointment> getAllAppoinments()
         {
             DBCalendario oIGesCat = new DBCalendario();
 
             FiltroEvent fg = new FiltroEvent();
-            fg.meses = Convert.ToInt32(DateTime.Now.Month.ToString());
+            var date = Session["dateScheduler"];
+
+            if(Convert.ToInt32(Session["dateScheduler"]) > 0)
+            {
+                fg.meses = Convert.ToInt32(Session["dateScheduler"]);
+            }
+            else
+            {
+                fg.meses = Convert.ToInt32(DateTime.Now.Month.ToString());
+            }
 
             List<Appointment> ap = new List<Appointment>();
 
