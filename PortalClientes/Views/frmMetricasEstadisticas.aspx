@@ -261,7 +261,7 @@
                         <asp:DropDownList ID="ddlTipoRubro" runat="server" CssClass="form-control" Width="100%"></asp:DropDownList>
                     </div>
                     <div class="col-md-2">
-                        <button id="btnGraficasBuscar" class="btn"><i class='fa fa-undo' style='color:#73879c;font-size:23px;'></i></button>
+                        <button id="btnGraficasBuscar" class="btn"><i class='fa fa-undo' style='color: #73879c; font-size: 23px;'></i></button>
                     </div>
                 </div>
                 <div class="row">
@@ -290,8 +290,8 @@
                 <div>
                     <br />
                     <div class="row" style="margin: 0px;">
-                        <div class="col-md-12 table-responsive" style="padding-left:1px !important; padding-right:1px !important">
-                            <table class="table" style="border:0px;">
+                        <div class="col-md-12 table-responsive" style="padding-left: 1px !important; padding-right: 1px !important">
+                            <table class="table" style="border: 0px;">
                                 <%--<tr>
                                     <th style="width: 70%;">
                                         <asp:Label ID="lblDescripcion" runat="server" Text="Tipo Reporte" Font-Bold="false"></asp:Label>
@@ -300,27 +300,25 @@
                                         <asp:Label ID="lblDescargar" runat="server" Text=" Descargar" Font-Bold="false"></asp:Label>
                                     </th>
                                 </tr>--%>
-                                <tr style="background-color:#00000003;">
-                                    <td style="border:0px; padding:6px;">
-                                        <img src="../build/images/resumen_gatos.png" style="width:32px;" />&nbsp;<span style="font-size:17px; font-weight:bold;"><asp:Label ID="lblResumenGastos" runat="server" Text=" Resumen de Gastos" Font-Bold="true"></asp:Label></span><br />
+                                <tr style="background-color: #00000003;">
+                                    <td style="border: 0px; padding: 6px;">
+                                        <img src="../build/images/resumen_gatos.png" style="width: 32px;" />&nbsp;<span style="font-size: 17px; font-weight: bold;"><asp:Label ID="lblResumenGastos" runat="server" Text=" Resumen de Gastos" Font-Bold="true"></asp:Label></span><br />
                                         <asp:Label ID="lblResumanGastosRes" runat="server" Text=" Resumen de gastos " Font-Bold="false"></asp:Label>
                                     </td>
-                                    <td align="center" style="border:0px; padding:0.1rem;">
+                                    <td align="center" style="border: 0px; padding: 0.1rem;">
                                         <asp:LinkButton ID="LinkButton1" runat="server" Text="<i class='fa fa-file-excel-o' style='color:#73879c;font-size:25px;'></i>" CssClass="btn" OnClick="lkbExpExcelRes_Click" />
                                         <asp:LinkButton ID="LinkButton2" runat="server" Text="<i class='fa fa-file-pdf-o' style='color:#73879c;font-size:25px;' ></i>" CssClass="btn" OnClick="lkbExpPDFRes_Click" />
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td colspan="2" style="height:3px;">
-                                        
-                                    </td>
+                                    <td colspan="2" style="height: 3px;"></td>
                                 </tr>
-                                <tr style="background-color:#00000003;">
-                                    <td style="border:0px; padding:6px;">
-                                        <img src="../build/images/detalle_gatos.png" style="width:32px;" />&nbsp;<span style="font-size:17px; font-weight:bold;"><asp:Label ID="lblRepDetGastos" runat="server" Text=" Detalle de Gastos" Font-Bold="true"></asp:Label></span><br />
+                                <tr style="background-color: #00000003;">
+                                    <td style="border: 0px; padding: 6px;">
+                                        <img src="../build/images/detalle_gatos.png" style="width: 32px;" />&nbsp;<span style="font-size: 17px; font-weight: bold;"><asp:Label ID="lblRepDetGastos" runat="server" Text=" Detalle de Gastos" Font-Bold="true"></asp:Label></span><br />
                                         <asp:Label ID="lblRepDeGastosRes" runat="server" Text=" Detalle de gastos " Font-Bold="false"></asp:Label>
                                     </td>
-                                    <td align="center" style="border:0px;">
+                                    <td align="center" style="border: 0px;">
                                         <asp:LinkButton ID="btnExcel" runat="server" Text="<i class='fa fa-file-excel-o' style='color:#73879c;font-size:25px;'></i>" CssClass="btn" OnClick="lkbExpExcel_Click" />
                                         <asp:LinkButton ID="btnPDF" runat="server" Text="<i class='fa fa-file-pdf-o' style='color:#73879c;font-size:25px;' ></i>" CssClass="btn" OnClick="lkbExpPDF_Click" />
                                     </td>
@@ -342,7 +340,7 @@
                         <asp:DropDownList ID="DDFiltroMesesPA" runat="server" CssClass="form-control" Width="100%"></asp:DropDownList>
                     </div>
                     <div class="col-md-2">
-                        <button id="btnGraficasBuscarPA" class="btn"><i class='fa fa-undo' style='color:#73879c;font-size:23px;'></i></button>
+                        <button id="btnGraficasBuscarPA" class="btn"><i class='fa fa-undo' style='color: #73879c; font-size: 23px;'></i></button>
                     </div>
                 </div>
                 <div class="row">
@@ -366,7 +364,7 @@
                         <asp:DropDownList ID="DDFiltroMesesV" runat="server" CssClass="form-control" Width="100%"></asp:DropDownList>
                     </div>
                     <div class="col-md-2">
-                        <button id="btnGraficasBuscarHvDv" class="btn"><i class='fa fa-undo' style='color:#73879c;font-size:23px;'></i></button>
+                        <button id="btnGraficasBuscarHvDv" class="btn"><i class='fa fa-undo' style='color: #73879c; font-size: 23px;'></i></button>
                     </div>
                 </div>
                 <div class="row">
@@ -389,7 +387,8 @@
                         </div>
                         <div class="row">
                             <div class="col-md-12">
-                                ---
+                                <div id="piechart_3d_7" style="min-height: 400px;">
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -402,11 +401,12 @@
                         </div>
                         <div class="row">
                             <div class="col-md-12">
-                                ---
+                                <div id="piechart_3d_8" style="min-height: 400px;">
+                                </div>
                             </div>
                         </div>
                     </div>
-                 </div>
+                </div>
                 <br />
                 <div class="row">
                     <div class="col-md-6">
@@ -418,7 +418,8 @@
                         </div>
                         <div class="row">
                             <div class="col-md-12">
-                                ---
+                                <div id="piechart_3d_9" style="min-height: 400px;">
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -431,11 +432,12 @@
                         </div>
                         <div class="row">
                             <div class="col-md-12">
-                                ---
+                                <div id="piechart_3d_10" style="min-height: 400px;">
+                                </div>
                             </div>
                         </div>
                     </div>
-                 </div>
+                </div>
                 <br />
                 <div class="row">
                     <div class="col-md-6">
@@ -447,7 +449,8 @@
                         </div>
                         <div class="row">
                             <div class="col-md-12">
-                                ---
+                                <div id="piechart_3d_11" style="min-height: 400px;">
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -460,11 +463,12 @@
                         </div>
                         <div class="row">
                             <div class="col-md-12">
-                                ---
+                                <div id="piechart_3d_12" style="min-height: 400px;">
+                                </div>
                             </div>
                         </div>
                     </div>
-                 </div>
+                </div>
                 <br />
                 <div class="row">
                     <div class="col-md-6">
@@ -475,8 +479,17 @@
                             <div class="clearfix"></div>
                         </div>
                         <div class="row">
+                            <div class="col-md-2 offset-8">
+                                <asp:DropDownList ID="DDFiltroMesesNV" runat="server" CssClass="form-control" Width="100%"></asp:DropDownList>
+                            </div>
+                            <div class="col-md-2">
+                                <button id="btnGraficasBuscarNV" class="btn"><i class='fa fa-undo' style='color: #73879c; font-size: 23px;'></i></button>
+                            </div>
+                        </div>
+                        <div class="row">
                             <div class="col-md-12">
-                                ---
+                                <div id="piechart_3d_13" style="min-height: 400px;">
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -488,12 +501,21 @@
                             <div class="clearfix"></div>
                         </div>
                         <div class="row">
+                            <div class="col-md-2 offset-8">
+                                <asp:DropDownList ID="DDFiltroMesesHV" runat="server" CssClass="form-control" Width="100%"></asp:DropDownList>
+                            </div>
+                            <div class="col-md-2">
+                                <button id="btnGraficasBuscarHV" class="btn"><i class='fa fa-undo' style='color: #73879c; font-size: 23px;'></i></button>
+                            </div>
+                        </div>
+                        <div class="row">
                             <div class="col-md-12">
-                                ---
+                                <div id="piechart_3d_14" style="min-height: 400px;">
+                                </div>
                             </div>
                         </div>
                     </div>
-                 </div>
+                </div>
                 <br />
                 <div class="row">
                     <div class="col-md-6">
@@ -505,7 +527,8 @@
                         </div>
                         <div class="row">
                             <div class="col-md-12">
-                                ---
+                                <div id="piechart_3d_15" style="min-height: 400px;">
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -517,20 +540,31 @@
                             <div class="clearfix"></div>
                         </div>
                         <div class="row">
+                            <div class="col-md-2 offset-8">
+                                <asp:DropDownList ID="DDFiltroMesesPC" runat="server" CssClass="form-control" Width="100%"></asp:DropDownList>
+                            </div>
+                            <div class="col-md-2">
+                                <button id="btnGraficasBuscarPC" class="btn"><i class='fa fa-undo' style='color: #73879c; font-size: 23px;'></i></button>
+                            </div>
+                        </div>
+                        <div class="row">
                             <div class="col-md-12">
-                                ---
+                                <div id="piechart_3d_16" style="min-height: 400px;">
+                                </div>
                             </div>
                         </div>
                     </div>
-                 </div>
-                <br />
                 </div>
+                <br />
             </div>
         </div>
     </div>
 
     <script src='<%=ResolveUrl("~/vendors/jquery/dist/jquery.min.js")%>'></script>
     <script src='<%=ResolveUrl("~/vendors/jquery/dist/jquery.js")%>'></script>
+    <script src='<%=ResolveUrl("~/build/js/GraficasJS/GraficasMeEsPromedioCosto.js")%>'></script>
+    <script src='<%=ResolveUrl("~/build/js/GraficasJS/GraficasMeEsNumeroVuelos.js")%>'></script>
+    <script src='<%=ResolveUrl("~/build/js/GraficasJS/GraficasMeEsHorasVoladas.js")%>'></script>
     <script src='<%=ResolveUrl("~/build/js/GraficasJS/GraficasMeEsPorDuracionVuelos.js")%>'></script>
     <script src='<%=ResolveUrl("~/build/js/GraficasJS/GraficasMeEsPorAeropuerto.js")%>'></script>
     <script src='<%=ResolveUrl("~/build/js/GraficasJS/GraficasMeEsPorProveedor.js")%>'></script>

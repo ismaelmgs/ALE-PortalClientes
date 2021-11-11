@@ -188,7 +188,7 @@ namespace PortalClientes.Views
             }
             else
             {
-                DDFiltroMesesPA.SelectedValue = v;
+                DDFiltroMesesPA.SelectedValue = v2;
             }
 
             var v3 = DDFiltroMesesV.SelectedValue;
@@ -205,7 +205,58 @@ namespace PortalClientes.Views
             }
             else
             {
-                DDFiltroMesesV.SelectedValue = v;
+                DDFiltroMesesV.SelectedValue = v3;
+            }
+
+            var v4 = DDFiltroMesesHV.SelectedValue;
+            // llenar dropdown filtro
+            DDFiltroMesesHV.Items.Clear();
+            DDFiltroMesesHV.Items.Add(new ListItem(Properties.Resources.FiltroME_MA, "0"));
+            DDFiltroMesesHV.Items.Add(new ListItem(Properties.Resources.FiltroME_1M, "1"));
+            DDFiltroMesesHV.Items.Add(new ListItem(Properties.Resources.FiltroME_2M, "2"));
+            DDFiltroMesesHV.Items.Add(new ListItem(Properties.Resources.FiltroME_3M, "3"));
+
+            if (v4 == "")
+            {
+                DDFiltroMesesHV.SelectedIndex = 1;
+            }
+            else
+            {
+                DDFiltroMesesHV.SelectedValue = v4;
+            }
+
+            var v5 = DDFiltroMesesNV.SelectedValue;
+            // llenar dropdown filtro
+            DDFiltroMesesNV.Items.Clear();
+            DDFiltroMesesNV.Items.Add(new ListItem(Properties.Resources.FiltroME_MA, "0"));
+            DDFiltroMesesNV.Items.Add(new ListItem(Properties.Resources.FiltroME_1M, "1"));
+            DDFiltroMesesNV.Items.Add(new ListItem(Properties.Resources.FiltroME_2M, "2"));
+            DDFiltroMesesNV.Items.Add(new ListItem(Properties.Resources.FiltroME_3M, "3"));
+
+            if (v5 == "")
+            {
+                DDFiltroMesesNV.SelectedIndex = 1;
+            }
+            else
+            {
+                DDFiltroMesesNV.SelectedValue = v5;
+            }
+
+            var v6= DDFiltroMesesPC.SelectedValue;
+            // llenar dropdown filtro
+            DDFiltroMesesPC.Items.Clear();
+            DDFiltroMesesPC.Items.Add(new ListItem(Properties.Resources.FiltroME_MA, "0"));
+            DDFiltroMesesPC.Items.Add(new ListItem(Properties.Resources.FiltroME_1M, "1"));
+            DDFiltroMesesPC.Items.Add(new ListItem(Properties.Resources.FiltroME_2M, "2"));
+            DDFiltroMesesPC.Items.Add(new ListItem(Properties.Resources.FiltroME_3M, "3"));
+
+            if (v6 == "")
+            {
+                DDFiltroMesesPC.SelectedIndex = 1;
+            }
+            else
+            {
+                DDFiltroMesesPC.SelectedValue = v6;
             }
         }
 
@@ -775,6 +826,63 @@ namespace PortalClientes.Views
 
             List<responseGraficaDuracionVuelos> lrg = new List<responseGraficaDuracionVuelos>();
             lrg = oIGesCat.ObtenerDuracionVuelos(fg);
+
+            if (lrg.Count() > 0)
+            {
+                lrg[0].idioma = Utils.Idioma;
+            }
+
+            return lrg;
+        }
+
+        [WebMethod]
+        public static List<responseGraficaHorasVoladas> GetHorasVoladas(string meses)
+        {
+            DBMetricasEstatics oIGesCat = new DBMetricasEstatics();
+
+            FiltroGrafica fg = new FiltroGrafica();
+            fg.meses = meses;
+
+            List<responseGraficaHorasVoladas> lrg = new List<responseGraficaHorasVoladas>();
+            lrg = oIGesCat.ObtenerHorasVoladas(fg);
+
+            if (lrg.Count() > 0)
+            {
+                lrg[0].idioma = Utils.Idioma;
+            }
+
+            return lrg;
+        }
+
+        [WebMethod]
+        public static List<responseGraficaNoVuelos> GetNoVuelos(string meses)
+        {
+            DBMetricasEstatics oIGesCat = new DBMetricasEstatics();
+
+            FiltroGrafica fg = new FiltroGrafica();
+            fg.meses = meses;
+
+            List<responseGraficaNoVuelos> lrg = new List<responseGraficaNoVuelos>();
+            lrg = oIGesCat.ObtenerNoVuelos(fg);
+
+            if (lrg.Count() > 0)
+            {
+                lrg[0].idioma = Utils.Idioma;
+            }
+
+            return lrg;
+        }
+
+        [WebMethod]
+        public static List<responseGraficaPromedioCostos> GetPromedioCostos(string meses)
+        {
+            DBMetricasEstatics oIGesCat = new DBMetricasEstatics();
+
+            FiltroGrafica fg = new FiltroGrafica();
+            fg.meses = meses;
+
+            List<responseGraficaPromedioCostos> lrg = new List<responseGraficaPromedioCostos>();
+            lrg = oIGesCat.ObtenerPromedioCostos(fg);
 
             if (lrg.Count() > 0)
             {

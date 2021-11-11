@@ -122,6 +122,87 @@ namespace PortalClientes.DomainModel
             return d;
         }
 
+        public List<responseGraficaHorasVoladas> ObtenerHorasVoladas(FiltroGrafica filtro)
+        {
+            JavaScriptSerializer ser = new JavaScriptSerializer();
+            ser.MaxJsonLength = 500000000;
+            List<responseGraficaHorasVoladas> d = new List<responseGraficaHorasVoladas>();
+            FiltroGrafica oLog = new FiltroGrafica();
+            oLog = filtro;
+            oLog.matricula = Utils.MatriculaActual;
+
+            oLog.matricula = "XA-CHY";
+            oLog.meses = "3";
+
+            TokenWS oToken = Utils.ObtieneToken;
+
+            var client = new RestClient(Helper.D_UrlObbtenerHorasVoladas);
+            var request = new RestRequest(Method.POST);
+            request.AddHeader("Authorization", oToken.token);
+            request.AddJsonBody(oLog);
+
+            IRestResponse response = client.Execute(request);
+            var resp = response.Content;
+
+            d = ser.Deserialize<List<responseGraficaHorasVoladas>>(resp);
+
+            return d;
+        }
+
+        public List<responseGraficaNoVuelos> ObtenerNoVuelos(FiltroGrafica filtro)
+        {
+            JavaScriptSerializer ser = new JavaScriptSerializer();
+            ser.MaxJsonLength = 500000000;
+            List<responseGraficaNoVuelos> d = new List<responseGraficaNoVuelos>();
+            FiltroGrafica oLog = new FiltroGrafica();
+            oLog = filtro;
+            oLog.matricula = Utils.MatriculaActual;
+
+            oLog.matricula = "XA-CHY";
+            oLog.meses = "3";
+
+            TokenWS oToken = Utils.ObtieneToken;
+
+            var client = new RestClient(Helper.D_UrlObbtenerNoVuelos);
+            var request = new RestRequest(Method.POST);
+            request.AddHeader("Authorization", oToken.token);
+            request.AddJsonBody(oLog);
+
+            IRestResponse response = client.Execute(request);
+            var resp = response.Content;
+
+            d = ser.Deserialize<List<responseGraficaNoVuelos>>(resp);
+
+            return d;
+        }
+
+        public List<responseGraficaPromedioCostos> ObtenerPromedioCostos(FiltroGrafica filtro)
+        {
+            JavaScriptSerializer ser = new JavaScriptSerializer();
+            ser.MaxJsonLength = 500000000;
+            List<responseGraficaPromedioCostos> d = new List<responseGraficaPromedioCostos>();
+            FiltroGrafica oLog = new FiltroGrafica();
+            oLog = filtro;
+            oLog.matricula = Utils.MatriculaActual;
+
+            oLog.matricula = "XA-CHY";
+            oLog.meses = "3";
+
+            TokenWS oToken = Utils.ObtieneToken;
+
+            var client = new RestClient(Helper.D_UrlObbtenerNoVuelos);
+            var request = new RestRequest(Method.POST);
+            request.AddHeader("Authorization", oToken.token);
+            request.AddJsonBody(oLog);
+
+            IRestResponse response = client.Execute(request);
+            var resp = response.Content;
+
+            d = ser.Deserialize<List<responseGraficaPromedioCostos>>(resp);
+
+            return d;
+        }
+
         public DatosMetricas DBGetMetricasEstadisticas(string sMatricula, int iMeses)
         {
             JavaScriptSerializer ser = new JavaScriptSerializer();
