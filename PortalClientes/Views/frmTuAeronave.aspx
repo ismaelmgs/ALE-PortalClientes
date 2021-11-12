@@ -67,42 +67,42 @@
                                     </div>
                                 </div>
                                 <div class="row" style="/*background-color: #f2f2f2;*/ padding: 5px; margin: 5px;">
-                                    <div class="col-md-4">
+                                    <div class="col-md-3">
                                         <asp:Label ID="lblFabricante" runat="server" Text="Fabricante:"></asp:Label>
                                     </div>
-                                    <div class="col-md-8">
+                                    <div class="col-md-9">
                                         <asp:Label ID="lblFabricanteResp" runat="server" Text="---" Font-Bold="true"></asp:Label>
                                     </div>
                                 </div>
                                 <div class="row" style="/*background-color: #f2f2f2;*/ padding: 5px; margin: 5px;">
-                                    <div class="col-md-4">
+                                    <div class="col-md-3">
                                         <asp:Label ID="lblYear" runat="server" Text="Año:"></asp:Label>
                                     </div>
-                                    <div class="col-md-8">
+                                    <div class="col-md-9">
                                         <asp:Label ID="lblYearResp" runat="server" Text="---" Font-Bold="true"></asp:Label>
                                     </div>
                                 </div>
                                 <div class="row" style="/*background-color: #f2f2f2;*/ padding: 5px; margin: 5px;">
-                                    <div class="col-md-4">
+                                    <div class="col-md-3">
                                         <asp:Label ID="lblModelo" runat="server" Text="Modelo:"></asp:Label>
                                     </div>
-                                    <div class="col-md-8">
+                                    <div class="col-md-9">
                                         <asp:Label ID="lblModeloResp" runat="server" Text="---" Font-Bold="true"></asp:Label>
                                     </div>
                                 </div>
                                 <div class="row" style="/*background-color: #f2f2f2;*/ padding: 5px; margin: 5px;">
-                                    <div class="col-md-4">
+                                    <div class="col-md-3">
                                         <asp:Label ID="lblRegistro" runat="server" Text="Registro No.:"></asp:Label>
                                     </div>
-                                    <div class="col-md-8">
+                                    <div class="col-md-9">
                                         <asp:Label ID="lblRegistroResp" runat="server" Text="---" Font-Bold="true"></asp:Label>
                                     </div>
                                 </div>
                                 <div class="row" style="/*background-color: #f2f2f2;*/ padding: 5px; margin: 5px;">
-                                    <div class="col-md-4">
+                                    <div class="col-md-3">
                                         <asp:Label ID="lblSerie" runat="server" Text="Serie No.:"></asp:Label>
                                     </div>
-                                    <div class="col-md-8">
+                                    <div class="col-md-9">
                                         <asp:Label ID="lblSerieResp" runat="server" Text="---" Font-Bold="true"></asp:Label>
                                     </div>
                                 </div>
@@ -113,18 +113,18 @@
                                     </div>
                                 </div>
                                 <div class="row" style="/*background-color: #f2f2f2;*/ padding: 5px; margin: 5px;">
-                                    <div class="col-md-4">
+                                    <div class="col-md-3">
                                         <asp:Label ID="lblPasajeros" runat="server" Text="Pasajeros:"></asp:Label>
                                     </div>
-                                    <div class="col-md-8">
+                                    <div class="col-md-9">
                                         <asp:Label ID="lblPasajerosResp" runat="server" Text="---" Font-Bold="true"></asp:Label>
                                     </div>
                                 </div>
                                 <div class="row" style="/*background-color: #f2f2f2;*/ padding: 5px; margin: 5px;">
-                                    <div class="col-md-4">
+                                    <div class="col-md-3">
                                         <asp:Label ID="lblTripulacion" runat="server" Text="Tripulación:"></asp:Label>
                                     </div>
-                                    <div class="col-md-8">
+                                    <div class="col-md-9">
                                         <asp:Label ID="lblTripulacionRes" runat="server" Text="---" Font-Bold="true"></asp:Label>
                                     </div>
                                 </div>
