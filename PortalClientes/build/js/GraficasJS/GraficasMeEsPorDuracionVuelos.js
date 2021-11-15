@@ -1,17 +1,17 @@
 $(document).ready(function () {
     //const url = "http://192.168.1.250/PortalClientes/Views/frmMetricasEstadisticas.aspx/GetGastos"; // API URL
-    const url = getUrlDV(); // API URL
+    const urlDV = getUrlDV(); // API URL
 
     let objDV = JSON.stringify({
         meses: $("#ContentPlaceHolder1_DDFiltroMesesV").val(),
     });
 
-    ajax_data(objDV, url, function (dataDV) {
+    ajax_data(objDV, urlDV, function (dataDV) {
         chartsDV(dataDV, "PieChart"); // Pie Charts
     });
 
     window.onresize = function () {
-        ajax_data(objDV, url, function (dataDV) {
+        ajax_data(objDV, urlDV, function (dataDV) {
             chartsDV(dataDV, "PieChart"); // Pie Charts
         });
     };
@@ -30,23 +30,23 @@ $('#btnGraficasBuscar').click(function (event) {
 });
 
 function ActualizarGraficaDV() {
-    const url = getUrlDV(); // API URL
+    const urlDV = getUrlDV(); // API URL
     let objDV = JSON.stringify({
         meses: $("#ContentPlaceHolder1_DDFiltroMesesV").val(),
     });
 
-    ajax_data(objDV, url, function (dataDV) {
+    ajax_data(objDV, urlDV, function (dataDV) {
         chartsDV(dataDV, "PieChart"); // Pie Charts
     });
 }
 
-function ajax_data(objDV, url, success) {
+function ajax_data(objDV, urlDV, success) {
     $.ajax({
         data: objDV,
         contentType: "Application/json; charset=utf-8",
         responseType: "json",
         method: 'POST',
-        url: url,
+        url: urlDV,
         dataType: "json",
         beforeSend: function (response) { },
         success: function (response) {

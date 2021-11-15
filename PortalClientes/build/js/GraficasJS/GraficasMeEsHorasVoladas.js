@@ -7,7 +7,7 @@ $(document).ready(function () {
     });
 
     ajax_dataHV(objHV, url, function (dataHV) {
-        chartsProv(dataProve , "PieChart"); // Pie Charts
+        chartsHV(dataHV , "PieChart"); // Pie Charts
     });
 
     window.onresize = function () {
@@ -97,24 +97,20 @@ function chartsHV(dataHV, ChartType) {
         dataHV_.addColumn('number', 'Horas');
         dataHV_.addColumn({ type: 'string', role: 'tooltip' });
 
-        const opt = { style: 'currency', currency: 'MXN' };
-        var numberFormat = new Intl.NumberFormat('es-MX', opt);
-
-        const opt2 = { style: 'currency', currency: 'USD' };
-        const numberFormat2 = new Intl.NumberFormat('en-US', opt2);
-
         jsonDataHV.forEach((item, index) => {
 
             if (jsonDataHV[0].idioma == "es-MX") {
-                dataHV_.addRows([[item.rubroESP, item.totalMXN, `${item.rubroESP} - ${numberFormat.format(item.totalMXN)} MXN`,]]);
+                dataHV_.addRows([[item.nombreESP, item.totalTiempo, `${item.nombreESP} - ${item.totalTiempo} Horas Voladas`,]]);
             } else {
-                dataHV_.addRows([[item.rubroENG, item.totalMXN, `${item.rubroENG} - ${numberFormat.format(item.totalMXN)} MXN`,]]);
+                dataHV_.addRows([[item.nombreENG, item.totalTiempo, `${item.nombreENG} - ${item.totalTiempo} Flight Hours`,]]);
             }
         });
 
         var optionsHV = {
             title: jsonDataHV[0].idioma == "es-MX" ? "Horas Voladas" : "Flight Hours",
-            is3D: true, //Pie Charts
+            bar: {
+                groupWidth: "60%",
+            },
             fontSize: 9,
             chartArea: {
                 left: screenWidth > 500 ? 30 : 10,

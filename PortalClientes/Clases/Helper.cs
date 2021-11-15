@@ -42,8 +42,8 @@ namespace PortalClientes.Clases
         public const string D_UrlObbtenerGastoProveedor = "http://201.163.208.231/" + DominioWS + "/ws/pc/obtieneGastosProveedor";
         public const string D_UrlObbtenerGastoAeropuerto = "http://201.163.208.231/" + DominioWS + "/ws/pc/obtieneGastosAeropuerto";
         public const string D_UrlObbtenerTiemposVuelo = "http://201.163.208.231/" + DominioWS + "/ws/pc/obtieneTiemposVuelo";
-        public const string D_UrlObbtenerHorasVoladas = "http://201.163.208.231/" + DominioWS + "/ws/pc/obtieneGraficaPromedioCosto";
-        public const string D_UrlObbtenerNoVuelos = "http://201.163.208.231/" + DominioWS + "/ws/pc/obtieneGraficaPromedioCosto";
+        public const string D_UrlObbtenerHorasVoladas = "http://201.163.208.231/" + DominioWS + "/ws/pc/obtieneGraficaHorasVoladas";
+        public const string D_UrlObbtenerNoVuelos = "http://201.163.208.231/" + DominioWS + "/ws/pc/obtieneGraficaNumeroVuelos";
         public const string D_UrlObbtenerPromedioCostos = "http://201.163.208.231/" + DominioWS + "/ws/pc/obtieneGraficaPromedioCosto";
         public const string D_UrlObtenerImagenesAeronave = "http://201.163.208.231/" + DominioWS + "/ws/pc/consultaImagenesAeronave";
 

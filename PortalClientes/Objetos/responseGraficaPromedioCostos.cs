@@ -9,7 +9,7 @@ namespace PortalClientes.Objetos
     {
         public string mes { get; set; }
         public string anio { get; set; }
-        public double importeProm { get; set; }
+        public float importeProm { get; set; }
         public int totalVlos { get; set; }
         public string nombreESP { get; set; }
         public string nombreENG { get; set; }
@@ -22,7 +22,7 @@ namespace PortalClientes.Objetos
         public int idRubro { get; set; }
         public string rubroESP { get; set; }
         public string rubroENG { get; set; }
-        public double importe { get; set; }
+        public float importe { get; set; }
         public string categoriaESP { get; set; }
         public string categoriaENG { get; set; }
         public string tipodeGasto { get; set; }

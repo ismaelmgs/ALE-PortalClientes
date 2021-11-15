@@ -11,11 +11,11 @@ namespace PortalClientes.Objetos
         public string mes { get; set; }
         public string nombreESP { get; set; }
         public string nombreENG { get; set; }
-        public double totalTiempo { get; set; }
-        public List<Hora> horasVoladas { get; set; }
+        public float totalTiempo { get; set; }
+        public List<hora> horasVoladas { get; set; }
         public string idioma { get; set; }
     }
-    public class Hora
+    public class hora
     {
         public int id { get; set; }
         public int anio { get; set; }

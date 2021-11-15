@@ -12,6 +12,7 @@ namespace PortalClientes.Objetos
         public string nombreESP { get; set; }
         public string nombreENG { get; set; }
         public List<novuelo> vuelos { get; set; }
+        public float noVuelos { get; set; }
         public string idioma { get; set; }
     }
 

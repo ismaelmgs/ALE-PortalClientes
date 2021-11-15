@@ -1,17 +1,17 @@
 $(document).ready(function () {
     //const url = "http://192.168.1.250/PortalClientes/Views/frmMetricasEstadisticas.aspx/GetPromedioCostos"; // API URL
-    const url = getUrlPC(); // API URL
+    const urlPC = getUrlPC(); // API URL
 
     let objPC = JSON.stringify({
         meses: $("#ContentPlaceHolder1_DDFiltroMesesPC").val(),
     });
 
-    ajax_dataPC(objPC, url, function (dataPC) {
+    ajax_dataPC(objPC, urlPC, function (dataPC) {
         chartsPC(dataPC , "PieChart"); // Pie Charts
     });
 
     window.onresize = function () {
-        ajax_dataPC(objPC, url, function (dataPC) {
+        ajax_dataPC(objPC, urlPC, function (dataPC) {
             chartsPC(dataPC, "PieChart"); // Pie Charts
         });
     };
@@ -30,23 +30,23 @@ $('#btnGraficasBuscarPC').click(function (event) {
 });
 
 function ActualizarGraficaPC() {
-    const url = getUrlPC(); // API URL
+    const urlPC = getUrlPC(); // API URL
     let objPC = JSON.stringify({
         meses: $("#ContentPlaceHolder1_DDFiltroMesesPC").val(),
     });
 
-    ajax_dataPC(objPC, url, function (dataPC) {
+    ajax_dataPC(objPC, urlPC, function (dataPC) {
         chartsPC(dataPC, "PieChart"); // Pie Charts
     });
 }
 
-function ajax_dataPC(objPC, url, success) {
+function ajax_dataPC(objPC, urlPC, success) {
     $.ajax({
         data: objPC,
         contentType: "Application/json; charset=utf-8",
         responseType: "json",
         method: 'POST',
-        url: url,
+        url: urlPC,
         dataType: "json",
         beforeSend: function (response) { },
         success: function (response) {
@@ -100,21 +100,18 @@ function chartsPC(dataPC, ChartType) {
         const opt = { style: 'currency', currency: 'MXN' };
         var numberFormat = new Intl.NumberFormat('es-MX', opt);
 
-        const opt2 = { style: 'currency', currency: 'USD' };
-        const numberFormat2 = new Intl.NumberFormat('en-US', opt2);
-
         jsonDataPC.forEach((item, index) => {
             if (jsonDataPC[0].idioma == "es-MX") {
-                dataPC_.addRows([[item.rubroESP, item.totalMXN, `${item.rubroESP} - ${numberFormat.format(item.totalMXN)} MXN`,]]);
+                dataPC_.addRows([[item.nombreESP, item.importeProm, `${item.nombreESP} - ${numberFormat.format(item.importeProm)} MXN`,]]);
             } else {
-                dataPC_.addRows([[item.rubroENG, item.totalMXN, `${item.rubroENG} - ${numberFormat.format(item.totalMXN)} MXN`,]]);
+                dataPC_.addRows([[item.nombreENG, item.importeProm, `${item.nombreENG} - ${numberFormat.format(item.importeProm)} MXN`,]]);
             }
         });
 
         var optionsPC = {
             title: jsonDataPC[0].idioma == "es-MX" ? "Promedio Costo" : "Average Cost",
             bar: {
-                groupWidth: "95%",
+                groupWidth: "60%",
             },
             fontSize: 9,
             chartArea: {
@@ -136,7 +133,7 @@ function chartsPC(dataPC, ChartType) {
         };
 
         var chartPC = new google.visualization.ColumnChart(document.getElementById('piechart_3d_16'));
-        chartPCdraw(dataPC_, optionsPC);
+        chartPC.draw(dataPC_, optionsPC);
 
         google.visualization.events.addListener(chartPC, 'select', function () {
             var selection = chartPC.getSelection();
@@ -144,7 +141,7 @@ function chartsPC(dataPC, ChartType) {
                 var row = selection[0].row;
 
                 let array = jsonDataPC[row];
-                const gastosProv = array.gastos
+                const costos = array.costos
 
                 let vuelos = []
 
@@ -152,15 +149,18 @@ function chartsPC(dataPC, ChartType) {
 
                 let gastosAe = []
 
+                let gastosProv = []
+
                 let obj = JSON.stringify({
                     vuelos,
                     gastos,
                     gastosAe,
                     gastosProv,
+                    costos,
                     tipoTrans: 3,
                     tipoDet: "MXN",
-                    descES: array.proveedor,
-                    descEN: array.proveedor,
+                    descES: array.nombreESP,
+                    descEN: array.nombreENG,
                     origen: 2,
                 });
 

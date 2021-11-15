@@ -7,7 +7,7 @@ $(document).ready(function () {
     });
 
     ajax_dataNV(objNV, url, function (dataNV) {
-        chartsProv(dataNV , "PieChart"); // Pie Charts
+        chartsNV(dataNV , "PieChart"); // Pie Charts
     });
 
     window.onresize = function () {
@@ -18,7 +18,7 @@ $(document).ready(function () {
 });
 
 function getUrlNV() {
-    let value = window.location + "/GetNumeroVuelos";
+    let value = window.location + "/GetNoVuelos";
     return value;
 }
 
@@ -93,28 +93,22 @@ function chartsNV(dataNV, ChartType) {
         var screenWidth = screen.width;
 
         var dataNV_ = new google.visualization.DataTable();
-        dataNV_.addColumn('string', 'NVedor');
-        dataNV_.addColumn('number', 'Gastos');
+        dataNV_.addColumn('string', 'Mes');
+        dataNV_.addColumn('number', 'Vuelos');
         dataNV_.addColumn({ type: 'string', role: 'tooltip' });
-
-        const opt = { style: 'currency', currency: 'MXN' };
-        var numberFormat = new Intl.NumberFormat('es-MX', opt);
-
-        const opt2 = { style: 'currency', currency: 'USD' };
-        const numberFormat2 = new Intl.NumberFormat('en-US', opt2);
 
         jsonDataNV.forEach((item, index) => {
             if (jsonDataNV[0].idioma == "es-MX") {
-                dataNV_.addRows([[item.rubroESP, item.totalMXN, `${item.rubroESP} - ${numberFormat.format(item.totalMXN)} MXN`,]]);
+                dataNV_.addRows([[item.nombreESP, item.noVuelos, `${item.nombreESP} - No. de Vuelos ${item.noVuelos}`,]]);
             } else {
-                dataNV_.addRows([[item.rubroENG, item.totalMXN, `${item.rubroENG} - ${numberFormat.format(item.totalMXN)} MXN`,]]);
+                dataNV_.addRows([[item.nombreENG, item.noVuelos, `${item.nombreENG} - No. of Flights ${item.noVuelos}`,]]);
             }
         });
 
         var optionsNV = {
             title: jsonDataNV[0].idioma == "es-MX" ? "No. de Vuelos" : "No. of Flights",
             bar: {
-                groupWidth: "95%",
+                groupWidth: "60%",
             },
             fontSize: 9,
             chartArea: {
@@ -159,8 +153,8 @@ function chartsNV(dataNV, ChartType) {
                     gastosProv,
                     tipoTrans: 3,
                     tipoDet: "MXN",
-                    descES: array.proveedor,
-                    descEN: array.proveedor,
+                    descES: array.nombreESP,
+                    descEN: array.nombreENG,
                     origen: 2,
                 });
 
