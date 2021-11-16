@@ -137,17 +137,23 @@ function chartsDV(dataDV, ChartType) {
                 let array = jsonDataDV[row];
                 const vuelos = array.vuelos
 
-                let gastosProv = []
-
                 let gastos = []
-
                 let gastosAe = []
+                let gastosProv = []
+                let novuelos = []
+                let paxs = []
+                let horasV = []
+                let costos = []
 
                 let obj = JSON.stringify({
                     vuelos,
                     gastos,
                     gastosAe,
                     gastosProv,
+                    costos,
+                    paxs,
+                    horasV,
+                    novuelos,
                     tipoTrans: 4,
                     tipoDet: "MXN",
                     descES: array.descripcionESP,

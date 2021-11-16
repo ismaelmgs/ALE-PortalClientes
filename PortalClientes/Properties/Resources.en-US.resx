@@ -837,4 +837,16 @@
   <data name="Ca_ZonaHorariaLlegada" xml:space="preserve">
     <value>Time Zone</value>
   </data>
+  <data name="TabTran_Cliente" xml:space="preserve">
+    <value>Client</value>
+  </data>
+  <data name="TabTran_Contrato" xml:space="preserve">
+    <value>Contract</value>
+  </data>
+  <data name="TabTran_CPax" xml:space="preserve">
+    <value>Number of Passengers</value>
+  </data>
+  <data name="TabTran_Importe" xml:space="preserve">
+    <value>Amount</value>
+  </data>
 </root>

@@ -28,7 +28,21 @@ namespace PortalClientes.Objetos
         public string origenVuelo { get; set; }
         public string destinoVuelo { get; set; }
         public string tiempoVuelo { get; set; }
-        public int cantPax { get; set; }
+        public float cantPax { get; set; }
+        public string cliente { get; set; }
+        public string contrato { get; set; }
+    }
+
+    public class gvPromedioPax
+    {
+        public string anio { get; set; }
+        public string mes { get; set; }
+        public string origen { get; set; }
+        public string destino { get; set; }
+        public string fechaOrigen { get; set; }
+        public string fechaDestino { get; set; }
+        public string tiempoVuelo { get; set; }
+        public string cantPax { get; set; }
         public string cliente { get; set; }
         public string contrato { get; set; }
     }

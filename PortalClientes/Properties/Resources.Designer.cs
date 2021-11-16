@@ -19,7 +19,7 @@ namespace PortalClientes.Properties {
     // a través de una herramienta como ResGen o Visual Studio.
     // Para agregar o quitar un miembro, edite el archivo .ResX y, a continuación, vuelva a ejecutar ResGen
     // con la opción /str o recompile su proyecto de VS.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "16.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "15.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     internal class Resources {
@@ -1771,11 +1771,38 @@ namespace PortalClientes.Properties {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Cliente.
+        /// </summary>
+        internal static string TabTran_Cliente {
+            get {
+                return ResourceManager.GetString("TabTran_Cliente", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Comentarios.
         /// </summary>
         internal static string TabTran_Comentario {
             get {
                 return ResourceManager.GetString("TabTran_Comentario", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Contrato.
+        /// </summary>
+        internal static string TabTran_Contrato {
+            get {
+                return ResourceManager.GetString("TabTran_Contrato", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Cantidad Pasajeros.
+        /// </summary>
+        internal static string TabTran_CPax {
+            get {
+                return ResourceManager.GetString("TabTran_CPax", resourceCulture);
             }
         }
         
@@ -1812,6 +1839,15 @@ namespace PortalClientes.Properties {
         internal static string TabTran_idRubro {
             get {
                 return ResourceManager.GetString("TabTran_idRubro", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Importe.
+        /// </summary>
+        internal static string TabTran_Importe {
+            get {
+                return ResourceManager.GetString("TabTran_Importe", resourceCulture);
             }
         }
         

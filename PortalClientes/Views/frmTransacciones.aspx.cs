@@ -80,6 +80,30 @@ namespace PortalClientes.Views
                         LlenarGV(transacciones, tipo);
                     }
 
+                    else if (tipo == 5)
+                    {
+                        transacciones.promedioPax = (List<gvPromedioPax>)Session["data"];
+                        LlenarGV(transacciones, tipo);
+                    }
+
+                    else if (tipo == 6)
+                    {
+                        transacciones.promedioCosto = (List<gvPromedioCosto>)Session["data"];
+                        LlenarGV(transacciones, tipo);
+                    }
+
+                    else if (tipo == 7)
+                    {
+                        transacciones.horasVoladas = (List<gvhorasVoladas>)Session["data"];
+                        LlenarGV(transacciones, tipo);
+                    }
+
+                    else if (tipo == 8)
+                    {
+                        transacciones.numeroVuelos = (List<gvnoVuelos>)Session["data"];
+                        LlenarGV(transacciones, tipo);
+                    }
+
                     if (od == 1)
                     {
                         btnRegresarMeEs.Visible = false;
@@ -158,7 +182,61 @@ namespace PortalClientes.Views
                     e.Row.Cells[5].Text = Properties.Resources.TabTran_FVuelo;
                     e.Row.Cells[6].Text = Properties.Resources.TabTran_TVuelo;
                     e.Row.Cells[7].Text = Properties.Resources.TabTran_Categoria;
-                }             
+                }
+
+                else if (tipo == 5)
+                {
+                    e.Row.Cells[0].Text = Properties.Resources.TabTran_Mes;
+                    e.Row.Cells[1].Text = Properties.Resources.TabTran_Anio;
+                    e.Row.Cells[2].Text = Properties.Resources.TabTran_Origen;
+                    e.Row.Cells[3].Text = Properties.Resources.TabTran_Destino;
+                    e.Row.Cells[4].Text = Properties.Resources.TabTran_IVuelo;
+                    e.Row.Cells[5].Text = Properties.Resources.TabTran_FVuelo;
+                    e.Row.Cells[6].Text = Properties.Resources.TabTran_TVuelo;
+                    e.Row.Cells[7].Text = Properties.Resources.TabTran_CPax;
+                    e.Row.Cells[8].Text = Properties.Resources.TabTran_Contrato;
+                    e.Row.Cells[9].Text = Properties.Resources.TabTran_Cliente;
+                }
+
+                else if (tipo == 6)
+                {
+                    e.Row.Cells[0].Text = Properties.Resources.TabTran_Mes;
+                    e.Row.Cells[1].Text = Properties.Resources.TabTran_Anio;
+                    e.Row.Cells[2].Text = Properties.Resources.TabTran_Rubro;
+                    e.Row.Cells[3].Text = Properties.Resources.TabTran_Importe;
+                    e.Row.Cells[4].Text = Properties.Resources.TabTran_Categoria;
+                    e.Row.Cells[5].Text = Properties.Resources.TabTran_TGasto;
+                    e.Row.Cells[6].Text = Properties.Resources.TabTran_Comentario;
+                }
+
+                else if (tipo == 7)
+                {
+                    e.Row.Cells[0].Text = Properties.Resources.TabTran_Mes;
+                    e.Row.Cells[1].Text = Properties.Resources.TabTran_Anio;
+                    e.Row.Cells[2].Text = Properties.Resources.TabTran_Origen;
+                    e.Row.Cells[3].Text = Properties.Resources.TabTran_Destino;
+                    e.Row.Cells[4].Text = Properties.Resources.TabTran_IVuelo;
+                    e.Row.Cells[5].Text = Properties.Resources.TabTran_FVuelo;
+                    e.Row.Cells[6].Text = Properties.Resources.TabTran_TVuelo;
+                    e.Row.Cells[7].Text = Properties.Resources.TabTran_CPax;
+                    e.Row.Cells[8].Text = Properties.Resources.TabTran_Contrato;
+                    e.Row.Cells[9].Text = Properties.Resources.TabTran_Cliente;
+                }
+
+                else if (tipo == 8)
+                {
+                    e.Row.Cells[0].Text = Properties.Resources.TabTran_Mes;
+                    e.Row.Cells[1].Text = Properties.Resources.TabTran_Anio;
+                    e.Row.Cells[2].Text = Properties.Resources.TabTran_Origen;
+                    e.Row.Cells[3].Text = Properties.Resources.TabTran_Destino;
+                    e.Row.Cells[4].Text = Properties.Resources.TabTran_IVuelo;
+                    e.Row.Cells[5].Text = Properties.Resources.TabTran_FVuelo;
+                    e.Row.Cells[6].Text = Properties.Resources.TabTran_TVuelo;
+                    e.Row.Cells[7].Text = Properties.Resources.TabTran_CPax;
+                    e.Row.Cells[8].Text = Properties.Resources.TabTran_Contrato;
+                    e.Row.Cells[9].Text = Properties.Resources.TabTran_Cliente;
+                }
+
             }
         }
 
@@ -189,6 +267,30 @@ namespace PortalClientes.Views
             else if (tipo == 4)
             {
                 transacciones.gastos = (List<gvGastos>)Session["data"];
+                LlenarGV(transacciones, tipo);
+            }
+
+            else if (tipo == 5)
+            {
+                transacciones.promedioPax = (List<gvPromedioPax>)Session["data"];
+                LlenarGV(transacciones, tipo);
+            }
+
+            else if (tipo == 6)
+            {
+                transacciones.promedioCosto = (List<gvPromedioCosto>)Session["data"];
+                LlenarGV(transacciones, tipo);
+            }
+
+            else if (tipo == 7)
+            {
+                transacciones.horasVoladas = (List<gvhorasVoladas>)Session["data"];
+                LlenarGV(transacciones, tipo);
+            }
+
+            else if (tipo == 8)
+            {
+                transacciones.numeroVuelos = (List<gvnoVuelos>)Session["data"];
                 LlenarGV(transacciones, tipo);
             }
 
@@ -397,6 +499,195 @@ namespace PortalClientes.Views
                 gvGastos.DataSource = transacciones.vuelos.OrderBy(x => x.mes).ToList(); //.GroupBy(r => r.mes).Select(x => x.First());
                 gvGastos.DataBind();
             }
+            else if (tipoTransaccion == 5)
+            {
+                totalRegistros = transacciones.promedioPax.Count();
+                contMeses = transacciones.promedioPax.GroupBy(r => r.mes).Count();
+                totalTransacciones = 0;//transacciones.vuelos.Sum(x => x.Total);
+                promedio = 0;// totalTransacciones / contMeses;
+
+                BoundField clm = new BoundField();
+                clm.DataField = "mes";
+                gvGastos.Columns.Add(clm);
+
+                BoundField clm2 = new BoundField();
+                clm2.DataField = "anio";
+                gvGastos.Columns.Add(clm2);
+
+                BoundField clm3 = new BoundField();
+                clm3.DataField = "origen";
+                gvGastos.Columns.Add(clm3);
+
+                BoundField clm4 = new BoundField();
+                clm4.DataField = "destino";
+                gvGastos.Columns.Add(clm4);
+
+                BoundField clm5 = new BoundField();
+                clm5.DataField = "fechaOrigen";
+                gvGastos.Columns.Add(clm5);
+
+                BoundField clm6 = new BoundField();
+                clm6.DataField = "fechaDestino";
+                gvGastos.Columns.Add(clm6);
+
+                BoundField clm7 = new BoundField();
+                clm7.DataField = "tiempoVuelo";
+                gvGastos.Columns.Add(clm7);
+
+                BoundField clm8 = new BoundField();
+                clm8.DataField = "cantPax";
+                gvGastos.Columns.Add(clm8);
+
+                BoundField clm9 = new BoundField();
+                clm9.DataField = "cliente";
+                gvGastos.Columns.Add(clm9);
+
+                BoundField clm10 = new BoundField();
+                clm10.DataField = "contrato";
+                gvGastos.Columns.Add(clm10);
+
+                gvGastos.DataSource = transacciones.promedioPax.OrderBy(x => x.mes).ToList(); //.GroupBy(r => r.mes).Select(x => x.First());
+                gvGastos.DataBind();
+            }
+            else if (tipoTransaccion == 6)
+            {
+                totalRegistros = transacciones.promedioCosto.Count();
+                contMeses = transacciones.promedioCosto.GroupBy(r => r.mes).Count();
+                totalTransacciones = transacciones.promedioCosto.Sum(x => x.importe);
+                promedio = totalTransacciones / totalRegistros;
+
+                BoundField clm = new BoundField();
+                clm.DataField = "mes";
+                gvGastos.Columns.Add(clm);
+
+                BoundField clm2 = new BoundField();
+                clm2.DataField = "anio";
+                gvGastos.Columns.Add(clm2);
+
+                BoundField clm3 = new BoundField();
+                clm3.DataField = "rubro";
+                gvGastos.Columns.Add(clm3);
+
+                BoundField clm4 = new BoundField();
+                clm4.DataField = "importe";
+                clm4.DataFormatString = "{0:c}";
+                gvGastos.Columns.Add(clm4);
+
+                BoundField clm5 = new BoundField();
+                clm5.DataField = "categoria";
+                gvGastos.Columns.Add(clm5);
+
+                BoundField clm6 = new BoundField();
+                clm6.DataField = "tipodeGasto";
+                gvGastos.Columns.Add(clm6);
+
+                BoundField clm7 = new BoundField();
+                clm7.DataField = "comentarios";
+                gvGastos.Columns.Add(clm7);
+
+                gvGastos.DataSource = transacciones.promedioCosto.OrderBy(x => x.mes).ToList(); //.GroupBy(r => r.mes).Select(x => x.First());
+                gvGastos.DataBind();
+            }
+            else if (tipoTransaccion == 7)
+            {
+                totalRegistros = transacciones.horasVoladas.Count();
+                contMeses = transacciones.horasVoladas.GroupBy(r => r.mes).Count();
+                totalTransacciones = 0;//transacciones.vuelos.Sum(x => x.Total);
+                promedio = 0;// totalTransacciones / contMeses;
+
+                BoundField clm = new BoundField();
+                clm.DataField = "mes";
+                gvGastos.Columns.Add(clm);
+
+                BoundField clm2 = new BoundField();
+                clm2.DataField = "anio";
+                gvGastos.Columns.Add(clm2);
+
+                BoundField clm3 = new BoundField();
+                clm3.DataField = "origen";
+                gvGastos.Columns.Add(clm3);
+
+                BoundField clm4 = new BoundField();
+                clm4.DataField = "destino";
+                gvGastos.Columns.Add(clm4);
+
+                BoundField clm5 = new BoundField();
+                clm5.DataField = "fechaOrigen";
+                gvGastos.Columns.Add(clm5);
+
+                BoundField clm6 = new BoundField();
+                clm6.DataField = "fechaDestino";
+                gvGastos.Columns.Add(clm6);
+
+                BoundField clm7 = new BoundField();
+                clm7.DataField = "tiempoVuelo";
+                gvGastos.Columns.Add(clm7);
+
+                BoundField clm8 = new BoundField();
+                clm8.DataField = "cantPax";
+                gvGastos.Columns.Add(clm8);
+
+                BoundField clm9 = new BoundField();
+                clm9.DataField = "cliente";
+                gvGastos.Columns.Add(clm9);
+
+                BoundField clm10 = new BoundField();
+                clm10.DataField = "contrato";
+                gvGastos.Columns.Add(clm10);
+
+                gvGastos.DataSource = transacciones.horasVoladas.OrderBy(x => x.mes).ToList(); //.GroupBy(r => r.mes).Select(x => x.First());
+                gvGastos.DataBind();
+            }
+            else if (tipoTransaccion == 8)
+            {
+                totalRegistros = transacciones.numeroVuelos.Count();
+                contMeses = transacciones.numeroVuelos.GroupBy(r => r.mes).Count();
+                totalTransacciones = 0;//transacciones.vuelos.Sum(x => x.Total);
+                promedio = 0;// totalTransacciones / contMeses;
+
+                BoundField clm = new BoundField();
+                clm.DataField = "mes";
+                gvGastos.Columns.Add(clm);
+
+                BoundField clm2 = new BoundField();
+                clm2.DataField = "anio";
+                gvGastos.Columns.Add(clm2);
+
+                BoundField clm3 = new BoundField();
+                clm3.DataField = "origen";
+                gvGastos.Columns.Add(clm3);
+
+                BoundField clm4 = new BoundField();
+                clm4.DataField = "destino";
+                gvGastos.Columns.Add(clm4);
+
+                BoundField clm5 = new BoundField();
+                clm5.DataField = "fechaOrigen";
+                gvGastos.Columns.Add(clm5);
+
+                BoundField clm6 = new BoundField();
+                clm6.DataField = "fechaDestino";
+                gvGastos.Columns.Add(clm6);
+
+                BoundField clm7 = new BoundField();
+                clm7.DataField = "tiempoVuelo";
+                gvGastos.Columns.Add(clm7);
+
+                BoundField clm8 = new BoundField();
+                clm8.DataField = "cantPax";
+                gvGastos.Columns.Add(clm8);
+
+                BoundField clm9 = new BoundField();
+                clm9.DataField = "cliente";
+                gvGastos.Columns.Add(clm9);
+
+                BoundField clm10 = new BoundField();
+                clm10.DataField = "contrato";
+                gvGastos.Columns.Add(clm10);
+
+                gvGastos.DataSource = transacciones.numeroVuelos.OrderBy(x => x.mes).ToList(); //.GroupBy(r => r.mes).Select(x => x.First());
+                gvGastos.DataBind();
+            }
 
             lblTotalTrasnRes.Text = totalRegistros.S();
             lblTotalRes.Text = totalTransacciones.ToString("C", CultureInfo.CreateSpecificCulture("es-MX"));
@@ -415,17 +706,16 @@ namespace PortalClientes.Views
         }
 
         [WebMethod]
-        public static void ObtenerTransacciones(List<gasto> gastos, List<gastoAeropuerto> gastosAe, List<gastoProveedor> gastosProv, List<vuelo> vuelos, int tipoTrans, string tipoDet, string descES, string descEN, int origen)
+        public static void ObtenerTransacciones(List<gasto> gastos, List<gastoAeropuerto> gastosAe, List<gastoProveedor> gastosProv, List<vuelo> vuelos, List<pasajero> paxs, List<costosProm> costos, List<hora> horasV, List<novuelo> novuelos, int tipoTrans, string tipoDet, string descES, string descEN, int origen)
         {
             // tipo transaccion: 1 gastos
             // tipo transaccion: 2 gastosAe
             // tipo transaccion: 3 gastosProv
             // tipo transaccion: 4 vuelos
-
-            List<gvGastos> gv = new List<gvGastos>();
-            List<gvGastosAeropuerto> gva = new List<gvGastosAeropuerto>();
-            List<gvGastosProveedor> gvp = new List<gvGastosProveedor>();
-            List<vuelo> gvv = new List<vuelo>();
+            // tipo transaccion: 5 promedio Paxs
+            // tipo transaccion: 6 promedio costos
+            // tipo transaccion: 7 horas voladas
+            // tipo transaccion: 8 numero vuelos
 
             DateTimeFormatInfo month = null;
             CultureInfo cultureInfo = Thread.CurrentThread.CurrentCulture;
@@ -443,6 +733,7 @@ namespace PortalClientes.Views
 
             if (tipoTrans == 1)
             {
+                List<gvGastos> gv = new List<gvGastos>();
                 foreach (var item in gastos)
                 {
                     gvGastos g = new gvGastos();
@@ -481,6 +772,7 @@ namespace PortalClientes.Views
 
             else if (tipoTrans == 2)
             {
+                List<gvGastosAeropuerto> gva = new List<gvGastosAeropuerto>();
                 foreach (var item in gastosAe)
                 {
                     gvGastosAeropuerto g = new gvGastosAeropuerto();
@@ -504,6 +796,7 @@ namespace PortalClientes.Views
 
             else if (tipoTrans == 3)
             {
+                List<gvGastosProveedor> gvp = new List<gvGastosProveedor>();
                 foreach (var item in gastosProv)
                 {
                     gvGastosProveedor g = new gvGastosProveedor();
@@ -527,6 +820,7 @@ namespace PortalClientes.Views
 
             else if (tipoTrans == 4)
             {
+                List<vuelo> gvv = new List<vuelo>();
                 foreach (var item in vuelos)
                 {
                     vuelo g = new vuelo();
@@ -545,6 +839,94 @@ namespace PortalClientes.Views
                 HttpContext.Current.Session["data"] = gvv;
             }
 
+            else if (tipoTrans == 5)
+            {
+                List<gvPromedioPax> gvpp = new List<gvPromedioPax>();
+                foreach (var item in paxs)
+                {
+                    gvPromedioPax pp = new gvPromedioPax();
+                    pp.mes = textInfo.ToTitleCase(month.GetMonthName(Convert.ToInt32(item.mes)));
+                    pp.anio = item.anio.S();
+                    pp.origen = item.origen;
+                    pp.destino = item.destino;
+                    pp.fechaOrigen = Convert.ToDateTime(item.origenVuelo).ToString("dd/MM/yyyy HH:mm");
+                    pp.fechaDestino = Convert.ToDateTime(item.destinoVuelo).ToString("dd/MM/yyyy HH:mm");
+                    pp.tiempoVuelo = item.tiempoVuelo;
+                    pp.cantPax = item.cantPax.S();
+                    pp.cliente = item.cliente;
+                    pp.contrato = item.contrato;
+
+                    gvpp.Add(pp);
+                }
+
+                HttpContext.Current.Session["data"] = gvpp;
+            }
+
+            else if (tipoTrans == 6)
+            {
+                List<gvPromedioCosto> gvpc = new List<gvPromedioCosto>();
+                foreach (var item in costos)
+                {
+                    gvPromedioCosto pc = new gvPromedioCosto();
+                    pc.mes = textInfo.ToTitleCase(month.GetMonthName(Convert.ToInt32(item.mes)));
+                    pc.anio = item.anio.S();
+                    pc.rubro = Utils.Idioma == "es-MX" ? item.rubroESP : item.rubroENG;
+                    pc.importe = item.importe;
+                    pc.categoria = Utils.Idioma == "es-MX" ? item.categoriaESP : item.categoriaENG;
+                    pc.tipodeGasto = item.tipodeGasto;
+                    pc.comentarios = item.comentarios;
+
+                    gvpc.Add(pc);
+                }
+
+                HttpContext.Current.Session["data"] = gvpc;
+            }
+
+            else if (tipoTrans == 7)
+            {
+                List<gvhorasVoladas> gvhv = new List<gvhorasVoladas>();
+                foreach (var item in horasV)
+                {
+                    gvhorasVoladas hv = new gvhorasVoladas();
+                    hv.mes = textInfo.ToTitleCase(month.GetMonthName(Convert.ToInt32(item.mes)));
+                    hv.anio = item.anio.S();
+                    hv.origen = item.origen;
+                    hv.destino = item.destino;
+                    hv.fechaOrigen = Convert.ToDateTime(item.origenVuelo).ToString("dd/MM/yyyy HH:mm");
+                    hv.fechaDestino = Convert.ToDateTime(item.destinoVuelo).ToString("dd/MM/yyyy HH:mm");
+                    hv.tiempoVuelo = item.tiempoVuelo;
+                    hv.cantPax = item.cantPax.S();
+                    hv.cliente = item.cliente;
+                    hv.contrato = item.contrato;
+
+                    gvhv.Add(hv);
+                }
+
+                HttpContext.Current.Session["data"] = gvhv;
+            }
+
+            else if (tipoTrans == 8)
+            {
+                List<gvnoVuelos> gvnv = new List<gvnoVuelos>();
+                foreach (var item in novuelos)
+                {
+                    gvnoVuelos nv = new gvnoVuelos();
+                    nv.mes = textInfo.ToTitleCase(month.GetMonthName(Convert.ToInt32(item.mes)));
+                    nv.anio = item.anio.S();
+                    nv.origen = item.origen;
+                    nv.destino = item.destino;
+                    nv.fechaOrigen = Convert.ToDateTime(item.origenVuelo).ToString("dd/MM/yyyy HH:mm");
+                    nv.fechaDestino = Convert.ToDateTime(item.destinoVuelo).ToString("dd/MM/yyyy HH:mm");
+                    nv.tiempoVuelo = item.tiempoVuelo;
+                    nv.cantPax = item.cantPax.S();
+                    nv.cliente = item.cliente;
+                    nv.contrato = item.contrato;
+
+                    gvnv.Add(nv);
+                }
+
+                HttpContext.Current.Session["data"] = gvnv;
+            }
 
             var descripcion = Utils.Idioma == "es-MX" ? CultureInfo.CurrentCulture.TextInfo.ToTitleCase(descES.ToLower()) : CultureInfo.CurrentCulture.TextInfo.ToTitleCase(descEN.ToLower());
 

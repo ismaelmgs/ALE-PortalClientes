@@ -139,23 +139,29 @@ function chartsHV(dataHV, ChartType) {
                 var row = selection[0].row;
 
                 let array = jsonDataHV[row];
-                const gastosProv = array.gastos
+                const horasV = array.horasVoladas
 
                 let vuelos = []
-
                 let gastos = []
-
                 let gastosAe = []
+                let gastosProv = []
+                let novuelos = []
+                let paxs = []
+                let costos = []
 
                 let obj = JSON.stringify({
                     vuelos,
                     gastos,
                     gastosAe,
                     gastosProv,
-                    tipoTrans: 3,
+                    costos,
+                    paxs,
+                    horasV,
+                    novuelos,
+                    tipoTrans: 7,
                     tipoDet: "MXN",
-                    descES: array.proveedor,
-                    descEN: array.proveedor,
+                    descES: array.nombreESP,
+                    descEN: array.nombreENG,
                     origen: 2,
                 });
 
@@ -164,7 +170,7 @@ function chartsHV(dataHV, ChartType) {
                     contentType: "Application/json; charset=utf-8",
                     responseType: "json",
                     method: 'POST',
-                    url: generarUrlProve(true),
+                    url: generarUrlHV(true),
                     dataType: "json",
                     success: function (response) {
                         window.location.pathname = generarUrlHV(false);

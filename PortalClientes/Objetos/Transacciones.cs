@@ -11,5 +11,9 @@ namespace PortalClientes.Objetos
         public List<gvGastos> gastos { get; set; } // tipo transaccion: 2
         public List<gvGastosProveedor> gastosProv { get; set; } // tipo transaccion: 3
         public List<gvGastosAeropuerto> gastosAe { get; set; } // tipo transaccion: 4
+        public List<gvPromedioPax> promedioPax { get; set; } // tipo transaccion: 5
+        public List<gvPromedioCosto> promedioCosto { get; set; } // tipo transaccion: 6
+        public List<gvhorasVoladas> horasVoladas { get; set; } // tipo transaccion: 7
+        public List<gvnoVuelos> numeroVuelos { get; set; } // tipo transaccion: 8
     }
 }

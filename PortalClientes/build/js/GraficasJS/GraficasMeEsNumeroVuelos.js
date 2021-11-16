@@ -132,26 +132,32 @@ function chartsNV(dataNV, ChartType) {
         var chartNV = new google.visualization.ColumnChart(document.getElementById('piechart_3d_13'));
         chartNV.draw(dataNV_, optionsNV);
 
-        google.visualization.events.addListener(optionsNV, 'select', function () {
+        google.visualization.events.addListener(chartNV, 'select', function () {
             var selection = chartNV.getSelection();
             if (selection.length) {
                 var row = selection[0].row;
 
                 let array = jsonDataNV[row];
-                const gastosProv = array.gastos
+                const novuelos = array.vuelos
 
                 let vuelos = []
-
                 let gastos = []
-
                 let gastosAe = []
+                let gastosProv = []
+                let costos = []
+                let paxs = []
+                let horasV = []
 
                 let obj = JSON.stringify({
                     vuelos,
                     gastos,
                     gastosAe,
                     gastosProv,
-                    tipoTrans: 3,
+                    costos,
+                    paxs,
+                    horasV,
+                    novuelos,
+                    tipoTrans: 8,
                     tipoDet: "MXN",
                     descES: array.nombreESP,
                     descEN: array.nombreENG,

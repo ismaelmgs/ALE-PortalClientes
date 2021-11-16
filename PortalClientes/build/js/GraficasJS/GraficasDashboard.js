@@ -70,9 +70,12 @@ function ajax_data(obj, url, success) {
 function charts(data, ChartType) {
     var c = ChartType;
     var jsonData = data;
-    google.charts.load("current", { packages: ["corechart"] });
-    google.charts.setOnLoadCallback(drawVisualization)
 
+    if (jsonData.length > 0) {
+        google.charts.load("current", { packages: ["corechart"] });
+        google.charts.setOnLoadCallback(drawVisualization)
+    }
+    
     function generarUrl(obtiene) {
         var url = "";
 
@@ -186,16 +189,22 @@ function charts(data, ChartType) {
                 const gastos = array.Gastos
 
                 let vuelos = []
-
-                let gastosProv = []
-
                 let gastosAe = []
+                let gastosProv = []
+                let novuelos = []
+                let paxs = []
+                let horasV = []
+                let costos = []
 
                 let obj = JSON.stringify({
                     vuelos,
                     gastos,
                     gastosAe,
                     gastosProv,
+                    costos,
+                    paxs,
+                    horasV,
+                    novuelos,
                     tipoTrans: 1,
                     tipoDet: "MXN",
                     descES: array.rubroESP,

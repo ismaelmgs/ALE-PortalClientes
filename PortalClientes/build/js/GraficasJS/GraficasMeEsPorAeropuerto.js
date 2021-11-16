@@ -138,16 +138,22 @@ function chartsAe(dataAe, ChartType) {
                 const gastosAe = array.gastos
 
                 let vuelos = []
-
                 let gastos = []
-
                 let gastosProv = []
+                let novuelos = []
+                let paxs = []
+                let horasV = []
+                let costos = []
 
                 let obj = JSON.stringify({
                     vuelos,
                     gastos,
                     gastosAe,
                     gastosProv,
+                    costos,
+                    paxs,
+                    horasV,
+                    novuelos,
                     tipoTrans: 2,
                     tipoDet: "MXN",
                     descES: array.aeropuerto,

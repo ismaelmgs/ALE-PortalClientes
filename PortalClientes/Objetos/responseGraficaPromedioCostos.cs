@@ -31,4 +31,15 @@ namespace PortalClientes.Objetos
         public int mes { get; set; }
         public string anio { get; set; }
     }
+
+    public class gvPromedioCosto
+    {
+        public string rubro { get; set; }
+        public float importe { get; set; }
+        public string categoria { get; set; }
+        public string tipodeGasto { get; set; }
+        public string comentarios { get; set; }
+        public string mes { get; set; }
+        public string anio { get; set; }
+    }
 }
