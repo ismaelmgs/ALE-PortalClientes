@@ -79,7 +79,7 @@ namespace PortalClientes
                     lblError.Visible = false;
 
                     if (oUser.IdUsuario != 0)
-                        Response.Redirect("Views/frmDefault.aspx");
+                        Response.Redirect("Views/frmDashboard.aspx");
                 }
                 else
                 {
