@@ -153,19 +153,13 @@
                                 </h2>
                                 <hr style="border-bottom: 1px solid #E6E9ED; margin-top: -1px;" />
                             </div>
-                        </div>
-                        <div class="row" style="background-color: #00000008;">
+                        </div>  
+                        <%--<div class="row" style="background-color: #00000008;">
                             <div class="col" style="text-align: left;">&nbsp;</div>
-                            <div class="col-md-3" style="text-align: left;">
-                                <i class="fa fa-plane"></i>
-                                <asp:Label ID="lblAeronave" runat="server" Text="Aeronave" Font-Bold="false" Style=""></asp:Label>
-                            </div>
-                            <div class="col-md-5" style="text-align: center;">
-                                <asp:Label ID="lblAeronaveRes" runat="server" Text="N849WC" Font-Bold="true" Style=""></asp:Label>
-                            </div>
+                            
                             <div class="col" style="text-align: left;">&nbsp;</div>
                         </div>
-                        <br />
+                        <br />--%>
                         <div class="row" style="background-color: #00000008;">
                             <div class="col-md-3" style="text-align: left; border: 1px solid #ffffff;">
                                 <i class="fa fa-space-shuttle"></i>
@@ -203,11 +197,18 @@
                                 <asp:Label ID="lalSolicitanteRes" runat="server" Text="Jhonson Thomas" Font-Bold="true" Style=""></asp:Label>
                             </div>
                             <div class="col-md-3" style="text-align: left; border: 1px solid #ffffff;">
+                                <i class="fa fa-plane"></i>
+                                <asp:Label ID="lblAeronave" runat="server" Text="Aeronave" Font-Bold="false" Style=""></asp:Label>
+                            </div>
+                            <div class="col-md-3" style="text-align: left; border: 1px solid #ffffff;">
+                                <asp:Label ID="lblAeronaveRes" runat="server" Text="N849WC" Font-Bold="true" Style=""></asp:Label>
+                            </div>
+                            <%--<div class="col-md-3" style="text-align: left; border: 1px solid #ffffff;">
                                 <asp:Label ID="lblObjetivo" runat="server" Text="Objetivo" Font-Bold="false" Style=""></asp:Label>
                             </div>
                             <div class="col-md-3" style="text-align: left; border: 1px solid #ffffff;">
                                 <asp:Label ID="lblObjetivoRes" runat="server" Text="---" Font-Bold="true" Style=""></asp:Label>
-                            </div>
+                            </div>--%>
                         </div>
                         <div class="row" style="background-color: #00000008;">
                             <div class="col-md-3" style="text-align: left; border: 1px solid #ffffff;">
@@ -223,14 +224,29 @@
                                 <asp:Label ID="lblEstatusRes" runat="server" Text="Completado" Font-Bold="true" Style=""></asp:Label>
                             </div>
                         </div>
+                        <div class="row" style="background-color: #00000008;">
+                            <div class="col-md-3" style="text-align: left; border: 1px solid #ffffff;">
+                                <span style="font-size: 18px;">&#x2b6c;</span>&nbsp;&nbsp;<asp:Label ID="lblDistancia" runat="server" Text="Distancia" Font-Bold="false" Style=""></asp:Label>
+                            </div>
+                            <div class="col-md-3" style="text-align: left; border: 1px solid #ffffff;">
+                                <asp:Label ID="lblDistanciaRes" runat="server" Text="1,181.9" Font-Bold="true" Style=""></asp:Label>
+                                <asp:Label ID="lblMillas" runat="server" Text="mi" Font-Bold="true" Style=""></asp:Label>
+                            </div>
+                            <div class="col-md-3" style="text-align: left; border: 1px solid #ffffff;">
+                                <asp:Label ID="lblDatosTiempoVuelo" runat="server" Text="Tiempo de Vuelo" Font-Bold="false" Style=""></asp:Label>
+                            </div>
+                            <div class="col-md-3" style="text-align: left; border: 1px solid #ffffff;">
+                                <asp:Label ID="lblDatosTiempoVueloRes" runat="server" Text="2h 40m" Font-Bold="true" Style=""></asp:Label>
+                            </div>
+                        </div>
                         <br />
                         <div class="row" style="background-color: #00000008;">
                             <div class="col">&nbsp;</div>
-                            <div class="col-md-3" style="text-align: left; border-bottom: 1px solid #ffffff;">
+                            <div class="col-md-4" style="text-align: center; border-bottom: 1px solid #ffffff;">
                                 <i class="fa fa-align-justify"></i>
                                 <asp:Label ID="lblDescripcion" runat="server" Text="Descripción" Font-Bold="false" Style=""></asp:Label>
                             </div>
-                            <div class="col-md-5" style="text-align: left; border-bottom: 1px solid #ffffff;">
+                            <div class="col-md-4" style="text-align: center; border-bottom: 1px solid #ffffff;">
                                 <asp:Label ID="lblDescripcionRes" runat="server" Text="viaje de negocios: CFO Meeting " Font-Bold="true" Style=""></asp:Label>
                             </div>
                             <div class="col">&nbsp;</div>
@@ -239,7 +255,7 @@
                         <div class="row">
                             <div class="col-md-12">
                                 <h2 style="color: #BDBDBD;">
-                                    <asp:Label ID="lbldesdeA" runat="server" Text="Salida de: &#x2794; Llegada a:" Font-Bold="true"></asp:Label>
+                                    <asp:Label ID="lbldesdeA" runat="server" Text="Salida de:" Font-Bold="true"></asp:Label>
                                 </h2>
                                 <hr style="border-bottom: 1px solid #E6E9ED; margin-top: -1px;" />
                             </div>
@@ -253,7 +269,7 @@
                                 <asp:Label ID="lblAeropuertoSalidaRes" runat="server" Text="Teterboro, Teterboro, US (KTEB)" Font-Bold="true" Style=""></asp:Label>
                             </div>
                         </div>
-                        <div class="row" style="background-color: #00000008;">
+                        <%--<div class="row" style="background-color: #00000008;">
                             <div class="col-md-4" style="text-align: left; border: 1px solid #ffffff;">
                                 <asp:Label ID="lblFueraFechaBloque" runat="server" Text="Fecha Fuera del Bloque" Font-Bold="false" Style=""></asp:Label>
                             </div>
@@ -268,16 +284,16 @@
                                 <i class="fa fa-clock-o"></i>
                                 <asp:Label ID="lblFueraTiempoBloqueRes" runat="server" Text="03:52 am" Font-Bold="true" Style=""></asp:Label>
                             </div>
-                        </div>
+                        </div>--%>
                         <div class="row" style="background-color: #00000008;">
-                            <div class="col-md-4" style="text-align: left; border: 1px solid #ffffff;">
+                            <div class="col-md-3" style="text-align: left; border: 1px solid #ffffff;">
                                 <asp:Label ID="lblFechaDeSalida" runat="server" Text="Fecha de Salida" Font-Bold="false" Style=""></asp:Label>
                             </div>
-                            <div class="col-md-2" style="text-align: left; border: 1px solid #ffffff;">
+                            <div class="col-md-5" style="text-align: left; border: 1px solid #ffffff;">
                                 <i class="fa fa-calendar"></i>
                                 <asp:Label ID="lblFechaDeSalidaRes" runat="server" Text="04/04/2021" Font-Bold="true" Style=""></asp:Label>
                             </div>
-                            <div class="col-md-4" style="text-align: left; border-bottom: 1px solid #ffffff;">
+                            <div class="col-md-2" style="text-align: left; border-bottom: 1px solid #ffffff;">
                                 <asp:Label ID="lblHoraSalida" runat="server" Text="Hora de Salida" Font-Bold="false" Style=""></asp:Label>
                             </div>
                             <div class="col-md-2" style="text-align: left; border-bottom: 1px solid #ffffff;">
@@ -286,18 +302,21 @@
                             </div>
                         </div>
                         <div class="row" style="background-color: #00000008;">
-                            <div class="col-md-4" style="text-align: left; border: 1px solid #ffffff;">
-                                <asp:Label ID="lblZonaHoraria" runat="server" Text="Zona Horaria" Font-Bold="false" Style=""></asp:Label>
-                                <i class="fa fa-globe"></i>
+                            <div class="col-md-3" style="text-align: left; border: 1px solid #ffffff;">
+                                <i class="fa fa-globe"></i> <asp:Label ID="lblZonaHoraria" runat="server" Text="Zona Horaria" Font-Bold="false" Style=""></asp:Label>
+                                
                             </div>
-                            <div class="col-md-8" style="text-align: left; border: 1px solid #ffffff;">
+                            <div class="col-md-9" style="text-align: left; border: 1px solid #ffffff;">
                                 <asp:Label ID="lblZonaHorariaRes" runat="server" Text="Tiempo Local" Font-Bold="true" Style=""></asp:Label>
                             </div>
                         </div>
                         <br />
+                        <h2 style="color: #BDBDBD;">
+                            <asp:Label ID="lblllegadaa" runat="server" Text="Llegada a:" Font-Bold="true"></asp:Label>
+                        </h2>
                         <div class="row" style="background-color: #00000008;">
                             <div class="col-md-4" style="text-align: left; border: 1px solid #ffffff;">
-                                <i class="fa fa-map-marker"></i>
+                                <span style="font-size: 18px;">&#x1f6ec;&#xfe0e;</span>
                                 <asp:Label ID="lblAeropuertoLLegada" runat="server" Text="Aeropuerto de Llegada" Font-Bold="false" Style=""></asp:Label>
                             </div>
                             <div class="col-md-8" style="text-align: left; border: 1px solid #ffffff;">
@@ -305,14 +324,14 @@
                             </div>
                         </div>
                         <div class="row" style="background-color: #00000008;">
-                            <div class="col-md-4" style="text-align: left; border: 1px solid #ffffff;">
+                            <div class="col-md-3" style="text-align: left; border: 1px solid #ffffff;">
                                 <asp:Label ID="lblFhechaArrivo" runat="server" Text="Fecha de Arrivo" Font-Bold="false" Style=""></asp:Label>
                             </div>
-                            <div class="col-md-2" style="text-align: left; border: 1px solid #ffffff;">
+                            <div class="col-md-5" style="text-align: left; border: 1px solid #ffffff;">
                                 <i class="fa fa-calendar"></i>
                                 <asp:Label ID="lblFechaArrivoRes" runat="server" Text="04/04/2021" Font-Bold="true" Style=""></asp:Label>
                             </div>
-                            <div class="col-md-4" style="text-align: left; border-bottom: 1px solid #ffffff;">
+                            <div class="col-md-2" style="text-align: left; border-bottom: 1px solid #ffffff;">
                                 <asp:Label ID="lblHoraArrivo" runat="server" Text="Hora de Arrivo" Font-Bold="false" Style=""></asp:Label>
                             </div>
                             <div class="col-md-2" style="text-align: left; border-bottom: 1px solid #ffffff;">
@@ -320,7 +339,7 @@
                                 <asp:Label ID="lblHoraArrivoRes" runat="server" Text="06:40 am" Font-Bold="true" Style=""></asp:Label>
                             </div>
                         </div>
-                        <div class="row" style="background-color: #00000008;">
+                        <%--<div class="row" style="background-color: #00000008;">
                             <div class="col-md-4" style="text-align: left; border: 1px solid #ffffff;">
                                 <asp:Label ID="lblFechaBloque" runat="server" Text="Fecha de Bloque" Font-Bold="false" Style=""></asp:Label>
                             </div>
@@ -335,11 +354,10 @@
                                 <i class="fa fa-clock-o"></i>
                                 <asp:Label ID="lblTiempoBloqueRes" runat="server" Text="04:00 am" Font-Bold="true" Style=""></asp:Label>
                             </div>
-                        </div>
+                        </div>--%>
                         <div class="row" style="background-color: #00000008;">
                             <div class="col-md-4" style="text-align: left; border: 1px solid #ffffff;">
-                                <asp:Label ID="lblZonaHorariaLlegada" runat="server" Text="Zona Horaria" Font-Bold="false" Style=""></asp:Label>
-                                <i class="fa fa-globe"></i>
+                                <i class="fa fa-globe"></i> <asp:Label ID="lblZonaHorariaLlegada" runat="server" Text="Zona Horaria" Font-Bold="false" Style=""></asp:Label>
                             </div>
                             <div class="col-md-8" style="text-align: left; border: 1px solid #ffffff;">
                                 <asp:Label ID="Label13" runat="server" Text="Tiempo Local" Font-Bold="true" Style=""></asp:Label>
@@ -355,19 +373,19 @@
                         </div>
                         <div class="row" style="background-color: #00000008;">
                             <div class="col-md-4" style="text-align: left; border: 1px solid #ffffff;">
+                                <asp:Label ID="lblNumeroPasajeros" runat="server" Text="Número Pasajeros" Font-Bold="false" Style=""></asp:Label>
+                            </div>
+                            <div class="col-md-8" style="text-align: left; border: 1px solid #ffffff;">
+                                <asp:Label ID="lblNumeroPasajerosRes" runat="server" Text="6" Font-Bold="true" Style=""></asp:Label>
+                            </div>
+                        </div>
+                        <div class="row" style="background-color: #00000008;">
+                            <div class="col-md-4" style="text-align: left; border: 1px solid #ffffff;">
                                 <i class="fa fa-group"></i>
                                 <asp:Label ID="lblPasajeros" runat="server" Text="Pasajeros" Font-Bold="false" Style=""></asp:Label>
                             </div>
                             <div class="col-md-8" style="text-align: left; border: 1px solid #ffffff;">
                                 <asp:Label ID="lblPasajerosRes" runat="server" Text="Nombre 0" Font-Bold="true" Style=""></asp:Label>
-                            </div>
-                        </div>
-                        <div class="row" style="background-color: #00000008;">
-                            <div class="col-md-4" style="text-align: left; border: 1px solid #ffffff;">
-                                <asp:Label ID="lblNumeroPasajeros" runat="server" Text="Número Pasajeros" Font-Bold="false" Style=""></asp:Label>
-                            </div>
-                            <div class="col-md-8" style="text-align: left; border: 1px solid #ffffff;">
-                                <asp:Label ID="lblNumeroPasajerosRes" runat="server" Text="6" Font-Bold="true" Style=""></asp:Label>
                             </div>
                         </div>
                         <br />
@@ -388,7 +406,7 @@
                                 <asp:Label ID="lblTrpulacionRes" runat="server" Text="Tripulación 0" Font-Bold="true" Style=""></asp:Label>
                             </div>
                         </div>
-                        <br />
+                        <%--<br />
                         <div class="row">
                             <div class="col-md-12">
                                 <h2 style="color: #BDBDBD;">
@@ -396,32 +414,16 @@
                                 </h2>
                                 <hr style="border-bottom: 1px solid #E6E9ED; margin-top: -1px;" />
                             </div>
-                        </div>
-                        <div class="row" style="background-color: #00000008;">
-                            <div class="col-md-4" style="text-align: left; border: 1px solid #ffffff;">
-                                <span style="font-size: 18px;">&#x2b6c;</span>&nbsp;&nbsp;<asp:Label ID="lblDistancia" runat="server" Text="Distancia" Font-Bold="false" Style=""></asp:Label>
-                            </div>
-                            <div class="col-md-8" style="text-align: left; border: 1px solid #ffffff;">
-                                <asp:Label ID="lblDistanciaRes" runat="server" Text="1,181.9" Font-Bold="true" Style=""></asp:Label>
-                                <asp:Label ID="lblMillas" runat="server" Text="mi" Font-Bold="true" Style=""></asp:Label>
-                            </div>
-                        </div>
-                        <div class="row" style="background-color: #00000008;">
-                            <div class="col-md-4" style="text-align: left; border: 1px solid #ffffff;">
-                                <asp:Label ID="lblDatosTiempoVuelo" runat="server" Text="Tiempo de Vuelo" Font-Bold="false" Style=""></asp:Label>
-                            </div>
-                            <div class="col-md-8" style="text-align: left; border: 1px solid #ffffff;">
-                                <asp:Label ID="lblDatosTiempoVueloRes" runat="server" Text="2h 40m" Font-Bold="true" Style=""></asp:Label>
-                            </div>
-                        </div>
-                        <div class="row" style="background-color: #00000008;">
+                        </div>--%>
+                        
+                        <%--<div class="row" style="background-color: #00000008;">
                             <div class="col-md-4" style="text-align: left; border: 1px solid #ffffff;">
                                 <asp:Label ID="lblDatosBloqueTiempo" runat="server" Text="Bloque de Tiempo" Font-Bold="false" Style=""></asp:Label>
                             </div>
                             <div class="col-md-8" style="text-align: left; border: 1px solid #ffffff;">
                                 <asp:Label ID="lblDatosBloqueTiempoRes" runat="server" Text="3h 01m" Font-Bold="true" Style=""></asp:Label>
                             </div>
-                        </div>
+                        </div>--%>
                         <br />
                         <div class="row">
                             <div class="col-md-12">
@@ -460,7 +462,7 @@
                         <br />
                         <div class="row" style="background-color: #00000008;">
                             <div class="col-md-4" style="text-align: left; border: 1px solid #ffffff;">
-                                <span style="font-size: 18px;">&#x1f6eb;&#xfe0e;</span>
+                                <span style="font-size: 18px;">&#x1f6ec;&#xfe0e;</span>
                                 <asp:Label ID="lblLLEgada" runat="server" Text="LLegada FBO" Font-Bold="false" Style=""></asp:Label>
                             </div>
                             <div class="col-md-8" style="text-align: left; border: 1px solid #ffffff;">
@@ -495,8 +497,8 @@
                         </div>
                         <div class="row" style="background-color: #00000008;">
                             <div class="col-md-4" style="text-align: left; border: 1px solid #ffffff;">
-                                <i class="fa fa-cutlery"></i>- <i class="fa fa-car"></i>
-                                <asp:Label ID="lblCateringTelNotas" runat="server" Text="Notas" Font-Bold="false" Style=""></asp:Label>
+                                <i class="fa fa-cutlery"></i> - <i class="fa fa-car"></i>
+                                <%--<asp:Label ID="lblCateringTelNotas" runat="server" Text="Notas" Font-Bold="false" Style=""></asp:Label>--%>
                             </div>
                             <div class="col-md-8" style="text-align: left; border: 1px solid #ffffff;">
                                 <asp:Label ID="lblCateringTelNotasRes" runat="server" Text="---" Font-Bold="true" Style=""></asp:Label>
