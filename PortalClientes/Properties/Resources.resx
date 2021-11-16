@@ -769,7 +769,7 @@
     <value>Salida FBO</value>
   </data>
   <data name="Ca_SalidaLlegada" xml:space="preserve">
-    <value>Salida de: &amp;#x2794; Llegada a:</value>
+    <value>Salida de:</value>
   </data>
   <data name="Ca_SalidaTransporte" xml:space="preserve">
     <value>Salida Trasporte</value>
