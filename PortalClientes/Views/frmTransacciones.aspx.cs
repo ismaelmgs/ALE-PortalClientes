@@ -1039,6 +1039,30 @@ namespace PortalClientes.Views
                     LlenarGV(transacciones, tipo);
                 }
 
+                else if (tipo == 5)
+                {
+                    transacciones.promedioPax = (List<gvPromedioPax>)Session["data"];
+                    LlenarGV(transacciones, tipo);
+                }
+
+                else if (tipo == 6)
+                {
+                    transacciones.promedioCosto = (List<gvPromedioCosto>)Session["data"];
+                    LlenarGV(transacciones, tipo);
+                }
+
+                else if (tipo == 7)
+                {
+                    transacciones.horasVoladas = (List<gvhorasVoladas>)Session["data"];
+                    LlenarGV(transacciones, tipo);
+                }
+
+                else if (tipo == 8)
+                {
+                    transacciones.numeroVuelos = (List<gvnoVuelos>)Session["data"];
+                    LlenarGV(transacciones, tipo);
+                }
+
 
                 gvGastos.HeaderRow.BackColor = Color.White;
                 foreach (TableCell cell in gvGastos.HeaderRow.Cells)
@@ -1110,6 +1134,30 @@ namespace PortalClientes.Views
                 else if (tipo == 4)
                 {
                     transacciones.vuelos = (List<vuelo>)Session["data"];
+                    LlenarGV(transacciones, tipo);
+                }
+
+                else if (tipo == 5)
+                {
+                    transacciones.promedioPax = (List<gvPromedioPax>)Session["data"];
+                    LlenarGV(transacciones, tipo);
+                }
+
+                else if (tipo == 6)
+                {
+                    transacciones.promedioCosto = (List<gvPromedioCosto>)Session["data"];
+                    LlenarGV(transacciones, tipo);
+                }
+
+                else if (tipo == 7)
+                {
+                    transacciones.horasVoladas = (List<gvhorasVoladas>)Session["data"];
+                    LlenarGV(transacciones, tipo);
+                }
+
+                else if (tipo == 8)
+                {
+                    transacciones.numeroVuelos = (List<gvnoVuelos>)Session["data"];
                     LlenarGV(transacciones, tipo);
                 }
 
