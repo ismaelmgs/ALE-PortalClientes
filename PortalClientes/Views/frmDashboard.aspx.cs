@@ -66,8 +66,8 @@ namespace PortalClientes.Views
             lblSaldoNumber.Text = oDashboard.SaldoActual.HasValue ? oDashboard.SaldoActual.Value.ToString("C", CultureInfo.CreateSpecificCulture("es-MX")) : "0";
             lblIncVenc90DiasNumber.Text = oDashboard.SaldoAlVencimiento.HasValue ? oDashboard.SaldoAlVencimiento.Value.ToString("C", CultureInfo.CreateSpecificCulture("es-MX")) : "0";
             lblultimaDeclaracionText.Text = oDashboard.SaldoUltimaDeclaracion.HasValue ? oDashboard.SaldoUltimaDeclaracion.Value.ToString("C", CultureInfo.CreateSpecificCulture("es-MX")) : "0";
-            lblDeclaracionMesAno1.Text = Convert.ToDateTime(oDashboard.FechaInicioDeclaracion).ToString("dd/MM/yyyy HH:mm");
-            lblDeclaracionMesAno2.Text = Convert.ToDateTime(oDashboard.FechaFinDeclaracion).ToString("dd/MM/yyyy HH:mm");
+            lblDeclaracionMesAno1.Text = Convert.ToDateTime(oDashboard.FechaInicioDeclaracion).ToString("dd/MM/yyyy");
+            lblDeclaracionMesAno2.Text = Convert.ToDateTime(oDashboard.FechaFinDeclaracion).ToString("dd/MM/yyyy");
 
             var count = 0;
 
