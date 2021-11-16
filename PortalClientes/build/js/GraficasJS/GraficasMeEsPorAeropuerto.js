@@ -106,7 +106,7 @@ function chartsAe(dataAe, ChartType) {
 
         var optionsAe = {
             title: jsonDataAe[0].idioma == "es-MX" ? "Gastos por Aeropuerto" : "Expenses by Airport",
-            is3D: true, //Pie Charts
+            //is3D: true, //Pie Charts
             fontSize: 9,
             chartArea: {
                 left: screenWidth > 500 ? 30 : 10,

@@ -23,7 +23,7 @@ namespace PortalClientes.Objetos
         public string origen { get; set; }
         public string destino { get; set; }
         public string origenVuelo { get; set; }
-        public string detinoVuelo { get; set; }
+        public string destinoVuelo { get; set; }
         public string tiempoVuelo { get; set; }
         public int cantPax { get; set; }
         public string cliente { get; set; }

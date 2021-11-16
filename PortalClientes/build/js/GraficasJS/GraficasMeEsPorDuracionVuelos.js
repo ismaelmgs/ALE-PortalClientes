@@ -106,7 +106,7 @@ function chartsDV(dataDV, ChartType) {
 
         var optionsDV = {
             title: jsonDataDV[0].idioma == "es-MX" ? "Vuelos por Duracion" : "Flight Duration",
-            is3D: true, //Pie Charts
+            //is3D: true, //Pie Charts
             fontSize: 9,
             chartArea: {
                 left: screenWidth > 500 ? 30 : 10,

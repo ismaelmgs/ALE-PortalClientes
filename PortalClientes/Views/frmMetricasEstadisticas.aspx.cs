@@ -258,6 +258,23 @@ namespace PortalClientes.Views
             {
                 DDFiltroMesesPC.SelectedValue = v6;
             }
+
+            var v7 = DDFiltroMesesPP.SelectedValue;
+            // llenar dropdown filtro
+            DDFiltroMesesPP.Items.Clear();
+            DDFiltroMesesPP.Items.Add(new ListItem(Properties.Resources.FiltroME_MA, "0"));
+            DDFiltroMesesPP.Items.Add(new ListItem(Properties.Resources.FiltroME_1M, "1"));
+            DDFiltroMesesPP.Items.Add(new ListItem(Properties.Resources.FiltroME_2M, "2"));
+            DDFiltroMesesPP.Items.Add(new ListItem(Properties.Resources.FiltroME_3M, "3"));
+
+            if (v7 == "")
+            {
+                DDFiltroMesesPP.SelectedIndex = 1;
+            }
+            else
+            {
+                DDFiltroMesesPP.SelectedValue = v6;
+            }
         }
 
         public void GeneraRepResumen(int iTipoReporte)
@@ -883,6 +900,25 @@ namespace PortalClientes.Views
 
             List<responseGraficaPromedioCostos> lrg = new List<responseGraficaPromedioCostos>();
             lrg = oIGesCat.ObtenerPromedioCostos(fg);
+
+            if (lrg.Count() > 0)
+            {
+                lrg[0].idioma = Utils.Idioma;
+            }
+
+            return lrg;
+        }
+
+        [WebMethod]
+        public static List<responseGraficaPromedioPasajero> GetPromedioPasajeros(string meses)
+        {
+            DBMetricasEstatics oIGesCat = new DBMetricasEstatics();
+
+            FiltroGrafica fg = new FiltroGrafica();
+            fg.meses = meses;
+
+            List<responseGraficaPromedioPasajero> lrg = new List<responseGraficaPromedioPasajero>();
+            lrg = oIGesCat.obtenerPromedioPasajero(fg);
 
             if (lrg.Count() > 0)
             {

@@ -203,6 +203,33 @@ namespace PortalClientes.DomainModel
             return d;
         }
 
+        public List<responseGraficaPromedioPasajero> obtenerPromedioPasajero(FiltroGrafica filtro)
+        {
+            JavaScriptSerializer ser = new JavaScriptSerializer();
+            ser.MaxJsonLength = 500000000;
+            List<responseGraficaPromedioPasajero> d = new List<responseGraficaPromedioPasajero>();
+            FiltroGrafica oLog = new FiltroGrafica();
+            oLog = filtro;
+            oLog.matricula = Utils.MatriculaActual;
+
+            oLog.matricula = "XA-CHY";
+            oLog.meses = "3";
+
+            TokenWS oToken = Utils.ObtieneToken;
+
+            var client = new RestClient(Helper.D_UrlObbtenerPromedioPasajeros);
+            var request = new RestRequest(Method.POST);
+            request.AddHeader("Authorization", oToken.token);
+            request.AddJsonBody(oLog);
+
+            IRestResponse response = client.Execute(request);
+            var resp = response.Content;
+
+            d = ser.Deserialize<List<responseGraficaPromedioPasajero>>(resp);
+
+            return d;
+        }
+
         public DatosMetricas DBGetMetricasEstadisticas(string sMatricula, int iMeses)
         {
             JavaScriptSerializer ser = new JavaScriptSerializer();

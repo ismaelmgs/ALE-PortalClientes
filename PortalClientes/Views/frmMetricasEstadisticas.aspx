@@ -526,6 +526,14 @@
                             <div class="clearfix"></div>
                         </div>
                         <div class="row">
+                            <div class="col-md-2 offset-8">
+                                <asp:DropDownList ID="DDFiltroMesesPP" runat="server" CssClass="form-control" Width="100%"></asp:DropDownList>
+                            </div>
+                            <div class="col-md-2">
+                                <button id="btnGraficasBuscarPP" class="btn"><i class='fa fa-undo' style='color: #73879c; font-size: 23px;'></i></button>
+                            </div>
+                        </div>
+                        <div class="row">
                             <div class="col-md-12">
                                 <div id="piechart_3d_15" style="min-height: 400px;">
                                 </div>
@@ -562,6 +570,7 @@
 
     <script src='<%=ResolveUrl("~/vendors/jquery/dist/jquery.min.js")%>'></script>
     <script src='<%=ResolveUrl("~/vendors/jquery/dist/jquery.js")%>'></script>
+    <script src='<%=ResolveUrl("~/build/js/GraficasJS/GraficasMeEsPromedioPax.js")%>'></script>
     <script src='<%=ResolveUrl("~/build/js/GraficasJS/GraficasMeEsPromedioCosto.js")%>'></script>
     <script src='<%=ResolveUrl("~/build/js/GraficasJS/GraficasMeEsNumeroVuelos.js")%>'></script>
     <script src='<%=ResolveUrl("~/build/js/GraficasJS/GraficasMeEsHorasVoladas.js")%>'></script>

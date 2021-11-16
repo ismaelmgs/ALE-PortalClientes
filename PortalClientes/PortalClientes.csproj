@@ -229,6 +229,7 @@
     <Content Include="build\js\GraficasJS\GraficasMeEsPorAeropuerto.js" />
     <Content Include="build\js\GraficasJS\GraficasMeEsHorasVoladas.js" />
     <Content Include="build\js\GraficasJS\GraficasMeEsNumeroVuelos.js" />
+    <Content Include="build\js\GraficasJS\GraficasMeEsPromedioPax.js" />
     <Content Include="build\js\GraficasJS\GraficasMeEsPromedioCosto.js" />
     <Content Include="build\js\GraficasJS\GraficasMeEsPorProveedor.js" />
     <Content Include="build\js\GraficasJS\GraficasMeEs.js" />
@@ -1570,6 +1571,7 @@
     <Compile Include="Objetos\responseGraficaHorasVoladas.cs" />
     <Compile Include="Objetos\responseGraficaNoVuelos.cs" />
     <Compile Include="Objetos\responseGraficaPromedioCostos.cs" />
+    <Compile Include="Objetos\responseGraficaPromedioPasajero.cs" />
     <Compile Include="Objetos\responseGraficaProveedores.cs" />
     <Compile Include="Objetos\Transacciones.cs" />
     <Compile Include="Objetos\Tripulacion.cs" />

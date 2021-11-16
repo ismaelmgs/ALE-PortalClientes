@@ -1,52 +1,52 @@
 $(document).ready(function () {
-    //const url = "http://192.168.1.250/PortalClientes/Views/frmMetricasEstadisticas.aspx/GetGastos"; // API URL
-    const url = getUrlP(); // API URL
+    //const url = "http://192.168.1.250/PortalClientes/Views/frmMetricasEstadisticas.aspx/GetPromedioPasajeros"; // API URL
+    const urlPP = getUrlPP(); // API URL
 
-    let objProve = JSON.stringify({
-        meses: $("#ContentPlaceHolder1_DDFiltroMesesPA").val(),
+    let objPP = JSON.stringify({
+        meses: $("#ContentPlaceHolder1_DDFiltroMesesPP").val(),
     });
 
-    ajax_data(objProve, url, function (dataProve) {
-        chartsProv(dataProve , "PieChart"); // Pie Charts
+    ajax_dataPP(objPP, urlPP, function (dataPP) {
+        chartsPP(dataPP , "PieChart"); // Pie Charts
     });
 
     window.onresize = function () {
-        ajax_data(objProve, url, function (dataProve) {
-            chartsProv(dataProve, "PieChart"); // Pie Charts
+        ajax_dataPP(objPP, urlPP, function (dataPP) {
+            chartsPP(dataPP, "PieChart"); // Pie Charts
         });
     };
 });
 
-function getUrlP() {
-    let value = window.location + "/GetGastosProveedor";
+function getUrlPP() {
+    let value = window.location + "/GetPromedioPasajeros";
     return value;
 }
 
-$('#btnGraficasBuscarPA').click(function (event) {
+$('#btnGraficasBuscarPP').click(function (event) {
 
     event.preventDefault();
-    ActualizarGraficaProve();
+    ActualizarGraficaPP();
 
 });
 
-function ActualizarGraficaProve() {
-    const url = getUrlP(); // API URL
-    let objProve = JSON.stringify({
-        meses: $("#ContentPlaceHolder1_DDFiltroMesesPA").val(),
+function ActualizarGraficaPP() {
+    const urlPP = getUrlPP(); // API URL
+    let objPP = JSON.stringify({
+        meses: $("#ContentPlaceHolder1_DDFiltroMesesPP").val(),
     });
 
-    ajax_data(objProve, url, function (dataProve) {
-        chartsProv(dataProve, "PieChart"); // Pie Charts
+    ajax_dataPP(objPP, urlPP, function (dataPP) {
+        chartsPP(dataPP, "PieChart"); // Pie Charts
     });
 }
 
-function ajax_data(objProve, url, success) {
+function ajax_dataPP(objPP, urlPP, success) {
     $.ajax({
-        data: objProve,
+        data: objPP,
         contentType: "Application/json; charset=utf-8",
         responseType: "json",
         method: 'POST',
-        url: url,
+        url: urlPP,
         dataType: "json",
         beforeSend: function (response) { },
         success: function (response) {
@@ -58,16 +58,16 @@ function ajax_data(objProve, url, success) {
     });
 }
 
-function chartsProv(dataProve, ChartType) {
+function chartsPP(dataPP, ChartType) {
     var c = ChartType;
-    var jsonData = dataProve;
+    var jsonDataPP = dataPP;
 
-    if (jsonData.length > 0) {
+    if (jsonDataPP.length > 0) {
         google.charts.load("current", { packages: ["corechart"] });
-        google.charts.setOnLoadCallback(drawVisualizationProv)
+        google.charts.setOnLoadCallback(drawVisualizationPP)
     }
     
-    function generarUrlProve(obtiene) {
+    function generarUrlPP(obtiene) {
         var url = "";
 
         if (obtiene) {
@@ -88,28 +88,28 @@ function chartsProv(dataProve, ChartType) {
         return url;
     }
 
-    function drawVisualizationProv() {
+    function drawVisualizationPP() {
 
         var screenWidth = screen.width;
 
-        var dataProve_ = new google.visualization.DataTable();
-        dataProve_.addColumn('string', 'Proveedor');
-        dataProve_.addColumn('number', 'Gastos');
-        dataProve_.addColumn({ type: 'string', role: 'tooltip' });
+        var dataPP_ = new google.visualization.DataTable();
+        dataPP_.addColumn('string', 'Meses');
+        dataPP_.addColumn('number', 'Promedio');
+        dataPP_.addColumn({ type: 'string', role: 'tooltip' });
 
-        const opt = { style: 'currency', currency: 'MXN' };
-        var numberFormat = new Intl.NumberFormat('es-MX', opt);
-
-        const opt2 = { style: 'currency', currency: 'USD' };
-        const numberFormat2 = new Intl.NumberFormat('en-US', opt2);
-
-        jsonData.forEach((item, index) => {
-            dataProve_.addRows([[item.proveedor, item.totalMXN, `${item.proveedor} - ${numberFormat.format(item.totalMXN)} MXN`,]]);
+        jsonDataPP.forEach((item, index) => {
+            if (jsonDataPP[0].idioma == "es-MX") {
+                dataPP_.addRows([[item.nombreESP, item.promPax, `Promedio en ${item.nombreESP} - ${item.promPax} pasajeros`,]]);
+            } else {
+                dataPP_.addRows([[item.nombreENG, item.promPax, `Average in ${item.nombreENG} - ${item.promPax} passengers`,]]);
+            }
         });
 
-        var optionsProv = {
-            title: jsonData[0].idioma == "es-MX" ? "Gastos por Proveedor" : "Expenses by Vendor",
-            //is3D: true, //Pie Charts
+        var optionsPP = {
+            title: jsonDataPP[0].idioma == "es-MX" ? "Promedio Pasajeros" : "Average Passengers",
+            bar: {
+                groupWidth: "60%",
+            },
             fontSize: 9,
             chartArea: {
                 left: screenWidth > 500 ? 30 : 10,
@@ -123,22 +123,22 @@ function chartsProv(dataProve, ChartType) {
                 startup: true
             },
             legend: {
-                position: 'rigth',
+                position: 'bottom',
                 alignment: 'center',
             },
             colors: ['#3276ae', '#6aabc0', '#cf575e', '#eb924f', '#f6c543', '#d578a9', '#9889d1', '#89d193']
         };
 
-        var chartProveedor = new google.visualization.PieChart(document.getElementById('piechart_3d_3'));
-        chartProveedor.draw(dataProve_, optionsProv);
+        var chartPP = new google.visualization.ColumnChart(document.getElementById('piechart_3d_15'));
+        chartPP.draw(dataPP_, optionsPP);
 
-        google.visualization.events.addListener(chartProveedor, 'select', function () {
-            var selection = chartProveedor.getSelection();
+        google.visualization.events.addListener(chartPP, 'select', function () {
+            var selection = chartPP.getSelection();
             if (selection.length) {
                 var row = selection[0].row;
 
-                let array = jsonData[row];
-                const gastosProv = array.gastos
+                let array = jsonDataPP[row];
+                const costos = array.costos
 
                 let vuelos = []
 
@@ -146,15 +146,18 @@ function chartsProv(dataProve, ChartType) {
 
                 let gastosAe = []
 
+                let gastosProv = []
+
                 let obj = JSON.stringify({
                     vuelos,
                     gastos,
                     gastosAe,
                     gastosProv,
+                    costos,
                     tipoTrans: 3,
                     tipoDet: "MXN",
-                    descES: array.proveedor,
-                    descEN: array.proveedor,
+                    descES: array.nombreESP,
+                    descEN: array.nombreENG,
                     origen: 2,
                 });
 
@@ -163,10 +166,10 @@ function chartsProv(dataProve, ChartType) {
                     contentType: "Application/json; charset=utf-8",
                     responseType: "json",
                     method: 'POST',
-                    url: generarUrlProve(true),
+                    url: generarUrlPP(true),
                     dataType: "json",
                     success: function (response) {
-                        window.location.pathname = generarUrlProve(false);
+                        window.location.pathname = generarUrlPP(false);
                     },
                     error: function (err) {
                         console.log("Error In Connecting", err);

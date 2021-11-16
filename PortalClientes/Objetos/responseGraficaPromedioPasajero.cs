@@ -5,18 +5,20 @@ using System.Web;
 
 namespace PortalClientes.Objetos
 {
-    public class responseGraficaNoVuelos
+    public class responseGraficaPromedioPasajero
     {
+        public string mes { get; set; }
         public string anio { get; set; }
-        public int mes { get; set; }
         public string nombreESP { get; set; }
         public string nombreENG { get; set; }
-        public List<novuelo> vuelos { get; set; }
-        public float noVuelos { get; set; }
+        public float totalPax { get; set; }
+        public int numVuelos { get; set; }
+        public float promPax { get; set; }
         public string idioma { get; set; }
+        public List<pasajero> pax { get; set; }
     }
 
-    public class novuelo
+    public class pasajero
     {
         public int id { get; set; }
         public int anio { get; set; }

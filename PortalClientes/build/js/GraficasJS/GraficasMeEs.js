@@ -128,7 +128,7 @@ function charts(data, ChartType) {
 
         var options = {
             title: jsonData[0].idioma == "es-MX" ? "Costos por Categoria MXN" : "Expenses by Category MXN",
-            is3D: true, //Pie Charts
+            //is3D: true, //Pie Charts
             fontSize: 9,
             chartArea: {
                 left: screenWidth > 500 ? 30 : 10,
@@ -150,7 +150,7 @@ function charts(data, ChartType) {
 
         var optionsE = {
             title: jsonData[0].idioma == "es-MX" ? "Costos por Categoria USD" : "Expenses by Category USD",
-            is3D: true, //Pie Charts
+            //is3D: true, //Pie Charts
             fontSize: 9,
             chartArea: {
                 left: screenWidth > 500 ? 30 : 10,

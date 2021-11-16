@@ -625,6 +625,15 @@ namespace PortalClientes.Views {
         protected global::System.Web.UI.WebControls.Label lblPromedioPasajerosDos;
         
         /// <summary>
+        /// Control DDFiltroMesesPP.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList DDFiltroMesesPP;
+        
+        /// <summary>
         /// Control lblPRomedioCosto.
         /// </summary>
         /// <remarks>
