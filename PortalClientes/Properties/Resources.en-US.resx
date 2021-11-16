@@ -849,4 +849,13 @@
   <data name="TabTran_Importe" xml:space="preserve">
     <value>Amount</value>
   </data>
+  <data name="TabTran_NoVuelos" xml:space="preserve">
+    <value>No. of Flights</value>
+  </data>
+  <data name="TabTran_PromedioVuelo" xml:space="preserve">
+    <value>Average Flight</value>
+  </data>
+  <data name="TabTran_TiempoTotVuelo" xml:space="preserve">
+    <value>Total Flight Time</value>
+  </data>
 </root>

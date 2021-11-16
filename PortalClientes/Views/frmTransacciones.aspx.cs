@@ -319,6 +319,8 @@ namespace PortalClientes.Views
         {
             var contMeses = 0;
             var totalTransacciones = 0.0;
+            var totalTiempoVuelo = "00:00";
+            var TiempoVueloProm = "00:00";
             var promedio = 0.0;
             var totalRegistros = 0;
 
@@ -642,8 +644,8 @@ namespace PortalClientes.Views
             {
                 totalRegistros = transacciones.numeroVuelos.Count();
                 contMeses = transacciones.numeroVuelos.GroupBy(r => r.mes).Count();
-                totalTransacciones = 0;//transacciones.vuelos.Sum(x => x.Total);
-                promedio = 0;// totalTransacciones / contMeses;
+                totalTiempoVuelo = SumatoriaTiempos(transacciones.numeroVuelos.Select(x => x.tiempoVuelo).ToList(),0,1);//transacciones.vuelos.Sum(x => x.Total);
+                TiempoVueloProm = SumatoriaTiempos(transacciones.numeroVuelos.Select(x => x.tiempoVuelo).ToList(), totalRegistros,2);
 
                 BoundField clm = new BoundField();
                 clm.DataField = "mes";
@@ -690,19 +692,78 @@ namespace PortalClientes.Views
             }
 
             lblTotalTrasnRes.Text = totalRegistros.S();
-            lblTotalRes.Text = totalTransacciones.ToString("C", CultureInfo.CreateSpecificCulture("es-MX"));
-            lblPromedioRes.Text = promedio.ToString("C", CultureInfo.CreateSpecificCulture("es-MX"));
+            lblTotalRes.Text = totalTiempoVuelo;
+            lblPromedioRes.Text = TiempoVueloProm;
             
+        }
+
+        private string SumatoriaTiempos(List<string> items, int totalReg, int tipoSum)
+        {
+            var horas = 0;
+            var min = 0;
+            var sumatoria = "00:00";
+
+            foreach (var item in items)
+            {
+                List<string> data = item.Split(':').ToList();
+                var entHoras = Convert.ToInt32(data[0]);
+                var entMin = Convert.ToInt32(data[1]);
+
+                horas += entHoras > 0 ? entHoras : 0;
+                min += entMin > 0 ? entMin : 0;
+            }
+
+            if(tipoSum == 1)
+            {
+                var min_Horas = min / 60;
+                var rest_min = min - (min_Horas * 60);
+
+                var HORAS = (horas + min_Horas).ToString();
+                var MIN = (rest_min).S();
+
+                sumatoria = HORAS + ":" + MIN;
+            }
+            else
+            {
+                var horas_Min = horas * 60;
+                var totalMin = horas_Min + min;
+                var prom = totalMin / totalReg;
+
+                var min_Horas = prom / 60;
+                var rest_min = prom - (min_Horas * 60);
+
+                var HORAS = (min_Horas).ToString();
+                var MIN = (rest_min).S();
+
+                sumatoria = HORAS + ":" + MIN;
+            }
+
+            return sumatoria;
         }
 
         private void ArmarTransacciones()
         {
-            lblTransacciones.Text = Properties.Resources.TabTransacciones + " - " + Session["title"];
-            lblTitulo.Text = Properties.Resources.TabTransacciones;
+            var transaccion = Session["tipoTransaccion"];
+            switch (transaccion)
+            {
+                case 8:
+                    lblTransacciones.Text = Properties.Resources.TabTransacciones + " - " + Session["title"];
+                    lblTitulo.Text = Properties.Resources.TabTransacciones;
 
-            lblTotalTrasn.Text = Properties.Resources.TabTran_NoGastos;
-            lblTotal.Text = Properties.Resources.TabTran_MontoTotal;
-            lblPromedio.Text = Properties.Resources.TabTran_PromedioMens;
+                    lblTotalTrasn.Text = Properties.Resources.TabTran_NoVuelos;
+                    lblTotal.Text = Properties.Resources.TabTran_TiempoTotVuelo;
+                    lblPromedio.Text = Properties.Resources.TabTran_PromedioVuelo;
+                    break;
+                default:
+                    lblTransacciones.Text = Properties.Resources.TabTransacciones + " - " + Session["title"];
+                    lblTitulo.Text = Properties.Resources.TabTransacciones;
+
+                    lblTotalTrasn.Text = Properties.Resources.TabTran_NoGastos;
+                    lblTotal.Text = Properties.Resources.TabTran_MontoTotal;
+                    lblPromedio.Text = Properties.Resources.TabTran_PromedioMens;
+                    break;
+            }
+
         }
 
         [WebMethod]
@@ -930,10 +991,12 @@ namespace PortalClientes.Views
 
             var descripcion = Utils.Idioma == "es-MX" ? CultureInfo.CurrentCulture.TextInfo.ToTitleCase(descES.ToLower()) : CultureInfo.CurrentCulture.TextInfo.ToTitleCase(descEN.ToLower());
 
+            var det = tipoTrans == 8 ? Utils.MatriculaActual : tipoDet;
+
             HttpContext.Current.Session["origenData"] = origen;
             HttpContext.Current.Session["tipoTransaccion"] = tipoTrans;
-            HttpContext.Current.Session["title"] = descripcion + " - " + tipoDet;
-            HttpContext.Current.Session["titleFile"] = descripcion + "_" + tipoDet;
+            HttpContext.Current.Session["title"] = descripcion + " - " + det;
+            HttpContext.Current.Session["titleFile"] = descripcion + "_" + det;
         }
 
         private void exportarExcel()

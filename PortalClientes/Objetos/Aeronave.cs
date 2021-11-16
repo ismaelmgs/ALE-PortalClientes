@@ -23,7 +23,7 @@ namespace PortalClientes.Objetos
         public int? pesoMaxZeroComb { get; set; }
         public int? pesoBasicoOpe { get; set; }
         public int? maxNivelAltura { get; set; }
-        public int? velocidadCrucero { get; set; }
+        public string velocidadCrucero { get; set; }
         public IEnumerable<FotoAeronave> Imagenes { get; set; }
 
     }
