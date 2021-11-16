@@ -745,7 +745,7 @@ namespace PortalClientes.Properties {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Completo.
+        ///   Busca una cadena traducida similar a Último vuelo.
         /// </summary>
         internal static string Das_Completo {
             get {
