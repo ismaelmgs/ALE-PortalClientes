@@ -339,6 +339,7 @@ namespace PortalClientes.Views
             var totalRegistros = 0;
 
             gvGastos.DataSource = null;
+            gvGastos.Columns.Clear();
 
             if (tipoTransaccion == 1)
             {
