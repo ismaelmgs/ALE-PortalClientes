@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="frmTripulacion.aspx.cs" Inherits="PortalClientes.Views.frmTripulacion" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="frmTripulacion.aspx.cs" EnableEventValidation = "false" Inherits="PortalClientes.Views.frmTripulacion" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>

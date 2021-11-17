@@ -294,26 +294,24 @@ namespace PortalClientes.Views
 
             Response.Clear();
             Response.Buffer = true;
-            Response.AddHeader("content-disposition", string.Format("attachment;filename={0}", nameFile));
-            Response.Charset = "";
-            Response.ContentType = "application/octet-stream";
-            Response.Cache.SetCacheability(HttpCacheability.NoCache);
             using (StringWriter sw = new StringWriter())
             {
                 HtmlTextWriter hw = new HtmlTextWriter(sw);
                 GridView gv = null;
                 if (tipo == "Piloto")
                 {
-                    gv = gvPilotos;
                     LlenaGridPilotosLocal();
+                    gv = gvPilotos;
                 }
                 else
                 {
-                    gv = gvEventos;
                     LlenaGridEventosLocal();
+                    gv = gvEventos;
                 }
 
-                gv.AllowPaging = false;
+                Response.ContentType = "application/pdf";
+                Response.AddHeader("content-disposition", string.Format("attachment;filename={0}", nameFile));
+                Response.Cache.SetCacheability(HttpCacheability.NoCache);
 
                 gv.HeaderRow.BackColor = Color.White;
                 foreach (TableCell cell in gv.HeaderRow.Cells)
@@ -337,10 +335,12 @@ namespace PortalClientes.Views
                     }
                 }
 
+                gv.AllowPaging = false;
+                gv.DataBind();
                 gv.RenderControl(hw);
 
                 StringReader sr = new StringReader(sw.ToString());
-                iTextSharp.text.Document pdfDoc = new iTextSharp.text.Document(iTextSharp.text.PageSize.A4.Rotate(), 10f, 10f, 100f, 0f);
+                iTextSharp.text.Document pdfDoc = new iTextSharp.text.Document(iTextSharp.text.PageSize.A4, 10f, 10f, 10f, 0f);
                 HTMLWorker htmlparser = new HTMLWorker(pdfDoc);
                 PdfWriter.GetInstance(pdfDoc, Response.OutputStream);
                 pdfDoc.Open();
