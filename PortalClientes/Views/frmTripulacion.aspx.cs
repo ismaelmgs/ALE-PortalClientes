@@ -114,22 +114,50 @@ namespace PortalClientes.Views
 
         protected void btnPDFEvent_Click(object sender, EventArgs e)
         {
-            exportarPDF("Evento");
+            try
+            {
+                exportarPDF("Evento");
+            }
+            catch (Exception ex)
+            {
+                string strError = ex.Message;
+            }
         }
 
         protected void btnExcelEvent_Click(object sender, EventArgs e)
         {
-            exportarExcel("Evento");
+            try
+            { 
+                exportarExcel("Evento");
+            }
+            catch (Exception ex)
+            {
+                string strError = ex.Message;
+            }
         }
 
         protected void btnExcelPilotos_Click(object sender, EventArgs e)
         {
-            exportarExcel("Piloto");
+            try
+            { 
+                exportarExcel("Piloto");
+            }
+            catch (Exception ex)
+            {
+                string strError = ex.Message;
+            }
         }
 
         protected void btnPDFPilotos_Click(object sender, EventArgs e)
         {
-            exportarPDF("Piloto");
+            try
+            { 
+                exportarPDF("Piloto");
+            }
+            catch (Exception ex)
+            {
+                string strError = ex.Message;
+            }
         }
 
         protected void btnFiltrar_Click(object sender, EventArgs e)

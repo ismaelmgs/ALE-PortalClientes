@@ -298,12 +298,26 @@ namespace PortalClientes.Views
 
         protected void btnExcel_Click(object sender, EventArgs e)
         {
+            try
+            { 
             exportarExcel();
+            }
+            catch (Exception ex)
+            {
+                string strError = ex.Message;
+            }
         }
 
         protected void btnPDF_Click(object sender, EventArgs e)
         {
+            try
+            { 
             exportarPDF();
+            }
+            catch (Exception ex)
+            {
+                string strError = ex.Message;
+            }
         }
 
         public override void VerifyRenderingInServerForm(Control control)
