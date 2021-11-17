@@ -154,7 +154,7 @@
     <value>Ingresar</value>
   </data>
   <data name="Lo_OlvidoPass" xml:space="preserve">
-    <value>¿Olvidó su contraseña?</value>
+    <value>¿Olvidaste la contraseña?</value>
   </data>
   <data name="Lo_Titulo" xml:space="preserve">
     <value>Acceso</value>
