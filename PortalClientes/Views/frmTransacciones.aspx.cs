@@ -773,6 +773,30 @@ namespace PortalClientes.Views
             var transaccion = Session["tipoTransaccion"];
             switch (transaccion)
             {
+                case 4:
+                    lblTransacciones.Text = Properties.Resources.TabTransacciones + " - " + Session["title"];
+                    lblTitulo.Text = Properties.Resources.TabTransacciones;
+
+                    lblTotalTrasn.Text = Properties.Resources.TabTran_NoVuelos;
+                    lblTotal.Text = Properties.Resources.TabTran_TiempoTotVuelo;
+                    lblPromedio.Text = Properties.Resources.TabTran_PromedioVuelo;
+                    break;
+                case 5:
+                    lblTransacciones.Text = Properties.Resources.TabTransacciones + " - " + Session["title"];
+                    lblTitulo.Text = Properties.Resources.TabTransacciones;
+
+                    lblTotalTrasn.Text = Properties.Resources.TabTran_NoVuelos;
+                    lblTotal.Text = Properties.Resources.TabTran_TiempoTotVuelo;
+                    lblPromedio.Text = Properties.Resources.TabTran_PromedioVuelo;
+                    break;
+                case 7:
+                    lblTransacciones.Text = Properties.Resources.TabTransacciones + " - " + Session["title"];
+                    lblTitulo.Text = Properties.Resources.TabTransacciones;
+
+                    lblTotalTrasn.Text = Properties.Resources.TabTran_NoVuelos;
+                    lblTotal.Text = Properties.Resources.TabTran_TiempoTotVuelo;
+                    lblPromedio.Text = Properties.Resources.TabTran_PromedioVuelo;
+                    break;
                 case 8:
                     lblTransacciones.Text = Properties.Resources.TabTransacciones + " - " + Session["title"];
                     lblTitulo.Text = Properties.Resources.TabTransacciones;
