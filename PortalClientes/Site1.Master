@@ -174,7 +174,7 @@
                                     </a>--%>
                                     <dx:BootstrapMenu ID="MenuMatriculas" runat="server" OnItemClick="MenuMatriculas_ItemClick">
                                         <Items>
-                                            <dx:BootstrapMenuItem Text="Salir" GroupName="Group1" IconCssClass="fa fa-sign-out"></dx:BootstrapMenuItem>
+                                            <dx:BootstrapMenuItem Text="Salir" GroupName="Group1" IconCssClass="fa fa-power-off"></dx:BootstrapMenuItem>
                                             <dx:BootstrapMenuItem Text="Usuario" GroupName="Group2" IconCssClass="fa fa-user"></dx:BootstrapMenuItem>
                                             <dx:BootstrapMenuItem Text="Administrar mi cuenta" GroupName="Group3" IconCssClass="fa fa-cogs"></dx:BootstrapMenuItem>
                                             <dx:BootstrapMenuItem Text="Matrículas &#x23f7;" IconCssClass="fa fa-plane" GroupName="Group4">
@@ -195,32 +195,31 @@
                             <li role="presentation" class="nav-item dropdown open">
                                 <a href="javascript:;" class="dropdown-toggle info-number" id="navbarDropdown1" data-toggle="dropdown" aria-expanded="false">
                                     <br />
-                                    <asp:Image ID="imgIconoEspanol"  Visible="false" runat="server" ImageUrl="Images/ico_mx.jpg" AlternateText="Español" style="margin-bottom:15px;" /> 
-                                    <asp:Image ID="imgIconoEnglish" Visible="false" runat="server" ImageUrl="Images/ico_eu.jpg" AlternateText="English" style="margin-bottom:15px;" />
+                                    <asp:Image ID="imgIconoEspanol"  Visible="false" runat="server" ImageUrl="Images/ico_mx.png" AlternateText="Español" style="margin-bottom:15px;" /> 
+                                    <asp:Image ID="imgIconoEnglish" Visible="false" runat="server" ImageUrl="Images/ico_eu.png" AlternateText="English" style="margin-bottom:15px;" />
                                 </a>
                                 <%--onclick="SeleccionaIdioma();"--%>
                                 <ul class="dropdown-menu list-unstyled msg_list" role="menu" aria-labelledby="navbarDropdown1" id="idiomaoption" onclick="CambiaIdioma();" style=" margin-top:22px;">
                                 
                                     <li class="nav-item">
-                                        <a class="dropdown-item">
-                                            <span>
+                                        <div class="dropdown-item">
                                                 
                                                 <span>
-                                                    <asp:LinkButton ID="lblIdiomaEspanol" runat="server" Text="<i class='fa fa-globe'></i>&nbsp;&nbsp;&nbsp; Español" Font-Bold="true" CommandArgument="es-MX"
+                                                    <asp:LinkButton ID="lblIdiomaEspanol" runat="server" Text="<img src='../Images/ico_mx.png' style='width:18px;' />&nbsp;&nbsp;&nbsp; Español" Font-Bold="true" CommandArgument="es-MX"
                                                         ClientIDMode="Static" OnClientClick="AsignaEspanol(this);" OnClick="lblIdiomaEspanol_Click"></asp:LinkButton>
                                                 </span>
-                                            </span>
-                                        </a>
+
+                                        </div>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="dropdown-item">
-                                            <span>
+                                        <div class="dropdown-item">
+
                                                 <span>
-                                                    <asp:LinkButton ID="lblIdiomaEnglish" runat="server" Text="<i class='fa fa-globe'></i>&nbsp;&nbsp;&nbsp; English" Font-Bold="true" CommandArgument="en-US"
+                                                    <asp:LinkButton ID="lblIdiomaEnglish" runat="server" Text="<img src='../Images/ico_eu.png' style='width:17px;' />&nbsp;&nbsp;&nbsp; English" Font-Bold="true" CommandArgument="en-US"
                                                         ClientIDMode="Static" OnClientClick="AsignaIngles(this);" OnClick="lblIdiomaEnglish_Click"></asp:LinkButton>
                                                 </span>
-                                            </span>
-                                        </a>
+
+                                        </div>
                                     </li>
                                 </ul>
                             </li>

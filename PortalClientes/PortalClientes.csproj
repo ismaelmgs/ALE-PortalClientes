@@ -242,7 +242,9 @@
     <Content Include="Images\icons\flecha_cierra.png" />
     <Content Include="Images\icons\visualizar.png" />
     <Content Include="Images\ico_eu.jpg" />
+    <Content Include="Images\ico_eu.png" />
     <Content Include="Images\ico_mx.jpg" />
+    <Content Include="Images\ico_mx.png" />
     <Content Include="Images\loading.gif" />
     <Content Include="jets\fotos_portada_01.jpg" />
     <Content Include="jets\fotos_portada_02.jpg" />
