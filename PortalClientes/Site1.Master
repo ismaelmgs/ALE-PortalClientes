@@ -126,9 +126,7 @@
                         <%--<a data-toggle="tooltip" data-placement="top" title="Full Screen" onclick="openFullscreen();">
                             <span class="glyphicon glyphicon-fullscreen" aria-hidden="true"></span>
                         </a>--%>
-                        <a data-toggle="tooltip" data-placement="top" title="Salir" href="" style="width:100%;">
-                            <span class="glyphicon glyphicon-off" aria-hidden="true"></span>
-                        </a>
+                        <asp:LinkButton Width="100%" ToolTip="Salir" ID="btnSalir" OnClick="btnSalir_Click" runat="server"><span class="glyphicon glyphicon-off" aria-hidden="true"></span></asp:LinkButton>
                     </div>
                     <!-- /menu footer buttons -->
                 </div>

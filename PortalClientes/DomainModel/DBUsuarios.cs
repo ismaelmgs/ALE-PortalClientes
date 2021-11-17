@@ -18,20 +18,28 @@ namespace PortalClientes.DomainModel
 
         public List<Usuario> ObtieneUsuarios()
         {
-            JavaScriptSerializer ser = new JavaScriptSerializer();
-            List<Usuario> ListUsers = new List<Usuario>();
+            try
+            {
+                JavaScriptSerializer ser = new JavaScriptSerializer();
+                List<Usuario> ListUsers = new List<Usuario>();
 
-            TokenWS oToken = Utils.ObtieneToken;
-            
-            var client = new RestClient(Helper.US_UrlObtieneUsuarios);
-            var request = new RestRequest(Method.GET);
-            request.AddHeader("Authorization", oToken.token);
+                TokenWS oToken = Utils.ObtieneToken;
 
-            IRestResponse response = client.Execute(request);
-            var resp = response.Content;
-            ListUsers = ser.Deserialize<List<Usuario>>(resp);
+                var client = new RestClient(Helper.US_UrlObtieneUsuarios);
+                var request = new RestRequest(Method.GET);
+                request.AddHeader("Authorization", oToken.token);
 
-            return ListUsers;
+                IRestResponse response = client.Execute(request);
+                var resp = response.Content;
+                ListUsers = ser.Deserialize<List<Usuario>>(resp);
+
+                return ListUsers;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
         }
 
         public string InsertaActualizaUsuarios(Usuario oUser)
@@ -72,23 +80,31 @@ namespace PortalClientes.DomainModel
 
         public List<Usuario> ObtieneUsuariosFiltros(string sFiltro)
         {
-            JavaScriptSerializer ser = new JavaScriptSerializer();
-            List<Usuario> oUser = new List<Usuario>();
-            Filtros oLog = new Filtros();
-            oLog.filtro = sFiltro;
+            try
+            {
+                JavaScriptSerializer ser = new JavaScriptSerializer();
+                List<Usuario> oUser = new List<Usuario>();
+                Filtros oLog = new Filtros();
+                oLog.filtro = sFiltro;
 
-            TokenWS oToken = Utils.ObtieneToken;
+                TokenWS oToken = Utils.ObtieneToken;
 
-            var client = new RestClient(Helper.US_UrlObtieneUsuariosFiltros);
-            var request = new RestRequest(Method.POST);
-            request.AddHeader("Authorization", oToken.token);
-            request.AddJsonBody(oLog);
+                var client = new RestClient(Helper.US_UrlObtieneUsuariosFiltros);
+                var request = new RestRequest(Method.POST);
+                request.AddHeader("Authorization", oToken.token);
+                request.AddJsonBody(oLog);
 
-            IRestResponse response = client.Execute(request);
-            var resp = response.Content;
-            oUser = ser.Deserialize<List<Usuario>>(resp);
+                IRestResponse response = client.Execute(request);
+                var resp = response.Content;
+                oUser = ser.Deserialize<List<Usuario>>(resp);
 
-            return oUser;
+                return oUser;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
         }
 
         // MATRICULAS
@@ -121,34 +137,41 @@ namespace PortalClientes.DomainModel
 
         public List<Matriculas> DBGetObtieneMatriculasPorUsuario(int iidUsuario)
         {
-
-            JavaScriptSerializer ser = new JavaScriptSerializer();
-            List<Matriculas> oMU = new List<Matriculas>();
-            FiltroMatUsuario oLog = new FiltroMatUsuario();
-            oLog.IdUsuario = iidUsuario;
-
-            TokenWS oToken = Utils.ObtieneToken;
-            var client = new RestClient(Helper.D_UrlObtenerMatriculasPorUsuario);
-            var request = new RestRequest(Method.POST);
-            request.AddHeader("Authorization", oToken.token);
-            request.AddJsonBody(oLog);
-
-            //IRestResponse response = client.Execute(request);
-            //var resp = response.Content;
-            //oMU = ser.Deserialize<List<Matriculas>>(resp);
-
-            //return oMU;
-
-
-            oDB_SP.sConexionSQL = "Data Source=192.168.1.219;Initial Catalog=MexJet360;User ID=sa;Password=SYS.*2015%SQL";
-
-            return oDB_SP.EjecutarDT("[PortalClientes].[spS_PC_ObtieneMatriculasPorUsuario]", "@IdUsuario", iidUsuario).AsEnumerable().Select(r => new Matriculas()
+            try
             {
-                IdAeronave = r["IdAeroave"].S().I(),
-                Serie = r["Serie"].S(),
-                Matricula = r["Matricula"].S(),
-                GrupoModelo = r["Descripcion"].S(),
-            }).ToList();
+                JavaScriptSerializer ser = new JavaScriptSerializer();
+                List<Matriculas> oMU = new List<Matriculas>();
+                FiltroMatUsuario oLog = new FiltroMatUsuario();
+                oLog.IdUsuario = iidUsuario;
+
+                TokenWS oToken = Utils.ObtieneToken;
+                var client = new RestClient(Helper.D_UrlObtenerMatriculasPorUsuario);
+                var request = new RestRequest(Method.POST);
+                request.AddHeader("Authorization", oToken.token);
+                request.AddJsonBody(oLog);
+
+                //IRestResponse response = client.Execute(request);
+                //var resp = response.Content;
+                //oMU = ser.Deserialize<List<Matriculas>>(resp);
+
+                //return oMU;
+
+
+                oDB_SP.sConexionSQL = "Data Source=192.168.1.219;Initial Catalog=MexJet360;User ID=sa;Password=SYS.*2015%SQL";
+
+                return oDB_SP.EjecutarDT("[PortalClientes].[spS_PC_ObtieneMatriculasPorUsuario]", "@IdUsuario", iidUsuario).AsEnumerable().Select(r => new Matriculas()
+                {
+                    IdAeronave = r["IdAeroave"].S().I(),
+                    Serie = r["Serie"].S(),
+                    Matricula = r["Matricula"].S(),
+                    GrupoModelo = r["Descripcion"].S(),
+                }).ToList();
+            }
+            catch (Exception)
+            {
+
+                throw;
+            } 
         }
         
         public responseCodigoMensaje DesvinculaUsuariosMatriculas(int iIdUsuario)

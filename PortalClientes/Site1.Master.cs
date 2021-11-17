@@ -296,5 +296,11 @@ namespace PortalClientes
                 Response.Redirect("~/Views/frmTripulacion.aspx");
             }
         }
+
+        protected void btnSalir_Click(object sender, EventArgs e)
+        {
+            Session["UserIdentity"] = null;
+            Response.Redirect("~/frmLogin.aspx");
+        }
     }
 }

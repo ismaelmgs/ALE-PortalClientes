@@ -18,240 +18,321 @@ namespace PortalClientes.DomainModel
 
         public List<responseGraficaGastos> ObtenerGastos(FiltroGraficaGastos filtro)
         {
-            JavaScriptSerializer ser = new JavaScriptSerializer();
-            ser.MaxJsonLength = 500000000;
-            List<responseGraficaGastos> d = new List<responseGraficaGastos>();
-            FiltroGraficaGastos oLog = new FiltroGraficaGastos();
-            oLog = filtro;
-            oLog.matricula = Utils.MatriculaActual;
-            oLog.idioma = Utils.Idioma;
+            try
+            {
+                JavaScriptSerializer ser = new JavaScriptSerializer();
+                ser.MaxJsonLength = 500000000;
+                List<responseGraficaGastos> d = new List<responseGraficaGastos>();
+                FiltroGraficaGastos oLog = new FiltroGraficaGastos();
+                oLog = filtro;
+                oLog.matricula = Utils.MatriculaActual;
+                oLog.idioma = Utils.Idioma;
 
-            TokenWS oToken = Utils.ObtieneToken;
+                TokenWS oToken = Utils.ObtieneToken;
 
-            var client = new RestClient(Helper.D_UrlObbtenerGastoRubros);
-            var request = new RestRequest(Method.POST);
-            request.AddHeader("Authorization", oToken.token);
-            request.AddJsonBody(oLog);
+                var client = new RestClient(Helper.D_UrlObbtenerGastoRubros);
+                var request = new RestRequest(Method.POST);
+                request.AddHeader("Authorization", oToken.token);
+                request.AddJsonBody(oLog);
 
-            IRestResponse response = client.Execute(request);
-            var resp = response.Content;
+                IRestResponse response = client.Execute(request);
+                var resp = response.Content;
 
-            d = ser.Deserialize<List<responseGraficaGastos>>(resp);
+                d = ser.Deserialize<List<responseGraficaGastos>>(resp);
 
-            return d;
+                return d;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            
         }
 
         public List<responseGraficaProveedores> ObtenerGastosProveedor(FiltroGrafica filtro)
         {
-            JavaScriptSerializer ser = new JavaScriptSerializer();
-            ser.MaxJsonLength = 500000000;
-            List<responseGraficaProveedores> d = new List<responseGraficaProveedores>();
-            FiltroGrafica oLog = new FiltroGrafica();
-            oLog = filtro;
-            oLog.matricula = Utils.MatriculaActual;
+            try
+            {
+                JavaScriptSerializer ser = new JavaScriptSerializer();
+                ser.MaxJsonLength = 500000000;
+                List<responseGraficaProveedores> d = new List<responseGraficaProveedores>();
+                FiltroGrafica oLog = new FiltroGrafica();
+                oLog = filtro;
+                oLog.matricula = Utils.MatriculaActual;
 
-            oLog.matricula = "XA-CHY";
-            oLog.meses = "3";
+                oLog.matricula = "XA-CHY";
+                oLog.meses = "3";
 
-            TokenWS oToken = Utils.ObtieneToken;
+                TokenWS oToken = Utils.ObtieneToken;
 
-            var client = new RestClient(Helper.D_UrlObbtenerGastoProveedor);
-            var request = new RestRequest(Method.POST);
-            request.AddHeader("Authorization", oToken.token);
-            request.AddJsonBody(oLog);
+                var client = new RestClient(Helper.D_UrlObbtenerGastoProveedor);
+                var request = new RestRequest(Method.POST);
+                request.AddHeader("Authorization", oToken.token);
+                request.AddJsonBody(oLog);
 
-            IRestResponse response = client.Execute(request);
-            var resp = response.Content;
+                IRestResponse response = client.Execute(request);
+                var resp = response.Content;
 
-            d = ser.Deserialize<List<responseGraficaProveedores>>(resp);
+                d = ser.Deserialize<List<responseGraficaProveedores>>(resp);
 
-            return d;
+                return d;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+           
         }
 
         public List<responseGraficaAeropuerto> ObtenerGastosAeropuerto(FiltroGrafica filtro)
         {
-            JavaScriptSerializer ser = new JavaScriptSerializer();
-            ser.MaxJsonLength = 500000000;
-            List<responseGraficaAeropuerto> d = new List<responseGraficaAeropuerto>();
-            FiltroGrafica oLog = new FiltroGrafica();
-            oLog = filtro;
-            oLog.matricula = Utils.MatriculaActual;
+            try
+            {
+                JavaScriptSerializer ser = new JavaScriptSerializer();
+                ser.MaxJsonLength = 500000000;
+                List<responseGraficaAeropuerto> d = new List<responseGraficaAeropuerto>();
+                FiltroGrafica oLog = new FiltroGrafica();
+                oLog = filtro;
+                oLog.matricula = Utils.MatriculaActual;
 
-            oLog.matricula = "XA-CHY";
-            oLog.meses = "3";
+                oLog.matricula = "XA-CHY";
+                oLog.meses = "3";
 
-            TokenWS oToken = Utils.ObtieneToken;
+                TokenWS oToken = Utils.ObtieneToken;
 
-            var client = new RestClient(Helper.D_UrlObbtenerGastoAeropuerto);
-            var request = new RestRequest(Method.POST);
-            request.AddHeader("Authorization", oToken.token);
-            request.AddJsonBody(oLog);
+                var client = new RestClient(Helper.D_UrlObbtenerGastoAeropuerto);
+                var request = new RestRequest(Method.POST);
+                request.AddHeader("Authorization", oToken.token);
+                request.AddJsonBody(oLog);
 
-            IRestResponse response = client.Execute(request);
-            var resp = response.Content;
+                IRestResponse response = client.Execute(request);
+                var resp = response.Content;
 
-            d = ser.Deserialize<List<responseGraficaAeropuerto>>(resp);
+                d = ser.Deserialize<List<responseGraficaAeropuerto>>(resp);
 
-            return d;
+                return d;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+          
         }
 
         public List<responseGraficaDuracionVuelos> ObtenerDuracionVuelos(FiltroGrafica filtro)
         {
-            JavaScriptSerializer ser = new JavaScriptSerializer();
-            ser.MaxJsonLength = 500000000;
-            List<responseGraficaDuracionVuelos> d = new List<responseGraficaDuracionVuelos>();
-            FiltroGrafica oLog = new FiltroGrafica();
-            oLog = filtro;
-            oLog.matricula = Utils.MatriculaActual;
+            try
+            {
+                JavaScriptSerializer ser = new JavaScriptSerializer();
+                ser.MaxJsonLength = 500000000;
+                List<responseGraficaDuracionVuelos> d = new List<responseGraficaDuracionVuelos>();
+                FiltroGrafica oLog = new FiltroGrafica();
+                oLog = filtro;
+                oLog.matricula = Utils.MatriculaActual;
 
-            oLog.matricula = "XA-CHY";
-            oLog.meses = "3";
+                oLog.matricula = "XA-CHY";
+                oLog.meses = "3";
 
-            TokenWS oToken = Utils.ObtieneToken;
+                TokenWS oToken = Utils.ObtieneToken;
 
-            var client = new RestClient(Helper.D_UrlObbtenerTiemposVuelo);
-            var request = new RestRequest(Method.POST);
-            request.AddHeader("Authorization", oToken.token);
-            request.AddJsonBody(oLog);
+                var client = new RestClient(Helper.D_UrlObbtenerTiemposVuelo);
+                var request = new RestRequest(Method.POST);
+                request.AddHeader("Authorization", oToken.token);
+                request.AddJsonBody(oLog);
 
-            IRestResponse response = client.Execute(request);
-            var resp = response.Content;
+                IRestResponse response = client.Execute(request);
+                var resp = response.Content;
 
-            d = ser.Deserialize<List<responseGraficaDuracionVuelos>>(resp);
+                d = ser.Deserialize<List<responseGraficaDuracionVuelos>>(resp);
 
-            return d;
+                return d;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        
         }
 
         public List<responseGraficaHorasVoladas> ObtenerHorasVoladas(FiltroGrafica filtro)
         {
-            JavaScriptSerializer ser = new JavaScriptSerializer();
-            ser.MaxJsonLength = 500000000;
-            List<responseGraficaHorasVoladas> d = new List<responseGraficaHorasVoladas>();
-            FiltroGrafica oLog = new FiltroGrafica();
-            oLog = filtro;
-            oLog.matricula = Utils.MatriculaActual;
+            try
+            {
+                JavaScriptSerializer ser = new JavaScriptSerializer();
+                ser.MaxJsonLength = 500000000;
+                List<responseGraficaHorasVoladas> d = new List<responseGraficaHorasVoladas>();
+                FiltroGrafica oLog = new FiltroGrafica();
+                oLog = filtro;
+                oLog.matricula = Utils.MatriculaActual;
 
-            oLog.matricula = "XA-CHY";
-            oLog.meses = "3";
+                oLog.matricula = "XA-CHY";
+                oLog.meses = "3";
 
-            TokenWS oToken = Utils.ObtieneToken;
+                TokenWS oToken = Utils.ObtieneToken;
 
-            var client = new RestClient(Helper.D_UrlObbtenerHorasVoladas);
-            var request = new RestRequest(Method.POST);
-            request.AddHeader("Authorization", oToken.token);
-            request.AddJsonBody(oLog);
+                var client = new RestClient(Helper.D_UrlObbtenerHorasVoladas);
+                var request = new RestRequest(Method.POST);
+                request.AddHeader("Authorization", oToken.token);
+                request.AddJsonBody(oLog);
 
-            IRestResponse response = client.Execute(request);
-            var resp = response.Content;
+                IRestResponse response = client.Execute(request);
+                var resp = response.Content;
 
-            d = ser.Deserialize<List<responseGraficaHorasVoladas>>(resp);
+                d = ser.Deserialize<List<responseGraficaHorasVoladas>>(resp);
 
-            return d;
+                return d;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+          
         }
 
         public List<responseGraficaNoVuelos> ObtenerNoVuelos(FiltroGrafica filtro)
         {
-            JavaScriptSerializer ser = new JavaScriptSerializer();
-            ser.MaxJsonLength = 500000000;
-            List<responseGraficaNoVuelos> d = new List<responseGraficaNoVuelos>();
-            FiltroGrafica oLog = new FiltroGrafica();
-            oLog = filtro;
-            oLog.matricula = Utils.MatriculaActual;
+            try
+            {
+                JavaScriptSerializer ser = new JavaScriptSerializer();
+                ser.MaxJsonLength = 500000000;
+                List<responseGraficaNoVuelos> d = new List<responseGraficaNoVuelos>();
+                FiltroGrafica oLog = new FiltroGrafica();
+                oLog = filtro;
+                oLog.matricula = Utils.MatriculaActual;
 
-            oLog.matricula = "XA-CHY";
-            oLog.meses = "3";
+                oLog.matricula = "XA-CHY";
+                oLog.meses = "3";
 
-            TokenWS oToken = Utils.ObtieneToken;
+                TokenWS oToken = Utils.ObtieneToken;
 
-            var client = new RestClient(Helper.D_UrlObbtenerNoVuelos);
-            var request = new RestRequest(Method.POST);
-            request.AddHeader("Authorization", oToken.token);
-            request.AddJsonBody(oLog);
+                var client = new RestClient(Helper.D_UrlObbtenerNoVuelos);
+                var request = new RestRequest(Method.POST);
+                request.AddHeader("Authorization", oToken.token);
+                request.AddJsonBody(oLog);
 
-            IRestResponse response = client.Execute(request);
-            var resp = response.Content;
+                IRestResponse response = client.Execute(request);
+                var resp = response.Content;
 
-            d = ser.Deserialize<List<responseGraficaNoVuelos>>(resp);
+                d = ser.Deserialize<List<responseGraficaNoVuelos>>(resp);
 
-            return d;
+                return d;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+          
         }
 
         public List<responseGraficaPromedioCostos> ObtenerPromedioCostos(FiltroGrafica filtro)
         {
-            JavaScriptSerializer ser = new JavaScriptSerializer();
-            ser.MaxJsonLength = 500000000;
-            List<responseGraficaPromedioCostos> d = new List<responseGraficaPromedioCostos>();
-            FiltroGrafica oLog = new FiltroGrafica();
-            oLog = filtro;
-            oLog.matricula = Utils.MatriculaActual;
+            try
+            {
+                JavaScriptSerializer ser = new JavaScriptSerializer();
+                ser.MaxJsonLength = 500000000;
+                List<responseGraficaPromedioCostos> d = new List<responseGraficaPromedioCostos>();
+                FiltroGrafica oLog = new FiltroGrafica();
+                oLog = filtro;
+                oLog.matricula = Utils.MatriculaActual;
 
-            oLog.matricula = "XA-CHY";
-            oLog.meses = "3";
+                oLog.matricula = "XA-CHY";
+                oLog.meses = "3";
 
-            TokenWS oToken = Utils.ObtieneToken;
+                TokenWS oToken = Utils.ObtieneToken;
 
-            var client = new RestClient(Helper.D_UrlObbtenerPromedioCostos);
-            var request = new RestRequest(Method.POST);
-            request.AddHeader("Authorization", oToken.token);
-            request.AddJsonBody(oLog);
+                var client = new RestClient(Helper.D_UrlObbtenerPromedioCostos);
+                var request = new RestRequest(Method.POST);
+                request.AddHeader("Authorization", oToken.token);
+                request.AddJsonBody(oLog);
 
-            IRestResponse response = client.Execute(request);
-            var resp = response.Content;
+                IRestResponse response = client.Execute(request);
+                var resp = response.Content;
 
-            d = ser.Deserialize<List<responseGraficaPromedioCostos>>(resp);
+                d = ser.Deserialize<List<responseGraficaPromedioCostos>>(resp);
 
-            return d;
+                return d;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+         
         }
 
         public List<responseGraficaPromedioPasajero> obtenerPromedioPasajero(FiltroGrafica filtro)
         {
-            JavaScriptSerializer ser = new JavaScriptSerializer();
-            ser.MaxJsonLength = 500000000;
-            List<responseGraficaPromedioPasajero> d = new List<responseGraficaPromedioPasajero>();
-            FiltroGrafica oLog = new FiltroGrafica();
-            oLog = filtro;
-            oLog.matricula = Utils.MatriculaActual;
+            try
+            {
+                JavaScriptSerializer ser = new JavaScriptSerializer();
+                ser.MaxJsonLength = 500000000;
+                List<responseGraficaPromedioPasajero> d = new List<responseGraficaPromedioPasajero>();
+                FiltroGrafica oLog = new FiltroGrafica();
+                oLog = filtro;
+                oLog.matricula = Utils.MatriculaActual;
 
-            oLog.matricula = "XA-CHY";
-            oLog.meses = "3";
+                oLog.matricula = "XA-CHY";
+                oLog.meses = "3";
 
-            TokenWS oToken = Utils.ObtieneToken;
+                TokenWS oToken = Utils.ObtieneToken;
 
-            var client = new RestClient(Helper.D_UrlObbtenerPromedioPasajeros);
-            var request = new RestRequest(Method.POST);
-            request.AddHeader("Authorization", oToken.token);
-            request.AddJsonBody(oLog);
+                var client = new RestClient(Helper.D_UrlObbtenerPromedioPasajeros);
+                var request = new RestRequest(Method.POST);
+                request.AddHeader("Authorization", oToken.token);
+                request.AddJsonBody(oLog);
 
-            IRestResponse response = client.Execute(request);
-            var resp = response.Content;
+                IRestResponse response = client.Execute(request);
+                var resp = response.Content;
 
-            d = ser.Deserialize<List<responseGraficaPromedioPasajero>>(resp);
+                d = ser.Deserialize<List<responseGraficaPromedioPasajero>>(resp);
 
-            return d;
+                return d;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+           
         }
 
         public DatosMetricas DBGetMetricasEstadisticas(string sMatricula, int iMeses)
         {
-            JavaScriptSerializer ser = new JavaScriptSerializer();
-            ser.MaxJsonLength = 500000000;
-            DatosMetricas dm = new DatosMetricas();
-            FiltroEvent oLog = new FiltroEvent();
-            oLog.matricula = sMatricula;
-            oLog.meses = iMeses;
+            try
+            {
+                JavaScriptSerializer ser = new JavaScriptSerializer();
+                ser.MaxJsonLength = 500000000;
+                DatosMetricas dm = new DatosMetricas();
+                FiltroEvent oLog = new FiltroEvent();
+                oLog.matricula = sMatricula;
+                oLog.meses = iMeses;
 
-            TokenWS oToken = Utils.ObtieneToken;
+                TokenWS oToken = Utils.ObtieneToken;
 
-            var client = new RestClient(Helper.D_UrlobtieneMetricasEstadisticas);
-            var request = new RestRequest(Method.POST);
-            request.AddHeader("Authorization", oToken.token);
-            request.AddJsonBody(oLog);
+                var client = new RestClient(Helper.D_UrlobtieneMetricasEstadisticas);
+                var request = new RestRequest(Method.POST);
+                request.AddHeader("Authorization", oToken.token);
+                request.AddJsonBody(oLog);
 
-            IRestResponse response = client.Execute(request);
-            var resp = response.Content;
+                IRestResponse response = client.Execute(request);
+                var resp = response.Content;
 
-            dm = ser.Deserialize<DatosMetricas>(resp);
+                dm = ser.Deserialize<DatosMetricas>(resp);
 
-            return dm;            
+                return dm;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+                   
         }
     }
 }

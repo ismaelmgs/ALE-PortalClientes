@@ -14,36 +14,42 @@ namespace PortalClientes.DomainModel
     {
         public Aeronave ObtenerAeronave()
         {
-            
-            JavaScriptSerializer ser = new JavaScriptSerializer();
-            Aeronave a = new Aeronave();
-            FiltroMat oLog = new FiltroMat();
-            oLog.matriculaActual = Utils.MatriculaActual;
+            try
+            {
+                JavaScriptSerializer ser = new JavaScriptSerializer();
+                Aeronave a = new Aeronave();
+                FiltroMat oLog = new FiltroMat();
+                oLog.matriculaActual = Utils.MatriculaActual;
 
-            TokenWS oToken = Utils.ObtieneToken;
-            
-            var client = new RestClient(Helper.D_UrlObtenerAeronave);
-            var request = new RestRequest(Method.POST);
-            request.AddHeader("Authorization", oToken.token);
-            request.AddJsonBody(oLog);
+                TokenWS oToken = Utils.ObtieneToken;
 
-            IRestResponse response = client.Execute(request);
-            var resp = response.Content;
-            a = ser.Deserialize<Aeronave>(resp);
+                var client = new RestClient(Helper.D_UrlObtenerAeronave);
+                var request = new RestRequest(Method.POST);
+                request.AddHeader("Authorization", oToken.token);
+                request.AddJsonBody(oLog);
 
-            // Carga de Imagenes
-            var clientImg = new RestClient(Helper.D_UrlObtenerImagenesAeronave);
-            var requestImg = new RestRequest(Method.POST);
-            requestImg.AddHeader("Authorization", oToken.token);
-            requestImg.AddJsonBody(oLog);
+                IRestResponse response = client.Execute(request);
+                var resp = response.Content;
+                a = ser.Deserialize<Aeronave>(resp);
 
-            IRestResponse responseImg = clientImg.Execute(requestImg);
-            var respImg = responseImg.Content;
+                // Carga de Imagenes
+                var clientImg = new RestClient(Helper.D_UrlObtenerImagenesAeronave);
+                var requestImg = new RestRequest(Method.POST);
+                requestImg.AddHeader("Authorization", oToken.token);
+                requestImg.AddJsonBody(oLog);
 
-            a.Imagenes = ser.Deserialize<List<FotoAeronave>>(respImg);
+                IRestResponse responseImg = clientImg.Execute(requestImg);
+                var respImg = responseImg.Content;
 
-            return a;
-            
+                a.Imagenes = ser.Deserialize<List<FotoAeronave>>(respImg);
+
+                return a;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
         }
     }
 }

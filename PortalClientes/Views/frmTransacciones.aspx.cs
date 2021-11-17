@@ -364,6 +364,10 @@ namespace PortalClientes.Views
 
                 gvGastos.DataSource = transacciones.gastos.OrderBy(x => x.Fecha).ToList(); //.GroupBy(r => r.mes).Select(x => x.First());
                 gvGastos.DataBind();
+
+                lblTotalTrasnRes.Text = totalRegistros.S();
+                lblTotalRes.Text = totalTransacciones.ToString("C", CultureInfo.CreateSpecificCulture("es-MX"));
+                lblPromedioRes.Text = promedio.ToString("C", CultureInfo.CreateSpecificCulture("es-MX"));
             }
             else if (tipoTransaccion == 2)
             {
@@ -411,6 +415,10 @@ namespace PortalClientes.Views
 
                 gvGastos.DataSource = transacciones.gastosAe.OrderBy(x => x.Mes).ToList(); //.GroupBy(r => r.mes).Select(x => x.First());
                 gvGastos.DataBind();
+
+                lblTotalTrasnRes.Text = totalRegistros.S();
+                lblTotalRes.Text = totalTransacciones.ToString("C", CultureInfo.CreateSpecificCulture("es-MX"));
+                lblPromedioRes.Text = promedio.ToString("C", CultureInfo.CreateSpecificCulture("es-MX"));
             }
             else if (tipoTransaccion == 3)
             {
@@ -458,13 +466,17 @@ namespace PortalClientes.Views
 
                 gvGastos.DataSource = transacciones.gastosProv.OrderBy(x => x.Mes).ToList(); //.GroupBy(r => r.mes).Select(x => x.First());
                 gvGastos.DataBind();
+
+                lblTotalTrasnRes.Text = totalRegistros.S();
+                lblTotalRes.Text = totalTransacciones.ToString("C", CultureInfo.CreateSpecificCulture("es-MX"));
+                lblPromedioRes.Text = promedio.ToString("C", CultureInfo.CreateSpecificCulture("es-MX"));
             }
             else if (tipoTransaccion == 4)
             {
                 totalRegistros = transacciones.vuelos.Count();
                 contMeses = transacciones.vuelos.GroupBy(r => r.mes).Count();
-                totalTransacciones = 0;//transacciones.vuelos.Sum(x => x.Total);
-                promedio = 0;// totalTransacciones / contMeses;
+                totalTiempoVuelo = SumatoriaTiempos(transacciones.vuelos.Select(x => x.tiempoVlo).ToList(), 0, 1);//transacciones.vuelos.Sum(x => x.Total);
+                TiempoVueloProm = SumatoriaTiempos(transacciones.vuelos.Select(x => x.tiempoVlo).ToList(), totalRegistros, 2);
 
                 BoundField clm = new BoundField();
                 clm.DataField = "mes";
@@ -500,13 +512,17 @@ namespace PortalClientes.Views
 
                 gvGastos.DataSource = transacciones.vuelos.OrderBy(x => x.mes).ToList(); //.GroupBy(r => r.mes).Select(x => x.First());
                 gvGastos.DataBind();
+
+                lblTotalTrasnRes.Text = totalRegistros.S();
+                lblTotalRes.Text = totalTiempoVuelo;
+                lblPromedioRes.Text = TiempoVueloProm;
             }
             else if (tipoTransaccion == 5)
             {
                 totalRegistros = transacciones.promedioPax.Count();
                 contMeses = transacciones.promedioPax.GroupBy(r => r.mes).Count();
-                totalTransacciones = 0;//transacciones.vuelos.Sum(x => x.Total);
-                promedio = 0;// totalTransacciones / contMeses;
+                totalTiempoVuelo = SumatoriaTiempos(transacciones.promedioPax.Select(x => x.tiempoVuelo).ToList(), 0, 1);//transacciones.vuelos.Sum(x => x.Total);
+                TiempoVueloProm = SumatoriaTiempos(transacciones.promedioPax.Select(x => x.tiempoVuelo).ToList(), totalRegistros, 2);
 
                 BoundField clm = new BoundField();
                 clm.DataField = "mes";
@@ -550,6 +566,10 @@ namespace PortalClientes.Views
 
                 gvGastos.DataSource = transacciones.promedioPax.OrderBy(x => x.mes).ToList(); //.GroupBy(r => r.mes).Select(x => x.First());
                 gvGastos.DataBind();
+
+                lblTotalTrasnRes.Text = totalRegistros.S();
+                lblTotalRes.Text = totalTiempoVuelo;
+                lblPromedioRes.Text = TiempoVueloProm;
             }
             else if (tipoTransaccion == 6)
             {
@@ -589,13 +609,17 @@ namespace PortalClientes.Views
 
                 gvGastos.DataSource = transacciones.promedioCosto.OrderBy(x => x.mes).ToList(); //.GroupBy(r => r.mes).Select(x => x.First());
                 gvGastos.DataBind();
+
+                lblTotalTrasnRes.Text = totalRegistros.S();
+                lblTotalRes.Text = totalTransacciones.ToString("C", CultureInfo.CreateSpecificCulture("es-MX"));
+                lblPromedioRes.Text = promedio.ToString("C", CultureInfo.CreateSpecificCulture("es-MX"));
             }
             else if (tipoTransaccion == 7)
             {
                 totalRegistros = transacciones.horasVoladas.Count();
                 contMeses = transacciones.horasVoladas.GroupBy(r => r.mes).Count();
-                totalTransacciones = 0;//transacciones.vuelos.Sum(x => x.Total);
-                promedio = 0;// totalTransacciones / contMeses;
+                totalTiempoVuelo = SumatoriaTiempos(transacciones.horasVoladas.Select(x => x.tiempoVuelo).ToList(), 0, 1);//transacciones.vuelos.Sum(x => x.Total);
+                TiempoVueloProm = SumatoriaTiempos(transacciones.horasVoladas.Select(x => x.tiempoVuelo).ToList(), totalRegistros, 2);
 
                 BoundField clm = new BoundField();
                 clm.DataField = "mes";
@@ -639,6 +663,10 @@ namespace PortalClientes.Views
 
                 gvGastos.DataSource = transacciones.horasVoladas.OrderBy(x => x.mes).ToList(); //.GroupBy(r => r.mes).Select(x => x.First());
                 gvGastos.DataBind();
+
+                lblTotalTrasnRes.Text = totalRegistros.S();
+                lblTotalRes.Text = totalTiempoVuelo;
+                lblPromedioRes.Text = TiempoVueloProm;
             }
             else if (tipoTransaccion == 8)
             {
@@ -689,12 +717,11 @@ namespace PortalClientes.Views
 
                 gvGastos.DataSource = transacciones.numeroVuelos.OrderBy(x => x.mes).ToList(); //.GroupBy(r => r.mes).Select(x => x.First());
                 gvGastos.DataBind();
-            }
 
-            lblTotalTrasnRes.Text = totalRegistros.S();
-            lblTotalRes.Text = totalTiempoVuelo;
-            lblPromedioRes.Text = TiempoVueloProm;
-            
+                lblTotalTrasnRes.Text = totalRegistros.S();
+                lblTotalRes.Text = totalTiempoVuelo;
+                lblPromedioRes.Text = TiempoVueloProm;
+            }  
         }
 
         private string SumatoriaTiempos(List<string> items, int totalReg, int tipoSum)
