@@ -1051,7 +1051,7 @@ namespace PortalClientes.Properties {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a ¿Olvidó su contraseña?.
+        ///   Busca una cadena traducida similar a ¿Olvidaste la contraseña?.
         /// </summary>
         internal static string Lo_OlvidoPass {
             get {
