@@ -125,7 +125,7 @@ namespace PortalClientes
                 oMenu0.nombreESP = "Inicio";
                 oMenu0.nombreUSD = "Home";
 
-                olstFinal.Add(oMenu0);
+                //olstFinal.Add(oMenu0);
 
                 foreach (ModulosUsuario oMenu in olst)
                 {
