@@ -31,6 +31,15 @@ namespace PortalClientes.Views {
         protected global::System.Web.UI.WebControls.Label lblTripulacion;
         
         /// <summary>
+        /// Control hometab.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlAnchor hometab;
+        
+        /// <summary>
         /// Control lblPanelEventos.
         /// </summary>
         /// <remarks>
@@ -40,6 +49,15 @@ namespace PortalClientes.Views {
         protected global::System.Web.UI.WebControls.Label lblPanelEventos;
         
         /// <summary>
+        /// Control profiletab.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlAnchor profiletab;
+        
+        /// <summary>
         /// Control lblPanelListado.
         /// </summary>
         /// <remarks>
@@ -47,6 +65,15 @@ namespace PortalClientes.Views {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblPanelListado;
+        
+        /// <summary>
+        /// Control home.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl home;
         
         /// <summary>
         /// Control ddlFiltro.
@@ -92,6 +119,15 @@ namespace PortalClientes.Views {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.GridView gvEventos;
+        
+        /// <summary>
+        /// Control profile.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl profile;
         
         /// <summary>
         /// Control btnExcelPilotos.

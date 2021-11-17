@@ -14,6 +14,7 @@ using iTextSharp.text.html.simpleparser;
 using iTextSharp.text.pdf;
 using NucleoBase.Core;
 using System.Linq;
+using System.Web.UI.HtmlControls;
 
 namespace PortalClientes.Views
 {
@@ -40,6 +41,7 @@ namespace PortalClientes.Views
             if (!IsPostBack)
             {
                 LlenarTripulacion();
+                settabHome();
             }
         }
 
@@ -47,6 +49,7 @@ namespace PortalClientes.Views
         {
             gvEventos.PageIndex = e.NewPageIndex;
             LlenaGridEventosLocal();
+            settabHome();
         }
 
         protected void gvEventos_RowDataBound(object sender, GridViewRowEventArgs e)
@@ -92,6 +95,7 @@ namespace PortalClientes.Views
         {
             gvPilotos.PageIndex = e.NewPageIndex;
             LlenaGridPilotosLocal();
+            settabProfile();
         }
 
         protected void gvPilotos_RowDataBound(object sender, GridViewRowEventArgs e)
@@ -377,6 +381,24 @@ namespace PortalClientes.Views
                 Response.Write(pdfDoc);
                 Response.End();
             }
+        }
+
+        public void settabHome()
+        {
+            profiletab.Attributes["class"] = "nav-link";
+            hometab.Attributes.Add("class", "nav-link active");
+
+            profile.Attributes.Add("class", "tab-pane fade");
+            home.Attributes.Add("class", "tab-pane fade show active");
+        }
+
+        public void settabProfile()
+        {
+            hometab.Attributes["class"] = "nav-link";
+            profiletab.Attributes.Add("class", "nav-link active");
+
+            home.Attributes.Add("class", "tab-pane fade");
+            profile.Attributes.Add("class", "tab-pane fade show active");
         }
 
         #endregion

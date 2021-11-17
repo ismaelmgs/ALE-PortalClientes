@@ -42,14 +42,14 @@
                     <div class="col-md-12">
                         <ul class="nav nav-tabs" id="myTab" role="tablist">
                             <li class="nav-item">
-                                <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true"><asp:Label ID="lblPanelEventos" runat="server" Text="Eventos" Font-Bold="true"></asp:Label></a>
+                                <a class="nav-link active" runat="server" id="hometab" data-toggle="tab" href="#ContentPlaceHolder1_home" role="tab" aria-controls="ContentPlaceHolder1_home" aria-selected="true"><asp:Label ID="lblPanelEventos" runat="server" Text="Eventos" Font-Bold="true"></asp:Label></a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false"><asp:Label ID="lblPanelListado" runat="server" Text="Listado" Font-Bold="true"></asp:Label></a>
+                                <a class="nav-link" runat="server"  id="profiletab" data-toggle="tab" href="#ContentPlaceHolder1_profile" role="tab" aria-controls="ContentPlaceHolder1_profile" aria-selected="false"><asp:Label ID="lblPanelListado" runat="server" Text="Listado" Font-Bold="true"></asp:Label></a>
                             </li>
                         </ul>
                         <div class="tab-content" id="myTabContent">
-                            <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                            <div class="tab-pane fade show active" runat="server" id="home" role="tabpanel" aria-labelledby="home-tab">
                                 <br />
                                 <div class="row">
                                     <div class="col-md-6">&nbsp;</div>
@@ -90,7 +90,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                            <div class="tab-pane fade" runat="server" id="profile" role="tabpanel" aria-labelledby="profile-tab">
                                 <br />
                                 <div class="row">
                                     <div class="col-md-2 offset-10" style="text-align: center;">
