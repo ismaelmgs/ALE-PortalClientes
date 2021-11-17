@@ -858,4 +858,28 @@
   <data name="TabTran_TiempoTotVuelo" xml:space="preserve">
     <value>Tiempo Total de Vuelo</value>
   </data>
+  <data name="ME_CostoFIjoVariable" xml:space="preserve">
+    <value>Costo Fijo y Variable</value>
+  </data>
+  <data name="ME_CostoFijoVariableHora" xml:space="preserve">
+    <value>Costo Fijo y Variable por Hora</value>
+  </data>
+  <data name="ME_CostoPaxMilla" xml:space="preserve">
+    <value>Costo por Pax Milla</value>
+  </data>
+  <data name="ME_GastoTotal" xml:space="preserve">
+    <value>Gasto Total</value>
+  </data>
+  <data name="ME_HorasVuelo" xml:space="preserve">
+    <value>Horas de Vuelo</value>
+  </data>
+  <data name="ME_NoVuelos" xml:space="preserve">
+    <value>Numero de Vuelos</value>
+  </data>
+  <data name="ME_PromedioCosto" xml:space="preserve">
+    <value>Promedio de Costo</value>
+  </data>
+  <data name="ME_PromedioPax" xml:space="preserve">
+    <value>Promedio de Pasajeros</value>
+  </data>
 </root>

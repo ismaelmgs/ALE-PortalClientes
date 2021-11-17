@@ -123,6 +123,17 @@ namespace PortalClientes.Views
             lblResumenGastos.Text = Properties.Resources.ME_TabDocResumenGastos;
             lblRepDetGastos.Text = Properties.Resources.Me_TabDocDetGastos;
 
+            lblPRomedioCosto.Text = Properties.Resources.ME_PromedioCosto;
+            lblPromedioPasajerosDos.Text = Properties.Resources.ME_PromedioPax;
+            lblHorasVuelo.Text = Properties.Resources.ME_HorasVuelo;
+            lblNumVuelos.Text = Properties.Resources.ME_NoVuelos;
+            lblCostoPaxMilla.Text = Properties.Resources.ME_CostoPaxMilla;
+            lblCoatoMilla.Text = Properties.Resources.ME_CostoMilla;
+            lblGastoHora.Text = Properties.Resources.ME_CostoHora;
+            lblGastoTotal.Text = Properties.Resources.ME_GastoTotal;
+            lblCostoFijoVariableHora.Text = Properties.Resources.ME_CostoFijoVariableHora;
+            lblCostoFijoVariable.Text = Properties.Resources.ME_CostoFIjoVariable;
+
             var vPeriodo = ddlPeriodo.SelectedValue;
             // llenar dropdown Periodo
             ddlPeriodo.Items.Clear();

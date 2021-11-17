@@ -94,7 +94,7 @@ function chartsHV(dataHV, ChartType) {
 
         var dataHV_ = new google.visualization.DataTable();
         dataHV_.addColumn('string', 'Meses');
-        dataHV_.addColumn('number', 'Horas');
+        dataHV_.addColumn('number', jsonDataHV[0].idioma == "es-MX" ? "Horas" : "Hours");
         dataHV_.addColumn({ type: 'string', role: 'tooltip' });
 
         jsonDataHV.forEach((item, index) => {

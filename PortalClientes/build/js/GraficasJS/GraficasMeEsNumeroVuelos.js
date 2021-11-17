@@ -94,7 +94,7 @@ function chartsNV(dataNV, ChartType) {
 
         var dataNV_ = new google.visualization.DataTable();
         dataNV_.addColumn('string', 'Mes');
-        dataNV_.addColumn('number', 'Vuelos');
+        dataNV_.addColumn('number', jsonDataNV[0].idioma == "es-MX" ? "Vuelos" : "Flights");
         dataNV_.addColumn({ type: 'string', role: 'tooltip' });
 
         jsonDataNV.forEach((item, index) => {

@@ -94,7 +94,7 @@ function chartsPC(dataPC, ChartType) {
 
         var dataPC_ = new google.visualization.DataTable();
         dataPC_.addColumn('string', 'Proveedor');
-        dataPC_.addColumn('number', 'Costos');
+        dataPC_.addColumn('number', jsonDataPC[0].idioma == "es-MX" ? "Costos" : "Costs");
         dataPC_.addColumn({ type: 'string', role: 'tooltip' });
 
         const opt = { style: 'currency', currency: 'MXN' };

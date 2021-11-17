@@ -94,7 +94,7 @@ function chartsPP(dataPP, ChartType) {
 
         var dataPP_ = new google.visualization.DataTable();
         dataPP_.addColumn('string', 'Meses');
-        dataPP_.addColumn('number', 'Promedio');
+        dataPP_.addColumn('number', jsonDataPP[0].idioma == "es-MX" ? "Promedio" : "Average");
         dataPP_.addColumn({ type: 'string', role: 'tooltip' });
 
         jsonDataPP.forEach((item, index) => {

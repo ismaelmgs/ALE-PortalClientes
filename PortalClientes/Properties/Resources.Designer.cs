@@ -19,7 +19,7 @@ namespace PortalClientes.Properties {
     // a través de una herramienta como ResGen o Visual Studio.
     // Para agregar o quitar un miembro, edite el archivo .ResX y, a continuación, vuelva a ejecutar ResGen
     // con la opción /str o recompile su proyecto de VS.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "16.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "15.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     internal class Resources {
@@ -1078,6 +1078,24 @@ namespace PortalClientes.Properties {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Costo Fijo y Variable.
+        /// </summary>
+        internal static string ME_CostoFIjoVariable {
+            get {
+                return ResourceManager.GetString("ME_CostoFIjoVariable", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Costo Fijo y Variable por Hora.
+        /// </summary>
+        internal static string ME_CostoFijoVariableHora {
+            get {
+                return ResourceManager.GetString("ME_CostoFijoVariableHora", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Costo por Hora.
         /// </summary>
         internal static string ME_CostoHora {
@@ -1092,6 +1110,15 @@ namespace PortalClientes.Properties {
         internal static string ME_CostoMilla {
             get {
                 return ResourceManager.GetString("ME_CostoMilla", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Costo por Pax Milla.
+        /// </summary>
+        internal static string ME_CostoPaxMilla {
+            get {
+                return ResourceManager.GetString("ME_CostoPaxMilla", resourceCulture);
             }
         }
         
@@ -1141,6 +1168,15 @@ namespace PortalClientes.Properties {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Gasto Total.
+        /// </summary>
+        internal static string ME_GastoTotal {
+            get {
+                return ResourceManager.GetString("ME_GastoTotal", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Gasto Total Fijo.
         /// </summary>
         internal static string Me_GastoTotalFijo {
@@ -1168,11 +1204,29 @@ namespace PortalClientes.Properties {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Horas de Vuelo.
+        /// </summary>
+        internal static string ME_HorasVuelo {
+            get {
+                return ResourceManager.GetString("ME_HorasVuelo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Información General.
         /// </summary>
         internal static string ME_InfoGeneral {
             get {
                 return ResourceManager.GetString("ME_InfoGeneral", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Numero de Vuelos.
+        /// </summary>
+        internal static string ME_NoVuelos {
+            get {
+                return ResourceManager.GetString("ME_NoVuelos", resourceCulture);
             }
         }
         
@@ -1204,11 +1258,29 @@ namespace PortalClientes.Properties {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Promedio de Costo.
+        /// </summary>
+        internal static string ME_PromedioCosto {
+            get {
+                return ResourceManager.GetString("ME_PromedioCosto", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Promedio de Pasajeros.
         /// </summary>
         internal static string ME_PromedioPasajeros {
             get {
                 return ResourceManager.GetString("ME_PromedioPasajeros", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Promedio de Pasajeros.
+        /// </summary>
+        internal static string ME_PromedioPax {
+            get {
+                return ResourceManager.GetString("ME_PromedioPax", resourceCulture);
             }
         }
         

@@ -292,14 +292,6 @@
                     <div class="row" style="margin: 0px;">
                         <div class="col-md-12 table-responsive" style="padding-left: 1px !important; padding-right: 1px !important">
                             <table class="table" style="border: 0px;">
-                                <%--<tr>
-                                    <th style="width: 70%;">
-                                        <asp:Label ID="lblDescripcion" runat="server" Text="Tipo Reporte" Font-Bold="false"></asp:Label>
-                                    </th>
-                                    <th style="text-align:center;">
-                                        <asp:Label ID="lblDescargar" runat="server" Text=" Descargar" Font-Bold="false"></asp:Label>
-                                    </th>
-                                </tr>--%>
                                 <tr style="background-color: #00000003;">
                                     <td style="border: 0px; padding: 6px;">
                                         <img src="../build/images/resumen_gatos.png" style="width: 32px;" />&nbsp;<span style="font-size: 17px; font-weight: bold;"><asp:Label ID="lblResumenGastos" runat="server" Text=" Resumen de Gastos" Font-Bold="true"></asp:Label></span><br />
@@ -479,7 +471,7 @@
                             <div class="clearfix"></div>
                         </div>
                         <div class="row">
-                            <div class="col-md-2 offset-8">
+                            <div class="col-md-4 offset-6">
                                 <asp:DropDownList ID="DDFiltroMesesNV" runat="server" CssClass="form-control" Width="100%"></asp:DropDownList>
                             </div>
                             <div class="col-md-2">
@@ -501,7 +493,7 @@
                             <div class="clearfix"></div>
                         </div>
                         <div class="row">
-                            <div class="col-md-2 offset-8">
+                            <div class="col-md-4 offset-6">
                                 <asp:DropDownList ID="DDFiltroMesesHV" runat="server" CssClass="form-control" Width="100%"></asp:DropDownList>
                             </div>
                             <div class="col-md-2">
@@ -526,7 +518,7 @@
                             <div class="clearfix"></div>
                         </div>
                         <div class="row">
-                            <div class="col-md-2 offset-8">
+                            <div class="col-md-4 offset-6">
                                 <asp:DropDownList ID="DDFiltroMesesPP" runat="server" CssClass="form-control" Width="100%"></asp:DropDownList>
                             </div>
                             <div class="col-md-2">
@@ -548,7 +540,7 @@
                             <div class="clearfix"></div>
                         </div>
                         <div class="row">
-                            <div class="col-md-2 offset-8">
+                            <div class="col-md-4 offset-6">
                                 <asp:DropDownList ID="DDFiltroMesesPC" runat="server" CssClass="form-control" Width="100%"></asp:DropDownList>
                             </div>
                             <div class="col-md-2">
