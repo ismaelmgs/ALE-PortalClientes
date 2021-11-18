@@ -286,6 +286,40 @@ namespace PortalClientes.Views
             {
                 DDFiltroMesesPP.SelectedValue = v6;
             }
+
+            var v8 = DDFiltroMesesFV.SelectedValue;
+            // llenar dropdown filtro
+            DDFiltroMesesFV.Items.Clear();
+            DDFiltroMesesFV.Items.Add(new ListItem(Properties.Resources.FiltroME_MA, "0"));
+            DDFiltroMesesFV.Items.Add(new ListItem(Properties.Resources.FiltroME_1M, "1"));
+            DDFiltroMesesFV.Items.Add(new ListItem(Properties.Resources.FiltroME_2M, "2"));
+            DDFiltroMesesFV.Items.Add(new ListItem(Properties.Resources.FiltroME_3M, "3"));
+
+            if (v8 == "")
+            {
+                DDFiltroMesesPP.SelectedIndex = 1;
+            }
+            else
+            {
+                DDFiltroMesesPP.SelectedValue = v8;
+            }
+
+            var v9 = DDFiltroMesesGT.SelectedValue;
+            // llenar dropdown filtro
+            DDFiltroMesesGT.Items.Clear();
+            DDFiltroMesesGT.Items.Add(new ListItem(Properties.Resources.FiltroME_MA, "0"));
+            DDFiltroMesesGT.Items.Add(new ListItem(Properties.Resources.FiltroME_1M, "1"));
+            DDFiltroMesesGT.Items.Add(new ListItem(Properties.Resources.FiltroME_2M, "2"));
+            DDFiltroMesesGT.Items.Add(new ListItem(Properties.Resources.FiltroME_3M, "3"));
+
+            if (v9 == "")
+            {
+                DDFiltroMesesGT.SelectedIndex = 1;
+            }
+            else
+            {
+                DDFiltroMesesGT.SelectedValue = v9;
+            }
         }
 
         public void GeneraRepResumen(int iTipoReporte)
@@ -930,6 +964,25 @@ namespace PortalClientes.Views
 
             List<responseGraficaPromedioPasajero> lrg = new List<responseGraficaPromedioPasajero>();
             lrg = oIGesCat.obtenerPromedioPasajero(fg);
+
+            if (lrg.Count() > 0)
+            {
+                lrg[0].idioma = Utils.Idioma;
+            }
+
+            return lrg;
+        }
+
+        [WebMethod]
+        public static List<responseGraficaCostoFijoVariable> GetCostosFijoVariable(string meses)
+        {
+            DBMetricasEstatics oIGesCat = new DBMetricasEstatics();
+
+            FiltroGraficaFV fg = new FiltroGraficaFV();
+            fg.meses = meses;
+
+            List<responseGraficaCostoFijoVariable> lrg = new List<responseGraficaCostoFijoVariable>();
+            lrg = oIGesCat.obtenerCostosFijoVariable(fg);
 
             if (lrg.Count() > 0)
             {

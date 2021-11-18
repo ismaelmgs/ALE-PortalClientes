@@ -143,10 +143,12 @@ function chartsProv(dataProve, ChartType) {
                 let vuelos = []
                 let gastos = []
                 let gastosAe = []
+                let costos = []
+                let horasV = []
                 let novuelos = []
                 let paxs = []
-                let horasV = []
-                let costos = []
+                let costosFV = []
+                let gastosT = []
 
                 let obj = JSON.stringify({
                     vuelos,
@@ -157,6 +159,8 @@ function chartsProv(dataProve, ChartType) {
                     paxs,
                     horasV,
                     novuelos,
+                    costosFV,
+                    gastosT,
                     tipoTrans: 3,
                     tipoDet: "MXN",
                     descES: array.proveedor,

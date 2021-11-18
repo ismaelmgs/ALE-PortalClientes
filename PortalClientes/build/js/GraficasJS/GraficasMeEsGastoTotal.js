@@ -1,52 +1,52 @@
 $(document).ready(function () {
-    //const url = "http://192.168.1.250/PortalClientes/Views/frmMetricasEstadisticas.aspx/GetGastos"; // API URL
-    const urlDV = getUrlDV(); // API URL
+    //const url = "http://192.168.1.250/PortalClientes/Views/frmMetricasEstadisticas.aspx/GetGastosTotales"; // API URL
+    const urlGT = getUrlGT(); // API URL
 
-    let objDV = JSON.stringify({
-        meses: $("#ContentPlaceHolder1_DDFiltroMesesV").val(),
+    let objGT = JSON.stringify({
+        meses: $("#ContentPlaceHolder1_DDFiltroMesesGT").val(),
     });
 
-    ajax_data(objDV, urlDV, function (dataDV) {
-        chartsDV(dataDV, "PieChart"); // Pie Charts
+    ajax_dataGT(objGT, urlGT, function (dataGT) {
+        chartsGT(dataGT , "PieChart"); // Pie Charts
     });
 
     window.onresize = function () {
-        ajax_data(objDV, urlDV, function (dataDV) {
-            chartsDV(dataDV, "PieChart"); // Pie Charts
+        ajax_dataGT(objGT, urlGT, function (dataGT) {
+            chartsGT(dataGT, "PieChart"); // Pie Charts
         });
     };
 });
 
-function getUrlDV() {
-    let value = window.location + "/GetDuracionVuelos";
+function getUrlGT() {
+    let value = window.location + "/GetGastosTotales";
     return value;
 }
 
-$('#btnGraficasBuscar').click(function (event) {
+$('#ContentPlaceHolder1_DDFiltroMesesGT').change(function (event) {
 
     event.preventDefault();
-    ActualizarGraficaDV();
+    ActualizarGraficaGT();
 
 });
 
-function ActualizarGraficaDV() {
-    const urlDV = getUrlDV(); // API URL
-    let objDV = JSON.stringify({
-        meses: $("#ContentPlaceHolder1_DDFiltroMesesV").val(),
+function ActualizarGraficaGT() {
+    const urlGT = getUrlGT(); // API URL
+    let objGT = JSON.stringify({
+        meses: $("#ContentPlaceHolder1_DDFiltroMesesGT").val(),
     });
 
-    ajax_data(objDV, urlDV, function (dataDV) {
-        chartsDV(dataDV, "PieChart"); // Pie Charts
+    ajax_dataGT(objGT, urlGT, function (dataGT) {
+        chartsGT(dataGT, "PieChart"); // Pie Charts
     });
 }
 
-function ajax_data(objDV, urlDV, success) {
+function ajax_dataGT(objGT, urlGT, success) {
     $.ajax({
-        data: objDV,
+        data: objGT,
         contentType: "Application/json; charset=utf-8",
         responseType: "json",
         method: 'POST',
-        url: urlDV,
+        url: urlGT,
         dataType: "json",
         beforeSend: function (response) { },
         success: function (response) {
@@ -58,13 +58,16 @@ function ajax_data(objDV, urlDV, success) {
     });
 }
 
-function chartsDV(dataDV, ChartType) {
+function chartsGT(dataGT, ChartType) {
     var c = ChartType;
-    var jsonDataDV = dataDV;
-    google.charts.load("current", { packages: ["corechart"] });
-    google.charts.setOnLoadCallback(drawVisualizationDV)
+    var jsonDataGT = dataGT;
 
-    function generarUrlV(obtiene) {
+    if (jsonDataGT.length > 0) {
+        google.charts.load("current", { packages: ["corechart"] });
+        google.charts.setOnLoadCallback(drawVisualizationGT)
+    }
+    
+    function generarUrlGT(obtiene) {
         var url = "";
 
         if (obtiene) {
@@ -85,28 +88,28 @@ function chartsDV(dataDV, ChartType) {
         return url;
     }
 
-    function drawVisualizationDV() {
+    function drawVisualizationGT() {
 
         var screenWidth = screen.width;
 
-        var dataDV_ = new google.visualization.DataTable();
-        dataDV_.addColumn('string', 'tipo');
-        dataDV_.addColumn('number', 'vuelos');
-        dataDV_.addColumn({ type: 'string', role: 'tooltip' });
+        var dataGT_ = new google.visualization.DataTable();
+        dataGT_.addColumn('string', 'Categoria');
+        dataGT_.addColumn('number', jsonDataGT[0].idioma == "es-MX" ? "Costos" : "Costs");
+        dataGT_.addColumn({ type: 'string', role: 'tooltip' });
 
-        jsonDataDV.forEach((item, index) => {
-
-            if (jsonDataDV[0].idioma == "es-MX") {
-                dataDV_.addRows([[item.descripcionESP, item.noVuelos, `Vuelo ${item.descripcionESP}: Total ${item.noVuelos}`,]]);
+        jsonDataGT.forEach((item, index) => {
+            if (jsonDataGT[0].idioma == "es-MX") {
+                dataGT_.addRows([[item.categoria, item.noGastos, `Total de Costos ${ item.noGastos } por ${ item.categoria }`,]]);
             } else {
-                dataDV_.addRows([[item.descripcionENG, item.noVuelos, `Flight ${item.descripcionENG}: Total ${item.noVuelos}`,]]);
+                dataGT_.addRows([[item.categoria, item.noGastos, `Total costs ${ item.noGastos } by ${ item.categoria }`,]]);
             }
-
         });
 
-        var optionsDV = {
-            title: jsonDataDV[0].idioma == "es-MX" ? "Vuelos por Duracion" : "Flight Duration",
-            //is3D: true, //Pie Charts
+        var optionsGT = {
+            title: jsonDataGT[0].idioma == "es-MX" ? "Costo Fijo y Variable" : "Fixed and Variable Cost",
+            bar: {
+                groupWidth: "60%",
+            },
             fontSize: 9,
             chartArea: {
                 left: screenWidth > 500 ? 30 : 10,
@@ -120,23 +123,24 @@ function chartsDV(dataDV, ChartType) {
                 startup: true
             },
             legend: {
-                position: 'rigth',
+                position: 'bottom',
                 alignment: 'center',
             },
             colors: ['#3276ae', '#6aabc0', '#cf575e', '#eb924f', '#f6c543', '#d578a9', '#9889d1', '#89d193']
         };
 
-        var chartDV = new google.visualization.PieChart(document.getElementById('piechart_3d_5'));
-        chartDV.draw(dataDV_, optionsDV);
+        var chartGT = new google.visualization.ColumnChart(document.getElementById('piechart_3d_9'));
+        chartGT.draw(dataGT_, optionsGT);
 
-        google.visualization.events.addListener(chartDV, 'select', function () {
-            var selection = chartDV.getSelection();
+        google.visualization.events.addListener(chartGT, 'select', function () {
+            var selection = chartGT.getSelection();
             if (selection.length) {
                 var row = selection[0].row;
 
-                let array = jsonDataDV[row];
-                const vuelos = array.vuelos
+                let array = jsonDataGT[row];
+                const gastosT = array.pax
 
+                let vuelos = []
                 let gastos = []
                 let gastosAe = []
                 let gastosProv = []
@@ -145,7 +149,6 @@ function chartsDV(dataDV, ChartType) {
                 let novuelos = []
                 let paxs = []
                 let costosFV = []
-                let gastosT = []
 
                 let obj = JSON.stringify({
                     vuelos,
@@ -158,10 +161,10 @@ function chartsDV(dataDV, ChartType) {
                     novuelos,
                     costosFV,
                     gastosT,
-                    tipoTrans: 4,
+                    tipoTrans: 10,
                     tipoDet: "MXN",
-                    descES: array.descripcionESP,
-                    descEN: array.descripcionENG,
+                    descES: array.nombreESP,
+                    descEN: array.nombreENG,
                     origen: 2,
                 });
 
@@ -170,10 +173,10 @@ function chartsDV(dataDV, ChartType) {
                     contentType: "Application/json; charset=utf-8",
                     responseType: "json",
                     method: 'POST',
-                    url: generarUrlV(true),
+                    url: generarUrlGT(true),
                     dataType: "json",
                     success: function (response) {
-                        window.location.pathname = generarUrlV(false);
+                        window.location.pathname = generarUrlGT(false);
                     },
                     error: function (err) {
                         console.log("Error In Connecting", err);

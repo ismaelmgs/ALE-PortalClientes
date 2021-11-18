@@ -535,6 +535,15 @@ namespace PortalClientes.Views {
         protected global::System.Web.UI.WebControls.Label lblCostoFijoVariable;
         
         /// <summary>
+        /// Control DDFiltroMesesFV.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList DDFiltroMesesFV;
+        
+        /// <summary>
         /// Control lblCostoFijoVariableHora.
         /// </summary>
         /// <remarks>
@@ -551,6 +560,15 @@ namespace PortalClientes.Views {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblGastoTotal;
+        
+        /// <summary>
+        /// Control DDFiltroMesesGT.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList DDFiltroMesesGT;
         
         /// <summary>
         /// Control lblGastoHora.

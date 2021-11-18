@@ -378,6 +378,11 @@
                             <div class="clearfix"></div>
                         </div>
                         <div class="row">
+                            <div class="col-md-4 offset-8">
+                                <asp:DropDownList ID="DDFiltroMesesFV" runat="server" CssClass="form-control" Width="100%"></asp:DropDownList>
+                            </div>
+                        </div>
+                        <div class="row">
                             <div class="col-md-12">
                                 <div id="piechart_3d_7" style="min-height: 400px;">
                                 </div>
@@ -404,9 +409,14 @@
                     <div class="col-md-6">
                         <div class="x_title">
                             <h2>
-                                <asp:Label ID="lblGastoTotal" runat="server" Text="Gasto Total" Font-Bold="true"></asp:Label>
+                                <asp:Label ID="lblGastoTotal" runat="server" Text="Gastos Total" Font-Bold="true"></asp:Label>
                             </h2>
                             <div class="clearfix"></div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-4 offset-8">
+                                <asp:DropDownList ID="DDFiltroMesesGT" runat="server" CssClass="form-control" Width="100%"></asp:DropDownList>
+                            </div>
                         </div>
                         <div class="row">
                             <div class="col-md-12">
@@ -562,6 +572,7 @@
 
     <script src='<%=ResolveUrl("~/vendors/jquery/dist/jquery.min.js")%>'></script>
     <script src='<%=ResolveUrl("~/vendors/jquery/dist/jquery.js")%>'></script>
+    <script src='<%=ResolveUrl("~/build/js/GraficasJS/GraficasMeEsCostoFijoVariable.js")%>'></script>
     <script src='<%=ResolveUrl("~/build/js/GraficasJS/GraficasMeEsPromedioPax.js")%>'></script>
     <script src='<%=ResolveUrl("~/build/js/GraficasJS/GraficasMeEsPromedioCosto.js")%>'></script>
     <script src='<%=ResolveUrl("~/build/js/GraficasJS/GraficasMeEsNumeroVuelos.js")%>'></script>

@@ -232,6 +232,7 @@
     <Content Include="build\js\GraficasJS\GraficasMeEsPorAeropuerto.js" />
     <Content Include="build\js\GraficasJS\GraficasMeEsHorasVoladas.js" />
     <Content Include="build\js\GraficasJS\GraficasMeEsNumeroVuelos.js" />
+    <Content Include="build\js\GraficasJS\GraficasMeEsCostoFijoVariable.js" />
     <Content Include="build\js\GraficasJS\GraficasMeEsPromedioPax.js" />
     <Content Include="build\js\GraficasJS\GraficasMeEsPromedioCosto.js" />
     <Content Include="build\js\GraficasJS\GraficasMeEsPorProveedor.js" />

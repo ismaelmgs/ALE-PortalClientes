@@ -833,7 +833,7 @@ namespace PortalClientes.Views
         }
 
         [WebMethod]
-        public static void ObtenerTransacciones(List<gasto> gastos, List<gastoAeropuerto> gastosAe, List<gastoProveedor> gastosProv, List<vuelo> vuelos, List<pasajero> paxs, List<costosProm> costos, List<hora> horasV, List<novuelo> novuelos, int tipoTrans, string tipoDet, string descES, string descEN, int origen)
+        public static void ObtenerTransacciones(List<gasto> gastos, List<gastoAeropuerto> gastosAe, List<gastoProveedor> gastosProv, List<vuelo> vuelos, List<pasajero> paxs, List<costosProm> costos, List<hora> horasV, List<novuelo> novuelos, List<gastofv> gastosT, int tipoTrans, string tipoDet, string descES, string descEN, int origen)
         {
             // tipo transaccion: 1 gastos
             // tipo transaccion: 2 gastosAe
@@ -843,6 +843,8 @@ namespace PortalClientes.Views
             // tipo transaccion: 6 promedio costos
             // tipo transaccion: 7 horas voladas
             // tipo transaccion: 8 numero vuelos
+            // tipo transaccion: 9 costos fijos variables
+            // tipo transaccion: 10 gastos totales
 
             DateTimeFormatInfo month = null;
             CultureInfo cultureInfo = Thread.CurrentThread.CurrentCulture;
@@ -1033,6 +1035,73 @@ namespace PortalClientes.Views
             }
 
             else if (tipoTrans == 8)
+            {
+                List<gvnoVuelos> gvnv = new List<gvnoVuelos>();
+                foreach (var item in novuelos)
+                {
+                    gvnoVuelos nv = new gvnoVuelos();
+                    nv.mes = textInfo.ToTitleCase(month.GetMonthName(Convert.ToInt32(item.mes)));
+                    nv.anio = item.anio.S();
+                    nv.origen = item.origen;
+                    nv.destino = item.destino;
+                    nv.fechaOrigen = Convert.ToDateTime(item.origenVuelo).ToString("dd/MM/yyyy HH:mm");
+                    nv.fechaDestino = Convert.ToDateTime(item.destinoVuelo).ToString("dd/MM/yyyy HH:mm");
+                    nv.tiempoVuelo = item.tiempoVuelo;
+                    nv.cantPax = item.cantPax.S();
+                    nv.cliente = item.cliente;
+                    nv.contrato = item.contrato;
+
+                    gvnv.Add(nv);
+                }
+
+                HttpContext.Current.Session["data"] = gvnv;
+            }
+
+            else if (tipoTrans == 8)
+            {
+                List<gvnoVuelos> gvnv = new List<gvnoVuelos>();
+                foreach (var item in novuelos)
+                {
+                    gvnoVuelos nv = new gvnoVuelos();
+                    nv.mes = textInfo.ToTitleCase(month.GetMonthName(Convert.ToInt32(item.mes)));
+                    nv.anio = item.anio.S();
+                    nv.origen = item.origen;
+                    nv.destino = item.destino;
+                    nv.fechaOrigen = Convert.ToDateTime(item.origenVuelo).ToString("dd/MM/yyyy HH:mm");
+                    nv.fechaDestino = Convert.ToDateTime(item.destinoVuelo).ToString("dd/MM/yyyy HH:mm");
+                    nv.tiempoVuelo = item.tiempoVuelo;
+                    nv.cantPax = item.cantPax.S();
+                    nv.cliente = item.cliente;
+                    nv.contrato = item.contrato;
+
+                    gvnv.Add(nv);
+                }
+
+                HttpContext.Current.Session["data"] = gvnv;
+            }
+
+            else if (tipoTrans == 9)
+            {
+                List<gvGastosFV> gvgfv = new List<gvGastosFV>();
+                foreach (var item in gastosT)
+                {
+                    gvGastosFV gfv = new gvGastosFV();
+                    gfv.rubro = item.rubroESP;
+                    gfv.totalImp = item.totalImp;
+                    gfv.categoria = item.categoria;
+                    gfv.comentarios = item.comentarios;
+                    gfv.idTipoGasto = item.idTipoGasto.S();
+                    gfv.mes = textInfo.ToTitleCase(month.GetMonthName(Convert.ToInt32(item.mes)));
+                    gfv.anio = item.anio.S();
+                    gfv.nombre = Utils.Idioma == "es-MX" ? item.nombreESP : item.nombreENG;
+
+                    gvgfv.Add(gfv);
+                }
+
+                HttpContext.Current.Session["data"] = gvgfv;
+            }
+
+            else if (tipoTrans == 10)
             {
                 List<gvnoVuelos> gvnv = new List<gvnoVuelos>();
                 foreach (var item in novuelos)
