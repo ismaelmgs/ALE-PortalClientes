@@ -116,6 +116,12 @@ namespace PortalClientes.Views
                         LlenarGV(transacciones, tipo);
                     }
 
+                    else if (tipo == 10)
+                    {
+                        transacciones.costosHoraVuelo = (List<gvCostosH>)Session["data"];
+                        LlenarGV(transacciones, tipo);
+                    }
+
                     if (od == 1)
                     {
                         btnRegresarMeEs.Visible = false;
@@ -270,6 +276,16 @@ namespace PortalClientes.Views
                     e.Row.Cells[5].Text = Properties.Resources.TabTran_Comentario;
                 }
 
+                else if (tipo == 11)
+                {
+                    e.Row.Cells[0].Text = Properties.Resources.TabTran_Mes;
+                    e.Row.Cells[1].Text = Properties.Resources.TabTran_Anio;
+                    e.Row.Cells[2].Text = Properties.Resources.TabTran_Rubro;
+                    e.Row.Cells[3].Text = Properties.Resources.TabTran_Importe;
+                    e.Row.Cells[4].Text = Properties.Resources.TabTran_Categoria;
+                    e.Row.Cells[5].Text = Properties.Resources.TabTran_Comentario;
+                }
+
             }
         }
 
@@ -336,6 +352,12 @@ namespace PortalClientes.Views
             else if (tipo == 10)
             {
                 transacciones.gastosTotales = (List<gvGastosT>)Session["data"];
+                LlenarGV(transacciones, tipo);
+            }
+
+            else if (tipo == 11)
+            {
+                transacciones.costosHoraVuelo = (List<gvCostosH>)Session["data"];
                 LlenarGV(transacciones, tipo);
             }
 
@@ -845,7 +867,7 @@ namespace PortalClientes.Views
                 gvGastos.Columns.Add(clm3);
 
                 BoundField clm4 = new BoundField();
-                clm4.DataField = "importe";
+                clm4.DataField = "totalImp";
                 clm4.DataFormatString = "{0:c}";
                 gvGastos.Columns.Add(clm4);
 
@@ -858,6 +880,45 @@ namespace PortalClientes.Views
                 gvGastos.Columns.Add(clm6);
 
                 gvGastos.DataSource = transacciones.gastosTotales.OrderBy(x => x.mes).ToList(); //.GroupBy(r => r.mes).Select(x => x.First());
+                gvGastos.DataBind();
+
+                lblTotalTrasnRes.Text = totalRegistros.S();
+                lblTotalRes.Text = totalTransacciones.ToString("C", CultureInfo.CreateSpecificCulture("es-MX"));
+                lblPromedioRes.Text = promedio.ToString("C", CultureInfo.CreateSpecificCulture("es-MX"));
+            }
+            else if (tipoTransaccion == 11)
+            {
+                totalRegistros = transacciones.costosHoraVuelo.Count();
+                contMeses = transacciones.costosHoraVuelo.GroupBy(r => r.mes).Count();
+                totalTransacciones = transacciones.costosHoraVuelo.Sum(x => x.totalImp);
+                promedio = totalTransacciones / totalRegistros;
+
+                BoundField clm = new BoundField();
+                clm.DataField = "mes";
+                gvGastos.Columns.Add(clm);
+
+                BoundField clm2 = new BoundField();
+                clm2.DataField = "anio";
+                gvGastos.Columns.Add(clm2);
+
+                BoundField clm3 = new BoundField();
+                clm3.DataField = "rubro";
+                gvGastos.Columns.Add(clm3);
+
+                BoundField clm4 = new BoundField();
+                clm4.DataField = "totalImp";
+                clm4.DataFormatString = "{0:c}";
+                gvGastos.Columns.Add(clm4);
+
+                BoundField clm5 = new BoundField();
+                clm5.DataField = "categoria";
+                gvGastos.Columns.Add(clm5);
+
+                BoundField clm6 = new BoundField();
+                clm6.DataField = "comentarios";
+                gvGastos.Columns.Add(clm6);
+
+                gvGastos.DataSource = transacciones.costosHoraVuelo.OrderBy(x => x.mes).ToList(); //.GroupBy(r => r.mes).Select(x => x.First());
                 gvGastos.DataBind();
 
                 lblTotalTrasnRes.Text = totalRegistros.S();
@@ -960,7 +1021,7 @@ namespace PortalClientes.Views
         }
 
         [WebMethod]
-        public static void ObtenerTransacciones(List<gasto> gastos, List<gastoAeropuerto> gastosAe, List<gastoProveedor> gastosProv, List<vuelo> vuelos, List<pasajero> paxs, List<costosProm> costos, List<hora> horasV, List<novuelo> novuelos, List<costofv> costosFV, List<gastot> gastosT, int tipoTrans, string tipoDet, string descES, string descEN, int origen)
+        public static void ObtenerTransacciones(List<gasto> gastos, List<gastoAeropuerto> gastosAe, List<gastoProveedor> gastosProv, List<vuelo> vuelos, List<pasajero> paxs, List<costosProm> costos, List<hora> horasV, List<novuelo> novuelos, List<costofv> costosFV, List<gastot> gastosT, List<costoH> costoH, int tipoTrans, string tipoDet, string descES, string descEN, int origen)
         {
             // tipo transaccion: 1 gastos
             // tipo transaccion: 2 gastosAe
@@ -972,6 +1033,7 @@ namespace PortalClientes.Views
             // tipo transaccion: 8 numero vuelos
             // tipo transaccion: 9 costos fijos variables
             // tipo transaccion: 10 gastos totales
+            // tipo transaccion: 11 costos hora vuelo
 
             DateTimeFormatInfo month = null;
             CultureInfo cultureInfo = Thread.CurrentThread.CurrentCulture;
@@ -1237,7 +1299,6 @@ namespace PortalClientes.Views
                     gt.totalImp = item.totalImp;
                     gt.categoria = Utils.Idioma == "es-MX" ? item.categoriaESP : item.categoriaENG;
                     gt.comentarios = item.comentarios;
-                    gt.comentarios = item.comentarios;
                     gt.mes = textInfo.ToTitleCase(month.GetMonthName(Convert.ToInt32(item.mes)));
                     gt.anio = item.anio.S();
 
@@ -1245,6 +1306,25 @@ namespace PortalClientes.Views
                 }
 
                 HttpContext.Current.Session["data"] = gvgt;
+            }
+
+            else if (tipoTrans == 11)
+            {
+                List<gvGastosH> gvch = new List<gvGastosH>();
+                foreach (var item in costoH)
+                {
+                    gvGastosH ch = new gvGastosH();
+                    ch.rubro = Utils.Idioma == "es-MX" ? item.rubroENG : item.rubroENG;
+                    ch.totalImp = item.totalImp;
+                    ch.categoria = Utils.Idioma == "es-MX" ? item.categoriaESP : item.categoriaENG;
+                    ch.comentarios = item.comentarios;
+                    ch.mes = textInfo.ToTitleCase(month.GetMonthName(Convert.ToInt32(item.mes)));
+                    ch.anio = item.anio.S();
+
+                    gvch.Add(ch);
+                }
+
+                HttpContext.Current.Session["data"] = gvch;
             }
 
             var descripcion = Utils.Idioma == "es-MX" ? CultureInfo.CurrentCulture.TextInfo.ToTitleCase(descES.ToLower()) : CultureInfo.CurrentCulture.TextInfo.ToTitleCase(descEN.ToLower());

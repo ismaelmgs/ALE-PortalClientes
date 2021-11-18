@@ -196,6 +196,7 @@ function charts(data, ChartType) {
                 let paxs = []
                 let costosFV = []
                 let gastosT = []
+                let costoH = []
 
                 let obj = JSON.stringify({
                     vuelos,
@@ -208,6 +209,7 @@ function charts(data, ChartType) {
                     novuelos,
                     costosFV,
                     gastosT,
+                    costoH,
                     tipoTrans: 1,
                     tipoDet: "MXN",
                     descES: array.rubroESP,

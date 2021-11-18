@@ -320,6 +320,23 @@ namespace PortalClientes.Views
             {
                 DDFiltroMesesGT.SelectedValue = v9;
             }
+
+            var v10 = DDFiltroMesesCH.SelectedValue;
+            // llenar dropdown filtro
+            DDFiltroMesesCH.Items.Clear();
+            DDFiltroMesesCH.Items.Add(new ListItem(Properties.Resources.FiltroME_MA, "0"));
+            DDFiltroMesesCH.Items.Add(new ListItem(Properties.Resources.FiltroME_1M, "1"));
+            DDFiltroMesesCH.Items.Add(new ListItem(Properties.Resources.FiltroME_2M, "2"));
+            DDFiltroMesesCH.Items.Add(new ListItem(Properties.Resources.FiltroME_3M, "3"));
+
+            if (v10 == "")
+            {
+                DDFiltroMesesCH.SelectedIndex = 1;
+            }
+            else
+            {
+                DDFiltroMesesCH.SelectedValue = v10;
+            }
         }
 
         public void GeneraRepResumen(int iTipoReporte)

@@ -152,6 +152,7 @@ function chartsPC(dataPC, ChartType) {
                 let paxs = []
                 let costosFV = []
                 let gastosT = []
+                let costoH = []
 
                 let obj = JSON.stringify({
                     vuelos,
@@ -164,6 +165,7 @@ function chartsPC(dataPC, ChartType) {
                     novuelos,
                     costosFV,
                     gastosT,
+                    costoH,
                     tipoTrans: 6,
                     tipoDet: "MXN",
                     descES: array.nombreESP,

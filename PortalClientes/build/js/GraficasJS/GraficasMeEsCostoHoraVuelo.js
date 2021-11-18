@@ -1,52 +1,52 @@
 $(document).ready(function () {
     //const url = "http://192.168.1.250/PortalClientes/Views/frmMetricasEstadisticas.aspx/GetGastosTotales"; // API URL
-    const urlGT = getUrlGT(); // API URL
+    const urlCH = getUrlCH(); // API URL
 
-    let objGT = JSON.stringify({
-        meses: $("#ContentPlaceHolder1_DDFiltroMesesGT").val(),
+    let objCH = JSON.stringify({
+        meses: $("#ContentPlaceHolder1_DDFiltroMesesCH").val(),
     });
 
-    ajax_dataGT(objGT, urlGT, function (dataGT) {
-        chartsGT(dataGT , "PieChart"); // Pie Charts
+    ajax_dataCH(objCH, urlCH, function (dataCH) {
+        chartsCH(dataCH , "PieChart"); // Pie Charts
     });
 
     window.onresize = function () {
-        ajax_dataGT(objGT, urlGT, function (dataGT) {
-            chartsGT(dataGT, "PieChart"); // Pie Charts
+        ajax_dataCH(objCH, urlCH, function (dataCH) {
+            chartsCH(dataCH, "PieChart"); // Pie Charts
         });
     };
 });
 
-function getUrlGT() {
+function getUrlCH() {
     let value = window.location + "/GetGastosTotales";
     return value;
 }
 
-$('#ContentPlaceHolder1_DDFiltroMesesGT').change(function (event) {
+$('#ContentPlaceHolder1_DDFiltroMesesCH').change(function (event) {
 
     event.preventDefault();
-    ActualizarGraficaGT();
+    ActualizarGraficaCH();
 
 });
 
-function ActualizarGraficaGT() {
-    const urlGT = getUrlGT(); // API URL
-    let objGT = JSON.stringify({
-        meses: $("#ContentPlaceHolder1_DDFiltroMesesGT").val(),
+function ActualizarGraficaCH() {
+    const urlCH = getUrlCH(); // API URL
+    let objCH = JSON.stringify({
+        meses: $("#ContentPlaceHolder1_DDFiltroMesesCH").val(),
     });
 
-    ajax_dataGT(objGT, urlGT, function (dataGT) {
-        chartsGT(dataGT, "PieChart"); // Pie Charts
+    ajax_dataCH(objCH, urlCH, function (dataCH) {
+        chartsCH(dataCH, "PieChart"); // Pie Charts
     });
 }
 
-function ajax_dataGT(objGT, urlGT, success) {
+function ajax_dataCH(objCH, urlCH, success) {
     $.ajax({
-        data: objGT,
+        data: objCH,
         contentType: "Application/json; charset=utf-8",
         responseType: "json",
         method: 'POST',
-        url: urlGT,
+        url: urlCH,
         dataType: "json",
         beforeSend: function (response) { },
         success: function (response) {
@@ -58,16 +58,16 @@ function ajax_dataGT(objGT, urlGT, success) {
     });
 }
 
-function chartsGT(dataGT, ChartType) {
+function chartsCH(dataCH, ChartType) {
     var c = ChartType;
-    var jsonDataGT = dataGT;
+    var jsonDataCH = dataCH;
 
-    if (jsonDataGT.length > 0) {
+    if (jsonDataCH.lenCHh > 0) {
         google.charts.load("current", { packages: ["corechart"] });
-        google.charts.setOnLoadCallback(drawVisualizationGT)
+        google.charts.setOnLoadCallback(drawVisualizationCH)
     }
     
-    function generarUrlGT(obtiene) {
+    function generarUrlCH(obtiene) {
         var url = "";
 
         if (obtiene) {
@@ -88,25 +88,25 @@ function chartsGT(dataGT, ChartType) {
         return url;
     }
 
-    function drawVisualizationGT() {
+    function drawVisualizationCH() {
 
         var screenWidth = screen.width;
 
-        var dataGT_ = new google.visualization.DataTable();
-        dataGT_.addColumn('string', 'Categoria');
-        dataGT_.addColumn('number', jsonDataGT[0].idioma == "es-MX" ? "Gastos" : "Expense Total");
-        dataGT_.addColumn({ type: 'string', role: 'tooltip' });
+        var dataCH_ = new google.visualization.DataTable();
+        dataCH_.addColumn('string', 'Categoria');
+        dataCH_.addColumn('number', jsonDataCH[0].idioma == "es-MX" ? "Costo Hora" : "Cost Hour");
+        dataCH_.addColumn({ type: 'string', role: 'tooltip' });
 
-        jsonDataGT.forEach((item, index) => {
-            if (jsonDataGT[0].idioma == "es-MX") {
-                dataGT_.addRows([[item.nombreESP, item.noGastos, `Total de Gastos ${item.noGastos} por ${item.nombreESP }`,]]);
+        jsonDataCH.forEach((item, index) => {
+            if (jsonDataCH[0].idioma == "es-MX") {
+                dataCH_.addRows([[item.nombreESP, item.costoHoraVuelo, `Costo de ${item.nombreESP} ${item.costoHoraVuelo }`,]]);
             } else {
-                dataGT_.addRows([[item.nombreENG, item.noGastos, `Total Expenses ${item.noGastos} by ${item.nombreENG }`,]]);
+                dataCH_.addRows([[item.nombreENG, item.costoHoraVuelo, `Cost of ${item.nombreENG} ${item.costoHoraVuelo }`,]]);
             }
         });
 
-        var optionsGT = {
-            title: jsonDataGT[0].idioma == "es-MX" ? "Gastos Totales" : "Total Expenses",
+        var optionsCH = {
+            title: jsonDataCH[0].idioma == "es-MX" ? "Costo por Hora de Vuelo" : "Cost per Flight Hour",
             bar: {
                 groupWidth: "60%",
             },
@@ -129,16 +129,16 @@ function chartsGT(dataGT, ChartType) {
             colors: ['#3276ae', '#6aabc0', '#cf575e', '#eb924f', '#f6c543', '#d578a9', '#9889d1', '#89d193']
         };
 
-        var chartGT = new google.visualization.ColumnChart(document.getElementById('piechart_3d_9'));
-        chartGT.draw(dataGT_, optionsGT);
+        var chartCH = new google.visualization.ColumnChart(document.getElementById('piechart_3d_10'));
+        chartCH.draw(dataCH_, optionsCH);
 
-        google.visualization.events.addListener(chartGT, 'select', function () {
-            var selection = chartGT.getSelection();
+        google.visualization.events.addListener(chartCH, 'select', function () {
+            var selection = chartCH.getSelection();
             if (selection.length) {
                 var row = selection[0].row;
 
-                let array = jsonDataGT[row];
-                const gastosT = array.pax
+                let array = jsonDataCH[row];
+                const costoH = array.costos
 
                 let vuelos = []
                 let gastos = []
@@ -149,7 +149,7 @@ function chartsGT(dataGT, ChartType) {
                 let novuelos = []
                 let paxs = []
                 let costosFV = []
-                let costoH = []
+                let gastosT = []
 
                 let obj = JSON.stringify({
                     vuelos,
@@ -175,10 +175,10 @@ function chartsGT(dataGT, ChartType) {
                     contentType: "Application/json; charset=utf-8",
                     responseType: "json",
                     method: 'POST',
-                    url: generarUrlGT(true),
+                    url: generarUrlCH(true),
                     dataType: "json",
                     success: function (response) {
-                        window.location.pathname = generarUrlGT(false);
+                        window.location.pathname = generarUrlCH(false);
                     },
                     error: function (err) {
                         console.log("Error In Connecting", err);
