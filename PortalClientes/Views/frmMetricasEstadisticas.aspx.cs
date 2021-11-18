@@ -958,6 +958,25 @@ namespace PortalClientes.Views
             return lrg;
         }
 
+        [WebMethod]
+        public static List<responseGraficaCostoHoraVuelo> GetGraficaCostoHoraVuelo(string meses)
+        {
+            DBMetricasEstatics oIGesCat = new DBMetricasEstatics();
+
+            FiltroGrafica fg = new FiltroGrafica();
+            fg.meses = meses;
+
+            List<responseGraficaCostoHoraVuelo> lrg = new List<responseGraficaCostoHoraVuelo>();
+            lrg = oIGesCat.obtenerCostoHoraVuelo(fg);
+
+            if (lrg.Count() > 0)
+            {
+                lrg[0].idioma = Utils.Idioma;
+            }
+
+            return lrg;
+        }
+
         public void CargarMetricasEstadisticas(DatosMetricas oME)
         {
             oMetEsta = oME;
