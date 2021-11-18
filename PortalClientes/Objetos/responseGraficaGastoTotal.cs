@@ -13,6 +13,7 @@ namespace PortalClientes.Objetos
         public string nombreENG { get; set; }
         public float importe { get; set; }
         public int noGastos { get; set; }
+        public string idioma { get; set; }
         public List<gastot> GastoT { get; set; }
     }
 

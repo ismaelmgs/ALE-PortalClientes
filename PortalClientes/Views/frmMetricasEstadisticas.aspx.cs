@@ -939,6 +939,25 @@ namespace PortalClientes.Views
             return lrg;
         }
 
+        [WebMethod]
+        public static List<responseGraficaGastoTotal> GetGraficaGastoTotales(string meses)
+        {
+            DBMetricasEstatics oIGesCat = new DBMetricasEstatics();
+
+            FiltroGrafica fg = new FiltroGrafica();
+            fg.meses = meses;
+
+            List<responseGraficaGastoTotal> lrg = new List<responseGraficaGastoTotal>();
+            lrg = oIGesCat.obtenerGastoTotal(fg);
+
+            if (lrg.Count() > 0)
+            {
+                lrg[0].idioma = Utils.Idioma;
+            }
+
+            return lrg;
+        }
+
         public void CargarMetricasEstadisticas(DatosMetricas oME)
         {
             oMetEsta = oME;
