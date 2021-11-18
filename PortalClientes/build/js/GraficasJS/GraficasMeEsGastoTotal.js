@@ -1,5 +1,5 @@
 $(document).ready(function () {
-    //const url = "http://192.168.1.250/PortalClientes/Views/frmMetricasEstadisticas.aspx/GetGastosTotales"; // API URL
+    //const url = "http://192.168.1.250/PortalClientes/Views/frmMetricasEstadisticas.aspx/GetGastoTotales"; // API URL
     const urlGT = getUrlGT(); // API URL
 
     let objGT = JSON.stringify({
@@ -18,7 +18,7 @@ $(document).ready(function () {
 });
 
 function getUrlGT() {
-    let value = window.location + "/GetGastosTotales";
+    let value = window.location + "/GetGastoTotales";
     return value;
 }
 
@@ -99,9 +99,9 @@ function chartsGT(dataGT, ChartType) {
 
         jsonDataGT.forEach((item, index) => {
             if (jsonDataGT[0].idioma == "es-MX") {
-                dataGT_.addRows([[item.nombreESP, item.noGastos, `Total de Gastos ${item.noGastos} por ${item.nombreESP }`,]]);
+                dataGT_.addRows([[item.nombreESP, item.noGastos, `Total de Gastos ${item.noGastos} en ${item.nombreESP }`,]]);
             } else {
-                dataGT_.addRows([[item.nombreENG, item.noGastos, `Total Expenses ${item.noGastos} by ${item.nombreENG }`,]]);
+                dataGT_.addRows([[item.nombreENG, item.noGastos, `Total Expenses ${item.noGastos} in ${item.nombreENG }`,]]);
             }
         });
 
@@ -138,7 +138,7 @@ function chartsGT(dataGT, ChartType) {
                 var row = selection[0].row;
 
                 let array = jsonDataGT[row];
-                const gastosT = array.pax
+                const gastosT = array.gastos
 
                 let vuelos = []
                 let gastos = []

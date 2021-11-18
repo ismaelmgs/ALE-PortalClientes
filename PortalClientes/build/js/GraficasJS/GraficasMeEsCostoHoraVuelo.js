@@ -1,5 +1,5 @@
 $(document).ready(function () {
-    //const url = "http://192.168.1.250/PortalClientes/Views/frmMetricasEstadisticas.aspx/GetGastosTotales"; // API URL
+    //const url = "http://192.168.1.250/PortalClientes/Views/frmMetricasEstadisticas.aspx/GetCostoHoraVuelo"; // API URL
     const urlCH = getUrlCH(); // API URL
 
     let objCH = JSON.stringify({
@@ -18,7 +18,7 @@ $(document).ready(function () {
 });
 
 function getUrlCH() {
-    let value = window.location + "/GetGastosTotales";
+    let value = window.location + "/GetCostoHoraVuelo";
     return value;
 }
 

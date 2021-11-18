@@ -302,7 +302,6 @@ namespace PortalClientes.DomainModel
 
         }
 
-
         public List<responseGraficaCostoFijoVariable> obtenerCostosFijoVariable(FiltroGraficaFV filtro)
         {
             try
@@ -352,8 +351,8 @@ namespace PortalClientes.DomainModel
                 oLog = filtro;
                 oLog.matricula = Utils.MatriculaActual;
 
-                oLog.matricula = "XA-CHY";
-                oLog.meses = "3";
+                oLog.matricula = "XA-FLC";
+                oLog.meses = "12";
 
                 TokenWS oToken = Utils.ObtieneToken;
 
@@ -377,6 +376,41 @@ namespace PortalClientes.DomainModel
             }
         }
 
+        public List<responseGraficaCostoHoraVuelo> obtenerCostoHoraVuelo(FiltroGrafica filtro)
+        {
+            try
+            {
+                JavaScriptSerializer ser = new JavaScriptSerializer();
+                ser.MaxJsonLength = 500000000;
+                List<responseGraficaCostoHoraVuelo> d = new List<responseGraficaCostoHoraVuelo>();
+                FiltroGrafica oLog = new FiltroGrafica();
+                oLog = filtro;
+                oLog.matricula = Utils.MatriculaActual;
+
+                oLog.matricula = "XA-CHY";
+                oLog.meses = "3";
+
+                TokenWS oToken = Utils.ObtieneToken;
+
+                var client = new RestClient(Helper.D_UrlObtieneCostoHoraVuelo);
+                var request = new RestRequest(Method.POST);
+                request.AddHeader("Authorization", oToken.token);
+                request.AddJsonBody(oLog);
+
+                IRestResponse response = client.Execute(request);
+                var resp = response.Content;
+
+                d = ser.Deserialize<List<responseGraficaCostoHoraVuelo>>(resp);
+
+                return d;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+
+        }
 
         public DatosMetricas DBGetMetricasEstadisticas(string sMatricula, int iMeses)
         {

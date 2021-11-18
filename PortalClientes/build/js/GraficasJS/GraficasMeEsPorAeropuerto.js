@@ -22,7 +22,7 @@ function getUrlA() {
     return value;
 }
 
-$('#btnGraficasBuscarPA').click(function (event) {
+$('#ContentPlaceHolder1_DDFiltroMesesPA').change(function (event) {
 
     event.preventDefault();
     ActualizarGraficaAe();

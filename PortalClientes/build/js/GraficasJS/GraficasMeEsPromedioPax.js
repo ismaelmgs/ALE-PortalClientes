@@ -22,7 +22,7 @@ function getUrlPP() {
     return value;
 }
 
-$('#btnGraficasBuscarPP').click(function (event) {
+$('#ContentPlaceHolder1_DDFiltroMesesPP').change(function (event) {
 
     event.preventDefault();
     ActualizarGraficaPP();

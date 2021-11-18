@@ -22,7 +22,7 @@ function getUrlHV() {
     return value;
 }
 
-$('#btnGraficasBuscarHV').click(function (event) {
+$('#ContentPlaceHolder1_DDFiltroMesesHV').change(function (event) {
 
     event.preventDefault();
     ActualizarGraficaHV();

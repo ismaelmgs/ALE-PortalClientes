@@ -328,11 +328,8 @@
                     <div class="clearfix"></div>
                 </div>
                 <div class="row">
-                    <div class="col-md-2 offset-8">
+                    <div class="col-md-3 offset-9">
                         <asp:DropDownList ID="DDFiltroMesesPA" runat="server" CssClass="form-control" Width="100%"></asp:DropDownList>
-                    </div>
-                    <div class="col-md-2">
-                        <button id="btnGraficasBuscarPA" class="btn"><i class='fa fa-undo' style='color: #73879c; font-size: 23px;'></i></button>
                     </div>
                 </div>
                 <div class="row">
@@ -352,11 +349,8 @@
                     <div class="clearfix"></div>
                 </div>
                 <div class="row">
-                    <div class="col-md-2 offset-8">
+                    <div class="col-md-4 offset-8">
                         <asp:DropDownList ID="DDFiltroMesesV" runat="server" CssClass="form-control" Width="100%"></asp:DropDownList>
-                    </div>
-                    <div class="col-md-2">
-                        <button id="btnGraficasBuscarHvDv" class="btn"><i class='fa fa-undo' style='color: #73879c; font-size: 23px;'></i></button>
                     </div>
                 </div>
                 <div class="row">
@@ -486,11 +480,8 @@
                             <div class="clearfix"></div>
                         </div>
                         <div class="row">
-                            <div class="col-md-4 offset-6">
+                            <div class="col-md-4 offset-8">
                                 <asp:DropDownList ID="DDFiltroMesesNV" runat="server" CssClass="form-control" Width="100%"></asp:DropDownList>
-                            </div>
-                            <div class="col-md-2">
-                                <button id="btnGraficasBuscarNV" class="btn"><i class='fa fa-undo' style='color: #73879c; font-size: 23px;'></i></button>
                             </div>
                         </div>
                         <div class="row">
@@ -508,11 +499,8 @@
                             <div class="clearfix"></div>
                         </div>
                         <div class="row">
-                            <div class="col-md-4 offset-6">
+                            <div class="col-md-4 offset-8">
                                 <asp:DropDownList ID="DDFiltroMesesHV" runat="server" CssClass="form-control" Width="100%"></asp:DropDownList>
-                            </div>
-                            <div class="col-md-2">
-                                <button id="btnGraficasBuscarHV" class="btn"><i class='fa fa-undo' style='color: #73879c; font-size: 23px;'></i></button>
                             </div>
                         </div>
                         <div class="row">
@@ -533,11 +521,8 @@
                             <div class="clearfix"></div>
                         </div>
                         <div class="row">
-                            <div class="col-md-4 offset-6">
+                            <div class="col-md-4 offset-8">
                                 <asp:DropDownList ID="DDFiltroMesesPP" runat="server" CssClass="form-control" Width="100%"></asp:DropDownList>
-                            </div>
-                            <div class="col-md-2">
-                                <button id="btnGraficasBuscarPP" class="btn"><i class='fa fa-undo' style='color: #73879c; font-size: 23px;'></i></button>
                             </div>
                         </div>
                         <div class="row">
@@ -555,11 +540,8 @@
                             <div class="clearfix"></div>
                         </div>
                         <div class="row">
-                            <div class="col-md-4 offset-6">
+                            <div class="col-md-4 offset-8">
                                 <asp:DropDownList ID="DDFiltroMesesPC" runat="server" CssClass="form-control" Width="100%"></asp:DropDownList>
-                            </div>
-                            <div class="col-md-2">
-                                <button id="btnGraficasBuscarPC" class="btn"><i class='fa fa-undo' style='color: #73879c; font-size: 23px;'></i></button>
                             </div>
                         </div>
                         <div class="row">
@@ -577,7 +559,7 @@
 
     <script src='<%=ResolveUrl("~/vendors/jquery/dist/jquery.min.js")%>'></script>
     <script src='<%=ResolveUrl("~/vendors/jquery/dist/jquery.js")%>'></script>
-    <script src='<%=ResolveUrl("~/build/js/GraficasJS/GraficasMeEsCostoHoraVuelo.js")%>'></script>
+    <%--<script src='<%=ResolveUrl("~/build/js/GraficasJS/GraficasMeEsCostoHoraVuelo.js")%>'></script>--%>
     <script src='<%=ResolveUrl("~/build/js/GraficasJS/GraficasMeEsGastoTotal.js")%>'></script>
     <script src='<%=ResolveUrl("~/build/js/GraficasJS/GraficasMeEsCostoFijoVariable.js")%>'></script>
     <script src='<%=ResolveUrl("~/build/js/GraficasJS/GraficasMeEsPromedioPax.js")%>'></script>

@@ -116,7 +116,7 @@ namespace PortalClientes.Views
                         LlenarGV(transacciones, tipo);
                     }
 
-                    else if (tipo == 10)
+                    else if (tipo == 11)
                     {
                         transacciones.costosHoraVuelo = (List<gvCostosH>)Session["data"];
                         LlenarGV(transacciones, tipo);
@@ -1021,7 +1021,7 @@ namespace PortalClientes.Views
         }
 
         [WebMethod]
-        public static void ObtenerTransacciones(List<gasto> gastos, List<gastoAeropuerto> gastosAe, List<gastoProveedor> gastosProv, List<vuelo> vuelos, List<pasajero> paxs, List<costosProm> costos, List<hora> horasV, List<novuelo> novuelos, List<costofv> costosFV, List<gastot> gastosT, List<costoH> costoH, int tipoTrans, string tipoDet, string descES, string descEN, int origen)
+        public static void ObtenerTransacciones(List<gasto> gastos, List<gastoAeropuerto> gastosAe, List<gastoProveedor> gastosProv, List<vuelo> vuelos, List<pasajero> paxs, List<costosProm> costos, List<hora> horasV, List<novuelo> novuelos, List<costofv> costosFV, List<gastot> gastosT, List<costohv> costoH, int tipoTrans, string tipoDet, string descES, string descEN, int origen)
         {
             // tipo transaccion: 1 gastos
             // tipo transaccion: 2 gastosAe
@@ -1310,10 +1310,10 @@ namespace PortalClientes.Views
 
             else if (tipoTrans == 11)
             {
-                List<gvGastosH> gvch = new List<gvGastosH>();
+                List<gvCostosH> gvch = new List<gvCostosH>();
                 foreach (var item in costoH)
                 {
-                    gvGastosH ch = new gvGastosH();
+                    gvCostosH ch = new gvCostosH();
                     ch.rubro = Utils.Idioma == "es-MX" ? item.rubroENG : item.rubroENG;
                     ch.totalImp = item.totalImp;
                     ch.categoria = Utils.Idioma == "es-MX" ? item.categoriaESP : item.categoriaENG;
@@ -1410,6 +1410,12 @@ namespace PortalClientes.Views
                 else if (tipo == 10)
                 {
                     transacciones.gastosTotales = (List<gvGastosT>)Session["data"];
+                    LlenarGV(transacciones, tipo);
+                }
+
+                else if (tipo == 11)
+                {
+                    transacciones.costosHoraVuelo = (List<gvCostosH>)Session["data"];
                     LlenarGV(transacciones, tipo);
                 }
 
@@ -1520,6 +1526,12 @@ namespace PortalClientes.Views
                 else if (tipo == 10)
                 {
                     transacciones.gastosTotales = (List<gvGastosT>)Session["data"];
+                    LlenarGV(transacciones, tipo);
+                }
+
+                else if (tipo == 11)
+                {
+                    transacciones.costosHoraVuelo = (List<gvCostosH>)Session["data"];
                     LlenarGV(transacciones, tipo);
                 }
 

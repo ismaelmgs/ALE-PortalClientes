@@ -17,6 +17,6 @@ namespace PortalClientes.Objetos
         public List<gvnoVuelos> numeroVuelos { get; set; } // tipo transaccion: 8
         public List<gvCostosFV> gastosFijosVariable { get; set; } // tipo transaccion: 9
         public List<gvGastosT> gastosTotales { get; set; } // tipo transaccion: 10
-        public List<gvCostosH> costosHoraVuelo { get; set; } // tipo transaccion: 10
+        public List<gvCostosH> costosHoraVuelo { get; set; } // tipo transaccion: 11
     }
 }

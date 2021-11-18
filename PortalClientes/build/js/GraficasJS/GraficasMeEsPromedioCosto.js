@@ -22,7 +22,7 @@ function getUrlPC() {
     return value;
 }
 
-$('#btnGraficasBuscarPC').click(function (event) {
+$('#ContentPlaceHolder1_DDFiltroMesesPC').change(function (event) {
 
     event.preventDefault();
     ActualizarGraficaPC();

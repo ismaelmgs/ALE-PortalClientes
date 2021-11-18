@@ -22,7 +22,7 @@ function getUrlDV() {
     return value;
 }
 
-$('#btnGraficasBuscar').click(function (event) {
+$('#ContentPlaceHolder1_DDFiltroMesesV').change(function (event) {
 
     event.preventDefault();
     ActualizarGraficaDV();

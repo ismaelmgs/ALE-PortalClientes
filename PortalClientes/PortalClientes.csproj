@@ -227,7 +227,10 @@
     <Content Include="build\images\resumen_gatos.png" />
     <Content Include="build\images\user.png" />
     <Content Include="build\images\visa.png" />
+    <Content Include="build\js\custom.js" />
+    <Content Include="build\js\custom.min.js" />
     <Content Include="build\js\datepicker\daterangepicker.js" />
+    <Content Include="build\js\GraficasJS\GraficasMeEsCostoHoraVuelo.js" />
     <Content Include="build\js\GraficasJS\GraficasMeEsGastoTotal.js" />
     <Content Include="build\js\GraficasJS\GraficasMeEsPorDuracionVuelos.js" />
     <Content Include="build\js\GraficasJS\GraficasMeEsPorAeropuerto.js" />
@@ -1574,6 +1577,7 @@
     <Compile Include="Objetos\MatriculasUsuario.cs" />
     <Compile Include="Objetos\responseGraficaAeropuerto.cs" />
     <Compile Include="Objetos\responseGraficaCostoFijoVariable.cs" />
+    <Compile Include="Objetos\responseGraficaCostoHoraVuelo.cs" />
     <Compile Include="Objetos\responseGraficaDuracionVuelos.cs" />
     <Compile Include="Objetos\responseGraficaGastos.cs" />
     <Compile Include="Objetos\responseGraficaGastoTotal.cs" />
