@@ -94,19 +94,19 @@ function chartsGT(dataGT, ChartType) {
 
         var dataGT_ = new google.visualization.DataTable();
         dataGT_.addColumn('string', 'Categoria');
-        dataGT_.addColumn('number', jsonDataGT[0].idioma == "es-MX" ? "Costos" : "Costs");
+        dataGT_.addColumn('number', jsonDataGT[0].idioma == "es-MX" ? "Gastos" : "Expense Total");
         dataGT_.addColumn({ type: 'string', role: 'tooltip' });
 
         jsonDataGT.forEach((item, index) => {
             if (jsonDataGT[0].idioma == "es-MX") {
-                dataGT_.addRows([[item.categoria, item.noGastos, `Total de Costos ${ item.noGastos } por ${ item.categoria }`,]]);
+                dataGT_.addRows([[item.nombreESP, item.noGastos, `Total de Gastos ${item.noGastos} por ${item.nombreESP }`,]]);
             } else {
-                dataGT_.addRows([[item.categoria, item.noGastos, `Total costs ${ item.noGastos } by ${ item.categoria }`,]]);
+                dataGT_.addRows([[item.nombreENG, item.noGastos, `Total Expenses ${item.noGastos} by ${item.nombreENG }`,]]);
             }
         });
 
         var optionsGT = {
-            title: jsonDataGT[0].idioma == "es-MX" ? "Costo Fijo y Variable" : "Fixed and Variable Cost",
+            title: jsonDataGT[0].idioma == "es-MX" ? "Gastos Totales" : "Total Expenses",
             bar: {
                 groupWidth: "60%",
             },

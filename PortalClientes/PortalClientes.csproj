@@ -228,6 +228,7 @@
     <Content Include="build\images\user.png" />
     <Content Include="build\images\visa.png" />
     <Content Include="build\js\datepicker\daterangepicker.js" />
+    <Content Include="build\js\GraficasJS\GraficasMeEsGastoTotal.js" />
     <Content Include="build\js\GraficasJS\GraficasMeEsPorDuracionVuelos.js" />
     <Content Include="build\js\GraficasJS\GraficasMeEsPorAeropuerto.js" />
     <Content Include="build\js\GraficasJS\GraficasMeEsHorasVoladas.js" />
@@ -1575,6 +1576,7 @@
     <Compile Include="Objetos\responseGraficaCostoFijoVariable.cs" />
     <Compile Include="Objetos\responseGraficaDuracionVuelos.cs" />
     <Compile Include="Objetos\responseGraficaGastos.cs" />
+    <Compile Include="Objetos\responseGraficaGastoTotal.cs" />
     <Compile Include="Objetos\responseGraficaHorasVoladas.cs" />
     <Compile Include="Objetos\responseGraficaNoVuelos.cs" />
     <Compile Include="Objetos\responseGraficaPromedioCostos.cs" />

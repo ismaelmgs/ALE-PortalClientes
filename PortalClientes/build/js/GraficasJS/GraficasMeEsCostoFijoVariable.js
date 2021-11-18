@@ -138,7 +138,7 @@ function chartsFV(dataFV, ChartType) {
                 var row = selection[0].row;
 
                 let array = jsonDataFV[row];
-                const costosFV = array.pax
+                const costosFV = array.costos
 
                 let vuelos = []
                 let gastos = []
@@ -163,14 +163,14 @@ function chartsFV(dataFV, ChartType) {
                     gastosT,
                     tipoTrans: 9,
                     tipoDet: "MXN",
-                    descES: array.nombreESP,
-                    descEN: array.nombreENG,
+                    descES: array.categoria,
+                    descEN: array.categoria,
                     origen: 2,
                 });
 
                 $.ajax({
                     data: obj,
-                    contentType: "AFVlication/json; charset=utf-8",
+                    contentType: "Application/json; charset=utf-8",
                     responseType: "json",
                     method: 'POST',
                     url: generarUrlFV(true),

@@ -47,7 +47,7 @@ namespace PortalClientes.DomainModel
 
                 throw;
             }
-            
+
         }
 
         public List<responseGraficaProveedores> ObtenerGastosProveedor(FiltroGrafica filtro)
@@ -83,7 +83,7 @@ namespace PortalClientes.DomainModel
 
                 throw;
             }
-           
+
         }
 
         public List<responseGraficaAeropuerto> ObtenerGastosAeropuerto(FiltroGrafica filtro)
@@ -119,7 +119,7 @@ namespace PortalClientes.DomainModel
 
                 throw;
             }
-          
+
         }
 
         public List<responseGraficaDuracionVuelos> ObtenerDuracionVuelos(FiltroGrafica filtro)
@@ -155,7 +155,7 @@ namespace PortalClientes.DomainModel
 
                 throw;
             }
-        
+
         }
 
         public List<responseGraficaHorasVoladas> ObtenerHorasVoladas(FiltroGrafica filtro)
@@ -191,7 +191,7 @@ namespace PortalClientes.DomainModel
 
                 throw;
             }
-          
+
         }
 
         public List<responseGraficaNoVuelos> ObtenerNoVuelos(FiltroGrafica filtro)
@@ -227,7 +227,7 @@ namespace PortalClientes.DomainModel
 
                 throw;
             }
-          
+
         }
 
         public List<responseGraficaPromedioCostos> ObtenerPromedioCostos(FiltroGrafica filtro)
@@ -263,7 +263,7 @@ namespace PortalClientes.DomainModel
 
                 throw;
             }
-         
+
         }
 
         public List<responseGraficaPromedioPasajero> obtenerPromedioPasajero(FiltroGrafica filtro)
@@ -299,8 +299,9 @@ namespace PortalClientes.DomainModel
 
                 throw;
             }
-           
+
         }
+
 
         public List<responseGraficaCostoFijoVariable> obtenerCostosFijoVariable(FiltroGraficaFV filtro)
         {
@@ -320,6 +321,7 @@ namespace PortalClientes.DomainModel
                 TokenWS oToken = Utils.ObtieneToken;
 
                 var client = new RestClient(Helper.D_UrlObbtenerCostoFijoVariable);
+
                 var request = new RestRequest(Method.POST);
                 request.AddHeader("Authorization", oToken.token);
                 request.AddJsonBody(oLog);
@@ -338,6 +340,43 @@ namespace PortalClientes.DomainModel
             }
 
         }
+
+        public List<responseGraficaGastoTotal> obtenerGastoTotal(FiltroGrafica filtro)
+        {
+            try
+            {
+                JavaScriptSerializer ser = new JavaScriptSerializer();
+                ser.MaxJsonLength = 500000000;
+                List<responseGraficaGastoTotal> d = new List<responseGraficaGastoTotal>();
+                FiltroGrafica oLog = new FiltroGrafica();
+                oLog = filtro;
+                oLog.matricula = Utils.MatriculaActual;
+
+                oLog.matricula = "XA-CHY";
+                oLog.meses = "3";
+
+                TokenWS oToken = Utils.ObtieneToken;
+
+                var client = new RestClient(Helper.D_UrlObtieneGastoTotal);
+
+                var request = new RestRequest(Method.POST);
+                request.AddHeader("Authorization", oToken.token);
+                request.AddJsonBody(oLog);
+
+                IRestResponse response = client.Execute(request);
+                var resp = response.Content;
+
+                d = ser.Deserialize<List<responseGraficaGastoTotal>>(resp);
+
+                return d;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+
 
         public DatosMetricas DBGetMetricasEstadisticas(string sMatricula, int iMeses)
         {
@@ -369,7 +408,7 @@ namespace PortalClientes.DomainModel
 
                 throw;
             }
-                   
+
         }
     }
 }
