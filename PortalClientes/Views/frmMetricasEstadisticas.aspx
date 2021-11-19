@@ -440,7 +440,7 @@
                     </div>
                 </div>
                 <br />
-                <div class="row">
+                <%--<div class="row">
                     <div class="col-md-6">
                         <div class="x_title">
                             <h2>
@@ -469,7 +469,7 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </div>--%>
                 <br />
                 <div class="row">
                     <div class="col-md-6">
