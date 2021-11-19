@@ -143,6 +143,11 @@ function chartsPC(dataPC, ChartType) {
                 let array = jsonDataPC[row];
                 const costos = array.costos
 
+                let opt = {
+                    campo1: null,
+                    campo2: null,
+                }//campos opcionales en graficas
+
                 let vuelos = []
                 let gastos = []
                 let gastosAe = []
@@ -173,6 +178,7 @@ function chartsPC(dataPC, ChartType) {
                     descES: array.nombreESP,
                     descEN: array.nombreENG,
                     origen: 2,
+                    opt,
                 });
 
                 $.ajax({

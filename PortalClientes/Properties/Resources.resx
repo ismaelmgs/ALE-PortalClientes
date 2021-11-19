@@ -899,7 +899,7 @@
   </data>
   <data name="Ec_Titulo" xml:space="preserve">
     <value>Estado de Cuenta Mensual</value>
-   </data>
+  </data>
   <data name="FiltroME_12M" xml:space="preserve">
     <value>Últimos 12 Meses</value>
   </data>
@@ -914,5 +914,8 @@
   </data>
   <data name="TabTran_TotalCostos" xml:space="preserve">
     <value>Total de Costos</value>
+  </data>
+  <data name="TabTran_CostoHV" xml:space="preserve">
+    <value>Costo Hora Vuelo</value>
   </data>
 </root>

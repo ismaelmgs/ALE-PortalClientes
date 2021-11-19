@@ -137,6 +137,12 @@ function chartsFVH(dataFVH, ChartType) {
                 let array = jsonDataFVH[row];
                 const costosFVH = array.gastos
 
+                let opt = {
+                    campo1: array.costoHoraVuelo,
+                    campo2: array.totalTiempo,
+                }//campos opcionales en graficas
+
+
                 let vuelos = []
                 let gastos = []
                 let gastosAe = []
@@ -167,6 +173,7 @@ function chartsFVH(dataFVH, ChartType) {
                     descES: array.categoria,
                     descEN: array.categoria,
                     origen: 2,
+                    opt
                 });
 
                 $.ajax({

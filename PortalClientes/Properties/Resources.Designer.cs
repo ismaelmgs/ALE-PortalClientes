@@ -1942,6 +1942,15 @@ namespace PortalClientes.Properties {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Costo Hora Vuelo.
+        /// </summary>
+        internal static string TabTran_CostoHV {
+            get {
+                return ResourceManager.GetString("TabTran_CostoHV", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Cantidad Pasajeros.
         /// </summary>
         internal static string TabTran_CPax {

@@ -141,6 +141,8 @@ function chartsHV(dataHV, ChartType) {
                 let array = jsonDataHV[row];
                 const horasV = array.horasVoladas
 
+                let opt = {}//campos opcionales en graficas
+
                 let vuelos = []
                 let gastos = []
                 let gastosAe = []
@@ -171,6 +173,7 @@ function chartsHV(dataHV, ChartType) {
                     descES: array.nombreESP,
                     descEN: array.nombreENG,
                     origen: 2,
+                    opt,
                 });
 
                 $.ajax({

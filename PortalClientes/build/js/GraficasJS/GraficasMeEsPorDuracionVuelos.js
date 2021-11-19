@@ -137,6 +137,11 @@ function chartsDV(dataDV, ChartType) {
                 let array = jsonDataDV[row];
                 const vuelos = array.vuelos
 
+                let opt = {
+                    campo1: null,
+                    campo2: null,
+                }//campos opcionales en graficas
+
                 let gastos = []
                 let gastosAe = []
                 let gastosProv = []
@@ -167,6 +172,7 @@ function chartsDV(dataDV, ChartType) {
                     descES: array.descripcionESP,
                     descEN: array.descripcionENG,
                     origen: 2,
+                    opt,
                 });
 
                 $.ajax({

@@ -137,6 +137,11 @@ function chartsFV(dataFV, ChartType) {
                 let array = jsonDataFV[row];
                 const costosFV = array.costos
 
+                let opt = {
+                    campo1: null,
+                    campo2: null,
+                }//campos opcionales en graficas
+
                 let vuelos = []
                 let gastos = []
                 let gastosAe = []
@@ -167,6 +172,7 @@ function chartsFV(dataFV, ChartType) {
                     descES: array.categoria,
                     descEN: array.categoria,
                     origen: 2,
+                    opt,
                 });
 
                 $.ajax({

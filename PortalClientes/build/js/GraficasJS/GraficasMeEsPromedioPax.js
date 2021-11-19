@@ -140,6 +140,11 @@ function chartsPP(dataPP, ChartType) {
                 let array = jsonDataPP[row];
                 const paxs = array.pax
 
+                let opt = {
+                    campo1: null,
+                    campo2: null,
+                }//campos opcionales en graficas
+
                 let vuelos = []
                 let gastos = []
                 let gastosAe = []
@@ -170,6 +175,7 @@ function chartsPP(dataPP, ChartType) {
                     descES: array.nombreESP,
                     descEN: array.nombreENG,
                     origen: 2,
+                    opt,
                 });
 
                 $.ajax({

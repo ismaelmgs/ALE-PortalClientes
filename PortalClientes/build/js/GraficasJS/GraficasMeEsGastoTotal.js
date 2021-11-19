@@ -143,6 +143,8 @@ function chartsGT(dataGT, ChartType) {
                 let array = jsonDataGT[row];
                 const gastosT = array.gastos
 
+                let opt = {}//campos opcionales en graficas
+
                 let vuelos = []
                 let gastos = []
                 let gastosAe = []
@@ -173,6 +175,7 @@ function chartsGT(dataGT, ChartType) {
                     descES: array.nombreESP,
                     descEN: array.nombreENG,
                     origen: 2,
+                    opt,
                 });
 
                 $.ajax({

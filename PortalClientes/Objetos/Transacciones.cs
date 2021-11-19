@@ -20,4 +20,18 @@ namespace PortalClientes.Objetos
         public List<gvCostosH> costosHoraVuelo { get; set; } // tipo transaccion: 11
         public List<gvCostosFVH> costosFijosVariableHora { get; set; } // tipo transaccion: 12
     }
+
+    public class camposOpcionales
+    {
+        public string campo1 { get; set; }
+        public string campo2 { get; set; }
+        public string campo3 { get; set; }
+        public string campo4 { get; set; }
+        public string campo5 { get; set; }
+        public string campo6 { get; set; }
+        public string campo7 { get; set; }
+        public string campo8 { get; set; }
+        public string campo9 { get; set; }
+        public string campo10 { get; set; }
+    }
 }

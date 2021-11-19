@@ -918,4 +918,7 @@
   <data name="TabTran_TotalCostos" xml:space="preserve">
     <value>Total Costs</value>
   </data>
+  <data name="TabTran_CostoHV" xml:space="preserve">
+    <value>Cost Hour Flight</value>
+  </data>
 </root>

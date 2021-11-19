@@ -140,6 +140,11 @@ function chartsNV(dataNV, ChartType) {
                 let array = jsonDataNV[row];
                 const novuelos = array.vuelos
 
+                let opt = {
+                    campo1: null,
+                    campo2: null,
+                }//campos opcionales en graficas
+
                 let vuelos = []
                 let gastos = []
                 let gastosAe = []
@@ -170,6 +175,7 @@ function chartsNV(dataNV, ChartType) {
                     descES: array.nombreESP,
                     descEN: array.nombreENG,
                     origen: 2,
+                    opt,
                 });
 
                 $.ajax({

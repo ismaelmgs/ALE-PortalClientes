@@ -188,6 +188,8 @@ function charts(data, ChartType) {
                 let array = jsonData[row];
                 const gastos = array.Gastos
 
+                let opt = {}//campos opcionales en graficas
+
                 let vuelos = []
                 let gastosAe = []
                 let gastosProv = []
@@ -217,7 +219,8 @@ function charts(data, ChartType) {
                     tipoDet: "MXN",
                     descES: array.rubroESP,
                     descEN: array.rubroENG,
-                    origen: 1,
+                    origen: 2,
+                    opt,
                 });
 
                 $.ajax({
@@ -245,22 +248,42 @@ function charts(data, ChartType) {
                 let array = jsonData[row];
                 const gastos = array.Gastos
 
+                let opt = {
+                    campo1: null,
+                    campo2: null,
+                }//campos opcionales en graficas
+
                 let vuelos = []
-
-                let gastosProv = []
-
                 let gastosAe = []
+                let gastosProv = []
+                let costos = []
+                let horasV = []
+                let novuelos = []
+                let paxs = []
+                let gastosT = []
+                let costoH = []
+                let costosFV = []
+                let costosFVH = []
 
                 let obj = JSON.stringify({
                     vuelos,
                     gastos,
                     gastosAe,
                     gastosProv,
+                    costos,
+                    paxs,
+                    horasV,
+                    novuelos,
+                    costosFV,
+                    gastosT,
+                    costoH,
+                    costosFVH,
                     tipoTrans: 1,
                     tipoDet: "USD",
                     descES: array.rubroESP,
                     descEN: array.rubroENG,
-                    origen: 1,
+                    origen: 2,
+                    opt,
                 });
 
                 $.ajax({

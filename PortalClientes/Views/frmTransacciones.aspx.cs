@@ -431,6 +431,7 @@ namespace PortalClientes.Views
             var TiempoVueloProm = "00:00";
             var promedio = 0.0;
             var totalRegistros = 0;
+            var dataOpt = (camposOpcionales)Session["dataOpt"];
 
             gvGastos.DataSource = null;
             gvGastos.Columns.Clear();
@@ -954,6 +955,7 @@ namespace PortalClientes.Views
             }
             else if (tipoTransaccion == 12)
             {
+
                 totalRegistros = transacciones.costosFijosVariableHora.Count();
                 contMeses = transacciones.costosFijosVariableHora.GroupBy(r => r.mes).Count();
                 totalTransacciones = transacciones.costosFijosVariableHora.Sum(x => x.totalImp);
@@ -987,9 +989,9 @@ namespace PortalClientes.Views
                 gvGastos.DataSource = transacciones.costosFijosVariableHora.OrderBy(x => x.mes).ToList(); //.GroupBy(r => r.mes).Select(x => x.First());
                 gvGastos.DataBind();
 
-                lblTotalTrasnRes.Text = totalRegistros.S();
-                lblTotalRes.Text = totalTransacciones.ToString("C", CultureInfo.CreateSpecificCulture("es-MX")) + " MXN";
-                lblPromedioRes.Text = promedio.ToString("C", CultureInfo.CreateSpecificCulture("es-MX")) + " MXN";
+                lblTotalTrasnRes.Text = Convert.ToDecimal(totalTransacciones).ToString("C", CultureInfo.CreateSpecificCulture("es-MX")) + " MXN";
+                lblTotalRes.Text = Convert.ToDecimal(dataOpt.campo1).ToString("C", CultureInfo.CreateSpecificCulture("es-MX")) + " MXN";
+                lblPromedioRes.Text = dataOpt.campo2;
             }
         }
 
@@ -1074,6 +1076,14 @@ namespace PortalClientes.Views
                     lblTotal.Text = Properties.Resources.TabTran_TiempoTotVuelo;
                     lblPromedio.Text = Properties.Resources.TabTran_PromedioVuelo;
                     break;
+                case 12:
+                    lblTransacciones.Text = (string)Session["title"];
+                    lblTitulo.Text = Properties.Resources.TabTransacciones;
+
+                    lblTotalTrasn.Text = Properties.Resources.TabTran_MontoTotal;
+                    lblTotal.Text = Properties.Resources.TabTran_CostoHV;
+                    lblPromedio.Text = Properties.Resources.TabTran_TiempoTotVuelo;
+                    break;
                 default:
                     lblTransacciones.Text = (string)Session["title"];
                     lblTitulo.Text = Properties.Resources.TabTransacciones;
@@ -1142,7 +1152,7 @@ namespace PortalClientes.Views
         }
 
         [WebMethod]
-        public static void ObtenerTransacciones(List<gasto> gastos, List<gastoAeropuerto> gastosAe, List<gastoProveedor> gastosProv, List<vuelo> vuelos, List<pasajero> paxs, List<costosProm> costos, List<hora> horasV, List<novuelo> novuelos, List<costofv> costosFV, List<gastot> gastosT, List<costohv> costoH, List<costofvh> costosFVH, int tipoTrans, string tipoDet, string descES, string descEN, int origen)
+        public static void ObtenerTransacciones(List<gasto> gastos, List<gastoAeropuerto> gastosAe, List<gastoProveedor> gastosProv, List<vuelo> vuelos, List<pasajero> paxs, List<costosProm> costos, List<hora> horasV, List<novuelo> novuelos, List<costofv> costosFV, List<gastot> gastosT, List<costohv> costoH, List<costofvh> costosFVH, int tipoTrans, string tipoDet, string descES, string descEN, int origen, camposOpcionales opt)
         {
             // tipo transaccion: 1 gastos
             // tipo transaccion: 2 gastosAe
@@ -1467,6 +1477,7 @@ namespace PortalClientes.Views
                 }
 
                 HttpContext.Current.Session["data"] = gvch;
+                HttpContext.Current.Session["dataOpt"] = opt;
             }
 
             var descripcion = Utils.Idioma == "es-MX" ? CultureInfo.CurrentCulture.TextInfo.ToTitleCase(descES.ToLower()) : CultureInfo.CurrentCulture.TextInfo.ToTitleCase(descEN.ToLower());

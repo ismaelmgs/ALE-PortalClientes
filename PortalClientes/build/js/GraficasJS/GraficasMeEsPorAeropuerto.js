@@ -137,6 +137,11 @@ function chartsAe(dataAe, ChartType) {
                 let array = jsonDataAe[row];
                 const gastosAe = array.gastos
 
+                let opt = {
+                    campo1: null,
+                    campo2: null,
+                }//campos opcionales en graficas
+
                 let vuelos = []
                 let gastos = []
                 let gastosProv = []
@@ -167,6 +172,7 @@ function chartsAe(dataAe, ChartType) {
                     descES: array.aeropuerto,
                     descEN: array.aeropuerto,
                     origen: 2,
+                    opt,
                 });
 
                 $.ajax({

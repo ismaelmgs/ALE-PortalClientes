@@ -140,6 +140,11 @@ function chartsProv(dataProve, ChartType) {
                 let array = jsonData[row];
                 const gastosProv = array.gastos
 
+                let opt = {
+                    campo1: null,
+                    campo2: null,
+                }//campos opcionales en graficas
+
                 let vuelos = []
                 let gastos = []
                 let gastosAe = []
@@ -170,6 +175,7 @@ function chartsProv(dataProve, ChartType) {
                     descES: array.proveedor,
                     descEN: array.proveedor,
                     origen: 2,
+                    opt,
                 });
 
                 $.ajax({
