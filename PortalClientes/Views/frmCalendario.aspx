@@ -512,6 +512,9 @@
                     <asp:Button ID="Button2" runat="server" CssClass="btn btn-secondary" Text="Cerrar" Font-Bold="true" OnClientClick="CloseModal();" />
                 </div>
             </ContentTemplate>
+            <Triggers>
+                <asp:PostBackTrigger ControlID="btnExcel"/>
+            </Triggers>
         </asp:UpdatePanel>
     </asp:Panel>
 </asp:Content>
