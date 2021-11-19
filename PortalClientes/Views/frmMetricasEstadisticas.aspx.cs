@@ -1047,6 +1047,25 @@ namespace PortalClientes.Views
             return lrg;
         }
 
+        [WebMethod]
+        public static List<responseGraficaCostoFijoVariableHora> GetCostoFijoVariableHora(string meses)
+        {
+            DBMetricasEstatics oIGesCat = new DBMetricasEstatics();
+
+            FiltroGrafica fg = new FiltroGrafica();
+            fg.meses = meses;
+
+            List<responseGraficaCostoFijoVariableHora> lrg = new List<responseGraficaCostoFijoVariableHora>();
+            lrg = oIGesCat.obtenerCostoFijoVariableHora(fg);
+
+            if (lrg.Count() > 0)
+            {
+                lrg[0].idioma = Utils.Idioma;
+            }
+
+            return lrg;
+        }
+
         public void CargarMetricasEstadisticas(DatosMetricas oME)
         {
             oMetEsta = oME;

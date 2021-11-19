@@ -49,6 +49,7 @@ namespace PortalClientes.Clases
         public const string D_UrlObbtenerCostoFijoVariable = "http://201.163.208.231/" + DominioWS + "/ws/pc/obtieneGraficaCostoFijo";
         public const string D_UrlObtieneGastoTotal = "http://201.163.208.231/" + DominioWS + "/ws/pc/obtieneGraficaGastoTotal";
         public const string D_UrlObtieneCostoHoraVuelo = "http://201.163.208.231/" + DominioWS + "/ws/pc/obtieneGraficaCostoHora";
+        public const string D_UrlObtieneCostoFijoVariableHora = "http://201.163.208.231/" + DominioWS + "/ws/pc/obtieneGraficaCostoFijoVariableHora"; 
 
         public const string D_UrlObtenerImagenesAeronave = "http://201.163.208.231/" + DominioWS + "/ws/pc/consultaImagenesAeronave";
 
