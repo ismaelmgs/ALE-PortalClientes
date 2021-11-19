@@ -42,7 +42,7 @@ namespace PortalClientes.Objetos
         public string fechaOrigen { get; set; }
         public string fechaDestino { get; set; }
         public string tiempoVuelo { get; set; }
-        public string cantPax { get; set; }
+        public float cantPax { get; set; }
         public string cliente { get; set; }
         public string contrato { get; set; }
     }

@@ -387,8 +387,8 @@ namespace PortalClientes.DomainModel
                 oLog = filtro;
                 oLog.matricula = Utils.MatriculaActual;
 
-                oLog.matricula = "XA-CHY";
-                oLog.meses = "3";
+                oLog.matricula = "XA-FLC";
+                oLog.meses = "12";
 
                 TokenWS oToken = Utils.ObtieneToken;
 
