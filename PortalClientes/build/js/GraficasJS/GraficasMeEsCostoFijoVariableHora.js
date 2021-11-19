@@ -1,52 +1,52 @@
 $(document).ready(function () {
-    //const url = "http://192.168.1.250/PortalClientes/Views/frmMetricasEstadisticas.aspx/GetCostoHoraVuelo"; // API URL
-    const urlCH = getUrlCH(); // API URL
+    //const url = "http://192.168.1.250/PortalClientes/Views/frmMetricasEstadisticas.aspx/GetCostosFijoVariableHora"; // API URL
+    const urlFVH = getUrlFVH(); // API URL
 
-    let objCH = JSON.stringify({
-        meses: $("#ContentPlaceHolder1_DDFiltroMesesCH").val(),
+    let objFVH = JSON.stringify({
+        meses: $("#ContentPlaceHolder1_DDFiltroMesesFVH").val(),
     });
 
-    ajax_dataCH(objCH, urlCH, function (dataCH) {
-        chartsCH(dataCH , "PieChart"); // Pie Charts
+    ajax_dataFVH(objFVH, urlFVH, function (dataFVH) {
+        chartsFVH(dataFVH , "PieChart"); // Pie Charts
     });
 
     window.onresize = function () {
-        ajax_dataCH(objCH, urlCH, function (dataCH) {
-            chartsCH(dataCH, "PieChart"); // Pie Charts
+        ajax_dataFVH(objFVH, urlFVH, function (dataFVH) {
+            chartsFVH(dataFVH, "PieChart"); // Pie Charts
         });
     };
 });
 
-function getUrlCH() {
-    let value = window.location + "/GetCostoHoraVuelo";
+function getUrlFVH() {
+    let value = window.location + "/GetCostosFijoVariableHora";
     return value;
 }
 
-$('#ContentPlaceHolder1_DDFiltroMesesCH').change(function (event) {
+$('#ContentPlaceHolder1_DDFiltroMesesFVH').change(function (event) {
 
     event.preventDefault();
-    ActualizarGraficaCH();
+    ActualizarGraficaFVH();
 
 });
 
-function ActualizarGraficaCH() {
-    const urlCH = getUrlCH(); // API URL
-    let objCH = JSON.stringify({
-        meses: $("#ContentPlaceHolder1_DDFiltroMesesCH").val(),
+function ActualizarGraficaFVH() {
+    const urlFVH = getUrlFVH(); // API URL
+    let objFVH = JSON.stringify({
+        meses: $("#ContentPlaceHolder1_DDFiltroMesesFVH").val(),
     });
 
-    ajax_dataCH(objCH, urlCH, function (dataCH) {
-        chartsCH(dataCH, "PieChart"); // Pie Charts
+    ajax_dataFVH(objFVH, urlFVH, function (dataFVH) {
+        chartsFVH(dataFVH, "PieChart"); // Pie Charts
     });
 }
 
-function ajax_dataCH(objCH, urlCH, success) {
+function ajax_dataFVH(objFVH, urlFVH, success) {
     $.ajax({
-        data: objCH,
+        data: objFVH,
         contentType: "Application/json; charset=utf-8",
         responseType: "json",
         method: 'POST',
-        url: urlCH,
+        url: urlFVH,
         dataType: "json",
         beforeSend: function (response) { },
         success: function (response) {
@@ -58,16 +58,16 @@ function ajax_dataCH(objCH, urlCH, success) {
     });
 }
 
-function chartsCH(dataCH, ChartType) {
+function chartsFVH(dataFVH, ChartType) {
     var c = ChartType;
-    var jsonDataCH = dataCH;
+    var jsonDataFVH = dataFVH;
 
-    if (jsonDataCH.length > 0) {
+    if (jsonDataFVH.length > 0) {
         google.charts.load("current", { packages: ["corechart"] });
-        google.charts.setOnLoadCallback(drawVisualizationCH)
+        google.charts.setOnLoadCallback(drawVisualizationFVH)
     }
     
-    function generarUrlCH(obtiene) {
+    function generarUrlFVH(obtiene) {
         var url = "";
 
         if (obtiene) {
@@ -88,31 +88,25 @@ function chartsCH(dataCH, ChartType) {
         return url;
     }
 
-    function drawVisualizationCH() {
+    function drawVisualizationFVH() {
 
         var screenWidth = screen.width;
 
-        var dataCH_ = new google.visualization.DataTable();
-        dataCH_.addColumn('string', 'Categoria');
-        dataCH_.addColumn('number', jsonDataCH[0].idioma == "es-MX" ? "Costo Hora" : "Cost Hour");
-        dataCH_.addColumn({ type: 'string', role: 'tooltip' });
+        var dataFVH_ = new google.visualization.DataTable();
+        dataFVH_.addColumn('string', 'Categoria');
+        dataFVH_.addColumn('number', jsonDataFVH[0].idioma == "es-MX" ? "Costos" : "Costs");
+        dataFVH_.addColumn({ type: 'string', role: 'tooltip' });
 
-        const opt = { style: 'currency', currency: 'MXN' };
-        var numberFormat = new Intl.NumberFormat('es-MX', opt);
-
-        jsonDataCH.forEach((item, index) => {
-            if (jsonDataCH[0].idioma == "es-MX") {
-                dataCH_.addRows([[item.nombreESP, item.totalGasto, `Costo de ${item.nombreESP} ${numberFormat.format(item.totalGasto)}`,]]);
+        jsonDataFVH.forEach((item, index) => {
+            if (jsonDataFVH[0].idioma == "es-MX") {
+                dataFVH_.addRows([[item.categoria, item.noGastos, `Total de Costos ${ item.noGastos } por ${ item.categoria }`,]]);
             } else {
-                dataCH_.addRows([[item.nombreENG, item.totalGasto, `Cost of ${item.nombreENG} ${numberFormat.format(item.totalGasto)}`,]]);
+                dataFVH_.addRows([[item.categoria, item.noGastos, `Total costs ${ item.noGastos } by ${ item.categoria }`,]]);
             }
         });
 
-        var optionsCH = {
-            title: jsonDataCH[0].idioma == "es-MX" ? "Costo por Hora de Vuelo" : "Cost per Flight Hour",
-            bar: {
-                groupWidth: "60%",
-            },
+        var optionsFVH = {
+            title: jsonDataFVH[0].idioma == "es-MX" ? "Costo Fijo y Variable por Hora" : "Fixed and Variable Cost Per Hour",
             fontSize: 9,
             chartArea: {
                 left: screenWidth > 500 ? 30 : 10,
@@ -132,16 +126,16 @@ function chartsCH(dataCH, ChartType) {
             colors: ['#3276ae', '#6aabc0', '#cf575e', '#eb924f', '#f6c543', '#d578a9', '#9889d1', '#89d193']
         };
 
-        var chartCH = new google.visualization.ColumnChart(document.getElementById('piechart_3d_10'));
-        chartCH.draw(dataCH_, optionsCH);
+        var chartFVH = new google.visualization.PieChart(document.getElementById('piechart_3d_8'));
+        chartFVH.draw(dataFVH_, optionsFVH);
 
-        google.visualization.events.addListener(chartCH, 'select', function () {
-            var selection = chartCH.getSelection();
+        google.visualization.events.addListener(chartFVH, 'select', function () {
+            var selection = chartFVH.getSelection();
             if (selection.length) {
                 var row = selection[0].row;
 
-                let array = jsonDataCH[row];
-                const costoH = array.costos
+                let array = jsonDataFVH[row];
+                const costosFVH = array.costos
 
                 let vuelos = []
                 let gastos = []
@@ -152,8 +146,8 @@ function chartsCH(dataCH, ChartType) {
                 let novuelos = []
                 let paxs = []
                 let gastosT = []
+                let costoH = []
                 let costosFV = []
-                let costosFVH = []
 
                 let obj = JSON.stringify({
                     vuelos,
@@ -168,10 +162,10 @@ function chartsCH(dataCH, ChartType) {
                     gastosT,
                     costoH,
                     costosFVH,
-                    tipoTrans: 11,
+                    tipoTrans: 9,
                     tipoDet: "MXN",
-                    descES: array.nombreESP,
-                    descEN: array.nombreENG,
+                    descES: array.categoria,
+                    descEN: array.categoria,
                     origen: 2,
                 });
 
@@ -180,10 +174,10 @@ function chartsCH(dataCH, ChartType) {
                     contentType: "Application/json; charset=utf-8",
                     responseType: "json",
                     method: 'POST',
-                    url: generarUrlCH(true),
+                    url: generarUrlFVH(true),
                     dataType: "json",
                     success: function (response) {
-                        window.location.pathname = generarUrlCH(false);
+                        window.location.pathname = generarUrlFVH(false);
                     },
                     error: function (err) {
                         console.log("Error In Connecting", err);

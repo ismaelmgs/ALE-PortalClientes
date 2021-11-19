@@ -148,9 +148,10 @@ function chartsHV(dataHV, ChartType) {
                 let costos = []
                 let novuelos = []
                 let paxs = []
-                let costosFV = []
                 let gastosT = []
                 let costoH = []
+                let costosFV = []
+                let costosFVH = []
 
                 let obj = JSON.stringify({
                     vuelos,
@@ -164,6 +165,7 @@ function chartsHV(dataHV, ChartType) {
                     costosFV,
                     gastosT,
                     costoH,
+                    costosFVH,
                     tipoTrans: 7,
                     tipoDet: "MXN",
                     descES: array.nombreESP,

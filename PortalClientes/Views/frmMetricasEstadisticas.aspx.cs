@@ -178,7 +178,7 @@ namespace PortalClientes.Views
 
             if (v == "")
             {
-                ddlFiltroResumenPeriodo.SelectedIndex = 1;
+                ddlFiltroResumenPeriodo.SelectedIndex = 0;
             }
             else
             {
@@ -195,7 +195,7 @@ namespace PortalClientes.Views
 
             if (v2 == "")
             {
-                DDFiltroMesesPA.SelectedIndex = 1;
+                DDFiltroMesesPA.SelectedIndex = 0;
             }
             else
             {
@@ -212,7 +212,7 @@ namespace PortalClientes.Views
 
             if (v3 == "")
             {
-                DDFiltroMesesV.SelectedIndex = 1;
+                DDFiltroMesesV.SelectedIndex = 0;
             }
             else
             {
@@ -222,14 +222,13 @@ namespace PortalClientes.Views
             var v4 = DDFiltroMesesHV.SelectedValue;
             // llenar dropdown filtro
             DDFiltroMesesHV.Items.Clear();
-            DDFiltroMesesHV.Items.Add(new ListItem(Properties.Resources.FiltroME_MA, "0"));
-            DDFiltroMesesHV.Items.Add(new ListItem(Properties.Resources.FiltroME_1M, "1"));
-            DDFiltroMesesHV.Items.Add(new ListItem(Properties.Resources.FiltroME_2M, "2"));
             DDFiltroMesesHV.Items.Add(new ListItem(Properties.Resources.FiltroME_3M, "3"));
+            DDFiltroMesesHV.Items.Add(new ListItem(Properties.Resources.FiltroME_6M, "6"));
+            DDFiltroMesesHV.Items.Add(new ListItem(Properties.Resources.FiltroME_12M, "12"));
 
             if (v4 == "")
             {
-                DDFiltroMesesHV.SelectedIndex = 1;
+                DDFiltroMesesHV.SelectedIndex = 0;
             }
             else
             {
@@ -239,14 +238,13 @@ namespace PortalClientes.Views
             var v5 = DDFiltroMesesNV.SelectedValue;
             // llenar dropdown filtro
             DDFiltroMesesNV.Items.Clear();
-            DDFiltroMesesNV.Items.Add(new ListItem(Properties.Resources.FiltroME_MA, "0"));
-            DDFiltroMesesNV.Items.Add(new ListItem(Properties.Resources.FiltroME_1M, "1"));
-            DDFiltroMesesNV.Items.Add(new ListItem(Properties.Resources.FiltroME_2M, "2"));
             DDFiltroMesesNV.Items.Add(new ListItem(Properties.Resources.FiltroME_3M, "3"));
+            DDFiltroMesesNV.Items.Add(new ListItem(Properties.Resources.FiltroME_6M, "6"));
+            DDFiltroMesesNV.Items.Add(new ListItem(Properties.Resources.FiltroME_12M, "12"));
 
             if (v5 == "")
             {
-                DDFiltroMesesNV.SelectedIndex = 1;
+                DDFiltroMesesNV.SelectedIndex = 0;
             }
             else
             {
@@ -256,14 +254,13 @@ namespace PortalClientes.Views
             var v6= DDFiltroMesesPC.SelectedValue;
             // llenar dropdown filtro
             DDFiltroMesesPC.Items.Clear();
-            DDFiltroMesesPC.Items.Add(new ListItem(Properties.Resources.FiltroME_MA, "0"));
-            DDFiltroMesesPC.Items.Add(new ListItem(Properties.Resources.FiltroME_1M, "1"));
-            DDFiltroMesesPC.Items.Add(new ListItem(Properties.Resources.FiltroME_2M, "2"));
             DDFiltroMesesPC.Items.Add(new ListItem(Properties.Resources.FiltroME_3M, "3"));
+            DDFiltroMesesPC.Items.Add(new ListItem(Properties.Resources.FiltroME_6M, "6"));
+            DDFiltroMesesPC.Items.Add(new ListItem(Properties.Resources.FiltroME_12M, "12"));
 
             if (v6 == "")
             {
-                DDFiltroMesesPC.SelectedIndex = 1;
+                DDFiltroMesesPC.SelectedIndex = 0;
             }
             else
             {
@@ -273,14 +270,13 @@ namespace PortalClientes.Views
             var v7 = DDFiltroMesesPP.SelectedValue;
             // llenar dropdown filtro
             DDFiltroMesesPP.Items.Clear();
-            DDFiltroMesesPP.Items.Add(new ListItem(Properties.Resources.FiltroME_MA, "0"));
-            DDFiltroMesesPP.Items.Add(new ListItem(Properties.Resources.FiltroME_1M, "1"));
-            DDFiltroMesesPP.Items.Add(new ListItem(Properties.Resources.FiltroME_2M, "2"));
             DDFiltroMesesPP.Items.Add(new ListItem(Properties.Resources.FiltroME_3M, "3"));
+            DDFiltroMesesPP.Items.Add(new ListItem(Properties.Resources.FiltroME_6M, "6"));
+            DDFiltroMesesPP.Items.Add(new ListItem(Properties.Resources.FiltroME_12M, "12"));
 
             if (v7 == "")
             {
-                DDFiltroMesesPP.SelectedIndex = 1;
+                DDFiltroMesesPP.SelectedIndex = 0;
             }
             else
             {
@@ -297,7 +293,7 @@ namespace PortalClientes.Views
 
             if (v8 == "")
             {
-                DDFiltroMesesPP.SelectedIndex = 1;
+                DDFiltroMesesPP.SelectedIndex = 0;
             }
             else
             {
@@ -307,14 +303,13 @@ namespace PortalClientes.Views
             var v9 = DDFiltroMesesGT.SelectedValue;
             // llenar dropdown filtro
             DDFiltroMesesGT.Items.Clear();
-            DDFiltroMesesGT.Items.Add(new ListItem(Properties.Resources.FiltroME_MA, "0"));
-            DDFiltroMesesGT.Items.Add(new ListItem(Properties.Resources.FiltroME_1M, "1"));
-            DDFiltroMesesGT.Items.Add(new ListItem(Properties.Resources.FiltroME_2M, "2"));
             DDFiltroMesesGT.Items.Add(new ListItem(Properties.Resources.FiltroME_3M, "3"));
+            DDFiltroMesesGT.Items.Add(new ListItem(Properties.Resources.FiltroME_6M, "6"));
+            DDFiltroMesesGT.Items.Add(new ListItem(Properties.Resources.FiltroME_12M, "12"));
 
             if (v9 == "")
             {
-                DDFiltroMesesGT.SelectedIndex = 1;
+                DDFiltroMesesGT.SelectedIndex = 0;
             }
             else
             {
@@ -331,11 +326,28 @@ namespace PortalClientes.Views
 
             if (v10 == "")
             {
-                DDFiltroMesesCH.SelectedIndex = 1;
+                DDFiltroMesesCH.SelectedIndex = 0;
             }
             else
             {
                 DDFiltroMesesCH.SelectedValue = v10;
+            }
+
+            var v11 = DDFiltroMesesFV.SelectedValue;
+            // llenar dropdown filtro
+            DDFiltroMesesFVH.Items.Clear();
+            DDFiltroMesesFVH.Items.Add(new ListItem(Properties.Resources.FiltroME_MA, "0"));
+            DDFiltroMesesFVH.Items.Add(new ListItem(Properties.Resources.FiltroME_1M, "1"));
+            DDFiltroMesesFVH.Items.Add(new ListItem(Properties.Resources.FiltroME_2M, "2"));
+            DDFiltroMesesFVH.Items.Add(new ListItem(Properties.Resources.FiltroME_3M, "3"));
+
+            if (v11 == "")
+            {
+                DDFiltroMesesPP.SelectedIndex = 0;
+            }
+            else
+            {
+                DDFiltroMesesPP.SelectedValue = v11;
             }
         }
 

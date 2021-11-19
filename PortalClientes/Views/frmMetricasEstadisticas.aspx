@@ -391,6 +391,11 @@
                             <div class="clearfix"></div>
                         </div>
                         <div class="row">
+                            <div class="col-md-4 offset-8">
+                                <asp:DropDownList ID="DDFiltroMesesFVH" runat="server" CssClass="form-control" Width="100%"></asp:DropDownList>
+                            </div>
+                        </div>
+                        <div class="row">
                             <div class="col-md-12">
                                 <div id="piechart_3d_8" style="min-height: 400px;">
                                 </div>
@@ -559,8 +564,9 @@
 
     <script src='<%=ResolveUrl("~/vendors/jquery/dist/jquery.min.js")%>'></script>
     <script src='<%=ResolveUrl("~/vendors/jquery/dist/jquery.js")%>'></script>
-    <%--<script src='<%=ResolveUrl("~/build/js/GraficasJS/GraficasMeEsCostoHoraVuelo.js")%>'></script>--%>
+    <script src='<%=ResolveUrl("~/build/js/GraficasJS/GraficasMeEsCostoHoraVuelo.js")%>'></script>
     <script src='<%=ResolveUrl("~/build/js/GraficasJS/GraficasMeEsGastoTotal.js")%>'></script>
+    <script src='<%=ResolveUrl("~/build/js/GraficasJS/GraficasMeEsCostoFijoVariableHora.js")%>'></script>
     <script src='<%=ResolveUrl("~/build/js/GraficasJS/GraficasMeEsCostoFijoVariable.js")%>'></script>
     <script src='<%=ResolveUrl("~/build/js/GraficasJS/GraficasMeEsPromedioPax.js")%>'></script>
     <script src='<%=ResolveUrl("~/build/js/GraficasJS/GraficasMeEsPromedioCosto.js")%>'></script>

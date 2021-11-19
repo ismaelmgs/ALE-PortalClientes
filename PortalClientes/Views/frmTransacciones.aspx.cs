@@ -122,6 +122,12 @@ namespace PortalClientes.Views
                         LlenarGV(transacciones, tipo);
                     }
 
+                    else if (tipo == 12)
+                    {
+                        transacciones.costosHoraVuelo = (List<gvCostosH>)Session["data"];
+                        LlenarGV(transacciones, tipo);
+                    }
+
                     if (od == 1)
                     {
                         btnRegresarMeEs.Visible = false;
@@ -286,6 +292,16 @@ namespace PortalClientes.Views
                     e.Row.Cells[5].Text = Properties.Resources.TabTran_Comentario;
                 }
 
+                else if (tipo == 12)
+                {
+                    e.Row.Cells[0].Text = Properties.Resources.TabTran_Mes;
+                    e.Row.Cells[1].Text = Properties.Resources.TabTran_Anio;
+                    e.Row.Cells[2].Text = Properties.Resources.TabTran_Rubro;
+                    e.Row.Cells[3].Text = Properties.Resources.TabTran_Importe;
+                    e.Row.Cells[4].Text = Properties.Resources.TabTran_Categoria;
+                    e.Row.Cells[5].Text = Properties.Resources.TabTran_Comentario;
+                }
+
             }
         }
 
@@ -356,6 +372,12 @@ namespace PortalClientes.Views
             }
 
             else if (tipo == 11)
+            {
+                transacciones.costosHoraVuelo = (List<gvCostosH>)Session["data"];
+                LlenarGV(transacciones, tipo);
+            }
+
+            else if (tipo == 12)
             {
                 transacciones.costosHoraVuelo = (List<gvCostosH>)Session["data"];
                 LlenarGV(transacciones, tipo);
@@ -499,8 +521,8 @@ namespace PortalClientes.Views
                 gvGastos.DataBind();
 
                 lblTotalTrasnRes.Text = totalRegistros.S();
-                lblTotalRes.Text = totalTransacciones.ToString("C", CultureInfo.CreateSpecificCulture("es-MX"));
-                lblPromedioRes.Text = promedio.ToString("C", CultureInfo.CreateSpecificCulture("es-MX"));
+                lblTotalRes.Text = totalTransacciones.ToString("C", CultureInfo.CreateSpecificCulture("es-MX")) + " MXN";
+                lblPromedioRes.Text = promedio.ToString("C", CultureInfo.CreateSpecificCulture("es-MX")) + " MXN";
             }
             else if (tipoTransaccion == 3)
             {
@@ -550,8 +572,8 @@ namespace PortalClientes.Views
                 gvGastos.DataBind();
 
                 lblTotalTrasnRes.Text = totalRegistros.S();
-                lblTotalRes.Text = totalTransacciones.ToString("C", CultureInfo.CreateSpecificCulture("es-MX"));
-                lblPromedioRes.Text = promedio.ToString("C", CultureInfo.CreateSpecificCulture("es-MX"));
+                lblTotalRes.Text = totalTransacciones.ToString("C", CultureInfo.CreateSpecificCulture("es-MX")) + " MXN";
+                lblPromedioRes.Text = promedio.ToString("C", CultureInfo.CreateSpecificCulture("es-MX")) + " MXN";
             }
             else if (tipoTransaccion == 4)
             {
@@ -604,7 +626,7 @@ namespace PortalClientes.Views
                 totalRegistros = transacciones.promedioPax.Count();
                 contMeses = transacciones.promedioPax.GroupBy(r => r.mes).Count();
                 totalTiempoVuelo = SumatoriaTiempos(transacciones.promedioPax.Select(x => x.tiempoVuelo).ToList(), 0, 1);//transacciones.vuelos.Sum(x => x.Total);
-                TiempoVueloProm = SumatoriaTiempos(transacciones.promedioPax.Select(x => x.tiempoVuelo).ToList(), totalRegistros, 2);
+                TiempoVueloProm = Math.Round((transacciones.promedioPax.Sum(x => x.cantPax) / totalRegistros),2).S();
 
                 BoundField clm = new BoundField();
                 clm.DataField = "mes";
@@ -650,8 +672,8 @@ namespace PortalClientes.Views
                 gvGastos.DataBind();
 
                 lblTotalTrasnRes.Text = totalRegistros.S();
-                lblTotalRes.Text = totalTiempoVuelo;
-                lblPromedioRes.Text = TiempoVueloProm;
+                lblTotalRes.Text = TiempoVueloProm;
+                lblPromedioRes.Text = totalTiempoVuelo;
             }
             else if (tipoTransaccion == 6)
             {
@@ -693,8 +715,8 @@ namespace PortalClientes.Views
                 gvGastos.DataBind();
 
                 lblTotalTrasnRes.Text = totalRegistros.S();
-                lblTotalRes.Text = totalTransacciones.ToString("C", CultureInfo.CreateSpecificCulture("es-MX"));
-                lblPromedioRes.Text = promedio.ToString("C", CultureInfo.CreateSpecificCulture("es-MX"));
+                lblTotalRes.Text = totalTransacciones.ToString("C", CultureInfo.CreateSpecificCulture("es-MX")) + " MXN";
+                lblPromedioRes.Text = promedio.ToString("C", CultureInfo.CreateSpecificCulture("es-MX")) + " MXN";
             }
             else if (tipoTransaccion == 7)
             {
@@ -844,8 +866,8 @@ namespace PortalClientes.Views
                 gvGastos.DataBind();
 
                 lblTotalTrasnRes.Text = totalRegistros.S();
-                lblTotalRes.Text = totalTransacciones.ToString("C", CultureInfo.CreateSpecificCulture("es-MX"));
-                lblPromedioRes.Text = promedio.ToString("C", CultureInfo.CreateSpecificCulture("es-MX"));
+                lblTotalRes.Text = totalTransacciones.ToString("C", CultureInfo.CreateSpecificCulture("es-MX")) + " MXN";
+                lblPromedioRes.Text = promedio.ToString("C", CultureInfo.CreateSpecificCulture("es-MX")) + " MXN";
             }
             else if (tipoTransaccion == 10)
             {
@@ -883,8 +905,8 @@ namespace PortalClientes.Views
                 gvGastos.DataBind();
 
                 lblTotalTrasnRes.Text = totalRegistros.S();
-                lblTotalRes.Text = totalTransacciones.ToString("C", CultureInfo.CreateSpecificCulture("es-MX"));
-                lblPromedioRes.Text = promedio.ToString("C", CultureInfo.CreateSpecificCulture("es-MX"));
+                lblTotalRes.Text = totalTransacciones.ToString("C", CultureInfo.CreateSpecificCulture("es-MX")) + " MXN";
+                lblPromedioRes.Text = promedio.ToString("C", CultureInfo.CreateSpecificCulture("es-MX")) + " MXN";
             }
             else if (tipoTransaccion == 11)
             {
@@ -922,8 +944,48 @@ namespace PortalClientes.Views
                 gvGastos.DataBind();
 
                 lblTotalTrasnRes.Text = totalRegistros.S();
-                lblTotalRes.Text = totalTransacciones.ToString("C", CultureInfo.CreateSpecificCulture("es-MX"));
-                lblPromedioRes.Text = promedio.ToString("C", CultureInfo.CreateSpecificCulture("es-MX"));
+                lblTotalRes.Text = totalTransacciones.ToString("C", CultureInfo.CreateSpecificCulture("es-MX")) + " MXN";
+                lblPromedioRes.Text = promedio.ToString("C", CultureInfo.CreateSpecificCulture("es-MX")) + " MXN";
+            }
+
+            else if (tipoTransaccion == 12)
+            {
+                totalRegistros = transacciones.costosHoraVuelo.Count();
+                contMeses = transacciones.costosHoraVuelo.GroupBy(r => r.mes).Count();
+                totalTransacciones = transacciones.costosHoraVuelo.Sum(x => x.totalImp);
+                promedio = totalTransacciones / totalRegistros;
+
+                BoundField clm = new BoundField();
+                clm.DataField = "mes";
+                gvGastos.Columns.Add(clm);
+
+                BoundField clm2 = new BoundField();
+                clm2.DataField = "anio";
+                gvGastos.Columns.Add(clm2);
+
+                BoundField clm3 = new BoundField();
+                clm3.DataField = "rubro";
+                gvGastos.Columns.Add(clm3);
+
+                BoundField clm4 = new BoundField();
+                clm4.DataField = "totalImp";
+                clm4.DataFormatString = "{0:c}";
+                gvGastos.Columns.Add(clm4);
+
+                BoundField clm5 = new BoundField();
+                clm5.DataField = "categoria";
+                gvGastos.Columns.Add(clm5);
+
+                BoundField clm6 = new BoundField();
+                clm6.DataField = "comentarios";
+                gvGastos.Columns.Add(clm6);
+
+                gvGastos.DataSource = transacciones.costosHoraVuelo.OrderBy(x => x.mes).ToList(); //.GroupBy(r => r.mes).Select(x => x.First());
+                gvGastos.DataBind();
+
+                lblTotalTrasnRes.Text = totalRegistros.S();
+                lblTotalRes.Text = totalTransacciones.ToString("C", CultureInfo.CreateSpecificCulture("es-MX")) + " MXN";
+                lblPromedioRes.Text = promedio.ToString("C", CultureInfo.CreateSpecificCulture("es-MX")) + " MXN";
             }
         }
 
@@ -989,8 +1051,8 @@ namespace PortalClientes.Views
                     lblTitulo.Text = Properties.Resources.TabTransacciones;
 
                     lblTotalTrasn.Text = Properties.Resources.TabTran_NoVuelos;
-                    lblTotal.Text = Properties.Resources.TabTran_TiempoTotVuelo;
-                    lblPromedio.Text = Properties.Resources.TabTran_PromedioVuelo;
+                    lblTotal.Text = Properties.Resources.TabTran_promedioPax;
+                    lblPromedio.Text = Properties.Resources.TabTran_TiempoTotVuelo;
                     break;
                 case 7:
                     lblTransacciones.Text = Properties.Resources.TabTransacciones + " - " + Session["title"];
@@ -1034,6 +1096,8 @@ namespace PortalClientes.Views
             // tipo transaccion: 9 costos fijos variables
             // tipo transaccion: 10 gastos totales
             // tipo transaccion: 11 costos hora vuelo
+            // tipo transaccion: 12 costos fijos variables por hora
+
 
             DateTimeFormatInfo month = null;
             CultureInfo cultureInfo = Thread.CurrentThread.CurrentCulture;
@@ -1170,7 +1234,7 @@ namespace PortalClientes.Views
                     pp.fechaOrigen = Convert.ToDateTime(item.origenVuelo).ToString("dd/MM/yyyy HH:mm");
                     pp.fechaDestino = Convert.ToDateTime(item.destinoVuelo).ToString("dd/MM/yyyy HH:mm");
                     pp.tiempoVuelo = item.tiempoVuelo;
-                    pp.cantPax = item.cantPax.S();
+                    pp.cantPax = item.cantPax;
                     pp.cliente = item.cliente;
                     pp.contrato = item.contrato;
 
@@ -1295,7 +1359,7 @@ namespace PortalClientes.Views
                 foreach (var item in gastosT)
                 {
                     gvGastosT gt = new gvGastosT();
-                    gt.rubro = Utils.Idioma == "es-MX" ? item.rubroENG : item.rubroENG;
+                    gt.rubro = Utils.Idioma == "es-MX" ? item.rubroESP : item.rubroENG;
                     gt.totalImp = item.totalImp;
                     gt.categoria = Utils.Idioma == "es-MX" ? item.categoriaESP : item.categoriaENG;
                     gt.comentarios = item.comentarios;
@@ -1309,6 +1373,25 @@ namespace PortalClientes.Views
             }
 
             else if (tipoTrans == 11)
+            {
+                List<gvCostosH> gvch = new List<gvCostosH>();
+                foreach (var item in costoH)
+                {
+                    gvCostosH ch = new gvCostosH();
+                    ch.rubro = Utils.Idioma == "es-MX" ? item.rubroENG : item.rubroENG;
+                    ch.totalImp = item.totalImp;
+                    ch.categoria = Utils.Idioma == "es-MX" ? item.categoriaESP : item.categoriaENG;
+                    ch.comentarios = item.comentarios;
+                    ch.mes = textInfo.ToTitleCase(month.GetMonthName(Convert.ToInt32(item.mes)));
+                    ch.anio = item.anio.S();
+
+                    gvch.Add(ch);
+                }
+
+                HttpContext.Current.Session["data"] = gvch;
+            }
+
+            else if (tipoTrans == 12)
             {
                 List<gvCostosH> gvch = new List<gvCostosH>();
                 foreach (var item in costoH)
