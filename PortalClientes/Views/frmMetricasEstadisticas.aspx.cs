@@ -127,8 +127,8 @@ namespace PortalClientes.Views
             lblPromedioPasajerosDos.Text = Properties.Resources.ME_PromedioPax;
             lblHorasVuelo.Text = Properties.Resources.ME_HorasVuelo;
             lblNumVuelos.Text = Properties.Resources.ME_NoVuelos;
-            lblCostoPaxMilla.Text = Properties.Resources.ME_CostoPaxMilla;
-            lblCoatoMilla.Text = Properties.Resources.ME_CostoMilla;
+            //lblCostoPaxMilla.Text = Properties.Resources.ME_CostoPaxMilla;
+            //lblCoatoMilla.Text = Properties.Resources.ME_CostoMilla;
             lblGastoHora.Text = Properties.Resources.ME_CostoHora;
             lblGastoTotal.Text = Properties.Resources.ME_GastoTotal;
             lblCostoFijoVariableHora.Text = Properties.Resources.ME_CostoFijoVariableHora;
@@ -1050,6 +1050,25 @@ namespace PortalClientes.Views
 
             List<responseGraficaCostoHoraVuelo> lrg = new List<responseGraficaCostoHoraVuelo>();
             lrg = oIGesCat.obtenerCostoHoraVuelo(fg);
+
+            if (lrg.Count() > 0)
+            {
+                lrg[0].idioma = Utils.Idioma;
+            }
+
+            return lrg;
+        }
+
+        [WebMethod]
+        public static List<responseGraficaCostoFijoVariableHora> GetCostoFijoVariableHora(string meses)
+        {
+            DBMetricasEstatics oIGesCat = new DBMetricasEstatics();
+
+            FiltroGrafica fg = new FiltroGrafica();
+            fg.meses = meses;
+
+            List<responseGraficaCostoFijoVariableHora> lrg = new List<responseGraficaCostoFijoVariableHora>();
+            lrg = oIGesCat.obtenerCostoFijoVariableHora(fg);
 
             if (lrg.Count() > 0)
             {

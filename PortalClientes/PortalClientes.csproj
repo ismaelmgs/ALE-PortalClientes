@@ -1580,6 +1580,7 @@
     <Compile Include="Objetos\MatriculasUsuario.cs" />
     <Compile Include="Objetos\responseGraficaAeropuerto.cs" />
     <Compile Include="Objetos\responseGraficaCostoFijoVariable.cs" />
+    <Compile Include="Objetos\responseGraficaCostoFijoVariableHora.cs" />
     <Compile Include="Objetos\responseGraficaCostoHoraVuelo.cs" />
     <Compile Include="Objetos\responseGraficaDuracionVuelos.cs" />
     <Compile Include="Objetos\responseGraficaGastos.cs" />

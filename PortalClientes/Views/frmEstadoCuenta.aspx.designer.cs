@@ -49,6 +49,15 @@ namespace PortalClientes.Views {
         protected global::System.Web.UI.WebControls.Label lblSaldoActual;
         
         /// <summary>
+        /// Control lblSaldoActualaUSD.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblSaldoActualaUSD;
+        
+        /// <summary>
         /// Control lblSaldoActualRes.
         /// </summary>
         /// <remarks>
@@ -65,6 +74,15 @@ namespace PortalClientes.Views {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblNuevosCargos;
+        
+        /// <summary>
+        /// Control lblNuevosCargosUSD.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblNuevosCargosUSD;
         
         /// <summary>
         /// Control lblNuevosCargosRes.
@@ -85,6 +103,15 @@ namespace PortalClientes.Views {
         protected global::System.Web.UI.WebControls.Label lblPagosPeriodo;
         
         /// <summary>
+        /// Control lblPagosPeriodoUSD.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblPagosPeriodoUSD;
+        
+        /// <summary>
         /// Control lblPagosPeriodoRes.
         /// </summary>
         /// <remarks>
@@ -101,6 +128,15 @@ namespace PortalClientes.Views {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblMontoReq;
+        
+        /// <summary>
+        /// Control lblMontoReqUSD.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblMontoReqUSD;
         
         /// <summary>
         /// Control lblMontoReqRes.
@@ -139,6 +175,15 @@ namespace PortalClientes.Views {
         protected global::System.Web.UI.WebControls.Label lblSaldoActualMXN;
         
         /// <summary>
+        /// Control lblSaldoActualMonMXN.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblSaldoActualMonMXN;
+        
+        /// <summary>
         /// Control lblSaldoActualMXNRes.
         /// </summary>
         /// <remarks>
@@ -155,6 +200,15 @@ namespace PortalClientes.Views {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblNuevosCargosMXN;
+        
+        /// <summary>
+        /// Control Label7.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label7;
         
         /// <summary>
         /// Control lblNuevosCargosMXNRes.
@@ -175,6 +229,15 @@ namespace PortalClientes.Views {
         protected global::System.Web.UI.WebControls.Label lblPagosPeriodoMXN;
         
         /// <summary>
+        /// Control Label10.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label10;
+        
+        /// <summary>
         /// Control lblPagosPeriodoMXNRes.
         /// </summary>
         /// <remarks>
@@ -191,6 +254,15 @@ namespace PortalClientes.Views {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblMontoReqMXN;
+        
+        /// <summary>
+        /// Control Label13.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label13;
         
         /// <summary>
         /// Control lblMontoReqMXNRes.

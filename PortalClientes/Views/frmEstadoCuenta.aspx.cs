@@ -59,9 +59,9 @@ namespace PortalClientes.Views
 
         public void LlenaEstadoCuenta(EstadoCuenta oEstado)
         {
-            lblSaldoActualRes.Text = oEstado.saldoAnteriorUSD.ToString("c");
-            lblNuevosCargosRes.Text = oEstado.nuevosCargosUSD.ToString("c");
-            lblPagosPeriodoRes.Text = oEstado.pagosCreditosUSD.ToString("c");
+            lblSaldoActualRes.Text = oEstado.saldoAnteriorUSD.ToString("n");
+            lblNuevosCargosRes.Text = oEstado.nuevosCargosUSD.ToString("n");
+            lblPagosPeriodoRes.Text = oEstado.pagosCreditosUSD.ToString("n");
 
             if (oEstado.saldoActualUSD < 0)
                 lblMontoReqRes.ForeColor = Color.Green;
@@ -70,12 +70,12 @@ namespace PortalClientes.Views
             //if (oEstado.saldoActualUSD == 0)
             //    lblMontoReqRes.ForeColor = Color.Black;
 
-            lblMontoReqRes.Text = oEstado.saldoActualUSD.ToString("c");
+            lblMontoReqRes.Text = oEstado.saldoActualUSD.ToString("n");
 
 
-            lblSaldoActualMXNRes.Text = oEstado.saldoAnteriorMXN.ToString("c");
-            lblNuevosCargosMXNRes.Text = oEstado.nuevosCargosMXN.ToString("c");
-            lblPagosPeriodoMXNRes.Text = oEstado.pagosCreditosMXN.ToString("c");
+            lblSaldoActualMXNRes.Text = oEstado.saldoAnteriorMXN.ToString("n");
+            lblNuevosCargosMXNRes.Text = oEstado.nuevosCargosMXN.ToString("n");
+            lblPagosPeriodoMXNRes.Text = oEstado.pagosCreditosMXN.ToString("n");
 
             if (oEstado.saldoActualMXN < 0)
                 lblMontoReqMXNRes.ForeColor = Color.Green;
@@ -84,7 +84,7 @@ namespace PortalClientes.Views
             //if (oEstado.saldoActualMXN == 0)
             //    lblMontoReqMXNRes.ForeColor = Color.Black;
 
-            lblMontoReqMXNRes.Text = oEstado.saldoActualMXN.ToString("c");
+            lblMontoReqMXNRes.Text = oEstado.saldoActualMXN.ToString("n");
         }
         #endregion
 
