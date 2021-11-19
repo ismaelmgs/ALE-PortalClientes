@@ -319,10 +319,9 @@ namespace PortalClientes.Views
             var v10 = DDFiltroMesesCH.SelectedValue;
             // llenar dropdown filtro
             DDFiltroMesesCH.Items.Clear();
-            DDFiltroMesesCH.Items.Add(new ListItem(Properties.Resources.FiltroME_MA, "0"));
-            DDFiltroMesesCH.Items.Add(new ListItem(Properties.Resources.FiltroME_1M, "1"));
-            DDFiltroMesesCH.Items.Add(new ListItem(Properties.Resources.FiltroME_2M, "2"));
             DDFiltroMesesCH.Items.Add(new ListItem(Properties.Resources.FiltroME_3M, "3"));
+            DDFiltroMesesCH.Items.Add(new ListItem(Properties.Resources.FiltroME_6M, "6"));
+            DDFiltroMesesCH.Items.Add(new ListItem(Properties.Resources.FiltroME_12M, "12"));
 
             if (v10 == "")
             {
