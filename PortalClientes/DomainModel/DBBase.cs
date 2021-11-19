@@ -12,9 +12,9 @@ namespace PortalClientes.DomainModel
         public BD_SP oDB_SP = new BD_SP();
         private bool bDisposed = false;
 
-        public DBBase()
-        {
-            oDB_SP.sConexionSQL = Globales.GetConfigConnection("SqlDefault");
-        }
+        //public DBBase()
+        //{
+        //    //oDB_SP.sConexionSQL = Globales.GetConfigConnection("SqlDefault");
+        //}
     }
 }

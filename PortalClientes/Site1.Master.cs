@@ -295,6 +295,10 @@ namespace PortalClientes
             {
                 Response.Redirect("~/Views/frmTripulacion.aspx");
             }
+            else if (path == Enums.EstadoCuenta)
+            {
+                Response.Redirect("~/Views/frmEstadoCuenta.aspx");
+            }
         }
 
         protected void btnSalir_Click(object sender, EventArgs e)

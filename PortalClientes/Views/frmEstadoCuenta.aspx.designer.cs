@@ -7,13 +7,20 @@
 // </generado automáticamente>
 //------------------------------------------------------------------------------
 
-namespace PortalClientes.Views
-{
-
-
-    public partial class frmEstadoCuenta
-    {
-
+namespace PortalClientes.Views {
+    
+    
+    public partial class frmEstadoCuenta {
+        
+        /// <summary>
+        /// Control lblTitulo.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblTitulo;
+        
         /// <summary>
         /// Control lblResumenDeCuenta.
         /// </summary>
@@ -22,16 +29,16 @@ namespace PortalClientes.Views
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblResumenDeCuenta;
-
+        
         /// <summary>
-        /// Control lblMatricula.
+        /// Control lblDolares.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblMatricula;
-
+        protected global::System.Web.UI.WebControls.Label lblDolares;
+        
         /// <summary>
         /// Control lblSaldoActual.
         /// </summary>
@@ -40,16 +47,7 @@ namespace PortalClientes.Views
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblSaldoActual;
-
-        /// <summary>
-        /// Control lblSaldoActualS.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblSaldoActualS;
-
+        
         /// <summary>
         /// Control lblSaldoActualRes.
         /// </summary>
@@ -58,113 +56,149 @@ namespace PortalClientes.Views
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblSaldoActualRes;
-
+        
         /// <summary>
-        /// Control lblTotalAtrasado.
+        /// Control lblNuevosCargos.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblTotalAtrasado;
-
+        protected global::System.Web.UI.WebControls.Label lblNuevosCargos;
+        
         /// <summary>
-        /// Control lblTotalAtrasadoS.
+        /// Control lblNuevosCargosRes.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblTotalAtrasadoS;
-
+        protected global::System.Web.UI.WebControls.Label lblNuevosCargosRes;
+        
         /// <summary>
-        /// Control lblTotalAtrasadoRes.
+        /// Control lblPagosPeriodo.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblTotalAtrasadoRes;
-
+        protected global::System.Web.UI.WebControls.Label lblPagosPeriodo;
+        
         /// <summary>
-        /// Control lblTotalAtrasadoUno.
+        /// Control lblPagosPeriodoRes.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblTotalAtrasadoUno;
-
+        protected global::System.Web.UI.WebControls.Label lblPagosPeriodoRes;
+        
         /// <summary>
-        /// Control lblTotalAtrasadoUnoRes.
+        /// Control lblMontoReq.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblTotalAtrasadoUnoRes;
-
+        protected global::System.Web.UI.WebControls.Label lblMontoReq;
+        
         /// <summary>
-        /// Control lblTotalAtrasadoDos.
+        /// Control lblMontoReqRes.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblTotalAtrasadoDos;
-
+        protected global::System.Web.UI.WebControls.Label lblMontoReqRes;
+        
         /// <summary>
-        /// Control lblTotalAtrasadoDosRes.
+        /// Control lblResumenPeriodo.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblTotalAtrasadoDosRes;
-
+        protected global::System.Web.UI.WebControls.Label lblResumenPeriodo;
+        
         /// <summary>
-        /// Control lblTotalAtrasadoTres.
+        /// Control lblPesos.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblTotalAtrasadoTres;
-
+        protected global::System.Web.UI.WebControls.Label lblPesos;
+        
         /// <summary>
-        /// Control lblTotalAtrasadoTresRes.
+        /// Control lblSaldoActualMXN.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblTotalAtrasadoTresRes;
-
+        protected global::System.Web.UI.WebControls.Label lblSaldoActualMXN;
+        
         /// <summary>
-        /// Control lblMontoRequerido.
+        /// Control lblSaldoActualMXNRes.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblMontoRequerido;
-
+        protected global::System.Web.UI.WebControls.Label lblSaldoActualMXNRes;
+        
         /// <summary>
-        /// Control lblMontoRequeridoUSD.
+        /// Control lblNuevosCargosMXN.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblMontoRequeridoUSD;
-
+        protected global::System.Web.UI.WebControls.Label lblNuevosCargosMXN;
+        
         /// <summary>
-        /// Control lblMontoRequeridoRes.
+        /// Control lblNuevosCargosMXNRes.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblMontoRequeridoRes;
+        protected global::System.Web.UI.WebControls.Label lblNuevosCargosMXNRes;
+        
+        /// <summary>
+        /// Control lblPagosPeriodoMXN.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblPagosPeriodoMXN;
+        
+        /// <summary>
+        /// Control lblPagosPeriodoMXNRes.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblPagosPeriodoMXNRes;
+        
+        /// <summary>
+        /// Control lblMontoReqMXN.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblMontoReqMXN;
+        
+        /// <summary>
+        /// Control lblMontoReqMXNRes.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblMontoReqMXNRes;
     }
 }

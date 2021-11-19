@@ -952,6 +952,60 @@ namespace PortalClientes.Properties {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Nuevos cargos.
+        /// </summary>
+        internal static string Ec_NuevosCargos {
+            get {
+                return ResourceManager.GetString("Ec_NuevosCargos", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Monto de depósito requerido.
+        /// </summary>
+        internal static string Ec_PagoRequerido {
+            get {
+                return ResourceManager.GetString("Ec_PagoRequerido", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Pagos del periodo.
+        /// </summary>
+        internal static string Ec_PagosPeriodo {
+            get {
+                return ResourceManager.GetString("Ec_PagosPeriodo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Resumen de cuenta.
+        /// </summary>
+        internal static string Ec_ResumenCuenta {
+            get {
+                return ResourceManager.GetString("Ec_ResumenCuenta", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Saldo actual.
+        /// </summary>
+        internal static string Ec_SaldoActual {
+            get {
+                return ResourceManager.GetString("Ec_SaldoActual", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Estado de Cuenta Mensual.
+        /// </summary>
+        internal static string Ec_Titulo {
+            get {
+                return ResourceManager.GetString("Ec_Titulo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Próximo mes.
         /// </summary>
         internal static string FiltroEvenTri_1M {

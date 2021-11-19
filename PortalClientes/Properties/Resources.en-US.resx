@@ -882,4 +882,22 @@
   <data name="ME_PromedioPax" xml:space="preserve">
     <value>Average Passengers</value>
   </data>
+  <data name="Ec_NuevosCargos" xml:space="preserve">
+    <value>New charges</value>
+  </data>
+  <data name="Ec_PagoRequerido" xml:space="preserve">
+    <value>Amount required</value>
+  </data>
+  <data name="Ec_PagosPeriodo" xml:space="preserve">
+    <value>Period payments</value>
+  </data>
+  <data name="Ec_ResumenCuenta" xml:space="preserve">
+    <value>Account summary</value>
+  </data>
+  <data name="Ec_SaldoActual" xml:space="preserve">
+    <value>Current balance</value>
+  </data>
+  <data name="Ec_Titulo" xml:space="preserve">
+    <value>Monthly state of account</value>
+  </data>
 </root>

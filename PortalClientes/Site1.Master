@@ -341,6 +341,12 @@
             //alert(sender.id);
             $('#<%= txtLang.ClientID%>').val('en-US');
         }
+
+        function onItemClick(s, e) {
+
+            var matricula = e.get_text();
+            alert(matricula);
+        }
     </script>
     <style type="text/css">
         .overlayy {

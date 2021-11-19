@@ -882,4 +882,22 @@
   <data name="ME_PromedioPax" xml:space="preserve">
     <value>Promedio de Pasajeros</value>
   </data>
+  <data name="Ec_NuevosCargos" xml:space="preserve">
+    <value>Nuevos cargos</value>
+  </data>
+  <data name="Ec_PagoRequerido" xml:space="preserve">
+    <value>Monto de depósito requerido</value>
+  </data>
+  <data name="Ec_PagosPeriodo" xml:space="preserve">
+    <value>Pagos del periodo</value>
+  </data>
+  <data name="Ec_ResumenCuenta" xml:space="preserve">
+    <value>Resumen de cuenta</value>
+  </data>
+  <data name="Ec_SaldoActual" xml:space="preserve">
+    <value>Saldo actual</value>
+  </data>
+  <data name="Ec_Titulo" xml:space="preserve">
+    <value>Estado de Cuenta Mensual</value>
+  </data>
 </root>
