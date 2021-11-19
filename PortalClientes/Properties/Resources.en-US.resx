@@ -899,6 +899,7 @@
   </data>
   <data name="Ec_Titulo" xml:space="preserve">
     <value>Monthly state of account</value>
+  </data>
   <data name="FiltroME_12M" xml:space="preserve">
     <value>Last 12 Months</value>
   </data>
