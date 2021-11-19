@@ -1,5 +1,5 @@
 $(document).ready(function () {
-    //const url = "http://192.168.1.250/PortalClientes/Views/frmMetricasEstadisticas.aspx/GetCostosFijoVariableHora"; // API URL
+    //const url = "http://192.168.1.250/PortalClientes/Views/frmMetricasEstadisticas.aspx/GetCostoFijoVariableHora"; // API URL
     const urlFVH = getUrlFVH(); // API URL
 
     let objFVH = JSON.stringify({
@@ -18,7 +18,7 @@ $(document).ready(function () {
 });
 
 function getUrlFVH() {
-    let value = window.location + "/GetCostosFijoVariableHora";
+    let value = window.location + "/GetCostoFijoVariableHora";
     return value;
 }
 
@@ -99,9 +99,9 @@ function chartsFVH(dataFVH, ChartType) {
 
         jsonDataFVH.forEach((item, index) => {
             if (jsonDataFVH[0].idioma == "es-MX") {
-                dataFVH_.addRows([[item.categoria, item.noGastos, `Total de Costos ${ item.noGastos } por ${ item.categoria }`,]]);
+                dataFVH_.addRows([[item.categoria, item.noGastos, `Total de Movimientos ${ item.noGastos } por ${ item.categoria }`,]]);
             } else {
-                dataFVH_.addRows([[item.categoria, item.noGastos, `Total costs ${ item.noGastos } by ${ item.categoria }`,]]);
+                dataFVH_.addRows([[item.categoria, item.noGastos, `Total Movements ${ item.noGastos } by ${ item.categoria }`,]]);
             }
         });
 
@@ -135,7 +135,7 @@ function chartsFVH(dataFVH, ChartType) {
                 var row = selection[0].row;
 
                 let array = jsonDataFVH[row];
-                const costosFVH = array.costos
+                const costosFVH = array.gastos
 
                 let vuelos = []
                 let gastos = []
@@ -162,7 +162,7 @@ function chartsFVH(dataFVH, ChartType) {
                     gastosT,
                     costoH,
                     costosFVH,
-                    tipoTrans: 9,
+                    tipoTrans: 12,
                     tipoDet: "MXN",
                     descES: array.categoria,
                     descEN: array.categoria,

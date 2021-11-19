@@ -32,8 +32,13 @@ namespace PortalClientes.Views
         #region EVENTOS
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            var tipo = Convert.ToInt32(Session["tipoTransaccion"]);
+            var od = Convert.ToInt32(Session["origenData"]);
+            var descripcion = (string)Session["descripcion"];
             //oPresenter = new Transacciones_Presenter(this, new DBTransacciones());
+
+            Session["title"] = GenerateTitle(true, tipo, descripcion);
+            Session["titleFile"] = GenerateTitle(false, tipo, descripcion);
 
             TextBox milabel = (TextBox)this.Master.FindControl("txtLang");
             if (milabel.Text != Utils.Idioma && milabel.Text != string.Empty)
@@ -52,8 +57,8 @@ namespace PortalClientes.Views
             {
                 if (Session["data"] != null)
                 {
-                    var tipo = Convert.ToInt32(Session["tipoTransaccion"]);
-                    var od = Convert.ToInt32(Session["origenData"]);
+                    tipo = Convert.ToInt32(Session["tipoTransaccion"]);
+                    od = Convert.ToInt32(Session["origenData"]);
 
                     Transacciones transacciones = new Transacciones();
                     if (tipo == 1)
@@ -106,7 +111,7 @@ namespace PortalClientes.Views
 
                     else if (tipo == 9)
                     {
-                        transacciones.gastosFijosVariable = (List<gvCostosFV>)Session["data"];
+                        transacciones.costosFijosVariable = (List<gvCostosFV>)Session["data"];
                         LlenarGV(transacciones, tipo);
                     }
 
@@ -124,7 +129,7 @@ namespace PortalClientes.Views
 
                     else if (tipo == 12)
                     {
-                        transacciones.costosHoraVuelo = (List<gvCostosH>)Session["data"];
+                        transacciones.costosFijosVariableHora = (List<gvCostosFVH>)Session["data"];
                         LlenarGV(transacciones, tipo);
                     }
 
@@ -361,7 +366,7 @@ namespace PortalClientes.Views
 
             else if (tipo == 9)
             {
-                transacciones.gastosFijosVariable = (List<gvCostosFV>)Session["data"];
+                transacciones.costosFijosVariable = (List<gvCostosFV>)Session["data"];
                 LlenarGV(transacciones, tipo);
             }
 
@@ -379,7 +384,7 @@ namespace PortalClientes.Views
 
             else if (tipo == 12)
             {
-                transacciones.costosHoraVuelo = (List<gvCostosH>)Session["data"];
+                transacciones.costosFijosVariableHora = (List<gvCostosFVH>)Session["data"];
                 LlenarGV(transacciones, tipo);
             }
 
@@ -828,9 +833,9 @@ namespace PortalClientes.Views
             }
             else if (tipoTransaccion == 9)
             {
-                totalRegistros = transacciones.gastosFijosVariable.Count();
-                contMeses = transacciones.gastosFijosVariable.GroupBy(r => r.mes).Count();
-                totalTransacciones = transacciones.gastosFijosVariable.Sum(x => x.totalImp);
+                totalRegistros = transacciones.costosFijosVariable.Count();
+                contMeses = transacciones.costosFijosVariable.GroupBy(r => r.mes).Count();
+                totalTransacciones = transacciones.costosFijosVariable.Sum(x => x.totalImp);
                 promedio = totalTransacciones / totalRegistros;
 
                 BoundField clm = new BoundField();
@@ -862,7 +867,7 @@ namespace PortalClientes.Views
                 clm7.DataField = "comentarios";
                 gvGastos.Columns.Add(clm7);
 
-                gvGastos.DataSource = transacciones.gastosFijosVariable.OrderBy(x => x.mes).ToList(); //.GroupBy(r => r.mes).Select(x => x.First());
+                gvGastos.DataSource = transacciones.costosFijosVariable.OrderBy(x => x.mes).ToList(); //.GroupBy(r => r.mes).Select(x => x.First());
                 gvGastos.DataBind();
 
                 lblTotalTrasnRes.Text = totalRegistros.S();
@@ -947,12 +952,11 @@ namespace PortalClientes.Views
                 lblTotalRes.Text = totalTransacciones.ToString("C", CultureInfo.CreateSpecificCulture("es-MX")) + " MXN";
                 lblPromedioRes.Text = promedio.ToString("C", CultureInfo.CreateSpecificCulture("es-MX")) + " MXN";
             }
-
             else if (tipoTransaccion == 12)
             {
-                totalRegistros = transacciones.costosHoraVuelo.Count();
-                contMeses = transacciones.costosHoraVuelo.GroupBy(r => r.mes).Count();
-                totalTransacciones = transacciones.costosHoraVuelo.Sum(x => x.totalImp);
+                totalRegistros = transacciones.costosFijosVariableHora.Count();
+                contMeses = transacciones.costosFijosVariableHora.GroupBy(r => r.mes).Count();
+                totalTransacciones = transacciones.costosFijosVariableHora.Sum(x => x.totalImp);
                 promedio = totalTransacciones / totalRegistros;
 
                 BoundField clm = new BoundField();
@@ -980,7 +984,7 @@ namespace PortalClientes.Views
                 clm6.DataField = "comentarios";
                 gvGastos.Columns.Add(clm6);
 
-                gvGastos.DataSource = transacciones.costosHoraVuelo.OrderBy(x => x.mes).ToList(); //.GroupBy(r => r.mes).Select(x => x.First());
+                gvGastos.DataSource = transacciones.costosFijosVariableHora.OrderBy(x => x.mes).ToList(); //.GroupBy(r => r.mes).Select(x => x.First());
                 gvGastos.DataBind();
 
                 lblTotalTrasnRes.Text = totalRegistros.S();
@@ -1039,7 +1043,7 @@ namespace PortalClientes.Views
             switch (transaccion)
             {
                 case 4:
-                    lblTransacciones.Text = Properties.Resources.TabTransacciones + " - " + Session["title"];
+                    lblTransacciones.Text = (string)Session["title"];
                     lblTitulo.Text = Properties.Resources.TabTransacciones;
 
                     lblTotalTrasn.Text = Properties.Resources.TabTran_NoVuelos;
@@ -1047,7 +1051,7 @@ namespace PortalClientes.Views
                     lblPromedio.Text = Properties.Resources.TabTran_PromedioVuelo;
                     break;
                 case 5:
-                    lblTransacciones.Text = Properties.Resources.TabTransacciones + " - " + Session["title"];
+                    lblTransacciones.Text = (string)Session["title"];
                     lblTitulo.Text = Properties.Resources.TabTransacciones;
 
                     lblTotalTrasn.Text = Properties.Resources.TabTran_NoVuelos;
@@ -1055,7 +1059,7 @@ namespace PortalClientes.Views
                     lblPromedio.Text = Properties.Resources.TabTran_TiempoTotVuelo;
                     break;
                 case 7:
-                    lblTransacciones.Text = Properties.Resources.TabTransacciones + " - " + Session["title"];
+                    lblTransacciones.Text = (string)Session["title"];
                     lblTitulo.Text = Properties.Resources.TabTransacciones;
 
                     lblTotalTrasn.Text = Properties.Resources.TabTran_NoVuelos;
@@ -1063,7 +1067,7 @@ namespace PortalClientes.Views
                     lblPromedio.Text = Properties.Resources.TabTran_PromedioVuelo;
                     break;
                 case 8:
-                    lblTransacciones.Text = Properties.Resources.TabTransacciones + " - " + Session["title"];
+                    lblTransacciones.Text = (string)Session["title"];
                     lblTitulo.Text = Properties.Resources.TabTransacciones;
 
                     lblTotalTrasn.Text = Properties.Resources.TabTran_NoVuelos;
@@ -1071,7 +1075,7 @@ namespace PortalClientes.Views
                     lblPromedio.Text = Properties.Resources.TabTran_PromedioVuelo;
                     break;
                 default:
-                    lblTransacciones.Text = Properties.Resources.TabTransacciones + " - " + Session["title"];
+                    lblTransacciones.Text = (string)Session["title"];
                     lblTitulo.Text = Properties.Resources.TabTransacciones;
 
                     lblTotalTrasn.Text = Properties.Resources.TabTran_NoGastos;
@@ -1082,8 +1086,63 @@ namespace PortalClientes.Views
 
         }
 
+        private string GenerateTitle(bool tipoT, int transaccion, string descripcion)
+        {
+            var title = "";
+
+            switch (transaccion)
+            {
+                case 1: title = Utils.Idioma == "es-MX" ? "Costos por Categoria" : "Costs by Category";
+                    break;
+                case 2:
+                    title = Utils.Idioma == "es-MX" ? "Gastos por Aeropuerto" : "Expenses by Airport";
+                    break;
+                case 3:
+                    title = Utils.Idioma == "es-MX" ? "Gastos por Proveedor" : "Expenses by Vendor";
+                    break;
+                case 4:
+                    title = Utils.Idioma == "es-MX" ? "Vuelos por Duracion" : "Flight Duration";
+                    break;
+                case 5:
+                    title = Utils.Idioma == "es-MX" ? "Promedio Pasajeros" : "Average Passengers";
+                    break;
+                case 6:
+                    title = Utils.Idioma == "es-MX" ? "Promedio Costo" : "Average Cost";
+                    break;
+                case 7:
+                    title = Utils.Idioma == "es-MX" ? "Horas Voladas" : "Flight Hours";
+                    break;
+                case 8:
+                    title = Utils.Idioma == "es-MX" ? "No. de Vuelos" : "No. of Flights";
+                    break;
+                case 9:
+                    title = Utils.Idioma == "es-MX" ? "Costo Fijo y Variable" : "Fixed and Variable Cost";
+                    break;
+                case 10:
+                    title = Utils.Idioma == "es-MX" ? "Gastos Totales" : "Total Expenses";
+                    break;
+                case 11:
+                    title = Utils.Idioma == "es-MX" ? "Costo por Hora de Vuelo" : "Cost per Flight Hour";
+                    break;
+                case 12:
+                    title = Utils.Idioma == "es-MX" ? "Costo Fijo y Variable por Hora" : "Fixed and Variable Cost Per Hour";
+                    break;
+            }
+
+            if (tipoT)
+            {
+                title += " - " + descripcion + " - " + Utils.MatriculaActual;
+            }
+            else
+            {
+                title += "_" + descripcion + "_" + Utils.MatriculaActual;
+            } 
+
+            return title;
+        }
+
         [WebMethod]
-        public static void ObtenerTransacciones(List<gasto> gastos, List<gastoAeropuerto> gastosAe, List<gastoProveedor> gastosProv, List<vuelo> vuelos, List<pasajero> paxs, List<costosProm> costos, List<hora> horasV, List<novuelo> novuelos, List<costofv> costosFV, List<gastot> gastosT, List<costohv> costoH, int tipoTrans, string tipoDet, string descES, string descEN, int origen)
+        public static void ObtenerTransacciones(List<gasto> gastos, List<gastoAeropuerto> gastosAe, List<gastoProveedor> gastosProv, List<vuelo> vuelos, List<pasajero> paxs, List<costosProm> costos, List<hora> horasV, List<novuelo> novuelos, List<costofv> costosFV, List<gastot> gastosT, List<costohv> costoH, List<costofvh> costosFVH, int tipoTrans, string tipoDet, string descES, string descEN, int origen)
         {
             // tipo transaccion: 1 gastos
             // tipo transaccion: 2 gastosAe
@@ -1393,13 +1452,13 @@ namespace PortalClientes.Views
 
             else if (tipoTrans == 12)
             {
-                List<gvCostosH> gvch = new List<gvCostosH>();
-                foreach (var item in costoH)
+                List<gvCostosFVH> gvch = new List<gvCostosFVH>();
+                foreach (var item in costosFVH)
                 {
-                    gvCostosH ch = new gvCostosH();
-                    ch.rubro = Utils.Idioma == "es-MX" ? item.rubroENG : item.rubroENG;
+                    gvCostosFVH ch = new gvCostosFVH();
+                    ch.rubro = Utils.Idioma == "es-MX" ? item.rubroESP : item.rubroENG;
                     ch.totalImp = item.totalImp;
-                    ch.categoria = Utils.Idioma == "es-MX" ? item.categoriaESP : item.categoriaENG;
+                    ch.categoria = item.categoria;
                     ch.comentarios = item.comentarios;
                     ch.mes = textInfo.ToTitleCase(month.GetMonthName(Convert.ToInt32(item.mes)));
                     ch.anio = item.anio.S();
@@ -1416,6 +1475,7 @@ namespace PortalClientes.Views
 
             HttpContext.Current.Session["origenData"] = origen;
             HttpContext.Current.Session["tipoTransaccion"] = tipoTrans;
+            HttpContext.Current.Session["descripcion"] = descripcion;
             HttpContext.Current.Session["title"] = descripcion + " - " + det;
             HttpContext.Current.Session["titleFile"] = descripcion + "_" + det;
         }
@@ -1486,7 +1546,7 @@ namespace PortalClientes.Views
 
                 else if (tipo == 9)
                 {
-                    transacciones.gastosFijosVariable = (List<gvCostosFV>)Session["data"];
+                    transacciones.costosFijosVariable = (List<gvCostosFV>)Session["data"];
                     LlenarGV(transacciones, tipo);
                 }
 
@@ -1499,6 +1559,12 @@ namespace PortalClientes.Views
                 else if (tipo == 11)
                 {
                     transacciones.costosHoraVuelo = (List<gvCostosH>)Session["data"];
+                    LlenarGV(transacciones, tipo);
+                }
+
+                else if (tipo == 12)
+                {
+                    transacciones.costosFijosVariableHora = (List<gvCostosFVH>)Session["data"];
                     LlenarGV(transacciones, tipo);
                 }
 
@@ -1602,7 +1668,7 @@ namespace PortalClientes.Views
 
                 else if (tipo == 9)
                 {
-                    transacciones.gastosFijosVariable = (List<gvCostosFV>)Session["data"];
+                    transacciones.costosFijosVariable = (List<gvCostosFV>)Session["data"];
                     LlenarGV(transacciones, tipo);
                 }
 
@@ -1615,6 +1681,12 @@ namespace PortalClientes.Views
                 else if (tipo == 11)
                 {
                     transacciones.costosHoraVuelo = (List<gvCostosH>)Session["data"];
+                    LlenarGV(transacciones, tipo);
+                }
+
+                else if (tipo == 12)
+                {
+                    transacciones.costosFijosVariableHora = (List<gvCostosFVH>)Session["data"];
                     LlenarGV(transacciones, tipo);
                 }
 

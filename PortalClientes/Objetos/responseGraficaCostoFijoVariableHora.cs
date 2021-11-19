@@ -16,7 +16,7 @@ namespace PortalClientes.Objetos
         public float totalTiempo { get; set; }
         public float costoHoraVuelo { get; set; }
         public string idioma { get; set; }
-        public List<costofvh> CostoFVH { get; set; }
+        public List<costofvh> gastos { get; set; }
     }
 
     public class costofvh
@@ -36,14 +36,11 @@ namespace PortalClientes.Objetos
 
     public class gvCostosFVH
     {
-        public string idRubro { get; set; }
         public string rubro { get; set; }
         public float totalImp { get; set; }
         public string categoria { get; set; }
         public string comentarios { get; set; }
-        public string idTipoGasto { get; set; }
         public string mes { get; set; }
         public string anio { get; set; }
-        public string nombre { get; set; }
     }
 }

@@ -1064,7 +1064,7 @@ namespace PortalClientes.Views
         {
             DBMetricasEstatics oIGesCat = new DBMetricasEstatics();
 
-            FiltroGrafica fg = new FiltroGrafica();
+            FiltroGraficaFV fg = new FiltroGraficaFV();
             fg.meses = meses;
 
             List<responseGraficaCostoFijoVariableHora> lrg = new List<responseGraficaCostoFijoVariableHora>();
