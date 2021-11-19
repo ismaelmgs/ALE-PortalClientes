@@ -14,6 +14,8 @@ using PortalClientes.Clases;
 using DevExpress.Web.ASPxScheduler.Internal;
 using NucleoBase.Core;
 using System.Web.Services;
+using CrystalDecisions.CrystalReports.Engine;
+using CrystalDecisions.Shared;
 
 namespace PortalClientes.Views
 {
@@ -101,6 +103,29 @@ namespace PortalClientes.Views
                 case "Dic":
                     Session["dateScheduler"] = 11;
                     break;
+            }
+        }
+
+        protected void lkbExpPDFRes_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string strPath = string.Empty;
+                ReportDocument rd = new ReportDocument();
+                strPath = Server.MapPath("RPT\\CrystalReport1.rpt");
+                strPath = strPath.Replace("\\Views", "");
+                rd.Load(strPath, OpenReportMethod.OpenReportByDefault);
+                //rd.SetDataSource(dsGastos);
+
+                //if (iTipoReporte == 1)
+                rd.ExportToHttpResponse(ExportFormatType.PortableDocFormat, Response, true, "DetalleVuelo");
+                //else
+                //   rd.ExportToHttpResponse(ExportFormatType.Excel, Response, true, "ResumenGastos");
+                Response.End();
+            }
+            catch(Exception ex)
+            {
+
             }
         }
 
