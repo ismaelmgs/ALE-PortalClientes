@@ -266,6 +266,7 @@ namespace PortalClientes
             }
 
             string[] pathList = HttpContext.Current.Request.Url.Segments;
+            var url = HttpContext.Current.Request.Url.AbsoluteUri;
             string path = pathList[2];
 
             if (e.Item.GroupName == "Group4")
@@ -285,19 +286,49 @@ namespace PortalClientes
 
             if (path == Enums.Dashboard)
             {
-                Response.Redirect("~/Views/frmDashboard.aspx");
+                if (url.Contains("localhost"))
+                {
+                    Response.Redirect("~/Views/frmDashboard.aspx");
+                }
+                else
+                {
+                    Response.Redirect("~/PortalCliente/Views/frmDashboard.aspx");
+                }
+                
             }
             else if (path == Enums.Aeronaves)
             {
-                Response.Redirect("~/Views/frmTuAeronave.aspx");
+                if(url.Contains("localhost"))
+                {
+                    Response.Redirect("~/Views/frmTuAeronave.aspx");
+                }
+                else
+                {
+                    Response.Redirect("~/PortalCliente/Views/frmTuAeronave.aspx");
+                }
             }
             else if (path == Enums.Tripulacion)
             {
-                Response.Redirect("~/Views/frmTripulacion.aspx");
+                if(url.Contains("localhost"))
+                {
+                    Response.Redirect("~/Views/frmTripulacion.aspx");
+                }
+                else
+                {
+                    Response.Redirect("~/PortalCliente/Views/frmTripulacion.aspx");
+                }
             }
             else if (path == Enums.EstadoCuenta)
             {
-                Response.Redirect("~/Views/frmEstadoCuenta.aspx");
+                if(url.Contains("localhost"))
+                {
+                    Response.Redirect("~/Views/frmEstadoCuenta.aspx");
+                }
+                else
+                {
+                    Response.Redirect("~/PortalCliente/Views/frmEstadoCuenta.aspx");
+                }
+                
             }
         }
 
