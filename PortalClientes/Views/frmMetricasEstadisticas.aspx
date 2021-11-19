@@ -559,7 +559,7 @@
 
     <script src='<%=ResolveUrl("~/vendors/jquery/dist/jquery.min.js")%>'></script>
     <script src='<%=ResolveUrl("~/vendors/jquery/dist/jquery.js")%>'></script>
-    <%--<script src='<%=ResolveUrl("~/build/js/GraficasJS/GraficasMeEsCostoHoraVuelo.js")%>'></script>--%>
+    <script src='<%=ResolveUrl("~/build/js/GraficasJS/GraficasMeEsCostoHoraVuelo.js")%>'></script>
     <script src='<%=ResolveUrl("~/build/js/GraficasJS/GraficasMeEsGastoTotal.js")%>'></script>
     <script src='<%=ResolveUrl("~/build/js/GraficasJS/GraficasMeEsCostoFijoVariable.js")%>'></script>
     <script src='<%=ResolveUrl("~/build/js/GraficasJS/GraficasMeEsPromedioPax.js")%>'></script>

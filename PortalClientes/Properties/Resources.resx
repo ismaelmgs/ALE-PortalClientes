@@ -882,4 +882,19 @@
   <data name="ME_PromedioPax" xml:space="preserve">
     <value>Promedio de Pasajeros</value>
   </data>
+  <data name="FiltroME_12M" xml:space="preserve">
+    <value>Últimos 12 Meses</value>
+  </data>
+  <data name="FiltroME_6M" xml:space="preserve">
+    <value>Últimos 6 Meses</value>
+  </data>
+  <data name="TabTran_NoCostos" xml:space="preserve">
+    <value>No. Costos</value>
+  </data>
+  <data name="TabTran_promedioPax" xml:space="preserve">
+    <value>Promedio Pasajeros</value>
+  </data>
+  <data name="TabTran_TotalCostos" xml:space="preserve">
+    <value>Total de Costos</value>
+  </data>
 </root>

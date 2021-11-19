@@ -35,6 +35,13 @@ namespace PortalClientes.Views
 
             //oPresenter = new Transacciones_Presenter(this, new DBTransacciones());
 
+            var tipo = Convert.ToInt32(Session["tipoTransaccion"]);
+            var od = Convert.ToInt32(Session["origenData"]);
+            var desc = (string)Session["descripcion"];
+
+            Session["title"] = generateTitle(true, tipo, desc);
+            Session["titleFile"] = generateTitle(false, tipo, desc);
+
             TextBox milabel = (TextBox)this.Master.FindControl("txtLang");
             if (milabel.Text != Utils.Idioma && milabel.Text != string.Empty)
             {
@@ -52,8 +59,8 @@ namespace PortalClientes.Views
             {
                 if (Session["data"] != null)
                 {
-                    var tipo = Convert.ToInt32(Session["tipoTransaccion"]);
-                    var od = Convert.ToInt32(Session["origenData"]);
+                    tipo = Convert.ToInt32(Session["tipoTransaccion"]);
+                    od = Convert.ToInt32(Session["origenData"]);
 
                     Transacciones transacciones = new Transacciones();
                     if (tipo == 1)
@@ -603,8 +610,8 @@ namespace PortalClientes.Views
             {
                 totalRegistros = transacciones.promedioPax.Count();
                 contMeses = transacciones.promedioPax.GroupBy(r => r.mes).Count();
-                totalTiempoVuelo = SumatoriaTiempos(transacciones.promedioPax.Select(x => x.tiempoVuelo).ToList(), 0, 1);//transacciones.vuelos.Sum(x => x.Total);
-                TiempoVueloProm = SumatoriaTiempos(transacciones.promedioPax.Select(x => x.tiempoVuelo).ToList(), totalRegistros, 2);
+                totalTiempoVuelo = (Math.Round((transacciones.promedioPax.Sum(x => x.cantPax) / totalRegistros),2)).S();//transacciones.vuelos.Sum(x => x.Total);
+                TiempoVueloProm = SumatoriaTiempos(transacciones.promedioPax.Select(x => x.tiempoVuelo).ToList(), totalRegistros, 1);
 
                 BoundField clm = new BoundField();
                 clm.DataField = "mes";
@@ -844,7 +851,7 @@ namespace PortalClientes.Views
                 gvGastos.DataBind();
 
                 lblTotalTrasnRes.Text = totalRegistros.S();
-                lblTotalRes.Text = totalTransacciones.ToString("C", CultureInfo.CreateSpecificCulture("es-MX"));
+                lblTotalRes.Text = totalTransacciones.ToString("C", CultureInfo.CreateSpecificCulture("es-MX")) + " MXN";
                 lblPromedioRes.Text = promedio.ToString("C", CultureInfo.CreateSpecificCulture("es-MX"));
             }
             else if (tipoTransaccion == 10)
@@ -883,7 +890,7 @@ namespace PortalClientes.Views
                 gvGastos.DataBind();
 
                 lblTotalTrasnRes.Text = totalRegistros.S();
-                lblTotalRes.Text = totalTransacciones.ToString("C", CultureInfo.CreateSpecificCulture("es-MX"));
+                lblTotalRes.Text = totalTransacciones.ToString("C", CultureInfo.CreateSpecificCulture("es-MX")) + " MXN";
                 lblPromedioRes.Text = promedio.ToString("C", CultureInfo.CreateSpecificCulture("es-MX"));
             }
             else if (tipoTransaccion == 11)
@@ -977,7 +984,7 @@ namespace PortalClientes.Views
             switch (transaccion)
             {
                 case 4:
-                    lblTransacciones.Text = Properties.Resources.TabTransacciones + " - " + Session["title"];
+                    lblTransacciones.Text = (string)Session["title"];
                     lblTitulo.Text = Properties.Resources.TabTransacciones;
 
                     lblTotalTrasn.Text = Properties.Resources.TabTran_NoVuelos;
@@ -985,15 +992,23 @@ namespace PortalClientes.Views
                     lblPromedio.Text = Properties.Resources.TabTran_PromedioVuelo;
                     break;
                 case 5:
-                    lblTransacciones.Text = Properties.Resources.TabTransacciones + " - " + Session["title"];
+                    lblTransacciones.Text = (string)Session["title"];
                     lblTitulo.Text = Properties.Resources.TabTransacciones;
 
                     lblTotalTrasn.Text = Properties.Resources.TabTran_NoVuelos;
-                    lblTotal.Text = Properties.Resources.TabTran_TiempoTotVuelo;
-                    lblPromedio.Text = Properties.Resources.TabTran_PromedioVuelo;
+                    lblTotal.Text = Properties.Resources.TabTran_promedioPax;
+                    lblPromedio.Text = Properties.Resources.TabTran_TiempoTotVuelo;
+                    break;
+                case 6:
+                    lblTransacciones.Text = (string)Session["title"];
+                    lblTitulo.Text = Properties.Resources.TabTransacciones;
+
+                    lblTotalTrasn.Text = Properties.Resources.TabTran_NoCostos;
+                    lblTotal.Text = Properties.Resources.TabTran_TotalCostos;
+                    lblPromedio.Text = Properties.Resources.TabTran_PromedioMens;
                     break;
                 case 7:
-                    lblTransacciones.Text = Properties.Resources.TabTransacciones + " - " + Session["title"];
+                    lblTransacciones.Text = (string)Session["title"];
                     lblTitulo.Text = Properties.Resources.TabTransacciones;
 
                     lblTotalTrasn.Text = Properties.Resources.TabTran_NoVuelos;
@@ -1001,7 +1016,15 @@ namespace PortalClientes.Views
                     lblPromedio.Text = Properties.Resources.TabTran_PromedioVuelo;
                     break;
                 case 8:
-                    lblTransacciones.Text = Properties.Resources.TabTransacciones + " - " + Session["title"];
+                    lblTransacciones.Text = (string)Session["title"];
+                    lblTitulo.Text = Properties.Resources.TabTransacciones;
+
+                    lblTotalTrasn.Text = Properties.Resources.TabTran_NoVuelos;
+                    lblTotal.Text = Properties.Resources.TabTran_TiempoTotVuelo;
+                    lblPromedio.Text = Properties.Resources.TabTran_PromedioVuelo;
+                    break;
+                case 10:
+                    lblTransacciones.Text = (string)Session["title"];
                     lblTitulo.Text = Properties.Resources.TabTransacciones;
 
                     lblTotalTrasn.Text = Properties.Resources.TabTran_NoVuelos;
@@ -1009,7 +1032,7 @@ namespace PortalClientes.Views
                     lblPromedio.Text = Properties.Resources.TabTran_PromedioVuelo;
                     break;
                 default:
-                    lblTransacciones.Text = Properties.Resources.TabTransacciones + " - " + Session["title"];
+                    lblTransacciones.Text = (string)Session["title"];
                     lblTitulo.Text = Properties.Resources.TabTransacciones;
 
                     lblTotalTrasn.Text = Properties.Resources.TabTran_NoGastos;
@@ -1170,7 +1193,7 @@ namespace PortalClientes.Views
                     pp.fechaOrigen = Convert.ToDateTime(item.origenVuelo).ToString("dd/MM/yyyy HH:mm");
                     pp.fechaDestino = Convert.ToDateTime(item.destinoVuelo).ToString("dd/MM/yyyy HH:mm");
                     pp.tiempoVuelo = item.tiempoVuelo;
-                    pp.cantPax = item.cantPax.S();
+                    pp.cantPax = item.cantPax;
                     pp.cliente = item.cliente;
                     pp.contrato = item.contrato;
 
@@ -1333,13 +1356,64 @@ namespace PortalClientes.Views
 
             HttpContext.Current.Session["origenData"] = origen;
             HttpContext.Current.Session["tipoTransaccion"] = tipoTrans;
-            HttpContext.Current.Session["title"] = descripcion + " - " + det;
-            HttpContext.Current.Session["titleFile"] = descripcion + "_" + det;
+            HttpContext.Current.Session["descripcion"] = descripcion;
+        }
+
+        private string generateTitle(bool tipo, int transaccion, string desc)
+        {
+            var title = "";
+
+            switch (transaccion)
+            {
+                case 1: title = Utils.Idioma == "es-MX" ? "Costos por Categoria" : "Expenses by Category";
+                    break;
+                case 2:
+                    title = Utils.Idioma == "es-MX" ? "Vuelos por Duracion" : "Flight Duration";
+                    break;
+                case 3:
+                    title = Utils.Idioma == "es-MX" ? "Gastos por Proveedor" : "Expenses by Vendor";
+                    break;
+                case 4:
+                    title = Utils.Idioma == "es-MX" ? "Vuelos por Duracion" : "Flight Duration";
+                    break;
+                case 5:
+                    title = Utils.Idioma == "es-MX" ? "Promedio Pasajeros" : "Average Passengers";
+                    break;
+                case 6:
+                    title = Utils.Idioma == "es-MX" ? "Promedio Costo" : "Average Cost";
+                    break;
+                case 7:
+                    title = Utils.Idioma == "es-MX" ? "Horas Voladas" : "Flight Hours";
+                    break;
+                case 8:
+                    title = Utils.Idioma == "es-MX" ? "No. de Vuelos" : "No. of Flights";
+                    break;
+                case 9:
+                    title = Utils.Idioma == "es-MX" ? "Costo Fijo y Variable" : "Fixed and Variable Cost";
+                    break;
+                case 10:
+                    title = Utils.Idioma == "es-MX" ? "Gastos Totales" : "Total Expenses";
+                    break;
+                case 11:
+                    title = Utils.Idioma == "es-MX" ? "Costo por Hora de Vuelo" : "Cost per Flight Hour";
+                    break;
+            }
+
+            if (tipo)
+            {
+                title += " - " + desc + " - " + Utils.MatriculaActual;
+            }
+            else
+            {
+                title += "_" + desc + "_" + Utils.MatriculaActual;
+            }
+
+            return title;
         }
 
         private void exportarExcel()
         {
-            var nameFile = "Transacciones_" + (string)Session["titleFile"] + ".xls";
+            var nameFile = (string)Session["titleFile"] + ".xls";
             Response.Clear();
             Response.Buffer = true;
             Response.AddHeader("content-disposition", string.Format("attachment;filename={0}", nameFile));
@@ -1454,7 +1528,7 @@ namespace PortalClientes.Views
 
         private void exportarPDF()
         {
-            var nameFile = "Transacciones_" + (string)Session["titleFile"] + ".pdf";
+            var nameFile = (string)Session["titleFile"] + ".pdf";
             Response.Clear();
             Response.Buffer = true;
             Response.AddHeader("content-disposition", string.Format("attachment;filename={0}", nameFile));

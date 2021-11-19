@@ -97,11 +97,14 @@ function chartsGT(dataGT, ChartType) {
         dataGT_.addColumn('number', jsonDataGT[0].idioma == "es-MX" ? "Gastos" : "Expense Total");
         dataGT_.addColumn({ type: 'string', role: 'tooltip' });
 
+        const opt = { style: 'currency', currency: 'MXN' };
+        var numberFormat = new Intl.NumberFormat('es-MX', opt);
+
         jsonDataGT.forEach((item, index) => {
             if (jsonDataGT[0].idioma == "es-MX") {
-                dataGT_.addRows([[item.nombreESP, item.noGastos, `Total de Gastos ${item.noGastos} en ${item.nombreESP }`,]]);
+                dataGT_.addRows([[item.nombreESP, item.total, `Total de Gastos ${ numberFormat.format(item.total)} en ${item.nombreESP }`,]]);
             } else {
-                dataGT_.addRows([[item.nombreENG, item.noGastos, `Total Expenses ${item.noGastos} in ${item.nombreENG }`,]]);
+                dataGT_.addRows([[item.nombreENG, item.total, `Total Expenses ${ numberFormat.format(item.total)} in ${item.nombreENG }`,]]);
             }
         });
 

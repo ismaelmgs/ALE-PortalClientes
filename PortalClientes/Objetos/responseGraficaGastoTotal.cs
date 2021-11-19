@@ -11,7 +11,7 @@ namespace PortalClientes.Objetos
         public int mes { get; set; }
         public string nombreESP { get; set; }
         public string nombreENG { get; set; }
-        public float importe { get; set; }
+        public float total { get; set; }
         public int noGastos { get; set; }
         public string idioma { get; set; }
         public List<gastot> gastos { get; set; }

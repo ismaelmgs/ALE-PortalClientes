@@ -62,7 +62,7 @@ function chartsCH(dataCH, ChartType) {
     var c = ChartType;
     var jsonDataCH = dataCH;
 
-    if (jsonDataCH.lenCHh > 0) {
+    if (jsonDataCH.length > 0) {
         google.charts.load("current", { packages: ["corechart"] });
         google.charts.setOnLoadCallback(drawVisualizationCH)
     }
@@ -163,7 +163,7 @@ function chartsCH(dataCH, ChartType) {
                     costosFV,
                     gastosT,
                     costoH,
-                    tipoTrans: 10,
+                    tipoTrans: 11,
                     tipoDet: "MXN",
                     descES: array.nombreESP,
                     descEN: array.nombreENG,

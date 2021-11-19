@@ -988,6 +988,15 @@ namespace PortalClientes.Properties {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Últimos 12 Meses.
+        /// </summary>
+        internal static string FiltroME_12M {
+            get {
+                return ResourceManager.GetString("FiltroME_12M", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Último Mes.
         /// </summary>
         internal static string FiltroME_1M {
@@ -1011,6 +1020,15 @@ namespace PortalClientes.Properties {
         internal static string FiltroME_3M {
             get {
                 return ResourceManager.GetString("FiltroME_3M", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Últimos 6 Meses.
+        /// </summary>
+        internal static string FiltroME_6M {
+            get {
+                return ResourceManager.GetString("FiltroME_6M", resourceCulture);
             }
         }
         
@@ -1951,6 +1969,15 @@ namespace PortalClientes.Properties {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a No. Costos.
+        /// </summary>
+        internal static string TabTran_NoCostos {
+            get {
+                return ResourceManager.GetString("TabTran_NoCostos", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a No. de Gastos.
         /// </summary>
         internal static string TabTran_NoGastos {
@@ -1992,6 +2019,15 @@ namespace PortalClientes.Properties {
         internal static string TabTran_PromedioMens {
             get {
                 return ResourceManager.GetString("TabTran_PromedioMens", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Promedio Pasajeros.
+        /// </summary>
+        internal static string TabTran_promedioPax {
+            get {
+                return ResourceManager.GetString("TabTran_promedioPax", resourceCulture);
             }
         }
         
@@ -2046,6 +2082,15 @@ namespace PortalClientes.Properties {
         internal static string TabTran_Total {
             get {
                 return ResourceManager.GetString("TabTran_Total", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Total de Costos.
+        /// </summary>
+        internal static string TabTran_TotalCostos {
+            get {
+                return ResourceManager.GetString("TabTran_TotalCostos", resourceCulture);
             }
         }
         

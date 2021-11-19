@@ -882,4 +882,22 @@
   <data name="ME_PromedioPax" xml:space="preserve">
     <value>Average Passengers</value>
   </data>
+  <data name="FiltroME_12M" xml:space="preserve">
+    <value>Last 12 Months</value>
+  </data>
+  <data name="FiltroME_6M" xml:space="preserve">
+    <value>Last 6 Months</value>
+  </data>
+  <data name="String1" xml:space="preserve">
+    <value />
+  </data>
+  <data name="TabTran_NoCostos" xml:space="preserve">
+    <value>No. Costs</value>
+  </data>
+  <data name="TabTran_promedioPax" xml:space="preserve">
+    <value>Average Passengers</value>
+  </data>
+  <data name="TabTran_TotalCostos" xml:space="preserve">
+    <value>Total Costs</value>
+  </data>
 </root>

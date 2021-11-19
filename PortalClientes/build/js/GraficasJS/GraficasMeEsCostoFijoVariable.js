@@ -107,9 +107,6 @@ function chartsFV(dataFV, ChartType) {
 
         var optionsFV = {
             title: jsonDataFV[0].idioma == "es-MX" ? "Costo Fijo y Variable" : "Fixed and Variable Cost",
-            bar: {
-                groupWidth: "60%",
-            },
             fontSize: 9,
             chartArea: {
                 left: screenWidth > 500 ? 30 : 10,
@@ -129,7 +126,7 @@ function chartsFV(dataFV, ChartType) {
             colors: ['#3276ae', '#6aabc0', '#cf575e', '#eb924f', '#f6c543', '#d578a9', '#9889d1', '#89d193']
         };
 
-        var chartFV = new google.visualization.ColumnChart(document.getElementById('piechart_3d_7'));
+        var chartFV = new google.visualization.PieChart(document.getElementById('piechart_3d_7'));
         chartFV.draw(dataFV_, optionsFV);
 
         google.visualization.events.addListener(chartFV, 'select', function () {

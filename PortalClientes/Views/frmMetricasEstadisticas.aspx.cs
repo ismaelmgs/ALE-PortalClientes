@@ -222,10 +222,9 @@ namespace PortalClientes.Views
             var v4 = DDFiltroMesesHV.SelectedValue;
             // llenar dropdown filtro
             DDFiltroMesesHV.Items.Clear();
-            DDFiltroMesesHV.Items.Add(new ListItem(Properties.Resources.FiltroME_MA, "0"));
-            DDFiltroMesesHV.Items.Add(new ListItem(Properties.Resources.FiltroME_1M, "1"));
-            DDFiltroMesesHV.Items.Add(new ListItem(Properties.Resources.FiltroME_2M, "2"));
             DDFiltroMesesHV.Items.Add(new ListItem(Properties.Resources.FiltroME_3M, "3"));
+            DDFiltroMesesHV.Items.Add(new ListItem(Properties.Resources.FiltroME_6M, "6"));
+            DDFiltroMesesHV.Items.Add(new ListItem(Properties.Resources.FiltroME_12M, "9"));
 
             if (v4 == "")
             {
@@ -239,10 +238,9 @@ namespace PortalClientes.Views
             var v5 = DDFiltroMesesNV.SelectedValue;
             // llenar dropdown filtro
             DDFiltroMesesNV.Items.Clear();
-            DDFiltroMesesNV.Items.Add(new ListItem(Properties.Resources.FiltroME_MA, "0"));
-            DDFiltroMesesNV.Items.Add(new ListItem(Properties.Resources.FiltroME_1M, "1"));
-            DDFiltroMesesNV.Items.Add(new ListItem(Properties.Resources.FiltroME_2M, "2"));
             DDFiltroMesesNV.Items.Add(new ListItem(Properties.Resources.FiltroME_3M, "3"));
+            DDFiltroMesesNV.Items.Add(new ListItem(Properties.Resources.FiltroME_6M, "6"));
+            DDFiltroMesesNV.Items.Add(new ListItem(Properties.Resources.FiltroME_12M, "9"));
 
             if (v5 == "")
             {
@@ -256,10 +254,9 @@ namespace PortalClientes.Views
             var v6= DDFiltroMesesPC.SelectedValue;
             // llenar dropdown filtro
             DDFiltroMesesPC.Items.Clear();
-            DDFiltroMesesPC.Items.Add(new ListItem(Properties.Resources.FiltroME_MA, "0"));
-            DDFiltroMesesPC.Items.Add(new ListItem(Properties.Resources.FiltroME_1M, "1"));
-            DDFiltroMesesPC.Items.Add(new ListItem(Properties.Resources.FiltroME_2M, "2"));
             DDFiltroMesesPC.Items.Add(new ListItem(Properties.Resources.FiltroME_3M, "3"));
+            DDFiltroMesesPC.Items.Add(new ListItem(Properties.Resources.FiltroME_6M, "6"));
+            DDFiltroMesesPC.Items.Add(new ListItem(Properties.Resources.FiltroME_12M, "9"));
 
             if (v6 == "")
             {
@@ -273,10 +270,9 @@ namespace PortalClientes.Views
             var v7 = DDFiltroMesesPP.SelectedValue;
             // llenar dropdown filtro
             DDFiltroMesesPP.Items.Clear();
-            DDFiltroMesesPP.Items.Add(new ListItem(Properties.Resources.FiltroME_MA, "0"));
-            DDFiltroMesesPP.Items.Add(new ListItem(Properties.Resources.FiltroME_1M, "1"));
-            DDFiltroMesesPP.Items.Add(new ListItem(Properties.Resources.FiltroME_2M, "2"));
             DDFiltroMesesPP.Items.Add(new ListItem(Properties.Resources.FiltroME_3M, "3"));
+            DDFiltroMesesPP.Items.Add(new ListItem(Properties.Resources.FiltroME_6M, "6"));
+            DDFiltroMesesPP.Items.Add(new ListItem(Properties.Resources.FiltroME_12M, "9"));
 
             if (v7 == "")
             {
@@ -307,14 +303,13 @@ namespace PortalClientes.Views
             var v9 = DDFiltroMesesGT.SelectedValue;
             // llenar dropdown filtro
             DDFiltroMesesGT.Items.Clear();
-            DDFiltroMesesGT.Items.Add(new ListItem(Properties.Resources.FiltroME_MA, "0"));
-            DDFiltroMesesGT.Items.Add(new ListItem(Properties.Resources.FiltroME_1M, "1"));
-            DDFiltroMesesGT.Items.Add(new ListItem(Properties.Resources.FiltroME_2M, "2"));
             DDFiltroMesesGT.Items.Add(new ListItem(Properties.Resources.FiltroME_3M, "3"));
+            DDFiltroMesesGT.Items.Add(new ListItem(Properties.Resources.FiltroME_6M, "6"));
+            DDFiltroMesesGT.Items.Add(new ListItem(Properties.Resources.FiltroME_12M, "9"));
 
             if (v9 == "")
             {
-                DDFiltroMesesGT.SelectedIndex = 1;
+                DDFiltroMesesGT.SelectedIndex = 0;
             }
             else
             {
