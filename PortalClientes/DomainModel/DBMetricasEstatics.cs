@@ -412,6 +412,42 @@ namespace PortalClientes.DomainModel
 
         }
 
+        public List<responseGraficaCostoFijoVariableHora> obtenerCostoFijoVariableHora(FiltroGrafica filtro)
+        {
+            try
+            {
+                JavaScriptSerializer ser = new JavaScriptSerializer();
+                ser.MaxJsonLength = 500000000;
+                List<responseGraficaCostoFijoVariableHora> d = new List<responseGraficaCostoFijoVariableHora>();
+                FiltroGrafica oLog = new FiltroGrafica();
+                oLog = filtro;
+                oLog.matricula = Utils.MatriculaActual;
+
+                oLog.matricula = "XA-FLC";
+                oLog.meses = "12";
+
+                TokenWS oToken = Utils.ObtieneToken;
+
+                var client = new RestClient(Helper.D_UrlObtieneCostoFijoVariableHora);
+                var request = new RestRequest(Method.POST);
+                request.AddHeader("Authorization", oToken.token);
+                request.AddJsonBody(oLog);
+
+                IRestResponse response = client.Execute(request);
+                var resp = response.Content;
+
+                d = ser.Deserialize<List<responseGraficaCostoFijoVariableHora>>(resp);
+
+                return d;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+
+        }
+
         public DatosMetricas DBGetMetricasEstadisticas(string sMatricula, int iMeses)
         {
             try
