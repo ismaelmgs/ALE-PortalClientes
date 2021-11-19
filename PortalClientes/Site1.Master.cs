@@ -292,7 +292,7 @@ namespace PortalClientes
                 }
                 else
                 {
-                    Response.Redirect("http://192.168.1.250/PortalClientes/Views/frmDashboard.aspx");
+                    Response.Redirect("~/frmDashboard.aspx");
                 }
                 
             }
@@ -304,7 +304,7 @@ namespace PortalClientes
                 }
                 else
                 {
-                    Response.Redirect("http://192.168.1.250/PortalClientes/Views/frmTuAeronave.aspx");
+                    Response.Redirect("~/frmTuAeronave.aspx");
                 }
             }
             else if (path == Enums.Tripulacion)
@@ -315,7 +315,7 @@ namespace PortalClientes
                 }
                 else
                 {
-                    Response.Redirect("http://192.168.1.250/PortalClientes/Views/frmTripulacion.aspx");
+                    Response.Redirect("~/frmTripulacion.aspx");
                 }
             }
             else if (path == Enums.EstadoCuenta)
@@ -326,7 +326,7 @@ namespace PortalClientes
                 }
                 else
                 {
-                    Response.Redirect("http://192.168.1.250/PortalClientes/Views/frmEstadoCuenta.aspx");
+                    Response.Redirect("~/frmEstadoCuenta.aspx");
                 }
                 
             }
