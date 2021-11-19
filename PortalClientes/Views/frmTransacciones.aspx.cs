@@ -1170,7 +1170,7 @@ namespace PortalClientes.Views
                     pp.fechaOrigen = Convert.ToDateTime(item.origenVuelo).ToString("dd/MM/yyyy HH:mm");
                     pp.fechaDestino = Convert.ToDateTime(item.destinoVuelo).ToString("dd/MM/yyyy HH:mm");
                     pp.tiempoVuelo = item.tiempoVuelo;
-                    pp.cantPax = item.cantPax.S();
+                    pp.cantPax = item.cantPax;
                     pp.cliente = item.cliente;
                     pp.contrato = item.contrato;
 
