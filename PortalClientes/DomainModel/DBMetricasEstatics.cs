@@ -412,19 +412,20 @@ namespace PortalClientes.DomainModel
 
         }
 
-        public List<responseGraficaCostoFijoVariableHora> obtenerCostoFijoVariableHora(FiltroGrafica filtro)
+        public List<responseGraficaCostoFijoVariableHora> obtenerCostoFijoVariableHora(FiltroGraficaFV filtro)
         {
             try
             {
                 JavaScriptSerializer ser = new JavaScriptSerializer();
                 ser.MaxJsonLength = 500000000;
                 List<responseGraficaCostoFijoVariableHora> d = new List<responseGraficaCostoFijoVariableHora>();
-                FiltroGrafica oLog = new FiltroGrafica();
+                FiltroGraficaFV oLog = new FiltroGraficaFV();
                 oLog = filtro;
                 oLog.matricula = Utils.MatriculaActual;
+                oLog.idioma = Utils.Idioma;
 
-                oLog.matricula = "XA-FLC";
-                oLog.meses = "12";
+                oLog.matricula = "XA-CHY";
+                oLog.meses = "3";
 
                 TokenWS oToken = Utils.ObtieneToken;
 

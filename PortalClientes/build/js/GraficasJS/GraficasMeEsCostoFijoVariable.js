@@ -99,9 +99,9 @@ function chartsFV(dataFV, ChartType) {
 
         jsonDataFV.forEach((item, index) => {
             if (jsonDataFV[0].idioma == "es-MX") {
-                dataFV_.addRows([[item.categoria, item.noGastos, `Total de Costos ${ item.noGastos } por ${ item.categoria }`,]]);
+                dataFV_.addRows([[item.categoria, item.noGastos, `Total de Movimientos ${ item.noGastos } por ${ item.categoria }`,]]);
             } else {
-                dataFV_.addRows([[item.categoria, item.noGastos, `Total costs ${ item.noGastos } by ${ item.categoria }`,]]);
+                dataFV_.addRows([[item.categoria, item.noGastos, `Total Movements ${ item.noGastos } by ${ item.categoria }`,]]);
             }
         });
 
@@ -147,6 +147,7 @@ function chartsFV(dataFV, ChartType) {
                 let paxs = []
                 let gastosT = []
                 let costoH = []
+                let costosFVH = []
 
                 let obj = JSON.stringify({
                     vuelos,
@@ -160,6 +161,7 @@ function chartsFV(dataFV, ChartType) {
                     costosFV,
                     gastosT,
                     costoH,
+                    costosFVH,
                     tipoTrans: 9,
                     tipoDet: "MXN",
                     descES: array.categoria,

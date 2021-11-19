@@ -147,9 +147,10 @@ function chartsPP(dataPP, ChartType) {
                 let costos = []
                 let horasV = []
                 let novuelos = []
-                let costosFV = []
                 let gastosT = []
                 let costoH = []
+                let costosFV = []
+                let costosFVH = []
 
                 let obj = JSON.stringify({
                     vuelos,
@@ -163,6 +164,7 @@ function chartsPP(dataPP, ChartType) {
                     costosFV,
                     gastosT,
                     costoH,
+                    costosFVH,
                     tipoTrans: 5,
                     tipoDet: "MXN",
                     descES: array.nombreESP,

@@ -151,8 +151,9 @@ function chartsGT(dataGT, ChartType) {
                 let horasV = []
                 let novuelos = []
                 let paxs = []
-                let costosFV = []
                 let costoH = []
+                let costosFV = []
+                let costosFVH = []
 
                 let obj = JSON.stringify({
                     vuelos,
@@ -166,6 +167,7 @@ function chartsGT(dataGT, ChartType) {
                     costosFV,
                     gastosT,
                     costoH,
+                    costosFVH,
                     tipoTrans: 10,
                     tipoDet: "MXN",
                     descES: array.nombreESP,
