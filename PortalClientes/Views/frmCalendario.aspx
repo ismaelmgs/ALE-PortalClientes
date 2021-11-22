@@ -9,19 +9,7 @@
     <script type="text/javascript" src="../build/js/scheduler.js?n=1"></script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <dx:ASPxLoadingPanel ID="loadingpanel" runat="server" ClientInstanceName="lPanel" 
-        Text=" " ShowImage="false"
-        ImagePosition="Top"
-        BackgroundImage-Repeat="NoRepeat"
-        Border-BorderStyle="None"
-        BackColor="Transparent"
-        BackgroundImage-ImageUrl="~/Images/loading.gif"
-        Image-Width="100"
-        Image-Height="100"
-        Height="200"
-        Width="200"
-        Modal="true">
-    </dx:ASPxLoadingPanel>
+   
     <div class="row">
         <div class="col-md-12 col-sm-12">
             <div class="x_panel">

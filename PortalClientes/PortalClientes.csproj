@@ -229,6 +229,7 @@
     <Content Include="build\images\visa.png" />
     <Content Include="build\js\custom.js" />
     <Content Include="build\js\custom.min.js" />
+    <Content Include="build\js\dataLoading.js" />
     <Content Include="build\js\datepicker\daterangepicker.js" />
     <Content Include="build\js\GraficasJS\GraficasMeEsCostoFijoVariableHora.js" />
     <Content Include="build\js\GraficasJS\GraficasMeEsCostoHoraVuelo.js" />

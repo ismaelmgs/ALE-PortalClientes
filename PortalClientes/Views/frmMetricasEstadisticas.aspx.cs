@@ -41,6 +41,7 @@ namespace PortalClientes.Views
 
             if (!IsPostBack)
             {
+                ScriptManager.RegisterStartupScript(this.Page, this.GetType(), Guid.NewGuid().ToString(), "openLoading();", true);
                 LlenarMetricasEstadisticas();
             }
         }
@@ -348,6 +349,8 @@ namespace PortalClientes.Views
             {
                 DDFiltroMesesPP.SelectedValue = v11;
             }
+
+            ScriptManager.RegisterStartupScript(this.Page, this.GetType(), Guid.NewGuid().ToString(), "closeLoading();", true);
         }
 
         public void GeneraRepResumen(int iTipoReporte)

@@ -37,6 +37,7 @@ namespace PortalClientes.Views
             if (!IsPostBack)
             {
                 LLenarTuAeronave();
+                ScriptManager.RegisterStartupScript(this.Page, this.GetType(), Guid.NewGuid().ToString(), "openLoading();", true);
             }
         }
 
@@ -237,6 +238,8 @@ namespace PortalClientes.Views
             }
 
             carouselExampleIndicators.InnerHtml = sHtml;
+
+            ScriptManager.RegisterStartupScript(this.Page, this.GetType(), Guid.NewGuid().ToString(), "closeLoading();", true);
         }
 
         private void ArmaFormulario()

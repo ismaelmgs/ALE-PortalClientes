@@ -42,6 +42,7 @@ namespace PortalClientes.Views
             {
                 LlenarTripulacion();
                 settabHome();
+                ScriptManager.RegisterStartupScript(this.Page, this.GetType(), Guid.NewGuid().ToString(), "openLoading();", true);
             }
         }
 
@@ -190,6 +191,8 @@ namespace PortalClientes.Views
         {
             if (eSearchObj != null)
                 eSearchObj(null, EventArgs.Empty);
+
+            ScriptManager.RegisterStartupScript(this.Page, this.GetType(), Guid.NewGuid().ToString(), "closeLoading();", true);
         }
 
         private void ArmarTripulacion()

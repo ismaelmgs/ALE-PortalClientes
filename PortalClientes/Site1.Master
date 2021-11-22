@@ -1,6 +1,7 @@
 ﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site1.master.cs" Inherits="PortalClientes.Site1" %>
 
 <%@ Register Assembly="DevExpress.Web.Bootstrap.v18.1, Version=18.1.15.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Namespace="DevExpress.Web.Bootstrap" TagPrefix="dx" %>
+<%@ Register TagPrefix="dx" Namespace="DevExpress.Web" Assembly="DevExpress.Web.v18.1, Version=18.1.15.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" %>
 
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="cc1" %>
 
@@ -75,6 +76,19 @@
 </head>
 <body class="nav-md">
 <form id="form1" runat="server">
+     <dx:ASPxLoadingPanel ID="loadingpanel" runat="server" ClientInstanceName="lPanel" 
+        Text=" " ShowImage="false"
+        ImagePosition="Top"
+        BackgroundImage-Repeat="NoRepeat"
+        Border-BorderStyle="None"
+        BackColor="Transparent"
+        BackgroundImage-ImageUrl="~/Images/loading.gif"
+        Image-Width="100"
+        Image-Height="100"
+        Height="200"
+        Width="200"
+        Modal="true">
+    </dx:ASPxLoadingPanel>
     <div class="container body" id="ventana">
         <div class="main_container">
             <div class="col-md-3 left_col">
@@ -315,6 +329,7 @@
 
     <!-- Custom Theme Scripts -->
     <script src='<%=ResolveUrl("~/build/js/custom.min.js")%>'></script>
+     <script src='<%=ResolveUrl("~/build/js/dataLoading.js")%>'></script>
     <script>
         var elem = document.getElementById("ventana");
         function openFullscreen() {

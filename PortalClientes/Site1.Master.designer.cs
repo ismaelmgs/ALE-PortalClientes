@@ -31,6 +31,15 @@ namespace PortalClientes {
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
+        /// Control loadingpanel.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::DevExpress.Web.ASPxLoadingPanel loadingpanel;
+        
+        /// <summary>
         /// Control lblAeronaveLat.
         /// </summary>
         /// <remarks>

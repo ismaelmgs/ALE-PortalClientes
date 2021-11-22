@@ -60,10 +60,12 @@ namespace PortalClientes.Views
 
             if (!IsPostBack)
             {
+                ScriptManager.RegisterStartupScript(this.Page, this.GetType(), Guid.NewGuid().ToString(), "openLoading();", true);
                 LlenaGrid();
             }
             else
             {
+                ScriptManager.RegisterStartupScript(this.Page, this.GetType(), Guid.NewGuid().ToString(), "openLoading();", true);
                 LlenaGridLocal();
             }
         }
@@ -410,6 +412,7 @@ namespace PortalClientes.Views
         {
             gvUsuarios.DataSource = oLstUsers;
             gvUsuarios.DataBind();
+            ScriptManager.RegisterStartupScript(this.Page, this.GetType(), Guid.NewGuid().ToString(), "closeLoading();", true);
         }
 
         public void CargaUsuarios(List<Usuario> oLst)
@@ -423,6 +426,7 @@ namespace PortalClientes.Views
 
             gvUsuarios.DataSource = oLstUsers;
             gvUsuarios.DataBind();
+            ScriptManager.RegisterStartupScript(this.Page, this.GetType(), Guid.NewGuid().ToString(), "closeLoading();", true);
         }
 
         public bool EsValidoFormulario()
