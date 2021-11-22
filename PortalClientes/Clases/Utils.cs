@@ -9,6 +9,7 @@ using Newtonsoft.Json;
 using System.Web.Script.Serialization;
 using System.Data;
 using System.ComponentModel;
+using System.IO;
 
 namespace PortalClientes.Clases
 {
@@ -154,6 +155,35 @@ namespace PortalClientes.Clases
             }
 
             return table;
+        }
+
+        public static void GuardarBitacora(string sMensaje)
+        {
+            try
+            {
+                string lsCarpeta = @"c:/Bitacoras/"; //Path.GetDirectoryName(System.Reflection.Assembly.GetEntryAssembly().Location) + "\\BitacorasApp\\";
+                string lsArchivo = "Bitacora_" + DateTime.Now.ToString("yyyy_MM_dd") + ".txt";
+
+                //valida si ya existe la carpeta o no
+                if (!Directory.Exists(lsCarpeta))
+                    Directory.CreateDirectory(lsCarpeta);
+
+                lsArchivo = lsCarpeta + lsArchivo;
+
+                //valida si existe el archivo
+                if (!File.Exists(lsArchivo))
+                    File.CreateText(lsArchivo).Close();
+
+                StreamWriter loSW = File.AppendText(lsArchivo);
+
+                loSW.WriteLine(DateTime.Now.ToString("HH:mm:ss") + " - " + sMensaje);
+
+                loSW.Close();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
 
     }
