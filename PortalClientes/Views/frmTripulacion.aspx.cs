@@ -40,14 +40,15 @@ namespace PortalClientes.Views
 
             if (!IsPostBack)
             {
+                ScriptManager.RegisterStartupScript(this.Page, this.GetType(), Guid.NewGuid().ToString(), "openLoading();", true);
                 LlenarTripulacion();
                 settabHome();
-                ScriptManager.RegisterStartupScript(this.Page, this.GetType(), Guid.NewGuid().ToString(), "openLoading();", true);
             }
         }
 
         protected void gvEventos_PageIndexChanging(object sender, GridViewPageEventArgs e)
         {
+            ScriptManager.RegisterStartupScript(this.Page, this.GetType(), Guid.NewGuid().ToString(), "openLoading();", true);
             gvEventos.PageIndex = e.NewPageIndex;
             LlenaGridEventosLocal();
             settabHome();
@@ -94,6 +95,7 @@ namespace PortalClientes.Views
 
         protected void gvPilotos_PageIndexChanging(object sender, GridViewPageEventArgs e)
         {
+            ScriptManager.RegisterStartupScript(this.Page, this.GetType(), Guid.NewGuid().ToString(), "openLoading();", true);
             gvPilotos.PageIndex = e.NewPageIndex;
             LlenaGridPilotosLocal();
             settabProfile();
@@ -393,6 +395,7 @@ namespace PortalClientes.Views
 
             profile.Attributes.Add("class", "tab-pane fade");
             home.Attributes.Add("class", "tab-pane fade show active");
+            ScriptManager.RegisterStartupScript(this.Page, this.GetType(), Guid.NewGuid().ToString(), "closeLoading();", true);
         }
 
         public void settabProfile()
@@ -402,6 +405,7 @@ namespace PortalClientes.Views
 
             home.Attributes.Add("class", "tab-pane fade");
             profile.Attributes.Add("class", "tab-pane fade show active");
+            ScriptManager.RegisterStartupScript(this.Page, this.GetType(), Guid.NewGuid().ToString(), "closeLoading();", true);
         }
 
         #endregion
