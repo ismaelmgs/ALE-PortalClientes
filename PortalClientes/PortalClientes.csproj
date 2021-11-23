@@ -225,6 +225,10 @@
     <Content Include="build\images\prod-4.jpg" />
     <Content Include="build\images\prod-5.jpg" />
     <Content Include="build\images\resumen_gatos.png" />
+    <Content Include="build\images\sesion.jpg" />
+    <Content Include="build\images\sesion_us.jpg" />
+    <Content Include="build\images\sinconexion.jpg" />
+    <Content Include="build\images\sinconexion_us.jpg" />
     <Content Include="build\images\user.png" />
     <Content Include="build\images\visa.png" />
     <Content Include="build\js\custom.js" />
@@ -1543,7 +1547,9 @@
     <Content Include="vendors\validator\validator.js" />
     <Content Include="Views\frmCalendario.aspx" />
     <Content Include="Views\frmDashboard.aspx" />
+    <Content Include="Views\frmErrorconexion.aspx" />
     <Content Include="Views\frmEstadoCuenta.aspx" />
+    <Content Include="Views\frmFinconexion.aspx" />
     <Content Include="Views\frmLegal.aspx" />
     <Content Include="Views\frmMantenimientos.aspx" />
     <Content Include="Views\frmMetricasEstadisticas.aspx" />
@@ -1726,12 +1732,26 @@
     <Compile Include="Views\frmDashboard.aspx.designer.cs">
       <DependentUpon>frmDashboard.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Views\frmErrorconexion.aspx.cs">
+      <DependentUpon>frmErrorconexion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\frmErrorconexion.aspx.designer.cs">
+      <DependentUpon>frmErrorconexion.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Views\frmEstadoCuenta.aspx.cs">
       <DependentUpon>frmEstadoCuenta.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Views\frmEstadoCuenta.aspx.designer.cs">
       <DependentUpon>frmEstadoCuenta.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\frmFinconexion.aspx.cs">
+      <DependentUpon>frmFinconexion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\frmFinconexion.aspx.designer.cs">
+      <DependentUpon>frmFinconexion.aspx</DependentUpon>
     </Compile>
     <Compile Include="Views\frmLegal.aspx.cs">
       <DependentUpon>frmLegal.aspx</DependentUpon>
