@@ -918,4 +918,7 @@
   <data name="TabTran_CostoHV" xml:space="preserve">
     <value>Costo Hora Vuelo</value>
   </data>
+  <data name="TabPilTri_Estatus" xml:space="preserve">
+    <value>Estatus</value>
+  </data>
 </root>

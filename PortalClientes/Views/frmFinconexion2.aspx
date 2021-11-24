@@ -62,6 +62,7 @@
         <div style="text-align:center; width:100%;">
             <p>© 2021 All Rights Reserved. Aerolíneas Ejecutivas.</p>
         </div>
+        <script src='<%=ResolveUrl("~/build/js/dataLoading.js")%>'></script>
     </form>
 </body>
 </html>

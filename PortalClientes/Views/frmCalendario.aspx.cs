@@ -25,7 +25,7 @@ namespace PortalClientes.Views
         {
             if (System.Web.HttpContext.Current.Session["UserIdentity"] == null)
             {
-                Response.Redirect("~/Views/frmFinconexion.aspx");
+                Response.Redirect("~/Views/frmFinconexion2.aspx");
             }
 
             TextBox milabel = (TextBox)this.Master.FindControl("txtLang");

@@ -1816,6 +1816,15 @@ namespace PortalClientes.Properties {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Estatus.
+        /// </summary>
+        internal static string TabPilTri_Estatus {
+            get {
+                return ResourceManager.GetString("TabPilTri_Estatus", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Expiración Visa.
         /// </summary>
         internal static string TabPilTri_ExpVisa {

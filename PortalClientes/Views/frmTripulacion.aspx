@@ -112,15 +112,16 @@
                                                             OnPageIndexChanging="gvPilotos_PageIndexChanging" OnRowDataBound="gvPilotos_RowDataBound" EmptyDataText="No Registros">
                                                             <Columns>
                                                                 <asp:BoundField DataField="codigoPiloto" />
-                                                                <asp:BoundField DataField="piloto" />
-                                                                <asp:BoundField DataField="licenciaVuelo" />
-                                                                <asp:BoundField DataField="tipoLicencia" />
+                                                                <asp:BoundField DataField="nombre" />
+                                                                <asp:BoundField DataField="tipoDocumentoEsp" />
+                                                                <asp:BoundField DataField="tipoDocumentoEng" />
+                                                                <asp:BoundField DataField="tipo" />
+                                                                <asp:BoundField DataField="numero" />
+                                                                <asp:BoundField DataField="fechaExpiracion" />
                                                                 <asp:BoundField DataField="lugarTrabajo" />
-                                                                <asp:BoundField DataField="noVisa" />
-                                                                <asp:BoundField DataField="fechaExpiraVisa" />
-                                                                <asp:BoundField DataField="paisVisa" />
-                                                                <asp:BoundField DataField="noPassport" />
-                                                                <asp:BoundField DataField="fechaExpiraPass" />
+                                                                <asp:BoundField DataField="pais" />
+                                                                <asp:BoundField DataField="estatusEsp" />
+                                                                <asp:BoundField DataField="estatusEng" />
                                                             </Columns>
                                                         </asp:GridView>
                                                     </div>

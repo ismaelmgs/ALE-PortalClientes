@@ -9,17 +9,16 @@ namespace PortalClientes.Objetos
     public class Piloto
     {
         public string codigoPiloto { get; set; }
-        public string piloto { get; set; }
-        public string licenciaVuelo { get; set; }
-        public string tipoLicencia { get; set; }
-        public DateTime expiraLicencia { get; set; }
+        public string nombre { get; set; }
+        public string tipoDocumentoEsp { get; set; }
+        public string tipoDocumentoEng { get; set; }
+        public string tipo { get; set; }
+        public string numero { get; set; }
+        public string fechaExpiracion { get; set; }
         public string lugarTrabajo { get; set; }
-        public string noVisa { get; set; }
-        public DateTime fechaExpiraVisa { get; set; }
-        public string paisVisa { get; set; }
-        public string noPassport { get; set; }
-        public DateTime fechaExpiraPass { get; set; }
         public string pais { get; set; }
+        public string estatusEsp { get; set; }
+        public string estatusEng { get; set; }
     }
 
     [Serializable]

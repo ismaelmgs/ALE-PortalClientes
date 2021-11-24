@@ -25,7 +25,7 @@ namespace PortalClientes.Views
         {
             if (System.Web.HttpContext.Current.Session["UserIdentity"] == null)
             {
-                Response.Redirect("~/Views/frmFinconexion.aspx");
+                Response.Redirect("~/Views/frmFinconexion2.aspx");
             }
 
             oPresenter = new Tripulacion_Presenter(this, new DBTripulacion());
@@ -113,14 +113,40 @@ namespace PortalClientes.Views
                 e.Row.Cells[0].Text = Properties.Resources.TabPilTri_CodPiloto;
                 e.Row.Cells[1].Text = Properties.Resources.TabPilTri_Nombre;
                 e.Row.Cells[2].Text = Properties.Resources.TabPilTri_Licencia;
-                e.Row.Cells[3].Text = Properties.Resources.TabPilTri_TipoLicencia;
-                e.Row.Cells[4].Text = Properties.Resources.TabPilTri_LugarTrabajo;
+                e.Row.Cells[3].Text = Properties.Resources.TabPilTri_Licencia;
+                e.Row.Cells[4].Text = Properties.Resources.TabPilTri_TipoLicencia;
                 e.Row.Cells[5].Text = Properties.Resources.TabPilTri_NoVisa;
                 e.Row.Cells[6].Text = Properties.Resources.TabPilTri_ExpVisa;
-                e.Row.Cells[7].Text = Properties.Resources.TabPilTri_PaisVisa;
-                e.Row.Cells[8].Text = Properties.Resources.TabPilTri_NoPassport;
-                e.Row.Cells[9].Text = Properties.Resources.TabPilTri_FechaExpiraPass;
+                e.Row.Cells[7].Text = Properties.Resources.TabPilTri_LugarTrabajo;
+                e.Row.Cells[8].Text = Properties.Resources.TabPilTri_PaisVisa;
+                e.Row.Cells[9].Text = Properties.Resources.TabPilTri_Estatus;
+                e.Row.Cells[10].Text = Properties.Resources.TabPilTri_Estatus;
 
+                if (Utils.Idioma == "es-MX")
+                {
+                    e.Row.Cells[3].Visible = false;
+                    e.Row.Cells[10].Visible = false;
+                }
+                else
+                {
+                    e.Row.Cells[2].Visible = false;
+                    e.Row.Cells[9].Visible = false;
+                }
+
+            }
+
+            if (e.Row.RowType == DataControlRowType.DataRow)
+            {
+                if(Utils.Idioma == "es-MX")
+                {
+                    e.Row.Cells[3].Visible = false;
+                    e.Row.Cells[10].Visible = false;
+                }
+                else
+                {
+                    e.Row.Cells[2].Visible = false;
+                    e.Row.Cells[9].Visible = false;
+                }
             }
         }
 

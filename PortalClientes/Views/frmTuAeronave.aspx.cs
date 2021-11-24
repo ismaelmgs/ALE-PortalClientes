@@ -21,7 +21,7 @@ namespace PortalClientes.Views
         {
             if (System.Web.HttpContext.Current.Session["UserIdentity"] == null)
             {
-                Response.Redirect("~/Views/frmFinconexion.aspx");
+                Response.Redirect("~/Views/frmFinconexion2.aspx");
             }
 
             oPresenter = new Aeronave_Presenter(this, new DBAeronave());    

@@ -336,19 +336,16 @@
       function initialize() {
       // Configuración del mapa
       var mapProp = {
-       zoom: 3,
-      center: {lat: -34.6036844, lng: -58.381559100000004},
-      mapTypeId: google.maps.MapTypeId.TERRAIN
+        zoom: 5,
+        center: {lat: 23.0000000, lng: -102.0000000},
       };
       // Agregando el mapa al tag de id googleMap
       var map = new google.maps.Map(document.getElementById("googleMap"), mapProp);
         
-      // Coordenada de la ruta (desde Misiones hasta Tierra del Fuego)
+      // Coordenada de la ruta
       var flightPlanCoordinates = [
-        {lat: -27.4269255, lng: -55.94670759999997},
-        {lat: -34.6036844, lng: -58.381559100000004},
-        {lat: -43.2934246, lng: -65.11148179999998},
-        {lat: -54.8053998, lng: -68.32420609999997}
+        {lat: 19.3910038, lng: -99.2836972},
+        {lat: 28.6710638, lng: -106.1346581}
       ];
        
       // Información de la ruta (coordenadas, color de línea, etc...)
@@ -364,6 +361,7 @@
           if (i == 0 || i == flightPlanCoordinates.length-1) {
               var marker = new google.maps.Marker({
                   position: flightPlanCoordinates[i],
+                  label: 'MX',
                   map: map
               });
           }
