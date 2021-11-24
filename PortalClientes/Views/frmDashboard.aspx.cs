@@ -22,6 +22,11 @@ namespace PortalClientes.Views
         {
             oPresenter = new Dashboard_Presenter(this, new DBDashboard());
 
+            if (System.Web.HttpContext.Current.Session["UserIdentity"] == null)
+            {
+                Response.Redirect("~/Views/frmDefault.aspx");
+            }
+
             TextBox milabel = (TextBox)this.Master.FindControl("txtLang");
             if (milabel.Text != Utils.Idioma && milabel.Text != string.Empty)
             {

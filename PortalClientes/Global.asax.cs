@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PortalClientes.Objetos;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -11,6 +12,21 @@ namespace PortalClientes
     {
         protected void Application_Start(object sender, EventArgs e)
         {
+
+        }
+
+        void Session_Start(object sender, EventArgs e)
+        {
+            if (Session.IsNewSession)
+            {
+                HttpContext.Current.Session.Timeout = 1;
+            }
+            
+        }
+
+        void Session_End(object sender, EventArgs e)
+        {
+            Session["UserIdentity"] = null;
         }
     }
 }

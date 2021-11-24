@@ -36,8 +36,8 @@ namespace PortalClientes.Views
 
             if (!IsPostBack)
             {
-                LLenarTuAeronave();
                 ScriptManager.RegisterStartupScript(this.Page, this.GetType(), Guid.NewGuid().ToString(), "openLoading();", true);
+                LLenarTuAeronave();
             }
         }
 

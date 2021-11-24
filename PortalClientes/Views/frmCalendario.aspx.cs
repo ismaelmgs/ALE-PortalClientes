@@ -40,8 +40,11 @@ namespace PortalClientes.Views
 
             if (IsPostBack)
             {
-                var cadena = hfdate.Value.Split(' ');
-                getMonth(cadena[1]);
+                if(hfdate.Value != "")
+                {
+                    var cadena = hfdate.Value.Split(' ');
+                    getMonth(cadena[1]);
+                }
             }
 
             //Scheduler.Start = DateTime.Now.AddMonths(-2);
@@ -68,40 +71,40 @@ namespace PortalClientes.Views
             switch (v)
             {
                 case "Jan":
-                    Session["dateScheduler"] = 11;
+                    Session["dateScheduler"] = 1;
                     break;
                 case "Feb":
-                    Session["dateScheduler"] = 11;
+                    Session["dateScheduler"] = 2;
                     break;
                 case "Mar":
-                    Session["dateScheduler"] = 11;
+                    Session["dateScheduler"] = 3;
                     break;
                 case "Apr":
-                    Session["dateScheduler"] = 11;
+                    Session["dateScheduler"] = 4;
                     break;
                 case "May":
-                    Session["dateScheduler"] = 11;
+                    Session["dateScheduler"] = 5;
                     break;
                 case "Jun":
-                    Session["dateScheduler"] = 11;
+                    Session["dateScheduler"] = 6;
                     break;
                 case "Jul":
-                    Session["dateScheduler"] = 11;
+                    Session["dateScheduler"] = 7;
                     break;
                 case "Agu":
-                    Session["dateScheduler"] = 11;
+                    Session["dateScheduler"] = 8;
                     break;
                 case "Sep":
-                    Session["dateScheduler"] = 11;
+                    Session["dateScheduler"] = 9;
                     break;
                 case "Oct":
-                    Session["dateScheduler"] = 11;
+                    Session["dateScheduler"] = 10;
                     break;
                 case "Nov":
                     Session["dateScheduler"] = 11;
                     break;
                 case "Dic":
-                    Session["dateScheduler"] = 11;
+                    Session["dateScheduler"] = 12;
                     break;
             }
         }
@@ -486,6 +489,9 @@ namespace PortalClientes.Views
             Button button = (Button)sender;
             string view = button.Attributes["data-view"];
 
+            setClassBtn();
+            button.CssClass = "btn btn-primary";
+
             switch (view)
             {
                 case "Day":
@@ -505,6 +511,15 @@ namespace PortalClientes.Views
                     break;
             }
 
+        }
+
+        private void setClassBtn()
+        {
+            btnActiveDay.CssClass = "btn btn-secondary";
+            btnActiveWorkWeek.CssClass = "btn btn-secondary";
+            btnActiveMonth.CssClass = "btn btn-secondary";
+            btnActiveTimeLine.CssClass = "btn btn-secondary";
+            btnActiveAgenda.CssClass = "btn btn-secondary";
         }
 
         protected void Scheduler_PopupMenuShowing(object sender, DevExpress.Web.Bootstrap.BootstrapSchedulerPopupMenuShowingEventArgs e)

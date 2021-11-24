@@ -1105,6 +1105,8 @@ namespace PortalClientes.Views
             lblCostoPromedioRes.Text = oMetEsta.PromedioMXN.ToString("C", CultureInfo.CreateSpecificCulture("es-MX"));
             lblCostoPromedioUSDRes.Text = oMetEsta.PromedioUSD.ToString("C", CultureInfo.CreateSpecificCulture("es-MX"));
 
+            ScriptManager.RegisterStartupScript(this.Page, this.GetType(), Guid.NewGuid().ToString(), "closeLoading();", true);
+
         }
         #endregion
 
