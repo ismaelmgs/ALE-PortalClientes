@@ -23,6 +23,11 @@ namespace PortalClientes.Views
         #region EVENTOS
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (System.Web.HttpContext.Current.Session["UserIdentity"] == null)
+            {
+                Response.Redirect("~/Views/frmFinconexion.aspx");
+            }
+
             oPresenter = new Tripulacion_Presenter(this, new DBTripulacion());
 
             TextBox milabel = (TextBox)this.Master.FindControl("txtLang");

@@ -20,28 +20,10 @@ namespace PortalClientes.Views
         #region EVENTOS
         protected void Page_Load(object sender, EventArgs e)
         {
-            //if (Session["UserIdentity"] == null)
-            //    Response.Redirect("frmLogin.aspx");
-
-            //if (!IsPostBack)
-            //{
-            //    if (Session["UserIdentity"] != null)
-            //    {
-            //        TextBox milabel = (TextBox)this.Master.FindControl("txtLang");
-
-            //        UserIdentity oUI = (UserIdentity)Session["UserIdentity"];
-            //        Utils.Idioma = oUI.sIdioma;
-            //        milabel.Text = oUI.sIdioma;
-            //    }
-            //}
-
-            //if (Request[ddlUsuarios.UniqueID] != null)
-            //{
-            //    if (Request[ddlUsuarios.UniqueID].Length > 0)
-            //    {
-            //        ddlUsuarios.Value = ddlUsuarios.Value;
-            //    }
-            //}
+            if (System.Web.HttpContext.Current.Session["UserIdentity"] == null)
+            {
+                Response.Redirect("~/Views/frmFinconexion.aspx");
+            }
 
             oPresenter = new Usuarios_Presenter(this, new DBUsuarios());
 

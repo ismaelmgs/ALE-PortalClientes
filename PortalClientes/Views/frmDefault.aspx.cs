@@ -11,7 +11,7 @@ namespace PortalClientes
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            ScriptManager.RegisterStartupScript(this.Page, this.GetType(), Guid.NewGuid().ToString(), "closeSession();", true);
+           
         }
     }
 }

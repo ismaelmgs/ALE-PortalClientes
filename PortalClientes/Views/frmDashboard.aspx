@@ -199,7 +199,8 @@
                     </div>
                 </div>
                 <div class="col-md-8">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15008005.624851545!2d-111.65547970087938!3d23.313441203547026!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x84043a3b88685353%3A0xed64b4be6b099811!2zTcOpeGljbw!5e0!3m2!1ses!2smx!4v1629999888503!5m2!1ses!2smx" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                    <div id="googleMap"></div>
+                    <%--<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15008005.624851545!2d-111.65547970087938!3d23.313441203547026!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x84043a3b88685353%3A0xed64b4be6b099811!2zTcOpeGljbw!5e0!3m2!1ses!2smx!4v1629999888503!5m2!1ses!2smx" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>--%>
                 </div>
             </div>
         </div>
@@ -318,7 +319,63 @@
     <script src='<%=ResolveUrl("~/vendors/jquery/dist/jquery.min.js")%>'></script>
     <script src='<%=ResolveUrl("~/vendors/jquery/dist/jquery.js")%>'></script>
     <script src='<%=ResolveUrl("~/build/js/GraficasJS/GraficasDashboard.js")%>'></script>
-   
+
+    <style>
+      html, body{
+        height:100%;
+        margin: 0px;
+      }
+      #googleMap{
+        width:100%;
+        height:450px;
+      }
+    </style>
+
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
+    <script type="text/javascript">
+      function initialize() {
+      // Configuración del mapa
+      var mapProp = {
+       zoom: 3,
+      center: {lat: -34.6036844, lng: -58.381559100000004},
+      mapTypeId: google.maps.MapTypeId.TERRAIN
+      };
+      // Agregando el mapa al tag de id googleMap
+      var map = new google.maps.Map(document.getElementById("googleMap"), mapProp);
+        
+      // Coordenada de la ruta (desde Misiones hasta Tierra del Fuego)
+      var flightPlanCoordinates = [
+        {lat: -27.4269255, lng: -55.94670759999997},
+        {lat: -34.6036844, lng: -58.381559100000004},
+        {lat: -43.2934246, lng: -65.11148179999998},
+        {lat: -54.8053998, lng: -68.32420609999997}
+      ];
+       
+      // Información de la ruta (coordenadas, color de línea, etc...)
+      var flightPath = new google.maps.Polyline({
+        path: flightPlanCoordinates,
+        geodesic: true,
+        strokeColor: '#FF0000',
+        strokeOpacity: 1.0,
+        strokeWeight: 2
+      });
+
+      for (i = 0; i < flightPlanCoordinates.length; i++) {
+          if (i == 0 || i == flightPlanCoordinates.length-1) {
+              var marker = new google.maps.Marker({
+                  position: flightPlanCoordinates[i],
+                  map: map
+              });
+          }
+      }
+       
+      // Creando la ruta en el mapa
+      flightPath.setMap(map);
+      }
+        
+      // Inicializando el mapa cuando se carga la página
+      google.maps.event.addDomListener(window, 'load', initialize);
+    </script>
 </asp:Content>
 
 

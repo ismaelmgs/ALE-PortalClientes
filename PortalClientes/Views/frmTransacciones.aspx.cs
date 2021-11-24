@@ -32,6 +32,11 @@ namespace PortalClientes.Views
         #region EVENTOS
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (System.Web.HttpContext.Current.Session["UserIdentity"] == null)
+            {
+                Response.Redirect("~/Views/frmFinconexion.aspx");
+            }
+
             var tipo = Convert.ToInt32(Session["tipoTransaccion"]);
             var od = Convert.ToInt32(Session["origenData"]);
             var descripcion = (string)Session["descripcion"];
