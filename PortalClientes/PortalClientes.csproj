@@ -1550,6 +1550,7 @@
     <Content Include="Views\frmErrorconexion.aspx" />
     <Content Include="Views\frmEstadoCuenta.aspx" />
     <Content Include="Views\frmFinconexion.aspx" />
+    <Content Include="Views\frmFinconexion2.aspx" />
     <Content Include="Views\frmLegal.aspx" />
     <Content Include="Views\frmMantenimientos.aspx" />
     <Content Include="Views\frmMetricasEstadisticas.aspx" />
@@ -1752,6 +1753,13 @@
     </Compile>
     <Compile Include="Views\frmFinconexion.aspx.designer.cs">
       <DependentUpon>frmFinconexion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\frmFinconexion2.aspx.cs">
+      <DependentUpon>frmFinconexion2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\frmFinconexion2.aspx.designer.cs">
+      <DependentUpon>frmFinconexion2.aspx</DependentUpon>
     </Compile>
     <Compile Include="Views\frmLegal.aspx.cs">
       <DependentUpon>frmLegal.aspx</DependentUpon>
