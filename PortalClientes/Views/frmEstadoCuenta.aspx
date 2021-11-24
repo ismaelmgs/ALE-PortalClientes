@@ -177,6 +177,25 @@
                     </div>
                 </div>
             </div>
+            <div class="row">
+                <div class="col-md-12 col-sm-12">
+                    <div class="x_panel">
+                        <div class="x_title">
+                            <h2>
+                                <asp:Label ID="lblAnio" runat="server" Text="2021" Font-Bold="true"></asp:Label>
+                            </h2>
+                            <div class="clearfix"></div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div>
+                                    Tabla
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         <%--</ContentTemplate>
     </asp:UpdatePanel>--%>
 </asp:Content>

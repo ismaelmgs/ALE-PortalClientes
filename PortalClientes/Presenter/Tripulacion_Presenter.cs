@@ -19,13 +19,13 @@ namespace PortalClientes.Presenter
 
         protected override void SearchObj_Presenter(object sender, EventArgs e)
         {
-            Utils.GuardarBitacora("Inicia consulta de eventos ***");
+            Utils.GuardarBitacora("TRIPULACION --> Inicia consulta de eventos");
             oIView.CargarEventosTripulacion(oIGesCat.ObtenerEventos(oIView.iMeses));
-            Utils.GuardarBitacora("Terminó de consultar eventos ***");
+            Utils.GuardarBitacora("TRIPULACION --> Terminó de consultar eventos");
 
-            Utils.GuardarBitacora("Inicia consulta de pilotos");
+            Utils.GuardarBitacora("TRIPULACION --> Inicia consulta de pilotos");
             oIView.CargarPilotosTripulacion(oIGesCat.ObtenerPilotos());
-            Utils.GuardarBitacora("Terminó de consultar pilotos");
+            Utils.GuardarBitacora("TRIPULACION --> Terminó de consultar pilotos");
         }
 
         //protected void eSearchObjEventos_Presenter(object sender, EventArgs e)
