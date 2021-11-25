@@ -1547,6 +1547,7 @@
     <Content Include="vendors\validator\validator.js" />
     <Content Include="Views\frmCalendario.aspx" />
     <Content Include="Views\frmDashboard.aspx" />
+    <Content Include="Views\frmEdoCtaDetalle.aspx" />
     <Content Include="Views\frmErrorconexion.aspx" />
     <Content Include="Views\frmEstadoCuenta.aspx" />
     <Content Include="Views\frmFinconexion.aspx" />
@@ -1732,6 +1733,13 @@
     </Compile>
     <Compile Include="Views\frmDashboard.aspx.designer.cs">
       <DependentUpon>frmDashboard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\frmEdoCtaDetalle.aspx.cs">
+      <DependentUpon>frmEdoCtaDetalle.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\frmEdoCtaDetalle.aspx.designer.cs">
+      <DependentUpon>frmEdoCtaDetalle.aspx</DependentUpon>
     </Compile>
     <Compile Include="Views\frmErrorconexion.aspx.cs">
       <DependentUpon>frmErrorconexion.aspx</DependentUpon>
