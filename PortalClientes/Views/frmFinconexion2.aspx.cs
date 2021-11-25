@@ -12,17 +12,7 @@ namespace PortalClientes.Views
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
-            if (Utils.Idioma == "es-MX")
-            {
-                imgSession.ImageUrl = "~/build/images/sesion.jpg";
-            }
-            else
-            {
-                imgSession.ImageUrl = "~/build/images/sesion_us.jpg";
-            }
-
-
+            imgSession.ImageUrl = "~/build/images/sesion_us.jpg";
             ScriptManager.RegisterStartupScript(this.Page, this.GetType(), Guid.NewGuid().ToString(), "closeSession();", true);
         }
     }

@@ -1,4 +1,5 @@
 ﻿using PortalClientes.Objetos;
+using PortalClientes.Clases;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -19,7 +20,7 @@ namespace PortalClientes
         {
             if (Session.IsNewSession)
             {
-                HttpContext.Current.Session.Timeout = 1;
+                HttpContext.Current.Session.Timeout = 5;
             }
             
         }

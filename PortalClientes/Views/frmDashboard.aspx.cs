@@ -62,13 +62,26 @@ namespace PortalClientes.Views
         public void CargarDashboard(Dashboard oDash)
         {
             oDashboard = oDash;
+            var fechaSalida = "";
+            var fechaLlegada = "";
+
+            if(Utils.Idioma == "es-MX")
+            {
+                fechaSalida = String.Format("{0} de {1} de {2} {3}", Convert.ToDateTime(oDashboard.Salida).ToString("dd"), Convert.ToDateTime(oDashboard.Salida).ToString("MMMM"), Convert.ToDateTime(oDashboard.Salida).ToString("yyyy"), Convert.ToDateTime(oDashboard.Salida).ToString("HH:mm"));
+                fechaLlegada = String.Format("{0} de {1} de {2} {3}", Convert.ToDateTime(oDashboard.Llegada).ToString("dd"), Convert.ToDateTime(oDashboard.Llegada).ToString("MMMM"), Convert.ToDateTime(oDashboard.Llegada).ToString("yyyy"), Convert.ToDateTime(oDashboard.Salida).ToString("HH:mm"));
+            }
+            else
+            {
+                fechaSalida = String.Format("{0} {1} {2} {3}", Convert.ToDateTime(oDashboard.Salida).ToString("dd"), Convert.ToDateTime(oDashboard.Salida).ToString("MMM"), Convert.ToDateTime(oDashboard.Salida).ToString("yyyy"), Convert.ToDateTime(oDashboard.Salida).ToString("HH:mm"));
+                fechaLlegada = String.Format("{0} {1} {2} {3}", Convert.ToDateTime(oDashboard.Llegada).ToString("dd"), Convert.ToDateTime(oDashboard.Llegada).ToString("MMM"), Convert.ToDateTime(oDashboard.Llegada).ToString("yyyy"), Convert.ToDateTime(oDashboard.Salida).ToString("HH:mm"));
+            }
 
             lblOrigen.Text = oDashboard.CiudadOrigen;
             lblDestino.Text = oDashboard.CiudadDestino;
             lblOrigenText.Text = oDashboard.Origen;
             lblDestinoText.Text = oDashboard.Destino;
-            lblSalidaText.Text = Convert.ToDateTime(oDashboard.Salida).ToString("dd/MM/yyyy HH:mm");
-            lblLlegoText.Text = Convert.ToDateTime(oDashboard.Llegada).ToString("dd/MM/yyyy HH:mm");
+            lblSalidaText.Text = fechaSalida;
+            lblLlegoText.Text = fechaLlegada;
             lblSaldoNumber.Text = oDashboard.SaldoActual.HasValue ? oDashboard.SaldoActual.Value.ToString("C", CultureInfo.CreateSpecificCulture("es-MX")) : "0";
             lblIncVenc90DiasNumber.Text = oDashboard.SaldoAlVencimiento.HasValue ? oDashboard.SaldoAlVencimiento.Value.ToString("C", CultureInfo.CreateSpecificCulture("es-MX")) : "0";
             lblultimaDeclaracionText.Text = oDashboard.SaldoUltimaDeclaracion.HasValue ? oDashboard.SaldoUltimaDeclaracion.Value.ToString("C", CultureInfo.CreateSpecificCulture("es-MX")) : "0";
