@@ -19,7 +19,7 @@ namespace PortalClientes
         {
             if (Session.IsNewSession)
             {
-                HttpContext.Current.Session.Timeout = 1;
+                HttpContext.Current.Session.Timeout = 5;
             }
             
         }
