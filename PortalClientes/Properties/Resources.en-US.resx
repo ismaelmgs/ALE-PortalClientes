@@ -529,7 +529,7 @@
     <value>Pilot Code</value>
   </data>
   <data name="TabPilTri_ExpVisa" xml:space="preserve">
-    <value>Visa Expiration</value>
+    <value>Expiration</value>
   </data>
   <data name="TabPilTri_FechaExpiraPass" xml:space="preserve">
     <value>Passport Expiration</value>
@@ -544,13 +544,13 @@
     <value>Name</value>
   </data>
   <data name="TabPilTri_NoPassport" xml:space="preserve">
-    <value>Passport No.</value>
+    <value>Number</value>
   </data>
   <data name="TabPilTri_NoVisa" xml:space="preserve">
-    <value>Visa No.</value>
+    <value>Number</value>
   </data>
   <data name="TabPilTri_PaisVisa" xml:space="preserve">
-    <value>Country Visa</value>
+    <value>Country</value>
   </data>
   <data name="TabPilTri_TipoLicencia" xml:space="preserve">
     <value>Type</value>

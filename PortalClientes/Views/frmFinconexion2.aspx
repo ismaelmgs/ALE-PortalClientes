@@ -49,7 +49,8 @@
             <div class="row">
                 <div class="col-md-3">&nbsp;</div>
                 <div class="col-md-6" style="text-align:center;">
-                    <img src="../build/images/sesion.jpg" style="width:100%;" /><%--<img src="../build/images/sesion_us.jpg" style="width:100%;" />--%><br />
+                    <asp:Image runat="server" ID="imgSession" style="width:100%;" ImageUrl="~/build/images/sesion.jpg"/>
+                    <%--<img runat="server" src="../build/images/sesion.jpg"  /><%--<img src="../build/images/sesion_us.jpg" style="width:100%;" />--%><br />
                     <asp:LinkButton ID="btnRegresarLogin" runat="server" Text="<i class='fa fa-undo' style='color:#73879C;font-size:14px;'></i> Regresar a Acceso <span class='glyphicon glyphicon-off' style='color:#73879C;font-size:14px;'></span>" CssClass="btn" href="../frmLogin.aspx" />
                 </div>
                 <div class="col-md-3">&nbsp;</div>

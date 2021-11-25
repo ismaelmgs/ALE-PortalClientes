@@ -1825,7 +1825,7 @@ namespace PortalClientes.Properties {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Expiración Visa.
+        ///   Busca una cadena traducida similar a Expiración.
         /// </summary>
         internal static string TabPilTri_ExpVisa {
             get {
@@ -1879,7 +1879,7 @@ namespace PortalClientes.Properties {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a No. de Visa.
+        ///   Busca una cadena traducida similar a Numero.
         /// </summary>
         internal static string TabPilTri_NoVisa {
             get {
@@ -1888,7 +1888,7 @@ namespace PortalClientes.Properties {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a País Visa.
+        ///   Busca una cadena traducida similar a País.
         /// </summary>
         internal static string TabPilTri_PaisVisa {
             get {
