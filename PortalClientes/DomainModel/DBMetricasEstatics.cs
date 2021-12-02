@@ -449,6 +449,41 @@ namespace PortalClientes.DomainModel
 
         }
 
+        public List<RutaAeropuerto> obtenerRutasAeropuertos (FiltroEvent filtro)
+        {
+            try
+            {
+                JavaScriptSerializer ser = new JavaScriptSerializer();
+                ser.MaxJsonLength = 500000000;
+                List<RutaAeropuerto> d = new List<RutaAeropuerto>();
+                FiltroEvent oLog = new FiltroEvent();
+                oLog = filtro;
+                oLog.matricula = Utils.MatriculaActual;
+
+                oLog.matricula = "XA-CHY";
+                oLog.meses = 3;
+
+                TokenWS oToken = Utils.ObtieneToken;
+
+                var client = new RestClient(Helper.D_UrlObtieneCostoFijoVariableHora);
+                var request = new RestRequest(Method.POST);
+                request.AddHeader("Authorization", oToken.token);
+                request.AddJsonBody(oLog);
+
+                IRestResponse response = client.Execute(request);
+                var resp = response.Content;
+
+                d = ser.Deserialize<List<RutaAeropuerto>>(resp);
+
+                return d;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+
         public DatosMetricas DBGetMetricasEstadisticas(string sMatricula, int iMeses)
         {
             try

@@ -1601,6 +1601,7 @@
     <Compile Include="Objetos\responseGraficaProveedores.cs" />
     <Compile Include="Objetos\Transacciones.cs" />
     <Compile Include="Objetos\Tripulacion.cs" />
+    <Compile Include="Objetos\RutasyAeropuertos.cs" />
     <Compile Include="Presenter\EstadoCuenta_Presenter.cs" />
     <Compile Include="Presenter\MetricasEstadisticas_Presenter.cs" />
     <Compile Include="Presenter\Tripulacion_Presenter.cs" />
