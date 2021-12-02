@@ -556,8 +556,79 @@
                             </div>
                         </div>
                     </div>
+                    
                 </div>
                 <br />
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="x_title">
+                            <h2>
+                                <asp:Label ID="lblCategoriasLargoTiempo" runat="server" Text="Categorías a lo Largo del Tiempo" Font-Bold="true"></asp:Label>
+                            </h2>
+                            <div class="clearfix"></div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-4 offset-8">
+                                <asp:DropDownList ID="DropDownList1" runat="server" CssClass="form-control" Width="100%"></asp:DropDownList>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                               --- Gráfica ---
+                            </div>
+                        </div>
+                    </div>
+                </div>
+<!-------->     
+                <br />
+                <div class="row">
+                <div class="col-md-12">
+                <div class="x_title">
+                    <h2>
+                        <asp:Label ID="lblMapRutaAeroPrinc" runat="server" Text="Mapa, Rutas y Aeropuertos Principales" Font-Bold="true"></asp:Label>
+                    </h2>
+                    <div class="clearfix"></div>
+                 </div>
+                <div class="row">
+                    <div class="col-md-8">
+                        <span style="color:#bdbdbd;font-size:16px;">&nbsp;&nbsp;<asp:Label ID="lblTusVuelos" runat="server" Text="Tus Vuelos" Font-Bold="true"></asp:Label></span>
+                    </div>
+                    <div class="col-md-4">
+                        <asp:DropDownList ID="ddlPEriodMeses" runat="server" CssClass="form-control" Width="100%"></asp:DropDownList>
+                    </div>
+                </div>
+                <br />
+                <div class="row">
+                    
+                    <div class="col-md-7">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15008005.624851545!2d-111.65547970087938!3d23.313441203547026!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x84043a3b88685353%3A0xed64b4be6b099811!2zTcOpeGljbw!5e0!3m2!1ses!2smx!4v1629999888503!5m2!1ses!2smx" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                    </div>
+                <div class="col-md-5">
+                    <ul class="nav nav-tabs" id="myTab" role="tablist">
+                      <li class="nav-item">
+                        <a class="nav-link active" id="hometab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true"><asp:Label ID="lblTopRutas" runat="server" Text="Top Rutas"></asp:Label></a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" id="profiletab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false"><asp:Label ID="lblTopAeropuertos" runat="server" Text="Top Aeropuertos"></asp:Label></a>
+                      </li>
+                    </ul>
+                    <div class="tab-content" id="myTabContent">
+                      <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                          <br />
+                          --- contenido ---
+
+                      </div>
+                      <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                           <br />
+                          --- contenido 2 ---
+                      </div>
+                    </div>
+                </div>
+                </div>
+            </div>
+            </div>
+
+<!-------->
             </div>
         </div>
     </div>
