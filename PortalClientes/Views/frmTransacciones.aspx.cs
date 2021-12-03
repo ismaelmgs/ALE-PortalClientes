@@ -1684,6 +1684,12 @@ namespace PortalClientes.Views
                     LlenarGV(transacciones, tipo);
                 }
 
+                else if (tipo == 13)
+                {
+                    transacciones.detalleEdoCuenta = (List<DetalleRepEdoCuenta>)Session["data"];
+                    LlenarGV(transacciones, tipo);
+                }
+
 
                 gvGastos.HeaderRow.BackColor = Color.White;
                 foreach (TableCell cell in gvGastos.HeaderRow.Cells)
@@ -1803,6 +1809,12 @@ namespace PortalClientes.Views
                 else if (tipo == 12)
                 {
                     transacciones.costosFijosVariableHora = (List<gvCostosFVH>)Session["data"];
+                    LlenarGV(transacciones, tipo);
+                }
+
+                else if (tipo == 13)
+                {
+                    transacciones.detalleEdoCuenta = (List<DetalleRepEdoCuenta>)Session["data"];
                     LlenarGV(transacciones, tipo);
                 }
 
