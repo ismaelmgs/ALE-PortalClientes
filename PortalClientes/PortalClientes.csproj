@@ -250,6 +250,7 @@
     <Content Include="build\js\GraficasJS\GraficasDashboard.js" />
     <Content Include="build\js\moment\moment.min.js" />
     <Content Include="build\images\no_image.jpg" />
+    <Content Include="build\js\RutasyAeropuertos.js" />
     <Content Include="build\js\scheduler.js" />
     <Content Include="Images\icons\descargar.png" />
     <Content Include="Images\icons\flecha_abre1.png" />
@@ -1589,6 +1590,7 @@
     <Compile Include="Objetos\EstadoCuenta.cs" />
     <Compile Include="Objetos\MatriculasUsuario.cs" />
     <Compile Include="Objetos\responseGraficaAeropuerto.cs" />
+    <Compile Include="Objetos\responseGraficaCategorias.cs" />
     <Compile Include="Objetos\responseGraficaCostoFijoVariable.cs" />
     <Compile Include="Objetos\responseGraficaCostoFijoVariableHora.cs" />
     <Compile Include="Objetos\responseGraficaCostoHoraVuelo.cs" />

@@ -10,8 +10,10 @@ namespace PortalClientes.Interfaces
     {
         DatosMetricas oMetEsta { get; }
         void CargarMetricasEstadisticas(DatosMetricas oLMetEsta);
+        void CargarRutasyAeropuertos(RutaAeropuerto ra);
 
         int iMeses { get; }
+        int iMesesMap { get; }
         string sMatricula { get; }
 
     }

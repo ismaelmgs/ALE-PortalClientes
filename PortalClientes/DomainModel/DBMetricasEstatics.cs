@@ -449,23 +449,23 @@ namespace PortalClientes.DomainModel
 
         }
 
-        public List<RutaAeropuerto> obtenerRutasAeropuertos (FiltroEvent filtro)
+        public List<responseGraficaCategorias> obtenerCategoriasPeriodos(FiltroEvent filtro)
         {
             try
             {
                 JavaScriptSerializer ser = new JavaScriptSerializer();
                 ser.MaxJsonLength = 500000000;
-                List<RutaAeropuerto> d = new List<RutaAeropuerto>();
+                List<responseGraficaCategorias> d = new List<responseGraficaCategorias>();
                 FiltroEvent oLog = new FiltroEvent();
                 oLog = filtro;
                 oLog.matricula = Utils.MatriculaActual;
 
-                oLog.matricula = "XA-CHY";
-                oLog.meses = 3;
+                oLog.matricula = "XA-ALE";
+                oLog.meses = 1;
 
                 TokenWS oToken = Utils.ObtieneToken;
 
-                var client = new RestClient(Helper.D_UrlObtieneCostoFijoVariableHora);
+                var client = new RestClient(Helper.D_UrlObtieneCategoriasPeriodo);
                 var request = new RestRequest(Method.POST);
                 request.AddHeader("Authorization", oToken.token);
                 request.AddJsonBody(oLog);
@@ -473,7 +473,43 @@ namespace PortalClientes.DomainModel
                 IRestResponse response = client.Execute(request);
                 var resp = response.Content;
 
-                d = ser.Deserialize<List<RutaAeropuerto>>(resp);
+                d = ser.Deserialize<List<responseGraficaCategorias>>(resp);
+
+                return d;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+
+        }
+
+        public RutaAeropuerto obtenerRutasAeropuertos (FiltroEvent filtro)
+        {
+            try
+            {
+                JavaScriptSerializer ser = new JavaScriptSerializer();
+                ser.MaxJsonLength = 500000000;
+                RutaAeropuerto d = new RutaAeropuerto();
+                FiltroEvent oLog = new FiltroEvent();
+                oLog = filtro;
+                oLog.matricula = Utils.MatriculaActual;
+
+                oLog.matricula = "XA-ALE";
+                oLog.meses = 1;
+
+                TokenWS oToken = Utils.ObtieneToken;
+
+                var client = new RestClient(Helper.D_UrlObtieneRutasAeropuertos);
+                var request = new RestRequest(Method.POST);
+                request.AddHeader("Authorization", oToken.token);
+                request.AddJsonBody(oLog);
+
+                IRestResponse response = client.Execute(request);
+                var resp = response.Content;
+
+                d = ser.Deserialize<RutaAeropuerto>(resp);
 
                 return d;
             }

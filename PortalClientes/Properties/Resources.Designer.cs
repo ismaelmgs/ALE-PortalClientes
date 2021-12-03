@@ -1330,6 +1330,24 @@ namespace PortalClientes.Properties {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Top Aeropuertos.
+        /// </summary>
+        internal static string ME_PnlAeropuertos {
+            get {
+                return ResourceManager.GetString("ME_PnlAeropuertos", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Top Rutas.
+        /// </summary>
+        internal static string ME_PnlRutas {
+            get {
+                return ResourceManager.GetString("ME_PnlRutas", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Promedio de Costo.
         /// </summary>
         internal static string ME_PromedioCosto {
@@ -1393,6 +1411,24 @@ namespace PortalClientes.Properties {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Aeropuerto.
+        /// </summary>
+        internal static string ME_TabAeropuertosAero {
+            get {
+                return ResourceManager.GetString("ME_TabAeropuertosAero", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Clave.
+        /// </summary>
+        internal static string ME_TabAeropuertosClave {
+            get {
+                return ResourceManager.GetString("ME_TabAeropuertosClave", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Descarga.
         /// </summary>
         internal static string ME_TabDescarga {
@@ -1443,6 +1479,15 @@ namespace PortalClientes.Properties {
         internal static string ME_TabDocResumenGastos {
             get {
                 return ResourceManager.GetString("ME_TabDocResumenGastos", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Rutas.
+        /// </summary>
+        internal static string ME_TabRutasRuta {
+            get {
+                return ResourceManager.GetString("ME_TabRutasRuta", resourceCulture);
             }
         }
         

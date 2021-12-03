@@ -61,8 +61,11 @@ function ajax_data(objDV, urlDV, success) {
 function chartsDV(dataDV, ChartType) {
     var c = ChartType;
     var jsonDataDV = dataDV;
-    google.charts.load("current", { packages: ["corechart"] });
-    google.charts.setOnLoadCallback(drawVisualizationDV)
+
+    if (jsonDataDV.length > 0) {
+        google.charts.load("current", { packages: ["corechart"] });
+        google.charts.setOnLoadCallback(drawVisualizationDV)
+    }
 
     function generarUrlV(obtiene) {
         var url = "";

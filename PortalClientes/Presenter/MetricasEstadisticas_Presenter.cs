@@ -1,5 +1,6 @@
 ﻿using PortalClientes.DomainModel;
 using PortalClientes.Interfaces;
+using PortalClientes.Objetos;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,6 +22,12 @@ namespace PortalClientes.Presenter
         protected override void SearchObj_Presenter(object sender, EventArgs e)
         {
             oIView.CargarMetricasEstadisticas(oIGesCat.DBGetMetricasEstadisticas(oIView.sMatricula,oIView.iMeses));
+
+            FiltroEvent fe = new FiltroEvent();
+            fe.matricula = oIView.sMatricula;
+            fe.meses = oIView.iMesesMap;
+
+            oIView.CargarRutasyAeropuertos(oIGesCat.obtenerRutasAeropuertos(fe));
         }
     }
 }

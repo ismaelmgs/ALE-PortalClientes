@@ -1,48 +1,48 @@
 $(document).ready(function () {
-    //const url = "http://192.168.1.250/PortalClientes/Views/frmMetricasEstadisticas.aspx/GetGastos"; // API URL
-    const url = getUrlA(); // API URL
+    //const url = "http://192.168.1.250/PortalClientes/Views/frmMetricasEstadisticas.aspx/GetCategoriasPeriodo"; // API URL
+    const urlCLT = getUrlCLT(); // API URL
 
-    let objAe = JSON.stringify({
-        meses: $("#ContentPlaceHolder1_DDFiltroMesesPA").val(),
+    let objCLT = JSON.stringify({
+        meses: $("#ContentPlaceHolder1_ddlCategoriasLT").val(),
     });
 
-    ajax_data(objAe, url, function (dataAe) {
-        chartsAe(dataAe, "PieChart"); // Pie Charts
+    ajax_data(objCLT, urlCLT, function (data) {
+        charts(data); // Pie Charts
     });
 
     window.onresize = function () {
-        ajax_data(objAe, url, function (dataAe) {
-            chartsAe(dataAe, "PieChart"); // Pie Charts
+        ajax_data(objCLT, urlCLT, function (data) {
+            charts(data); // Pie Charts
         });
     };
 });
 
-function getUrlA() {
-    let value = window.location + "/GetGastosAeropuerto";
+function getUrlCLT() {
+    let value = window.location + "/GetCategoriasPeriodo";
     return value;
 }
 
-$('#ContentPlaceHolder1_DDFiltroMesesPA').change(function (event) {
+$('#btnGraficasBuscar').click(function (event) {
 
     event.preventDefault();
-    ActualizarGraficaAe();
+    ActualizarGrafica();
 
 });
 
-function ActualizarGraficaAe() {
-    const url = getUrlA(); // API URL
-    let objAe = JSON.stringify({
-        meses: $("#ContentPlaceHolder1_DDFiltroMesesPA").val(),
+function ActualizarGrafica() {
+    const url = getUrl(); // API URL
+    let obj = JSON.stringify({
+        meses: $("#ContentPlaceHolder1_ddlPeriodo").val(),
     });
 
-    ajax_data(objAe, url, function (dataAe) {
-        chartsAe(dataAe, "PieChart"); // Pie Charts
+    ajax_data(obj, url, function (data) {
+        charts(data, "PieChart"); // Pie Charts
     });
 }
 
-function ajax_data(objAe, url, success) {
+function ajax_data(obj, url, success) {
     $.ajax({
-        data: objAe,
+        data: obj,
         contentType: "Application/json; charset=utf-8",
         responseType: "json",
         method: 'POST',
@@ -58,16 +58,15 @@ function ajax_data(objAe, url, success) {
     });
 }
 
-function chartsAe(dataAe, ChartType) {
-    var c = ChartType;
-    var jsonDataAe = dataAe;
-
-    if (jsonDataAe.length > 0) {
+function charts(data) {
+    var jsonData = data;
+    
+    if (jsonData.length > 0) {
         google.charts.load("current", { packages: ["corechart"] });
         google.charts.setOnLoadCallback(drawVisualization)
     }
 
-    function generarUrlAe(obtiene) {
+    function generarUrl(obtiene) {
         var url = "";
 
         if (obtiene) {
@@ -88,28 +87,38 @@ function chartsAe(dataAe, ChartType) {
         return url;
     }
 
-    function drawVisualizationAe() {
+
+    function drawVisualization() {
 
         var screenWidth = screen.width;
 
-        var dataAe_ = new google.visualization.DataTable();
-        dataAe_.addColumn('string', 'Aeropuertos');
-        dataAe_.addColumn('number', 'Costos');
-        dataAe_.addColumn({ type: 'string', role: 'tooltip' });
+        var data = google.visualization.arrayToDataTable([
+            [ {label: 'Year', id: 'year'},
+              {label: 'Sales', id: 'Sales', type: 'number'}, // Use object notation to explicitly specify the data type.
+              {label: 'Expenses', id: 'Expenses', type: 'number'} ],
+            ['2014', 1000, 400],
+            ['2015', 1170, 460],
+            ['2016', 660, 1120],
+            ['2017', 1030, 540]]);
 
-        const opt = { style: 'currency', currency: 'MXN' };
-        var numberFormat = new Intl.NumberFormat('es-MX', opt);
+        // const opt = { style: 'currency', currency: 'MXN' };
+        // var numberFormat = new Intl.NumberFormat('es-MX', opt);
 
-        const opt2 = { style: 'currency', currency: 'USD' };
-        const numberFormat2 = new Intl.NumberFormat('en-US', opt2);
+        // jsonData.forEach((item, index) => {
 
-        jsonDataAe.forEach((item, index) => {
-            dataAe_.addRows([[item.aeropuerto, item.totalMXN, `${item.aeropuerto} - ${numberFormat.format(item.totalMXN)} MXN`,]]);
-        });
+        //     if (jsonData[0].idioma == "es-MX") {
+        //         data.addRows([[item.rubroESP, item.totalMXN, `${item.rubroESP} - ${numberFormat.format(item.totalMXN)} MXN`,]]);
+        //     } else {
+        //         data.addRows([[item.rubroENG, item.totalMXN, `${item.rubroENG} - ${numberFormat.format(item.totalMXN)} MXN`,]]);
+        //     }
 
-        var optionsAe = {
-            title: jsonDataAe[0].idioma == "es-MX" ? "Gastos por Aeropuerto" : "Expenses by Airport",
-            //is3D: true, //Pie Charts
+        // });
+
+        var options = {
+            title: jsonData[0].idioma == "es-MX" ? "Categorias a lo Largo del Tiempo" : "Expenses Categories Over Time",
+            bar: {
+                groupWidth: "60%",
+            },
             fontSize: 9,
             chartArea: {
                 left: screenWidth > 500 ? 30 : 10,
@@ -123,30 +132,28 @@ function chartsAe(dataAe, ChartType) {
                 startup: true
             },
             legend: {
-                position: 'rigth',
+                position: 'bottom',
                 alignment: 'center',
+                maxLines: 20,
             },
             colors: ['#3276ae', '#6aabc0', '#cf575e', '#eb924f', '#f6c543', '#d578a9', '#9889d1', '#89d193']
         };
 
-        var chartAero = new google.visualization.PieChart(document.getElementById('piechart_3d_4'));
-        chartAero.draw(dataAe_, optionsAe);
+        var chart = new google.visualization.ColumnChart(document.getElementById('piechart_3d_1'));
+        chart.draw(data, options);
 
-        google.visualization.events.addListener(chartAero, 'select', function () {
-            var selection = chartAero.getSelection();
+        google.visualization.events.addListener(chart, 'select', function () {
+            var selection = chart.getSelection();
             if (selection.length) {
                 var row = selection[0].row;
 
-                let array = jsonDataAe[row];
-                const gastosAe = array.gastos
+                let array = jsonData[row];
+                const gastos = array.Gastos
 
-                let opt = {
-                    campo1: null,
-                    campo2: null,
-                }//campos opcionales en graficas
+                let opt = {}//campos opcionales en graficas
 
                 let vuelos = []
-                let gastos = []
+                let gastosAe = []
                 let gastosProv = []
                 let costos = []
                 let horasV = []
@@ -170,10 +177,10 @@ function chartsAe(dataAe, ChartType) {
                     gastosT,
                     costoH,
                     costosFVH,
-                    tipoTrans: 2,
+                    tipoTrans: 1,
                     tipoDet: "MXN",
-                    descES: array.aeropuerto,
-                    descEN: array.aeropuerto,
+                    descES: array.rubroESP,
+                    descEN: array.rubroENG,
                     origen: 2,
                     opt,
                 });
@@ -183,10 +190,10 @@ function chartsAe(dataAe, ChartType) {
                     contentType: "Application/json; charset=utf-8",
                     responseType: "json",
                     method: 'POST',
-                    url: generarUrlAe(true),
+                    url: generarUrl(true),
                     dataType: "json",
                     success: function (response) {
-                        window.location.pathname = generarUrlAe(false);
+                        window.location.pathname = generarUrl(false);
                     },
                     error: function (err) {
                         console.log("Error In Connecting", err);

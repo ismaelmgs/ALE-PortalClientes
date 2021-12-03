@@ -921,4 +921,19 @@
   <data name="TabPilTri_Estatus" xml:space="preserve">
     <value>Estatus</value>
   </data>
+  <data name="ME_PnlAeropuertos" xml:space="preserve">
+    <value>Top Aeropuertos</value>
+  </data>
+  <data name="ME_PnlRutas" xml:space="preserve">
+    <value>Top Rutas</value>
+  </data>
+  <data name="ME_TabAeropuertosAero" xml:space="preserve">
+    <value>Aeropuerto</value>
+  </data>
+  <data name="ME_TabAeropuertosClave" xml:space="preserve">
+    <value>Clave</value>
+  </data>
+  <data name="ME_TabRutasRuta" xml:space="preserve">
+    <value>Rutas</value>
+  </data>
 </root>

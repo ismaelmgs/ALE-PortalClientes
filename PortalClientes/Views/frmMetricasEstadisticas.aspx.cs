@@ -141,6 +141,9 @@ namespace PortalClientes.Views
             lblCostoFijoVariableHora.Text = Properties.Resources.ME_CostoFijoVariableHora;
             lblCostoFijoVariable.Text = Properties.Resources.ME_CostoFIjoVariable;
 
+            lblTopRutas.Text = Properties.Resources.ME_PnlRutas;
+            lblTopAeropuertos.Text = Properties.Resources.ME_PnlAeropuertos;
+
             var vPeriodo = ddlPeriodo.SelectedValue;
             // llenar dropdown Periodo
             ddlPeriodo.Items.Clear();
@@ -300,11 +303,11 @@ namespace PortalClientes.Views
 
             if (v8 == "")
             {
-                DDFiltroMesesPP.SelectedIndex = 0;
+                DDFiltroMesesFV.SelectedIndex = 0;
             }
             else
             {
-                DDFiltroMesesPP.SelectedValue = v8;
+                DDFiltroMesesFV.SelectedValue = v8;
             }
 
             var v9 = DDFiltroMesesGT.SelectedValue;
@@ -349,11 +352,43 @@ namespace PortalClientes.Views
 
             if (v11 == "")
             {
-                DDFiltroMesesPP.SelectedIndex = 0;
+                DDFiltroMesesFVH.SelectedIndex = 0;
             }
             else
             {
-                DDFiltroMesesPP.SelectedValue = v11;
+                DDFiltroMesesFVH.SelectedValue = v11;
+            }
+
+            var v12 = ddlCategoriasLT.SelectedValue;
+            // llenar dropdown filtro
+            ddlCategoriasLT.Items.Clear();
+            ddlCategoriasLT.Items.Add(new ListItem(Properties.Resources.FiltroME_3M, "3"));
+            ddlCategoriasLT.Items.Add(new ListItem(Properties.Resources.FiltroME_6M, "6"));
+            ddlCategoriasLT.Items.Add(new ListItem(Properties.Resources.FiltroME_12M, "12"));
+
+            if (v12 == "")
+            {
+                ddlCategoriasLT.SelectedIndex = 0;
+            }
+            else
+            {
+                ddlCategoriasLT.SelectedValue = v12;
+            }
+
+            var v13 = ddlFiltroMesesRA.SelectedValue;
+            // llenar dropdown filtro
+            ddlFiltroMesesRA.Items.Clear();
+            ddlFiltroMesesRA.Items.Add(new ListItem(Properties.Resources.FiltroME_3M, "3"));
+            ddlFiltroMesesRA.Items.Add(new ListItem(Properties.Resources.FiltroME_6M, "6"));
+            ddlFiltroMesesRA.Items.Add(new ListItem(Properties.Resources.FiltroME_12M, "12"));
+
+            if (v13 == "")
+            {
+                ddlFiltroMesesRA.SelectedIndex = 0;
+            }
+            else
+            {
+                ddlFiltroMesesRA.SelectedValue = v13;
             }
 
             ScriptManager.RegisterStartupScript(this.Page, this.GetType(), Guid.NewGuid().ToString(), "closeLoading();", true);
@@ -518,6 +553,71 @@ namespace PortalClientes.Views
                 rd.ExportToHttpResponse(ExportFormatType.PortableDocFormat, Response, true, "DetalleGastos");
             else
                 rd.ExportToHttpResponse(ExportFormatType.Excel, Response, true, "DetalleGastos");
+        }
+
+        protected void gvRutas_PageIndexChanging(object sender, GridViewPageEventArgs e)
+        {
+            ScriptManager.RegisterStartupScript(this.Page, this.GetType(), Guid.NewGuid().ToString(), "openLoading();", true);
+            gvRuta.PageIndex = e.NewPageIndex;
+            LlenaGridRutas();
+            settabHome();
+        }
+
+        private void LlenaGridRutas()
+        {
+            gvRuta.DataSource = oLstRutas;
+            gvRuta.DataBind();
+        }
+
+        protected void gvRutas_RowDataBound(object sender, GridViewRowEventArgs e)
+        {
+            if (e.Row.RowType == DataControlRowType.Header)
+            {
+                e.Row.Cells[0].Text = Properties.Resources.ME_TabRutasRuta;
+            }
+        }
+
+        protected void gvAeropuertos_PageIndexChanging(object sender, GridViewPageEventArgs e)
+        {
+            ScriptManager.RegisterStartupScript(this.Page, this.GetType(), Guid.NewGuid().ToString(), "openLoading();", true);
+            gvAeropuerto.PageIndex = e.NewPageIndex;
+            LlenaGridAeropuertos();
+            settabProfile();
+        }
+
+        private void LlenaGridAeropuertos()
+        {
+            gvAeropuerto.DataSource = oLstAeropuertos;
+            gvAeropuerto.DataBind();
+        }
+
+        protected void gvAeropuertos_RowDataBound(object sender, GridViewRowEventArgs e)
+        {
+            if (e.Row.RowType == DataControlRowType.Header)
+            {
+                e.Row.Cells[0].Text = Properties.Resources.ME_TabAeropuertosClave;
+                e.Row.Cells[1].Text = Properties.Resources.ME_TabAeropuertosAero;
+            }
+        }
+
+        public void settabHome()
+        {
+            profiletab.Attributes["class"] = "nav-link";
+            hometab.Attributes.Add("class", "nav-link active");
+
+            profile.Attributes.Add("class", "tab-pane fade");
+            home.Attributes.Add("class", "tab-pane fade show active");
+            ScriptManager.RegisterStartupScript(this.Page, this.GetType(), Guid.NewGuid().ToString(), "closeLoading();", true);
+        }
+
+        public void settabProfile()
+        {
+            hometab.Attributes["class"] = "nav-link";
+            profiletab.Attributes.Add("class", "nav-link active");
+
+            home.Attributes.Add("class", "tab-pane fade");
+            profile.Attributes.Add("class", "tab-pane fade show active");
+            ScriptManager.RegisterStartupScript(this.Page, this.GetType(), Guid.NewGuid().ToString(), "closeLoading();", true);
         }
 
         public DataSet ObtieneGastosTabla(List<responseGraficaGastos> lrg)
@@ -1086,6 +1186,39 @@ namespace PortalClientes.Views
             return lrg;
         }
 
+        [WebMethod]
+        public static List<responseGraficaCategorias> GetCategoriasPeriodo(int meses)
+        {
+            DBMetricasEstatics oIGesCat = new DBMetricasEstatics();
+
+            FiltroEvent fg = new FiltroEvent();
+            fg.meses = meses;
+
+            List<responseGraficaCategorias> lrg = new List<responseGraficaCategorias>();
+            lrg = oIGesCat.obtenerCategoriasPeriodos(fg);
+
+            if (lrg.Count() > 0)
+            {
+                lrg[0].idioma = Utils.Idioma;
+            }
+
+            return lrg;
+        }
+
+        [WebMethod]
+        public static RutaAeropuerto GetRutasAeropuertos(int meses)
+        {
+            DBMetricasEstatics oIGesCat = new DBMetricasEstatics();
+
+            FiltroEvent fg = new FiltroEvent();
+            fg.meses = meses;
+
+            RutaAeropuerto lrg = new RutaAeropuerto();
+            lrg = oIGesCat.obtenerRutasAeropuertos(fg);
+
+            return lrg;
+        }
+
         public void CargarMetricasEstadisticas(DatosMetricas oME)
         {
             oMetEsta = oME;
@@ -1114,6 +1247,49 @@ namespace PortalClientes.Views
             ScriptManager.RegisterStartupScript(this.Page, this.GetType(), Guid.NewGuid().ToString(), "closeLoading();", true);
 
         }
+
+        public void CargarRutasyAeropuertos(RutaAeropuerto ra)
+        {
+            var rutas = ra.rutaAeropuertoPeriodoA;
+            var aeropuertos = ra.rutaAeropuertoPeriodoB;
+
+            List<gvRutas> gvRutas = new List<gvRutas>();
+
+            foreach(var item in rutas)
+            {
+                if (item.aorigenLatitud != null && item.aorigenLongitud != null && item.adestinoLatitud != null && item.adestinoLatitud != null)
+                {
+                    gvRutas gv = new gvRutas();
+                    gv.rutas = item.origen + " - " + item.destino;
+
+                    gvRutas.Add(gv);
+                }
+            }
+
+            oLstRutas = gvRutas;
+            gvRuta.DataSource = oLstRutas;
+            gvRuta.DataBind();
+
+            List<gvAeropuertos> gvAeropuertos = new List<gvAeropuertos>();
+
+            foreach (var item in aeropuertos)
+            {
+                if(item.latitud != null && item.longitud != null)
+                {
+                    gvAeropuertos gv = new gvAeropuertos();
+                    gv.clave = item.aeropuerto;
+                    gv.aeropuerto = item.descripcion;
+
+                    gvAeropuertos.Add(gv);
+                }
+            }
+
+            oLstAeropuertos = gvAeropuertos;
+            gvAeropuerto.DataSource = oLstAeropuertos;
+            gvAeropuerto.DataBind();
+
+            ScriptManager.RegisterStartupScript(this.Page, this.GetType(), Guid.NewGuid().ToString(), "closeLoading();", true);
+        }
         #endregion
 
         #region VARIABLES Y PROPIEDADES
@@ -1125,11 +1301,31 @@ namespace PortalClientes.Views
         public event EventHandler eSaveObj;
         public event EventHandler eDeleteObj;
 
+        public List<gvRutas> oLstRutas
+        {
+            get { return (List<gvRutas>)ViewState["VSRutas"]; }
+            set { ViewState["VSRutas"] = value; }
+        }
+
+        public List<gvAeropuertos> oLstAeropuertos
+        {
+            get { return (List<gvAeropuertos>)ViewState["VSAeropuertos"]; }
+            set { ViewState["VSAeropuertos"] = value; }
+        }
+
         public int iMeses
         {
             get
             {
                 return ddlFiltroResumenPeriodo.SelectedValue.S().I();
+            }
+        }
+
+        public int iMesesMap
+        {
+            get
+            {
+                return ddlFiltroMesesRA.SelectedValue.S().I();
             }
         }
 
@@ -1148,5 +1344,6 @@ namespace PortalClientes.Views
         }
 
         #endregion
+
     }
 }
