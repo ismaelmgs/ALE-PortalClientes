@@ -84,11 +84,12 @@ namespace PortalClientes.Views
             {
                 Session["tipoTransaccion"] = 13;
                 Session["origenData"] = 2;
-                Session["descripcion"] = "Periodo";
+                
 
                 responseRepEdoCuenta oEC = (responseRepEdoCuenta) oEstados.Where(x => x.mes == iMes).FirstOrDefault();
                 if (oEC != null)
                 {
+                    Session["descripcion"] = ObtienePeriodoEdoCuenta(oEC.mes, oEC.anio);
                     Session["data"] = oEC.olsDetalle;
                     Response.Redirect("frmTransacciones.aspx");
                 }
