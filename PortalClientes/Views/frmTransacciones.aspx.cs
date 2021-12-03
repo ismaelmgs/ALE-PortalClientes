@@ -138,15 +138,28 @@ namespace PortalClientes.Views
                         LlenarGV(transacciones, tipo);
                     }
 
+                    else if (tipo == 13)
+                    {
+                        transacciones.detalleEdoCuenta = (List<DetalleRepEdoCuenta>)Session["data"];
+                        LlenarGV(transacciones, tipo);
+                        btnRegresaEdoCta.Visible = true;
+                    }
+
                     if (od == 1)
                     {
                         btnRegresarMeEs.Visible = false;
                         btnRegresarMeEsEng.Visible = false;
                         btnRegresarDash.Visible = true;
                     }
+                    else if (od == 2)
+                    {
+                        btnRegresarDash.Visible = false;
+                        btnRegresarMeEs.Visible = false;
+                        btnRegresarMeEsEng.Visible = false;
+                    }
                     else
                     {
-                        
+
                         if (Utils.Idioma == "es-MX")
                         {
                             btnRegresarMeEs.Visible = true;
@@ -637,7 +650,7 @@ namespace PortalClientes.Views
                 totalRegistros = transacciones.promedioPax.Count();
                 contMeses = transacciones.promedioPax.GroupBy(r => r.mes).Count();
                 totalTiempoVuelo = SumatoriaTiempos(transacciones.promedioPax.Select(x => x.tiempoVuelo).ToList(), 0, 1);//transacciones.vuelos.Sum(x => x.Total);
-                TiempoVueloProm = Math.Round((transacciones.promedioPax.Sum(x => x.cantPax) / totalRegistros),2).S();
+                TiempoVueloProm = Math.Round((transacciones.promedioPax.Sum(x => x.cantPax) / totalRegistros), 2).S();
 
                 BoundField clm = new BoundField();
                 clm.DataField = "mes";
@@ -787,8 +800,8 @@ namespace PortalClientes.Views
             {
                 totalRegistros = transacciones.numeroVuelos.Count();
                 contMeses = transacciones.numeroVuelos.GroupBy(r => r.mes).Count();
-                totalTiempoVuelo = SumatoriaTiempos(transacciones.numeroVuelos.Select(x => x.tiempoVuelo).ToList(),0,1);//transacciones.vuelos.Sum(x => x.Total);
-                TiempoVueloProm = SumatoriaTiempos(transacciones.numeroVuelos.Select(x => x.tiempoVuelo).ToList(), totalRegistros,2);
+                totalTiempoVuelo = SumatoriaTiempos(transacciones.numeroVuelos.Select(x => x.tiempoVuelo).ToList(), 0, 1);//transacciones.vuelos.Sum(x => x.Total);
+                TiempoVueloProm = SumatoriaTiempos(transacciones.numeroVuelos.Select(x => x.tiempoVuelo).ToList(), totalRegistros, 2);
 
                 BoundField clm = new BoundField();
                 clm.DataField = "mes";
@@ -998,6 +1011,69 @@ namespace PortalClientes.Views
                 lblTotalRes.Text = Convert.ToDecimal(dataOpt.campo1).ToString("C", CultureInfo.CreateSpecificCulture("es-MX")) + " MXN";
                 lblPromedioRes.Text = dataOpt.campo2;
             }
+            else if (tipoTransaccion == 13)
+            {
+                totalRegistros = transacciones.detalleEdoCuenta.Count();
+                contMeses = 1;
+                //totalTransacciones = transacciones.detalleEdoCuenta.Sum(x => x.importe.S().Db());
+                //promedio = totalTransacciones / totalRegistros;
+
+                BoundField clm = new BoundField();
+                clm.DataField = "nombreMes";
+                gvGastos.Columns.Add(clm);
+
+                //BoundField clm2 = new BoundField();
+                //clm2.DataField = "anio";
+                //gvGastos.Columns.Add(clm2);
+
+                BoundField clm3 = new BoundField();
+                clm3.DataField = "tipoMoneda";
+                gvGastos.Columns.Add(clm3);
+
+                BoundField clm4 = new BoundField();
+                clm4.DataField = "fecha";
+                gvGastos.Columns.Add(clm4);
+
+                BoundField clm5 = new BoundField();
+                clm5.DataField = "noReferencia";
+                gvGastos.Columns.Add(clm5);
+
+                BoundField clm6 = new BoundField();
+                clm6.DataField = "tipoGasto";
+                gvGastos.Columns.Add(clm6);
+
+                BoundField clm7 = new BoundField();
+                clm7.DataField = "concepto";
+                gvGastos.Columns.Add(clm7);
+
+                BoundField clm8 = new BoundField();
+                clm8.DataField = "detalle";
+                gvGastos.Columns.Add(clm8);
+
+                BoundField clm9 = new BoundField();
+                clm9.DataField = "proveedor";
+                gvGastos.Columns.Add(clm9);
+
+
+                BoundField clm10 = new BoundField();
+                clm10.DataField = "importe";
+                clm10.DataFormatString = "{0:c}";
+                gvGastos.Columns.Add(clm10);
+
+                
+
+                gvGastos.DataSource = transacciones.detalleEdoCuenta.OrderBy(x => x.mes).ToList(); //.GroupBy(r => r.mes).Select(x => x.First());
+                gvGastos.DataBind();
+
+                lblTotalTrasnRes.Text = totalRegistros.S();
+
+                lblTotal.Text = "Total transacciones MXN";
+                double totalTransaccionesMXN = transacciones.detalleEdoCuenta.Where(x => x.tipoMoneda == "MXN").Sum(x => x.importe.S().Db());
+                lblTotalRes.Text = Convert.ToDecimal(totalTransaccionesMXN).ToString("C", CultureInfo.CreateSpecificCulture("es-MX")) + " MXN";
+
+                totalTransacciones = transacciones.detalleEdoCuenta.Where(x => x.tipoMoneda == "USD").Sum(x => x.importe.S().Db());
+                lblPromedioRes.Text = Convert.ToDecimal(totalTransacciones).ToString("C", CultureInfo.CreateSpecificCulture("es-MX")) + " USD";
+            }
         }
 
         private string SumatoriaTiempos(List<string> items, int totalReg, int tipoSum)
@@ -1141,6 +1217,9 @@ namespace PortalClientes.Views
                     break;
                 case 12:
                     title = Utils.Idioma == "es-MX" ? "Costo Fijo y Variable por Hora" : "Fixed and Variable Cost Per Hour";
+                    break;
+                case 13:
+                    title = Utils.Idioma == "es-MX" ? "Detalle de Estado de Cuenta" : "Account Statement Detail";
                     break;
             }
 

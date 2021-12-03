@@ -193,7 +193,7 @@
                             <div class="col-md-12">
                                 <div>
                                     <asp:GridView ID="gvEdoCuenta" runat="server" AutoGenerateColumns="false" CssClass="table table-striped table-bordered table-hover" AllowPaging="true"
-                                        EmptyDataText="No Registros" OnRowDataBound="gvEdoCuenta_RowDataBound" DataKeyNames="Mes">
+                                        EmptyDataText="No Registros" OnRowDataBound="gvEdoCuenta_RowDataBound" OnRowCommand="gvEdoCuenta_RowCommand" DataKeyNames="Mes">
                                         <Columns>
                                             <asp:BoundField DataField="nombreMes" />
                                             <asp:BoundField DataField="saldoAnteriorMXN" DataFormatString="{0:c}" />
@@ -206,7 +206,7 @@
                                             <asp:BoundField DataField="saldoActualUSD" DataFormatString="{0:c}" />
                                             <asp:TemplateField>
                                                 <ItemTemplate>
-                                                    <asp:LinkButton ID="lkbDetalle" runat="server"></asp:LinkButton>
+                                                    <asp:LinkButton ID="lkbDetalle" runat="server" CommandName="Detalle" CommandArgument="<%# ((GridViewRow) Container).RowIndex %>"></asp:LinkButton>
                                                 </ItemTemplate>
                                             </asp:TemplateField>
                                         </Columns>

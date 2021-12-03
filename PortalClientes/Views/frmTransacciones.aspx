@@ -169,6 +169,7 @@
                 <asp:LinkButton ID="btnRegresarMeEsEng" runat="server" Text="<i class='fa fa-undo' style='color:#73879C;font-size:14px;'></i> Metrics and Statistics <i class='fa fa-line-chart' style='color:#73879C;font-size:14px;'></i>" CssClass="btn" href="frmMetricasEstadisticas.aspx" />
                 <asp:LinkButton ID="btnRegresarMeEs" runat="server" Text="<i class='fa fa-undo' style='color:#73879C;font-size:14px;'></i> Metricas y Estadisticas <i class='fa fa-line-chart' style='color:#73879C;font-size:14px;'></i>" CssClass="btn" href="frmMetricasEstadisticas.aspx" />
                 <asp:LinkButton ID="btnRegresarDash" runat="server" Text="<i class='fa fa-undo' style='color:#73879C;font-size:14px;'></i> Dashboard <i class='fa fa-th-large' style='color:#73879C;font-size:14px;'></i>" CssClass="btn" href="frmDashboard.aspx" />
+                <asp:LinkButton ID="btnRegresaEdoCta" runat="server" Text="<i class='fa fa-undo' style='color:#73879C;font-size:14px;'></i> Estado de cuenta <i class='fa fa-th-large' style='color:#73879C;font-size:14px;'></i>" CssClass="btn" href="frmEstadoCuenta.aspx" />
             </div>
         </div>
     </div>

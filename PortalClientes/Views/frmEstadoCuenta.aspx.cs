@@ -76,6 +76,25 @@ namespace PortalClientes.Views
             }
         }
 
+        protected void gvEdoCuenta_RowCommand(object sender, GridViewCommandEventArgs e)
+        {
+            int iMes = gvEdoCuenta.DataKeys[e.CommandArgument.S().I()]["Mes"].S().I();
+
+            if (e.CommandName == "Detalle")
+            {
+                Session["tipoTransaccion"] = 13;
+                Session["origenData"] = 2;
+                Session["descripcion"] = "Periodo";
+
+                responseRepEdoCuenta oEC = (responseRepEdoCuenta) oEstados.Where(x => x.mes == iMes).FirstOrDefault();
+                if (oEC != null)
+                {
+                    Session["data"] = oEC.olsDetalle;
+                    Response.Redirect("frmTransacciones.aspx");
+                }
+            }
+        }
+
         #region METODOS
         private void ArmarEstadoCuenta()
         {
@@ -171,9 +190,16 @@ namespace PortalClientes.Views
 
         public void LlenaTableEdoCuenta(List<responseRepEdoCuenta> olstRep)
         {
+            oEstados = olstRep;
+
             foreach (responseRepEdoCuenta item in olstRep)
             {
                 item.nombreMes = ObtienePeriodoEdoCuenta(item.mes, item.anio);
+
+                foreach (DetalleRepEdoCuenta itemD in item.olsDetalle)
+                {
+                    itemD.nombreMes = ObtienePeriodoEdoCuenta(itemD.mes, itemD.anio);
+                }
             }
 
             gvEdoCuenta.DataSource = olstRep;
@@ -190,7 +216,14 @@ namespace PortalClientes.Views
         public event EventHandler eDeleteObj;
         public event EventHandler eSearchObj;
 
+        public List<responseRepEdoCuenta> oEstados
+        {
+            get { return (List<responseRepEdoCuenta>)ViewState["VSEstados"]; }
+            set { ViewState["VSEstados"] = value; }
+        }
+
         #endregion
+
 
     }
 }
