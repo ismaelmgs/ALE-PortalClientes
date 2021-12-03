@@ -924,4 +924,70 @@
   <data name="TabPilTri_Estatus" xml:space="preserve">
     <value>Status</value>
   </data>
+  <data name="Cm_Abril" xml:space="preserve">
+    <value>April</value>
+  </data>
+  <data name="Cm_Agosto" xml:space="preserve">
+    <value>August</value>
+  </data>
+  <data name="Cm_Diciembre" xml:space="preserve">
+    <value>December</value>
+  </data>
+  <data name="Cm_Enero" xml:space="preserve">
+    <value>January</value>
+  </data>
+  <data name="Cm_Febrero" xml:space="preserve">
+    <value>February</value>
+  </data>
+  <data name="Cm_Julio" xml:space="preserve">
+    <value>July</value>
+  </data>
+  <data name="Cm_Junio" xml:space="preserve">
+    <value>June</value>
+  </data>
+  <data name="Cm_Marzo" xml:space="preserve">
+    <value>March</value>
+  </data>
+  <data name="Cm_Mayo" xml:space="preserve">
+    <value>May</value>
+  </data>
+  <data name="Cm_Noviembre" xml:space="preserve">
+    <value>November</value>
+  </data>
+  <data name="Cm_Octubre" xml:space="preserve">
+    <value>October</value>
+  </data>
+  <data name="Cm_Septiembre" xml:space="preserve">
+    <value>September</value>
+  </data>
+  <data name="Ec_NombreMes" xml:space="preserve">
+    <value>Period</value>
+  </data>
+  <data name="Ec_NuevosCargosMXN" xml:space="preserve">
+    <value>New charges MXN</value>
+  </data>
+  <data name="Ec_NuevosCargosUSD" xml:space="preserve">
+    <value>New charges USD</value>
+  </data>
+  <data name="Ec_PagosCreditosMXN" xml:space="preserve">
+    <value>Payments / credits MXN</value>
+  </data>
+  <data name="Ec_PagosCreditosUSD" xml:space="preserve">
+    <value>Payments / credits USD</value>
+  </data>
+  <data name="Ec_SaldoActualMXN" xml:space="preserve">
+    <value>Current balance MXN</value>
+  </data>
+  <data name="Ec_SaldoActualUSD" xml:space="preserve">
+    <value>Current balance USD</value>
+  </data>
+  <data name="Ec_SaldoAnteriorMXN" xml:space="preserve">
+    <value>Previous balance MXN</value>
+  </data>
+  <data name="Ec_SaldoAnteriosUSD" xml:space="preserve">
+    <value>Previous balance USD</value>
+  </data>
+  <data name="Ec_VerDetalle" xml:space="preserve">
+    <value>View detail</value>
+  </data>
 </root>

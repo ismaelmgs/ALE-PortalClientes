@@ -10,7 +10,10 @@
             <div class="row">
                 <div class="col-md-6">
                     <div class="title_left">
-                        <h3><asp:Label ID="lblTitulo" runat="server" Text="Estados de Cuenta Mensual"></asp:Label></h3>
+                        <h3>
+                            <asp:Label ID="lblTitulo" runat="server" Text="Estados de Cuenta Mensual"></asp:Label>
+                            (<asp:Label ID="lblPeriodo" runat="server"></asp:Label>)
+                        </h3>
                     </div>
                 </div>
                 <div class="col-md-6">
@@ -99,7 +102,7 @@
                                                     <asp:Label ID="lblPagosPeriodo" runat="server" Text=" Pagos del periodo" Font-Bold="false"></asp:Label></span>
                                                 <div class="count">
                                                     <asp:Label ID="lblPagosPeriodoUSD" runat="server" Text=" $" Font-Bold="true" CssClass="count"/>
-                                                    <asp:Label ID="lblPagosPeriodoRes" runat="server" Text=" 100,000.00" Font-Bold="true" CssClass="count"></asp:Label>
+                                                    <asp:Label ID="lblPagosPeriodoRes" runat="server" Text=" 0.00" Font-Bold="true" CssClass="count"></asp:Label>
                                                 </div>
                                             </div>
                                         </div>
@@ -109,7 +112,7 @@
                                                     <asp:Label ID="lblMontoReq" runat="server" Text=" Monto de Depósito Requerido" Font-Bold="false"></asp:Label></span>
                                                 <div class="count">
                                                     <asp:Label ID="lblMontoReqUSD" runat="server" Text=" $" Font-Bold="true" CssClass="count"/>
-                                                    <asp:Label ID="lblMontoReqRes" runat="server" Text=" 100,000.00" Font-Bold="true" CssClass="count"></asp:Label>
+                                                    <asp:Label ID="lblMontoReqRes" runat="server" Text=" 0.00" Font-Bold="true" CssClass="count"></asp:Label>
                                                 </div>
                                             </div>
                                         </div>
@@ -136,7 +139,7 @@
                                                     <asp:Label ID="lblSaldoActualMXN" runat="server" Text=" Saldo Actual" Font-Bold="false"></asp:Label></span>
                                                 <div class="count">
                                                     <asp:Label ID="lblSaldoActualMonMXN" runat="server" Text=" $" Font-Bold="true" CssClass="count" />
-                                                    <asp:Label ID="lblSaldoActualMXNRes" runat="server" Text=" 155,522.11" Font-Bold="true" CssClass="count"></asp:Label>
+                                                    <asp:Label ID="lblSaldoActualMXNRes" runat="server" Text=" 0.01" Font-Bold="true" CssClass="count"></asp:Label>
                                                 </div>
                                             </div>
                                         </div>
@@ -146,7 +149,7 @@
                                                     <asp:Label ID="lblNuevosCargosMXN" runat="server" Text=" Nuevos Cargos" Font-Bold="false"></asp:Label></span>
                                                 <div class="count">
                                                     <asp:Label ID="Label7" runat="server" Text=" $" Font-Bold="true" CssClass="count" />
-                                                    <asp:Label ID="lblNuevosCargosMXNRes" runat="server" Text=" 155.522.11" Font-Bold="true" CssClass="count"></asp:Label>
+                                                    <asp:Label ID="lblNuevosCargosMXNRes" runat="server" Text=" 0.01" Font-Bold="true" CssClass="count"></asp:Label>
                                                 </div>
                                             </div>
                                         </div>
@@ -156,7 +159,7 @@
                                                     <asp:Label ID="lblPagosPeriodoMXN" runat="server" Text=" Pagos del periodo" Font-Bold="false"></asp:Label></span>
                                                 <div class="count">
                                                     <asp:Label ID="Label10" runat="server" Text=" $" Font-Bold="true" CssClass="count" />
-                                                    <asp:Label ID="lblPagosPeriodoMXNRes" runat="server" Text=" 100,000.00" Font-Bold="true" CssClass="count"></asp:Label>
+                                                    <asp:Label ID="lblPagosPeriodoMXNRes" runat="server" Text=" 0.00" Font-Bold="true" CssClass="count"></asp:Label>
                                                 </div>
                                             </div>
                                         </div>
@@ -166,7 +169,7 @@
                                                     <asp:Label ID="lblMontoReqMXN" runat="server" Text=" Monto de Depósito Requerido" Font-Bold="false"></asp:Label></span>
                                                 <div class="count">
                                                     <asp:Label ID="Label13" runat="server" Text=" $" Font-Bold="true" CssClass="count" />
-                                                    <asp:Label ID="lblMontoReqMXNRes" runat="server" Text=" 100,000.00" Font-Bold="true" CssClass="count"></asp:Label>
+                                                    <asp:Label ID="lblMontoReqMXNRes" runat="server" Text=" 0.00" Font-Bold="true" CssClass="count"></asp:Label>
                                                 </div>
                                             </div>
                                         </div>
@@ -189,7 +192,25 @@
                         <div class="row">
                             <div class="col-md-12">
                                 <div>
-                                    Tabla
+                                    <asp:GridView ID="gvEdoCuenta" runat="server" AutoGenerateColumns="false" CssClass="table table-striped table-bordered table-hover" AllowPaging="true"
+                                        EmptyDataText="No Registros" OnRowDataBound="gvEdoCuenta_RowDataBound" DataKeyNames="Mes">
+                                        <Columns>
+                                            <asp:BoundField DataField="nombreMes" />
+                                            <asp:BoundField DataField="saldoAnteriorMXN" DataFormatString="{0:c}" />
+                                            <asp:BoundField DataField="pagosCreditoMXN" DataFormatString="{0:c}" />
+                                            <asp:BoundField DataField="nuevosCargosMXN" DataFormatString="{0:c}" />
+                                            <asp:BoundField DataField="saldoActualMXN" DataFormatString="{0:c}" />
+                                            <asp:BoundField DataField="saldoAnteriorUSD" DataFormatString="{0:c}" />
+                                            <asp:BoundField DataField="pagosCreditoUSD" DataFormatString="{0:c}" />
+                                            <asp:BoundField DataField="nuevosCargosUSD" DataFormatString="{0:c}" />
+                                            <asp:BoundField DataField="saldoActualUSD" DataFormatString="{0:c}" />
+                                            <asp:TemplateField>
+                                                <ItemTemplate>
+                                                    <asp:LinkButton ID="lkbDetalle" runat="server"></asp:LinkButton>
+                                                </ItemTemplate>
+                                            </asp:TemplateField>
+                                        </Columns>
+                                    </asp:GridView>
                                 </div>
                             </div>
                         </div>

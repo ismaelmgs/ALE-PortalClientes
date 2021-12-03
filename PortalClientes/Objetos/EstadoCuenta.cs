@@ -13,11 +13,11 @@ namespace PortalClientes.Objetos
         public decimal saldoAnteriorUSD { set; get; }
         public decimal pagosCreditosUSD { set; get; }
         public decimal nuevosCargosUSD { set; get; }
-        public decimal saldoActualUSD { set; get; }
+        public decimal saldoActalUSD { set; get; }
 
         public decimal saldoAnteriorMXN { set; get; }
         public decimal pagosCreditosMXN { set; get; }
         public decimal nuevosCargosMXN { set; get; }
-        public decimal saldoActualMXN { set; get; }
+        public decimal saldoActalMXN { set; get; }
     }
 }

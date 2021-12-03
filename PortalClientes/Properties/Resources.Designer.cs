@@ -691,6 +691,24 @@ namespace PortalClientes.Properties {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Abril.
+        /// </summary>
+        internal static string Cm_Abril {
+            get {
+                return ResourceManager.GetString("Cm_Abril", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Agosto.
+        /// </summary>
+        internal static string Cm_Agosto {
+            get {
+                return ResourceManager.GetString("Cm_Agosto", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Buscar....
         /// </summary>
         internal static string Cm_Buscador {
@@ -705,6 +723,96 @@ namespace PortalClientes.Properties {
         internal static string Cm_CampoReq {
             get {
                 return ResourceManager.GetString("Cm_CampoReq", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Diciembre.
+        /// </summary>
+        internal static string Cm_Diciembre {
+            get {
+                return ResourceManager.GetString("Cm_Diciembre", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Enero.
+        /// </summary>
+        internal static string Cm_Enero {
+            get {
+                return ResourceManager.GetString("Cm_Enero", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Febrero.
+        /// </summary>
+        internal static string Cm_Febrero {
+            get {
+                return ResourceManager.GetString("Cm_Febrero", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Julio.
+        /// </summary>
+        internal static string Cm_Julio {
+            get {
+                return ResourceManager.GetString("Cm_Julio", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Junio.
+        /// </summary>
+        internal static string Cm_Junio {
+            get {
+                return ResourceManager.GetString("Cm_Junio", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Marzo.
+        /// </summary>
+        internal static string Cm_Marzo {
+            get {
+                return ResourceManager.GetString("Cm_Marzo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Mayo.
+        /// </summary>
+        internal static string Cm_Mayo {
+            get {
+                return ResourceManager.GetString("Cm_Mayo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Noviembre.
+        /// </summary>
+        internal static string Cm_Noviembre {
+            get {
+                return ResourceManager.GetString("Cm_Noviembre", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Octubre.
+        /// </summary>
+        internal static string Cm_Octubre {
+            get {
+                return ResourceManager.GetString("Cm_Octubre", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Septiembre.
+        /// </summary>
+        internal static string Cm_Septiembre {
+            get {
+                return ResourceManager.GetString("Cm_Septiembre", resourceCulture);
             }
         }
         
@@ -952,6 +1060,15 @@ namespace PortalClientes.Properties {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Periodo.
+        /// </summary>
+        internal static string Ec_NombreMes {
+            get {
+                return ResourceManager.GetString("Ec_NombreMes", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Nuevos cargos.
         /// </summary>
         internal static string Ec_NuevosCargos {
@@ -961,11 +1078,47 @@ namespace PortalClientes.Properties {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Nuevos cargos MXN.
+        /// </summary>
+        internal static string Ec_NuevosCargosMXN {
+            get {
+                return ResourceManager.GetString("Ec_NuevosCargosMXN", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Nuevos cargos USD.
+        /// </summary>
+        internal static string Ec_NuevosCargosUSD {
+            get {
+                return ResourceManager.GetString("Ec_NuevosCargosUSD", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Monto de depósito requerido.
         /// </summary>
         internal static string Ec_PagoRequerido {
             get {
                 return ResourceManager.GetString("Ec_PagoRequerido", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Pagos crédito MXN.
+        /// </summary>
+        internal static string Ec_PagosCreditosMXN {
+            get {
+                return ResourceManager.GetString("Ec_PagosCreditosMXN", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Pagos créditos USD.
+        /// </summary>
+        internal static string Ec_PagosCreditosUSD {
+            get {
+                return ResourceManager.GetString("Ec_PagosCreditosUSD", resourceCulture);
             }
         }
         
@@ -997,11 +1150,56 @@ namespace PortalClientes.Properties {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Saldo actual MXN.
+        /// </summary>
+        internal static string Ec_SaldoActualMXN {
+            get {
+                return ResourceManager.GetString("Ec_SaldoActualMXN", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Saldo actual USD.
+        /// </summary>
+        internal static string Ec_SaldoActualUSD {
+            get {
+                return ResourceManager.GetString("Ec_SaldoActualUSD", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Saldo anterior MXN.
+        /// </summary>
+        internal static string Ec_SaldoAnteriorMXN {
+            get {
+                return ResourceManager.GetString("Ec_SaldoAnteriorMXN", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Saldo anterior USD.
+        /// </summary>
+        internal static string Ec_SaldoAnteriosUSD {
+            get {
+                return ResourceManager.GetString("Ec_SaldoAnteriosUSD", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Estado de Cuenta Mensual.
         /// </summary>
         internal static string Ec_Titulo {
             get {
                 return ResourceManager.GetString("Ec_Titulo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Ver detalle.
+        /// </summary>
+        internal static string Ec_VerDetalle {
+            get {
+                return ResourceManager.GetString("Ec_VerDetalle", resourceCulture);
             }
         }
         
