@@ -5,6 +5,7 @@ using System.Web;
 
 namespace PortalClientes.Objetos
 {
+    [Serializable]
     public class responseRepEdoCuenta
     {
         private List<DetalleRepEdoCuenta> _olsDetalle = new List<DetalleRepEdoCuenta>();
@@ -25,8 +26,10 @@ namespace PortalClientes.Objetos
         public List<DetalleRepEdoCuenta> olsDetalle { get => _olsDetalle; set => _olsDetalle = value; }
     }
 
+    [Serializable]
     public class DetalleRepEdoCuenta
     {
+        public string nombreMes { set; get; } 
         public int mes { set; get; }
         public int anio { set; get; }
         public string tipoMoneda { set; get; }
