@@ -449,19 +449,20 @@ namespace PortalClientes.DomainModel
 
         }
 
-        public List<responseGraficaCategorias> obtenerCategoriasPeriodos(FiltroEvent filtro)
+        public List<responseGraficaCategorias> obtenerCategoriasPeriodos(FiltroGraficaFV filtro)
         {
             try
             {
                 JavaScriptSerializer ser = new JavaScriptSerializer();
                 ser.MaxJsonLength = 500000000;
                 List<responseGraficaCategorias> d = new List<responseGraficaCategorias>();
-                FiltroEvent oLog = new FiltroEvent();
+                FiltroGraficaFV oLog = new FiltroGraficaFV();
                 oLog = filtro;
                 oLog.matricula = Utils.MatriculaActual;
 
-                oLog.matricula = "XA-ALE";
-                oLog.meses = 1;
+                oLog.matricula = "XA-FLC";
+                oLog.meses = "12";
+                oLog.idioma = Utils.Idioma;
 
                 TokenWS oToken = Utils.ObtieneToken;
 

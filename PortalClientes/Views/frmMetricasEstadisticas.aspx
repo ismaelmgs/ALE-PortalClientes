@@ -602,18 +602,25 @@
                 <div class="row">
                     
                     <div class="col-md-7">
+                        <h5>
+                            <label runat="server" id="lbTitleMapR">Top Rutas</label>
+                            <label runat="server" style="display: none;" id="lbTitleMapA">Top Aeropuertos</label>
+                        </h5>
+                        <br />
                         <div id="googleMap"></div>
                         <%--<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15008005.624851545!2d-111.65547970087938!3d23.313441203547026!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x84043a3b88685353%3A0xed64b4be6b099811!2zTcOpeGljbw!5e0!3m2!1ses!2smx!4v1629999888503!5m2!1ses!2smx" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>--%>
                     </div>
                 <div class="col-md-5">
                     <ul class="nav nav-tabs" id="myTab" role="tablist">
-                      <li class="nav-item">
-                        <a class="nav-link active" runat="server" id="hometab" data-toggle="tab" href="#ContentPlaceHolder1_home" role="tab" aria-controls="ContentPlaceHolder1_home" aria-selected="true">
-                            <asp:Label ID="lblTopRutas" runat="server" Text="Top Rutas"></asp:Label></a>
+                      <li class="nav-item" onclick="hometab_Click">
+                          <asp:LinkButton runat="server" ID="hometab" OnClientClick="hometab_Click()" CssClass="nav-link active" data-toggle="tab" href="#ContentPlaceHolder1_home" role="tab" aria-controls="ContentPlaceHolder1_home" aria-selected="true">
+                              <asp:Label ID="lblTopRutas" runat="server" Text="Top Rutas"></asp:Label>
+                          </asp:LinkButton>
                       </li>
-                        <li class="nav-item">
-                            <a class="nav-link" runat="server" id="profiletab" data-toggle="tab" href="#ContentPlaceHolder1_profile" role="tab" aria-controls="ContentPlaceHolder1_profile" aria-selected="false">
-                                <asp:Label ID="lblTopAeropuertos" runat="server" Text="Top Aeropuertos"></asp:Label></a>
+                        <li class="nav-item" onclick="profiletab_Click">
+                             <asp:LinkButton runat="server" ID="profiletab" OnClientClick="profiletab_Click()" CssClass="nav-link" data-toggle="tab" href="#ContentPlaceHolder1_profile" role="tab" aria-controls="ContentPlaceHolder1_profile" aria-selected="false">
+                               <asp:Label ID="lblTopAeropuertos" runat="server" Text="Top Aeropuertos"></asp:Label>
+                          </asp:LinkButton>
                         </li>
                     </ul>
                     <div class="tab-content" id="myTabContent">

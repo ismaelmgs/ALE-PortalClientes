@@ -715,13 +715,31 @@ namespace PortalClientes.Views {
         protected global::System.Web.UI.WebControls.DropDownList ddlFiltroMesesRA;
         
         /// <summary>
+        /// Control lbTitleMapR.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl lbTitleMapR;
+        
+        /// <summary>
+        /// Control lbTitleMapA.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl lbTitleMapA;
+        
+        /// <summary>
         /// Control hometab.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlAnchor hometab;
+        protected global::System.Web.UI.WebControls.LinkButton hometab;
         
         /// <summary>
         /// Control lblTopRutas.
@@ -739,7 +757,7 @@ namespace PortalClientes.Views {
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlAnchor profiletab;
+        protected global::System.Web.UI.WebControls.LinkButton profiletab;
         
         /// <summary>
         /// Control lblTopAeropuertos.

@@ -6,12 +6,12 @@ $(document).ready(function () {
         meses: $("#ContentPlaceHolder1_ddlCategoriasLT").val(),
     });
 
-    ajax_data(objCLT, urlCLT, function (data) {
-        charts(data); // Pie Charts
+    ajax_dataCLT(objCLT, urlCLT, function (data) {
+        chartsCLT(data); // Pie Charts
     });
 
     window.onresize = function () {
-        ajax_data(objCLT, urlCLT, function (data) {
+        ajax_dataCLT(objCLT, urlCLT, function (data) {
             charts(data); // Pie Charts
         });
     };
@@ -22,25 +22,23 @@ function getUrlCLT() {
     return value;
 }
 
-$('#btnGraficasBuscar').click(function (event) {
-
+$('#ContentPlaceHolder1_ddlCategoriasLT').click(function (event) {
     event.preventDefault();
-    ActualizarGrafica();
-
+    ActualizarGraficaCLT();
 });
 
-function ActualizarGrafica() {
-    const url = getUrl(); // API URL
-    let obj = JSON.stringify({
+function ActualizarGraficaCLT() {
+    const urlCLT = getUrl(); // API URL
+    let objCLT = JSON.stringify({
         meses: $("#ContentPlaceHolder1_ddlPeriodo").val(),
     });
 
-    ajax_data(obj, url, function (data) {
-        charts(data, "PieChart"); // Pie Charts
+    ajax_dataCLT(objCLT, urlCLT, function (data) {
+        chartsCLT(data, "PieChart"); // Pie Charts
     });
 }
 
-function ajax_data(obj, url, success) {
+function ajax_dataCLT(obj, url, success) {
     $.ajax({
         data: obj,
         contentType: "Application/json; charset=utf-8",
@@ -58,15 +56,15 @@ function ajax_data(obj, url, success) {
     });
 }
 
-function charts(data) {
-    var jsonData = data;
+function chartsCLT(data) {
+    var jsonDataCLT = data;
     
-    if (jsonData.length > 0) {
+    if (jsonDataCLT.length > 0) {
         google.charts.load("current", { packages: ["corechart"] });
-        google.charts.setOnLoadCallback(drawVisualization)
+        google.charts.setOnLoadCallback(drawVisualizationCLT)
     }
 
-    function generarUrl(obtiene) {
+    function generarUrlCLT(obtiene) {
         var url = "";
 
         if (obtiene) {
@@ -88,37 +86,41 @@ function charts(data) {
     }
 
 
-    function drawVisualization() {
+    function drawVisualizationCLT() {
 
         var screenWidth = screen.width;
 
         var data = google.visualization.arrayToDataTable([
-            [ {label: 'Year', id: 'year'},
-              {label: 'Sales', id: 'Sales', type: 'number'}, // Use object notation to explicitly specify the data type.
-              {label: 'Expenses', id: 'Expenses', type: 'number'} ],
-            ['2014', 1000, 400],
-            ['2015', 1170, 460],
-            ['2016', 660, 1120],
-            ['2017', 1030, 540]]);
+            [ {label: 'Mes', id: 'mes'},
+              {label: 'CAPITAL', id: 'CAPITAL', type: 'number'},
+              {label: 'CUOTA', id: 'CUOTA', type: 'number'},
+              {label: 'DIVERSOS', id: 'DIVERSOS', type: 'number'},
+              {label: 'IMPUESTOS Y DERECHOS', id: 'IMPUESTOS Y DERECHOS', type: 'number'},
+              {label: 'MANTENIMIENTO', id: 'MANTENIMIENTO', type: 'number'},
+              {label: 'SEGUROS', id: 'SEGUROS', type: 'number'},
+              {label: 'VIAJE', id: 'VIAJE', type: 'number'},
+              {label: 'OTHER', id: 'OTHER', type: 'number'} ],
+            ['ENERO', 21000, 40330,53234,32542,23564,54677,34554,33223],
+            ['FEBRERO', 23430, 40330,53234,32542,23564,24677,34554,54333],
+            ['MARZO', 25634, 40330,53234,32542,23564,25477,34554,44633],
+            ['ABRIL', 34674, 40330,53234,32542,23564,25467,34554,43655],
+            ['MAYO', 12345, 40330,53234,32542,23564,25677,34554,46433],
+            ['JUNIO', 32432, 40330,53234,32542,23564,25677,34554,45744],
+            ['JULIO', 34567, 40330,53234,32542,23564,25677,34554,42377],
+            ['AGOSTO', 45678, 40330,53234,32542,23564,24677,34554,37456],
+            ['SEPTIEMBRE', 67534, 40330,53234,32542,23564,25467,34554,23467],
+            ['OCTUBRE', 34567, 44455,34673,64533,36789,12349,23789,34532],
+            ['NOVIEMBRE', 21456, 34455,56334,65444,34599,47891,35783,43525],
+            ['DICIEMBRE', 53454, 23453,32432,34571,23123,12322,23211,65432],
+        ]);
 
-        // const opt = { style: 'currency', currency: 'MXN' };
-        // var numberFormat = new Intl.NumberFormat('es-MX', opt);
-
-        // jsonData.forEach((item, index) => {
-
-        //     if (jsonData[0].idioma == "es-MX") {
-        //         data.addRows([[item.rubroESP, item.totalMXN, `${item.rubroESP} - ${numberFormat.format(item.totalMXN)} MXN`,]]);
-        //     } else {
-        //         data.addRows([[item.rubroENG, item.totalMXN, `${item.rubroENG} - ${numberFormat.format(item.totalMXN)} MXN`,]]);
-        //     }
-
-        // });
 
         var options = {
-            title: jsonData[0].idioma == "es-MX" ? "Categorias a lo Largo del Tiempo" : "Expenses Categories Over Time",
+            title: "Categorias a lo Largo del Tiempo",//jsonData[0].idioma == "es-MX" ? "Categorias a lo Largo del Tiempo" : "Expenses Categories Over Time",
             bar: {
                 groupWidth: "60%",
             },
+            isStacked: true,
             fontSize: 9,
             chartArea: {
                 left: screenWidth > 500 ? 30 : 10,
@@ -139,7 +141,7 @@ function charts(data) {
             colors: ['#3276ae', '#6aabc0', '#cf575e', '#eb924f', '#f6c543', '#d578a9', '#9889d1', '#89d193']
         };
 
-        var chart = new google.visualization.ColumnChart(document.getElementById('piechart_3d_1'));
+        var chart = new google.visualization.ColumnChart(document.getElementById('piechart_3d_17'));
         chart.draw(data, options);
 
         google.visualization.events.addListener(chart, 'select', function () {
@@ -202,6 +204,17 @@ function charts(data) {
             }
         });
     }
+}
+
+
+function hometab_Click(){
+    document.getElementById("ContentPlaceHolder1_lbTitleMapR").style.display = 'block';
+    document.getElementById("ContentPlaceHolder1_lbTitleMapA").style.display = 'none';
+}
+
+function profiletab_Click(){
+    document.getElementById("ContentPlaceHolder1_lbTitleMapA").style.display = 'block';
+    document.getElementById("ContentPlaceHolder1_lbTitleMapR").style.display = 'none';
 }
 
 

@@ -144,6 +144,9 @@ namespace PortalClientes.Views
             lblTopRutas.Text = Properties.Resources.ME_PnlRutas;
             lblTopAeropuertos.Text = Properties.Resources.ME_PnlAeropuertos;
 
+            lbTitleMapA.InnerText = Properties.Resources.ME_PnlAeropuertos;
+            lbTitleMapR.InnerText = Properties.Resources.ME_PnlRutas;
+
             var vPeriodo = ddlPeriodo.SelectedValue;
             // llenar dropdown Periodo
             ddlPeriodo.Items.Clear();
@@ -607,6 +610,7 @@ namespace PortalClientes.Views
 
             profile.Attributes.Add("class", "tab-pane fade");
             home.Attributes.Add("class", "tab-pane fade show active");
+
             ScriptManager.RegisterStartupScript(this.Page, this.GetType(), Guid.NewGuid().ToString(), "closeLoading();", true);
         }
 
@@ -617,6 +621,7 @@ namespace PortalClientes.Views
 
             home.Attributes.Add("class", "tab-pane fade");
             profile.Attributes.Add("class", "tab-pane fade show active");
+
             ScriptManager.RegisterStartupScript(this.Page, this.GetType(), Guid.NewGuid().ToString(), "closeLoading();", true);
         }
 
@@ -1187,11 +1192,11 @@ namespace PortalClientes.Views
         }
 
         [WebMethod]
-        public static List<responseGraficaCategorias> GetCategoriasPeriodo(int meses)
+        public static List<responseGraficaCategorias> GetCategoriasPeriodo(string meses)
         {
             DBMetricasEstatics oIGesCat = new DBMetricasEstatics();
 
-            FiltroEvent fg = new FiltroEvent();
+            FiltroGraficaFV fg = new FiltroGraficaFV();
             fg.meses = meses;
 
             List<responseGraficaCategorias> lrg = new List<responseGraficaCategorias>();
@@ -1344,6 +1349,5 @@ namespace PortalClientes.Views
         }
 
         #endregion
-
     }
 }
