@@ -420,6 +420,12 @@ namespace PortalClientes.Views
                 LlenarGV(transacciones, tipo);
             }
 
+            else if (tipo == 13)
+            {
+                transacciones.detalleEdoCuenta = (List<DetalleRepEdoCuenta>)Session["data"];
+                LlenarGV(transacciones, tipo);
+            }
+
         }
 
         protected void btnExcel_Click(object sender, EventArgs e)
