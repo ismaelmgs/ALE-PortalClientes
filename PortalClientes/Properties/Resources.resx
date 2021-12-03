@@ -1020,4 +1020,13 @@
   <data name="TabTran_TMoneda" xml:space="preserve">
     <value>Tipo Moneda</value>
   </data>
+  <data name="TabTran_Periodo" xml:space="preserve">
+    <value>Periodo</value>
+  </data>
+  <data name="TabTran_TotalTranMXN" xml:space="preserve">
+    <value>Total transacciones MXN</value>
+  </data>
+  <data name="TabTran_TotalTranUSD" xml:space="preserve">
+    <value>Total transacciones USD</value>
+  </data>
 </root>

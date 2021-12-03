@@ -1023,4 +1023,13 @@
   <data name="TabTran_TMoneda" xml:space="preserve">
     <value>Type Currency</value>
   </data>
+  <data name="TabTran_Periodo" xml:space="preserve">
+    <value>Period</value>
+  </data>
+  <data name="TabTran_TotalTranMXN" xml:space="preserve">
+    <value>Total MXN transactions</value>
+  </data>
+  <data name="TabTran_TotalTranUSD" xml:space="preserve">
+    <value>Total USD transactions</value>
+  </data>
 </root>

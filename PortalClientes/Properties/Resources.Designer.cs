@@ -2374,6 +2374,15 @@ namespace PortalClientes.Properties {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Periodo.
+        /// </summary>
+        internal static string TabTran_Periodo {
+            get {
+                return ResourceManager.GetString("TabTran_Periodo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Promedio Mensual.
         /// </summary>
         internal static string TabTran_PromedioMens {
@@ -2460,6 +2469,24 @@ namespace PortalClientes.Properties {
         internal static string TabTran_TotalCostos {
             get {
                 return ResourceManager.GetString("TabTran_TotalCostos", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Total transacciones MXN.
+        /// </summary>
+        internal static string TabTran_TotalTranMXN {
+            get {
+                return ResourceManager.GetString("TabTran_TotalTranMXN", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Total transacciones USD.
+        /// </summary>
+        internal static string TabTran_TotalTranUSD {
+            get {
+                return ResourceManager.GetString("TabTran_TotalTranUSD", resourceCulture);
             }
         }
         

@@ -328,15 +328,14 @@ namespace PortalClientes.Views
                 else if (tipo == 13)
                 {
                     e.Row.Cells[0].Text = Properties.Resources.TabTran_Mes;
-                    e.Row.Cells[1].Text = Properties.Resources.TabTran_Anio;
-                    e.Row.Cells[2].Text = Properties.Resources.TabTran_TMoneda;
-                    e.Row.Cells[3].Text = Properties.Resources.TabTran_Fecha;
-                    e.Row.Cells[4].Text = Properties.Resources.TabTran_NoReferencia;
-                    e.Row.Cells[5].Text = Properties.Resources.TabTran_TGasto;
-                    e.Row.Cells[6].Text = Properties.Resources.TabTran_Concepto;
-                    e.Row.Cells[7].Text = Properties.Resources.TabTran_Detalle;
-                    e.Row.Cells[8].Text = Properties.Resources.TabTran_Proveedor;
-                    e.Row.Cells[9].Text = Properties.Resources.TabTran_Importe;
+                    e.Row.Cells[1].Text = Properties.Resources.TabTran_TMoneda;
+                    e.Row.Cells[2].Text = Properties.Resources.TabTran_Fecha;
+                    e.Row.Cells[3].Text = Properties.Resources.TabTran_NoReferencia;
+                    e.Row.Cells[4].Text = Properties.Resources.TabTran_TGasto;
+                    e.Row.Cells[5].Text = Properties.Resources.TabTran_Concepto;
+                    e.Row.Cells[6].Text = Properties.Resources.TabTran_Detalle;
+                    e.Row.Cells[7].Text = Properties.Resources.TabTran_Proveedor;
+                    e.Row.Cells[8].Text = Properties.Resources.TabTran_Importe;
                     
                 }
 
@@ -1082,10 +1081,11 @@ namespace PortalClientes.Views
 
                 lblTotalTrasnRes.Text = totalRegistros.S();
 
-                lblTotal.Text = "Total transacciones MXN";
+                lblTotal.Text = Properties.Resources.TabTran_TotalTranMXN;
                 double totalTransaccionesMXN = transacciones.detalleEdoCuenta.Where(x => x.tipoMoneda == "MXN").Sum(x => x.importe.S().Db());
                 lblTotalRes.Text = Convert.ToDecimal(totalTransaccionesMXN).ToString("C", CultureInfo.CreateSpecificCulture("es-MX")) + " MXN";
 
+                lblPromedio.Text = Properties.Resources.TabTran_TotalTranUSD;
                 totalTransacciones = transacciones.detalleEdoCuenta.Where(x => x.tipoMoneda == "USD").Sum(x => x.importe.S().Db());
                 lblPromedioRes.Text = Convert.ToDecimal(totalTransacciones).ToString("C", CultureInfo.CreateSpecificCulture("es-MX")) + " USD";
             }
