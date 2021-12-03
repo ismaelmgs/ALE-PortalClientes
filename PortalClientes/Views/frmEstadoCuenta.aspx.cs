@@ -45,6 +45,36 @@ namespace PortalClientes.Views
             }
         }
 
+        protected void gvEdoCuenta_RowDataBound(object sender, GridViewRowEventArgs e)
+        {
+            try
+            {
+                if (e.Row.RowType == DataControlRowType.Header)
+                {
+                    e.Row.Cells[0].Text = Properties.Resources.Ec_NombreMes;
+
+                    e.Row.Cells[1].Text = Properties.Resources.Ec_SaldoAnteriorMXN;
+                    e.Row.Cells[2].Text = Properties.Resources.Ec_PagosCreditosMXN;
+                    e.Row.Cells[3].Text = Properties.Resources.Ec_NuevosCargosMXN;
+                    e.Row.Cells[4].Text = Properties.Resources.Ec_SaldoActualMXN;
+
+                    e.Row.Cells[5].Text = Properties.Resources.Ec_SaldoAnteriosUSD;
+                    e.Row.Cells[6].Text = Properties.Resources.Ec_PagosCreditosUSD;
+                    e.Row.Cells[7].Text = Properties.Resources.Ec_NuevosCargosUSD;
+                    e.Row.Cells[8].Text = Properties.Resources.Ec_SaldoActualUSD;
+                }
+
+                if (e.Row.RowType == DataControlRowType.DataRow)
+                {
+                    LinkButton lkb = (LinkButton)e.Row.FindControl("lkbDetalle");
+                    lkb.Text = Properties.Resources.Ec_VerDetalle;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
 
         #region METODOS
         private void ArmarEstadoCuenta()
@@ -68,28 +98,86 @@ namespace PortalClientes.Views
             lblNuevosCargosRes.Text = oEstado.nuevosCargosUSD.ToString("n");
             lblPagosPeriodoRes.Text = oEstado.pagosCreditosUSD.ToString("n");
 
-            if (oEstado.saldoActualUSD < 0)
+            if (oEstado.saldoActalUSD < 0)
                 lblMontoReqRes.ForeColor = Color.Green;
-            if (oEstado.saldoActualUSD > 0)
+            if (oEstado.saldoActalUSD > 0)
                 lblMontoReqRes.ForeColor = Color.Red;
             //if (oEstado.saldoActualUSD == 0)
             //    lblMontoReqRes.ForeColor = Color.Black;
 
-            lblMontoReqRes.Text = oEstado.saldoActualUSD.ToString("n");
+            lblMontoReqRes.Text = oEstado.saldoActalUSD.ToString("n");
 
 
             lblSaldoActualMXNRes.Text = oEstado.saldoAnteriorMXN.ToString("n");
             lblNuevosCargosMXNRes.Text = oEstado.nuevosCargosMXN.ToString("n");
             lblPagosPeriodoMXNRes.Text = oEstado.pagosCreditosMXN.ToString("n");
 
-            if (oEstado.saldoActualMXN < 0)
+            if (oEstado.saldoActalMXN < 0)
                 lblMontoReqMXNRes.ForeColor = Color.Green;
-            if(oEstado.saldoActualMXN > 0)
+            if(oEstado.saldoActalMXN > 0)
                 lblMontoReqMXNRes.ForeColor = Color.Red;
             //if (oEstado.saldoActualMXN == 0)
             //    lblMontoReqMXNRes.ForeColor = Color.Black;
 
-            lblMontoReqMXNRes.Text = oEstado.saldoActualMXN.ToString("n");
+            lblMontoReqMXNRes.Text = oEstado.saldoActalMXN.ToString("n");
+            lblPeriodo.Text = ObtienePeriodoEdoCuenta(oEstado.mes, oEstado.anio);
+        }
+
+        private string ObtienePeriodoEdoCuenta(int iMes, int iAnio)
+        {
+            string Periodo = string.Empty;
+            switch (iMes)
+            {
+                case 1:
+                    Periodo = Properties.Resources.Cm_Enero;
+                    break;
+                case 2:
+                    Periodo = Properties.Resources.Cm_Febrero;
+                    break;
+                case 3:
+                    Periodo = Properties.Resources.Cm_Marzo;
+                    break;
+                case 4:
+                    Periodo = Properties.Resources.Cm_Abril;
+                    break;
+                case 5:
+                    Periodo = Properties.Resources.Cm_Mayo;
+                    break;
+                case 6:
+                    Periodo = Properties.Resources.Cm_Junio;
+                    break;
+                case 7:
+                    Periodo = Properties.Resources.Cm_Julio;
+                    break;
+                case 8:
+                    Periodo = Properties.Resources.Cm_Agosto;
+                    break;
+                case 9:
+                    Periodo = Properties.Resources.Cm_Septiembre;
+                    break;
+                case 10:
+                    Periodo = Properties.Resources.Cm_Octubre;
+                    break;
+                case 11:
+                    Periodo = Properties.Resources.Cm_Noviembre;
+                    break;
+                case 12:
+                    Periodo = Properties.Resources.Cm_Diciembre;
+                    break;
+            }
+
+            return Periodo + " " + iAnio.S();
+        }
+
+        public void LlenaTableEdoCuenta(List<responseRepEdoCuenta> olstRep)
+        {
+            foreach (responseRepEdoCuenta item in olstRep)
+            {
+                item.nombreMes = ObtienePeriodoEdoCuenta(item.mes, item.anio);
+            }
+
+            gvEdoCuenta.DataSource = olstRep;
+            gvEdoCuenta.DataBind();
         }
         #endregion
 
@@ -102,8 +190,7 @@ namespace PortalClientes.Views
         public event EventHandler eDeleteObj;
         public event EventHandler eSearchObj;
 
-        
-
         #endregion
+
     }
 }

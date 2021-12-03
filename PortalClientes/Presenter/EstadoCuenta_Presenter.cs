@@ -22,6 +22,7 @@ namespace PortalClientes.Presenter
         protected override void SearchObj_Presenter(object sender, EventArgs e)
         {
             oIView.LlenaEstadoCuenta(oIGesCat.DBGetObtieneMatricuasPorUsuario(Utils.MatriculaActual));
+            oIView.LlenaTableEdoCuenta(oIGesCat.DBGetObtieneUltimosEdoCuentaMatricula());
         }
     }
 }

@@ -1588,6 +1588,7 @@
     <Compile Include="Objetos\Calendario.cs" />
     <Compile Include="Objetos\DatosMetricas.cs" />
     <Compile Include="Objetos\EstadoCuenta.cs" />
+    <Compile Include="Objetos\RequestMatricula.cs" />
     <Compile Include="Objetos\MatriculasUsuario.cs" />
     <Compile Include="Objetos\responseGraficaAeropuerto.cs" />
     <Compile Include="Objetos\responseGraficaCategorias.cs" />
@@ -1602,6 +1603,7 @@
     <Compile Include="Objetos\responseGraficaPromedioCostos.cs" />
     <Compile Include="Objetos\responseGraficaPromedioPasajero.cs" />
     <Compile Include="Objetos\responseGraficaProveedores.cs" />
+    <Compile Include="Objetos\responseRepEdoCuenta.cs" />
     <Compile Include="Objetos\Transacciones.cs" />
     <Compile Include="Objetos\Tripulacion.cs" />
     <Compile Include="Objetos\RutasyAeropuertos.cs" />

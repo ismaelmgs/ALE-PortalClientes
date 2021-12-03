@@ -10,5 +10,6 @@ namespace PortalClientes.Interfaces
     public interface IViewEstadoCuenta : IBaseView
     {
         void LlenaEstadoCuenta(EstadoCuenta oEstado);
+        void LlenaTableEdoCuenta(List<responseRepEdoCuenta> olstRep);
     }
 }
