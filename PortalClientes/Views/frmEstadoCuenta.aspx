@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="frmEstadoCuenta.aspx.cs" Inherits="PortalClientes.Views.frmEstadoCuenta" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="frmEstadoCuenta.aspx.cs" UICulture="es" Culture="es-MX" Inherits="PortalClientes.Views.frmEstadoCuenta" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
