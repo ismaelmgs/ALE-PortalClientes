@@ -577,6 +577,10 @@
                               <div id="piechart_3d_17" style="min-height: 400px;">
                                 </div>
                             </div>
+                            <div class="col-md-12">
+                              <div id="piechart_3d_18" style="min-height: 400px;">
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>

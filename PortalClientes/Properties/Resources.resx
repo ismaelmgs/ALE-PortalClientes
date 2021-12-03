@@ -935,7 +935,7 @@
   </data>
   <data name="ME_TabRutasRuta" xml:space="preserve">
     <value>Rutas</value>
-    </data>
+  </data>
   <data name="Cm_Abril" xml:space="preserve">
     <value>Abril</value>
   </data>
@@ -1001,5 +1001,11 @@
   </data>
   <data name="Ec_VerDetalle" xml:space="preserve">
     <value>Ver detalle</value>
+  </data>
+  <data name="ME_TituloCatLT" xml:space="preserve">
+    <value>Categorías a lo Largo del Tiempo</value>
+  </data>
+  <data name="ME_TituloRutaAero" xml:space="preserve">
+    <value>Rutas y Aeropuertos Principales</value>
   </data>
 </root>

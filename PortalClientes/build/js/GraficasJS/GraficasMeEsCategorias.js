@@ -114,9 +114,59 @@ function chartsCLT(data) {
             ['DICIEMBRE', 53454, 23453,32432,34571,23123,12322,23211,65432],
         ]);
 
+        var dataE = google.visualization.arrayToDataTable([
+            [ {label: 'Mes', id: 'mes'},
+              {label: 'CAPITAL', id: 'CAPITAL', type: 'number'},
+              {label: 'CUOTA', id: 'CUOTA', type: 'number'},
+              {label: 'DIVERSOS', id: 'DIVERSOS', type: 'number'},
+              {label: 'IMPUESTOS Y DERECHOS', id: 'IMPUESTOS Y DERECHOS', type: 'number'},
+              {label: 'MANTENIMIENTO', id: 'MANTENIMIENTO', type: 'number'},
+              {label: 'SEGUROS', id: 'SEGUROS', type: 'number'},
+              {label: 'VIAJE', id: 'VIAJE', type: 'number'},
+              {label: 'OTHER', id: 'OTHER', type: 'number'} ],
+            ['ENERO', 2100, 4030,5334,3242,2364,5477,3554,3323],
+            ['FEBRERO', 2430, 4330,5234,3542,2364,2477,3454,5433],
+            ['MARZO', 2534, 4030,5334,3542,2364,2577,3554,4433],
+            ['ABRIL', 3474, 4030,5234,3242,2364,2567,3454,4355],
+            ['MAYO', 3022,3478,5334,3254,2364,2677,3554,4643],
+            ['JUNIO', 3232, 4030,5234,3242,2364,2577,3554,4544],
+            ['JULIO', 3467, 4030,3234,2542,3564,2577,3554,4237],
+            ['AGOSTO', 4678, 4030,5324,3542,2364,2677,3554,3756],
+            ['SEPTIEMBRE', 6754, 4030,5334,3254,2354,2546,3455,2367],
+            ['OCTUBRE', 3457, 4445,3473,6433,3789,1249,2389,3432],
+            ['NOVIEMBRE', 2146, 3445,5634,6544,3599,4791,3783,4525],
+            ['DICIEMBRE', 5345, 2343,3232,3451,2123,1232,2321,6532],
+        ]);
+
 
         var options = {
-            title: "Categorias a lo Largo del Tiempo",//jsonData[0].idioma == "es-MX" ? "Categorias a lo Largo del Tiempo" : "Expenses Categories Over Time",
+            title: "Categorias a lo Largo del Tiempo MX",//jsonData[0].idioma == "es-MX" ? "Categorias a lo Largo del Tiempo" : "Expenses Categories Over Time",
+            bar: {
+                groupWidth: "60%",
+            },
+            isStacked: true,
+            fontSize: 9,
+            chartArea: {
+                left: screenWidth > 500 ? 30 : 10,
+                top: 30,
+                width: '100%',
+                height: '75%'
+            },
+            animation: {
+                duration: 3000,
+                easing: 'out',
+                startup: true
+            },
+            legend: {
+                position: 'bottom',
+                alignment: 'center',
+                maxLines: 20,
+            },
+            colors: ['#3276ae', '#6aabc0', '#cf575e', '#eb924f', '#f6c543', '#d578a9', '#9889d1', '#89d193']
+        };
+
+        var optionsE = {
+            title: "Categorias a lo Largo del Tiempo USD",//jsonData[0].idioma == "es-MX" ? "Categorias a lo Largo del Tiempo" : "Expenses Categories Over Time",
             bar: {
                 groupWidth: "60%",
             },
@@ -144,65 +194,68 @@ function chartsCLT(data) {
         var chart = new google.visualization.ColumnChart(document.getElementById('piechart_3d_17'));
         chart.draw(data, options);
 
-        google.visualization.events.addListener(chart, 'select', function () {
-            var selection = chart.getSelection();
-            if (selection.length) {
-                var row = selection[0].row;
+        var chartE = new google.visualization.ColumnChart(document.getElementById('piechart_3d_18'));
+        chartE.draw(dataE, optionsE);
 
-                let array = jsonData[row];
-                const gastos = array.Gastos
+        // google.visualization.events.addListener(chart, 'select', function () {
+        //     var selection = chart.getSelection();
+        //     if (selection.length) {
+        //         var row = selection[0].row;
 
-                let opt = {}//campos opcionales en graficas
+        //         let array = jsonData[row];
+        //         const gastos = array.Gastos
 
-                let vuelos = []
-                let gastosAe = []
-                let gastosProv = []
-                let costos = []
-                let horasV = []
-                let novuelos = []
-                let paxs = []
-                let gastosT = []
-                let costoH = []
-                let costosFV = []
-                let costosFVH = []
+        //         let opt = {}//campos opcionales en graficas
 
-                let obj = JSON.stringify({
-                    vuelos,
-                    gastos,
-                    gastosAe,
-                    gastosProv,
-                    costos,
-                    paxs,
-                    horasV,
-                    novuelos,
-                    costosFV,
-                    gastosT,
-                    costoH,
-                    costosFVH,
-                    tipoTrans: 1,
-                    tipoDet: "MXN",
-                    descES: array.rubroESP,
-                    descEN: array.rubroENG,
-                    origen: 2,
-                    opt,
-                });
+        //         let vuelos = []
+        //         let gastosAe = []
+        //         let gastosProv = []
+        //         let costos = []
+        //         let horasV = []
+        //         let novuelos = []
+        //         let paxs = []
+        //         let gastosT = []
+        //         let costoH = []
+        //         let costosFV = []
+        //         let costosFVH = []
 
-                $.ajax({
-                    data: obj,
-                    contentType: "Application/json; charset=utf-8",
-                    responseType: "json",
-                    method: 'POST',
-                    url: generarUrl(true),
-                    dataType: "json",
-                    success: function (response) {
-                        window.location.pathname = generarUrl(false);
-                    },
-                    error: function (err) {
-                        console.log("Error In Connecting", err);
-                    }
-                });
-            }
-        });
+        //         let obj = JSON.stringify({
+        //             vuelos,
+        //             gastos,
+        //             gastosAe,
+        //             gastosProv,
+        //             costos,
+        //             paxs,
+        //             horasV,
+        //             novuelos,
+        //             costosFV,
+        //             gastosT,
+        //             costoH,
+        //             costosFVH,
+        //             tipoTrans: 1,
+        //             tipoDet: "MXN",
+        //             descES: array.rubroESP,
+        //             descEN: array.rubroENG,
+        //             origen: 2,
+        //             opt,
+        //         });
+
+        //         $.ajax({
+        //             data: obj,
+        //             contentType: "Application/json; charset=utf-8",
+        //             responseType: "json",
+        //             method: 'POST',
+        //             url: generarUrl(true),
+        //             dataType: "json",
+        //             success: function (response) {
+        //                 window.location.pathname = generarUrl(false);
+        //             },
+        //             error: function (err) {
+        //                 console.log("Error In Connecting", err);
+        //             }
+        //         });
+        //     }
+        // });
     }
 }
 

@@ -1005,4 +1005,10 @@
   <data name="Ec_VerDetalle" xml:space="preserve">
     <value>View detail</value>
   </data>
+  <data name="ME_TituloCatLT" xml:space="preserve">
+    <value>Categories Over Time</value>
+  </data>
+  <data name="ME_TituloRutaAero" xml:space="preserve">
+    <value>Main Routes and Airports</value>
+  </data>
 </root>

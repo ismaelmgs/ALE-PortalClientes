@@ -147,6 +147,9 @@ namespace PortalClientes.Views
             lbTitleMapA.InnerText = Properties.Resources.ME_PnlAeropuertos;
             lbTitleMapR.InnerText = Properties.Resources.ME_PnlRutas;
 
+            lblMapRutaAeroPrinc.Text = Properties.Resources.ME_TituloRutaAero;
+            lblCategoriasLargoTiempo.Text = Properties.Resources.ME_TituloCatLT;
+
             var vPeriodo = ddlPeriodo.SelectedValue;
             // llenar dropdown Periodo
             ddlPeriodo.Items.Clear();

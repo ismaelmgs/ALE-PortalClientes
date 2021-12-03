@@ -1708,6 +1708,24 @@ namespace PortalClientes.Properties {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Categorías a lo Largo del Tiempo.
+        /// </summary>
+        internal static string ME_TituloCatLT {
+            get {
+                return ResourceManager.GetString("ME_TituloCatLT", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Rutas y Aeropuertos Principales.
+        /// </summary>
+        internal static string ME_TituloRutaAero {
+            get {
+                return ResourceManager.GetString("ME_TituloRutaAero", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Eventos.
         /// </summary>
         internal static string PTEventos {
