@@ -1008,4 +1008,16 @@
   <data name="ME_TituloRutaAero" xml:space="preserve">
     <value>Rutas y Aeropuertos Principales</value>
   </data>
+  <data name="TabTran_Concepto" xml:space="preserve">
+    <value>Concepto</value>
+  </data>
+  <data name="TabTran_Detalle" xml:space="preserve">
+    <value>Detalle</value>
+  </data>
+  <data name="TabTran_NoReferencia" xml:space="preserve">
+    <value>No Referencia</value>
+  </data>
+  <data name="TabTran_TMoneda" xml:space="preserve">
+    <value>Tipo Moneda</value>
+  </data>
 </root>

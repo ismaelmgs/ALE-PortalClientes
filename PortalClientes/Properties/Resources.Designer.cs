@@ -2203,6 +2203,15 @@ namespace PortalClientes.Properties {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Concepto.
+        /// </summary>
+        internal static string TabTran_Concepto {
+            get {
+                return ResourceManager.GetString("TabTran_Concepto", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Contrato.
         /// </summary>
         internal static string TabTran_Contrato {
@@ -2235,6 +2244,15 @@ namespace PortalClientes.Properties {
         internal static string TabTran_Destino {
             get {
                 return ResourceManager.GetString("TabTran_Destino", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Detalle.
+        /// </summary>
+        internal static string TabTran_Detalle {
+            get {
+                return ResourceManager.GetString("TabTran_Detalle", resourceCulture);
             }
         }
         
@@ -2329,6 +2347,15 @@ namespace PortalClientes.Properties {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a No Referencia.
+        /// </summary>
+        internal static string TabTran_NoReferencia {
+            get {
+                return ResourceManager.GetString("TabTran_NoReferencia", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a No. de Vuelos.
         /// </summary>
         internal static string TabTran_NoVuelos {
@@ -2406,6 +2433,15 @@ namespace PortalClientes.Properties {
         internal static string TabTran_TiempoTotVuelo {
             get {
                 return ResourceManager.GetString("TabTran_TiempoTotVuelo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Tipo Moneda.
+        /// </summary>
+        internal static string TabTran_TMoneda {
+            get {
+                return ResourceManager.GetString("TabTran_TMoneda", resourceCulture);
             }
         }
         

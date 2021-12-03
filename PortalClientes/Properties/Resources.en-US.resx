@@ -1011,4 +1011,16 @@
   <data name="ME_TituloRutaAero" xml:space="preserve">
     <value>Main Routes and Airports</value>
   </data>
+  <data name="TabTran_Concepto" xml:space="preserve">
+    <value>Concept</value>
+  </data>
+  <data name="TabTran_Detalle" xml:space="preserve">
+    <value>Detail</value>
+  </data>
+  <data name="TabTran_NoReferencia" xml:space="preserve">
+    <value>No Reference</value>
+  </data>
+  <data name="TabTran_TMoneda" xml:space="preserve">
+    <value>Type Currency</value>
+  </data>
 </root>

@@ -325,6 +325,21 @@ namespace PortalClientes.Views
                     e.Row.Cells[5].Text = Properties.Resources.TabTran_Comentario;
                 }
 
+                else if (tipo == 13)
+                {
+                    e.Row.Cells[0].Text = Properties.Resources.TabTran_Mes;
+                    e.Row.Cells[1].Text = Properties.Resources.TabTran_Anio;
+                    e.Row.Cells[2].Text = Properties.Resources.TabTran_TMoneda;
+                    e.Row.Cells[3].Text = Properties.Resources.TabTran_Fecha;
+                    e.Row.Cells[4].Text = Properties.Resources.TabTran_NoReferencia;
+                    e.Row.Cells[5].Text = Properties.Resources.TabTran_TGasto;
+                    e.Row.Cells[6].Text = Properties.Resources.TabTran_Concepto;
+                    e.Row.Cells[7].Text = Properties.Resources.TabTran_Detalle;
+                    e.Row.Cells[8].Text = Properties.Resources.TabTran_Proveedor;
+                    e.Row.Cells[9].Text = Properties.Resources.TabTran_Importe;
+                    
+                }
+
             }
         }
 
