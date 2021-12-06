@@ -59,7 +59,7 @@ function ajax_dataCLT(obj, url, success) {
 function chartsCLT(data) {
     var jsonDataCLT = data;
     
-    if (jsonDataCLT.length > 0) {
+    if (jsonDataCLT.datosM.length > 0) {
         google.charts.load("current", { packages: ["corechart"] });
         google.charts.setOnLoadCallback(drawVisualizationCLT)
     }
@@ -85,58 +85,82 @@ function chartsCLT(data) {
         return url;
     }
 
-
     function drawVisualizationCLT() {
 
         var screenWidth = screen.width;
 
-        var data = google.visualization.arrayToDataTable([
-            [ {label: 'Mes', id: 'mes'},
-              {label: 'CAPITAL', id: 'CAPITAL', type: 'number'},
-              {label: 'CUOTA', id: 'CUOTA', type: 'number'},
-              {label: 'DIVERSOS', id: 'DIVERSOS', type: 'number'},
-              {label: 'IMPUESTOS Y DERECHOS', id: 'IMPUESTOS Y DERECHOS', type: 'number'},
-              {label: 'MANTENIMIENTO', id: 'MANTENIMIENTO', type: 'number'},
-              {label: 'SEGUROS', id: 'SEGUROS', type: 'number'},
-              {label: 'VIAJE', id: 'VIAJE', type: 'number'},
-              {label: 'OTHER', id: 'OTHER', type: 'number'} ],
-            ['ENERO', 21000, 40330,53234,32542,23564,54677,34554,33223],
-            ['FEBRERO', 23430, 40330,53234,32542,23564,24677,34554,54333],
-            ['MARZO', 25634, 40330,53234,32542,23564,25477,34554,44633],
-            ['ABRIL', 34674, 40330,53234,32542,23564,25467,34554,43655],
-            ['MAYO', 12345, 40330,53234,32542,23564,25677,34554,46433],
-            ['JUNIO', 32432, 40330,53234,32542,23564,25677,34554,45744],
-            ['JULIO', 34567, 40330,53234,32542,23564,25677,34554,42377],
-            ['AGOSTO', 45678, 40330,53234,32542,23564,24677,34554,37456],
-            ['SEPTIEMBRE', 67534, 40330,53234,32542,23564,25467,34554,23467],
-            ['OCTUBRE', 34567, 44455,34673,64533,36789,12349,23789,34532],
-            ['NOVIEMBRE', 21456, 34455,56334,65444,34599,47891,35783,43525],
-            ['DICIEMBRE', 53454, 23453,32432,34571,23123,12322,23211,65432],
-        ]);
+        var dataMXN = jsonDataCLT.datosM;
+        var dataUSD = jsonDataCLT.datosU;
+        const conceptos = jsonDataCLT.conceptos;
+        const idioma = jsonDataCLT.idioma;
+        let dataArrayMXN = []
+        let dataArrayUSD = []
 
-        var dataE = google.visualization.arrayToDataTable([
-            [ {label: 'Mes', id: 'mes'},
-              {label: 'CAPITAL', id: 'CAPITAL', type: 'number'},
-              {label: 'CUOTA', id: 'CUOTA', type: 'number'},
-              {label: 'DIVERSOS', id: 'DIVERSOS', type: 'number'},
-              {label: 'IMPUESTOS Y DERECHOS', id: 'IMPUESTOS Y DERECHOS', type: 'number'},
-              {label: 'MANTENIMIENTO', id: 'MANTENIMIENTO', type: 'number'},
-              {label: 'SEGUROS', id: 'SEGUROS', type: 'number'},
-              {label: 'VIAJE', id: 'VIAJE', type: 'number'},
-              {label: 'OTHER', id: 'OTHER', type: 'number'} ],
-            ['ENERO', 2100, 4030,5334,3242,2364,5477,3554,3323],
-            ['FEBRERO', 2430, 4330,5234,3542,2364,2477,3454,5433],
-            ['MARZO', 2534, 4030,5334,3542,2364,2577,3554,4433],
-            ['ABRIL', 3474, 4030,5234,3242,2364,2567,3454,4355],
-            ['MAYO', 3022,3478,5334,3254,2364,2677,3554,4643],
-            ['JUNIO', 3232, 4030,5234,3242,2364,2577,3554,4544],
-            ['JULIO', 3467, 4030,3234,2542,3564,2577,3554,4237],
-            ['AGOSTO', 4678, 4030,5324,3542,2364,2677,3554,3756],
-            ['SEPTIEMBRE', 6754, 4030,5334,3254,2354,2546,3455,2367],
-            ['OCTUBRE', 3457, 4445,3473,6433,3789,1249,2389,3432],
-            ['NOVIEMBRE', 2146, 3445,5634,6544,3599,4791,3783,4525],
-            ['DICIEMBRE', 5345, 2343,3232,3451,2123,1232,2321,6532],
-        ]);
+        let dataTitles = [ 
+            {label: idioma == "es-MX" ? 'MES' : 'MOUNTH', id: 'mes'},
+        ]
+
+        let title = {
+            label: '', 
+            id: '', 
+            type: 'number'
+        }
+
+        conceptos.forEach(item => {
+            let addTitle = {...title}
+            addTitle.label = item
+            addTitle.id = item
+
+            dataTitles.push(addTitle)
+        })
+
+        dataArrayMXN.push(dataTitles)
+        dataArrayUSD.push(dataTitles)
+
+        const opt = { style: 'currency', currency: 'MXN' };
+        var numberFormat = new Intl.NumberFormat('es-MX', opt);
+
+        let contador2 = 1
+        let contadorAdd2 = 0
+        let array2 = []
+        dataMXN.forEach(item => {
+            if(contador2 > conceptos.length + 1){
+                array2.push(item)
+
+                if(contadorAdd2 == conceptos.length){
+                    dataArrayMXN.push(array2)
+                    array2 = []
+                    contadorAdd2 = 0
+                }else{
+                    contadorAdd2 ++
+                }
+            }
+            contador2++
+        })
+
+        const opt2 = { style: 'currency', currency: 'USD' };
+        const numberFormat2 = new Intl.NumberFormat('en-US', opt2);
+
+        let contador = 1
+        let contadorAdd = 0
+        let array = []
+        dataUSD.forEach(item => {
+            if(contador > conceptos.length + 1){
+                array.push(item)
+
+                if(contadorAdd == conceptos.length){
+                    dataArrayUSD.push(array)
+                    array = []
+                    contadorAdd = 0
+                }else{
+                    contadorAdd ++
+                }
+            }
+            contador++
+        })
+
+        var data = google.visualization.arrayToDataTable(dataArrayMXN);
+        var dataE = google.visualization.arrayToDataTable(dataArrayUSD);
 
 
         var options = {

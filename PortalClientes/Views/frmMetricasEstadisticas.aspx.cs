@@ -1195,7 +1195,7 @@ namespace PortalClientes.Views
         }
 
         [WebMethod]
-        public static List<responseGraficaCategorias> GetCategoriasPeriodo(string meses)
+        public static dataGrafica GetCategoriasPeriodo(string meses)
         {
             DBMetricasEstatics oIGesCat = new DBMetricasEstatics();
 
@@ -1203,14 +1203,102 @@ namespace PortalClientes.Views
             fg.meses = meses;
 
             List<responseGraficaCategorias> lrg = new List<responseGraficaCategorias>();
+            dataGrafica data = new dataGrafica();
+
             lrg = oIGesCat.obtenerCategoriasPeriodos(fg);
+
+            var mesesL = lrg.Select(item => mesLetra(item.mes)).Distinct().ToArray();
+            var mesesArray = lrg.Select(item => item.mes).Distinct().ToArray();
+            var conceptos = lrg.Select(item => Utils.Idioma == "es-MX" ? item.rubroESP : item.rubroENG).Distinct().ToArray();
+
+            data.datosM = new string[mesesArray.Count() + 1,conceptos.Count() + 1];
+            data.datosU = new string[mesesArray.Count() + 1,conceptos.Count() + 1];
+
+            data.datosM[0, 0] = Utils.Idioma == "es-MX" ? "MESES" : "MONTHS";
+            data.datosU[0, 0] = Utils.Idioma == "es-MX" ? "MESES" : "MONTHS";
+
+            var x = 1;
+            foreach (var item in conceptos)
+            {
+                data.datosM[0, x] = item;
+                data.datosU[0, x] = item;
+                x++;
+            }
+
+            for (int i = 1; i < mesesL.Count(); i++)
+            {
+                data.datosM[i, 0] = mesesL[i-1];
+                data.datosU[i, 0] = mesesL[i-1];
+
+                var cont = 0;
+                var elements = lrg.Where(z => z.mes == mesesArray[i]).ToList();
+                foreach (var item in elements)
+                {
+                    if (item.rubroESP == conceptos[cont] || item.rubroENG == conceptos[cont])
+                    {
+                        data.datosM[i, cont + 1] = item.totalMXN.ToString();
+                        data.datosU[i, cont + 1] = item.totalUSD.ToString();
+                        cont++;
+                    }
+                }
+            }
 
             if (lrg.Count() > 0)
             {
-                lrg[0].idioma = Utils.Idioma;
+                data.idioma = Utils.Idioma;
             }
 
-            return lrg;
+            data.response = lrg;
+            data.conceptos = conceptos;
+
+            return data;
+        }
+
+        private static string mesLetra(int mes)
+        {
+            var m = "";
+
+            switch (mes)
+            {
+                case 1:
+                    m = Utils.Idioma == "es-MX" ? "ENERO" : "JUNUARY";
+                    break;
+                case 2:
+                    m = Utils.Idioma == "es-MX" ? "FEBRERO" : "FEBRUARY";
+                    break;
+                case 3:
+                    m = Utils.Idioma == "es-MX" ? "MARZO" : "MARCH";
+                    break;
+                case 4:
+                    m = Utils.Idioma == "es-MX" ? "ABRIL" : "APRIL";
+                    break;
+                case 5:
+                    m = Utils.Idioma == "es-MX" ? "MAYO" : "MAY";
+                    break;
+                case 6:
+                    m = Utils.Idioma == "es-MX" ? "JUNIO" : "JUNE";
+                    break;
+                case 7:
+                    m = Utils.Idioma == "es-MX" ? "JULIO" : "JULY";
+                    break;
+                case 8:
+                    m = Utils.Idioma == "es-MX" ? "AGOSTO" : "AUGUSTS";
+                    break;
+                case 9:
+                    m = Utils.Idioma == "es-MX" ? "SEPTIEMBRE" : "EPTEMBRE";
+                    break;
+                case 10:
+                    m = Utils.Idioma == "es-MX" ? "OCTUBRE" : "OCTOBER";
+                    break;
+                case 11:
+                    m = Utils.Idioma == "es-MX" ? "NOVIEMBRE" : "NOVEMBER";
+                    break;
+                case 12:
+                    m = Utils.Idioma == "es-MX" ? "DICIEMBRE" : "DECEMBER";
+                    break;
+            }
+
+            return m;
         }
 
         [WebMethod]

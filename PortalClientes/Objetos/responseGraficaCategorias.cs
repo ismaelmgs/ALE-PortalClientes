@@ -7,7 +7,6 @@ namespace PortalClientes.Objetos
 {
     public class responseGraficaCategorias
     {
-        public string idioma { get; set; }
         public int anio { get; set; }
         public int mes { get; set; }
         public int idRubro { get; set; }
@@ -32,5 +31,14 @@ namespace PortalClientes.Objetos
         public string tipoGasto { get; set; }
         public string comentarios { get; set; }
         public string mesDesc { get; set; }
+    }
+
+    public class dataGrafica
+    {
+        public string idioma { get; set; }
+        public string[,] datosM { get; set; }
+        public string[,] datosU { get; set; }
+        public string[] conceptos { get; set; }
+        public List<responseGraficaCategorias> response { get; set; }
     }
 }
