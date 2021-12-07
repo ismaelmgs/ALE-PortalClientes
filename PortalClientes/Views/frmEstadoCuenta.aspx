@@ -217,6 +217,90 @@
                     </div>
                 </div>
             </div>
+    <!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+  Launch demo modal
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel"><asp:Label ID="lblTituloMensajes" runat="server" Text="Mensajes" Font-Bold="true"></asp:Label></h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="row">
+            <div class="col-md-12">
+                <ul class="nav nav-tabs" id="myTab" role="tablist">
+                  <li class="nav-item">
+                    <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true"><asp:Label ID="lblMensajeNuevo" runat="server" Text=" Mensaje Nuevo" Font-Bold="true"></asp:Label></a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false"><asp:Label ID="lblHistorialMensajes" runat="server" Text=" Historial de Mensajes" Font-Bold="true"></asp:Label></a>
+                  </li>
+                </ul>
+                <div class="tab-content" id="myTabContent">
+                  <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                      <div class="row">
+                          <div class="col-md-2" style="padding-top:10px;">
+                              <asp:Label ID="lblMensajePara" runat="server" Text=" Para:" Font-Bold="true"></asp:Label>
+                          </div>
+                          <div class="col-md-10">
+                              <asp:TextBox ID="txtMensajePara" type="text" runat="server" Text="Recipientes" Width="100%" CssClass="form-control"></asp:TextBox>
+                          </div>
+                      </div>
+                      <br />
+                      <div class="row">
+                          <div class="col-md-2">
+                              <asp:Button ID="btnAddCc" Text="+ Add Cc" runat="server" CssClass="btn btn-primary" />
+                          </div>
+                          <div class="col-md-2">
+                              <asp:Button ID="btnAddBcc" Text="+ Add Bcc" runat="server" CssClass="btn btn-primary" />
+                          </div>
+                          <div class="col-md-8">
+                              &nbsp;
+                          </div>
+                      </div>
+                      <br />
+                      <div class="row">
+                          <div class="col-md-12">
+                              <asp:Label ID="lblMensajeOpcional" runat="server" Text=" Mensaje Opcional" Font-Bold="true"></asp:Label>
+                          </div>
+                      </div>
+                      <div class="row">
+                          <div class="col-md-12">
+                              <asp:TextBox ID="txtMensaje" type="text" runat="server" Text="" Width="100%" CssClass="form-control"></asp:TextBox>
+                          </div>
+                      </div>
+                      <br />
+                      <div class="row">
+                        <div class="col-md-12">
+                            <asp:CheckBox ID="cbIncluirPDFs" runat="server" type="checkbox" Text="&nbsp;&nbsp;&nbsp;Incluir PDFs de extractos mensuales como archivos adjuntos (< 7,5 Mb)" />
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-md-12">
+                            --- Grid ---
+                        </div>
+                      </div>
+                  </div>
+                  <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                      ...
+                  </div>
+                </div>
+            </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+      </div>
+    </div>
+  </div>
+</div>
         <%--</ContentTemplate>
     </asp:UpdatePanel>--%>
 </asp:Content>
