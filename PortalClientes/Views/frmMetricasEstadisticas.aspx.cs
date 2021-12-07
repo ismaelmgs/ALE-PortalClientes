@@ -1231,7 +1231,7 @@ namespace PortalClientes.Views
                 data.datosU[i, 0] = mesesL[i-1];
 
                 var cont = 0;
-                var elements = lrg.Where(z => z.mes == mesesArray[i]).ToList();
+                var elements = lrg.Where(z => z.mes == mesesArray[i-1]).ToList();
                 foreach (var item in elements)
                 {
                     if (item.rubroESP == conceptos[cont] || item.rubroENG == conceptos[cont])
