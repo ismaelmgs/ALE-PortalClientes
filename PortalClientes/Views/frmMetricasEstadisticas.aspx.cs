@@ -368,9 +368,9 @@ namespace PortalClientes.Views
             var v12 = ddlCategoriasLT.SelectedValue;
             // llenar dropdown filtro
             ddlCategoriasLT.Items.Clear();
-            ddlCategoriasLT.Items.Add(new ListItem(Properties.Resources.FiltroME_3M, "3"));
-            ddlCategoriasLT.Items.Add(new ListItem(Properties.Resources.FiltroME_6M, "6"));
             ddlCategoriasLT.Items.Add(new ListItem(Properties.Resources.FiltroME_12M, "12"));
+            ddlCategoriasLT.Items.Add(new ListItem(Properties.Resources.FiltroME_6M, "6"));
+            ddlCategoriasLT.Items.Add(new ListItem(Properties.Resources.FiltroME_3M, "3"));
 
             if (v12 == "")
             {

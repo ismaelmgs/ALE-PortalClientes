@@ -143,8 +143,8 @@ function chartsHV(dataHV, ChartType) {
 
                 let opt = {}//campos opcionales en graficas
 
-                let vuelos = []
                 let gastos = []
+                let vuelos = []
                 let gastosAe = []
                 let gastosProv = []
                 let costos = []
@@ -154,6 +154,7 @@ function chartsHV(dataHV, ChartType) {
                 let costoH = []
                 let costosFV = []
                 let costosFVH = []
+                let detGasto = []
 
                 let obj = JSON.stringify({
                     vuelos,
@@ -168,6 +169,7 @@ function chartsHV(dataHV, ChartType) {
                     gastosT,
                     costoH,
                     costosFVH,
+                    detGasto,
                     tipoTrans: 7,
                     tipoDet: "MXN",
                     descES: array.nombreESP,

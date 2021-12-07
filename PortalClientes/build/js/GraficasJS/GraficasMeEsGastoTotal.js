@@ -143,10 +143,13 @@ function chartsGT(dataGT, ChartType) {
                 let array = jsonDataGT[row];
                 const gastosT = array.gastos
 
-                let opt = {}//campos opcionales en graficas
+                let opt = {
+                    campo1: null,
+                    campo2: null,
+                }//campos opcionales en graficas
 
-                let vuelos = []
                 let gastos = []
+                let vuelos = []
                 let gastosAe = []
                 let gastosProv = []
                 let costos = []
@@ -156,6 +159,7 @@ function chartsGT(dataGT, ChartType) {
                 let costoH = []
                 let costosFV = []
                 let costosFVH = []
+                let detGasto = []
 
                 let obj = JSON.stringify({
                     vuelos,
@@ -170,6 +174,7 @@ function chartsGT(dataGT, ChartType) {
                     gastosT,
                     costoH,
                     costosFVH,
+                    detGasto,
                     tipoTrans: 10,
                     tipoDet: "MXN",
                     descES: array.nombreESP,

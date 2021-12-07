@@ -188,7 +188,10 @@ function charts(data, ChartType) {
                 let array = jsonData[row];
                 const gastos = array.Gastos
 
-                let opt = {}//campos opcionales en graficas
+                let opt = {
+                    campo1: null,
+                    campo2: null,
+                }//campos opcionales en graficas
 
                 let vuelos = []
                 let gastosAe = []
@@ -201,6 +204,7 @@ function charts(data, ChartType) {
                 let costoH = []
                 let costosFV = []
                 let costosFVH = []
+                let detGasto = []
 
                 let obj = JSON.stringify({
                     vuelos,
@@ -215,11 +219,12 @@ function charts(data, ChartType) {
                     gastosT,
                     costoH,
                     costosFVH,
+                    detGasto,
                     tipoTrans: 1,
                     tipoDet: "MXN",
                     descES: array.rubroESP,
                     descEN: array.rubroENG,
-                    origen: 2,
+                    origen: 1,
                     opt,
                 });
 
@@ -264,6 +269,7 @@ function charts(data, ChartType) {
                 let costoH = []
                 let costosFV = []
                 let costosFVH = []
+                let detGasto = []
 
                 let obj = JSON.stringify({
                     vuelos,
@@ -278,11 +284,12 @@ function charts(data, ChartType) {
                     gastosT,
                     costoH,
                     costosFVH,
+                    detGasto,
                     tipoTrans: 1,
                     tipoDet: "USD",
                     descES: array.rubroESP,
                     descEN: array.rubroENG,
-                    origen: 2,
+                    origen: 1,
                     opt,
                 });
 

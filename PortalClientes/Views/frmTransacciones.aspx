@@ -143,21 +143,6 @@
                         <div class="card-box table-responsive">
                             <asp:GridView ID="gvGastos" runat="server" AutoGenerateColumns="false" CssClass="table table-striped table-bordered table-hover" AllowPaging="true"
                                 OnPageIndexChanging="gvGastos_PageIndexChanging" OnRowDataBound="gvGastos_RowDataBound" EmptyDataText="No Registros">
-                                <%--<Columns>
-                                    <asp:BoundField DataField="mes" />
-                                    <asp:BoundField DataField="idRubro" />
-                                    <asp:BoundField DataField="Rubro" />
-                                    <asp:TemplateField HeaderText="Total" ItemStyle-HorizontalAlign="Right">
-                                        <ItemTemplate>
-                                            <asp:Label runat="server" ID="lblTotal" Text='<%# String.Format("{0:C}",DataBinder.Eval(Container.DataItem,"Total"))%>'></asp:Label>
-                                        </ItemTemplate>
-                                    </asp:TemplateField>
-                                    <%--<asp:BoundField DataField="Total" DataFormatString="{0:c}" />--%
-                                    <asp:BoundField DataField="Fecha" />
-                                    <asp:BoundField DataField="Categoria" />
-                                    <asp:BoundField DataField="tipodeGasto" />
-                                    <asp:BoundField DataField="comentarios" />
-                                </Columns>--%>
                             </asp:GridView>
                         </div>
                     </div>
@@ -169,6 +154,7 @@
                 <asp:LinkButton ID="btnRegresarMeEsEng" runat="server" Text="<i class='fa fa-undo' style='color:#73879C;font-size:14px;'></i> Metrics and Statistics <i class='fa fa-line-chart' style='color:#73879C;font-size:14px;'></i>" CssClass="btn" href="frmMetricasEstadisticas.aspx" />
                 <asp:LinkButton ID="btnRegresarMeEs" runat="server" Text="<i class='fa fa-undo' style='color:#73879C;font-size:14px;'></i> Metricas y Estadisticas <i class='fa fa-line-chart' style='color:#73879C;font-size:14px;'></i>" CssClass="btn" href="frmMetricasEstadisticas.aspx" />
                 <asp:LinkButton ID="btnRegresarDash" runat="server" Text="<i class='fa fa-undo' style='color:#73879C;font-size:14px;'></i> Dashboard <i class='fa fa-th-large' style='color:#73879C;font-size:14px;'></i>" CssClass="btn" href="frmDashboard.aspx" />
+                <asp:LinkButton ID="btnRegresaEdoCtaEng" runat="server" Text="<i class='fa fa-undo' style='color:#73879C;font-size:14px;'></i> Account Status <i class='fa fa-th-large' style='color:#73879C;font-size:14px;'></i>" CssClass="btn" href="frmEstadoCuenta.aspx" />
                 <asp:LinkButton ID="btnRegresaEdoCta" runat="server" Text="<i class='fa fa-undo' style='color:#73879C;font-size:14px;'></i> Estado de cuenta <i class='fa fa-th-large' style='color:#73879C;font-size:14px;'></i>" CssClass="btn" href="frmEstadoCuenta.aspx" />
             </div>
         </div>

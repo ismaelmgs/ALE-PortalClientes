@@ -148,8 +148,8 @@ function chartsPC(dataPC, ChartType) {
                     campo2: null,
                 }//campos opcionales en graficas
 
-                let vuelos = []
                 let gastos = []
+                let vuelos = []
                 let gastosAe = []
                 let gastosProv = []
                 let horasV = []
@@ -159,6 +159,7 @@ function chartsPC(dataPC, ChartType) {
                 let costoH = []
                 let costosFV = []
                 let costosFVH = []
+                let detGasto = []
 
                 let obj = JSON.stringify({
                     vuelos,
@@ -173,6 +174,7 @@ function chartsPC(dataPC, ChartType) {
                     gastosT,
                     costoH,
                     costosFVH,
+                    detGasto,
                     tipoTrans: 6,
                     tipoDet: "MXN",
                     descES: array.nombreESP,

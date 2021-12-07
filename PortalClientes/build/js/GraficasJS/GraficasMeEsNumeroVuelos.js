@@ -145,8 +145,8 @@ function chartsNV(dataNV, ChartType) {
                     campo2: null,
                 }//campos opcionales en graficas
 
-                let vuelos = []
                 let gastos = []
+                let vuelos = []
                 let gastosAe = []
                 let gastosProv = []
                 let costos = []
@@ -156,6 +156,7 @@ function chartsNV(dataNV, ChartType) {
                 let costoH = []
                 let costosFV = []
                 let costosFVH = []
+                let detGasto = []
 
                 let obj = JSON.stringify({
                     vuelos,
@@ -170,6 +171,7 @@ function chartsNV(dataNV, ChartType) {
                     gastosT,
                     costoH,
                     costosFVH,
+                    detGasto,
                     tipoTrans: 8,
                     tipoDet: "MXN",
                     descES: array.nombreESP,

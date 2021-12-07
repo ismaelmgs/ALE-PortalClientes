@@ -83,9 +83,8 @@ namespace PortalClientes.Views
             if (e.CommandName == "Detalle")
             {
                 Session["tipoTransaccion"] = 13;
-                Session["origenData"] = 2;
+                Session["origenData"] = 3;
                 
-
                 responseRepEdoCuenta oEC = (responseRepEdoCuenta) oEstados.Where(x => x.mes == iMes).FirstOrDefault();
                 if (oEC != null)
                 {

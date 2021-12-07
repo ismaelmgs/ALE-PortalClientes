@@ -145,8 +145,8 @@ function chartsProv(dataProve, ChartType) {
                     campo2: null,
                 }//campos opcionales en graficas
 
-                let vuelos = []
                 let gastos = []
+                let vuelos = []
                 let gastosAe = []
                 let costos = []
                 let horasV = []
@@ -156,6 +156,7 @@ function chartsProv(dataProve, ChartType) {
                 let costoH = []
                 let costosFV = []
                 let costosFVH = []
+                let detGasto = []
 
                 let obj = JSON.stringify({
                     vuelos,
@@ -170,6 +171,7 @@ function chartsProv(dataProve, ChartType) {
                     gastosT,
                     costoH,
                     costosFVH,
+                    detGasto,
                     tipoTrans: 3,
                     tipoDet: "MXN",
                     descES: array.proveedor,

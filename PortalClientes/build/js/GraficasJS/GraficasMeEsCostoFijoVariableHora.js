@@ -142,9 +142,8 @@ function chartsFVH(dataFVH, ChartType) {
                     campo2: array.totalTiempo,
                 }//campos opcionales en graficas
 
-
-                let vuelos = []
                 let gastos = []
+                let vuelos = []
                 let gastosAe = []
                 let gastosProv = []
                 let costos = []
@@ -154,6 +153,7 @@ function chartsFVH(dataFVH, ChartType) {
                 let gastosT = []
                 let costoH = []
                 let costosFV = []
+                let detGasto = []
 
                 let obj = JSON.stringify({
                     vuelos,
@@ -168,6 +168,7 @@ function chartsFVH(dataFVH, ChartType) {
                     gastosT,
                     costoH,
                     costosFVH,
+                    detGasto,
                     tipoTrans: 12,
                     tipoDet: "MXN",
                     descES: array.categoria,

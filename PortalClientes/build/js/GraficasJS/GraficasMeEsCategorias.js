@@ -12,7 +12,7 @@ $(document).ready(function () {
 
     window.onresize = function () {
         ajax_dataCLT(objCLT, urlCLT, function (data) {
-            charts(data); // Pie Charts
+            chartsCLT(data); // Pie Charts
         });
     };
 });
@@ -28,9 +28,9 @@ $('#ContentPlaceHolder1_ddlCategoriasLT').click(function (event) {
 });
 
 function ActualizarGraficaCLT() {
-    const urlCLT = getUrl(); // API URL
+    const urlCLT = getUrlCLT(); // API URL
     let objCLT = JSON.stringify({
-        meses: $("#ContentPlaceHolder1_ddlPeriodo").val(),
+        meses: $("#ContentPlaceHolder1_ddlCategoriasLT").val(),
     });
 
     ajax_dataCLT(objCLT, urlCLT, function (data) {
@@ -221,65 +221,139 @@ function chartsCLT(data) {
         var chartE = new google.visualization.ColumnChart(document.getElementById('piechart_3d_18'));
         chartE.draw(dataE, optionsE);
 
-        // google.visualization.events.addListener(chart, 'select', function () {
-        //     var selection = chart.getSelection();
-        //     if (selection.length) {
-        //         var row = selection[0].row;
+        google.visualization.events.addListener(chart, 'select', function () {
+             var selection = chart.getSelection();
+             if (selection.length) {
 
-        //         let array = jsonData[row];
-        //         const gastos = array.Gastos
+                 let mes = selection[0].row + 1
+                 let concepto = jsonDataCLT.conceptos[selection[0].column - 1]
 
-        //         let opt = {}//campos opcionales en graficas
+                 let array = jsonDataCLT.response.find(item => item.mes == mes && item.rubroESP == concepto);
+                 let detGasto = array.detalleGastos
 
-        //         let vuelos = []
-        //         let gastosAe = []
-        //         let gastosProv = []
-        //         let costos = []
-        //         let horasV = []
-        //         let novuelos = []
-        //         let paxs = []
-        //         let gastosT = []
-        //         let costoH = []
-        //         let costosFV = []
-        //         let costosFVH = []
+                 let opt = {
+                    campo1: null,
+                    campo2: null,
+                }//campos opcionales en graficas
 
-        //         let obj = JSON.stringify({
-        //             vuelos,
-        //             gastos,
-        //             gastosAe,
-        //             gastosProv,
-        //             costos,
-        //             paxs,
-        //             horasV,
-        //             novuelos,
-        //             costosFV,
-        //             gastosT,
-        //             costoH,
-        //             costosFVH,
-        //             tipoTrans: 1,
-        //             tipoDet: "MXN",
-        //             descES: array.rubroESP,
-        //             descEN: array.rubroENG,
-        //             origen: 2,
-        //             opt,
-        //         });
+                let gastos = []
+                let vuelos = []
+                let gastosAe = []
+                let gastosProv = []
+                let costos = []
+                let horasV = []
+                let novuelos = []
+                let paxs = []
+                let gastosT = []
+                let costoH = []
+                let costosFV = []
+                let costosFVH = []
 
-        //         $.ajax({
-        //             data: obj,
-        //             contentType: "Application/json; charset=utf-8",
-        //             responseType: "json",
-        //             method: 'POST',
-        //             url: generarUrl(true),
-        //             dataType: "json",
-        //             success: function (response) {
-        //                 window.location.pathname = generarUrl(false);
-        //             },
-        //             error: function (err) {
-        //                 console.log("Error In Connecting", err);
-        //             }
-        //         });
-        //     }
-        // });
+                let obj = JSON.stringify({
+                    vuelos,
+                    gastos,
+                    gastosAe,
+                    gastosProv,
+                    costos,
+                    paxs,
+                    horasV,
+                    novuelos,
+                    costosFV,
+                    gastosT,
+                    costoH,
+                    costosFVH,
+                    detGasto,
+                    tipoTrans: 14,
+                    tipoDet: "MXN",
+                    descES: array.rubroESP,
+                    descEN: array.rubroENG,
+                    origen: 2,
+                    opt,
+                });
+
+                $.ajax({
+                    data: obj,
+                    contentType: "Application/json; charset=utf-8",
+                    responseType: "json",
+                    method: 'POST',
+                    url: generarUrlCLT(true),
+                    dataType: "json",
+                    success: function (response) {
+                        window.location.pathname = generarUrlCLT(false);
+                    },
+                    error: function (err) {
+                        console.log("Error In Connecting", err);
+                    }
+                });
+             }
+        });
+
+        google.visualization.events.addListener(chartE, 'select', function () {
+            var selection = chartE.getSelection();
+            if (selection.length) {
+
+                let mes = selection[0].row + 1
+                let concepto = jsonDataCLT.conceptos[selection[0].column - 1]
+
+                let array = jsonDataCLT.response.find(item => item.mes == mes && item.rubroENG == concepto);
+                let detGasto = array.detalleGastos
+
+                let opt = {
+                   campo1: null,
+                   campo2: null,
+               }//campos opcionales en graficas
+
+               let gastos = []
+               let vuelos = []
+               let gastosAe = []
+               let gastosProv = []
+               let costos = []
+               let horasV = []
+               let novuelos = []
+               let paxs = []
+               let gastosT = []
+               let costoH = []
+               let costosFV = []
+               let costosFVH = []
+
+               let obj = JSON.stringify({
+                   vuelos,
+                   gastos,
+                   gastosAe,
+                   gastosProv,
+                   costos,
+                   paxs,
+                   horasV,
+                   novuelos,
+                   costosFV,
+                   gastosT,
+                   costoH,
+                   costosFVH,
+                   detGasto,
+                   tipoTrans: 14,
+                   tipoDet: "USD",
+                   descES: array.rubroESP,
+                   descEN: array.rubroENG,
+                   origen: 2,
+                   opt,
+               });
+
+               $.ajax({
+                   data: obj,
+                   contentType: "Application/json; charset=utf-8",
+                   responseType: "json",
+                   method: 'POST',
+                   url: generarUrlCLT(true),
+                   dataType: "json",
+                   success: function (response) {
+                       window.location.pathname = generarUrlCLT(false);
+                   },
+                   error: function (err) {
+                       console.log("Error In Connecting", err);
+                   }
+               });
+            }
+       });
     }
 }
 

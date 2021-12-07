@@ -145,20 +145,25 @@ namespace PortalClientes.Views
                         btnRegresaEdoCta.Visible = true;
                     }
 
+                    else if (tipo == 14)
+                    {
+                        transacciones.detGastos = (List<gvDetGastos>)Session["data"];
+                        LlenarGV(transacciones, tipo);
+                    }
+
                     if (od == 1)
                     {
                         btnRegresarMeEs.Visible = false;
                         btnRegresarMeEsEng.Visible = false;
                         btnRegresarDash.Visible = true;
+                        btnRegresaEdoCta.Visible = false;
+                        btnRegresaEdoCtaEng.Visible = false;
                     }
                     else if (od == 2)
                     {
                         btnRegresarDash.Visible = false;
-                        btnRegresarMeEs.Visible = false;
-                        btnRegresarMeEsEng.Visible = false;
-                    }
-                    else
-                    {
+                        btnRegresaEdoCta.Visible = false;
+                        btnRegresaEdoCtaEng.Visible = false;
 
                         if (Utils.Idioma == "es-MX")
                         {
@@ -170,7 +175,23 @@ namespace PortalClientes.Views
                             btnRegresarMeEs.Visible = false;
                             btnRegresarMeEsEng.Visible = true;
                         }
+                    }
+                    else if (od == 3)
+                    {
                         btnRegresarDash.Visible = false;
+                        btnRegresarMeEs.Visible = false;
+                        btnRegresarMeEsEng.Visible = false;
+
+                        if (Utils.Idioma == "es-MX")
+                        {
+                            btnRegresaEdoCta.Visible = true;
+                            btnRegresaEdoCtaEng.Visible = false;
+                        }
+                        else
+                        {
+                            btnRegresaEdoCta.Visible = false;
+                            btnRegresaEdoCtaEng.Visible = true;
+                        }
                     }
                 } 
             }
@@ -336,7 +357,17 @@ namespace PortalClientes.Views
                     e.Row.Cells[6].Text = Properties.Resources.TabTran_Detalle;
                     e.Row.Cells[7].Text = Properties.Resources.TabTran_Proveedor;
                     e.Row.Cells[8].Text = Properties.Resources.TabTran_Importe;
-                    
+                }
+
+                else if (tipo == 14)
+                {
+                    e.Row.Cells[0].Text = Properties.Resources.TabTran_Mes;
+                    e.Row.Cells[1].Text = Properties.Resources.TabTran_Anio;
+                    e.Row.Cells[2].Text = Properties.Resources.TabTran_Rubro;
+                    e.Row.Cells[3].Text = Properties.Resources.TabTran_Importe;
+                    e.Row.Cells[4].Text = Properties.Resources.TabTran_Categoria;
+                    e.Row.Cells[5].Text = Properties.Resources.TabTran_TGasto;
+                    e.Row.Cells[6].Text = Properties.Resources.TabTran_Comentario;
                 }
 
             }
@@ -423,6 +454,12 @@ namespace PortalClientes.Views
             else if (tipo == 13)
             {
                 transacciones.detalleEdoCuenta = (List<DetalleRepEdoCuenta>)Session["data"];
+                LlenarGV(transacciones, tipo);
+            }
+
+            else if (tipo == 14)
+            {
+                transacciones.detGastos = (List<gvDetGastos>)Session["data"];
                 LlenarGV(transacciones, tipo);
             }
 
@@ -1095,6 +1132,50 @@ namespace PortalClientes.Views
                 totalTransacciones = transacciones.detalleEdoCuenta.Where(x => x.tipoMoneda == "USD").Sum(x => x.importe.S().Db());
                 lblPromedioRes.Text = Convert.ToDecimal(totalTransacciones).ToString("C", CultureInfo.CreateSpecificCulture("es-MX")) + " USD";
             }
+            else if (tipoTransaccion == 14)
+            {
+
+                totalRegistros = transacciones.detGastos.Count();
+                contMeses = transacciones.detGastos.GroupBy(r => r.mes).Count();
+                totalTransacciones = transacciones.detGastos.Sum(x => x.total);
+                promedio = totalTransacciones / contMeses;
+
+                BoundField clm = new BoundField();
+                clm.DataField = "mes";
+                gvGastos.Columns.Add(clm);
+
+                BoundField clm2 = new BoundField();
+                clm2.DataField = "anio";
+                gvGastos.Columns.Add(clm2);
+
+                BoundField clm3 = new BoundField();
+                clm3.DataField = "rubro";
+                gvGastos.Columns.Add(clm3);
+
+                BoundField clm4 = new BoundField();
+                clm4.DataField = "total";
+                clm4.DataFormatString = "{0:c}";
+                gvGastos.Columns.Add(clm4);
+
+                BoundField clm5 = new BoundField();
+                clm5.DataField = "categoria";
+                gvGastos.Columns.Add(clm5);
+
+                BoundField clm6 = new BoundField();
+                clm6.DataField = "tipoGasto";
+                gvGastos.Columns.Add(clm6);
+
+                BoundField clm7 = new BoundField();
+                clm7.DataField = "comentarios";
+                gvGastos.Columns.Add(clm7);
+
+                gvGastos.DataSource = transacciones.detGastos.OrderBy(x => x.mes).ToList(); //.GroupBy(r => r.mes).Select(x => x.First());
+                gvGastos.DataBind();
+
+                lblTotalTrasnRes.Text = totalRegistros.S();
+                lblTotalRes.Text = totalTransacciones.ToString("C", CultureInfo.CreateSpecificCulture("es-MX"));
+                lblPromedioRes.Text = promedio.ToString("C", CultureInfo.CreateSpecificCulture("es-MX"));
+            }
         }
 
         private string SumatoriaTiempos(List<string> items, int totalReg, int tipoSum)
@@ -1242,6 +1323,9 @@ namespace PortalClientes.Views
                 case 13:
                     title = Utils.Idioma == "es-MX" ? "Detalle de Estado de Cuenta" : "Account Statement Detail";
                     break;
+                case 14:
+                    title = Utils.Idioma == "es-MX" ? "Categorías a lo Largo del Tiempo" : "Categories Over Time";
+                    break;
             }
 
             if (tipoT)
@@ -1257,7 +1341,7 @@ namespace PortalClientes.Views
         }
 
         [WebMethod]
-        public static void ObtenerTransacciones(List<gasto> gastos, List<gastoAeropuerto> gastosAe, List<gastoProveedor> gastosProv, List<vuelo> vuelos, List<pasajero> paxs, List<costosProm> costos, List<hora> horasV, List<novuelo> novuelos, List<costofv> costosFV, List<gastot> gastosT, List<costohv> costoH, List<costofvh> costosFVH, int tipoTrans, string tipoDet, string descES, string descEN, int origen, camposOpcionales opt)
+        public static void ObtenerTransacciones(List<gasto> gastos, List<gastoAeropuerto> gastosAe, List<gastoProveedor> gastosProv, List<vuelo> vuelos, List<pasajero> paxs, List<costosProm> costos, List<hora> horasV, List<novuelo> novuelos, List<costofv> costosFV, List<gastot> gastosT, List<costohv> costoH, List<costofvh> costosFVH, List<detalleGastosTran> detGasto, int tipoTrans, string tipoDet, string descES, string descEN, int origen, camposOpcionales opt)
         {
             // tipo transaccion: 1 gastos
             // tipo transaccion: 2 gastosAe
@@ -1271,6 +1355,8 @@ namespace PortalClientes.Views
             // tipo transaccion: 10 gastos totales
             // tipo transaccion: 11 costos hora vuelo
             // tipo transaccion: 12 costos fijos variables por hora
+            // tipo transaccion: 13 detalle estado de cuenta
+            // tipo transaccion: 12 detalle gastos
 
 
             DateTimeFormatInfo month = null;
@@ -1585,6 +1671,27 @@ namespace PortalClientes.Views
                 HttpContext.Current.Session["dataOpt"] = opt;
             }
 
+            else if (tipoTrans == 14)
+            {
+                List<gvDetGastos> gvdt = new List<gvDetGastos>();
+                foreach (var item in detGasto)
+                {
+                    gvDetGastos dt = new gvDetGastos();
+                    dt.rubro = Utils.Idioma == "es-MX" ? item.rubroESP : item.rubroENG;
+                    dt.total = tipoDet == "MXN" ? item.totalMXN : item.totalUSD;
+                    dt.categoria = item.categoria;
+                    dt.comentarios = item.comentarios;
+                    dt.tipoGasto = item.tipoGasto;
+                    dt.mes = textInfo.ToTitleCase(month.GetMonthName(Convert.ToInt32(item.mes)));
+                    dt.anio = item.anio.S();
+
+                    gvdt.Add(dt);
+                }
+
+                HttpContext.Current.Session["data"] = gvdt;
+                HttpContext.Current.Session["dataOpt"] = opt;
+            }
+
             var descripcion = Utils.Idioma == "es-MX" ? CultureInfo.CurrentCulture.TextInfo.ToTitleCase(descES.ToLower()) : CultureInfo.CurrentCulture.TextInfo.ToTitleCase(descEN.ToLower());
 
             var det = tipoTrans == 8 ? Utils.MatriculaActual : tipoDet;
@@ -1687,6 +1794,12 @@ namespace PortalClientes.Views
                 else if (tipo == 13)
                 {
                     transacciones.detalleEdoCuenta = (List<DetalleRepEdoCuenta>)Session["data"];
+                    LlenarGV(transacciones, tipo);
+                }
+
+                else if (tipo == 14)
+                {
+                    transacciones.detGastos = (List<gvDetGastos>)Session["data"];
                     LlenarGV(transacciones, tipo);
                 }
 
@@ -1815,6 +1928,12 @@ namespace PortalClientes.Views
                 else if (tipo == 13)
                 {
                     transacciones.detalleEdoCuenta = (List<DetalleRepEdoCuenta>)Session["data"];
+                    LlenarGV(transacciones, tipo);
+                }
+
+                else if (tipo == 14)
+                {
+                    transacciones.detGastos = (List<gvDetGastos>)Session["data"];
                     LlenarGV(transacciones, tipo);
                 }
 

@@ -64,7 +64,7 @@ function chartsAe(dataAe, ChartType) {
 
     if (jsonDataAe.length > 0) {
         google.charts.load("current", { packages: ["corechart"] });
-        google.charts.setOnLoadCallback(drawVisualization)
+        google.charts.setOnLoadCallback(drawVisualizationAe)
     }
 
     function generarUrlAe(obtiene) {
@@ -145,8 +145,8 @@ function chartsAe(dataAe, ChartType) {
                     campo2: null,
                 }//campos opcionales en graficas
 
-                let vuelos = []
                 let gastos = []
+                let vuelos = []
                 let gastosProv = []
                 let costos = []
                 let horasV = []
@@ -156,6 +156,7 @@ function chartsAe(dataAe, ChartType) {
                 let costoH = []
                 let costosFV = []
                 let costosFVH = []
+                let detGasto = []
 
                 let obj = JSON.stringify({
                     vuelos,
@@ -170,6 +171,7 @@ function chartsAe(dataAe, ChartType) {
                     gastosT,
                     costoH,
                     costosFVH,
+                    detGasto,
                     tipoTrans: 2,
                     tipoDet: "MXN",
                     descES: array.aeropuerto,

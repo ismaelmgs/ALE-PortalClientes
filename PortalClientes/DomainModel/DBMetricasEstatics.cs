@@ -514,7 +514,7 @@ namespace PortalClientes.DomainModel
 
                 return d;
             }
-            catch (Exception)
+            catch (Exception e)
             {
 
                 throw;
