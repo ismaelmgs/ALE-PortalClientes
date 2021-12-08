@@ -461,7 +461,7 @@ namespace PortalClientes.DomainModel
                 oLog.matricula = Utils.MatriculaActual;
 
                 oLog.matricula = "XA-FLC";
-                oLog.meses = "12";
+                //oLog.meses = "12";
                 oLog.idioma = Utils.Idioma;
 
                 TokenWS oToken = Utils.ObtieneToken;

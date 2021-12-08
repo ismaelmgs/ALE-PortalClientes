@@ -356,16 +356,3 @@ function chartsCLT(data) {
        });
     }
 }
-
-
-function hometab_Click(){
-    document.getElementById("ContentPlaceHolder1_lbTitleMapR").style.display = 'block';
-    document.getElementById("ContentPlaceHolder1_lbTitleMapA").style.display = 'none';
-}
-
-function profiletab_Click(){
-    document.getElementById("ContentPlaceHolder1_lbTitleMapA").style.display = 'block';
-    document.getElementById("ContentPlaceHolder1_lbTitleMapR").style.display = 'none';
-}
-
-

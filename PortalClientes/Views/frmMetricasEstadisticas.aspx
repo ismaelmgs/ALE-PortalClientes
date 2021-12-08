@@ -431,7 +431,7 @@
                             </h2>
                             <div class="clearfix"></div>
                         </div>
-                         <div class="row">
+                        <div class="row">
                             <div class="col-md-4 offset-8">
                                 <asp:DropDownList ID="DDFiltroMesesCH" runat="server" CssClass="form-control" Width="100%"></asp:DropDownList>
                             </div>
@@ -556,7 +556,7 @@
                             </div>
                         </div>
                     </div>
-                    
+
                 </div>
                 <br />
                 <div class="row">
@@ -574,122 +574,122 @@
                         </div>
                         <div class="row">
                             <div class="col-md-12">
-                              <div id="piechart_3d_17" style="min-height: 400px;">
+                                <div id="piechart_3d_17" style="min-height: 400px;">
                                 </div>
                             </div>
                             <div class="col-md-12">
-                              <div id="piechart_3d_18" style="min-height: 400px;">
+                                <div id="piechart_3d_18" style="min-height: 400px;">
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-<!-------->     
+                <!-------->
                 <br />
                 <div class="row">
-                <div class="col-md-12">
-                <div class="x_title">
-                    <h2>
-                        <asp:Label ID="lblMapRutaAeroPrinc" runat="server" Text="Rutas y Aeropuertos Principales" Font-Bold="true"></asp:Label>
-                    </h2>
-                    <div class="clearfix"></div>
-                 </div>
-                <div class="row">
-                    <div class="col-md-8">
-                        <span style="color:#bdbdbd;font-size:16px;">&nbsp;&nbsp;<asp:Label ID="lblTusVuelos" runat="server" Text="" Font-Bold="true"></asp:Label></span>
-                    </div>
-                    <div class="col-md-4">
-                        <asp:DropDownList ID="ddlFiltroMesesRA" runat="server" CssClass="form-control" Width="100%"></asp:DropDownList>
-                    </div>
-                </div>
-                <br />
-                <div class="row">
-                    
-                    <div class="col-md-7">
-                        <h5>
-                            <label runat="server" id="lbTitleMapR">Top Rutas</label>
-                            <label runat="server" style="display: none;" id="lbTitleMapA">Top Aeropuertos</label>
-                        </h5>
+                    <div class="col-md-12">
+                        <div class="x_title">
+                            <h2>
+                                <asp:Label ID="lblMapRutaAeroPrinc" runat="server" Text="Rutas y Aeropuertos Principales" Font-Bold="true"></asp:Label>
+                            </h2>
+                            <div class="clearfix"></div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-8">
+                                <span style="color: #bdbdbd; font-size: 16px;">&nbsp;&nbsp;<asp:Label ID="lblTusVuelos" runat="server" Text="" Font-Bold="true"></asp:Label></span>
+                            </div>
+                            <div class="col-md-4">
+                                <asp:DropDownList ID="ddlFiltroMesesRA" runat="server" CssClass="form-control" Width="100%"></asp:DropDownList>
+                            </div>
+                        </div>
                         <br />
-                        <div id="googleMap"></div>
-                        <%--<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15008005.624851545!2d-111.65547970087938!3d23.313441203547026!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x84043a3b88685353%3A0xed64b4be6b099811!2zTcOpeGljbw!5e0!3m2!1ses!2smx!4v1629999888503!5m2!1ses!2smx" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>--%>
-                    </div>
-                <div class="col-md-5">
-                    <ul class="nav nav-tabs" id="myTab" role="tablist">
-                      <li class="nav-item" onclick="hometab_Click">
-                          <asp:LinkButton runat="server" ID="hometab" OnClientClick="hometab_Click()" CssClass="nav-link active" data-toggle="tab" href="#ContentPlaceHolder1_home" role="tab" aria-controls="ContentPlaceHolder1_home" aria-selected="true">
-                              <asp:Label ID="lblTopRutas" runat="server" Text="Top Rutas"></asp:Label>
-                          </asp:LinkButton>
-                      </li>
-                        <li class="nav-item" onclick="profiletab_Click">
-                             <asp:LinkButton runat="server" ID="profiletab" OnClientClick="profiletab_Click()" CssClass="nav-link" data-toggle="tab" href="#ContentPlaceHolder1_profile" role="tab" aria-controls="ContentPlaceHolder1_profile" aria-selected="false">
-                               <asp:Label ID="lblTopAeropuertos" runat="server" Text="Top Aeropuertos"></asp:Label>
-                          </asp:LinkButton>
-                        </li>
-                    </ul>
-                    <div class="tab-content" id="myTabContent">
-                        <div class="tab-pane fade show active" runat="server" id="home" role="tabpanel" aria-labelledby="home-tab">
-                            <br />
-                            <div class="col-md-12">
-                                <div class="table-responsive">
-                                    <div class="card-box table-responsive">
-                                        <asp:GridView ID="gvRuta" runat="server" AutoGenerateColumns="false" CssClass="table table-striped table-bordered table-hover" AllowPaging="true"
-                                            OnPageIndexChanging="gvRutas_PageIndexChanging" OnRowDataBound="gvRutas_RowDataBound" EmptyDataText="No Registros">
-                                            <Columns>
-                                                <asp:BoundField DataField="rutas" />
-                                            </Columns>
-                                        </asp:GridView>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="tab-pane fade" runat="server" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-                            <br />
-                            <div class="col-md-12">
-                                <div class="table-responsive">
-                                    <div class="card-box table-responsive">
-                                        <asp:GridView ID="gvAeropuerto" runat="server" AutoGenerateColumns="false" CssClass="table table-striped table-bordered table-hover" AllowPaging="true"
-                                            OnPageIndexChanging="gvAeropuertos_PageIndexChanging" OnRowDataBound="gvAeropuertos_RowDataBound" EmptyDataText="No Registros">
-                                            <Columns>
-                                                <asp:BoundField DataField="clave" />
-                                                <asp:BoundField DataField="aeropuerto" />
-                                            </Columns>
-                                        </asp:GridView>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                </div>
-                </div>
-                </div>
-                </div>
-            </div>
-            </div>
+                        <div class="row">
 
-<!-------->
+                            <div class="col-md-7">
+                                <h5>
+                                    <label runat="server" id="lbTitleMapR">Top Rutas</label>
+                                    <label runat="server" style="display: none;" id="lbTitleMapA">Top Aeropuertos</label>
+                                </h5>
+                                <br />
+                                <div id="googleMap"></div>
+                                <%--<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15008005.624851545!2d-111.65547970087938!3d23.313441203547026!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x84043a3b88685353%3A0xed64b4be6b099811!2zTcOpeGljbw!5e0!3m2!1ses!2smx!4v1629999888503!5m2!1ses!2smx" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>--%>
+                            </div>
+                            <div class="col-md-5">
+                                <ul class="nav nav-tabs" id="myTab" role="tablist">
+                                    <li class="nav-item" onclick="hometab_Click">
+                                        <asp:LinkButton runat="server" ID="hometab" OnClientClick="hometab_Click()" CssClass="nav-link active" data-toggle="tab" href="#ContentPlaceHolder1_home" role="tab" aria-controls="ContentPlaceHolder1_home" aria-selected="true">
+                                            <asp:Label ID="lblTopRutas" runat="server" Text="Top Rutas"></asp:Label>
+                                        </asp:LinkButton>
+                                    </li>
+                                    <li class="nav-item" onclick="profiletab_Click">
+                                        <asp:LinkButton runat="server" ID="profiletab" OnClientClick="profiletab_Click()" CssClass="nav-link" data-toggle="tab" href="#ContentPlaceHolder1_profile" role="tab" aria-controls="ContentPlaceHolder1_profile" aria-selected="false">
+                                            <asp:Label ID="lblTopAeropuertos" runat="server" Text="Top Aeropuertos"></asp:Label>
+                                        </asp:LinkButton>
+                                    </li>
+                                </ul>
+                                <div class="tab-content" id="myTabContent">
+                                    <div class="tab-pane fade show active" runat="server" id="home" role="tabpanel" aria-labelledby="home-tab">
+                                        <br />
+                                        <div class="col-md-12">
+                                            <div class="table-responsive">
+                                                <div class="card-box table-responsive">
+                                                    <asp:GridView ID="gvRuta" runat="server" AutoGenerateColumns="false" CssClass="table table-striped table-bordered table-hover" AllowPaging="true"
+                                                        OnPageIndexChanging="gvRutas_PageIndexChanging" OnRowDataBound="gvRutas_RowDataBound" EmptyDataText="No Registros">
+                                                        <Columns>
+                                                            <asp:BoundField DataField="rutas" />
+                                                        </Columns>
+                                                    </asp:GridView>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane fade" runat="server" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                                        <br />
+                                        <div class="col-md-12">
+                                            <div class="table-responsive">
+                                                <div class="card-box table-responsive">
+                                                    <asp:GridView ID="gvAeropuerto" runat="server" AutoGenerateColumns="false" CssClass="table table-striped table-bordered table-hover" AllowPaging="true"
+                                                        OnPageIndexChanging="gvAeropuertos_PageIndexChanging" OnRowDataBound="gvAeropuertos_RowDataBound" EmptyDataText="No Registros">
+                                                        <Columns>
+                                                            <asp:BoundField DataField="clave" />
+                                                            <asp:BoundField DataField="aeropuerto" />
+                                                        </Columns>
+                                                    </asp:GridView>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
+
+        <!-------->
     </div>
 
+
     <style>
-      html, body{
-        height:100%;
-        margin: 0px;
-      }
-      #googleMap{
-        width:100%;
-        height:450px;
-      }
+        html, body {
+            height: 100%;
+            margin: 0px;
+        }
+
+        #googleMap {
+            width: 100%;
+            height: 450px;
+        }
     </style>
 
     <script src='<%=ResolveUrl("~/vendors/jquery/dist/jquery.min.js")%>'></script>
     <script src='<%=ResolveUrl("~/vendors/jquery/dist/jquery.js")%>'></script>
-   
+
     <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
-     <script src='<%=ResolveUrl("~/build/js/RutasyAeropuertos.js")%>'></script>
-   
+    <script src='<%=ResolveUrl("~/build/js/RutasyAeropuertos.js")%>'></script>
+
     <script src='<%=ResolveUrl("~/build/js/GraficasJS/GraficasMeEsCategorias.js")%>'></script>
     <script src='<%=ResolveUrl("~/build/js/GraficasJS/GraficasMeEsCostoHoraVuelo.js")%>'></script>
     <script src='<%=ResolveUrl("~/build/js/GraficasJS/GraficasMeEsGastoTotal.js")%>'></script>
