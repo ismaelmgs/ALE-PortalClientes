@@ -16,12 +16,6 @@
                     <div class="title_right">
                         <div class="col-md-5 col-sm-5   form-group pull-right top_search">
                             <div class="input-group">
-                                <%--<asp:TextBox ID="txtBusqueda" runat="server" CssClass="form-control" placeholder="Buscar..."></asp:TextBox>
-                        <span class="input-group-btn">
-                            <button id="btnBuscar" class="btn btn-default" type="button">
-                                <i class="fa fa-search" aria-hidden="true"></i>
-                            </button>
-                        </span>--%>
                             </div>
                         </div>
                     </div>
@@ -33,12 +27,6 @@
                         <div class="x_title">
                             <h2>
                                 <asp:Label ID="lblTripulacion" runat="server" Text="Tripulación" Font-Bold="true"></asp:Label></h2>
-                            <%--<ul class="nav navbar-right panel_toolbox">
-                    <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
-                    </li>
-                    <li><a class="close-link"><i class="fa fa-close"></i></a>
-                    </li>
-                </ul>--%>
                             <div class="clearfix"></div>
                         </div>
                         <div class="row">
@@ -64,9 +52,6 @@
                                             </div>
                                             <div class="col-md-1" style="text-align: right;">
                                                 <asp:Button ID="btnFiltrarTripulacion" runat="server" Text="Filtrar" CssClass="btn btn-success" OnClick="btnFiltrar_Click" Style="margin-left: 10px;" />
-                                                <%--<button id="btnFiltrarTripulacion" class="btn btn-sm btn-primary" type="button"  OnClick="">
-                                            <i class="fa fa-filter" aria-hidden="true"></i>Filtrar
-                                        </button>--%>
                                             </div>
                                             <div class="col" style="text-align: center;">
                                                 <asp:LinkButton ID="btnExcelEvent" runat="server" Text="<i class='fa fa-file-excel-o' style='color:#73879c;font-size:28px;'></i>" CssClass="btn" OnClick="btnExcelEvent_Click" />

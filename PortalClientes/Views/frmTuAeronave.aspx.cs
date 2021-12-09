@@ -77,6 +77,35 @@ namespace PortalClientes.Views
             }
         }
 
+        protected void gvDocumentos_RowCommand(object sender, GridViewCommandEventArgs e)
+        {
+            if (e.CommandName == "download")
+            {
+                var index = Convert.ToInt32(e.CommandArgument);
+
+                GridViewRow row = gvDocumentos.Rows[index];
+
+                var nombre = "";
+                var ext = "";
+                var img = "";
+                if (row != null)
+                {
+                    nombre = gvDocumentos.Rows[row.RowIndex].Cells[0].Text;
+                    ext = gvDocumentos.Rows[row.RowIndex].Cells[1].Text;
+                    img = gvDocumentos.Rows[row.RowIndex].Cells[2].Text;
+                }
+
+                Response.Clear();
+
+                Response.AddHeader("content-disposition", string.Format("attachment;filename={0}", nombre));
+                Response.ContentType = "application/octet-stream";
+
+                Byte[] bytes = Convert.FromBase64String(img);
+                Response.BinaryWrite(bytes);
+                Response.End();
+            }
+        }
+
         protected void imbViewDoc_Click(object sender, ImageClickEventArgs e)
         {
             GridViewRow row = ((ImageButton)sender).NamingContainer as GridViewRow;
@@ -110,30 +139,6 @@ namespace PortalClientes.Views
                 "   function(){" +
                 "      window.open('file:///' + document.getElementById('ContentPlaceHolder1_HFPath').value,'_explorer.exe','location=yes,height=570,width=520,scrollbars=yes,status=yes')" +
                 "   }, 2000);</script>");
-        }
-
-        protected void imbDownloadDoc_Click(object sender, ImageClickEventArgs e)
-        {
-            GridViewRow row = ((ImageButton)sender).NamingContainer as GridViewRow;
-            var nombre = "";
-            var ext = "";
-            var img = "";
-            if (row != null)
-            {
-                nombre = gvDocumentos.Rows[row.RowIndex].Cells[0].Text;
-                ext = gvDocumentos.Rows[row.RowIndex].Cells[1].Text;
-                img = gvDocumentos.Rows[row.RowIndex].Cells[2].Text;
-            }
-
-            Response.Clear();
-
-            Response.AddHeader("content-disposition", string.Format("attachment;filename={0}", nombre));
-            Response.ContentType = "application/octet-stream";
-
-            Byte[] bytes = Convert.FromBase64String(img);
-            Response.BinaryWrite(bytes);
-            Response.End();
-
         }
 
         #endregion
