@@ -7,13 +7,20 @@
 // </generado automáticamente>
 //------------------------------------------------------------------------------
 
-namespace PortalClientes.Views
-{
-
-
-    public partial class frmTuAeronave
-    {
-
+namespace PortalClientes.Views {
+    
+    
+    public partial class frmTuAeronave {
+        
+        /// <summary>
+        /// Control upaPrincipal.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.UpdatePanel upaPrincipal;
+        
         /// <summary>
         /// Control lblTitulo.
         /// </summary>
@@ -22,7 +29,7 @@ namespace PortalClientes.Views
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblTitulo;
-
+        
         /// <summary>
         /// Control lblTuAeronave.
         /// </summary>
@@ -31,7 +38,7 @@ namespace PortalClientes.Views
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblTuAeronave;
-
+        
         /// <summary>
         /// Control lblEspecificaciones.
         /// </summary>
@@ -40,7 +47,7 @@ namespace PortalClientes.Views
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblEspecificaciones;
-
+        
         /// <summary>
         /// Control lblDocumentos.
         /// </summary>
@@ -49,7 +56,7 @@ namespace PortalClientes.Views
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblDocumentos;
-
+        
         /// <summary>
         /// Control lblMatriculaTuAeronave.
         /// </summary>
@@ -58,7 +65,7 @@ namespace PortalClientes.Views
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblMatriculaTuAeronave;
-
+        
         /// <summary>
         /// Control lblFabricante.
         /// </summary>
@@ -67,7 +74,7 @@ namespace PortalClientes.Views
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblFabricante;
-
+        
         /// <summary>
         /// Control lblFabricanteResp.
         /// </summary>
@@ -76,7 +83,7 @@ namespace PortalClientes.Views
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblFabricanteResp;
-
+        
         /// <summary>
         /// Control lblYear.
         /// </summary>
@@ -85,7 +92,7 @@ namespace PortalClientes.Views
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblYear;
-
+        
         /// <summary>
         /// Control lblYearResp.
         /// </summary>
@@ -94,7 +101,7 @@ namespace PortalClientes.Views
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblYearResp;
-
+        
         /// <summary>
         /// Control lblModelo.
         /// </summary>
@@ -103,7 +110,7 @@ namespace PortalClientes.Views
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblModelo;
-
+        
         /// <summary>
         /// Control lblModeloResp.
         /// </summary>
@@ -112,7 +119,7 @@ namespace PortalClientes.Views
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblModeloResp;
-
+        
         /// <summary>
         /// Control lblRegistro.
         /// </summary>
@@ -121,7 +128,7 @@ namespace PortalClientes.Views
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblRegistro;
-
+        
         /// <summary>
         /// Control lblRegistroResp.
         /// </summary>
@@ -130,7 +137,7 @@ namespace PortalClientes.Views
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblRegistroResp;
-
+        
         /// <summary>
         /// Control lblSerie.
         /// </summary>
@@ -139,7 +146,7 @@ namespace PortalClientes.Views
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblSerie;
-
+        
         /// <summary>
         /// Control lblSerieResp.
         /// </summary>
@@ -148,7 +155,7 @@ namespace PortalClientes.Views
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblSerieResp;
-
+        
         /// <summary>
         /// Control lblCapacidad.
         /// </summary>
@@ -157,7 +164,7 @@ namespace PortalClientes.Views
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblCapacidad;
-
+        
         /// <summary>
         /// Control lblPasajeros.
         /// </summary>
@@ -166,7 +173,7 @@ namespace PortalClientes.Views
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblPasajeros;
-
+        
         /// <summary>
         /// Control lblPasajerosResp.
         /// </summary>
@@ -175,7 +182,7 @@ namespace PortalClientes.Views
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblPasajerosResp;
-
+        
         /// <summary>
         /// Control lblTripulacion.
         /// </summary>
@@ -184,7 +191,7 @@ namespace PortalClientes.Views
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblTripulacion;
-
+        
         /// <summary>
         /// Control lblTripulacionRes.
         /// </summary>
@@ -193,7 +200,7 @@ namespace PortalClientes.Views
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblTripulacionRes;
-
+        
         /// <summary>
         /// Control lblPesoMaxDespegue.
         /// </summary>
@@ -202,7 +209,7 @@ namespace PortalClientes.Views
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblPesoMaxDespegue;
-
+        
         /// <summary>
         /// Control lblPesoMaxDespegueRes.
         /// </summary>
@@ -211,7 +218,7 @@ namespace PortalClientes.Views
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblPesoMaxDespegueRes;
-
+        
         /// <summary>
         /// Control lblPesoMaxAterrizaje.
         /// </summary>
@@ -220,7 +227,7 @@ namespace PortalClientes.Views
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblPesoMaxAterrizaje;
-
+        
         /// <summary>
         /// Control lblPesoMaxAterrizajeRes.
         /// </summary>
@@ -229,7 +236,7 @@ namespace PortalClientes.Views
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblPesoMaxAterrizajeRes;
-
+        
         /// <summary>
         /// Control lblMaxCeroCombustible.
         /// </summary>
@@ -238,7 +245,7 @@ namespace PortalClientes.Views
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblMaxCeroCombustible;
-
+        
         /// <summary>
         /// Control lblMaxCeroCombustibleRes.
         /// </summary>
@@ -247,7 +254,7 @@ namespace PortalClientes.Views
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblMaxCeroCombustibleRes;
-
+        
         /// <summary>
         /// Control lblPesoBasicoOperacion.
         /// </summary>
@@ -256,7 +263,7 @@ namespace PortalClientes.Views
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblPesoBasicoOperacion;
-
+        
         /// <summary>
         /// Control lblPesoBasicoOperacionRes.
         /// </summary>
@@ -265,7 +272,7 @@ namespace PortalClientes.Views
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblPesoBasicoOperacionRes;
-
+        
         /// <summary>
         /// Control lblVelocidad.
         /// </summary>
@@ -274,7 +281,7 @@ namespace PortalClientes.Views
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblVelocidad;
-
+        
         /// <summary>
         /// Control lblVelocidadRes.
         /// </summary>
@@ -283,7 +290,7 @@ namespace PortalClientes.Views
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblVelocidadRes;
-
+        
         /// <summary>
         /// Control lblMaxAltura.
         /// </summary>
@@ -292,7 +299,7 @@ namespace PortalClientes.Views
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblMaxAltura;
-
+        
         /// <summary>
         /// Control lblMaxAlturaRes.
         /// </summary>
@@ -301,7 +308,7 @@ namespace PortalClientes.Views
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblMaxAlturaRes;
-
+        
         /// <summary>
         /// Control carouselExampleIndicators.
         /// </summary>
@@ -310,7 +317,7 @@ namespace PortalClientes.Views
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl carouselExampleIndicators;
-
+        
         /// <summary>
         /// Control gvDocumentos.
         /// </summary>
@@ -319,7 +326,7 @@ namespace PortalClientes.Views
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.GridView gvDocumentos;
-
+        
         /// <summary>
         /// Control HFPath.
         /// </summary>

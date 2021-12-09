@@ -7,13 +7,20 @@
 // </generado automáticamente>
 //------------------------------------------------------------------------------
 
-namespace PortalClientes.Views
-{
-
-
-    public partial class frmMantenimientos
-    {
-
+namespace PortalClientes.Views {
+    
+    
+    public partial class frmMantenimientos {
+        
+        /// <summary>
+        /// Control upaPrincipal.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.UpdatePanel upaPrincipal;
+        
         /// <summary>
         /// Control lblMantenimientos.
         /// </summary>

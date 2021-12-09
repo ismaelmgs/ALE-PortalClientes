@@ -7,13 +7,20 @@
 // </generado automáticamente>
 //------------------------------------------------------------------------------
 
-namespace PortalClientes.Views
-{
-
-
-    public partial class frmFinconexion
-    {
-
+namespace PortalClientes.Views {
+    
+    
+    public partial class frmFinconexion {
+        
+        /// <summary>
+        /// Control upaPrincipal.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.UpdatePanel upaPrincipal;
+        
         /// <summary>
         /// Control lblSesionExp.
         /// </summary>
@@ -22,7 +29,7 @@ namespace PortalClientes.Views
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblSesionExp;
-
+        
         /// <summary>
         /// Control btnRegresarLogin.
         /// </summary>

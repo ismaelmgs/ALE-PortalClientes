@@ -9,70 +9,72 @@
     <script type="text/javascript" src="../build/js/scheduler.js?n=1"></script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-   
-    <div class="row">
-        <div class="col-md-12 col-sm-12">
-            <div class="x_panel">
-                <div class="x_title">
-                    <h2>
-                        <asp:Label ID="lblCalendario" runat="server" Text="Calendario" Font-Bold="true"></asp:Label></h2>
-                    <div class="clearfix"></div>
-                </div>
-                <div class="row">
+    <asp:UpdatePanel ID="upaPrincipal" runat="server">
+        <ContentTemplate>
+            <div class="row">
+                <div class="col-md-12 col-sm-12">
+                    <div class="x_panel">
+                        <div class="x_title">
+                            <h2>
+                                <asp:Label ID="lblCalendario" runat="server" Text="Calendario" Font-Bold="true"></asp:Label></h2>
+                            <div class="clearfix"></div>
+                        </div>
+                        <div class="row">
 
-                    <div class="col-md-12" style="text-align: right;">
-                        <asp:Button runat="server" ID="btnActiveDay" OnClick="btnActiveView_Click" data-view="Day" Text="Hoy" CssClass="btn btn-secondary" />
-                        <asp:Button runat="server" ID="btnActiveWorkWeek" OnClick="btnActiveView_Click" data-view="WorkWeek" Text="Semanal" CssClass="btn btn-secondary" />
-                        <asp:Button runat="server" ID="btnActiveMonth" OnClick="btnActiveView_Click" data-view="Month" Text="Mensual" CssClass="btn btn-primary" />
-                        <asp:Button runat="server" ID="btnActiveTimeLine" OnClick="btnActiveView_Click" data-view="Timeline" Text="TimeLine" CssClass="btn btn-secondary" />
-                        <asp:Button runat="server" ID="btnActiveAgenda" OnClick="btnActiveView_Click" data-view="Agenda" Text="Agenda" CssClass="btn btn-secondary" />
-                        <dx:BootstrapScheduler ID="Scheduler" AppointmentDataSourceID="ObjectDataSource" runat="server" ActiveViewType="month"
-                            OnPopupMenuShowing="Scheduler_PopupMenuShowing">
-                            <Storage>
-                                <Appointments AutoRetrieveId="true">
-                                    <Mappings AppointmentId="ID" Start="StartTime" End="EndTime" Subject="Subject"
-                                        Description="Description" Location="Location"
-                                        Type="EventType" Label="Label" Status="Status" />
-                                </Appointments>
-                            </Storage>
-                            <ClientSideEvents
-                                AppointmentClick="function(s, e) { ClickAppointment(s, e); }"
-                                MouseUp="function(s, e) { Click(s, e,9); }"
-                                />
-                            <OptionsToolTips ShowAppointmentToolTip="false" />
-                            <Views>
-                                <DayView>
-                                    <WorkTime Start="00:00:00" End="23:59:59" />
-                                </DayView>
-                                <WorkWeekView ResourcesPerPage="1">
-                                    <WorkTime Start="00:00:00" End="23:59:59" />
-                                </WorkWeekView>
-                                <WeekView Enabled="false" />
-                                <FullWeekView Enabled="false">
-                                </FullWeekView>
-                                <MonthView ResourcesPerPage="1">
-                                    <AppointmentDisplayOptions StartTimeVisibility="Never" EndTimeVisibility="Never" StatusDisplayType="Bounds" />
-                                    <CellAutoHeightOptions Mode="LimitHeight" MinHeight="140" />
-                                </MonthView>
-                                <TimelineView ResourcesPerPage="1">
-                                </TimelineView>
-                                <AgendaView Enabled="true">
-                                    <%--<AgendaViewStyles ScrollAreaHeight="600">
+                            <div class="col-md-12" style="text-align: right;">
+                                <asp:Button runat="server" ID="btnActiveDay" OnClick="btnActiveView_Click" data-view="Day" Text="Hoy" CssClass="btn btn-secondary" />
+                                <asp:Button runat="server" ID="btnActiveWorkWeek" OnClick="btnActiveView_Click" data-view="WorkWeek" Text="Semanal" CssClass="btn btn-secondary" />
+                                <asp:Button runat="server" ID="btnActiveMonth" OnClick="btnActiveView_Click" data-view="Month" Text="Mensual" CssClass="btn btn-primary" />
+                                <asp:Button runat="server" ID="btnActiveTimeLine" OnClick="btnActiveView_Click" data-view="Timeline" Text="TimeLine" CssClass="btn btn-secondary" />
+                                <asp:Button runat="server" ID="btnActiveAgenda" OnClick="btnActiveView_Click" data-view="Agenda" Text="Agenda" CssClass="btn btn-secondary" />
+                                <dx:BootstrapScheduler ID="Scheduler" AppointmentDataSourceID="ObjectDataSource" runat="server" ActiveViewType="month"
+                                    OnPopupMenuShowing="Scheduler_PopupMenuShowing">
+                                    <Storage>
+                                        <Appointments AutoRetrieveId="true">
+                                            <Mappings AppointmentId="ID" Start="StartTime" End="EndTime" Subject="Subject"
+                                                Description="Description" Location="Location"
+                                                Type="EventType" Label="Label" Status="Status" />
+                                        </Appointments>
+                                    </Storage>
+                                    <ClientSideEvents
+                                        AppointmentClick="function(s, e) { ClickAppointment(s, e); }"
+                                        MouseUp="function(s, e) { Click(s, e,9); }" />
+                                    <OptionsToolTips ShowAppointmentToolTip="false" />
+                                    <Views>
+                                        <DayView>
+                                            <WorkTime Start="00:00:00" End="23:59:59" />
+                                        </DayView>
+                                        <WorkWeekView ResourcesPerPage="1">
+                                            <WorkTime Start="00:00:00" End="23:59:59" />
+                                        </WorkWeekView>
+                                        <WeekView Enabled="false" />
+                                        <FullWeekView Enabled="false">
+                                        </FullWeekView>
+                                        <MonthView ResourcesPerPage="1">
+                                            <AppointmentDisplayOptions StartTimeVisibility="Never" EndTimeVisibility="Never" StatusDisplayType="Bounds" />
+                                            <CellAutoHeightOptions Mode="LimitHeight" MinHeight="140" />
+                                        </MonthView>
+                                        <TimelineView ResourcesPerPage="1">
+                                        </TimelineView>
+                                        <AgendaView Enabled="true">
+                                            <%--<AgendaViewStyles ScrollAreaHeight="600">
                                     </AgendaViewStyles>--%>
-                                </AgendaView>
-                            </Views>
-                            <Storage EnableReminders="false" />
-                        </dx:BootstrapScheduler>
-                        <asp:ObjectDataSource
-                            ID="ObjectDataSource"
-                            runat="server"
-                            SelectMethod="getAllAppoinments"
-                            TypeName="PortalClientes.Views.frmCalendario" />
+                                        </AgendaView>
+                                    </Views>
+                                    <Storage EnableReminders="false" />
+                                </dx:BootstrapScheduler>
+                                <asp:ObjectDataSource
+                                    ID="ObjectDataSource"
+                                    runat="server"
+                                    SelectMethod="getAllAppoinments"
+                                    TypeName="PortalClientes.Views.frmCalendario" />
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
+        </ContentTemplate>
+    </asp:UpdatePanel>
     <asp:HiddenField ID="hfdate" runat="server" />
     <asp:HiddenField ID="hdTargetDescription" runat="server" />
     <cc1:ModalPopupExtender ID="modalDescription" runat="server" TargetControlID="hdTargetDescription"
@@ -82,18 +84,17 @@
         Width="" CssClass="modal-derecha anim_RLR">
         <asp:UpdatePanel ID="upaUsuario" runat="server">
             <ContentTemplate>
-                
-                    <asp:Button ID="Button1" runat="server" CssClass="btn" Text="X" Font-Bold="true" OnClientClick="CloseModal();" Style="z-index: 2000; right: 13px; margin-top: 10px; position: absolute; color: #ffffff;" />
-                    <h5 class="modal-title" style="color:#ffffff;background-color:#2a3f54;width:100%;height:70px;padding-top:15px;">
-                                <asp:Label ID="lblDetallesVuelo" runat="server" Text="Detalles de Vuelo" Font-Bold="true"></asp:Label></h5>
-                    <!-- inicio contenido modal RLR-->
-                    <div style="padding:5px;">
-                        <div class="row">
+
+                <asp:Button ID="Button1" runat="server" CssClass="btn" Text="X" Font-Bold="true" OnClientClick="CloseModal();" Style="z-index: 2000; right: 13px; margin-top: 10px; position: absolute; color: #ffffff;" />
+                <h5 class="modal-title" style="color: #ffffff; background-color: #2a3f54; width: 100%; height: 70px; padding-top: 15px;">
+                    <asp:Label ID="lblDetallesVuelo" runat="server" Text="Detalles de Vuelo" Font-Bold="true"></asp:Label></h5>
+                <!-- inicio contenido modal RLR-->
+                <div style="padding: 5px;">
+                    <div class="row">
                         <div class="col-md-9" style="text-align: left;">
-                            
                         </div>
                         <div class="col-md-3" style="text-align: right;">
-                            <asp:LinkButton ID="btnExcel" runat="server" Text="<i class='fa fa-file-pdf-o' style='color:#73879c;font-size:25px;'></i>" CssClass="btn" OnClick="lkbExpPDFRes_Click"/>
+                            <asp:LinkButton ID="btnExcel" runat="server" Text="<i class='fa fa-file-pdf-o' style='color:#73879c;font-size:25px;'></i>" CssClass="btn" OnClick="lkbExpPDFRes_Click" />
                             <asp:LinkButton ID="btnPDF" runat="server" Text="<i class='fa fa-print' style='color:#73879c;font-size:25px;'></i>" CssClass="btn" />
                         </div>
                     </div>
@@ -141,13 +142,7 @@
                                 </h2>
                                 <hr style="border-bottom: 1px solid #E6E9ED; margin-top: -1px;" />
                             </div>
-                        </div>  
-                        <%--<div class="row" style="background-color: #00000008;">
-                            <div class="col" style="text-align: left;">&nbsp;</div>
-                            
-                            <div class="col" style="text-align: left;">&nbsp;</div>
                         </div>
-                        <br />--%>
                         <div class="row" style="background-color: #00000008;">
                             <div class="col-md-3" style="text-align: left; border: 1px solid #ffffff;">
                                 <i class="fa fa-space-shuttle"></i>
@@ -191,12 +186,6 @@
                             <div class="col-md-3" style="text-align: left; border: 1px solid #ffffff;">
                                 <asp:Label ID="lblAeronaveRes" runat="server" Text="N849WC" Font-Bold="true" Style=""></asp:Label>
                             </div>
-                            <%--<div class="col-md-3" style="text-align: left; border: 1px solid #ffffff;">
-                                <asp:Label ID="lblObjetivo" runat="server" Text="Objetivo" Font-Bold="false" Style=""></asp:Label>
-                            </div>
-                            <div class="col-md-3" style="text-align: left; border: 1px solid #ffffff;">
-                                <asp:Label ID="lblObjetivoRes" runat="server" Text="---" Font-Bold="true" Style=""></asp:Label>
-                            </div>--%>
                         </div>
                         <div class="row" style="background-color: #00000008;">
                             <div class="col-md-3" style="text-align: left; border: 1px solid #ffffff;">
@@ -257,22 +246,6 @@
                                 <asp:Label ID="lblAeropuertoSalidaRes" runat="server" Text="Teterboro, Teterboro, US (KTEB)" Font-Bold="true" Style=""></asp:Label>
                             </div>
                         </div>
-                        <%--<div class="row" style="background-color: #00000008;">
-                            <div class="col-md-4" style="text-align: left; border: 1px solid #ffffff;">
-                                <asp:Label ID="lblFueraFechaBloque" runat="server" Text="Fecha Fuera del Bloque" Font-Bold="false" Style=""></asp:Label>
-                            </div>
-                            <div class="col-md-2" style="text-align: left; border: 1px solid #ffffff;">
-                                <i class="fa fa-calendar"></i>
-                                <asp:Label ID="lblFueraFechaBloqueRes" runat="server" Text="04/04/2021" Font-Bold="true" Style=""></asp:Label>
-                            </div>
-                            <div class="col-md-4" style="text-align: left; border-bottom: 1px solid #ffffff;">
-                                <asp:Label ID="lblFueraTiempoBloque" runat="server" Text="Tiempo Fuera Bloque" Font-Bold="false" Style=""></asp:Label>
-                            </div>
-                            <div class="col-md-2" style="text-align: left; border-bottom: 1px solid #ffffff;">
-                                <i class="fa fa-clock-o"></i>
-                                <asp:Label ID="lblFueraTiempoBloqueRes" runat="server" Text="03:52 am" Font-Bold="true" Style=""></asp:Label>
-                            </div>
-                        </div>--%>
                         <div class="row" style="background-color: #00000008;">
                             <div class="col-md-3" style="text-align: left; border: 1px solid #ffffff;">
                                 <asp:Label ID="lblFechaDeSalida" runat="server" Text="Fecha de Salida" Font-Bold="false" Style=""></asp:Label>
@@ -291,8 +264,9 @@
                         </div>
                         <div class="row" style="background-color: #00000008;">
                             <div class="col-md-3" style="text-align: left; border: 1px solid #ffffff;">
-                                <i class="fa fa-globe"></i> <asp:Label ID="lblZonaHoraria" runat="server" Text="Zona Horaria" Font-Bold="false" Style=""></asp:Label>
-                                
+                                <i class="fa fa-globe"></i>
+                                <asp:Label ID="lblZonaHoraria" runat="server" Text="Zona Horaria" Font-Bold="false" Style=""></asp:Label>
+
                             </div>
                             <div class="col-md-9" style="text-align: left; border: 1px solid #ffffff;">
                                 <asp:Label ID="lblZonaHorariaRes" runat="server" Text="Tiempo Local" Font-Bold="true" Style=""></asp:Label>
@@ -327,25 +301,10 @@
                                 <asp:Label ID="lblHoraArrivoRes" runat="server" Text="06:40 am" Font-Bold="true" Style=""></asp:Label>
                             </div>
                         </div>
-                        <%--<div class="row" style="background-color: #00000008;">
-                            <div class="col-md-4" style="text-align: left; border: 1px solid #ffffff;">
-                                <asp:Label ID="lblFechaBloque" runat="server" Text="Fecha de Bloque" Font-Bold="false" Style=""></asp:Label>
-                            </div>
-                            <div class="col-md-2" style="text-align: left; border: 1px solid #ffffff;">
-                                <i class="fa fa-calendar"></i>
-                                <asp:Label ID="lblFechaBloqueRes" runat="server" Text="04/04/2021" Font-Bold="true" Style=""></asp:Label>
-                            </div>
-                            <div class="col-md-4" style="text-align: left; border-bottom: 1px solid #ffffff;">
-                                <asp:Label ID="lblTiempoBloque" runat="server" Text="Hora de Bloque" Font-Bold="false" Style=""></asp:Label>
-                            </div>
-                            <div class="col-md-2" style="text-align: left; border-bottom: 1px solid #ffffff;">
-                                <i class="fa fa-clock-o"></i>
-                                <asp:Label ID="lblTiempoBloqueRes" runat="server" Text="04:00 am" Font-Bold="true" Style=""></asp:Label>
-                            </div>
-                        </div>--%>
                         <div class="row" style="background-color: #00000008;">
                             <div class="col-md-4" style="text-align: left; border: 1px solid #ffffff;">
-                                <i class="fa fa-globe"></i> <asp:Label ID="lblZonaHorariaLlegada" runat="server" Text="Zona Horaria" Font-Bold="false" Style=""></asp:Label>
+                                <i class="fa fa-globe"></i>
+                                <asp:Label ID="lblZonaHorariaLlegada" runat="server" Text="Zona Horaria" Font-Bold="false" Style=""></asp:Label>
                             </div>
                             <div class="col-md-8" style="text-align: left; border: 1px solid #ffffff;">
                                 <asp:Label ID="Label13" runat="server" Text="Tiempo Local" Font-Bold="true" Style=""></asp:Label>
@@ -394,24 +353,6 @@
                                 <asp:Label ID="lblTrpulacionRes" runat="server" Text="Tripulación 0" Font-Bold="true" Style=""></asp:Label>
                             </div>
                         </div>
-                        <%--<br />
-                        <div class="row">
-                            <div class="col-md-12">
-                                <h2 style="color: #BDBDBD;">
-                                    <asp:Label ID="lblDatosVuelo" runat="server" Text="Datos de Vuelo" Font-Bold="true"></asp:Label>
-                                </h2>
-                                <hr style="border-bottom: 1px solid #E6E9ED; margin-top: -1px;" />
-                            </div>
-                        </div>--%>
-                        
-                        <%--<div class="row" style="background-color: #00000008;">
-                            <div class="col-md-4" style="text-align: left; border: 1px solid #ffffff;">
-                                <asp:Label ID="lblDatosBloqueTiempo" runat="server" Text="Bloque de Tiempo" Font-Bold="false" Style=""></asp:Label>
-                            </div>
-                            <div class="col-md-8" style="text-align: left; border: 1px solid #ffffff;">
-                                <asp:Label ID="lblDatosBloqueTiempoRes" runat="server" Text="3h 01m" Font-Bold="true" Style=""></asp:Label>
-                            </div>
-                        </div>--%>
                         <br />
                         <div class="row">
                             <div class="col-md-12">
@@ -485,7 +426,7 @@
                         </div>
                         <div class="row" style="background-color: #00000008;">
                             <div class="col-md-4" style="text-align: left; border: 1px solid #ffffff;">
-                                <i class="fa fa-cutlery"></i> - <i class="fa fa-car"></i>
+                                <i class="fa fa-cutlery"></i>- <i class="fa fa-car"></i>
                                 <%--<asp:Label ID="lblCateringTelNotas" runat="server" Text="Notas" Font-Bold="false" Style=""></asp:Label>--%>
                             </div>
                             <div class="col-md-8" style="text-align: left; border: 1px solid #ffffff;">
@@ -501,7 +442,7 @@
                 </div>
             </ContentTemplate>
             <Triggers>
-                <asp:PostBackTrigger ControlID="btnExcel"/>
+                <asp:PostBackTrigger ControlID="btnExcel" />
             </Triggers>
         </asp:UpdatePanel>
     </asp:Panel>

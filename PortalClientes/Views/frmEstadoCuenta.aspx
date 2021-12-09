@@ -3,10 +3,8 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <%--<asp:UpdatePanel ID="upaPrincipal" runat="server">
-        <ContentTemplate>--%>
-
-
+    <asp:UpdatePanel ID="upaPrincipal" runat="server">
+        <ContentTemplate>
             <div class="row">
                 <div class="col-md-6">
                     <div class="title_left">
@@ -20,12 +18,6 @@
                     <div class="title_right">
                         <div class="col-md-5 col-sm-5   form-group pull-right top_search">
                             <div class="input-group">
-                                <%--<asp:TextBox ID="txtBusqueda" runat="server" CssClass="form-control" placeholder="Buscar..."></asp:TextBox>
-                        <span class="input-group-btn">
-                            <button id="btnBuscar" class="btn btn-default" type="button">
-                                <i class="fa fa-search" aria-hidden="true"></i>
-                            </button>
-                        </span>--%>
                             </div>
                         </div>
                     </div>
@@ -38,26 +30,19 @@
                             <h2>
                                 <asp:Label ID="lblResumenDeCuenta" runat="server" Text="Resumen de la cuenta" Font-Bold="true"></asp:Label>
                                 <asp:Label ID="lblDolares" runat="server" Text=" | USD" Font-Bold="true"></asp:Label></h2>
-                            <%--<ul class="nav navbar-right panel_toolbox">
-                    <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
-                    </li>
-                    <li><a class="close-link"><i class="fa fa-close"></i></a>
-                    </li>
-                </ul>--%>
                             <div class="clearfix"></div>
                         </div>
                         <div class="row">
                             <div class="col-md-12">
                                 <div>
                                     <br />
-                                    <%--<h2>Resumen del período</h2>--%>
                                     <div class="row" style="margin: 5px;">
                                         <div class="col-md-3 tile_count">
                                             <div class="tile_stats_count" style="text-align: center; background-image: none !important; border: 0px;">
                                                 <span class="count_top">
                                                     <asp:Label ID="lblSaldoActual" runat="server" Text=" Saldo Actual" Font-Bold="false"></asp:Label></span>
                                                 <div class="count">
-                                                    <asp:Label ID="lblSaldoActualaUSD" runat="server" Text=" $" Font-Bold="true" CssClass="count"/>
+                                                    <asp:Label ID="lblSaldoActualaUSD" runat="server" Text=" $" Font-Bold="true" CssClass="count" />
                                                     <asp:Label ID="lblSaldoActualRes" runat="server" Text=" 155,522.11" Font-Bold="true" CssClass="count"></asp:Label>
                                                 </div>
                                             </div>
@@ -67,109 +52,86 @@
                                                 <span class="count_top">
                                                     <asp:Label ID="lblNuevosCargos" runat="server" Text=" Nuevos Cargos" Font-Bold="false"></asp:Label></span>
                                                 <div class="count">
-                                                    <asp:Label ID="lblNuevosCargosUSD" runat="server" Text=" $" Font-Bold="true" CssClass="count"/>
+                                                    <asp:Label ID="lblNuevosCargosUSD" runat="server" Text=" $" Font-Bold="true" CssClass="count" />
                                                     <asp:Label ID="lblNuevosCargosRes" runat="server" Text=" 155.522.11" Font-Bold="true" CssClass="count"></asp:Label>
                                                 </div>
-                                                <%--<div class="row">
-                                <div class="col-md-6">
-                                    <asp:Label ID="lblTotalAtrasadoUno" runat="server" Text=" Total Atrasado (+30 días):" Font-Bold="true"></asp:Label>
-                                </div>
-                                <div class="col-md-6">
-                                    <asp:Label ID="lblTotalAtrasadoUnoRes" runat="server" Text=" 66,603.91 USD" Font-Bold="true" style="color:#ff0000;"></asp:Label>
-                                </div>--%>
                                             </div>
-                                            <%--<div class="row">
-                                <div class="col-md-6">
-                                    <asp:Label ID="lblTotalAtrasadoDos" runat="server" Text=" Total Atrasado (+60 días):" Font-Bold="true"></asp:Label>
+                                            <%--</div>--%>
+                                            <div class="col-md-3 tile_count">
+                                                <div class="tile_stats_count" style="text-align: center; background-image: none !important; border: 0px;">
+                                                    <span class="count_top">
+                                                        <asp:Label ID="lblPagosPeriodo" runat="server" Text=" Pagos del periodo" Font-Bold="false"></asp:Label></span>
+                                                    <div class="count">
+                                                        <asp:Label ID="lblPagosPeriodoUSD" runat="server" Text=" $" Font-Bold="true" CssClass="count" />
+                                                        <asp:Label ID="lblPagosPeriodoRes" runat="server" Text=" 0.00" Font-Bold="true" CssClass="count"></asp:Label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3 tile_count">
+                                                <div class="tile_stats_count" style="text-align: center; background-image: none !important; border: 0px;">
+                                                    <span class="count_top">
+                                                        <asp:Label ID="lblMontoReq" runat="server" Text=" Monto de Depósito Requerido" Font-Bold="false"></asp:Label></span>
+                                                    <div class="count">
+                                                        <asp:Label ID="lblMontoReqUSD" runat="server" Text=" $" Font-Bold="true" CssClass="count" />
+                                                        <asp:Label ID="lblMontoReqRes" runat="server" Text=" 0.00" Font-Bold="true" CssClass="count"></asp:Label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div class="col-md-6">
-                                    <asp:Label ID="lblTotalAtrasadoDosRes" runat="server" Text=" 49,759.53 USD" Font-Bold="true" style="color:#ff0000;"></asp:Label>
-                                </div>
+                            </div>
+
+                            <div class="x_title">
+                                <h2>
+                                    <asp:Label ID="lblResumenPeriodo" runat="server" Text="Resumen de la cuenta" Font-Bold="true"></asp:Label>
+                                    <asp:Label ID="lblPesos" runat="server" Text=" | MXN" Font-Bold="true"></asp:Label>
+                                </h2>
+                                <div class="clearfix"></div>
                             </div>
                             <div class="row">
-                                <div class="col-md-6">
-                                    <asp:Label ID="lblTotalAtrasadoTres" runat="server" Text=" Total Atrasado (+90 días):" Font-Bold="true"></asp:Label>
-                                </div>
-                                <div class="col-md-6">
-                                    <asp:Label ID="lblTotalAtrasadoTresRes" runat="server" Text=" 39,158.67 USD" Font-Bold="true" style="color:#ff0000;"></asp:Label>
-                                </div>
-                            </div>--%>
-                                        </div>
-                                        <%--</div>--%>
-                                        <div class="col-md-3 tile_count">
-                                            <div class="tile_stats_count" style="text-align: center; background-image: none !important; border: 0px;">
-                                                <span class="count_top">
-                                                    <asp:Label ID="lblPagosPeriodo" runat="server" Text=" Pagos del periodo" Font-Bold="false"></asp:Label></span>
-                                                <div class="count">
-                                                    <asp:Label ID="lblPagosPeriodoUSD" runat="server" Text=" $" Font-Bold="true" CssClass="count"/>
-                                                    <asp:Label ID="lblPagosPeriodoRes" runat="server" Text=" 0.00" Font-Bold="true" CssClass="count"></asp:Label>
+                                <div class="col-md-12">
+                                    <div>
+                                        <br />
+                                        <div class="row" style="margin: 5px;">
+                                            <div class="col-md-3 tile_count">
+                                                <div class="tile_stats_count" style="text-align: center; background-image: none !important; border: 0px;">
+                                                    <span class="count_top">
+                                                        <asp:Label ID="lblSaldoActualMXN" runat="server" Text=" Saldo Actual" Font-Bold="false"></asp:Label></span>
+                                                    <div class="count">
+                                                        <asp:Label ID="lblSaldoActualMonMXN" runat="server" Text=" $" Font-Bold="true" CssClass="count" />
+                                                        <asp:Label ID="lblSaldoActualMXNRes" runat="server" Text=" 0.01" Font-Bold="true" CssClass="count"></asp:Label>
+                                                    </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                        <div class="col-md-3 tile_count">
-                                            <div class="tile_stats_count" style="text-align: center; background-image: none !important; border: 0px;">
-                                                <span class="count_top">
-                                                    <asp:Label ID="lblMontoReq" runat="server" Text=" Monto de Depósito Requerido" Font-Bold="false"></asp:Label></span>
-                                                <div class="count">
-                                                    <asp:Label ID="lblMontoReqUSD" runat="server" Text=" $" Font-Bold="true" CssClass="count"/>
-                                                    <asp:Label ID="lblMontoReqRes" runat="server" Text=" 0.00" Font-Bold="true" CssClass="count"></asp:Label>
+                                            <div class="col-md-3 tile_count">
+                                                <div class="tile_stats_count" style="text-align: center; background-image: none !important; border: 0px;">
+                                                    <span class="count_top">
+                                                        <asp:Label ID="lblNuevosCargosMXN" runat="server" Text=" Nuevos Cargos" Font-Bold="false"></asp:Label></span>
+                                                    <div class="count">
+                                                        <asp:Label ID="Label7" runat="server" Text=" $" Font-Bold="true" CssClass="count" />
+                                                        <asp:Label ID="lblNuevosCargosMXNRes" runat="server" Text=" 0.01" Font-Bold="true" CssClass="count"></asp:Label>
+                                                    </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="x_title">
-                            <h2>
-                                <asp:Label ID="lblResumenPeriodo" runat="server" Text="Resumen de la cuenta" Font-Bold="true"></asp:Label>
-                                <asp:Label ID="lblPesos" runat="server" Text=" | MXN" Font-Bold="true"></asp:Label>
-                            </h2>
-                    <div class="clearfix"></div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-12">
-                                <div>
-                                    <br />
-                                    <div class="row" style="margin: 5px;">
-                                        <div class="col-md-3 tile_count">
-                                            <div class="tile_stats_count" style="text-align: center; background-image: none !important; border: 0px;">
-                                                <span class="count_top">
-                                                    <asp:Label ID="lblSaldoActualMXN" runat="server" Text=" Saldo Actual" Font-Bold="false"></asp:Label></span>
-                                                <div class="count">
-                                                    <asp:Label ID="lblSaldoActualMonMXN" runat="server" Text=" $" Font-Bold="true" CssClass="count" />
-                                                    <asp:Label ID="lblSaldoActualMXNRes" runat="server" Text=" 0.01" Font-Bold="true" CssClass="count"></asp:Label>
+                                            <div class="col-md-3 tile_count">
+                                                <div class="tile_stats_count" style="text-align: center; background-image: none !important; border: 0px;">
+                                                    <span class="count_top">
+                                                        <asp:Label ID="lblPagosPeriodoMXN" runat="server" Text=" Pagos del periodo" Font-Bold="false"></asp:Label></span>
+                                                    <div class="count">
+                                                        <asp:Label ID="Label10" runat="server" Text=" $" Font-Bold="true" CssClass="count" />
+                                                        <asp:Label ID="lblPagosPeriodoMXNRes" runat="server" Text=" 0.00" Font-Bold="true" CssClass="count"></asp:Label>
+                                                    </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                        <div class="col-md-3 tile_count">
-                                            <div class="tile_stats_count" style="text-align: center; background-image: none !important; border: 0px;">
-                                                <span class="count_top">
-                                                    <asp:Label ID="lblNuevosCargosMXN" runat="server" Text=" Nuevos Cargos" Font-Bold="false"></asp:Label></span>
-                                                <div class="count">
-                                                    <asp:Label ID="Label7" runat="server" Text=" $" Font-Bold="true" CssClass="count" />
-                                                    <asp:Label ID="lblNuevosCargosMXNRes" runat="server" Text=" 0.01" Font-Bold="true" CssClass="count"></asp:Label>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-3 tile_count">
-                                            <div class="tile_stats_count" style="text-align: center; background-image: none !important; border: 0px;">
-                                                <span class="count_top">
-                                                    <asp:Label ID="lblPagosPeriodoMXN" runat="server" Text=" Pagos del periodo" Font-Bold="false"></asp:Label></span>
-                                                <div class="count">
-                                                    <asp:Label ID="Label10" runat="server" Text=" $" Font-Bold="true" CssClass="count" />
-                                                    <asp:Label ID="lblPagosPeriodoMXNRes" runat="server" Text=" 0.00" Font-Bold="true" CssClass="count"></asp:Label>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-3 tile_count">
-                                            <div class="tile_stats_count" style="text-align: center; background-image: none !important; border: 0px;">
-                                                <span class="count_top">
-                                                    <asp:Label ID="lblMontoReqMXN" runat="server" Text=" Monto de Depósito Requerido" Font-Bold="false"></asp:Label></span>
-                                                <div class="count">
-                                                    <asp:Label ID="Label13" runat="server" Text=" $" Font-Bold="true" CssClass="count" />
-                                                    <asp:Label ID="lblMontoReqMXNRes" runat="server" Text=" 0.00" Font-Bold="true" CssClass="count"></asp:Label>
+                                            <div class="col-md-3 tile_count">
+                                                <div class="tile_stats_count" style="text-align: center; background-image: none !important; border: 0px;">
+                                                    <span class="count_top">
+                                                        <asp:Label ID="lblMontoReqMXN" runat="server" Text=" Monto de Depósito Requerido" Font-Bold="false"></asp:Label></span>
+                                                    <div class="count">
+                                                        <asp:Label ID="Label13" runat="server" Text=" $" Font-Bold="true" CssClass="count" />
+                                                        <asp:Label ID="lblMontoReqMXNRes" runat="server" Text=" 0.00" Font-Bold="true" CssClass="count"></asp:Label>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
@@ -179,128 +141,130 @@
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="row">
-                <div class="col-md-12 col-sm-12">
-                    <div class="x_panel">
-                        <div class="x_title">
-                            <h2>
-                                <asp:Label ID="lblAnio" runat="server" Text="2021" Font-Bold="true"></asp:Label>
-                            </h2>
-                            <div class="clearfix"></div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-12">
-                                <div>
-                                    <asp:GridView ID="gvEdoCuenta" runat="server" AutoGenerateColumns="false" CssClass="table table-striped table-bordered table-hover" AllowPaging="true"
-                                        EmptyDataText="No Registros" OnRowDataBound="gvEdoCuenta_RowDataBound" OnRowCommand="gvEdoCuenta_RowCommand" DataKeyNames="Mes">
-                                        <Columns>
-                                            <asp:BoundField DataField="nombreMes" />
-                                            <asp:BoundField DataField="saldoAnteriorMXN" DataFormatString="{0:c}" />
-                                            <asp:BoundField DataField="pagosCreditoMXN" DataFormatString="{0:c}" />
-                                            <asp:BoundField DataField="nuevosCargosMXN" DataFormatString="{0:c}" />
-                                            <asp:BoundField DataField="saldoActualMXN" DataFormatString="{0:c}" />
-                                            <asp:BoundField DataField="saldoAnteriorUSD" DataFormatString="{0:c}" />
-                                            <asp:BoundField DataField="pagosCreditoUSD" DataFormatString="{0:c}" />
-                                            <asp:BoundField DataField="nuevosCargosUSD" DataFormatString="{0:c}" />
-                                            <asp:BoundField DataField="saldoActualUSD" DataFormatString="{0:c}" />
-                                            <asp:TemplateField>
-                                                <ItemTemplate>
-                                                    <asp:LinkButton ID="lkbDetalle" runat="server" CommandName="Detalle" CommandArgument="<%# ((GridViewRow) Container).RowIndex %>"></asp:LinkButton>
-                                                </ItemTemplate>
-                                            </asp:TemplateField>
-                                        </Columns>
-                                    </asp:GridView>
+                <div class="row">
+                    <div class="col-md-12 col-sm-12">
+                        <div class="x_panel">
+                            <div class="x_title">
+                                <h2>
+                                    <asp:Label ID="lblAnio" runat="server" Text="2021" Font-Bold="true"></asp:Label>
+                                </h2>
+                                <div class="clearfix"></div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div>
+                                        <asp:GridView ID="gvEdoCuenta" runat="server" AutoGenerateColumns="false" CssClass="table table-striped table-bordered table-hover" AllowPaging="true"
+                                            EmptyDataText="No Registros" OnRowDataBound="gvEdoCuenta_RowDataBound" OnRowCommand="gvEdoCuenta_RowCommand" DataKeyNames="Mes">
+                                            <Columns>
+                                                <asp:BoundField DataField="nombreMes" />
+                                                <asp:BoundField DataField="saldoAnteriorMXN" DataFormatString="{0:c}" />
+                                                <asp:BoundField DataField="pagosCreditoMXN" DataFormatString="{0:c}" />
+                                                <asp:BoundField DataField="nuevosCargosMXN" DataFormatString="{0:c}" />
+                                                <asp:BoundField DataField="saldoActualMXN" DataFormatString="{0:c}" />
+                                                <asp:BoundField DataField="saldoAnteriorUSD" DataFormatString="{0:c}" />
+                                                <asp:BoundField DataField="pagosCreditoUSD" DataFormatString="{0:c}" />
+                                                <asp:BoundField DataField="nuevosCargosUSD" DataFormatString="{0:c}" />
+                                                <asp:BoundField DataField="saldoActualUSD" DataFormatString="{0:c}" />
+                                                <asp:TemplateField>
+                                                    <ItemTemplate>
+                                                        <asp:LinkButton ID="lkbDetalle" runat="server" CommandName="Detalle" CommandArgument="<%# ((GridViewRow) Container).RowIndex %>"></asp:LinkButton>
+                                                    </ItemTemplate>
+                                                </asp:TemplateField>
+                                            </Columns>
+                                        </asp:GridView>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-    <!-- Button trigger modal -->
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-  Launch demo modal
-</button>
+                <!-- Button trigger modal -->
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+                    Launch demo modal
+                </button>
 
-<!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel"><asp:Label ID="lblTituloMensajes" runat="server" Text="Mensajes" Font-Bold="true"></asp:Label></h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <div class="row">
-            <div class="col-md-12">
-                <ul class="nav nav-tabs" id="myTab" role="tablist">
-                  <li class="nav-item">
-                    <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true"><asp:Label ID="lblMensajeNuevo" runat="server" Text=" Mensaje Nuevo" Font-Bold="true"></asp:Label></a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false"><asp:Label ID="lblHistorialMensajes" runat="server" Text=" Historial de Mensajes" Font-Bold="true"></asp:Label></a>
-                  </li>
-                </ul>
-                <div class="tab-content" id="myTabContent">
-                  <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-                      <div class="row">
-                          <div class="col-md-2" style="padding-top:10px;">
-                              <asp:Label ID="lblMensajePara" runat="server" Text=" Para:" Font-Bold="true"></asp:Label>
-                          </div>
-                          <div class="col-md-10">
-                              <asp:TextBox ID="txtMensajePara" type="text" runat="server" Text="Recipientes" Width="100%" CssClass="form-control"></asp:TextBox>
-                          </div>
-                      </div>
-                      <br />
-                      <div class="row">
-                          <div class="col-md-2">
-                              <asp:Button ID="btnAddCc" Text="+ Add Cc" runat="server" CssClass="btn btn-primary" />
-                          </div>
-                          <div class="col-md-2">
-                              <asp:Button ID="btnAddBcc" Text="+ Add Bcc" runat="server" CssClass="btn btn-primary" />
-                          </div>
-                          <div class="col-md-8">
-                              &nbsp;
-                          </div>
-                      </div>
-                      <br />
-                      <div class="row">
-                          <div class="col-md-12">
-                              <asp:Label ID="lblMensajeOpcional" runat="server" Text=" Mensaje Opcional" Font-Bold="true"></asp:Label>
-                          </div>
-                      </div>
-                      <div class="row">
-                          <div class="col-md-12">
-                              <asp:TextBox ID="txtMensaje" type="text" runat="server" Text="" Width="100%" CssClass="form-control"></asp:TextBox>
-                          </div>
-                      </div>
-                      <br />
-                      <div class="row">
-                        <div class="col-md-12">
-                            <asp:CheckBox ID="cbIncluirPDFs" runat="server" type="checkbox" Text="&nbsp;&nbsp;&nbsp;Incluir PDFs de extractos mensuales como archivos adjuntos (< 7,5 Mb)" />
+                <!-- Modal -->
+                <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">
+                                    <asp:Label ID="lblTituloMensajes" runat="server" Text="Mensajes" Font-Bold="true"></asp:Label></h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <ul class="nav nav-tabs" id="myTab" role="tablist">
+                                            <li class="nav-item">
+                                                <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">
+                                                    <asp:Label ID="lblMensajeNuevo" runat="server" Text=" Mensaje Nuevo" Font-Bold="true"></asp:Label></a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">
+                                                    <asp:Label ID="lblHistorialMensajes" runat="server" Text=" Historial de Mensajes" Font-Bold="true"></asp:Label></a>
+                                            </li>
+                                        </ul>
+                                        <div class="tab-content" id="myTabContent">
+                                            <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                                                <div class="row">
+                                                    <div class="col-md-2" style="padding-top: 10px;">
+                                                        <asp:Label ID="lblMensajePara" runat="server" Text=" Para:" Font-Bold="true"></asp:Label>
+                                                    </div>
+                                                    <div class="col-md-10">
+                                                        <asp:TextBox ID="txtMensajePara" type="text" runat="server" Text="Recipientes" Width="100%" CssClass="form-control"></asp:TextBox>
+                                                    </div>
+                                                </div>
+                                                <br />
+                                                <div class="row">
+                                                    <div class="col-md-2">
+                                                        <asp:Button ID="btnAddCc" Text="+ Add Cc" runat="server" CssClass="btn btn-primary" />
+                                                    </div>
+                                                    <div class="col-md-2">
+                                                        <asp:Button ID="btnAddBcc" Text="+ Add Bcc" runat="server" CssClass="btn btn-primary" />
+                                                    </div>
+                                                    <div class="col-md-8">
+                                                        &nbsp;
+                                                    </div>
+                                                </div>
+                                                <br />
+                                                <div class="row">
+                                                    <div class="col-md-12">
+                                                        <asp:Label ID="lblMensajeOpcional" runat="server" Text=" Mensaje Opcional" Font-Bold="true"></asp:Label>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-md-12">
+                                                        <asp:TextBox ID="txtMensaje" type="text" runat="server" Text="" Width="100%" CssClass="form-control"></asp:TextBox>
+                                                    </div>
+                                                </div>
+                                                <br />
+                                                <div class="row">
+                                                    <div class="col-md-12">
+                                                        <asp:CheckBox ID="cbIncluirPDFs" runat="server" type="checkbox" Text="&nbsp;&nbsp;&nbsp;Incluir PDFs de extractos mensuales como archivos adjuntos (< 7,5 Mb)" />
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-md-12">
+                                                        --- Grid ---
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                                                ...
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                            </div>
                         </div>
-                      </div>
-                      <div class="row">
-                        <div class="col-md-12">
-                            --- Grid ---
-                        </div>
-                      </div>
-                  </div>
-                  <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-                      ...
-                  </div>
+                    </div>
                 </div>
-            </div>
-        </div>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-      </div>
-    </div>
-  </div>
-</div>
-        <%--</ContentTemplate>
-    </asp:UpdatePanel>--%>
+        </ContentTemplate>
+    </asp:UpdatePanel>
 </asp:Content>

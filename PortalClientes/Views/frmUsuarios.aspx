@@ -7,7 +7,7 @@
 <%@ Register Assembly="xVal.WebForms" Namespace="xVal.WebForms" TagPrefix="val" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-    
+
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 
     <script type="text/javascript">
@@ -96,7 +96,7 @@
         //});
 
     </script>
-    
+
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <asp:UpdatePanel ID="upaPrincipal" runat="server">
@@ -105,7 +105,8 @@
             <div class="row">
                 <div class="col-md-6">
                     <div class="title_left">
-                        <h3><asp:Label ID="lblTituloPagina" runat="server"></asp:Label></h3>
+                        <h3>
+                            <asp:Label ID="lblTituloPagina" runat="server"></asp:Label></h3>
                     </div>
                 </div>
                 <div class="col-md-6">
@@ -124,32 +125,11 @@
                 </div>
             </div>
 
-
-            <%--<div class="row">
-                <div class="col-sm-4"></div>
-                <div class="col-sm-8">
-                    <div class="x_content bs-example-popovers">
-                        <div class="alert alert-info alert-dismissible" role="alert">
-                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                <span aria-hidden="true">x</span>
-                            </button>
-                            <strong>Holy guacamole!</strong>
-                            " Best check yo self, you're not looking too good. "
-                        </div>
-                    </div>
-                </div>
-            </div>--%>
-
             <div class="col-md-12 col-sm-12">
                 <div class="x_panel">
                     <div class="x_title">
-                        <h2><asp:Label ID="lblSubTituloPagina" runat="server"></asp:Label></h2>
-                        <%--<ul class="nav navbar-right panel_toolbox">
-                            <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
-                            </li>
-                            <li><a class="close-link"><i class="fa fa-close"></i></a>
-                            </li>
-                        </ul>--%>
+                        <h2>
+                            <asp:Label ID="lblSubTituloPagina" runat="server"></asp:Label></h2>
                         <div class="clearfix"></div>
                     </div>
                     <div class="x_content">
@@ -165,7 +145,7 @@
                                         <RowStyle />
                                         <AlternatingRowStyle />
                                         <Columns>
-                                            <asp:BoundField DataField="Nombres"/>
+                                            <asp:BoundField DataField="Nombres" />
                                             <asp:BoundField DataField="ApePat" />
                                             <asp:BoundField DataField="ApeMat" />
                                             <asp:BoundField DataField="Correo" />
@@ -174,10 +154,10 @@
                                                 <ItemTemplate>
                                                     <asp:ImageButton ID="imbAddMats" runat="server" ImageUrl="~/Images/icons/add_mats.png" Width="22px" Height=""
                                                         OnClick="imbAddMats_Click" CommandName="Mats" CommandArgument="<%# ((GridViewRow) Container).RowIndex %>" />&nbsp;&nbsp;&nbsp;
-                                                    <asp:ImageButton ID="imbEditarModulos" runat="server" ImageUrl="~/Images/icons/add_permissions.png" Width="22px" Height="" 
-                                                        OnClick="imbEditarModulos_Click" CommandName="Modulos" CommandArgument="<%# ((GridViewRow) Container).RowIndex %>"/>&nbsp;&nbsp;&nbsp;
-                                                    <asp:ImageButton ID="imbClonUsuarios" runat="server" ImageUrl="~/Images/icons/clone_permissions.png" Width="22px" Height="" 
-                                                        OnClick="imbClonUsuarios_Click" CommandName="Usuarios" CommandArgument="<%# ((GridViewRow) Container).RowIndex %>"/>
+                                                    <asp:ImageButton ID="imbEditarModulos" runat="server" ImageUrl="~/Images/icons/add_permissions.png" Width="22px" Height=""
+                                                        OnClick="imbEditarModulos_Click" CommandName="Modulos" CommandArgument="<%# ((GridViewRow) Container).RowIndex %>" />&nbsp;&nbsp;&nbsp;
+                                                    <asp:ImageButton ID="imbClonUsuarios" runat="server" ImageUrl="~/Images/icons/clone_permissions.png" Width="22px" Height=""
+                                                        OnClick="imbClonUsuarios_Click" CommandName="Usuarios" CommandArgument="<%# ((GridViewRow) Container).RowIndex %>" />
                                                 </ItemTemplate>
                                             </asp:TemplateField>
                                         </Columns>
@@ -201,115 +181,119 @@
         Width="" CssClass="modal-derecha anim_RLR">
         <asp:UpdatePanel ID="upaUsuario" runat="server">
             <ContentTemplate>
-                <asp:Button ID="Button1" runat="server" CssClass="btn" Text="X" Font-Bold="true" OnClientClick="OcultarEdicionUsuarios();" Style="z-index: 2000;right: 13px;margin-top:10px;position: absolute; color:#ffffff;" />
-                <h5 class="modal-title" style="color:#ffffff;background-color:#2a3f54;width:100%;height:70px;padding-top:15px;">
+                <asp:Button ID="Button1" runat="server" CssClass="btn" Text="X" Font-Bold="true" OnClientClick="OcultarEdicionUsuarios();" Style="z-index: 2000; right: 13px; margin-top: 10px; position: absolute; color: #ffffff;" />
+                <h5 class="modal-title" style="color: #ffffff; background-color: #2a3f54; width: 100%; height: 70px; padding-top: 15px;">
                     <%--Edición de empleados--%>
                     <asp:Label ID="lblTituloModalUsuario" runat="server"></asp:Label>
-                </h5><br />
-                <div><%--style="margin:4px;">--%>
-                    <table style="width: 97%; margin:0 auto !important;">
-                    <tr>
-                        <td>
-                            &nbsp;
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>  <br />        
-                            <div class="row">
-                                <div class="col-md-1"></div>
-                                <div class="col-md-5" style="text-align:left;">
-                                    <%--<asp:Label ID="lblNombre" runat="server" style="width:550px;"></asp:Label><br />
+                </h5>
+                <br />
+                <div>
+                    <%--style="margin:4px;">--%>
+                    <table style="width: 97%; margin: 0 auto !important;">
+                        <tr>
+                            <td>&nbsp;
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <br />
+                                <div class="row">
+                                    <div class="col-md-1"></div>
+                                    <div class="col-md-5" style="text-align: left;">
+                                        <%--<asp:Label ID="lblNombre" runat="server" style="width:550px;"></asp:Label><br />
                                     <asp:TextBox ID="txtNombre" runat="server" CssClass="form-control"></asp:TextBox>--%>
-<%--                                    <dx:bootstraptextbox ID="" runat="server">
+                                        <%--                                    <dx:bootstraptextbox ID="" runat="server">
                                     </dx:bootstraptextbox>--%>
-                                    <asp:Label ID="lblNombre" runat="server"></asp:Label><asp:Label runat="server" ForeColor="Red" Text=" *"></asp:Label><br />
-                                    <asp:TextBox ID="txtNombre" runat="server" CssClass="form-control"></asp:TextBox>
-                                    <asp:Label ID="lblReqNombre" runat="server" ForeColor="Red" Visible="false"></asp:Label>
+                                        <asp:Label ID="lblNombre" runat="server"></asp:Label><asp:Label runat="server" ForeColor="Red" Text=" *"></asp:Label><br />
+                                        <asp:TextBox ID="txtNombre" runat="server" CssClass="form-control"></asp:TextBox>
+                                        <asp:Label ID="lblReqNombre" runat="server" ForeColor="Red" Visible="false"></asp:Label>
+                                    </div>
+                                    <div class="col-md-5" style="text-align: left;">
+                                        <asp:Label ID="lblApellidoPat" runat="server"></asp:Label><br />
+                                        <asp:TextBox ID="txtApellidoPat" runat="server" CssClass="form-control"></asp:TextBox>
+
+                                    </div>
+                                    <div class="col-md-1"></div>
                                 </div>
-                                <div class="col-md-5" style="text-align:left;">
-                                    <asp:Label ID="lblApellidoPat" runat="server"></asp:Label><br />
-                                    <asp:TextBox ID="txtApellidoPat" runat="server" CssClass="form-control"></asp:TextBox>
-                                    
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="row">
+                                    <div class="col-md-1"></div>
+                                    <div class="col-md-5" style="text-align: left;">
+                                        <asp:Label ID="lblApellidoMat" runat="server"></asp:Label><br />
+                                        <asp:TextBox ID="txtApellidoMat" runat="server" CssClass="form-control"></asp:TextBox>
+                                    </div>
+                                    <div class="col-md-5" style="text-align: left;">
+                                        <asp:Label ID="lblPuesto" runat="server"></asp:Label>
+                                        <asp:TextBox ID="txtPuesto" runat="server" CssClass="form-control"></asp:TextBox>
+
+                                    </div>
+                                    <div class="col-md-1"></div>
                                 </div>
-                                <div class="col-md-1"></div>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <div class="row">
-                                <div class="col-md-1"></div>
-                                <div class="col-md-5" style="text-align:left;">
-                                    <asp:Label ID="lblApellidoMat" runat="server"></asp:Label><br />
-                                    <asp:TextBox ID="txtApellidoMat" runat="server" CssClass="form-control"></asp:TextBox>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="row">
+                                    <div class="col-md-1"></div>
+                                    <div class="col-md-5" style="text-align: left;">
+                                        <asp:Label ID="lblCorreo" runat="server"></asp:Label><asp:Label runat="server" ForeColor="Red" Text=" *"></asp:Label><br />
+                                        <asp:TextBox ID="txtCorreo" runat="server" CssClass="form-control"></asp:TextBox>
+                                        <asp:Label ID="lblReqCorreo" runat="server" ForeColor="Red" Visible="false"></asp:Label>
+                                    </div>
+                                    <div class="col-md-5" style="text-align: left;">
+                                        <asp:Label ID="lblTelefonoMovil" runat="server"></asp:Label><br />
+                                        <asp:TextBox ID="txtTelMovil" runat="server" CssClass="form-control" MaxLength="13"></asp:TextBox>
+                                        <cc1:FilteredTextBoxExtender ID="fteTelMovil" runat="server" TargetControlID="txtTelMovil" FilterMode="ValidChars"
+                                            ValidChars="0123456789+" />
+                                    </div>
+                                    <div class="col-md-1"></div>
                                 </div>
-                                <div class="col-md-5" style="text-align:left;">
-                                    <asp:Label ID="lblPuesto" runat="server"></asp:Label>
-                                    <asp:TextBox ID="txtPuesto" runat="server" CssClass="form-control"></asp:TextBox>
-                                    
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="row">
+                                    <div class="col-md-1"></div>
+                                    <div class="col-md-5" style="text-align: left;">
+                                        <asp:Label ID="lblCorreoSecundario" runat="server"></asp:Label><br />
+                                        <asp:TextBox ID="txtCorreoSecundario" runat="server" CssClass="form-control"></asp:TextBox>
+                                    </div>
+                                    <div class="col-md-5" style="text-align: left;">
+                                        <asp:Label ID="lblTelefonoOficina" runat="server"></asp:Label><br />
+                                        <asp:TextBox ID="txtTelefonoOficina" runat="server" CssClass="form-control" MaxLength="13"></asp:TextBox>
+                                        <cc1:FilteredTextBoxExtender ID="fteTelefonoOficina" runat="server" TargetControlID="txtTelefonoOficina" FilterMode="ValidChars"
+                                            ValidChars="0123456789+" />
+                                    </div>
+                                    <div class="col-md-1"></div>
                                 </div>
-                                <div class="col-md-1"></div>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <div class="row">
-                                <div class="col-md-1"></div>
-                                <div class="col-md-5" style="text-align:left;">
-                                    <asp:Label ID="lblCorreo" runat="server"></asp:Label><asp:Label runat="server" ForeColor="Red" Text=" *"></asp:Label><br />
-                                    <asp:TextBox ID="txtCorreo" runat="server" CssClass="form-control"></asp:TextBox>
-                                    <asp:Label ID="lblReqCorreo" runat="server" ForeColor="Red" Visible="false"></asp:Label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="row">
+                                    <div class="col-md-1"></div>
+                                    <div class="col-md-5" style="text-align: left;">
+                                        <asp:Label ID="lblPass" runat="server"></asp:Label><asp:Label runat="server" ForeColor="Red" Text=" *"></asp:Label><br />
+                                        <asp:TextBox ID="txtPass" runat="server" TextMode="Password" CssClass="form-control"></asp:TextBox>
+                                        <asp:Label ID="lblReqPass" runat="server" ForeColor="Red" Visible="false"></asp:Label>
+                                    </div>
+                                    <div class="col-md-5" style="text-align: left;">
+                                        <asp:Label ID="lblConfirPass" runat="server"></asp:Label><asp:Label runat="server" ForeColor="Red" Text=" *"></asp:Label><br />
+                                        <asp:TextBox ID="txtConfirPass" runat="server" TextMode="Password" CssClass="form-control"></asp:TextBox>
+                                        <asp:Label ID="lblReqConfirPass" runat="server" ForeColor="Red" Visible="false"></asp:Label>
+                                    </div>
+                                    <div class="col-md-1"></div>
                                 </div>
-                                <div class="col-md-5" style="text-align:left;">
-                                    <asp:Label ID="lblTelefonoMovil" runat="server"></asp:Label><br />
-                                    <asp:TextBox ID="txtTelMovil" runat="server" CssClass="form-control" MaxLength="13"></asp:TextBox>
-                                    <cc1:FilteredTextBoxExtender ID="fteTelMovil" runat="server" TargetControlID="txtTelMovil" FilterMode="ValidChars"
-                                        ValidChars="0123456789+"/>
-                                </div>
-                                <div class="col-md-1"></div>
-                            </div>  
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <div class="row">
-                                <div class="col-md-1"></div>
-                                <div class="col-md-5" style="text-align:left;">
-                                    <asp:Label ID="lblCorreoSecundario" runat="server"></asp:Label><br />
-                                    <asp:TextBox ID="txtCorreoSecundario" runat="server" CssClass="form-control"></asp:TextBox>
-                                </div>
-                                <div class="col-md-5" style="text-align:left;">
-                                    <asp:Label ID="lblTelefonoOficina" runat="server"></asp:Label><br />
-                                    <asp:TextBox ID="txtTelefonoOficina" runat="server" CssClass="form-control" MaxLength="13"></asp:TextBox>
-                                    <cc1:FilteredTextBoxExtender ID="fteTelefonoOficina" runat="server" TargetControlID="txtTelefonoOficina" FilterMode="ValidChars"
-                                        ValidChars="0123456789+"/>
-                                </div>
-                                <div class="col-md-1"></div>
-                            </div>  
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <div class="row">
-                                <div class="col-md-1"></div>
-                                <div class="col-md-5" style="text-align:left;">
-                                    <asp:Label ID="lblPass" runat="server"></asp:Label><asp:Label runat="server" ForeColor="Red" Text=" *"></asp:Label><br />
-                                    <asp:TextBox ID="txtPass" runat="server" TextMode="Password" CssClass="form-control"></asp:TextBox>
-                                    <asp:Label ID="lblReqPass" runat="server" ForeColor="Red" Visible="false"></asp:Label>
-                                </div>
-                                <div class="col-md-5" style="text-align:left;">
-                                    <asp:Label ID="lblConfirPass" runat="server"></asp:Label><asp:Label runat="server" ForeColor="Red" Text=" *"></asp:Label><br />
-                                    <asp:TextBox ID="txtConfirPass" runat="server" TextMode="Password" CssClass="form-control"></asp:TextBox>
-                                    <asp:Label ID="lblReqConfirPass" runat="server" ForeColor="Red" Visible="false"></asp:Label>
-                                </div>
-                                <div class="col-md-1"></div>
-                            </div>
-                        </td>
-                    </tr>
-                </table>
+                            </td>
+                        </tr>
+                    </table>
                 </div>
-                <br /><br /><br />
+                <br />
+                <br />
+                <br />
                 <table style="width: 100%;">
                     <tr>
                         <td>
@@ -317,8 +301,8 @@
                                 <div class="col-md-1">
                                     &nbsp;
                                 </div>
-                                <div class="col-md-10" style="text-align:right;">
-                                    <asp:Button ID="btnAceptar" runat="server" CssClass="btn btn-primary" UseSubmitBehavior="true" OnClick="btnAceptar_Click"/>
+                                <div class="col-md-10" style="text-align: right;">
+                                    <asp:Button ID="btnAceptar" runat="server" CssClass="btn btn-primary" UseSubmitBehavior="true" OnClick="btnAceptar_Click" />
                                 </div>
                                 <div class="col-md-1">
                                     &nbsp;
@@ -347,19 +331,21 @@
         PopupControlID="pnlMats" BackgroundCssClass="overlayy">
     </cc1:ModalPopupExtender>
     <asp:Panel ID="pnlMats" runat="server" BorderColor="" BackColor="White" HorizontalAlign="Center" Height="" Width=""
-         CssClass="modalrlr">
+        CssClass="modalrlr">
         <asp:UpdatePanel ID="upaMats" runat="server">
             <ContentTemplate>
-                <asp:Button ID="btnCerrarMats" runat="server" CssClass="btn" Text="X" Font-Bold="true" OnClientClick="OcultarModalMatriculas();" Style="z-index: 2000;right: 13px;margin-top:10px;position: absolute; color:#ffffff;" />
-                <h5 class="modal-title" style="color:#ffffff;background-color:#2a3f54;width:100%;height:70px;padding-top:15px;">
+                <asp:Button ID="btnCerrarMats" runat="server" CssClass="btn" Text="X" Font-Bold="true" OnClientClick="OcultarModalMatriculas();" Style="z-index: 2000; right: 13px; margin-top: 10px; position: absolute; color: #ffffff;" />
+                <h5 class="modal-title" style="color: #ffffff; background-color: #2a3f54; width: 100%; height: 70px; padding-top: 15px;">
                     <%--Edición de empleados--%>
                     <asp:Label ID="lblTituloMatriculas" runat="server"></asp:Label>
-                </h5><br />
-                <div><%--style="margin:4px;">--%>
+                </h5>
+                <br />
+                <div>
+                    <%--style="margin:4px;">--%>
                     <asp:Panel ID="pnlMatsScroll" runat="server">
-                        <div style="height:70vh; overflow-y:auto; overflow-x:hidden; border:1px solid #efefef; background-color:#00000003;">      
-                            <div class="table-responsive" style="text-align:left;padding:5px;">
-                                <asp:GridView ID="gvMatriculas" runat="server" AutoGenerateColumns="false" DataKeyNames="IdAeronave" 
+                        <div style="height: 70vh; overflow-y: auto; overflow-x: hidden; border: 1px solid #efefef; background-color: #00000003;">
+                            <div class="table-responsive" style="text-align: left; padding: 5px;">
+                                <asp:GridView ID="gvMatriculas" runat="server" AutoGenerateColumns="false" DataKeyNames="IdAeronave"
                                     OnRowDataBound="gvMatriculas_RowDataBound" Width="100%" CssClass="table table-bordered table-hover">
                                     <Columns>
                                         <asp:TemplateField>
@@ -379,9 +365,9 @@
                     <tr>
                         <td>
                             <div class="row">
-                                <div class="col-md-12" style="text-align:right;">
-                                    <asp:Button ID="btnAceptarMats" runat="server" CssClass="btn btn-primary" UseSubmitBehavior="true" OnClick="btnAceptarMats_Click"/>
-                                    <asp:Button ID="btnCancelarMats" runat="server" CssClass="btn btn-warning" UseSubmitBehavior="true" OnClientClick="OcultarModalMatriculas();"/>
+                                <div class="col-md-12" style="text-align: right;">
+                                    <asp:Button ID="btnAceptarMats" runat="server" CssClass="btn btn-primary" UseSubmitBehavior="true" OnClick="btnAceptarMats_Click" />
+                                    <asp:Button ID="btnCancelarMats" runat="server" CssClass="btn btn-warning" UseSubmitBehavior="true" OnClientClick="OcultarModalMatriculas();" />
                                 </div>
                             </div>
                         </td>
@@ -406,17 +392,18 @@
         PopupControlID="pnlModulos" BackgroundCssClass="overlayy">
     </cc1:ModalPopupExtender>
     <asp:Panel ID="pnlModulos" runat="server" BorderColor="" BackColor="White" HorizontalAlign="Center" Height="" Width=""
-         CssClass="modalrlr">
+        CssClass="modalrlr">
         <asp:UpdatePanel ID="UpdatePanel1" runat="server">
             <ContentTemplate>
-                <asp:Button ID="btnCerrarModulos" runat="server" CssClass="btn" Text="X" Font-Bold="true" OnClientClick="OcultarModalModulos();" Style="z-index: 2000;right: 13px;margin-top:10px;position: absolute; color:#ffffff;" />
-                <h5 class="modal-title" style="color:#ffffff;background-color:#2a3f54;width:100%;height:70px;padding-top:15px;">
+                <asp:Button ID="btnCerrarModulos" runat="server" CssClass="btn" Text="X" Font-Bold="true" OnClientClick="OcultarModalModulos();" Style="z-index: 2000; right: 13px; margin-top: 10px; position: absolute; color: #ffffff;" />
+                <h5 class="modal-title" style="color: #ffffff; background-color: #2a3f54; width: 100%; height: 70px; padding-top: 15px;">
                     <asp:Label ID="lblTituloModulos" runat="server"></asp:Label>
-                </h5><br />
+                </h5>
+                <br />
                 <div>
                     <asp:Panel ID="Panel2" runat="server">
-                        <div style="height:70vh; overflow-y:auto; overflow-x:hidden; border:1px solid #efefef; background-color:#00000003;">      
-                            <div class="table-responsive" style="text-align:left;padding:5px;">
+                        <div style="height: 70vh; overflow-y: auto; overflow-x: hidden; border: 1px solid #efefef; background-color: #00000003;">
+                            <div class="table-responsive" style="text-align: left; padding: 5px;">
                                 <asp:GridView ID="gvModulos" runat="server" AutoGenerateColumns="false" DataKeyNames="idModulo"
                                     OnRowDataBound="gvModulos_RowDataBound" Width="100%" CssClass="table table-bordered table-hover">
                                     <Columns>
@@ -439,9 +426,9 @@
                     <tr>
                         <td>
                             <div class="row">
-                                <div class="col-md-12" style="text-align:right;">
-                                    <asp:Button ID="btnAceptarModulos" runat="server" CssClass="btn btn-primary" UseSubmitBehavior="true" OnClick="btnAceptarModulos_Click"/>
-                                    <asp:Button ID="btnCancelarModulos" runat="server" CssClass="btn btn-warning" UseSubmitBehavior="true" OnClientClick="OcultarModalModulos();"/>
+                                <div class="col-md-12" style="text-align: right;">
+                                    <asp:Button ID="btnAceptarModulos" runat="server" CssClass="btn btn-primary" UseSubmitBehavior="true" OnClick="btnAceptarModulos_Click" />
+                                    <asp:Button ID="btnCancelarModulos" runat="server" CssClass="btn btn-warning" UseSubmitBehavior="true" OnClientClick="OcultarModalModulos();" />
                                 </div>
                             </div>
                         </td>
@@ -466,18 +453,20 @@
         PopupControlID="pnlClonar" BackgroundCssClass="overlayy">
     </cc1:ModalPopupExtender>
     <asp:Panel ID="pnlClonar" runat="server" BorderColor="" BackColor="White" HorizontalAlign="Center" Height="" Width=""
-         CssClass="modalrlr">
+        CssClass="modalrlr">
         <asp:UpdatePanel ID="upaClonar" runat="server" UpdateMode="Conditional">
             <ContentTemplate>
-                <asp:Button ID="btnCerrarClonar" runat="server" CssClass="btn" Text="X" Font-Bold="true" OnClientClick="OcultarModalClonar();" Style="z-index: 2000;right: 13px;margin-top:10px;position: absolute; color:#ffffff;" />
-                <h5 class="modal-title" style="color:#ffffff;background-color:#2a3f54;width:100%;height:70px;padding-top:15px;">
+                <asp:Button ID="btnCerrarClonar" runat="server" CssClass="btn" Text="X" Font-Bold="true" OnClientClick="OcultarModalClonar();" Style="z-index: 2000; right: 13px; margin-top: 10px; position: absolute; color: #ffffff;" />
+                <h5 class="modal-title" style="color: #ffffff; background-color: #2a3f54; width: 100%; height: 70px; padding-top: 15px;">
                     <asp:Label ID="lblTituloClonar" runat="server"></asp:Label>
-                </h5><br />
-                <div style="height:70vh; overflow-y:auto; overflow-x:hidden; border:1px solid #efefef; background-color:#00000003;">
+                </h5>
+                <br />
+                <div style="height: 70vh; overflow-y: auto; overflow-x: hidden; border: 1px solid #efefef; background-color: #00000003;">
 
                     <asp:Label ID="lblUsuarioDestino" runat="server"></asp:Label>
                     <br />
-                    <h3><asp:Label ID="lblUsuarioDestinoResp" runat="server"></asp:Label></h3>
+                    <h3>
+                        <asp:Label ID="lblUsuarioDestinoResp" runat="server"></asp:Label></h3>
                     <br />
                     <%--<dx:BootstrapComboBox ID="BootstrapComboBox1" runat="server"></dx:BootstrapComboBox>--%>
                     <center>
@@ -499,9 +488,9 @@
                     <tr>
                         <td>
                             <div class="row">
-                                <div class="col-md-12" style="text-align:right;">
-                                    <asp:Button ID="btnAceptarClonar" runat="server" CssClass="btn btn-primary" UseSubmitBehavior="true" OnClick="btnAceptarClonar_Click"/>
-                                    <asp:Button ID="btnCancelarClonar" runat="server" CssClass="btn btn-warning" UseSubmitBehavior="true" OnClientClick="OcultarModalClonar();"/>
+                                <div class="col-md-12" style="text-align: right;">
+                                    <asp:Button ID="btnAceptarClonar" runat="server" CssClass="btn btn-primary" UseSubmitBehavior="true" OnClick="btnAceptarClonar_Click" />
+                                    <asp:Button ID="btnCancelarClonar" runat="server" CssClass="btn btn-warning" UseSubmitBehavior="true" OnClientClick="OcultarModalClonar();" />
                                 </div>
                             </div>
                         </td>
