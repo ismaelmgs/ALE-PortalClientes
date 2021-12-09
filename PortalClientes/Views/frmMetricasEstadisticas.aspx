@@ -3,8 +3,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <asp:UpdatePanel ID="upaPrincipal" runat="server">
-        <ContentTemplate>
+    
             <div class="row">
                 <div class="col-md-6">
                     <div class="title_left">
@@ -587,12 +586,16 @@
                                                 <div class="col-md-12">
                                                     <div class="table-responsive">
                                                         <div class="card-box table-responsive">
-                                                            <asp:GridView ID="gvRuta" runat="server" AutoGenerateColumns="false" CssClass="table table-striped table-bordered table-hover" AllowPaging="true"
-                                                                OnPageIndexChanging="gvRutas_PageIndexChanging" OnRowDataBound="gvRutas_RowDataBound" EmptyDataText="No Registros">
-                                                                <Columns>
-                                                                    <asp:BoundField DataField="rutas" />
-                                                                </Columns>
-                                                            </asp:GridView>
+                                                            <asp:UpdatePanel ID="upaPrincipal" runat="server">
+                                                                <ContentTemplate>
+                                                                    <asp:GridView ID="gvRuta" runat="server" AutoGenerateColumns="false" CssClass="table table-striped table-bordered table-hover" AllowPaging="true"
+                                                                        OnPageIndexChanging="gvRutas_PageIndexChanging" OnRowDataBound="gvRutas_RowDataBound" EmptyDataText="No Registros">
+                                                                        <Columns>
+                                                                            <asp:BoundField DataField="rutas" />
+                                                                        </Columns>
+                                                                    </asp:GridView>
+                                                                </ContentTemplate>
+                                                            </asp:UpdatePanel>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -602,13 +605,17 @@
                                                 <div class="col-md-12">
                                                     <div class="table-responsive">
                                                         <div class="card-box table-responsive">
-                                                            <asp:GridView ID="gvAeropuerto" runat="server" AutoGenerateColumns="false" CssClass="table table-striped table-bordered table-hover" AllowPaging="true"
-                                                                OnPageIndexChanging="gvAeropuertos_PageIndexChanging" OnRowDataBound="gvAeropuertos_RowDataBound" EmptyDataText="No Registros">
-                                                                <Columns>
-                                                                    <asp:BoundField DataField="clave" />
-                                                                    <asp:BoundField DataField="aeropuerto" />
-                                                                </Columns>
-                                                            </asp:GridView>
+                                                            <asp:UpdatePanel ID="UpdatePanel1" runat="server">
+                                                                <ContentTemplate>
+                                                                    <asp:GridView ID="gvAeropuerto" runat="server" AutoGenerateColumns="false" CssClass="table table-striped table-bordered table-hover" AllowPaging="true"
+                                                                        OnPageIndexChanging="gvAeropuertos_PageIndexChanging" OnRowDataBound="gvAeropuertos_RowDataBound" EmptyDataText="No Registros">
+                                                                        <Columns>
+                                                                            <asp:BoundField DataField="clave" />
+                                                                            <asp:BoundField DataField="aeropuerto" />
+                                                                        </Columns>
+                                                                    </asp:GridView>
+                                                                </ContentTemplate>
+                                                            </asp:UpdatePanel>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -670,6 +677,4 @@
                     </div>
                 </ProgressTemplate>
             </asp:UpdateProgress>
-        </ContentTemplate>
-    </asp:UpdatePanel>
 </asp:Content>

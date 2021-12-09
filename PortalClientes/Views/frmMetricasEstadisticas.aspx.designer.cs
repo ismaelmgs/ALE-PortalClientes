@@ -13,15 +13,6 @@ namespace PortalClientes.Views {
     public partial class frmMetricasEstadisticas {
         
         /// <summary>
-        /// Control upaPrincipal.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.UpdatePanel upaPrincipal;
-        
-        /// <summary>
         /// Control lbltitulometricasEstadisticas.
         /// </summary>
         /// <remarks>
@@ -787,6 +778,15 @@ namespace PortalClientes.Views {
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl home;
         
         /// <summary>
+        /// Control upaPrincipal.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.UpdatePanel upaPrincipal;
+        
+        /// <summary>
         /// Control gvRuta.
         /// </summary>
         /// <remarks>
@@ -803,6 +803,15 @@ namespace PortalClientes.Views {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl profile;
+        
+        /// <summary>
+        /// Control UpdatePanel1.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.UpdatePanel UpdatePanel1;
         
         /// <summary>
         /// Control gvAeropuerto.
