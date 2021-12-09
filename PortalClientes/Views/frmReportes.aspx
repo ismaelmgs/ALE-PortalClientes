@@ -36,18 +36,9 @@
                                         <table class="table" style="border: 0px;">
                                             <tr style="background-color: #00000003;">
                                                 <td style="border-bottom: 1px solid #dee2e6; padding: 6px;">
-                                                    <img src="../build/images/detalle_gatos.png" style="width: 32px;" />&nbsp;<span style="font-size: 17px; font-weight: bold;"><asp:Label ID="lblRepGastosFijos" runat="server" Text=" Gastos Fijos" Font-Bold="true"></asp:Label></span><br />
+                                                    <img src="../build/images/detalle_gatos.png" style="width: 32px;" />&nbsp;<span style="font-size: 17px; font-weight: bold;"><asp:Label ID="lblRepGastosFijosVariables" runat="server" Text=" Gastos Fijos y Variables" Font-Bold="true"></asp:Label></span><br />
                                                 </td>
                                             </tr>
-                                            <tr>
-                                                <td style="height: 3px;"></td>
-                                            </tr>
-                                            <tr style="background-color: #00000003;">
-                                                <td style="border-bottom: 1px solid #dee2e6; padding: 6px;">
-                                                    <img src="../build/images/detalle_gatos.png" style="width: 32px;" />&nbsp;<span style="font-size: 17px; font-weight: bold;"><asp:Label ID="lblRepGastosVariables" runat="server" Text=" Gastos Variables" Font-Bold="true"></asp:Label></span><br />
-                                                </td>
-                                            </tr>
-                                            <tr>
                                                 <td style="height: 3px;"></td>
                                             </tr>
                                             <tr style="background-color: #00000003;">

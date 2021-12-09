@@ -7,11 +7,13 @@
 // </generado automáticamente>
 //------------------------------------------------------------------------------
 
-namespace PortalClientes.Views {
-    
-    
-    public partial class frmReportes {
-        
+namespace PortalClientes.Views
+{
+
+
+    public partial class frmReportes
+    {
+
         /// <summary>
         /// Control upaPrincipal.
         /// </summary>
@@ -20,7 +22,7 @@ namespace PortalClientes.Views {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.UpdatePanel upaPrincipal;
-        
+
         /// <summary>
         /// Control lblReportesFijosVariables.
         /// </summary>
@@ -29,7 +31,7 @@ namespace PortalClientes.Views {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblReportesFijosVariables;
-        
+
         /// <summary>
         /// Control lblReportesFijosVar.
         /// </summary>
@@ -38,25 +40,16 @@ namespace PortalClientes.Views {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblReportesFijosVar;
-        
+
         /// <summary>
-        /// Control lblRepGastosFijos.
+        /// Control lblRepGastosFijosVariables.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblRepGastosFijos;
-        
-        /// <summary>
-        /// Control lblRepGastosVariables.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblRepGastosVariables;
-        
+        protected global::System.Web.UI.WebControls.Label lblRepGastosFijosVariables;
+
         /// <summary>
         /// Control lblRepGastosAeropuerto.
         /// </summary>
@@ -65,7 +58,7 @@ namespace PortalClientes.Views {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblRepGastosAeropuerto;
-        
+
         /// <summary>
         /// Control lblRepGastosProveedor.
         /// </summary>
