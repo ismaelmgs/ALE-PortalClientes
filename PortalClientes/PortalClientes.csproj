@@ -1548,6 +1548,7 @@
     <Content Include="vendors\validator\validator.js" />
     <Content Include="Views\frmCalendario.aspx" />
     <Content Include="Views\frmDashboard.aspx" />
+    <Content Include="Views\frmDetalleReportes.aspx" />
     <Content Include="Views\frmEdoCtaDetalle.aspx" />
     <Content Include="Views\frmErrorconexion.aspx" />
     <Content Include="Views\frmEstadoCuenta.aspx" />
@@ -1582,12 +1583,14 @@
     <Compile Include="DomainModel\DBLogin.cs" />
     <Compile Include="DomainModel\DBUsuarios.cs" />
     <Compile Include="DomainModel\DBUtils.cs" />
+    <Compile Include="Interfaces\IViewDetalleReportes.cs" />
     <Compile Include="Interfaces\IViewEstadoCuenta.cs" />
     <Compile Include="Interfaces\IViewMetricasEstadisticas.cs" />
     <Compile Include="Interfaces\IViewTripulacion.cs" />
     <Compile Include="Objetos\Calendario.cs" />
     <Compile Include="Objetos\DatosMetricas.cs" />
     <Compile Include="Objetos\EstadoCuenta.cs" />
+    <Compile Include="Objetos\Reportes.cs" />
     <Compile Include="Objetos\RequestMatricula.cs" />
     <Compile Include="Objetos\MatriculasUsuario.cs" />
     <Compile Include="Objetos\responseGraficaAeropuerto.cs" />
@@ -1607,6 +1610,7 @@
     <Compile Include="Objetos\Transacciones.cs" />
     <Compile Include="Objetos\Tripulacion.cs" />
     <Compile Include="Objetos\RutasyAeropuertos.cs" />
+    <Compile Include="Presenter\DetalleReportes_Presenter.cs" />
     <Compile Include="Presenter\EstadoCuenta_Presenter.cs" />
     <Compile Include="Presenter\MetricasEstadisticas_Presenter.cs" />
     <Compile Include="Presenter\Tripulacion_Presenter.cs" />
@@ -1738,6 +1742,13 @@
     </Compile>
     <Compile Include="Views\frmDashboard.aspx.designer.cs">
       <DependentUpon>frmDashboard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\frmDetalleReportes.aspx.cs">
+      <DependentUpon>frmDetalleReportes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\frmDetalleReportes.aspx.designer.cs">
+      <DependentUpon>frmDetalleReportes.aspx</DependentUpon>
     </Compile>
     <Compile Include="Views\frmEdoCtaDetalle.aspx.cs">
       <DependentUpon>frmEdoCtaDetalle.aspx</DependentUpon>

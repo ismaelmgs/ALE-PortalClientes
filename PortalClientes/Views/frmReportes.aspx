@@ -36,14 +36,26 @@
                                         <table class="table" style="border: 0px;">
                                             <tr style="background-color: #00000003;">
                                                 <td style="border-bottom: 1px solid #dee2e6; padding: 6px;">
-                                                    <img src="../build/images/detalle_gatos.png" style="width: 32px;" />&nbsp;<span style="font-size: 17px; font-weight: bold;"><asp:Label ID="lblRepGastosFijosVariables" runat="server" Text=" Gastos Fijos y Variables" Font-Bold="true"></asp:Label></span><br />
+                                                    <asp:LinkButton runat="server" ID="btnDetReporte1" OnClick="btnDetReporte_Click" data-report="1">
+                                                        <img src="../build/images/detalle_gatos.png" style="width: 32px;" />&nbsp;
+                                                        <span style="font-size: 17px; font-weight: bold;">
+                                                            <asp:Label ID="lblRepGastosFijosVariables" runat="server" Text=" Gastos Fijos y Variables" Font-Bold="true"></asp:Label>
+                                                        </span>
+                                                        <br />
+                                                    </asp:LinkButton>
                                                 </td>
                                             </tr>
-                                                <td style="height: 3px;"></td>
+                                            <td style="height: 3px;"></td>
                                             </tr>
                                             <tr style="background-color: #00000003;">
                                                 <td style="border-bottom: 1px solid #dee2e6; padding: 6px;">
-                                                    <img src="../build/images/detalle_gatos.png" style="width: 32px;" />&nbsp;<span style="font-size: 17px; font-weight: bold;"><asp:Label ID="lblRepGastosAeropuerto" runat="server" Text=" Gastos por Aeropuerto" Font-Bold="true"></asp:Label></span><br />
+                                                    <asp:LinkButton runat="server" ID="btnDetReporte2" OnClick="btnDetReporte_Click" data-report="2">
+                                                        <img src="../build/images/detalle_gatos.png" style="width: 32px;" />&nbsp;
+                                                        <span style="font-size: 17px; font-weight: bold;">
+                                                            <asp:Label ID="lblRepGastosAeropuerto" runat="server" Text=" Gastos por Aeropuerto" Font-Bold="true"></asp:Label>
+                                                        </span>
+                                                        <br />
+                                                    </asp:LinkButton>
                                                 </td>
                                             </tr>
                                             <tr>
@@ -51,7 +63,9 @@
                                             </tr>
                                             <tr style="background-color: #00000003;">
                                                 <td style="border-bottom: 1px solid #dee2e6; padding: 6px;">
-                                                    <img src="../build/images/detalle_gatos.png" style="width: 32px;" />&nbsp;<span style="font-size: 17px; font-weight: bold;"><asp:Label ID="lblRepGastosProveedor" runat="server" Text=" Gastos por Proveedor" Font-Bold="true"></asp:Label></span><br />
+                                                    <asp:LinkButton runat="server" ID="btnDetReporte3" OnClick="btnDetReporte_Click" data-report="3">
+                                                        <img src="../build/images/detalle_gatos.png" style="width: 32px;" />&nbsp;<span style="font-size: 17px; font-weight: bold;"><asp:Label ID="lblRepGastosProveedor" runat="server" Text=" Gastos por Proveedor" Font-Bold="true"></asp:Label></span><br />
+                                                    </asp:LinkButton>
                                                 </td>
                                             </tr>
                                         </table>

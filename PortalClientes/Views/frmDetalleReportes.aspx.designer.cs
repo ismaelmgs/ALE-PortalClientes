@@ -10,7 +10,7 @@
 namespace PortalClientes.Views {
     
     
-    public partial class frmReportes {
+    public partial class frmDetalleReportes {
         
         /// <summary>
         /// Control upaPrincipal.
@@ -22,75 +22,120 @@ namespace PortalClientes.Views {
         protected global::System.Web.UI.UpdatePanel upaPrincipal;
         
         /// <summary>
-        /// Control lblReportesFijosVariables.
+        /// Control lblTitulo.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblReportesFijosVariables;
+        protected global::System.Web.UI.WebControls.Label lblTitulo;
         
         /// <summary>
-        /// Control lblReportesFijosVar.
+        /// Control lblTotalTrasn.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblReportesFijosVar;
+        protected global::System.Web.UI.WebControls.Label lblTotalTrasn;
         
         /// <summary>
-        /// Control btnDetReporte1.
+        /// Control lblTotalTrasnRes.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton btnDetReporte1;
+        protected global::System.Web.UI.WebControls.Label lblTotalTrasnRes;
         
         /// <summary>
-        /// Control lblRepGastosFijosVariables.
+        /// Control lblTotal.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblRepGastosFijosVariables;
+        protected global::System.Web.UI.WebControls.Label lblTotal;
         
         /// <summary>
-        /// Control btnDetReporte2.
+        /// Control lblTotalRes.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton btnDetReporte2;
+        protected global::System.Web.UI.WebControls.Label lblTotalRes;
         
         /// <summary>
-        /// Control lblRepGastosAeropuerto.
+        /// Control lblPromedio.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblRepGastosAeropuerto;
+        protected global::System.Web.UI.WebControls.Label lblPromedio;
         
         /// <summary>
-        /// Control btnDetReporte3.
+        /// Control lblPromedioRes.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton btnDetReporte3;
+        protected global::System.Web.UI.WebControls.Label lblPromedioRes;
         
         /// <summary>
-        /// Control lblRepGastosProveedor.
+        /// Control lblTransacciones.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblRepGastosProveedor;
+        protected global::System.Web.UI.WebControls.Label lblTransacciones;
+        
+        /// <summary>
+        /// Control btnExcel.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton btnExcel;
+        
+        /// <summary>
+        /// Control btnPDF.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton btnPDF;
+        
+        /// <summary>
+        /// Control gvdetReportes.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView gvdetReportes;
+        
+        /// <summary>
+        /// Control btnRegresarEng.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton btnRegresarEng;
+        
+        /// <summary>
+        /// Control btnRegresar.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton btnRegresar;
     }
 }

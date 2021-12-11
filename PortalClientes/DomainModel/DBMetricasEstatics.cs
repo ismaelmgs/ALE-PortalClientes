@@ -61,7 +61,7 @@ namespace PortalClientes.DomainModel
                 oLog = filtro;
                 oLog.matricula = Utils.MatriculaActual;
 
-                oLog.matricula = "XA-CHY";
+                //oLog.matricula = "XA-CHY";
                 oLog.meses = "3";
 
                 TokenWS oToken = Utils.ObtieneToken;
@@ -314,7 +314,7 @@ namespace PortalClientes.DomainModel
                 oLog.matricula = Utils.MatriculaActual;
                 oLog.idioma = Utils.Idioma;
 
-                oLog.matricula = "XA-CHY";
+                //oLog.matricula = "XA-CHY";
                 oLog.meses = "3";
 
                 TokenWS oToken = Utils.ObtieneToken;

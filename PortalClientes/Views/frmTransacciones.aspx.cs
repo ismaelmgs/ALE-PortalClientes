@@ -1356,7 +1356,7 @@ namespace PortalClientes.Views
             // tipo transaccion: 11 costos hora vuelo
             // tipo transaccion: 12 costos fijos variables por hora
             // tipo transaccion: 13 detalle estado de cuenta
-            // tipo transaccion: 12 detalle gastos
+            // tipo transaccion: 14 detalle gastos
 
 
             DateTimeFormatInfo month = null;

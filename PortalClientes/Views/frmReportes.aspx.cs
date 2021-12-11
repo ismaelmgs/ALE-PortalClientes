@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using NucleoBase.Core;
 
 namespace PortalClientes.Views
 {
@@ -15,6 +16,16 @@ namespace PortalClientes.Views
             {
                 Response.Redirect("~/Views/frmFinconexion2.aspx");
             }
+        }
+
+        protected void btnDetReporte_Click(object sender, EventArgs e)
+        {
+            LinkButton button = (LinkButton)sender;
+            string report = button.Attributes["data-report"];
+
+            Session["reporteDetalle"] = report.I();
+
+            Response.Redirect("frmDetalleReportes.aspx");
         }
     }
 }

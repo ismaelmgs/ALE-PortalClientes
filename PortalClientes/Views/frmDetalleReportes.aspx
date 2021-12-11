@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" UICulture="es" Culture="es-MX" AutoEventWireup="true" CodeBehind="frmTransacciones.aspx.cs" Inherits="PortalClientes.Views.frmTransacciones" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" UICulture="es" Culture="es-MX" AutoEventWireup="true" CodeBehind="frmDetalleReportes.aspx.cs" Inherits="PortalClientes.Views.frmDetalleReportes" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <script src="../vendors/jquery/dist/jquery.js"></script>
@@ -86,8 +86,8 @@
                             <div class="col-md-12">
                                 <div class="table-responsive">
                                     <div class="card-box table-responsive">
-                                        <asp:GridView ID="gvGastos" runat="server" AutoGenerateColumns="false" CssClass="table table-striped table-bordered table-hover" AllowPaging="true"
-                                            OnPageIndexChanging="gvGastos_PageIndexChanging" OnRowDataBound="gvGastos_RowDataBound" EmptyDataText="No Registros">
+                                        <asp:GridView ID="gvdetReportes" runat="server" AutoGenerateColumns="false" CssClass="table table-striped table-bordered table-hover" AllowPaging="true"
+                                            OnPageIndexChanging="gvdetReportes_PageIndexChanging" OnRowDataBound="gvdetReportes_RowDataBound" EmptyDataText="No Registros">
                                         </asp:GridView>
                                     </div>
                                 </div>
@@ -96,17 +96,14 @@
                         </div>
                         <hr style="border: 1px solid #efefef;" />
                         <div style="width: 100%; text-align: center;">
-                            <asp:LinkButton ID="btnRegresarMeEsEng" runat="server" Text="<i class='fa fa-undo' style='color:#73879C;font-size:14px;'></i> Metrics and Statistics <i class='fa fa-line-chart' style='color:#73879C;font-size:14px;'></i>" CssClass="btn" href="frmMetricasEstadisticas.aspx" />
-                            <asp:LinkButton ID="btnRegresarMeEs" runat="server" Text="<i class='fa fa-undo' style='color:#73879C;font-size:14px;'></i> Metricas y Estadisticas <i class='fa fa-line-chart' style='color:#73879C;font-size:14px;'></i>" CssClass="btn" href="frmMetricasEstadisticas.aspx" />
-                            <asp:LinkButton ID="btnRegresarDash" runat="server" Text="<i class='fa fa-undo' style='color:#73879C;font-size:14px;'></i> Dashboard <i class='fa fa-th-large' style='color:#73879C;font-size:14px;'></i>" CssClass="btn" href="frmDashboard.aspx" />
-                            <asp:LinkButton ID="btnRegresaEdoCtaEng" runat="server" Text="<i class='fa fa-undo' style='color:#73879C;font-size:14px;'></i> Account Status <i class='fa fa-th-large' style='color:#73879C;font-size:14px;'></i>" CssClass="btn" href="frmEstadoCuenta.aspx" />
-                            <asp:LinkButton ID="btnRegresaEdoCta" runat="server" Text="<i class='fa fa-undo' style='color:#73879C;font-size:14px;'></i> Estado de cuenta <i class='fa fa-th-large' style='color:#73879C;font-size:14px;'></i>" CssClass="btn" href="frmEstadoCuenta.aspx" />
+                            <asp:LinkButton ID="btnRegresarEng" runat="server" Text="<i class='fa fa-undo' style='color:#73879C;font-size:14px;'></i> Reports <i class='fa fa-line-chart' style='color:#73879C;font-size:14px;'></i>" CssClass="btn" href="frmMetricasEstadisticas.aspx" />
+                            <asp:LinkButton ID="btnRegresar" runat="server" Text="<i class='fa fa-undo' style='color:#73879C;font-size:14px;'></i> Reportes <i class='fa fa-line-chart' style='color:#73879C;font-size:14px;'></i>" CssClass="btn" href="frmMetricasEstadisticas.aspx" />
                         </div>
                     </div>
                 </div>
             </div>
         </ContentTemplate>
-        <Triggers>
+         <Triggers>
             <asp:PostBackTrigger ControlID="btnExcel" />
             <asp:PostBackTrigger ControlID="btnPDF" />
         </Triggers>
