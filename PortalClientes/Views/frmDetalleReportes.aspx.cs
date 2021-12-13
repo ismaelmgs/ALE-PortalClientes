@@ -182,7 +182,7 @@ namespace PortalClientes.Views
             switch (reporte)
             {
                 case 1:
-                    title += Utils.Idioma == "es-MX" ? "Costo Fijo y Variable por Hora" : "Fixed and Variable Cost Per Hour";
+                    title += Utils.Idioma == "es-MX" ? "Costo Fijo y Variable" : "Fixed and Variable Cost";
                     break;
                 case 2:
                     title += Utils.Idioma == "es-MX" ? "Gastos por Aeropuerto" : "Expenses by Airport";
