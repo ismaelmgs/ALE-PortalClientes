@@ -56,7 +56,7 @@
                                                     <asp:Label ID="lblNuevosCargosRes" runat="server" Text=" 155.522.11" Font-Bold="true" CssClass="count"></asp:Label>
                                                 </div>
                                             </div>
-                                            <%--</div>--%>
+                                            </div>
                                             <div class="col-md-3 tile_count">
                                                 <div class="tile_stats_count" style="text-align: center; background-image: none !important; border: 0px;">
                                                     <span class="count_top">
