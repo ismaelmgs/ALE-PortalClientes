@@ -24,7 +24,7 @@
                 <div class="col-md-6">
                     <div class="title_left">
                         <h3>
-                            <asp:Label ID="lblTitulo" runat="server" Text="Transacciones"></asp:Label></h3>
+                            <asp:Label ID="lblTitulo" runat="server" Text="Detalle Reporte"></asp:Label></h3>
                     </div>
                 </div>
                 <div class="col-md-6">
@@ -96,8 +96,8 @@
                         </div>
                         <hr style="border: 1px solid #efefef;" />
                         <div style="width: 100%; text-align: center;">
-                            <asp:LinkButton ID="btnRegresarEng" runat="server" Text="<i class='fa fa-undo' style='color:#73879C;font-size:14px;'></i> Reports <i class='fa fa-line-chart' style='color:#73879C;font-size:14px;'></i>" CssClass="btn" href="frmMetricasEstadisticas.aspx" />
-                            <asp:LinkButton ID="btnRegresar" runat="server" Text="<i class='fa fa-undo' style='color:#73879C;font-size:14px;'></i> Reportes <i class='fa fa-line-chart' style='color:#73879C;font-size:14px;'></i>" CssClass="btn" href="frmMetricasEstadisticas.aspx" />
+                            <asp:LinkButton ID="btnRegresarEng" runat="server" Text="<i class='fa fa-undo' style='color:#73879C;font-size:14px;'></i> Reports <i class='fa fa-line-chart' style='color:#73879C;font-size:14px;'></i>" CssClass="btn" href="frmReportes.aspx" />
+                            <asp:LinkButton ID="btnRegresar" runat="server" Text="<i class='fa fa-undo' style='color:#73879C;font-size:14px;'></i> Reportes <i class='fa fa-line-chart' style='color:#73879C;font-size:14px;'></i>" CssClass="btn" href="frmReportes.aspx" />
                         </div>
                     </div>
                 </div>

@@ -34,6 +34,8 @@ namespace PortalClientes.Views
 
             iReporte = (int)Session["reporteDetalle"];
 
+            lblTransacciones.Text = GenerateTitle(true, iReporte);
+
             TextBox milabel = (TextBox)this.Master.FindControl("txtLang");
             if (milabel.Text != Utils.Idioma && milabel.Text != string.Empty)
             {
@@ -142,6 +144,7 @@ namespace PortalClientes.Views
         {
             try
             {
+                Session["titleFile"] = GenerateTitle(false, iReporte);
                 exportarExcel();
             }
             catch (Exception ex)
@@ -154,6 +157,7 @@ namespace PortalClientes.Views
         {
             try
             {
+                Session["titleFile"] = GenerateTitle(false, iReporte);
                 exportarPDF();
             }
             catch (Exception ex)
@@ -171,54 +175,66 @@ namespace PortalClientes.Views
 
         #region METODOS
 
+        private string GenerateTitle(bool tipoT, int reporte)
+        {
+            var title = Utils.Idioma == "es-MX" ? "Reporte " : "Report "; ;
+
+            switch (reporte)
+            {
+                case 1:
+                    title += Utils.Idioma == "es-MX" ? "Costo Fijo y Variable por Hora" : "Fixed and Variable Cost Per Hour";
+                    break;
+                case 2:
+                    title += Utils.Idioma == "es-MX" ? "Gastos por Aeropuerto" : "Expenses by Airport";
+                    break;
+                case 3:
+                    title += Utils.Idioma == "es-MX" ? "Gastos por Proveedor" : "Expenses by Vendor";
+                    break;
+            }
+
+            if (tipoT)
+            {
+                title += " - " + Utils.MatriculaActual;
+            }
+            else
+            {
+                title += "_" + Utils.MatriculaActual;
+            }
+
+            return title;
+        }
+
         private void ArmarDetalleReportes()
         {
+            lblTitulo.Text = Properties.Resources.DetRpt_Title;
             switch (iReporte)
             {
                 case 4:
-                    lblTransacciones.Text = (string)Session["title"];
-                    lblTitulo.Text = Properties.Resources.TabTransacciones;
-
                     lblTotalTrasn.Text = Properties.Resources.TabTran_NoVuelos;
                     lblTotal.Text = Properties.Resources.TabTran_TiempoTotVuelo;
                     lblPromedio.Text = Properties.Resources.TabTran_PromedioVuelo;
                     break;
                 case 5:
-                    lblTransacciones.Text = (string)Session["title"];
-                    lblTitulo.Text = Properties.Resources.TabTransacciones;
-
                     lblTotalTrasn.Text = Properties.Resources.TabTran_NoVuelos;
                     lblTotal.Text = Properties.Resources.TabTran_promedioPax;
                     lblPromedio.Text = Properties.Resources.TabTran_TiempoTotVuelo;
                     break;
                 case 7:
-                    lblTransacciones.Text = (string)Session["title"];
-                    lblTitulo.Text = Properties.Resources.TabTransacciones;
-
                     lblTotalTrasn.Text = Properties.Resources.TabTran_NoVuelos;
                     lblTotal.Text = Properties.Resources.TabTran_TiempoTotVuelo;
                     lblPromedio.Text = Properties.Resources.TabTran_PromedioVuelo;
                     break;
                 case 8:
-                    lblTransacciones.Text = (string)Session["title"];
-                    lblTitulo.Text = Properties.Resources.TabTransacciones;
-
                     lblTotalTrasn.Text = Properties.Resources.TabTran_NoVuelos;
                     lblTotal.Text = Properties.Resources.TabTran_TiempoTotVuelo;
                     lblPromedio.Text = Properties.Resources.TabTran_PromedioVuelo;
                     break;
                 case 12:
-                    lblTransacciones.Text = (string)Session["title"];
-                    lblTitulo.Text = Properties.Resources.TabTransacciones;
-
                     lblTotalTrasn.Text = Properties.Resources.TabTran_MontoTotal;
                     lblTotal.Text = Properties.Resources.TabTran_CostoHV;
                     lblPromedio.Text = Properties.Resources.TabTran_TiempoTotVuelo;
                     break;
                 default:
-                    lblTransacciones.Text = (string)Session["title"];
-                    lblTitulo.Text = Properties.Resources.TabTransacciones;
-
                     lblTotalTrasn.Text = Properties.Resources.TabTran_NoGastos;
                     lblTotal.Text = Properties.Resources.TabTran_MontoTotal;
                     lblPromedio.Text = Properties.Resources.TabTran_PromedioMens;
@@ -379,7 +395,7 @@ namespace PortalClientes.Views
             if (tipo == 1)
             {
                 totalRegistros = reportes.costosFijosVariable.Count();
-                contMeses = reportes.costosFijosVariable.GroupBy(r => r.mes).Count();
+                contMeses = reportes.costosFijosVariable.Count();
                 totalTransacciones = reportes.costosFijosVariable.Sum(x => x.totalImp);
                 promedio = totalTransacciones / totalRegistros;
 
@@ -422,7 +438,7 @@ namespace PortalClientes.Views
             else if (tipo == 2)
             {
                 totalRegistros = reportes.gastosAe.Count();
-                contMeses = reportes.gastosAe.GroupBy(r => r.Mes).Count();
+                contMeses = reportes.gastosAe.Count();
                 totalTransacciones = reportes.gastosAe.Sum(x => x.Total);
                 promedio = totalTransacciones / contMeses;
 
@@ -473,7 +489,7 @@ namespace PortalClientes.Views
             else if(tipo == 3)
             {
                 totalRegistros = reportes.gastosProv.Count();
-                contMeses = reportes.gastosProv.GroupBy(r => r.Mes).Count();
+                contMeses = reportes.gastosProv.Count();
                 totalTransacciones = reportes.gastosProv.Sum(x => x.Total);
                 promedio = totalTransacciones / contMeses;
 

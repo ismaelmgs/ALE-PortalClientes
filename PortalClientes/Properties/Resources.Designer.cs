@@ -1060,6 +1060,15 @@ namespace PortalClientes.Properties {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Detalle Reporte.
+        /// </summary>
+        internal static string DetRpt_Title {
+            get {
+                return ResourceManager.GetString("DetRpt_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Periodo.
         /// </summary>
         internal static string Ec_NombreMes {

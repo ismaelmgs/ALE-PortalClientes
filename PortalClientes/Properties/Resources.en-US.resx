@@ -1032,4 +1032,7 @@
   <data name="TabTran_TotalTranUSD" xml:space="preserve">
     <value>Total USD transactions</value>
   </data>
+  <data name="DetRpt_Title" xml:space="preserve">
+    <value>Report Detail</value>
+  </data>
 </root>
