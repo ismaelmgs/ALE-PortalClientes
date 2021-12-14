@@ -63,4 +63,12 @@ namespace PortalClientes.Objetos
     {
         public int IdUsuario { get; set; }
     }
+
+    [Serializable]
+    public class FiltroDocumento
+    {
+        public string matricula { get; set; }
+        public string anio { get; set; }
+        public string mes { get; set; }
+    }
 }

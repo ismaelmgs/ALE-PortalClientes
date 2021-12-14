@@ -64,6 +64,7 @@ namespace PortalClientes.DomainModel
                     oRes.pagosCreditoUSD = row["PagosCreditoUSD"].S().D();
                     oRes.nuevosCargosUSD = row["NuevosCargosUSD"].S().D();
                     oRes.saldoActualUSD = row["SaldoActualUSD"].S().D();
+                    oRes.docF = row["DocF"].S().I();
 
                     foreach (DataRow row2 in ds.Tables[1].Rows)
                     {
@@ -93,6 +94,42 @@ namespace PortalClientes.DomainModel
 
                 throw;
             }
+        }
+
+        public List<responseDocumentoF> ObtenerDocumentoF(FiltroDocumento filtro)
+        {
+            try
+            {
+                JavaScriptSerializer ser = new JavaScriptSerializer();
+                ser.MaxJsonLength = 500000000;
+                List<responseDocumentoF> d = new List<responseDocumentoF>();
+                FiltroDocumento oLog = new FiltroDocumento();
+                oLog = filtro;
+                oLog.matricula = Utils.MatriculaActual;
+
+                oLog.matricula = "XA-CHY";
+                oLog.mes = "3";
+
+                TokenWS oToken = Utils.ObtieneToken;
+
+                var client = new RestClient(Helper.D_UrlObbtenerGastoProveedor); /*FALTA URL DE DOCF*/
+                var request = new RestRequest(Method.POST);
+                request.AddHeader("Authorization", oToken.token);
+                request.AddJsonBody(oLog);
+
+                IRestResponse response = client.Execute(request);
+                var resp = response.Content;
+
+                d = ser.Deserialize<List<responseDocumentoF>>(resp);
+
+                return d;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+
         }
     }
 }
