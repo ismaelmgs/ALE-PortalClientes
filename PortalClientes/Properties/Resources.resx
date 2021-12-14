@@ -1032,4 +1032,13 @@
   <data name="DetRpt_Title" xml:space="preserve">
     <value>Detalle Reporte</value>
   </data>
+  <data name="Ec_VerFactura" xml:space="preserve">
+    <value>Ver Facturas</value>
+  </data>
+  <data name="Ec_VerDetalleTitle" xml:space="preserve">
+    <value>Detalle</value>
+  </data>
+  <data name="Ec_VerFacturaTitle" xml:space="preserve">
+    <value>Facturas</value>
+  </data>
 </root>

@@ -11,5 +11,7 @@ namespace PortalClientes.Interfaces
     {
         void LlenaEstadoCuenta(EstadoCuenta oEstado);
         void LlenaTableEdoCuenta(List<responseRepEdoCuenta> olstRep);
+        void LlenaDocsEdoCuenta(List<responseRepEdoCuenta> olstRep);
+
     }
 }

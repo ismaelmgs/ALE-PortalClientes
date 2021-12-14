@@ -1213,6 +1213,33 @@ namespace PortalClientes.Properties {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Detalle.
+        /// </summary>
+        internal static string Ec_VerDetalleTitle {
+            get {
+                return ResourceManager.GetString("Ec_VerDetalleTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Ver Facturas.
+        /// </summary>
+        internal static string Ec_VerFactura {
+            get {
+                return ResourceManager.GetString("Ec_VerFactura", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Facturas.
+        /// </summary>
+        internal static string Ec_VerFacturaTitle {
+            get {
+                return ResourceManager.GetString("Ec_VerFacturaTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Próximo mes.
         /// </summary>
         internal static string FiltroEvenTri_1M {

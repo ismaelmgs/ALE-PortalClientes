@@ -310,93 +310,75 @@ namespace PortalClientes.Views {
         protected global::System.Web.UI.WebControls.GridView gvEdoCuenta;
         
         /// <summary>
-        /// Control lblTituloMensajes.
+        /// Control hdTargetDocs.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblTituloMensajes;
+        protected global::System.Web.UI.WebControls.HiddenField hdTargetDocs;
         
         /// <summary>
-        /// Control lblMensajeNuevo.
+        /// Control mpeDocsEdoCuenta.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblMensajeNuevo;
+        protected global::AjaxControlToolkit.ModalPopupExtender mpeDocsEdoCuenta;
         
         /// <summary>
-        /// Control lblHistorialMensajes.
+        /// Control pnlDocsEdoCuenta.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblHistorialMensajes;
+        protected global::System.Web.UI.WebControls.Panel pnlDocsEdoCuenta;
         
         /// <summary>
-        /// Control lblMensajePara.
+        /// Control upaDocsEdoCuenta.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblMensajePara;
+        protected global::System.Web.UI.UpdatePanel upaDocsEdoCuenta;
         
         /// <summary>
-        /// Control txtMensajePara.
+        /// Control btnCerrar.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtMensajePara;
+        protected global::System.Web.UI.WebControls.Button btnCerrar;
         
         /// <summary>
-        /// Control btnAddCc.
+        /// Control lblTituloDocsEdoCuenta.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnAddCc;
+        protected global::System.Web.UI.WebControls.Label lblTituloDocsEdoCuenta;
         
         /// <summary>
-        /// Control btnAddBcc.
+        /// Control gvDocEdoCuenta.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnAddBcc;
+        protected global::System.Web.UI.WebControls.GridView gvDocEdoCuenta;
         
         /// <summary>
-        /// Control lblMensajeOpcional.
+        /// Control btnCancelar.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblMensajeOpcional;
-        
-        /// <summary>
-        /// Control txtMensaje.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtMensaje;
-        
-        /// <summary>
-        /// Control cbIncluirPDFs.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox cbIncluirPDFs;
+        protected global::System.Web.UI.WebControls.Button btnCancelar;
     }
 }

@@ -1035,4 +1035,13 @@
   <data name="DetRpt_Title" xml:space="preserve">
     <value>Report Detail</value>
   </data>
+  <data name="Ec_VerFactura" xml:space="preserve">
+    <value>View Invoices</value>
+  </data>
+  <data name="Ec_VerDetalleTitle" xml:space="preserve">
+    <value>Detail</value>
+  </data>
+  <data name="Ec_VerFacturaTitle" xml:space="preserve">
+    <value>Invoices</value>
+  </data>
 </root>

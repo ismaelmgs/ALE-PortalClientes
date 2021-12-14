@@ -62,12 +62,18 @@ namespace PortalClientes.Views
                     e.Row.Cells[6].Text = Properties.Resources.Ec_PagosCreditosUSD;
                     e.Row.Cells[7].Text = Properties.Resources.Ec_NuevosCargosUSD;
                     e.Row.Cells[8].Text = Properties.Resources.Ec_SaldoActualUSD;
+                    e.Row.Cells[9].Text = Properties.Resources.Ec_VerDetalleTitle;
+                    e.Row.Cells[10].Text = Properties.Resources.Ec_VerFacturaTitle;
                 }
 
                 if (e.Row.RowType == DataControlRowType.DataRow)
                 {
                     LinkButton lkb = (LinkButton)e.Row.FindControl("lkbDetalle");
                     lkb.Text = Properties.Resources.Ec_VerDetalle;
+
+                    LinkButton lkbvd = (LinkButton)e.Row.FindControl("lkbViewDocument");
+                    lkbvd.Text = Properties.Resources.Ec_VerFactura;
+                    
                 }
             }
             catch (Exception ex)
@@ -78,7 +84,8 @@ namespace PortalClientes.Views
 
         protected void gvEdoCuenta_RowCommand(object sender, GridViewCommandEventArgs e)
         {
-            int iMes = gvEdoCuenta.DataKeys[e.CommandArgument.S().I()]["Mes"].S().I();
+            iMes = gvEdoCuenta.DataKeys[e.CommandArgument.S().I()]["Mes"].S().I();
+            iAnio = gvEdoCuenta.DataKeys[e.CommandArgument.S().I()]["Anio"].S().I();
 
             if (e.CommandName == "Detalle")
             {
@@ -93,6 +100,22 @@ namespace PortalClientes.Views
                     Response.Redirect("frmTransacciones.aspx");
                 }
             }
+
+            if(e.CommandName == "ViewDocument")
+            {
+                if (eSearchObj != null)
+                    eSearchObj(sender, e);
+            }
+        }
+
+        protected void gvDocEdoCuenta_RowCommand(object sender, GridViewCommandEventArgs e)
+        {
+
+        }
+
+        protected void gvDocEdoCuenta_RowDataBound(object sender, GridViewRowEventArgs e)
+        {
+
         }
 
         #region METODOS
@@ -222,8 +245,18 @@ namespace PortalClientes.Views
             set { ViewState["VSEstados"] = value; }
         }
 
+        public int iMes
+        {
+            get { return ViewState["VSMes"].S().I(); }
+            set { ViewState["VSMes"] = value; }
+        }
+
+        public int iAnio
+        {
+            get { return ViewState["VSAnio"].S().I(); }
+            set { ViewState["VSAnio"] = value; }
+        }
+
         #endregion
-
-
     }
 }
