@@ -22,7 +22,9 @@ namespace PortalClientes.Objetos
         public decimal pagosCreditoUSD { set; get; }
         public decimal nuevosCargosUSD { set; get; }
         public decimal saldoActualUSD { set; get; }
-        
+        public int docF { set; get; }
+
+
         public List<DetalleRepEdoCuenta> olsDetalle { get => _olsDetalle; set => _olsDetalle = value; }
     }
 
@@ -42,4 +44,15 @@ namespace PortalClientes.Objetos
         public string proveedor { set; get; }
         public decimal importe { set; get; }
     }
+    public class responseDocumentoF
+    {
+        public int Clave { get; set; }
+        public string RazonSocial { get; set; }
+        public int TipoDocumento { get; set; }
+        public int Folio { get; set; }
+        public int Anio { get; set; }
+        public int Mes { get; set; }
+        public int Dia { get; set; }
+    }
+
 }
