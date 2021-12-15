@@ -1069,6 +1069,69 @@ namespace PortalClientes.Properties {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Año.
+        /// </summary>
+        internal static string Ec_Anio {
+            get {
+                return ResourceManager.GetString("Ec_Anio", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Clave.
+        /// </summary>
+        internal static string Ec_Clave {
+            get {
+                return ResourceManager.GetString("Ec_Clave", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Dia.
+        /// </summary>
+        internal static string Ec_Dia {
+            get {
+                return ResourceManager.GetString("Ec_Dia", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Descarga.
+        /// </summary>
+        internal static string Ec_Download {
+            get {
+                return ResourceManager.GetString("Ec_Download", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Descargar.
+        /// </summary>
+        internal static string Ec_DownloadDoc {
+            get {
+                return ResourceManager.GetString("Ec_DownloadDoc", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Folio.
+        /// </summary>
+        internal static string Ec_Folio {
+            get {
+                return ResourceManager.GetString("Ec_Folio", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Mes.
+        /// </summary>
+        internal static string Ec_Mes {
+            get {
+                return ResourceManager.GetString("Ec_Mes", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Periodo.
         /// </summary>
         internal static string Ec_NombreMes {
@@ -1141,6 +1204,15 @@ namespace PortalClientes.Properties {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Razon Social.
+        /// </summary>
+        internal static string Ec_RazonSocial {
+            get {
+                return ResourceManager.GetString("Ec_RazonSocial", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Resumen de cuenta.
         /// </summary>
         internal static string Ec_ResumenCuenta {
@@ -1191,6 +1263,15 @@ namespace PortalClientes.Properties {
         internal static string Ec_SaldoAnteriosUSD {
             get {
                 return ResourceManager.GetString("Ec_SaldoAnteriosUSD", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Tipo Documento.
+        /// </summary>
+        internal static string Ec_TipoDocumento {
+            get {
+                return ResourceManager.GetString("Ec_TipoDocumento", resourceCulture);
             }
         }
         

@@ -1041,4 +1041,31 @@
   <data name="Ec_VerFacturaTitle" xml:space="preserve">
     <value>Facturas</value>
   </data>
+  <data name="Ec_Anio" xml:space="preserve">
+    <value>Año</value>
+  </data>
+  <data name="Ec_Clave" xml:space="preserve">
+    <value>Clave</value>
+  </data>
+  <data name="Ec_Dia" xml:space="preserve">
+    <value>Dia</value>
+  </data>
+  <data name="Ec_Download" xml:space="preserve">
+    <value>Descarga</value>
+  </data>
+  <data name="Ec_DownloadDoc" xml:space="preserve">
+    <value>Descargar</value>
+  </data>
+  <data name="Ec_Folio" xml:space="preserve">
+    <value>Folio</value>
+  </data>
+  <data name="Ec_Mes" xml:space="preserve">
+    <value>Mes</value>
+  </data>
+  <data name="Ec_RazonSocial" xml:space="preserve">
+    <value>Razon Social</value>
+  </data>
+  <data name="Ec_TipoDocumento" xml:space="preserve">
+    <value>Tipo Documento</value>
+  </data>
 </root>

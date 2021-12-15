@@ -108,7 +108,8 @@ namespace PortalClientes.DomainModel
                 oLog.matricula = Utils.MatriculaActual;
 
                 oLog.matricula = "XA-CHY";
-                oLog.mes = "3";
+                oLog.mes = 3;
+                oLog.anio = 2021;
 
                 TokenWS oToken = Utils.ObtieneToken;
 

@@ -11,6 +11,7 @@ using PortalClientes.Clases;
 using PortalClientes.Objetos;
 using NucleoBase.Core;
 using System.Drawing;
+using System.Data;
 
 namespace PortalClientes.Views
 {
@@ -49,6 +50,9 @@ namespace PortalClientes.Views
         {
             try
             {
+                responseRepEdoCuenta doc = (responseRepEdoCuenta)e.Row.DataItem;
+                var existeDoc = doc != null ? doc.docF : 0;
+
                 if (e.Row.RowType == DataControlRowType.Header)
                 {
                     e.Row.Cells[0].Text = Properties.Resources.Ec_NombreMes;
@@ -63,7 +67,8 @@ namespace PortalClientes.Views
                     e.Row.Cells[7].Text = Properties.Resources.Ec_NuevosCargosUSD;
                     e.Row.Cells[8].Text = Properties.Resources.Ec_SaldoActualUSD;
                     e.Row.Cells[9].Text = Properties.Resources.Ec_VerDetalleTitle;
-                    e.Row.Cells[10].Text = Properties.Resources.Ec_VerFacturaTitle;
+                        e.Row.Cells[10].Text = Properties.Resources.Ec_VerFacturaTitle;
+                
                 }
 
                 if (e.Row.RowType == DataControlRowType.DataRow)
@@ -71,9 +76,15 @@ namespace PortalClientes.Views
                     LinkButton lkb = (LinkButton)e.Row.FindControl("lkbDetalle");
                     lkb.Text = Properties.Resources.Ec_VerDetalle;
 
-                    LinkButton lkbvd = (LinkButton)e.Row.FindControl("lkbViewDocument");
-                    lkbvd.Text = Properties.Resources.Ec_VerFactura;
-                    
+                    if(existeDoc == 0)
+                    {
+                        e.Row.Cells[10].Visible = false;
+                    }
+                    else
+                    {
+                        LinkButton lkbvd = (LinkButton)e.Row.FindControl("lkbViewDocument");
+                        lkbvd.Text = Properties.Resources.Ec_VerFactura;
+                    } 
                 }
             }
             catch (Exception ex)
@@ -103,19 +114,37 @@ namespace PortalClientes.Views
 
             if(e.CommandName == "ViewDocument")
             {
-                if (eSearchObj != null)
-                    eSearchObj(sender, e);
+                if (eSearchObjDocs != null)
+                    eSearchObjDocs(sender, e);
             }
         }
 
         protected void gvDocEdoCuenta_RowCommand(object sender, GridViewCommandEventArgs e)
         {
-
+            if (e.CommandName == "Download")
+            {
+                
+            }
         }
 
         protected void gvDocEdoCuenta_RowDataBound(object sender, GridViewRowEventArgs e)
         {
+            if (e.Row.RowType == DataControlRowType.Header)
+            {
+                e.Row.Cells[0].Text = Properties.Resources.Ec_Clave;
+                e.Row.Cells[1].Text = Properties.Resources.Ec_RazonSocial;
+                e.Row.Cells[2].Text = Properties.Resources.Ec_TipoDocumento;
+                e.Row.Cells[3].Text = Properties.Resources.Ec_Anio;
+                e.Row.Cells[4].Text = Properties.Resources.Ec_Mes;
+                e.Row.Cells[5].Text = Properties.Resources.Ec_Dia;
+                e.Row.Cells[6].Text = Properties.Resources.Ec_Download;
+            }
 
+            if (e.Row.RowType == DataControlRowType.DataRow)
+            {
+                LinkButton lkb = (LinkButton)e.Row.FindControl("lkbDownloadDoc");
+                lkb.Text = Properties.Resources.Ec_DownloadDoc;
+            }
         }
 
         #region METODOS
@@ -228,6 +257,14 @@ namespace PortalClientes.Views
             gvEdoCuenta.DataSource = olstRep;
             gvEdoCuenta.DataBind();
         }
+
+        public void LlenaDocsEdoCuenta(List<responseDocumentoF> olstRep)
+        {
+            gvDocEdoCuenta.DataSource = olstRep;
+            gvDocEdoCuenta.DataBind();
+
+            mpeDocsEdoCuenta.Show();
+        }
         #endregion
 
         #region VARIABLES Y PROPIEDADES
@@ -238,6 +275,7 @@ namespace PortalClientes.Views
         public event EventHandler eSaveObj;
         public event EventHandler eDeleteObj;
         public event EventHandler eSearchObj;
+        public event EventHandler eSearchObjDocs;
 
         public List<responseRepEdoCuenta> oEstados
         {
@@ -255,6 +293,12 @@ namespace PortalClientes.Views
         {
             get { return ViewState["VSAnio"].S().I(); }
             set { ViewState["VSAnio"] = value; }
+        }
+
+        public int iExisteDoc
+        {
+            get { return ViewState["VSExisteDoc"].S().I(); }
+            set { ViewState["VSExisteDoc"] = value; }
         }
 
         #endregion

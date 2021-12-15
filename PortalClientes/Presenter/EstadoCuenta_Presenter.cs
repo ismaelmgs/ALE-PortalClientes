@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using PortalClientes.Clases;
+using PortalClientes.Objetos;
 
 namespace PortalClientes.Presenter
 {
@@ -16,13 +17,23 @@ namespace PortalClientes.Presenter
         {
             oIGesCat = oGC;
 
-            
+            oIView.eSearchObjDocs += eSearchObjDocs_Presenter;
         }
 
         protected override void SearchObj_Presenter(object sender, EventArgs e)
         {
             oIView.LlenaEstadoCuenta(oIGesCat.DBGetObtieneMatricuasPorUsuario(Utils.MatriculaActual));
             oIView.LlenaTableEdoCuenta(oIGesCat.DBGetObtieneUltimosEdoCuentaMatricula());
+        }
+
+        protected void eSearchObjDocs_Presenter(object sender, EventArgs e)
+        {
+            FiltroDocumento f = new FiltroDocumento();
+            f.anio = oIView.iAnio;
+            f.mes = oIView.iMes;
+            f.matricula = Utils.MatriculaActual;
+
+            oIView.LlenaDocsEdoCuenta(oIGesCat.ObtenerDocumentoF(f));
         }
     }
 }
