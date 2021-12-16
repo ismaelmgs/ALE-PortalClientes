@@ -354,7 +354,7 @@
                                             </ItemTemplate>
                                         </asp:TemplateField>
                                         <asp:BoundField DataField="Matricula" />
-                                        <asp:BoundField DataField="Contrato" />
+                                        <asp:BoundField DataField="ClaveCliente" />
                                     </Columns>
                                 </asp:GridView>
                             </div>

@@ -31,7 +31,7 @@ namespace PortalClientes.Presenter
             FiltroDocumento f = new FiltroDocumento();
             f.anio = oIView.iAnio;
             f.mes = oIView.iMes;
-            f.matricula = Utils.MatriculaActual;
+            f.contrato = "RASSI";
 
             oIView.LlenaDocsEdoCuenta(oIGesCat.ObtenerDocumentoF(f));
         }

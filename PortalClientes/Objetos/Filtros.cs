@@ -61,13 +61,13 @@ namespace PortalClientes.Objetos
     [Serializable]
     public class FiltroMatUsuario
     {
-        public int IdUsuario { get; set; }
+        public int idUsuario { get; set; }
     }
 
     [Serializable]
     public class FiltroDocumento
     {
-        public string matricula { get; set; }
+        public string contrato { get; set; }
         public int anio { get; set; }
         public int mes { get; set; }
     }

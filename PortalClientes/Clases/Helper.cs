@@ -24,7 +24,8 @@ namespace PortalClientes.Clases
         public const string US_UrlObtieneUsuariosFiltros = "http://201.163.208.231/" + DominioWS + "/ws/pc/consultaUsuariosFiltros";
         public const string US_UrlInsertaUsuario = "http://201.163.208.231/" + DominioWS + "/ws/pc/insertaUsuarios";
         public const string US_UrlConsultaMatriculas = "http://201.163.208.231/" + DominioWS + "/ws/pc/consultaMatriculas";
-        
+        public const string US_UrlconsultaMatriculasUsuario = "http://201.163.208.231/" + DominioWS + "/ws/pc/consultaMatriculasUsuario";
+
         public const string US_UrlConsultaModulosPorUsuario = "http://201.163.208.231/" + DominioWS + "/ws/pc/consultaModulosPorUsuario";
 
         public const string US_UrlRelacionaUsuarioMats = "http://201.163.208.231/" + DominioWS + "/ws/pc/relUsuarioMatriculas";
@@ -51,6 +52,7 @@ namespace PortalClientes.Clases
         public const string D_UrlObtieneCostoHoraVuelo = "http://201.163.208.231/" + DominioWS + "/ws/pc/obtieneGraficaCostoHora";
         public const string D_UrlObtieneCostoFijoVariableHora = "http://201.163.208.231/" + DominioWS + "/ws/pc/obtieneGraficaCostoFijoVariableHora"; 
         public const string D_UrlObtieneCategoriasPeriodo = "http://201.163.208.231/" + DominioWS + "/ws/pc/obtieneGastosRubroDetTiempo";
+        public const string D_UrlObtieneFacturasContratos = "http://201.163.208.231/" + DominioWS + "/ws/pc/obtieneFacturasContratos";
 
         public const string D_UrlObtieneRutasAeropuertos = "http://201.163.208.231/" + DominioWS + "/ws/pc/consultaRutaAeropuertosPeriodo";
 

@@ -76,7 +76,7 @@ namespace PortalClientes.Views
                     LinkButton lkb = (LinkButton)e.Row.FindControl("lkbDetalle");
                     lkb.Text = Properties.Resources.Ec_VerDetalle;
 
-                    if(existeDoc == 0)
+                    if(existeDoc > 0) //cambiar a ==0
                     {
                         e.Row.Cells[10].Visible = false;
                     }
@@ -96,7 +96,6 @@ namespace PortalClientes.Views
         protected void gvEdoCuenta_RowCommand(object sender, GridViewCommandEventArgs e)
         {
             iMes = gvEdoCuenta.DataKeys[e.CommandArgument.S().I()]["Mes"].S().I();
-            iAnio = gvEdoCuenta.DataKeys[e.CommandArgument.S().I()]["Anio"].S().I();
 
             if (e.CommandName == "Detalle")
             {
@@ -114,6 +113,9 @@ namespace PortalClientes.Views
 
             if(e.CommandName == "ViewDocument")
             {
+                responseRepEdoCuenta oEC = (responseRepEdoCuenta)oEstados.Where(x => x.mes == iMes).FirstOrDefault();
+                iAnio = oEC.anio;
+
                 if (eSearchObjDocs != null)
                     eSearchObjDocs(sender, e);
             }
@@ -134,10 +136,12 @@ namespace PortalClientes.Views
                 e.Row.Cells[0].Text = Properties.Resources.Ec_Clave;
                 e.Row.Cells[1].Text = Properties.Resources.Ec_RazonSocial;
                 e.Row.Cells[2].Text = Properties.Resources.Ec_TipoDocumento;
-                e.Row.Cells[3].Text = Properties.Resources.Ec_Anio;
-                e.Row.Cells[4].Text = Properties.Resources.Ec_Mes;
-                e.Row.Cells[5].Text = Properties.Resources.Ec_Dia;
-                e.Row.Cells[6].Text = Properties.Resources.Ec_Download;
+                e.Row.Cells[3].Text = Properties.Resources.Ec_Folio;
+                e.Row.Cells[4].Text = Properties.Resources.Ec_FechaDoc;
+                e.Row.Cells[5].Text = Properties.Resources.Ec_Anio;
+                e.Row.Cells[6].Text = Properties.Resources.Ec_Mes;
+                e.Row.Cells[7].Text = Properties.Resources.Ec_Dia;
+                e.Row.Cells[8].Text = Properties.Resources.Ec_Download;
             }
 
             if (e.Row.RowType == DataControlRowType.DataRow)

@@ -1069,6 +1069,9 @@
     <value>Tipo Documento</value>
   </data>
   <data name="Us_Contrato" xml:space="preserve">
-    <value>Contrato</value>
+    <value>Clave Cliente</value>
+  </data>
+  <data name="Ec_FechaDoc" xml:space="preserve">
+    <value>Fecha</value>
   </data>
 </root>

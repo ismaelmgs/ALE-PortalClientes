@@ -105,15 +105,13 @@ namespace PortalClientes.DomainModel
                 List<responseDocumentoF> d = new List<responseDocumentoF>();
                 FiltroDocumento oLog = new FiltroDocumento();
                 oLog = filtro;
-                oLog.matricula = Utils.MatriculaActual;
 
-                oLog.matricula = "XA-CHY";
-                oLog.mes = 3;
+                oLog.mes = 12;
                 oLog.anio = 2021;
 
                 TokenWS oToken = Utils.ObtieneToken;
 
-                var client = new RestClient(Helper.D_UrlObbtenerGastoProveedor); /*FALTA URL DE DOCF*/
+                var client = new RestClient(Helper.D_UrlObtieneFacturasContratos);
                 var request = new RestRequest(Method.POST);
                 request.AddHeader("Authorization", oToken.token);
                 request.AddJsonBody(oLog);

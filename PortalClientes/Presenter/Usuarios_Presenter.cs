@@ -60,7 +60,10 @@ namespace PortalClientes.Presenter
                 foreach (Matriculas itemU in olstMU)
                 {
                     if (item.IdAeronave == itemU.IdAeronave)
+                    {
                         oMatU.sts = 1;
+                        oMatU.ClaveCliente = itemU.ClaveCliente;
+                    }
                 }
 
                 olstMats.Add(oMatU);

@@ -292,9 +292,14 @@
                     <asp:GridView ID="gvDocEdoCuenta" runat="server" AutoGenerateColumns="false"
                         OnRowDataBound="gvDocEdoCuenta_RowDataBound" OnRowCommand="gvDocEdoCuenta_RowCommand" Width="100%" CssClass="table table-bordered table-hover">
                         <Columns>
-                            <asp:BoundField DataField="ClaveModulo" />
-                            <asp:BoundField DataField="NombreESP" />
-                            <asp:BoundField DataField="NombreENG" />
+                            <asp:BoundField DataField="Clave" />
+                            <asp:BoundField DataField="RazonSocial" />
+                            <asp:BoundField DataField="TipoDocumento" />
+                            <asp:BoundField DataField="Folio" />
+                            <asp:BoundField DataField="fechaDocumento" />
+                            <asp:BoundField DataField="anio" />
+                            <asp:BoundField DataField="mes" />
+                            <asp:BoundField DataField="dia" />
                             <asp:TemplateField>
                                 <ItemTemplate>
                                     <asp:LinkButton ID="lkbDownloadDoc" runat="server" CommandName="Download" CommandArgument="<%# ((GridViewRow) Container).RowIndex %>"></asp:LinkButton>

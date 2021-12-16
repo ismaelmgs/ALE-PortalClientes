@@ -142,10 +142,10 @@ namespace PortalClientes.DomainModel
                 JavaScriptSerializer ser = new JavaScriptSerializer();
                 List<Matriculas> oMU = new List<Matriculas>();
                 FiltroMatUsuario oLog = new FiltroMatUsuario();
-                oLog.IdUsuario = iidUsuario;
+                oLog.idUsuario = iidUsuario;
 
                 TokenWS oToken = Utils.ObtieneToken;
-                var client = new RestClient(Helper.D_UrlObtenerMatriculasPorUsuario);
+                var client = new RestClient(Helper.US_UrlconsultaMatriculasUsuario);
                 var request = new RestRequest(Method.POST);
                 request.AddHeader("Authorization", oToken.token);
                 request.AddJsonBody(oLog);

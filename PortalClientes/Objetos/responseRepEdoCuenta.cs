@@ -46,13 +46,14 @@ namespace PortalClientes.Objetos
     }
     public class responseDocumentoF
     {
-        public int Clave { get; set; }
+        public string Clave { get; set; }
         public string RazonSocial { get; set; }
-        public int TipoDocumento { get; set; }
+        public string TipoDocumento { get; set; }
         public int Folio { get; set; }
         public int Anio { get; set; }
         public int Mes { get; set; }
         public int Dia { get; set; }
+        public DateTime fechaDocumento { get; set; }
     }
 
 }

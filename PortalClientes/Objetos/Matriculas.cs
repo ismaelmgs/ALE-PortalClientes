@@ -11,5 +11,6 @@ namespace PortalClientes.Objetos
         public string Serie { set; get; }
         public string Matricula { set; get; }
         public string GrupoModelo { set; get; }
+        public string ClaveCliente { get; set; }
     }
 }

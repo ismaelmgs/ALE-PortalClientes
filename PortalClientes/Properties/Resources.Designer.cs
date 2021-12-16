@@ -1114,6 +1114,15 @@ namespace PortalClientes.Properties {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Fecha.
+        /// </summary>
+        internal static string Ec_FechaDoc {
+            get {
+                return ResourceManager.GetString("Ec_FechaDoc", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Folio.
         /// </summary>
         internal static string Ec_Folio {
@@ -2716,7 +2725,7 @@ namespace PortalClientes.Properties {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Contrato.
+        ///   Busca una cadena traducida similar a Clave Cliente.
         /// </summary>
         internal static string Us_Contrato {
             get {
