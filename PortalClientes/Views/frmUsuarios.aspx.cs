@@ -183,6 +183,7 @@ namespace PortalClientes.Views
             if (e.Row.RowType == DataControlRowType.Header)
             {
                 e.Row.Cells[1].Text = Properties.Resources.Us_Matricula;
+                e.Row.Cells[2].Text = Properties.Resources.Us_Contrato;
             }
 
             if (e.Row.RowType == DataControlRowType.DataRow)

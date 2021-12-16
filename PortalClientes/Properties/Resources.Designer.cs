@@ -2716,6 +2716,15 @@ namespace PortalClientes.Properties {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Contrato.
+        /// </summary>
+        internal static string Us_Contrato {
+            get {
+                return ResourceManager.GetString("Us_Contrato", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Correo secundario:.
         /// </summary>
         internal static string Us_CorreoSecundario {

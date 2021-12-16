@@ -1068,4 +1068,7 @@
   <data name="Ec_TipoDocumento" xml:space="preserve">
     <value>Tipo Documento</value>
   </data>
+  <data name="Us_Contrato" xml:space="preserve">
+    <value>Contrato</value>
+  </data>
 </root>

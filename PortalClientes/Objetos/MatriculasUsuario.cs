@@ -12,6 +12,7 @@ namespace PortalClientes.Objetos
         public string Serie { set; get; }
         public string Matricula { set; get; }
         public string GrupoModelo { set; get; }
+        public string Contrato { get; set; }
 
         private int _sts = 0;
         public int sts { set { _sts = value; } get { return _sts; } }
