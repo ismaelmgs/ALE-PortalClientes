@@ -11,6 +11,6 @@ function closeLoading() {
 
 function closeSession() {
     window.setTimeout(function () {
-        window.location.pathname = "/frmLogin.aspx";
+        window.location.pathname = "~/Views/frmLogin.aspx";
     }, 5000);
 }
