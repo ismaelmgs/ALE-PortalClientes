@@ -320,8 +320,8 @@
                             <asp:BoundField DataField="anio" />
                             <asp:BoundField DataField="mes" />
                             <asp:BoundField DataField="dia" />
-                            <asp:TemplateField>
-                                <ItemTemplate>
+                            <asp:TemplateField  ItemStyle-HorizontalAlign="Center">
+                                <ItemTemplate >
                                     <asp:ImageButton ID="lkbDownloadDoc" runat="server" ImageUrl="~/Images/icons/descargar.png" Width="30px" Height="32px"
                                                              CommandName="Download" CommandArgument="<%# ((GridViewRow) Container).RowIndex %>" CssClass="btn" />&nbsp;&nbsp;&nbsp;
                                 </ItemTemplate>
