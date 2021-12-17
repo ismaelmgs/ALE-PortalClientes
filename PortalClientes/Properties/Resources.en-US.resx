@@ -1081,6 +1081,6 @@
     <value>Cancel</value>
   </data>
   <data name="Ec_FacturaEdoCuenta" xml:space="preserve">
-    <value>Invoice</value>
+    <value>Tax Documents</value>
   </data>
 </root>

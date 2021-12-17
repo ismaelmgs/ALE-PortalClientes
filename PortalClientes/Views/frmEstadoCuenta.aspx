@@ -315,7 +315,7 @@
                             <asp:BoundField DataField="RazonSocial" />
                             <asp:BoundField DataField="TipoDocumento" />
                             <asp:BoundField DataField="Folio" />
-                            <asp:BoundField DataField="fechaDocumento" />
+                            <asp:BoundField DataField="fechaDocumento" DataFormatString = "{0:dd/MM/yyyy}" />
                             <asp:BoundField DataField="anio" />
                             <asp:BoundField DataField="mes" />
                             <asp:BoundField DataField="dia" />

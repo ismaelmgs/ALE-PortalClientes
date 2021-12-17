@@ -120,6 +120,7 @@ namespace PortalClientes.Views
                 if (eSearchObjDocs != null)
                     eSearchObjDocs(sender, e);
 
+                upaDocsEdoCuenta.Update();
                 mpeDocsEdoCuenta.Show();
             }
         }
@@ -163,12 +164,20 @@ namespace PortalClientes.Views
                 e.Row.Cells[6].Text = Properties.Resources.Ec_Mes;
                 e.Row.Cells[7].Text = Properties.Resources.Ec_Dia;
                 e.Row.Cells[8].Text = Properties.Resources.Ec_Download;
+
+                e.Row.Cells[5].Visible = false;
+                e.Row.Cells[6].Visible = false;
+                e.Row.Cells[7].Visible = false;
             }
 
             if (e.Row.RowType == DataControlRowType.DataRow)
             {
                 LinkButton lkb = (LinkButton)e.Row.FindControl("lkbDownloadDoc");
                 lkb.Text = Properties.Resources.Ec_DownloadDoc;
+
+                e.Row.Cells[5].Visible = false;
+                e.Row.Cells[6].Visible = false;
+                e.Row.Cells[7].Visible = false;
             }
         }
 
