@@ -12,6 +12,7 @@ using PortalClientes.Objetos;
 using NucleoBase.Core;
 using System.Drawing;
 using System.Data;
+using System.IO;
 
 namespace PortalClientes.Views
 {
@@ -118,6 +119,8 @@ namespace PortalClientes.Views
 
                 if (eSearchObjDocs != null)
                     eSearchObjDocs(sender, e);
+
+                mpeDocsEdoCuenta.Show();
             }
         }
 
@@ -125,7 +128,25 @@ namespace PortalClientes.Views
         {
             if (e.CommandName == "Download")
             {
-                
+                var index = Convert.ToInt32(e.CommandArgument);
+                GridViewRow row = gvDocEdoCuenta.Rows[index];
+
+                var path = "\\\\192.168.1.223/Archivos SAP/XML/INV/"; // \\192.168.1.223\Archivos SAP\XML\INV\2021\12\1
+
+                // concatenar anio/mes/dia
+                path += row.Cells[5].Text.S() + "/";
+                path += row.Cells[6].Text.S() + "/";
+                path += row.Cells[7].Text.S() + "/";
+
+                // concatenamos el nombre del archivo
+                path += "FC" + row.Cells[3].Text.S() + ".pdf";
+
+                HttpContext.Current.Response.Clear();
+                HttpContext.Current.Response.ContentType = "application/pdf";
+                var nombre = Path.GetFileName(path).ToString();
+                HttpContext.Current.Response.AppendHeader("Content-Disposition", "attachment; filename=" + nombre);
+                HttpContext.Current.Response.TransmitFile(path);
+                HttpContext.Current.Response.End();
             }
         }
 
@@ -165,6 +186,9 @@ namespace PortalClientes.Views
             lblPagosPeriodoMXN.Text = Properties.Resources.Ec_PagosPeriodo;
             lblMontoReq.Text = Properties.Resources.Ec_PagoRequerido;
             lblMontoReqMXN.Text = Properties.Resources.Ec_PagoRequerido;
+
+            btnCancelar.Text = Properties.Resources.Ec_btnCancelar;
+            lblTituloDocsEdoCuenta.Text = Properties.Resources.Ec_FacturaEdoCuenta;
         }
 
         public void LlenaEstadoCuenta(EstadoCuenta oEstado)
@@ -264,10 +288,11 @@ namespace PortalClientes.Views
 
         public void LlenaDocsEdoCuenta(List<responseDocumentoF> olstRep)
         {
-            gvDocEdoCuenta.DataSource = olstRep;
-            gvDocEdoCuenta.DataBind();
-
-            mpeDocsEdoCuenta.Show();
+            if(olstRep.Count > 0)
+            {
+                gvDocEdoCuenta.DataSource = olstRep;
+                gvDocEdoCuenta.DataBind();
+            }
         }
         #endregion
 

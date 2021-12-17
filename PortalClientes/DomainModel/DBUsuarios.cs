@@ -155,22 +155,11 @@ namespace PortalClientes.DomainModel
                 oMU = ser.Deserialize<List<Matriculas>>(resp);
 
                 return oMU;
-
-
-                //oDB_SP.sConexionSQL = "Data Source=192.168.1.219;Initial Catalog=MexJet360;User ID=sa;Password=SYS.*2015%SQL";
-
-                //return oDB_SP.EjecutarDT("[PortalClientes].[spS_PC_ObtieneMatriculasPorUsuario]", "@IdUsuario", iidUsuario).AsEnumerable().Select(r => new Matriculas()
-                //{
-                //    IdAeronave = r["IdAeroave"].S().I(),
-                //    Serie = r["Serie"].S(),
-                //    Matricula = r["Matricula"].S(),
-                //    GrupoModelo = r["Descripcion"].S(),
-                //}).ToList();
             }
-            catch (Exception)
+            catch (Exception ex)
             {
 
-                throw;
+                throw ex;
             } 
         }
         

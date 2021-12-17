@@ -2,6 +2,25 @@
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="cc1" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+
+    <script type="text/javascript">
+        function OcultarModal() {
+            "use strict";
+            var modalId = '<%=mpeDocsEdoCuenta.ClientID%>';
+            var modal = $find(modalId);
+            modal.hide();
+        }
+        
+        $(document).on('keydown', function (event){
+            if (event.key == "Escape") {
+                var modalcloId = '<%=mpeDocsEdoCuenta.ClientID%>';
+                var modalclo = $find(modalcloId);
+                modalclo.hide();
+            }
+        });
+
+    </script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <asp:UpdatePanel ID="upaPrincipal" runat="server">
@@ -321,6 +340,9 @@
                     </tr>
                 </table>
             </ContentTemplate>
+            <Triggers>
+                <asp:PostBackTrigger ControlID="gvDocEdoCuenta" />
+            </Triggers>
         </asp:UpdatePanel>
     </asp:Panel>
 </asp:Content>

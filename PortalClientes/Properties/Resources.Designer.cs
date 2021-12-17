@@ -1078,6 +1078,15 @@ namespace PortalClientes.Properties {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Cancelar.
+        /// </summary>
+        internal static string Ec_btnCancelar {
+            get {
+                return ResourceManager.GetString("Ec_btnCancelar", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Clave.
         /// </summary>
         internal static string Ec_Clave {
@@ -1110,6 +1119,15 @@ namespace PortalClientes.Properties {
         internal static string Ec_DownloadDoc {
             get {
                 return ResourceManager.GetString("Ec_DownloadDoc", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Facturas.
+        /// </summary>
+        internal static string Ec_FacturaEdoCuenta {
+            get {
+                return ResourceManager.GetString("Ec_FacturaEdoCuenta", resourceCulture);
             }
         }
         

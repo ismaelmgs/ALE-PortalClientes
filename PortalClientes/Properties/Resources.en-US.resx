@@ -1077,4 +1077,10 @@
   <data name="Ec_FechaDoc" xml:space="preserve">
     <value>Date</value>
   </data>
+  <data name="Ec_btnCancelar" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="Ec_FacturaEdoCuenta" xml:space="preserve">
+    <value>Invoice</value>
+  </data>
 </root>
