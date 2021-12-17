@@ -73,8 +73,8 @@ namespace PortalClientes.Views
 
                 if (e.Row.RowType == DataControlRowType.DataRow)
                 {
-                    LinkButton lkb = (LinkButton)e.Row.FindControl("lkbDetalle");
-                    lkb.Text = Properties.Resources.Ec_VerDetalle;
+                    ImageButton lkb = (ImageButton)e.Row.FindControl("lkbDetalle");
+                    //lkb.Text = Properties.Resources.Ec_VerDetalle;
 
                     if(existeDoc > 0) //cambiar a ==0
                     {
@@ -82,8 +82,8 @@ namespace PortalClientes.Views
                     }
                     else
                     {
-                        LinkButton lkbvd = (LinkButton)e.Row.FindControl("lkbViewDocument");
-                        lkbvd.Text = Properties.Resources.Ec_VerFactura;
+                        ImageButton lkbvd = (ImageButton)e.Row.FindControl("lkbViewDocument");
+                        //lkbvd.Text = Properties.Resources.Ec_VerFactura;
                     } 
                 }
             }
@@ -171,8 +171,8 @@ namespace PortalClientes.Views
 
             if (e.Row.RowType == DataControlRowType.DataRow)
             {
-                LinkButton lkb = (LinkButton)e.Row.FindControl("lkbDownloadDoc");
-                lkb.Text = Properties.Resources.Ec_DownloadDoc;
+                ImageButton lkb = (ImageButton)e.Row.FindControl("lkbDownloadDoc");
+                //lkb.Text = Properties.Resources.Ec_DownloadDoc;
 
                 e.Row.Cells[5].Visible = false;
                 e.Row.Cells[6].Visible = false;
