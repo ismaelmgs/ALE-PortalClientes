@@ -1339,7 +1339,7 @@ namespace PortalClientes.Properties {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Facturas.
+        ///   Busca una cadena traducida similar a Documentos.
         /// </summary>
         internal static string Ec_VerFacturaTitle {
             get {

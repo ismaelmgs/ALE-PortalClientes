@@ -56,13 +56,14 @@ namespace PortalClientes.Presenter
                 oMatU.Serie = item.Serie;
                 oMatU.Matricula = item.Matricula;
                 oMatU.GrupoModelo = item.GrupoModelo;
+                oMatU.ClaveCliente = item.ClaveCliente;
 
                 foreach (Matriculas itemU in olstMU)
                 {
                     if (item.IdAeronave == itemU.IdAeronave)
                     {
                         oMatU.sts = 1;
-                        oMatU.ClaveCliente = itemU.ClaveCliente;
+                        //oMatU.ClaveCliente = itemU.ClaveCliente;
                     }
                 }
 

@@ -1042,7 +1042,7 @@
     <value>Detail</value>
   </data>
   <data name="Ec_VerFacturaTitle" xml:space="preserve">
-    <value>Invoices</value>
+    <value>Documents</value>
   </data>
   <data name="Ec_Anio" xml:space="preserve">
     <value>Year</value>

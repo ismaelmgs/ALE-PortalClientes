@@ -67,9 +67,8 @@ namespace PortalClientes.Views
                     e.Row.Cells[6].Text = Properties.Resources.Ec_PagosCreditosUSD;
                     e.Row.Cells[7].Text = Properties.Resources.Ec_NuevosCargosUSD;
                     e.Row.Cells[8].Text = Properties.Resources.Ec_SaldoActualUSD;
-                    e.Row.Cells[9].Text = Properties.Resources.Ec_VerDetalleTitle;
-                        e.Row.Cells[10].Text = Properties.Resources.Ec_VerFacturaTitle;
-                
+                    e.Row.Cells[9].Text = Properties.Resources.Ec_VerFacturaTitle;
+                    e.Row.Cells[10].Text = Properties.Resources.Ec_VerDetalleTitle;
                 }
 
                 if (e.Row.RowType == DataControlRowType.DataRow)

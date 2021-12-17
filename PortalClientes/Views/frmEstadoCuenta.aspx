@@ -185,14 +185,15 @@
                                             <asp:BoundField DataField="pagosCreditoUSD" DataFormatString="{0:c}" />
                                             <asp:BoundField DataField="nuevosCargosUSD" DataFormatString="{0:c}" />
                                             <asp:BoundField DataField="saldoActualUSD" DataFormatString="{0:c}" />
+                                             <asp:TemplateField>
+                                                <ItemTemplate>
+                                                    <asp:ImageButton ID="lkbViewDocument" runat="server" ImageUrl="~/Images/icons/descargar.png" Width="30px" Height="32px"
+                                                             CommandName="ViewDocument" CommandArgument="<%# ((GridViewRow) Container).RowIndex %>" CssClass="btn" />&nbsp;&nbsp;&nbsp;
+                                                </ItemTemplate>
+                                            </asp:TemplateField>
                                             <asp:TemplateField>
                                                 <ItemTemplate>
                                                     <asp:LinkButton ID="lkbDetalle" runat="server" CommandName="Detalle" CommandArgument="<%# ((GridViewRow) Container).RowIndex %>"></asp:LinkButton>
-                                                </ItemTemplate>
-                                            </asp:TemplateField>
-                                             <asp:TemplateField>
-                                                <ItemTemplate>
-                                                    <asp:LinkButton ID="lkbViewDocument" runat="server" CommandName="ViewDocument" CommandArgument="<%# ((GridViewRow) Container).RowIndex %>"></asp:LinkButton>
                                                 </ItemTemplate>
                                             </asp:TemplateField>
                                         </Columns>
@@ -321,7 +322,8 @@
                             <asp:BoundField DataField="dia" />
                             <asp:TemplateField>
                                 <ItemTemplate>
-                                    <asp:LinkButton ID="lkbDownloadDoc" runat="server" CommandName="Download" CommandArgument="<%# ((GridViewRow) Container).RowIndex %>"></asp:LinkButton>
+                                    <asp:ImageButton ID="lkbDownloadDoc" runat="server" ImageUrl="~/Images/icons/descargar.png" Width="30px" Height="32px"
+                                                             CommandName="Download" CommandArgument="<%# ((GridViewRow) Container).RowIndex %>" CssClass="btn" />&nbsp;&nbsp;&nbsp;
                                 </ItemTemplate>
                             </asp:TemplateField>
                         </Columns>
