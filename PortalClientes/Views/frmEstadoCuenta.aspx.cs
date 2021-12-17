@@ -73,8 +73,8 @@ namespace PortalClientes.Views
 
                 if (e.Row.RowType == DataControlRowType.DataRow)
                 {
-                    ImageButton lkb = (ImageButton)e.Row.FindControl("lkbDetalle");
-                    //lkb.Text = Properties.Resources.Ec_VerDetalle;
+                    LinkButton lkb = (LinkButton)e.Row.FindControl("lkbDetalle");
+                    lkb.Text = Properties.Resources.Ec_VerDetalle;
 
                     if(existeDoc > 0) //cambiar a ==0
                     {
