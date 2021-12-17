@@ -323,7 +323,13 @@
                             <asp:TemplateField  ItemStyle-HorizontalAlign="Center">
                                 <ItemTemplate >
                                     <asp:ImageButton ID="lkbDownloadDoc" runat="server" ImageUrl="~/Images/icons/descargar.png" Width="30px" Height="32px"
-                                                             CommandName="Download" CommandArgument="<%# ((GridViewRow) Container).RowIndex %>" CssClass="btn" />&nbsp;&nbsp;&nbsp;
+                                                             CommandName="DownloadPDF" CommandArgument="<%# ((GridViewRow) Container).RowIndex %>" CssClass="btn" />&nbsp;&nbsp;&nbsp;
+                                </ItemTemplate>
+                            </asp:TemplateField>
+                            <asp:TemplateField  ItemStyle-HorizontalAlign="Center">
+                                <ItemTemplate >
+                                    <asp:ImageButton ID="lkbDownloadDocXML" runat="server" ImageUrl="~/Images/icons/descargar.png" Width="30px" Height="32px"
+                                                             CommandName="DownloadXML" CommandArgument="<%# ((GridViewRow) Container).RowIndex %>" CssClass="btn" />&nbsp;&nbsp;&nbsp;
                                 </ItemTemplate>
                             </asp:TemplateField>
                         </Columns>

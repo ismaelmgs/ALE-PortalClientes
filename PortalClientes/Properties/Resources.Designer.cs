@@ -1105,7 +1105,7 @@ namespace PortalClientes.Properties {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Descarga.
+        ///   Busca una cadena traducida similar a Descarga PDF.
         /// </summary>
         internal static string Ec_Download {
             get {
@@ -1119,6 +1119,15 @@ namespace PortalClientes.Properties {
         internal static string Ec_DownloadDoc {
             get {
                 return ResourceManager.GetString("Ec_DownloadDoc", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Descargar XML.
+        /// </summary>
+        internal static string Ec_DownloadXML {
+            get {
+                return ResourceManager.GetString("Ec_DownloadXML", resourceCulture);
             }
         }
         

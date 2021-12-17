@@ -1051,7 +1051,7 @@
     <value>Dia</value>
   </data>
   <data name="Ec_Download" xml:space="preserve">
-    <value>Descarga</value>
+    <value>Descarga PDF</value>
   </data>
   <data name="Ec_DownloadDoc" xml:space="preserve">
     <value>Descargar</value>
@@ -1079,5 +1079,8 @@
   </data>
   <data name="Ec_FacturaEdoCuenta" xml:space="preserve">
     <value>Documentos Fiscales</value>
+  </data>
+  <data name="Ec_DownloadXML" xml:space="preserve">
+    <value>Descargar XML</value>
   </data>
 </root>

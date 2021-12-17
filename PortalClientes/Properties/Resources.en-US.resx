@@ -1054,7 +1054,7 @@
     <value>Day</value>
   </data>
   <data name="Ec_Download" xml:space="preserve">
-    <value>Download</value>
+    <value>Download PDF</value>
   </data>
   <data name="Ec_DownloadDoc" xml:space="preserve">
     <value>Download</value>
@@ -1082,5 +1082,8 @@
   </data>
   <data name="Ec_FacturaEdoCuenta" xml:space="preserve">
     <value>Tax Documents</value>
+  </data>
+  <data name="Ec_DownloadXML" xml:space="preserve">
+    <value>Download XML</value>
   </data>
 </root>

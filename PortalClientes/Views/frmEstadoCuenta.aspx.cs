@@ -22,7 +22,7 @@ namespace PortalClientes.Views
         {
             if (System.Web.HttpContext.Current.Session["UserIdentity"] == null)
             {
-                Response.Redirect("~/frmFinconexion2.aspx");
+                Response.Redirect("~/Views/frmFinconexion2.aspx");
             }
 
             oPresenter = new EstadoCuenta_Presenter(this, new DBEstadoCuenta());
@@ -126,23 +126,36 @@ namespace PortalClientes.Views
 
         protected void gvDocEdoCuenta_RowCommand(object sender, GridViewCommandEventArgs e)
         {
-            if (e.CommandName == "Download")
+            var index = Convert.ToInt32(e.CommandArgument);
+            GridViewRow row = gvDocEdoCuenta.Rows[index];
+
+            var path = "\\\\192.168.1.223/Archivos SAP/XML/INV/"; // \\192.168.1.223\Archivos SAP\XML\INV\2021\12\1
+
+            // concatenar anio/mes/dia
+            path += row.Cells[5].Text.S() + "/";
+            path += row.Cells[6].Text.S() + "/";
+            path += row.Cells[7].Text.S() + "/";
+
+            if (e.CommandName == "DownloadPDF")
             {
-                var index = Convert.ToInt32(e.CommandArgument);
-                GridViewRow row = gvDocEdoCuenta.Rows[index];
-
-                var path = "\\\\192.168.1.223/Archivos SAP/XML/INV/"; // \\192.168.1.223\Archivos SAP\XML\INV\2021\12\1
-
-                // concatenar anio/mes/dia
-                path += row.Cells[5].Text.S() + "/";
-                path += row.Cells[6].Text.S() + "/";
-                path += row.Cells[7].Text.S() + "/";
-
                 // concatenamos el nombre del archivo
                 path += "FC" + row.Cells[3].Text.S() + ".pdf";
 
                 HttpContext.Current.Response.Clear();
                 HttpContext.Current.Response.ContentType = "application/pdf";
+                var nombre = Path.GetFileName(path).ToString();
+                HttpContext.Current.Response.AppendHeader("Content-Disposition", "attachment; filename=" + nombre);
+                HttpContext.Current.Response.TransmitFile(path);
+                HttpContext.Current.Response.End();
+            }
+
+            if(e.CommandName == "DownloadXML")
+            {
+                // concatenamos el nombre del archivo
+                path += "FC" + row.Cells[3].Text.S() + ".xml";
+
+                HttpContext.Current.Response.Clear();
+                HttpContext.Current.Response.ContentType = "application/vnd.apple.installer+xml";
                 var nombre = Path.GetFileName(path).ToString();
                 HttpContext.Current.Response.AppendHeader("Content-Disposition", "attachment; filename=" + nombre);
                 HttpContext.Current.Response.TransmitFile(path);
@@ -163,6 +176,7 @@ namespace PortalClientes.Views
                 e.Row.Cells[6].Text = Properties.Resources.Ec_Mes;
                 e.Row.Cells[7].Text = Properties.Resources.Ec_Dia;
                 e.Row.Cells[8].Text = Properties.Resources.Ec_Download;
+                e.Row.Cells[9].Text = Properties.Resources.Ec_DownloadXML;
 
                 e.Row.Cells[5].Visible = false;
                 e.Row.Cells[6].Visible = false;

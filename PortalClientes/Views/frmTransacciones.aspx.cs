@@ -34,7 +34,7 @@ namespace PortalClientes.Views
         {
             if (System.Web.HttpContext.Current.Session["UserIdentity"] == null)
             {
-                Response.Redirect("~/frmFinconexion2.aspx");
+                Response.Redirect("~/Views/frmFinconexion2.aspx");
             }
 
             var tipo = Convert.ToInt32(Session["tipoTransaccion"]);
