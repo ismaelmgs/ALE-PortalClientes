@@ -187,7 +187,7 @@
                                             <asp:BoundField DataField="saldoActualUSD" DataFormatString="{0:c}" />
                                              <asp:TemplateField ItemStyle-HorizontalAlign="Center">
                                                 <ItemTemplate>
-                                                    <asp:ImageButton ID="lkbViewDocument" runat="server" ImageUrl="~/Images/icons/descargar.png" Width="30px" Height="32px"
+                                                    &nbsp;&nbsp;&nbsp;<asp:ImageButton ID="lkbViewDocument" runat="server" ImageUrl="~/Images/icons/files.png" Width="40px" Height="42px"
                                                              CommandName="ViewDocument" CommandArgument="<%# ((GridViewRow) Container).RowIndex %>" CssClass="btn" />&nbsp;&nbsp;&nbsp;
                                                 </ItemTemplate>
                                             </asp:TemplateField>
