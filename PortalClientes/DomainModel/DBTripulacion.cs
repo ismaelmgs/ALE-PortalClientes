@@ -35,12 +35,10 @@ namespace PortalClientes.DomainModel
 
                 return ep;
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
-                throw;
+                throw ex;
             }
-            
         }
 
         public List<Piloto> ObtenerPilotos()
@@ -65,12 +63,10 @@ namespace PortalClientes.DomainModel
 
                 return p;
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
-                throw;
+                throw ex;
             }
-          
         }
 
     }

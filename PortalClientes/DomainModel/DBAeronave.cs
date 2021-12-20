@@ -45,10 +45,9 @@ namespace PortalClientes.DomainModel
 
                 return a;
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
-                throw;
+                throw ex;
             }
         }
     }

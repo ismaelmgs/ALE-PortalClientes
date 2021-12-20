@@ -20,6 +20,7 @@ namespace PortalClientes.Views
         #region EVENTOS
         protected void Page_Load(object sender, EventArgs e)
         {
+            Session["RefUrl"] = Request.UrlReferrer.ToString();
             oPresenter = new Dashboard_Presenter(this, new DBDashboard());
 
             if (System.Web.HttpContext.Current.Session["UserIdentity"] == null)

@@ -23,6 +23,7 @@ namespace PortalClientes.Views
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            Session["RefUrl"] = Request.UrlReferrer.ToString();
             if (System.Web.HttpContext.Current.Session["UserIdentity"] == null)
             {
                 Response.Redirect("~/Views/frmFinconexion2.aspx");

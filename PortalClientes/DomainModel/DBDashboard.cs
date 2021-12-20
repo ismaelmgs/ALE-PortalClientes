@@ -35,10 +35,9 @@ namespace PortalClientes.DomainModel
 
                 return d;
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
-                throw;
+                throw ex;
             }
         }
 
@@ -68,12 +67,10 @@ namespace PortalClientes.DomainModel
 
                 return d;
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
-                throw;
+                throw ex;
             }
-         
         }
     }
 }

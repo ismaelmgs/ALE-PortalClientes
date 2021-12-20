@@ -42,10 +42,9 @@ namespace PortalClientes.DomainModel
 
                 return d;
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
-                throw;
+                throw ex;
             }
 
         }
@@ -78,10 +77,9 @@ namespace PortalClientes.DomainModel
 
                 return d;
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
-                throw;
+                throw ex;
             }
 
         }
@@ -114,12 +112,10 @@ namespace PortalClientes.DomainModel
 
                 return d;
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
-                throw;
+                throw ex;
             }
-
         }
 
         public List<responseGraficaDuracionVuelos> ObtenerDuracionVuelos(FiltroGrafica filtro)
@@ -150,12 +146,10 @@ namespace PortalClientes.DomainModel
 
                 return d;
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
-                throw;
+                throw ex;
             }
-
         }
 
         public List<responseGraficaHorasVoladas> ObtenerHorasVoladas(FiltroGrafica filtro)
@@ -186,12 +180,10 @@ namespace PortalClientes.DomainModel
 
                 return d;
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
-                throw;
+                throw ex;
             }
-
         }
 
         public List<responseGraficaNoVuelos> ObtenerNoVuelos(FiltroGrafica filtro)
@@ -222,12 +214,10 @@ namespace PortalClientes.DomainModel
 
                 return d;
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
-                throw;
+                throw ex;
             }
-
         }
 
         public List<responseGraficaPromedioCostos> ObtenerPromedioCostos(FiltroGrafica filtro)
@@ -258,12 +248,10 @@ namespace PortalClientes.DomainModel
 
                 return d;
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
-                throw;
+                throw ex;
             }
-
         }
 
         public List<responseGraficaPromedioPasajero> obtenerPromedioPasajero(FiltroGrafica filtro)
@@ -294,12 +282,10 @@ namespace PortalClientes.DomainModel
 
                 return d;
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
-                throw;
+                throw ex;
             }
-
         }
 
         public List<responseGraficaCostoFijoVariable> obtenerCostosFijoVariable(FiltroGraficaFV filtro)
@@ -332,12 +318,10 @@ namespace PortalClientes.DomainModel
 
                 return d;
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
-                throw;
+                throw ex;
             }
-
         }
 
         public List<responseGraficaGastoTotal> obtenerGastoTotal(FiltroGrafica filtro)
@@ -369,10 +353,9 @@ namespace PortalClientes.DomainModel
 
                 return d;
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
-                throw;
+                throw ex;
             }
         }
 
@@ -404,12 +387,10 @@ namespace PortalClientes.DomainModel
 
                 return d;
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
-                throw;
+                throw ex;
             }
-
         }
 
         public List<responseGraficaCostoFijoVariableHora> obtenerCostoFijoVariableHora(FiltroGraficaFV filtro)
@@ -441,12 +422,10 @@ namespace PortalClientes.DomainModel
 
                 return d;
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
-                throw;
+                throw ex;
             }
-
         }
 
         public List<responseGraficaCategorias> obtenerCategoriasPeriodos(FiltroGraficaFV filtro)
@@ -478,12 +457,10 @@ namespace PortalClientes.DomainModel
 
                 return d;
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
-                throw;
+                throw ex;
             }
-
         }
 
         public RutaAeropuerto obtenerRutasAeropuertos (FiltroEvent filtro)
@@ -514,10 +491,9 @@ namespace PortalClientes.DomainModel
 
                 return d;
             }
-            catch (Exception e)
+            catch (Exception ex)
             {
-
-                throw;
+                throw ex;
             }
         }
 
@@ -546,12 +522,10 @@ namespace PortalClientes.DomainModel
 
                 return dm;
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
-                throw;
+                throw ex;
             }
-
         }
     }
 }

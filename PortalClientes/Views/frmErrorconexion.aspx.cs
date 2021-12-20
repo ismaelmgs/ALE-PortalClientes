@@ -13,5 +13,12 @@ namespace PortalClientes.Views
         {
 
         }
+
+        protected void btnRegresarLogin_Click(object sender, EventArgs e)
+        {
+            object refUrl = Session["RefUrl"];
+            if (refUrl != null)
+                Response.Redirect((string)refUrl);
+        }
     }
 }

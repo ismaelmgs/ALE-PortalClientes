@@ -35,10 +35,9 @@ namespace PortalClientes.DomainModel
 
                 return ec;
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
-                throw;
+                throw ex;
             }
         }
 
@@ -89,10 +88,9 @@ namespace PortalClientes.DomainModel
 
                 return ols;
             }
-            catch (Exception e)
+            catch (Exception ex)
             {
-
-                throw;
+                throw ex;
             }
         }
 
@@ -123,10 +121,9 @@ namespace PortalClientes.DomainModel
 
                 return d;
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
-                throw;
+                throw ex;
             }
 
         }

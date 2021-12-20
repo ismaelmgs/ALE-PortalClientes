@@ -35,10 +35,9 @@ namespace PortalClientes.DomainModel
 
                 return ListUsers;
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
-                throw;
+                throw ex;
             }
         }
 
@@ -100,10 +99,9 @@ namespace PortalClientes.DomainModel
 
                 return oUser;
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
-                throw;
+                throw ex;
             }
         }
 
@@ -158,9 +156,8 @@ namespace PortalClientes.DomainModel
             }
             catch (Exception ex)
             {
-
                 throw ex;
-            } 
+            }
         }
         
         public responseCodigoMensaje DesvinculaUsuariosMatriculas(int iIdUsuario)
