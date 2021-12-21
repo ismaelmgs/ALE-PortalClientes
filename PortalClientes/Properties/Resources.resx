@@ -1083,4 +1083,22 @@
   <data name="Ec_DownloadXML" xml:space="preserve">
     <value>Descargar XML</value>
   </data>
+  <data name="Ca_TituloCal" xml:space="preserve">
+    <value>Calendario</value>
+  </data>
+  <data name="Re_GastosAeropuerto" xml:space="preserve">
+    <value>Gastos por Aeropuerto</value>
+  </data>
+  <data name="Re_GastosFijoVariable" xml:space="preserve">
+    <value>Gastos Fijos y variables</value>
+  </data>
+  <data name="Re_GastosProveedor" xml:space="preserve">
+    <value>Gastos por Proveedor</value>
+  </data>
+  <data name="Re_SeccionGatoFijoVariable" xml:space="preserve">
+    <value>Gastos Fijos y variables</value>
+  </data>
+  <data name="Re_TituloRep" xml:space="preserve">
+    <value>Reportes</value>
+  </data>
 </root>

@@ -190,18 +190,19 @@ namespace PortalClientes.DomainModel
             }
         }
 
-        public requestIdUsuario RelacionaUsuarioMatriculas(int iIdUsuario, List<int> oLstMats)
+        public requestIdUsuario RelacionaUsuarioMatriculas(int iIdUsuario, List<Tuple<int, string>> oLstMats)
         {
             try
             {
                 JavaScriptSerializer ser = new JavaScriptSerializer();
                 requestIdUsuario oReq = new requestIdUsuario();
                 
-                foreach (int iAeronave in oLstMats)
+                foreach (var item in oLstMats)
                 {
                     requestUsuarioMatricula oReqU = new requestUsuarioMatricula();
                     oReqU.idUsuario = iIdUsuario;
-                    oReqU.idMatricula = iAeronave;
+                    oReqU.idMatricula = item.Item1;
+                    oReqU.claveCliente = item.Item2;
                     
                     TokenWS oToken = Utils.ObtieneToken;
                     var client = new RestClient(Helper.US_UrlRelacionaUsuarioMats);

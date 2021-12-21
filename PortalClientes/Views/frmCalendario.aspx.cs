@@ -363,6 +363,7 @@ namespace PortalClientes.Views
             btnActiveMonth.Text = Properties.Resources.Ca_ActiveMonth;
             btnActiveTimeLine.Text = Properties.Resources.Ca_ActiveTimeLine;
             btnActiveAgenda.Text = Properties.Resources.Ca_ActiveAgenda;
+            lblCalendario.Text = Properties.Resources.Ca_TituloCal;
         }
 
         public List<Appointment> getAllAppoinments()
