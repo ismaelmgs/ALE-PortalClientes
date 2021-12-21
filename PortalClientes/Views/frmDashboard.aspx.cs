@@ -69,12 +69,12 @@ namespace PortalClientes.Views
             if(Utils.Idioma == "es-MX")
             {
                 fechaSalida = String.Format("{0} de {1} de {2} {3}", Convert.ToDateTime(oDashboard.Salida).ToString("dd"), Convert.ToDateTime(oDashboard.Salida).ToString("MMMM"), Convert.ToDateTime(oDashboard.Salida).ToString("yyyy"), Convert.ToDateTime(oDashboard.Salida).ToString("HH:mm"));
-                fechaLlegada = String.Format("{0} de {1} de {2} {3}", Convert.ToDateTime(oDashboard.Llegada).ToString("dd"), Convert.ToDateTime(oDashboard.Llegada).ToString("MMMM"), Convert.ToDateTime(oDashboard.Llegada).ToString("yyyy"), Convert.ToDateTime(oDashboard.Salida).ToString("HH:mm"));
+                fechaLlegada = String.Format("{0} de {1} de {2} {3}", Convert.ToDateTime(oDashboard.Llegada).ToString("dd"), Convert.ToDateTime(oDashboard.Llegada).ToString("MMMM"), Convert.ToDateTime(oDashboard.Llegada).ToString("yyyy"), Convert.ToDateTime(oDashboard.Llegada).ToString("HH:mm"));
             }
             else
             {
                 fechaSalida = String.Format("{0} {1} {2} {3}", Convert.ToDateTime(oDashboard.Salida).ToString("dd"), Convert.ToDateTime(oDashboard.Salida).ToString("MMM"), Convert.ToDateTime(oDashboard.Salida).ToString("yyyy"), Convert.ToDateTime(oDashboard.Salida).ToString("HH:mm"));
-                fechaLlegada = String.Format("{0} {1} {2} {3}", Convert.ToDateTime(oDashboard.Llegada).ToString("dd"), Convert.ToDateTime(oDashboard.Llegada).ToString("MMM"), Convert.ToDateTime(oDashboard.Llegada).ToString("yyyy"), Convert.ToDateTime(oDashboard.Salida).ToString("HH:mm"));
+                fechaLlegada = String.Format("{0} {1} {2} {3}", Convert.ToDateTime(oDashboard.Llegada).ToString("dd"), Convert.ToDateTime(oDashboard.Llegada).ToString("MMM"), Convert.ToDateTime(oDashboard.Llegada).ToString("yyyy"), Convert.ToDateTime(oDashboard.Llegada).ToString("HH:mm"));
             }
 
             lblOrigen.Text = oDashboard.CiudadOrigen;
