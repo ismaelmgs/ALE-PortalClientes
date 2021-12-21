@@ -1635,6 +1635,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>dsDetalleGastosUSD.xsd</DependentUpon>
     </Compile>
+    <Compile Include="RPT\dsDetalleVuelo.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsDetalleVuelo.xsd</DependentUpon>
+    </Compile>
     <Compile Include="RPT\dsFiltrosGastos.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -1944,6 +1949,17 @@
     </Content>
     <Content Include="RPT\dsFiltrosGastos.xsc">
       <DependentUpon>dsFiltrosGastos.xsd</DependentUpon>
+    </Content>
+    <Content Include="RPT\dsDetalleVuelo.xsc">
+      <DependentUpon>dsDetalleVuelo.xsd</DependentUpon>
+    </Content>
+    <None Include="RPT\dsDetalleVuelo.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsDetalleVuelo.Designer.cs</LastGenOutput>
+    </None>
+    <Content Include="RPT\dsDetalleVuelo.xss">
+      <DependentUpon>dsDetalleVuelo.xsd</DependentUpon>
     </Content>
     <None Include="RPT\dsFiltrosGastos.xsd">
       <SubType>Designer</SubType>

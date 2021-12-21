@@ -35,6 +35,7 @@ namespace PortalClientes.DomainModel
                 d = ser.Deserialize<List<DatosCalendario>>(resp);
 
                 Session["SSEventos"] = d;
+                Session["tableRpt"] = resp;
 
                 foreach (var item in d)
                 {

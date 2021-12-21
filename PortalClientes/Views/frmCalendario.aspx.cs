@@ -16,6 +16,8 @@ using NucleoBase.Core;
 using System.Web.Services;
 using CrystalDecisions.CrystalReports.Engine;
 using CrystalDecisions.Shared;
+using System.Data;
+using Newtonsoft.Json;
 
 namespace PortalClientes.Views
 {
@@ -119,12 +121,13 @@ namespace PortalClientes.Views
         {
             try
             {
+                DataTable dt = (DataTable)HttpContext.Current.Session["dataTableItem"];
                 string strPath = string.Empty;
                 ReportDocument rd = new ReportDocument();
                 strPath = Server.MapPath("RPT\\CrystalReport1.rpt");
                 strPath = strPath.Replace("\\Views", "");
                 rd.Load(strPath, OpenReportMethod.OpenReportByDefault);
-                //rd.SetDataSource(dsGastos);
+                rd.SetDataSource(dt);
 
                 //if (iTipoReporte == 1)
                 rd.ExportToHttpResponse(ExportFormatType.PortableDocFormat, Response, true, "DetalleVuelo");
@@ -410,10 +413,43 @@ namespace PortalClientes.Views
             try
             {
                 List<DatosCalendario> olst = (List<DatosCalendario>)HttpContext.Current.Session["SSEventos"];
+                DataTable dt = (DataTable)JsonConvert.DeserializeObject((String)HttpContext.Current.Session["tableRpt"], (typeof(DataTable)));
+
+                // generamos el item que va al reporte
+                string expresion = "legId = " + Id;
+                DataTable tblFiltered = dt.Select(expresion).AsEnumerable().CopyToDataTable();
                 var item = olst.Find(x => x.legId == Convert.ToInt32(Id));
+
+                tblFiltered.Columns.Add("TiempoVuelo", typeof(System.String));
+                tblFiltered.Columns.Add("FechaInicioStr", typeof(System.String));
+                tblFiltered.Columns.Add("HoraInicio", typeof(System.String));
+                tblFiltered.Columns.Add("FechaFinStr", typeof(System.String));
+                tblFiltered.Columns.Add("HoraFin", typeof(System.String));
+                tblFiltered.Columns.Add("Matricula", typeof(System.String));
+                tblFiltered.Columns.Add("Evento", typeof(System.String));
+                tblFiltered.Columns.Add("statusVuelo", typeof(System.String));
+
+                foreach (DataRow row in tblFiltered.Rows)
+                {
+                    row["TiempoVuelo"] = (item.FechaFin - item.FechaInicio).ToString(@"hh\h\ mm\m\ ");
+                    row["FechaInicioStr"] = item.FechaInicio.ToLongDateString();
+                    row["FechaFinStr"] = item.FechaFin.ToLongDateString();
+                    row["HoraInicio"] = item.FechaInicio.ToShortTimeString();
+                    row["HoraFin"] = item.FechaFin.ToShortTimeString();
+                    row["Matricula"] = Utils.MatriculaActual;
+                    row["Evento"] = item.recType == "M" ? "Mantenimiento" : "Vuelo";
+                    row["tripStat"] = item.tripStat == "X" ? "Cancelado" : "Pendiente";
+                    row["statusVuelo"] = item.FechaInicio < DateTime.Now ? "Completado" : "En Proceso";
+                    row["pasajeros"] = string.Join(", ", item.pasajeros.Split('|').ToList());
+                    row["piloto"] = item.primerNomPil + " " + item.segNomPil + " " + item.apellidosPil + ", " + item.primerNomCop + " " + item.segNomCop + " " + item.apellidosCop;
+                }
+
+
+                HttpContext.Current.Session["dataTableItem"] = tblFiltered;
+
                 DatosModal dm = new DatosModal();
 
-                if(item != null)
+                if (item != null)
                 {
                     dm.origen = item.origen;
                     dm.fboNombreOrigen = item.fboNombreOrigen;
@@ -448,7 +484,7 @@ namespace PortalClientes.Views
 
                 return dm;
             }
-            catch (Exception)
+            catch (Exception ex)
             {
                 return null;
             }
