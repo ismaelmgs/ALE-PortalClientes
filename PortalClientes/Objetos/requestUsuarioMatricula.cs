@@ -9,5 +9,6 @@ namespace PortalClientes.Objetos
     {
         public int idUsuario { set; get; }
         public int idMatricula { set; get; }
+        public string claveCliente { set; get; }
     }
 }

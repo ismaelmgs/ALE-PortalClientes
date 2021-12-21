@@ -14,6 +14,7 @@ namespace PortalClientes.Interfaces
         int iIdUsuario { set; get; }
         List<int> olst { set; get; }
         int iIdUsuarioOrigen { set; get; }
+        List<Tuple<int, string>> olsTV { set; get; }
 
 
         void CargaUsuarios(List<Usuario> oLstUsers);

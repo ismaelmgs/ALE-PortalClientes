@@ -158,7 +158,7 @@ namespace PortalClientes.Views
 
         protected void btnAceptarMats_Click(object sender, EventArgs e)
         {
-            List<int> olsMats = new List<int>();
+            List<Tuple<int, string>> olsMats = new List<Tuple<int, string>>();
             foreach (GridViewRow row in gvMatriculas.Rows)
             {
                 CheckBox chk = (CheckBox)row.FindControl("chkSeleccione");
@@ -166,12 +166,12 @@ namespace PortalClientes.Views
                 {
                     if (chk.Checked)
                     {
-                        olsMats.Add(gvMatriculas.DataKeys[row.RowIndex]["IdAeronave"].S().I());
+                        olsMats.Add(new Tuple<int, string>(gvMatriculas.DataKeys[row.RowIndex]["IdAeronave"].S().I(), row.Cells[2].Text));
                     }
                 }
             }
 
-            olst = olsMats;
+            olsTV = olsMats;
 
             if (eSaveMatriculasUsuario != null)
                 eSaveMatriculasUsuario(sender, e);
@@ -596,6 +596,12 @@ namespace PortalClientes.Views
         {
             set { ViewState["VSLista"] = value; }
             get { return (List<int>)ViewState["VSLista"]; }
+        }
+
+        public List<Tuple<int, string>> olsTV
+        {
+            set { ViewState["VSLista"] = value; }
+            get { return (List<Tuple<int, string>>)ViewState["VSLista"]; }
         }
 
         public int iIdUsuarioOrigen

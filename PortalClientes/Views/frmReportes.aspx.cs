@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using PortalClientes.Clases;
 using NucleoBase.Core;
 
 namespace PortalClientes.Views
@@ -17,6 +18,19 @@ namespace PortalClientes.Views
             {
                 Response.Redirect("~/Views/frmFinconexion2.aspx");
             }
+            TextBox milabel = (TextBox)this.Master.FindControl("txtLang");
+            if (milabel.Text != Utils.Idioma && milabel.Text != string.Empty)
+            {
+                Utils.Idioma = milabel.Text;
+                System.Threading.Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo(Utils.Idioma);
+                ArmaReportes();
+            }
+            else
+            {
+                System.Threading.Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo(Utils.Idioma);
+                ArmaReportes();
+            }
+
         }
 
         protected void btnDetReporte_Click(object sender, EventArgs e)
@@ -27,6 +41,15 @@ namespace PortalClientes.Views
             Session["reporteDetalle"] = report.I();
 
             Response.Redirect("frmDetalleReportes.aspx");
+        }
+
+        private void ArmaReportes()
+        {
+            lblReportesFijosVariables.Text = Properties.Resources.Re_TituloRep;
+            lblReportesFijosVar.Text = Properties.Resources.Re_SeccionGatoFijoVariable;
+            lblRepGastosFijosVariables.Text = Properties.Resources.Re_GastosFijoVariable;
+            lblRepGastosAeropuerto.Text = Properties.Resources.Re_GastosAeropuerto;
+            lblRepGastosProveedor.Text = Properties.Resources.Re_GastosProveedor;
         }
     }
 }

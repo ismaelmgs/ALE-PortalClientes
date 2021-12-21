@@ -78,7 +78,7 @@ namespace PortalClientes.Presenter
             responseCodigoMensaje respuesta = oIGesCat.DesvinculaUsuariosMatriculas(oIView.iIdUsuario);
             if (respuesta.codigo == "0000")
             {
-                requestIdUsuario ReqUsuario = oIGesCat.RelacionaUsuarioMatriculas(oIView.iIdUsuario, oIView.olst);
+                requestIdUsuario ReqUsuario = oIGesCat.RelacionaUsuarioMatriculas(oIView.iIdUsuario, oIView.olsTV);
             }
         }
 
