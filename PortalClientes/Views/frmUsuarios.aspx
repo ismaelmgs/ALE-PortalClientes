@@ -136,7 +136,7 @@
                         <div class="row">
                             <div class="col-sm-12">
                                 <div class="card-box table-responsive">
-                                    <div class="col-lg-12" style="text-align: right">
+                                    <div class="col-lg-12" style="text-align: right;margin-bottom:4px;">
                                         <asp:Button ID="btnAgregar" runat="server" Text="" CssClass="btn btn-success" OnClick="btnAgregar_Click" />
                                     </div>
                                     <asp:GridView ID="gvUsuarios" runat="server" AutoGenerateColumns="false" CssClass="table table-striped table-bordered table-hover"
