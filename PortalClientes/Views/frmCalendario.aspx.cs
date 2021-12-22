@@ -367,6 +367,7 @@ namespace PortalClientes.Views
             btnActiveTimeLine.Text = Properties.Resources.Ca_ActiveTimeLine;
             btnActiveAgenda.Text = Properties.Resources.Ca_ActiveAgenda;
             lblCalendario.Text = Properties.Resources.Ca_TituloCal;
+            lblllegadaa.Text = Properties.Resources.Ca_LlegadaA;
         }
 
         public List<Appointment> getAllAppoinments()
@@ -428,9 +429,11 @@ namespace PortalClientes.Views
                 tblFiltered.Columns.Add("Matricula", typeof(System.String));
                 tblFiltered.Columns.Add("Evento", typeof(System.String));
                 tblFiltered.Columns.Add("statusVuelo", typeof(System.String));
+                tblFiltered.Columns.Add("idioma", typeof(System.String));
 
                 foreach (DataRow row in tblFiltered.Rows)
                 {
+                    row["idioma"] = Utils.Idioma;
                     row["TiempoVuelo"] = (item.FechaFin - item.FechaInicio).ToString(@"hh\h\ mm\m\ ");
                     row["FechaInicioStr"] = item.FechaInicio.ToLongDateString();
                     row["FechaFinStr"] = item.FechaFin.ToLongDateString();

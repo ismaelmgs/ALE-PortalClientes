@@ -12,7 +12,7 @@
   <xs:element name="dsDetalleVuelo" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="dsDetalleVuelo" msprop:Generator_UserDSName="dsDetalleVuelo">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="DatosCalendario" msprop:Generator_TableClassName="DatosCalendarioDataTable" msprop:Generator_TableVarName="tableDatosCalendario" msprop:Generator_TablePropName="DatosCalendario" msprop:Generator_RowDeletingName="DatosCalendarioRowDeleting" msprop:Generator_RowChangingName="DatosCalendarioRowChanging" msprop:Generator_RowEvHandlerName="DatosCalendarioRowChangeEventHandler" msprop:Generator_RowDeletedName="DatosCalendarioRowDeleted" msprop:Generator_UserTableName="DatosCalendario" msprop:Generator_RowChangedName="DatosCalendarioRowChanged" msprop:Generator_RowEvArgName="DatosCalendarioRowChangeEvent" msprop:Generator_RowClassName="DatosCalendarioRow">
+        <xs:element name="DatosCalendario" msprop:Generator_TableClassName="DatosCalendarioDataTable" msprop:Generator_TableVarName="tableDatosCalendario" msprop:Generator_RowChangedName="DatosCalendarioRowChanged" msprop:Generator_TablePropName="DatosCalendario" msprop:Generator_RowDeletingName="DatosCalendarioRowDeleting" msprop:Generator_RowChangingName="DatosCalendarioRowChanging" msprop:Generator_RowEvHandlerName="DatosCalendarioRowChangeEventHandler" msprop:Generator_RowDeletedName="DatosCalendarioRowDeleted" msprop:Generator_RowClassName="DatosCalendarioRow" msprop:Generator_UserTableName="DatosCalendario" msprop:Generator_RowEvArgName="DatosCalendarioRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="tripNum" msprop:Generator_ColumnVarNameInTable="columntripNum" msprop:Generator_ColumnPropNameInRow="tripNum" msprop:Generator_ColumnPropNameInTable="tripNumColumn" msprop:Generator_UserColumnName="tripNum" type="xs:int" minOccurs="0" />
@@ -61,6 +61,7 @@
               <xs:element name="Matricula" msprop:Generator_ColumnVarNameInTable="columnMatricula" msprop:Generator_ColumnPropNameInRow="Matricula" msprop:Generator_ColumnPropNameInTable="MatriculaColumn" msprop:Generator_UserColumnName="Matricula" type="xs:string" minOccurs="0" />
               <xs:element name="Evento" msprop:Generator_ColumnVarNameInTable="columnEvento" msprop:Generator_ColumnPropNameInRow="Evento" msprop:Generator_ColumnPropNameInTable="EventoColumn" msprop:Generator_UserColumnName="Evento" type="xs:string" minOccurs="0" />
               <xs:element name="statusVuelo" msprop:Generator_ColumnVarNameInTable="columnstatusVuelo" msprop:Generator_ColumnPropNameInRow="statusVuelo" msprop:Generator_ColumnPropNameInTable="statusVueloColumn" msprop:Generator_UserColumnName="statusVuelo" type="xs:string" minOccurs="0" />
+              <xs:element name="idioma" msprop:Generator_ColumnVarNameInTable="columnidioma" msprop:Generator_ColumnPropNameInRow="idioma" msprop:Generator_ColumnPropNameInTable="idiomaColumn" msprop:Generator_UserColumnName="idioma" type="xs:string" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>

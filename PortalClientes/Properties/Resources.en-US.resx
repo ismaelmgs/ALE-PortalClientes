@@ -1104,4 +1104,7 @@
   <data name="Re_TituloRep" xml:space="preserve">
     <value>Reports</value>
   </data>
+  <data name="Ca_LlegadaA" xml:space="preserve">
+    <value>Arrive to:</value>
+  </data>
 </root>
