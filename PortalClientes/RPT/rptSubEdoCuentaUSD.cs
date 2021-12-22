@@ -16,14 +16,14 @@ namespace PortalClientes.RPT {
     using CrystalDecisions.CrystalReports.Engine;
     
     
-    public class rptEstadoCuenta : ReportClass {
+    public class rptSubEdoCuentaUSD : ReportClass {
         
-        public rptEstadoCuenta() {
+        public rptSubEdoCuentaUSD() {
         }
         
         public override string ResourceName {
             get {
-                return "rptEstadoCuenta.rpt";
+                return "rptSubEdoCuentaUSD.rpt";
             }
             set {
                 // Do nothing
@@ -41,7 +41,7 @@ namespace PortalClientes.RPT {
         
         public override string FullResourceName {
             get {
-                return "PortalClientes.RPT.rptEstadoCuenta.rpt";
+                return "PortalClientes.RPT.rptSubEdoCuentaUSD.rpt";
             }
             set {
                 // Do nothing
@@ -90,9 +90,9 @@ namespace PortalClientes.RPT {
     }
     
     [System.Drawing.ToolboxBitmapAttribute(typeof(CrystalDecisions.Shared.ExportOptions), "report.bmp")]
-    public class CachedrptEstadoCuenta : Component, ICachedReport {
+    public class CachedrptSubEdoCuentaUSD : Component, ICachedReport {
         
-        public CachedrptEstadoCuenta() {
+        public CachedrptSubEdoCuentaUSD() {
         }
         
         [Browsable(false)]
@@ -129,7 +129,7 @@ namespace PortalClientes.RPT {
         }
         
         public virtual CrystalDecisions.CrystalReports.Engine.ReportDocument CreateReport() {
-            rptEstadoCuenta rpt = new rptEstadoCuenta();
+            rptSubEdoCuentaUSD rpt = new rptSubEdoCuentaUSD();
             rpt.Site = this.Site;
             return rpt;
         }

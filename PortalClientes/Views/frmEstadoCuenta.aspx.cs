@@ -13,6 +13,8 @@ using NucleoBase.Core;
 using System.Drawing;
 using System.Data;
 using System.IO;
+using CrystalDecisions.CrystalReports.Engine;
+using CrystalDecisions.Shared;
 
 namespace PortalClientes.Views
 {
@@ -195,6 +197,19 @@ namespace PortalClientes.Views
             }
         }
 
+        protected void btnRepoEdoCuenta_Click(object sender, EventArgs e)
+        {
+            string strPath = string.Empty;
+            ReportDocument rd = new ReportDocument();
+            strPath = Server.MapPath("RPT\\rptEstadoCuenta.rpt");
+            strPath = strPath.Replace("\\Views", "");
+            rd.Load(strPath, OpenReportMethod.OpenReportByDefault);
+            //rd.SetDataSource(dsGastos);
+
+            //if (iTipoReporte == 1)
+                rd.ExportToHttpResponse(ExportFormatType.PortableDocFormat, Response, true, "EstadoCuenta");
+        }
+
         #region METODOS
         private void ArmarEstadoCuenta()
         {
@@ -354,5 +369,7 @@ namespace PortalClientes.Views
         }
 
         #endregion
+
+        
     }
 }
