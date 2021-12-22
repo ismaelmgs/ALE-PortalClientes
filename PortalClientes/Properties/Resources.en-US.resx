@@ -127,7 +127,7 @@
     <value>Cancel</value>
   </data>
   <data name="CerrarSesion" xml:space="preserve">
-    <value>LogOut</value>
+    <value>Logout</value>
   </data>
   <data name="Ce_9999" xml:space="preserve">
     <value>The username and password do not exist.</value>

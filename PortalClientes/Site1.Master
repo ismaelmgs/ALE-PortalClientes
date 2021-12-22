@@ -157,7 +157,7 @@
                                 <a href="javascript:;" class="user-profile dropdown-toggle" aria-haspopup="true" id="navbarDropdown" data-toggle="dropdown" aria-expanded="false">
                                     <img src='<%=ResolveUrl("~/build/images/img.jpg")%>' alt="" style="z-index:100;margin-top:-10px;"><asp:Label ID="lblAeronave" runat="server" Text="" Font-Bold="true"></asp:Label>
                                 </a>
-                                <div class="dropdown-menu dropdown-usermenu pull-right" aria-labelledby="navbarDropdown" style="width: 320px; margin-top:25px;">
+                                <div class="dropdown-menu dropdown-usermenu pull-right" aria-labelledby="navbarDropdown" style="width: 230px; margin-top:25px;">
                                     <%--<a class="dropdown-item" href="javascript:;">
                                         <asp:Label ID="lblUsuario" runat="server" Text="Usuario" Font-Bold="true"></asp:Label>
                                         <i class="fa fa-user" style="position: absolute; right: 22px;"></i></a>--%>
