@@ -68,6 +68,26 @@
                                                     </asp:LinkButton>
                                                 </td>
                                             </tr>
+                                            <tr>
+                                                <td style="height: 3px;"></td>
+                                            </tr>
+                                            <tr style="background-color: #00000003;">
+                                                <td style="border-bottom: 1px solid #dee2e6; padding: 6px;">
+                                                    <asp:LinkButton runat="server" ID="btnResGastosVuelos" OnClick="btnDetReporte_Click" data-report="4">
+                                                        <img src="../build/images/detalle_gatos.png" style="width: 32px;" />&nbsp;<span style="font-size: 17px; font-weight: bold;"><asp:Label ID="lblResumenGastosVuelos" runat="server" Text=" Resumen de gastos / Vuelos" Font-Bold="true"></asp:Label></span><br />
+                                                    </asp:LinkButton>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td style="height: 3px;"></td>
+                                            </tr>
+                                            <tr style="background-color: #00000003;">
+                                                <td style="border-bottom: 1px solid #dee2e6; padding: 6px;">
+                                                    <asp:LinkButton runat="server" ID="btnDetGastosVuelos" OnClick="btnDetReporte_Click" data-report="5">
+                                                        <img src="../build/images/detalle_gatos.png" style="width: 32px;" />&nbsp;<span style="font-size: 17px; font-weight: bold;"><asp:Label ID="lblDetalleGastosVuelos" runat="server" Text=" Detalle de gastos / Vuelos" Font-Bold="true"></asp:Label></span><br />
+                                                    </asp:LinkButton>
+                                                </td>
+                                            </tr>
                                         </table>
 
                                     </div>
