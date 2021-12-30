@@ -11,6 +11,7 @@ namespace PortalClientes.Interfaces
         void CargarReporteGastosFV(List<responseGraficaCostoFijoVariable> orptCostoFijoVariable);
         void CargarReporteGastosAe(List<responseGraficaAeropuerto> orptAeropuerto);
         void CargarReporteGastosProve(List<responseGraficaProveedores> orptProveedores);
+        void CargarReporteResumenGastosVuelos(List<rptResumenGastosVuelos> orptResumenGastosVuelos);
         int iReporte { get; }
     }
 }

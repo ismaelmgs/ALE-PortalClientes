@@ -1655,6 +1655,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>dsResumenGastos.xsd</DependentUpon>
     </Compile>
+    <Compile Include="RPT\dsResumenGastosVuelos.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsResumenGastosVuelos.xsd</DependentUpon>
+    </Compile>
     <Compile Include="RPT\dsTableAdminAnual.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -1672,18 +1677,23 @@
       <DependentUpon>rptDetalleGastos.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
-<<<<<<< HEAD
     <Compile Include="RPT\rptGraficaAdminAnual.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>rptGraficaAdminAnual.rpt</DependentUpon>
-=======
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="RPT\rptEstadoCuenta.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>rptEstadoCuenta.rpt</DependentUpon>
->>>>>>> 915a55aa725a50ad6db9ec84b5b79d26e33fae13
       <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="RPT\rptResumenGastosVuelos.cs">
+      <DependentUpon>rptResumenGastosVuelos.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
     </Compile>
     <Compile Include="RPT\rptResumenGastos.cs">
       <AutoGen>True</AutoGen>
@@ -2041,6 +2051,17 @@
     <Content Include="RPT\dsTableAdminAnual.xsc">
       <DependentUpon>dsTableAdminAnual.xsd</DependentUpon>
     </Content>
+    <Content Include="RPT\dsResumenGastosVuelos.xsc">
+      <DependentUpon>dsResumenGastosVuelos.xsd</DependentUpon>
+    </Content>
+    <None Include="RPT\dsResumenGastosVuelos.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsResumenGastosVuelos.Designer.cs</LastGenOutput>
+    </None>
+    <Content Include="RPT\dsResumenGastosVuelos.xss">
+      <DependentUpon>dsResumenGastosVuelos.xsd</DependentUpon>
+    </Content>
     <None Include="RPT\dsTableAdminAnual.xsd">
       <SubType>Designer</SubType>
       <Generator>MSDataSetGenerator</Generator>
@@ -2093,6 +2114,10 @@
     <EmbeddedResource Include="RPT\rptEstadoCuenta.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>rptEstadoCuenta.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RPT\rptResumenGastosVuelos.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptResumenGastosVuelos.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="RPT\rptResumenGastos.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>

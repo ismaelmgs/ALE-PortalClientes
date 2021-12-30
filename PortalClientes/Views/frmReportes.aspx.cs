@@ -37,8 +37,10 @@ namespace PortalClientes.Views
         {
             LinkButton button = (LinkButton)sender;
             string report = button.Attributes["data-report"];
+            string rpt = button.Attributes["data-rpt"];
 
             Session["reporteDetalle"] = report.I();
+            Session["isRpt"] = rpt.I();
 
             Response.Redirect("frmDetalleReportes.aspx");
         }
@@ -50,6 +52,8 @@ namespace PortalClientes.Views
             lblRepGastosFijosVariables.Text = Properties.Resources.Re_GastosFijoVariable;
             lblRepGastosAeropuerto.Text = Properties.Resources.Re_GastosAeropuerto;
             lblRepGastosProveedor.Text = Properties.Resources.Re_GastosProveedor;
+            lblResumenGastosVuelos.Text = Properties.Resources.Re_ResumenGastosVuelos;
+            lblDetalleGastosVuelos.Text = Properties.Resources.Re_DetalleGastosVuelos;
         }
     }
 }

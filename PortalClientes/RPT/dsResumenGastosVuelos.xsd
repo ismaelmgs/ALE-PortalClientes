@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="dsResumenGastosVuelos" targetNamespace="http://tempuri.org/dsResumenGastosVuelos.xsd" xmlns:mstns="http://tempuri.org/dsResumenGastosVuelos.xsd" xmlns="http://tempuri.org/dsResumenGastosVuelos.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="dsResumenGastosVuelos" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="dsResumenGastosVuelos" msprop:Generator_UserDSName="dsResumenGastosVuelos">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="tablaDatos" msprop:Generator_TableClassName="tablaDatosDataTable" msprop:Generator_TableVarName="tabletablaDatos" msprop:Generator_TablePropName="tablaDatos" msprop:Generator_RowDeletingName="tablaDatosRowDeleting" msprop:Generator_RowChangingName="tablaDatosRowChanging" msprop:Generator_RowEvHandlerName="tablaDatosRowChangeEventHandler" msprop:Generator_RowDeletedName="tablaDatosRowDeleted" msprop:Generator_UserTableName="tablaDatos" msprop:Generator_RowChangedName="tablaDatosRowChanged" msprop:Generator_RowEvArgName="tablaDatosRowChangeEvent" msprop:Generator_RowClassName="tablaDatosRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Anio" msprop:Generator_ColumnVarNameInTable="columnAnio" msprop:Generator_ColumnPropNameInRow="Anio" msprop:Generator_ColumnPropNameInTable="AnioColumn" msprop:Generator_UserColumnName="Anio" type="xs:string" minOccurs="0" />
+              <xs:element name="Mes" msprop:Generator_ColumnVarNameInTable="columnMes" msprop:Generator_ColumnPropNameInRow="Mes" msprop:Generator_ColumnPropNameInTable="MesColumn" msprop:Generator_UserColumnName="Mes" type="xs:string" minOccurs="0" />
+              <xs:element name="NoVuelos" msprop:Generator_ColumnVarNameInTable="columnNoVuelos" msprop:Generator_ColumnPropNameInRow="NoVuelos" msprop:Generator_ColumnPropNameInTable="NoVuelosColumn" msprop:Generator_UserColumnName="NoVuelos" type="xs:int" minOccurs="0" />
+              <xs:element name="TotalMXN" msprop:Generator_ColumnVarNameInTable="columnTotalMXN" msprop:Generator_ColumnPropNameInRow="TotalMXN" msprop:Generator_ColumnPropNameInTable="TotalMXNColumn" msprop:Generator_UserColumnName="TotalMXN" type="xs:decimal" minOccurs="0" />
+              <xs:element name="TotalUSD" msprop:Generator_ColumnVarNameInTable="columnTotalUSD" msprop:Generator_ColumnPropNameInRow="TotalUSD" msprop:Generator_ColumnPropNameInTable="TotalUSDColumn" msprop:Generator_UserColumnName="TotalUSD" type="xs:decimal" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Totales" msprop:Generator_TableClassName="TotalesDataTable" msprop:Generator_TableVarName="tableTotales" msprop:Generator_TablePropName="Totales" msprop:Generator_RowDeletingName="TotalesRowDeleting" msprop:Generator_RowChangingName="TotalesRowChanging" msprop:Generator_RowEvHandlerName="TotalesRowChangeEventHandler" msprop:Generator_RowDeletedName="TotalesRowDeleted" msprop:Generator_UserTableName="Totales" msprop:Generator_RowChangedName="TotalesRowChanged" msprop:Generator_RowEvArgName="TotalesRowChangeEvent" msprop:Generator_RowClassName="TotalesRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="TotalesMXN" msprop:Generator_ColumnVarNameInTable="columnTotalesMXN" msprop:Generator_ColumnPropNameInRow="TotalesMXN" msprop:Generator_ColumnPropNameInTable="TotalesMXNColumn" msprop:Generator_UserColumnName="TotalesMXN" type="xs:decimal" minOccurs="0" />
+              <xs:element name="TotalesUSD" msprop:Generator_ColumnVarNameInTable="columnTotalesUSD" msprop:Generator_ColumnPropNameInRow="TotalesUSD" msprop:Generator_ColumnPropNameInTable="TotalesUSDColumn" msprop:Generator_UserColumnName="TotalesUSD" type="xs:decimal" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Generales" msprop:Generator_TableClassName="GeneralesDataTable" msprop:Generator_TableVarName="tableGenerales" msprop:Generator_TablePropName="Generales" msprop:Generator_RowDeletingName="GeneralesRowDeleting" msprop:Generator_RowChangingName="GeneralesRowChanging" msprop:Generator_RowEvHandlerName="GeneralesRowChangeEventHandler" msprop:Generator_RowDeletedName="GeneralesRowDeleted" msprop:Generator_UserTableName="Generales" msprop:Generator_RowChangedName="GeneralesRowChanged" msprop:Generator_RowEvArgName="GeneralesRowChangeEvent" msprop:Generator_RowClassName="GeneralesRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Anio" msprop:Generator_ColumnVarNameInTable="columnAnio" msprop:Generator_ColumnPropNameInRow="Anio" msprop:Generator_ColumnPropNameInTable="AnioColumn" msprop:Generator_UserColumnName="Anio" type="xs:string" minOccurs="0" />
+              <xs:element name="Periodo" msprop:Generator_ColumnVarNameInTable="columnPeriodo" msprop:Generator_ColumnPropNameInRow="Periodo" msprop:Generator_ColumnPropNameInTable="PeriodoColumn" msprop:Generator_UserColumnName="Periodo" type="xs:string" minOccurs="0" />
+              <xs:element name="Idioma" msprop:Generator_ColumnVarNameInTable="columnIdioma" msprop:Generator_ColumnPropNameInRow="Idioma" msprop:Generator_ColumnPropNameInTable="IdiomaColumn" msprop:Generator_UserColumnName="Idioma" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

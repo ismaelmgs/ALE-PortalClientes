@@ -38,6 +38,14 @@ namespace PortalClientes.Objetos
     }
 
     [Serializable]
+    public class FiltroGraficaCC
+    {
+        public string matricula { get; set; }
+        public string meses { get; set; }
+        public string claveCliente { get; set; }
+    }
+
+    [Serializable]
     public class FiltroGraficaFV
     {
         public string matricula { get; set; }
