@@ -15,6 +15,7 @@ using System.Data;
 using System.IO;
 using CrystalDecisions.CrystalReports.Engine;
 using CrystalDecisions.Shared;
+using Newtonsoft.Json;
 
 namespace PortalClientes.Views
 {
@@ -48,6 +49,8 @@ namespace PortalClientes.Views
                 if (eSearchObj != null)
                     eSearchObj(sender, e);
             }
+
+            EdoCuenta = new DataSet();
         }
 
         protected void gvEdoCuenta_RowDataBound(object sender, GridViewRowEventArgs e)
@@ -125,6 +128,25 @@ namespace PortalClientes.Views
                 upaDocsEdoCuenta.Update();
                 mpeDocsEdoCuenta.Show();
             }
+
+            if (e.CommandName == "Reporte")
+            {
+                if (eSearchEdoObj != null)
+                    eSearchEdoObj(sender, e);
+
+                string strPath = string.Empty;
+                ReportDocument rd = new ReportDocument();
+                strPath = Server.MapPath("RPT\\rptEstadoCuenta.rpt");
+                strPath = strPath.Replace("\\Views", "");
+                rd.Load(strPath, OpenReportMethod.OpenReportByDefault);
+                rd.SetDataSource(EdoCuenta.Tables[0]);
+
+                rd.Subreports["rptSubEdoCuentaUSD.rpt"].SetDataSource(EdoCuenta.Tables[1]);
+                rd.Subreports["rptSubEdocuentaMXN.rpt"].SetDataSource(EdoCuenta.Tables[2]);
+
+                rd.ExportToHttpResponse(ExportFormatType.PortableDocFormat, Response, true, "EstadoCuenta");
+                Response.End();
+            }
         }
 
         protected void gvDocEdoCuenta_RowCommand(object sender, GridViewCommandEventArgs e)
@@ -195,19 +217,6 @@ namespace PortalClientes.Views
                 e.Row.Cells[6].Visible = false;
                 e.Row.Cells[7].Visible = false;
             }
-        }
-
-        protected void btnRepoEdoCuenta_Click(object sender, EventArgs e)
-        {
-            string strPath = string.Empty;
-            ReportDocument rd = new ReportDocument();
-            strPath = Server.MapPath("RPT\\rptEstadoCuenta.rpt");
-            strPath = strPath.Replace("\\Views", "");
-            rd.Load(strPath, OpenReportMethod.OpenReportByDefault);
-            //rd.SetDataSource(dsGastos);
-
-            //if (iTipoReporte == 1)
-                rd.ExportToHttpResponse(ExportFormatType.PortableDocFormat, Response, true, "EstadoCuenta");
         }
 
         #region METODOS
@@ -332,6 +341,125 @@ namespace PortalClientes.Views
                 gvDocEdoCuenta.DataBind();
             }
         }
+
+        public void LlenarEdoCuenta(List<responseEdoCuenta> olstRep)
+        {
+            DataTable dt = new DataTable();
+            dt.TableName = "Extras";
+            dt.Columns.Add("Cliente", typeof(System.String));
+            dt.Columns.Add("Periodo", typeof(System.String));
+            dt.Columns.Add("Elaboro", typeof(System.String));
+            dt.Columns.Add("Matricula", typeof(System.String));
+            dt.Columns.Add("ClaveContrato", typeof(System.String));
+            dt.Columns.Add("IVA", typeof(System.String));
+            dt.Columns.Add("IVAText", typeof(System.String));
+            dt.Columns.Add("Fecha", typeof(System.String));
+            dt.Columns.Add("SaldoAnterior", typeof(System.String));
+            dt.Columns.Add("PagosyCred", typeof(System.String));
+            dt.Columns.Add("NuevosCargos", typeof(System.String));
+            dt.Columns.Add("SaldoActual", typeof(System.String));
+            dt.Columns.Add("SaldoAnteriorUSD", typeof(System.String));
+            dt.Columns.Add("PagosyCredUSD", typeof(System.String));
+            dt.Columns.Add("NuevosCargosUSD", typeof(System.String));
+            dt.Columns.Add("SaldoActualUSD", typeof(System.String));
+
+            var contador = 0;
+            DataRow row = dt.NewRow();
+            foreach (var item in olstRep)
+            {
+                if (contador == 0)
+                {
+                    row["SaldoAnterior"] = item.saldoAnterior;
+                    row["PagosyCred"] = item.pagosCreditos;
+                    row["NuevosCargos"] = item.nuevosCargos;
+                    row["SaldoActual"] = item.saldoActual;
+                    row["Matricula"] = Utils.MatriculaActual;
+                    row["Cliente"] = Utils.NombreUsuario;//Checar
+                    row["IVA"] = "";
+                    row["IVAText"] = "";
+                    row["Fecha"] = "";
+                    row["ClaveContrato"] = item.claveContrato;
+                    row["Periodo"] = Utils.Idioma == "es-MX" ? "Anual":"Annual";//Checar
+                    row["Elaboro"] = Utils.NombreUsuario;//Checar
+                }
+                else
+                {
+                    row["SaldoAnteriorUSD"] = item.saldoAnterior;
+                    row["PagosyCredUSD"] = item.pagosCreditos;
+                    row["NuevosCargosUSD"] = item.nuevosCargos;
+                    row["SaldoActualUSD"] = item.saldoActual;
+                    dt.Rows.Add(row);
+                }
+                contador++;
+            }
+
+            EdoCuenta.Tables.Add(dt);
+        }
+
+        public void LlenarSubEdoCuenta(SubEdoCuenta olstRep)
+        {
+            //Tabla MXP
+            DataTable dtMXP = new DataTable();
+            dtMXP.TableName = "MXP";
+            dtMXP.Columns.Add("Fecha", typeof(System.String));
+            dtMXP.Columns.Add("NoReferencia", typeof(System.String));
+            dtMXP.Columns.Add("TipodeGastos", typeof(System.String));
+            dtMXP.Columns.Add("Concepto", typeof(System.String));
+            dtMXP.Columns.Add("Rubro", typeof(System.String));
+            dtMXP.Columns.Add("Detalle", typeof(System.String));
+            dtMXP.Columns.Add("Proveedor", typeof(System.String));
+            dtMXP.Columns.Add("Importe", typeof(System.Decimal));
+            dtMXP.Columns.Add("AmpliadoGasto", typeof(System.String));
+
+            foreach (var item in olstRep.estadoCuentaMXN)
+            {
+                DataRow rowMXP = dtMXP.NewRow();
+                rowMXP["Fecha"] = item.fecha;
+                rowMXP["NoReferencia"] = item.numReferencia;
+                rowMXP["TipodeGastos"] = item.tipoGasto;
+                rowMXP["Concepto"] = item.concepto;
+                rowMXP["Rubro"] = item.rubro;
+                rowMXP["Detalle"] = item.detalle;
+                rowMXP["Proveedor"] = item.proveedor;
+                rowMXP["Importe"] = item.importe;
+                rowMXP["AmpliadoGasto"] = "";
+
+                dtMXP.Rows.Add(rowMXP);
+            }
+
+            EdoCuenta.Tables.Add(dtMXP);
+
+            //Tabla USD
+            DataTable dtUSD = new DataTable();
+            dtUSD.TableName = "USD";
+            dtUSD.Columns.Add("Fecha", typeof(System.String));
+            dtUSD.Columns.Add("NoReferencia", typeof(System.String));
+            dtUSD.Columns.Add("TipodeGasto", typeof(System.String));
+            dtUSD.Columns.Add("Concepto", typeof(System.String));
+            dtUSD.Columns.Add("Rubro", typeof(System.String));
+            dtUSD.Columns.Add("Detalle", typeof(System.String));
+            dtUSD.Columns.Add("Proveedor", typeof(System.String));
+            dtUSD.Columns.Add("Importe", typeof(System.Decimal));
+            dtUSD.Columns.Add("AmpliadoGasto", typeof(System.String));
+
+            foreach (var item in olstRep.estadoCuentaUSD)
+            {
+                DataRow rowUSD = dtUSD.NewRow();
+                rowUSD["Fecha"] = item.fecha;
+                rowUSD["NoReferencia"] = item.numReferencia;
+                rowUSD["TipodeGastos"] = item.tipoGasto;
+                rowUSD["Concepto"] = item.concepto;
+                rowUSD["Rubro"] = item.rubro;
+                rowUSD["Detalle"] = item.detalle;
+                rowUSD["Proveedor"] = item.proveedor;
+                rowUSD["Importe"] = item.importe;
+                rowUSD["AmpliadoGasto"] = "";
+
+                dtUSD.Rows.Add(rowUSD);
+            }
+
+            EdoCuenta.Tables.Add(dtUSD);
+        }
         #endregion
 
         #region VARIABLES Y PROPIEDADES
@@ -343,6 +471,7 @@ namespace PortalClientes.Views
         public event EventHandler eDeleteObj;
         public event EventHandler eSearchObj;
         public event EventHandler eSearchObjDocs;
+        public event EventHandler eSearchEdoObj;
 
         public List<responseRepEdoCuenta> oEstados
         {
@@ -368,8 +497,15 @@ namespace PortalClientes.Views
             set { ViewState["VSExisteDoc"] = value; }
         }
 
+        public DataSet EdoCuenta
+        {
+            get { return (DataSet)ViewState["EdoCuenta"]; }
+            set { ViewState["EdoCuenta"] = value; }
+        }
+
+
         #endregion
 
-        
+
     }
 }

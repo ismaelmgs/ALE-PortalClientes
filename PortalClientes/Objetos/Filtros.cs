@@ -71,4 +71,18 @@ namespace PortalClientes.Objetos
         public int anio { get; set; }
         public int mes { get; set; }
     }
+
+    public class FiltroEdoCuenta
+    {
+        public string claveContrato { get; set; }
+        public int anio { get; set; }
+        public int mes { get; set; }
+    }
+
+    public class FiltroSubEdoCuenta
+    {
+        public string matricula { get; set; }
+        public int anio { get; set; }
+        public int mes { get; set; }
+    }
 }

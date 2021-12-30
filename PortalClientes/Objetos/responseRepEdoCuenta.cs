@@ -56,4 +56,37 @@ namespace PortalClientes.Objetos
         public DateTime fechaDocumento { get; set; }
     }
 
+    public class responseEdoCuenta
+    {
+        public string idSaldosEdoCuenta { set; get; }
+        public string claveContrato { set; get; }
+        public string TipoMoneda { set; get; }
+        public int mes { set; get; }
+        public int anio { set; get; }
+        public decimal saldoAnterior { set; get; }
+        public decimal pagosCreditos { set; get; }
+        public decimal nuevosCargos { set; get; }
+        public decimal saldoActual { set; get; }
+        public decimal existeMesActual { set; get; }
+        public decimal existeMesAnterior { set; get; }
+    }
+
+    public class ResponseSubEdoCuenta
+    {
+        public string fecha { set; get; }
+        public string numReferencia { set; get; }
+        public string tipoGasto { set; get; }
+        public string concepto { set; get; }
+        public string rubro { set; get; }
+        public string detalle { set; get; }
+        public string proveedor { set; get; }
+        public decimal importe { set; get; }
+    }
+
+    public class SubEdoCuenta
+    {
+        public List<ResponseSubEdoCuenta> estadoCuentaMXN { set; get; }
+        public List<ResponseSubEdoCuenta> estadoCuentaUSD { set; get; }
+    }
+
 }
