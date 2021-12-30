@@ -45,7 +45,8 @@
                                                     </asp:LinkButton>
                                                 </td>
                                             </tr>
-                                            <td style="height: 3px;"></td>
+                                            <tr>
+                                                <td style="height: 3px;"></td>
                                             </tr>
                                             <tr style="background-color: #00000003;">
                                                 <td style="border-bottom: 1px solid #dee2e6; padding: 6px;">
