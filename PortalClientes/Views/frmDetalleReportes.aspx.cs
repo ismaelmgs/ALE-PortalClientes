@@ -17,6 +17,9 @@ using System.Threading;
 using PortalClientes.Interfaces;
 using PortalClientes.Presenter;
 using PortalClientes.DomainModel;
+using CrystalDecisions.CrystalReports.Engine;
+using CrystalDecisions.Shared;
+using System.Data;
 
 namespace PortalClientes.Views
 {
@@ -34,6 +37,7 @@ namespace PortalClientes.Views
             oPresenter = new DetalleReportes_Presenter(this, new DBMetricasEstatics());
 
             iReporte = (int)Session["reporteDetalle"];
+            iisRpt = (int)Session["isRpt"];
 
             lblTransacciones.Text = GenerateTitle(true, iReporte);
 
@@ -94,6 +98,12 @@ namespace PortalClientes.Views
                 reporte.gastosProv = (List<gvGastosProveedor>)Session["data"];
                 LlenarGV(reporte, tipo);
             }
+
+            else if (tipo == 4)
+            {
+                reporte.resumenGastosVuelos = (List<rptResumenGastosVuelos>)Session["data"];
+                LlenarGV(reporte, tipo);
+            }
         }
 
         protected void gvdetReportes_RowDataBound(object sender, GridViewRowEventArgs e)
@@ -138,6 +148,15 @@ namespace PortalClientes.Views
                     e.Row.Cells[7].Text = Properties.Resources.TabTran_Origen;
                     e.Row.Cells[8].Text = Properties.Resources.TabTran_Destino;
                 }
+
+                else if (tipo == 4)
+                {
+                    e.Row.Cells[0].Text = Properties.Resources.TabTran_Anio;
+                    e.Row.Cells[1].Text = Properties.Resources.TabTran_Mes;
+                    e.Row.Cells[2].Text = Properties.Resources.TabTran_NoVuelos;
+                    e.Row.Cells[3].Text = Properties.Resources.TabTran_TotalMxn;
+                    e.Row.Cells[4].Text = Properties.Resources.TabTran_TotalUsd;
+                }
             }
         }
 
@@ -146,7 +165,15 @@ namespace PortalClientes.Views
             try
             {
                 Session["titleFile"] = GenerateTitle(false, iReporte);
-                exportarExcel();
+                if (iisRpt > 0)
+                {
+                    generarRpt(1);
+                }
+                else
+                {
+                    exportarExcel();
+                }
+                
             }
             catch (Exception ex)
             {
@@ -159,12 +186,99 @@ namespace PortalClientes.Views
             try
             {
                 Session["titleFile"] = GenerateTitle(false, iReporte);
-                exportarPDF();
+                if (iisRpt > 0)
+                {
+                    generarRpt(2);
+                }
+                else
+                {
+                    exportarPDF();
+                }
+                
             }
             catch (Exception ex)
             {
                 string strError = ex.Message;
             }
+        }
+
+        private void generarRpt(int tipo)
+        {
+            DataSet ds = GenerarDT();
+            string strPath = string.Empty;
+            ReportDocument rd = new ReportDocument();
+            strPath = Server.MapPath("RPT\\rptResumenGastosVuelos.rpt");
+            strPath = strPath.Replace("\\Views", "");
+            rd.Load(strPath, OpenReportMethod.OpenReportByDefault);
+            rd.SetDataSource(ds);
+
+            if(tipo == 1)
+            {
+                rd.ExportToHttpResponse(ExportFormatType.Excel, Response, true, (string)Session["titleFile"]);
+            }
+            else
+            {
+                rd.ExportToHttpResponse(ExportFormatType.PortableDocFormat, Response, true, (string)Session["titleFile"]);
+            }
+
+            Response.End();
+        }
+
+        private DataSet GenerarDT()
+        {
+            DataSet ds = new DataSet();
+            List<rptResumenGastosVuelos> rgv = (List<rptResumenGastosVuelos>)Session["data"];
+            DataTable dt = new DataTable();
+            dt.TableName = "tablaDatos";
+            dt.Columns.Add("Anio", typeof(System.String));
+            dt.Columns.Add("Mes", typeof(System.String));
+            dt.Columns.Add("NoVuelos", typeof(System.String));
+            dt.Columns.Add("TotalMXN", typeof(System.Decimal));
+            dt.Columns.Add("TotalUSD", typeof(System.Decimal));
+
+            foreach(var item in rgv)
+            {
+                DataRow row = dt.NewRow();
+
+                row["Anio"] = item.anio;
+                row["Mes"] = Utils.Idioma == "es-MX" ? item.nombreESP : item.nombreENG;
+                row["NoVuelos"] = item.vuelos;
+                row["TotalMXN"] = item.totalMXN;
+                row["TotalUSD"] = item.totalUSD;
+
+                dt.Rows.Add(row);
+            }
+
+            ds.Tables.Add(dt);
+
+            DataTable dtTotales = new DataTable();
+            dtTotales.TableName = "Totales";
+            dtTotales.Columns.Add("TotalesMXN", typeof(System.Decimal));
+            dtTotales.Columns.Add("TotalesUSD", typeof(System.Decimal));
+
+            DataRow row2 = dtTotales.NewRow();
+            row2["TotalesMXN"] = rgv.Sum(x => x.totalMXN);
+            row2["TotalesUSD"] = rgv.Sum(x => x.totalUSD);
+            dtTotales.Rows.Add(row2);
+
+            ds.Tables.Add(dtTotales);
+
+            DataTable dtTGenerales = new DataTable();
+            dtTGenerales.TableName = "Generales";
+            dtTGenerales.Columns.Add("Anio", typeof(System.String));
+            dtTGenerales.Columns.Add("Periodo", typeof(System.String));
+            dtTGenerales.Columns.Add("Idioma", typeof(System.String));
+
+            DataRow row3 = dtTGenerales.NewRow();
+            row3["Anio"] = DateTime.Now.Year.S();
+            row3["Periodo"] = Utils.Idioma == "es-MX" ? "Anual" : "Annual";
+            row3["Idioma"] = Utils.Idioma;
+            dtTGenerales.Rows.Add(row3);
+
+            ds.Tables.Add(dtTGenerales);
+
+
+            return ds;
         }
 
         public override void VerifyRenderingInServerForm(Control control)
@@ -191,6 +305,9 @@ namespace PortalClientes.Views
                 case 3:
                     title += Utils.Idioma == "es-MX" ? "Gastos por Proveedor" : "Expenses by Vendor";
                     break;
+                case 4:
+                    title += Utils.Idioma == "es-MX" ? "Resumen de Gastos / Vuelos" : "Summary of Expenses / Flights";
+                    break;
             }
 
             if (tipoT)
@@ -212,28 +329,8 @@ namespace PortalClientes.Views
             {
                 case 4:
                     lblTotalTrasn.Text = Properties.Resources.TabTran_NoVuelos;
-                    lblTotal.Text = Properties.Resources.TabTran_TiempoTotVuelo;
-                    lblPromedio.Text = Properties.Resources.TabTran_PromedioVuelo;
-                    break;
-                case 5:
-                    lblTotalTrasn.Text = Properties.Resources.TabTran_NoVuelos;
-                    lblTotal.Text = Properties.Resources.TabTran_promedioPax;
-                    lblPromedio.Text = Properties.Resources.TabTran_TiempoTotVuelo;
-                    break;
-                case 7:
-                    lblTotalTrasn.Text = Properties.Resources.TabTran_NoVuelos;
-                    lblTotal.Text = Properties.Resources.TabTran_TiempoTotVuelo;
-                    lblPromedio.Text = Properties.Resources.TabTran_PromedioVuelo;
-                    break;
-                case 8:
-                    lblTotalTrasn.Text = Properties.Resources.TabTran_NoVuelos;
-                    lblTotal.Text = Properties.Resources.TabTran_TiempoTotVuelo;
-                    lblPromedio.Text = Properties.Resources.TabTran_PromedioVuelo;
-                    break;
-                case 12:
-                    lblTotalTrasn.Text = Properties.Resources.TabTran_MontoTotal;
-                    lblTotal.Text = Properties.Resources.TabTran_CostoHV;
-                    lblPromedio.Text = Properties.Resources.TabTran_TiempoTotVuelo;
+                    lblTotal.Text = Properties.Resources.TabTran_TotalMxn;
+                    lblPromedio.Text = Properties.Resources.TabTran_TotalUsd;
                     break;
                 default:
                     lblTotalTrasn.Text = Properties.Resources.TabTran_NoGastos;
@@ -376,6 +473,18 @@ namespace PortalClientes.Views
             Reportes r = new Reportes();
             Session["data"] = gvp;
             r.gastosProv = gvp;
+
+            LlenarGV(r, reporte);
+        }
+
+        public void CargarReporteResumenGastosVuelos(List<rptResumenGastosVuelos> orptResumenGastosVuelos)
+        {
+            var reporte = 4;
+            Session["tipoReporte"] = reporte;
+
+            Reportes r = new Reportes();
+            Session["data"] = orptResumenGastosVuelos;
+            r.resumenGastosVuelos = orptResumenGastosVuelos;
 
             LlenarGV(r, reporte);
         }
@@ -538,6 +647,49 @@ namespace PortalClientes.Views
                 lblTotalRes.Text = totalTransacciones.ToString("C", CultureInfo.CreateSpecificCulture("es-MX")) + " MXN";
                 lblPromedioRes.Text = promedio.ToString("C", CultureInfo.CreateSpecificCulture("es-MX")) + " MXN";
             }
+            else if (tipo == 4)
+            {
+                totalRegistros = reportes.resumenGastosVuelos.Count();
+                contMeses = reportes.resumenGastosVuelos.Count();
+                totalTransacciones = reportes.resumenGastosVuelos.Sum(x => x.totalMXN);
+                promedio = reportes.resumenGastosVuelos.Sum(x => x.totalUSD);
+
+                BoundField clm = new BoundField();
+                clm.DataField = "anio";
+                gvdetReportes.Columns.Add(clm);
+
+                BoundField clm3 = new BoundField();
+                if(Utils.Idioma == "es-MX"){
+                    clm3.DataField = "nombreESP";
+                    gvdetReportes.Columns.Add(clm3);
+                }
+                else
+                {
+                    clm3.DataField = "nombreENG";
+                    gvdetReportes.Columns.Add(clm3);
+                }
+               
+                BoundField clm4 = new BoundField();
+                clm4.DataField = "vuelos";
+                gvdetReportes.Columns.Add(clm4);
+
+                BoundField clm6 = new BoundField();
+                clm6.DataField = "totalMXN";
+                clm6.DataFormatString = "{0:c}";
+                gvdetReportes.Columns.Add(clm6);
+
+                BoundField clm7 = new BoundField();
+                clm7.DataField = "totalUSD";
+                clm7.DataFormatString = "{0:c}";
+                gvdetReportes.Columns.Add(clm7);
+
+                gvdetReportes.DataSource = reportes.resumenGastosVuelos.OrderBy(x => x.mes).ToList(); //.GroupBy(r => r.mes).Select(x => x.First());
+                gvdetReportes.DataBind();
+
+                lblTotalTrasnRes.Text = totalRegistros.S();
+                lblTotalRes.Text = totalTransacciones.ToString("C", CultureInfo.CreateSpecificCulture("es-MX")) + " MXN";
+                lblPromedioRes.Text = promedio.ToString("C", CultureInfo.CreateSpecificCulture("es-MX")) + " USD";
+            }
         }
 
         private void exportarExcel()
@@ -690,6 +842,12 @@ namespace PortalClientes.Views
         {
             get { return (int)ViewState["VSReporte"]; }
             set { ViewState["VSReporte"] = value; }
+        }
+
+        public int iisRpt
+        {
+            get { return (int)ViewState["VSIsReport"]; }
+            set { ViewState["VSIsReport"] = value; }
         }
 
         #endregion

@@ -1915,6 +1915,15 @@ namespace PortalClientes.Properties {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Detalle de gastos / Vuelos.
+        /// </summary>
+        internal static string Re_DetalleGastosVuelos {
+            get {
+                return ResourceManager.GetString("Re_DetalleGastosVuelos", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Gastos por Aeropuerto.
         /// </summary>
         internal static string Re_GastosAeropuerto {
@@ -1938,6 +1947,15 @@ namespace PortalClientes.Properties {
         internal static string Re_GastosProveedor {
             get {
                 return ResourceManager.GetString("Re_GastosProveedor", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Resumen de gastos / Vuelos.
+        /// </summary>
+        internal static string Re_ResumenGastosVuelos {
+            get {
+                return ResourceManager.GetString("Re_ResumenGastosVuelos", resourceCulture);
             }
         }
         
@@ -2689,6 +2707,15 @@ namespace PortalClientes.Properties {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Total MXN.
+        /// </summary>
+        internal static string TabTran_TotalMxn {
+            get {
+                return ResourceManager.GetString("TabTran_TotalMxn", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Total transacciones MXN.
         /// </summary>
         internal static string TabTran_TotalTranMXN {
@@ -2703,6 +2730,15 @@ namespace PortalClientes.Properties {
         internal static string TabTran_TotalTranUSD {
             get {
                 return ResourceManager.GetString("TabTran_TotalTranUSD", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Total USD.
+        /// </summary>
+        internal static string TabTran_TotalUsd {
+            get {
+                return ResourceManager.GetString("TabTran_TotalUsd", resourceCulture);
             }
         }
         

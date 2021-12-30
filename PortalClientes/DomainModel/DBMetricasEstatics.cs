@@ -463,6 +463,41 @@ namespace PortalClientes.DomainModel
             }
         }
 
+        public List<rptResumenGastosVuelos> obtenerReporteResumenGastosVuelos(FiltroGraficaCC filtro)
+        {
+            try
+            {
+                JavaScriptSerializer ser = new JavaScriptSerializer();
+                ser.MaxJsonLength = 500000000;
+                List<rptResumenGastosVuelos> d = new List<rptResumenGastosVuelos>();
+                FiltroGraficaCC oLog = new FiltroGraficaCC();
+                oLog = filtro;
+                oLog.matricula = Utils.MatriculaActual;
+
+                oLog.matricula = "XA-FLC";
+                oLog.meses = "12";
+                oLog.claveCliente = "RASSI";
+
+                TokenWS oToken = Utils.ObtieneToken;
+
+                var client = new RestClient(Helper.D_UrlObtieneRptResumenGastosVuelos);
+                var request = new RestRequest(Method.POST);
+                request.AddHeader("Authorization", oToken.token);
+                request.AddJsonBody(oLog);
+
+                IRestResponse response = client.Execute(request);
+                var resp = response.Content;
+
+                d = ser.Deserialize<List<rptResumenGastosVuelos>>(resp);
+
+                return d;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
         public RutaAeropuerto obtenerRutasAeropuertos (FiltroEvent filtro)
         {
             try

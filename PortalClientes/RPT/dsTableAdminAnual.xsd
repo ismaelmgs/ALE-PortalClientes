@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="dsTableAdminAnual" targetNamespace="http://tempuri.org/dsTableAdminAnual.xsd" xmlns:mstns="http://tempuri.org/dsTableAdminAnual.xsd" xmlns="http://tempuri.org/dsTableAdminAnual.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="dsTableAdminAnual" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="dsTableAdminAnual" msprop:Generator_UserDSName="dsTableAdminAnual">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="datos" msprop:Generator_TableClassName="datosDataTable" msprop:Generator_TableVarName="tabledatos" msprop:Generator_RowChangedName="datosRowChanged" msprop:Generator_TablePropName="datos" msprop:Generator_RowDeletingName="datosRowDeleting" msprop:Generator_RowChangingName="datosRowChanging" msprop:Generator_RowEvHandlerName="datosRowChangeEventHandler" msprop:Generator_RowDeletedName="datosRowDeleted" msprop:Generator_RowClassName="datosRow" msprop:Generator_UserTableName="datos" msprop:Generator_RowEvArgName="datosRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Mes" msprop:Generator_ColumnVarNameInTable="columnMes" msprop:Generator_ColumnPropNameInRow="Mes" msprop:Generator_ColumnPropNameInTable="MesColumn" msprop:Generator_UserColumnName="Mes" type="xs:string" minOccurs="0" />
+              <xs:element name="Horas" msprop:Generator_ColumnVarNameInTable="columnHoras" msprop:Generator_ColumnPropNameInRow="Horas" msprop:Generator_ColumnPropNameInTable="HorasColumn" msprop:Generator_UserColumnName="Horas" type="xs:string" minOccurs="0" />
+              <xs:element name="CostoHora" msprop:Generator_ColumnVarNameInTable="columnCostoHora" msprop:Generator_ColumnPropNameInRow="CostoHora" msprop:Generator_ColumnPropNameInTable="CostoHoraColumn" msprop:Generator_UserColumnName="CostoHora" type="xs:string" minOccurs="0" />
+              <xs:element name="PromCostoxHr" msprop:Generator_ColumnVarNameInTable="columnPromCostoxHr" msprop:Generator_ColumnPropNameInRow="PromCostoxHr" msprop:Generator_ColumnPropNameInTable="PromCostoxHrColumn" msprop:Generator_UserColumnName="PromCostoxHr" type="xs:string" minOccurs="0" />
+              <xs:element name="CostoNM" msprop:Generator_ColumnVarNameInTable="columnCostoNM" msprop:Generator_ColumnPropNameInRow="CostoNM" msprop:Generator_ColumnPropNameInTable="CostoNMColumn" msprop:Generator_UserColumnName="CostoNM" type="xs:string" minOccurs="0" />
+              <xs:element name="CostoTotal" msprop:Generator_ColumnVarNameInTable="columnCostoTotal" msprop:Generator_ColumnPropNameInRow="CostoTotal" msprop:Generator_ColumnPropNameInTable="CostoTotalColumn" msprop:Generator_UserColumnName="CostoTotal" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

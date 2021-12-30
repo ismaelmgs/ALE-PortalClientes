@@ -7,19 +7,32 @@ namespace PortalClientes.Objetos
 {
     public class Reportes
     {
-        public List<vuelo> vuelos { get; set; } // tipo transaccion: 1
-        public List<gvGastos> gastos { get; set; } // tipo transaccion: 2
-        public List<gvGastosProveedor> gastosProv { get; set; } // tipo transaccion: 3
-        public List<gvGastosAeropuerto> gastosAe { get; set; } // tipo transaccion: 4
-        public List<gvPromedioPax> promedioPax { get; set; } // tipo transaccion: 5
-        public List<gvPromedioCosto> promedioCosto { get; set; } // tipo transaccion: 6
-        public List<gvhorasVoladas> horasVoladas { get; set; } // tipo transaccion: 7
-        public List<gvnoVuelos> numeroVuelos { get; set; } // tipo transaccion: 8
-        public List<gvCostosFV> costosFijosVariable { get; set; } // tipo transaccion: 9
-        public List<gvGastosT> gastosTotales { get; set; } // tipo transaccion: 10
-        public List<gvCostosH> costosHoraVuelo { get; set; } // tipo transaccion: 11
-        public List<gvCostosFVH> costosFijosVariableHora { get; set; } // tipo transaccion: 12
-        public List<DetalleRepEdoCuenta> detalleEdoCuenta { get; set; } // tipo transaccion: 13
-        public List<gvDetGastos> detGastos { get; set; } // tipo transaccion: 14
+        public List<vuelo> vuelos { get; set; }
+        public List<gvGastos> gastos { get; set; }
+        public List<gvGastosProveedor> gastosProv { get; set; }
+        public List<gvGastosAeropuerto> gastosAe { get; set; }
+        public List<gvPromedioPax> promedioPax { get; set; }
+        public List<gvPromedioCosto> promedioCosto { get; set; }
+        public List<gvhorasVoladas> horasVoladas { get; set; }
+        public List<gvnoVuelos> numeroVuelos { get; set; }
+        public List<gvCostosFV> costosFijosVariable { get; set; }
+        public List<gvGastosT> gastosTotales { get; set; }
+        public List<gvCostosH> costosHoraVuelo { get; set; }
+        public List<gvCostosFVH> costosFijosVariableHora { get; set; }
+        public List<DetalleRepEdoCuenta> detalleEdoCuenta { get; set; }
+        public List<gvDetGastos> detGastos { get; set; }
+        public List<rptResumenGastosVuelos> resumenGastosVuelos { get; set; }
+    }
+
+    public class rptResumenGastosVuelos
+    {
+        public int anio { get; set; }
+        public int mes { get; set; }
+        public int vuelos { get; set; }
+        public float totalMXN { get; set; }
+        public float totalUSD { get; set; }
+        public string nombreESP { get; set; }
+        public string nombreENG { get; set; }
+        public string idioma { get; set; }
     }
 }

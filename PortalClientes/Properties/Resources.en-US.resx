@@ -1107,4 +1107,16 @@
   <data name="Ca_LlegadaA" xml:space="preserve">
     <value>Arrive to:</value>
   </data>
+  <data name="Re_DetalleGastosVuelos" xml:space="preserve">
+    <value>Details of expenses / Flights</value>
+  </data>
+  <data name="Re_ResumenGastosVuelos" xml:space="preserve">
+    <value>Summary of expenses / Flights</value>
+  </data>
+  <data name="TabTran_TotalMxn" xml:space="preserve">
+    <value>Total MXN</value>
+  </data>
+  <data name="TabTran_TotalUsd" xml:space="preserve">
+    <value>Total USD</value>
+  </data>
 </root>
