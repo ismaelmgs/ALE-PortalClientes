@@ -167,6 +167,7 @@
                         <div class="x_title">
                             <h2>
                                 <asp:Label ID="lblAnio" runat="server" Text="2021" Font-Bold="true"></asp:Label>
+                                <asp:Button runat="server" Text="Generar" ID="btnRepoEdoCuenta" OnClick="btnRepoEdoCuenta_Click"/>
                             </h2>
                             <div class="clearfix"></div>
                         </div>
@@ -292,6 +293,9 @@
                 </div>
             </div>--%>
         </ContentTemplate>
+        <Triggers>
+            <asp:PostBackTrigger ControlID="btnRepoEdoCuenta" />
+        </Triggers>
     </asp:UpdatePanel>
 
     <%-- MODAL --%>
