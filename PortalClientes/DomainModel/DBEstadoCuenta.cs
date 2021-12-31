@@ -143,7 +143,7 @@ namespace PortalClientes.DomainModel
 
                 oLog.mes = 01;
                 oLog.anio = 2021;
-                oLog.claveContrato = "AGAVO";
+                oLog.claveContrato = "RASSI";
                 
                 TokenWS oToken = Utils.ObtieneToken;
 
