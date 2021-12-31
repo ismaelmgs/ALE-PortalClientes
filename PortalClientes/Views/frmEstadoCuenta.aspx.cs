@@ -374,13 +374,13 @@ namespace PortalClientes.Views
                     row["NuevosCargos"] = item.nuevosCargos;
                     row["SaldoActual"] = item.saldoActual;
                     row["Matricula"] = Utils.MatriculaActual;
-                    row["Cliente"] = Utils.NombreUsuario;//Checar
+                    row["Cliente"] = Utils.NombreUsuario;//Checar (1)
                     row["IVA"] = "";
                     row["IVAText"] = "";
                     row["Fecha"] = "";
                     row["ClaveContrato"] = item.claveContrato;
-                    row["Periodo"] = Utils.Idioma == "es-MX" ? "Anual":"Annual";//Checar
-                    row["Elaboro"] = Utils.NombreUsuario;//Checar
+                    row["Periodo"] = Utils.Idioma == "es-MX" ? "Anual":"Annual";//Checar (mes)
+                    row["Elaboro"] = Utils.NombreUsuario;
                 }
                 else
                 {
@@ -411,7 +411,7 @@ namespace PortalClientes.Views
             dtMXP.Columns.Add("Importe", typeof(System.Decimal));
             dtMXP.Columns.Add("AmpliadoGasto", typeof(System.String));
 
-            foreach (var item in olstRep.estadoCuentaMXN)
+            foreach (var item in olstRep.estadoCuentaUSD)
             {
                 DataRow rowMXP = dtMXP.NewRow();
                 rowMXP["Fecha"] = item.fecha;
@@ -442,7 +442,7 @@ namespace PortalClientes.Views
             dtUSD.Columns.Add("Importe", typeof(System.Decimal));
             dtUSD.Columns.Add("AmpliadoGasto", typeof(System.String));
 
-            foreach (var item in olstRep.estadoCuentaUSD)
+            foreach (var item in olstRep.estadoCuentaMXN)
             {
                 DataRow rowUSD = dtUSD.NewRow();
                 rowUSD["Fecha"] = item.fecha;
