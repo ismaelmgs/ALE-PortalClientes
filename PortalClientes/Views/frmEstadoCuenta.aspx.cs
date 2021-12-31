@@ -447,7 +447,7 @@ namespace PortalClientes.Views
                 DataRow rowUSD = dtUSD.NewRow();
                 rowUSD["Fecha"] = item.fecha;
                 rowUSD["NoReferencia"] = item.numReferencia;
-                rowUSD["TipodeGastos"] = item.tipoGasto;
+                rowUSD["TipodeGasto"] = item.tipoGasto;
                 rowUSD["Concepto"] = item.concepto;
                 rowUSD["Rubro"] = item.rubro;
                 rowUSD["Detalle"] = item.detalle;
