@@ -583,7 +583,7 @@ namespace PortalClientes.DomainModel
                 oLog.matricula = Utils.MatriculaActual;
 
                 oLog.matricula = "XA-ALE";
-                oLog.meses = 1;
+                oLog.meses = 2;
 
                 TokenWS oToken = Utils.ObtieneToken;
 
