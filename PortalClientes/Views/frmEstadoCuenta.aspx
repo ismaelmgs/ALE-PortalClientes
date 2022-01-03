@@ -167,7 +167,6 @@
                         <div class="x_title">
                             <h2>
                                 <asp:Label ID="lblAnio" runat="server" Text="2021" Font-Bold="true"></asp:Label>
-                                <asp:Button runat="server" Text="Generar" ID="btnRepoEdoCuenta" OnClick="btnRepoEdoCuenta_Click"/>
                             </h2>
                             <div class="clearfix"></div>
                         </div>
@@ -195,6 +194,12 @@
                                             <asp:TemplateField>
                                                 <ItemTemplate>
                                                     <asp:LinkButton ID="lkbDetalle" runat="server" CommandName="Detalle" CommandArgument="<%# ((GridViewRow) Container).RowIndex %>"></asp:LinkButton>
+                                                </ItemTemplate>
+                                            </asp:TemplateField>
+                                            <asp:TemplateField ItemStyle-HorizontalAlign="Center" HeaderText="Reporte">
+                                                <ItemTemplate>
+                                                    &nbsp;&nbsp;&nbsp;<asp:ImageButton ID="lkbReporte" runat="server" ImageUrl="~/Images/icons/descargar.png" Width="40px" Height="42px"
+                                                             CommandName="Reporte" CommandArgument="<%# ((GridViewRow) Container).RowIndex %>" CssClass="btn" />&nbsp;&nbsp;&nbsp;
                                                 </ItemTemplate>
                                             </asp:TemplateField>
                                         </Columns>
@@ -294,7 +299,7 @@
             </div>--%>
         </ContentTemplate>
         <Triggers>
-            <asp:PostBackTrigger ControlID="btnRepoEdoCuenta" />
+            <asp:PostBackTrigger ControlID="gvEdoCuenta" />
         </Triggers>
     </asp:UpdatePanel>
 

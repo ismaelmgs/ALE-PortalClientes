@@ -12,6 +12,6 @@ namespace PortalClientes.Interfaces
         event EventHandler eObjSelected;
         event EventHandler eSaveObj;
         event EventHandler eDeleteObj;
-        event EventHandler eSearchObj;
+        event EventHandler eSearchObj;       
     }
 }

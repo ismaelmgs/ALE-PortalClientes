@@ -1576,7 +1576,9 @@
     <Compile Include="DomainModel\DBCalendario.cs">
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="DomainModel\DBEstadoCuenta.cs" />
+    <Compile Include="DomainModel\DBEstadoCuenta.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
     <Compile Include="DomainModel\DBMetricasEstatics.cs" />
     <Compile Include="DomainModel\DBTripulacion.cs" />
     <Compile Include="DomainModel\DBDashboard.cs" />
@@ -1640,6 +1642,21 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>dsDetalleVuelo.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="RPT\dsEdoCuenta.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsEdoCuenta.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="RPT\dsEdoCuenta_MXP.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsEdoCuenta_MXP.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="RPT\dsEdoCuenta_USD.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsEdoCuenta_USD.xsd</DependentUpon>
     </Compile>
     <Compile Include="RPT\dsFiltrosGastos.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -2018,6 +2035,39 @@
     </None>
     <Content Include="RPT\dsDetalleVuelo.xss">
       <DependentUpon>dsDetalleVuelo.xsd</DependentUpon>
+    </Content>
+    <Content Include="RPT\dsEdoCuenta_MXP.xsc">
+      <DependentUpon>dsEdoCuenta_MXP.xsd</DependentUpon>
+    </Content>
+    <Content Include="RPT\dsEdoCuenta.xsc">
+      <DependentUpon>dsEdoCuenta.xsd</DependentUpon>
+    </Content>
+    <None Include="RPT\dsEdoCuenta.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsEdoCuenta.Designer.cs</LastGenOutput>
+    </None>
+    <Content Include="RPT\dsEdoCuenta.xss">
+      <DependentUpon>dsEdoCuenta.xsd</DependentUpon>
+    </Content>
+    <None Include="RPT\dsEdoCuenta_MXP.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsEdoCuenta_MXP.Designer.cs</LastGenOutput>
+    </None>
+    <Content Include="RPT\dsEdoCuenta_MXP.xss">
+      <DependentUpon>dsEdoCuenta_MXP.xsd</DependentUpon>
+    </Content>
+    <Content Include="RPT\dsEdoCuenta_USD.xsc">
+      <DependentUpon>dsEdoCuenta_USD.xsd</DependentUpon>
+    </Content>
+    <None Include="RPT\dsEdoCuenta_USD.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsEdoCuenta_USD.Designer.cs</LastGenOutput>
+    </None>
+    <Content Include="RPT\dsEdoCuenta_USD.xss">
+      <DependentUpon>dsEdoCuenta_USD.xsd</DependentUpon>
     </Content>
     <None Include="RPT\dsFiltrosGastos.xsd">
       <SubType>Designer</SubType>

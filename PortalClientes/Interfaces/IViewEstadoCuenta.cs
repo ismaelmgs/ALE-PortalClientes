@@ -13,6 +13,11 @@ namespace PortalClientes.Interfaces
         void LlenaTableEdoCuenta(List<responseRepEdoCuenta> olstRep);
         void LlenaDocsEdoCuenta(List<responseDocumentoF> olstRep);
 
+        void LlenarEdoCuenta(List<responseEdoCuenta> olstRep);
+        void LlenarSubEdoCuenta(SubEdoCuenta olstRep);
+
+        event EventHandler eSearchEdoObj;
+
         event EventHandler eSearchObjDocs;
         int iMes { get; }
         int iAnio { get; }

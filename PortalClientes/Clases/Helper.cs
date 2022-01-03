@@ -68,6 +68,8 @@ namespace PortalClientes.Clases
         public const string D_UrlObtenerEventosCalendario = "http://201.163.208.231/" + DominioWS + "/ws/pc/obtieneEventosMatriculaCal";
 
         public const string EC_ObtieneUltimoEdoCuenta = "http://201.163.208.231/" + DominioWS + "/ws/pc/obtieneUltimoEdoCtaMatricula";
+        public const string D_UrlObtieneEdoCuenta = "http://201.163.208.231/" + DominioWS + "/ws/pc/consultaTotalesEdoCta";
+        public const string D_UrlObtieneSubEdoCuenta = "http://201.163.208.231/" + DominioWS + "/ws/pc/consultaEdoCta";
 
     }
 }

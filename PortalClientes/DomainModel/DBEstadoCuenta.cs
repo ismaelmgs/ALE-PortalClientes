@@ -9,9 +9,10 @@ using System.Web.Script.Serialization;
 using PortalClientes.Clases;
 using RestSharp;
 
+
 namespace PortalClientes.DomainModel
 {
-    public class DBEstadoCuenta : DBBase
+    public class DBEstadoCuenta : System.Web.UI.Page
     {
         public EstadoCuenta DBGetObtieneMatricuasPorUsuario(string Matricula)
         {
@@ -33,6 +34,8 @@ namespace PortalClientes.DomainModel
                 var resp = response.Content;
                 ec = ser.Deserialize<EstadoCuenta>(resp);
 
+                Session["tableRpt"] = ec;
+
                 return ec;
             }
             catch (Exception ex)
@@ -45,10 +48,11 @@ namespace PortalClientes.DomainModel
         {
             try
             {
+                DBBase db = new DBBase();
                 List<responseRepEdoCuenta> ols = new List<responseRepEdoCuenta>();
 
-                oDB_SP.sConexionSQL = "Data Source=192.168.1.219;Initial Catalog=MexJet360;User ID=sa;Password=SYS.*2015%SQL";
-                DataSet ds = oDB_SP.EjecutarDS("[PortalClientes].[spS_PC_ObtieneReportesEstadosDeCuentaMatricula]", "@Matricula", Utils.MatriculaActual);
+                db.oDB_SP.sConexionSQL = "Data Source=192.168.1.219;Initial Catalog=MexJet360;User ID=sa;Password=SYS.*2015%SQL";
+                DataSet ds = db.oDB_SP.EjecutarDS("[PortalClientes].[spS_PC_ObtieneReportesEstadosDeCuentaMatricula]", "@Matricula", Utils.MatriculaActual);
 
                 foreach (DataRow row in ds.Tables[0].Rows)
                 {
@@ -118,6 +122,75 @@ namespace PortalClientes.DomainModel
                 var resp = response.Content;
 
                 d = ser.Deserialize<List<responseDocumentoF>>(resp);
+
+                return d;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+
+        }
+        public List<responseEdoCuenta> ObtenerEstadoCuenta(FiltroEdoCuenta filtro)
+        {
+            try
+            {
+                JavaScriptSerializer ser = new JavaScriptSerializer();
+                ser.MaxJsonLength = 500000000;
+                List<responseEdoCuenta> d = new List<responseEdoCuenta>();
+                FiltroEdoCuenta oLog = new FiltroEdoCuenta();
+                oLog = filtro;
+
+                oLog.mes = 01;
+                oLog.anio = 2021;
+                oLog.claveContrato = "RASSI";
+                
+                TokenWS oToken = Utils.ObtieneToken;
+
+                var client = new RestClient(Helper.D_UrlObtieneEdoCuenta);
+                var request = new RestRequest(Method.POST);
+                request.AddHeader("Authorization", oToken.token);
+                request.AddJsonBody(oLog);
+
+                IRestResponse response = client.Execute(request);
+                var resp = response.Content;
+
+                d = ser.Deserialize<List<responseEdoCuenta>>(resp);
+
+                return d;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+
+        }
+
+        public SubEdoCuenta ObtenerSubEstadoCuenta(FiltroSubEdoCuenta filtro)
+        {
+            try
+            {
+                JavaScriptSerializer ser = new JavaScriptSerializer();
+                ser.MaxJsonLength = 500000000;
+                SubEdoCuenta d = new SubEdoCuenta();
+                FiltroSubEdoCuenta oLog = new FiltroSubEdoCuenta();
+                oLog = filtro;
+
+                oLog.mes = 01;
+                oLog.anio = 2021;
+                oLog.matricula = Utils.MatriculaActual;
+
+                TokenWS oToken = Utils.ObtieneToken;
+
+                var client = new RestClient(Helper.D_UrlObtieneSubEdoCuenta);
+                var request = new RestRequest(Method.POST);
+                request.AddHeader("Authorization", oToken.token);
+                request.AddJsonBody(oLog);
+
+                IRestResponse response = client.Execute(request);
+                var resp = response.Content;
+
+                d = ser.Deserialize<SubEdoCuenta> (resp);
 
                 return d;
             }

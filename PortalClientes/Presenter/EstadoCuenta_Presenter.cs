@@ -18,6 +18,7 @@ namespace PortalClientes.Presenter
             oIGesCat = oGC;
 
             oIView.eSearchObjDocs += eSearchObjDocs_Presenter;
+            oIView.eSearchEdoObj += eSearchEdoObj_Presenter;
         }
 
         protected override void SearchObj_Presenter(object sender, EventArgs e)
@@ -34,6 +35,16 @@ namespace PortalClientes.Presenter
             f.contrato = "RASSI";
 
             oIView.LlenaDocsEdoCuenta(oIGesCat.ObtenerDocumentoF(f));
+        }
+
+        protected void eSearchEdoObj_Presenter(object sender, EventArgs e)
+        {
+            FiltroEdoCuenta F = new FiltroEdoCuenta();
+            FiltroSubEdoCuenta Fsub = new FiltroSubEdoCuenta();
+            oIView.LlenarEdoCuenta(oIGesCat.ObtenerEstadoCuenta(F));
+            oIView.LlenarSubEdoCuenta(oIGesCat.ObtenerSubEstadoCuenta(Fsub));
+
+            //oIView.LlenaDocsEdoCuenta(oIGesCat.ObtenerDocumentoF(f));
         }
     }
 }
