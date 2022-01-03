@@ -1,10 +1,12 @@
 
+let rutas = true;
+
 function getUrlRA() {
   let value = window.location + "/GetRutasAeropuertos";
   return value;
 }
 
-function initialize(rutas) {
+function initialize() {
   // Coordenada de la ruta
   var flightPlanCoordinates = [
     // {lat: 19.3910038, lng: -99.2836972},
@@ -122,12 +124,14 @@ function hometab_Click(){
   document.getElementById("ContentPlaceHolder1_lbTitleMapR").style.display = 'block';
   document.getElementById("ContentPlaceHolder1_lbTitleMapA").style.display = 'none';
 
-  initialize(true)
+  rutas = true;
+  initialize()
 }
 
 function profiletab_Click(){
   document.getElementById("ContentPlaceHolder1_lbTitleMapA").style.display = 'block';
   document.getElementById("ContentPlaceHolder1_lbTitleMapR").style.display = 'none';
 
-  initialize(false)
+  rutas = false;
+  initialize()
 }

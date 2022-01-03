@@ -649,7 +649,7 @@
             <script src='<%=ResolveUrl("~/vendors/jquery/dist/jquery.js")%>'></script>
 
             <script
-            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC98wN4fcIzsEP7zyEey3V0LkvZ7KHUYdw&callback=initialize(true)"
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC98wN4fcIzsEP7zyEey3V0LkvZ7KHUYdw&callback=initialize"
             async
             ></script>
             <!-- <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?sensor=false"></script> -->

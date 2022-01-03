@@ -13,10 +13,10 @@ function closeSession() {
     window.setTimeout(function () {
         let url = window.location.href;
 
-        if(ulr.inculdes("localhost")){
-            window.location.pathname = "/PortalClientes/Views/frmLogin.aspx";
+        if(url.includes('localhost')){
+            window.location.pathname = "/frmLogin.aspx";
         }else{
-            window.location.pathname = "/Views/frmLogin.aspx";
+            window.location.pathname = "/PortalClientes/Views/frmLogin.aspx";
         }
         
     }, 5000);
