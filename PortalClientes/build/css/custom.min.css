@@ -157,6 +157,10 @@
 .card {
 	margin-top: 10px;
 }
+.dxbs-sc-vi {
+	font-weight: bold !important;
+	font-size: 18px !important;
+}
 @media (min-width: 280px) {
 	.flotante {
 		top: 112px;
