@@ -116,7 +116,7 @@ function ajax_dataRA(objRA, success) {
 }
     
 // Inicializando el mapa cuando se carga la página
-google.maps.event.addDomListener(window, 'load', initialize(true));
+// google.maps.event.addDomListener(window, 'load', initialize(true));
 
 function hometab_Click(){
   document.getElementById("ContentPlaceHolder1_lbTitleMapR").style.display = 'block';
