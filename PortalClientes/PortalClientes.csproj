@@ -1595,6 +1595,7 @@
     <Compile Include="Objetos\Reportes.cs" />
     <Compile Include="Objetos\RequestMatricula.cs" />
     <Compile Include="Objetos\MatriculasUsuario.cs" />
+    <Compile Include="Objetos\responseDetGastosVuelos.cs" />
     <Compile Include="Objetos\responseGraficaAeropuerto.cs" />
     <Compile Include="Objetos\responseGraficaCategorias.cs" />
     <Compile Include="Objetos\responseGraficaCostoFijoVariable.cs" />
