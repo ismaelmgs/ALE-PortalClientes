@@ -89,6 +89,13 @@
                                                     </asp:LinkButton>
                                                 </td>
                                             </tr>
+                                            <tr style="background-color: #00000003;">
+                                                <td style="border-bottom: 1px solid #dee2e6; padding: 6px;">
+                                                    <asp:LinkButton runat="server" ID="btnReporteAdminAnual" OnClick="btnDetReporte_Click" data-report="5" data-rpt="0">
+                                                        <img src="../build/images/detalle_gatos.png" style="width: 32px;" />&nbsp;<span style="font-size: 17px; font-weight: bold;"><asp:Label ID="lblReporteAdminAnual" runat="server" Text=" Reporte de Administración Anual" Font-Bold="true"></asp:Label></span><br />
+                                                    </asp:LinkButton>
+                                                </td>
+                                            </tr>
                                         </table>
 
                                     </div>
