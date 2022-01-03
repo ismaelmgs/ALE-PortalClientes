@@ -62,7 +62,7 @@
                                                 <span class="count_top">
                                                     <asp:Label ID="lblSaldoActual" runat="server" Text=" Saldo Actual" Font-Bold="false"></asp:Label></span>
                                                 <div class="count">
-                                                    <asp:Label ID="lblSaldoActualaUSD" runat="server" Text=" $" Font-Bold="true" CssClass="count" />
+                                                    <asp:Label ID="lblSaldoActualaUSD" runat="server" Text=" $" Font-Bold="true" CssClass="count2" />
                                                     <asp:Label ID="lblSaldoActualRes" runat="server" Text=" 155,522.11" Font-Bold="true" CssClass="count"></asp:Label>
                                                 </div>
                                             </div>
@@ -72,7 +72,7 @@
                                                 <span class="count_top">
                                                     <asp:Label ID="lblNuevosCargos" runat="server" Text=" Nuevos Cargos" Font-Bold="false"></asp:Label></span>
                                                 <div class="count">
-                                                    <asp:Label ID="lblNuevosCargosUSD" runat="server" Text=" $" Font-Bold="true" CssClass="count" />
+                                                    <asp:Label ID="lblNuevosCargosUSD" runat="server" Text=" $" Font-Bold="true" CssClass="count2" />
                                                     <asp:Label ID="lblNuevosCargosRes" runat="server" Text=" 155.522.11" Font-Bold="true" CssClass="count"></asp:Label>
                                                 </div>
                                             </div>
@@ -82,7 +82,7 @@
                                                 <span class="count_top">
                                                     <asp:Label ID="lblPagosPeriodo" runat="server" Text=" Pagos del periodo" Font-Bold="false"></asp:Label></span>
                                                 <div class="count">
-                                                    <asp:Label ID="lblPagosPeriodoUSD" runat="server" Text=" $" Font-Bold="true" CssClass="count" />
+                                                    <asp:Label ID="lblPagosPeriodoUSD" runat="server" Text=" $" Font-Bold="true" CssClass="count2" />
                                                     <asp:Label ID="lblPagosPeriodoRes" runat="server" Text=" 0.00" Font-Bold="true" CssClass="count"></asp:Label>
                                                 </div>
                                             </div>
@@ -92,7 +92,7 @@
                                                 <span class="count_top">
                                                     <asp:Label ID="lblMontoReq" runat="server" Text=" Monto de Depósito Requerido" Font-Bold="false"></asp:Label></span>
                                                 <div class="count">
-                                                    <asp:Label ID="lblMontoReqUSD" runat="server" Text=" $" Font-Bold="true" CssClass="count" />
+                                                    <asp:Label ID="lblMontoReqUSD" runat="server" Text=" $" Font-Bold="true" CssClass="count2" />
                                                     <asp:Label ID="lblMontoReqRes" runat="server" Text=" 0.00" Font-Bold="true" CssClass="count"></asp:Label>
                                                 </div>
                                             </div>
@@ -119,7 +119,7 @@
                                                 <span class="count_top">
                                                     <asp:Label ID="lblSaldoActualMXN" runat="server" Text=" Saldo Actual" Font-Bold="false"></asp:Label></span>
                                                 <div class="count">
-                                                    <asp:Label ID="lblSaldoActualMonMXN" runat="server" Text=" $" Font-Bold="true" CssClass="count" />
+                                                    <asp:Label ID="lblSaldoActualMonMXN" runat="server" Text=" $" Font-Bold="true" CssClass="count2" />
                                                     <asp:Label ID="lblSaldoActualMXNRes" runat="server" Text=" 0.01" Font-Bold="true" CssClass="count"></asp:Label>
                                                 </div>
                                             </div>
@@ -129,7 +129,7 @@
                                                 <span class="count_top">
                                                     <asp:Label ID="lblNuevosCargosMXN" runat="server" Text=" Nuevos Cargos" Font-Bold="false"></asp:Label></span>
                                                 <div class="count">
-                                                    <asp:Label ID="Label7" runat="server" Text=" $" Font-Bold="true" CssClass="count" />
+                                                    <asp:Label ID="Label7" runat="server" Text=" $" Font-Bold="true" CssClass="count2" />
                                                     <asp:Label ID="lblNuevosCargosMXNRes" runat="server" Text=" 0.01" Font-Bold="true" CssClass="count"></asp:Label>
                                                 </div>
                                             </div>
@@ -139,7 +139,7 @@
                                                 <span class="count_top">
                                                     <asp:Label ID="lblPagosPeriodoMXN" runat="server" Text=" Pagos del periodo" Font-Bold="false"></asp:Label></span>
                                                 <div class="count">
-                                                    <asp:Label ID="Label10" runat="server" Text=" $" Font-Bold="true" CssClass="count" />
+                                                    <asp:Label ID="Label10" runat="server" Text=" $" Font-Bold="true" CssClass="count2" />
                                                     <asp:Label ID="lblPagosPeriodoMXNRes" runat="server" Text=" 0.00" Font-Bold="true" CssClass="count"></asp:Label>
                                                 </div>
                                             </div>
@@ -149,7 +149,7 @@
                                                 <span class="count_top">
                                                     <asp:Label ID="lblMontoReqMXN" runat="server" Text=" Monto de Depósito Requerido" Font-Bold="false"></asp:Label></span>
                                                 <div class="count">
-                                                    <asp:Label ID="Label13" runat="server" Text=" $" Font-Bold="true" CssClass="count" />
+                                                    <asp:Label ID="Label13" runat="server" Text=" $" Font-Bold="true" CssClass="count2" />
                                                     <asp:Label ID="lblMontoReqMXNRes" runat="server" Text=" 0.00" Font-Bold="true" CssClass="count"></asp:Label>
                                                 </div>
                                             </div>
