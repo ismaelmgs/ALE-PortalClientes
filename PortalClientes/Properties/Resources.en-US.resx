@@ -886,7 +886,7 @@
     <value>New charges</value>
   </data>
   <data name="Ec_PagoRequerido" xml:space="preserve">
-    <value>Amount required</value>
+    <value>Current balance</value>
   </data>
   <data name="Ec_PagosPeriodo" xml:space="preserve">
     <value>Period payments</value>
@@ -895,7 +895,7 @@
     <value>Account summary</value>
   </data>
   <data name="Ec_SaldoActual" xml:space="preserve">
-    <value>Current balance</value>
+    <value>Previous balance</value>
   </data>
   <data name="Ec_Titulo" xml:space="preserve">
     <value>Monthly state of account</value>

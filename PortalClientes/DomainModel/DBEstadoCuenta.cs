@@ -141,7 +141,7 @@ namespace PortalClientes.DomainModel
                 FiltroEdoCuenta oLog = new FiltroEdoCuenta();
                 oLog = filtro;
 
-                oLog.mes = 01;
+                oLog.mes = 06;
                 oLog.anio = 2021;
                 oLog.claveContrato = "RASSI";
                 
@@ -176,7 +176,7 @@ namespace PortalClientes.DomainModel
                 FiltroSubEdoCuenta oLog = new FiltroSubEdoCuenta();
                 oLog = filtro;
 
-                oLog.mes = 01;
+                oLog.mes = 06;
                 oLog.anio = 2021;
                 oLog.matricula = Utils.MatriculaActual;
 
