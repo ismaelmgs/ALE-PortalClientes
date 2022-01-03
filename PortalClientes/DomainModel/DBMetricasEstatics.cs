@@ -498,6 +498,79 @@ namespace PortalClientes.DomainModel
             }
         }
 
+        public responseDetGastosVuelos obtenerReporteDetalleGastosVuelos(FiltroGraficaCC filtro)
+        {
+            try
+            {
+                JavaScriptSerializer ser = new JavaScriptSerializer();
+                ser.MaxJsonLength = 500000000;
+                responseDetGastosVuelos d = new responseDetGastosVuelos();
+                FiltroGraficaCC oLog = new FiltroGraficaCC();
+                oLog = filtro;
+                oLog.matricula = Utils.MatriculaActual;
+
+                oLog.matricula = "XA-FLC";
+                oLog.meses = "12";
+                oLog.claveCliente = "RASSI";
+
+                //TokenWS oToken = Utils.ObtieneToken;
+
+                //var client = new RestClient(Helper.D_UrlObtieneRptResumenGastosVuelos);
+                //var request = new RestRequest(Method.POST);
+                //request.AddHeader("Authorization", oToken.token);
+                //request.AddJsonBody(oLog);
+
+                //IRestResponse response = client.Execute(request);
+                //var resp = response.Content;
+
+                //d = ser.Deserialize<responseDetGastosVuelos>(resp);
+
+                oDB_SP.sConexionSQL = "Data Source=192.168.1.219;Initial Catalog=MexJet360;User ID=sa;Password=SYS.*2015%SQL";
+                DataSet ds = oDB_SP.EjecutarDS("[PortalClientes].[spS_PC_ObtieneReporteDetalleGastosVuelos]", "@Matricula", oLog.matricula, "@Meses", oLog.meses, "@ClaveCliente", oLog.claveCliente);
+                d.vuelos = new List<vuelos>();
+                d.conceptosVuelos = new List<conceptos>();
+
+                foreach (DataRow row in ds.Tables[0].Rows)
+                {
+                    vuelos v = new vuelos();
+                    v.anio = row["Anio"].S().I();
+                    v.mes = row["Mes"].S().I();
+                    v.origenVuelo = row["origenVuelo"].S();
+                    v.destinoVuelo = row["destinoVuelo"].S();
+                    v.anio = row["tiempoVuelo"].S().I();
+                    v.cantPax = row["cantPax"].S().I();
+                    v.cliente = row["cliente"].S();
+                    v.contrato = row["contrato"].S();
+
+                    d.vuelos.Add(v);
+                }
+
+                foreach (DataRow row in ds.Tables[1].Rows)
+                {
+                    conceptos c = new conceptos();
+                    c.idRubro = row["idRubro"].S().I();
+                    c.rubroESP = row["rubroESP"].S();
+                    c.rubroENG = row["rubroENG"].S();
+                    c.totalMXN = row["totalMXN"].S().I();
+                    c.totalUSD = row["totalUSD"].S().I();
+                    c.fecha = (DateTime)row["fecha"];
+                    c.categoria = row["categoria"].S();
+                    c.tipoGasto = row["tipodeGasto"].S();
+                    c.comentarios = row["comentarios"].S();
+                    c.mes = row["mes"].S().I();
+                    c.anio = row["Anio"].S().I();
+
+                    d.conceptosVuelos.Add(c);
+                }
+
+                return d;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
         public RutaAeropuerto obtenerRutasAeropuertos (FiltroEvent filtro)
         {
             try

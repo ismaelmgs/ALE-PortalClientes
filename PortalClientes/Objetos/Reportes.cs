@@ -22,6 +22,7 @@ namespace PortalClientes.Objetos
         public List<DetalleRepEdoCuenta> detalleEdoCuenta { get; set; }
         public List<gvDetGastos> detGastos { get; set; }
         public List<rptResumenGastosVuelos> resumenGastosVuelos { get; set; }
+        public detGastosVuelos detalleGastosVuelos { get; set; }
     }
 
     public class rptResumenGastosVuelos

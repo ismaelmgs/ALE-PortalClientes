@@ -87,7 +87,7 @@
                                 <div class="table-responsive">
                                     <div class="card-box table-responsive">
                                         <asp:GridView ID="gvdetReportes" runat="server" AutoGenerateColumns="false" CssClass="table table-striped table-bordered table-hover" AllowPaging="true"
-                                            OnPageIndexChanging="gvdetReportes_PageIndexChanging" OnRowDataBound="gvdetReportes_RowDataBound" EmptyDataText="No Registros">
+                                            OnPageIndexChanging="gvdetReportes_PageIndexChanging" OnRowCreated="gvdetReportes_RowCreated" OnRowDataBound="gvdetReportes_RowDataBound" EmptyDataText="No Registros">
                                         </asp:GridView>
                                     </div>
                                 </div>

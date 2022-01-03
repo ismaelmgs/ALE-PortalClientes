@@ -108,10 +108,9 @@ namespace PortalClientes.Views
 
         protected void gvdetReportes_RowDataBound(object sender, GridViewRowEventArgs e)
         {
+            var tipo = Convert.ToInt32(Session["tipoReporte"]);
             if (e.Row.RowType == DataControlRowType.Header)
             {
-                var tipo = Convert.ToInt32(Session["tipoReporte"]);
-
                 if(tipo == 1)
                 {
                     e.Row.Cells[0].Text = Properties.Resources.TabTran_Mes;
@@ -156,6 +155,49 @@ namespace PortalClientes.Views
                     e.Row.Cells[2].Text = Properties.Resources.TabTran_NoVuelos;
                     e.Row.Cells[3].Text = Properties.Resources.TabTran_TotalMxn;
                     e.Row.Cells[4].Text = Properties.Resources.TabTran_TotalUsd;
+                }
+
+                else if (tipo == 5)
+                {
+                    e.Row.Cells[0].Text = Properties.Resources.TabTran_Mes;
+                    e.Row.Cells[0].Visible = true;
+                }
+            }
+        }
+
+        private void Lb_Command(object sender, CommandEventArgs e)
+        {
+            throw new NotImplementedException();
+        }
+
+        protected void gvdetReportes_RowCreated(object sender, GridViewRowEventArgs e)
+        {
+            var tipo = Convert.ToInt32(Session["tipoReporte"]);
+            if (e.Row.RowType == DataControlRowType.Header)
+            {
+                if (tipo == 5)
+                {
+                    TableCell tc = new TableCell();
+                    tc.Text = Properties.Resources.TabTran_Mes;
+                    e.Row.Cells.Add(tc);
+                }
+            }
+
+             if (e.Row.RowType == DataControlRowType.DataRow)
+            {
+                if (tipo == 5)
+                {
+                    LinkButton lb = new LinkButton();
+                    lb.ID = "lnkB" + e.Row.RowIndex;
+                    lb.Visible = true;
+                    lb.Text = e.Row.Cells[0].Text;
+                    lb.Command += Lb_Command;
+
+                    TableCell tc = new TableCell();
+                    tc.Width = 300;
+                    tc.Controls.Add(lb);
+                    e.Row.Cells.Add(tc);
+                    e.Row.Cells[0].Visible = false;
                 }
             }
         }
@@ -332,6 +374,11 @@ namespace PortalClientes.Views
                     lblTotal.Text = Properties.Resources.TabTran_TotalMxn;
                     lblPromedio.Text = Properties.Resources.TabTran_TotalUsd;
                     break;
+                case 5:
+                    lblTotalTrasn.Text = Properties.Resources.TabTran_NoVuelos;
+                    lblTotal.Text = Properties.Resources.TabTran_TotalMxn;
+                    lblPromedio.Text = Properties.Resources.TabTran_TotalUsd;
+                    break;
                 default:
                     lblTotalTrasn.Text = Properties.Resources.TabTran_NoGastos;
                     lblTotal.Text = Properties.Resources.TabTran_MontoTotal;
@@ -485,6 +532,73 @@ namespace PortalClientes.Views
             Reportes r = new Reportes();
             Session["data"] = orptResumenGastosVuelos;
             r.resumenGastosVuelos = orptResumenGastosVuelos;
+
+            LlenarGV(r, reporte);
+        }
+
+        public void CargarReporteDetalleGastosVuelos(responseDetGastosVuelos orptDetalleGastosVuelos)
+        {
+            DateTimeFormatInfo month = null;
+            CultureInfo cultureInfo = Thread.CurrentThread.CurrentCulture;
+            TextInfo textInfo = cultureInfo.TextInfo;
+            var reporte = 5;
+
+            Session["tipoReporte"] = reporte;
+
+            if (Utils.Idioma == "es-MX")
+            {
+                month = new CultureInfo("es-ES", false).DateTimeFormat;
+            }
+            else
+            {
+                month = new CultureInfo("en-US", false).DateTimeFormat;
+            }
+
+            detGastosVuelos detGV = new detGastosVuelos();
+            detGV.gvVuelos = new List<gvVuelos>();
+            detGV.titulos = new List<gvTitulosVuelos>();
+            detGV.gvConceptos = new List<gvConcepto>();
+
+            List<int> meses = new List<int>();
+            meses = orptDetalleGastosVuelos.vuelos.Select(x => x.mes).Distinct().ToList();
+
+            foreach(var m in meses)
+            {
+                var mes = textInfo.ToTitleCase(month.GetMonthName(m));
+
+                gvTitulosVuelos tv = new gvTitulosVuelos();
+                tv.tituloLink = Utils.Idioma == "es-MX" ? orptDetalleGastosVuelos.vuelos.Where(j => j.mes == m).Count().S() + " vuelos de " + mes : mes + " " + orptDetalleGastosVuelos.vuelos.Where(j => j.mes == m).Count().S() + "Flights";
+                tv.mes = mes;
+                detGV.titulos.Add(tv);
+
+                foreach (var item in orptDetalleGastosVuelos.vuelos.Where(x => x.mes == m))
+                {
+                    gvVuelos gvv = new gvVuelos();
+                    gvv.origen = item.origenVuelo;
+                    gvv.destino = item.destinoVuelo;
+                    gvv.tiempoVuelo = item.tiempoVuelo;
+                    gvv.pasajeros = item.cantPax;
+                    gvv.contrato = item.contrato;
+                    gvv.mes = mes;
+                    detGV.gvVuelos.Add(gvv);
+                }
+            }
+
+            foreach (var item in orptDetalleGastosVuelos.conceptosVuelos)
+            {
+                gvConcepto gvc = new gvConcepto();
+                gvc.rubro = Utils.Idioma == "es-MX" ? item.rubroESP : item.rubroENG;
+                gvc.totalMXN = item.totalMXN;
+                gvc.totalUSD = item.totalUSD;
+                gvc.fecha = item.fecha.ToString("dd/MMDyyyy");
+                gvc.categoria = item.categoria;
+                gvc.comentarios = item.comentarios;
+                detGV.gvConceptos.Add(gvc);
+            }
+
+            Reportes r = new Reportes();
+            Session["data"] = orptDetalleGastosVuelos;
+            r.detalleGastosVuelos = detGV;
 
             LlenarGV(r, reporte);
         }
@@ -649,7 +763,7 @@ namespace PortalClientes.Views
             }
             else if (tipo == 4)
             {
-                totalRegistros = reportes.resumenGastosVuelos.Count();
+                totalRegistros = reportes.resumenGastosVuelos.Sum(x => x.vuelos);
                 contMeses = reportes.resumenGastosVuelos.Count();
                 totalTransacciones = reportes.resumenGastosVuelos.Sum(x => x.totalMXN);
                 promedio = reportes.resumenGastosVuelos.Sum(x => x.totalUSD);
@@ -684,6 +798,24 @@ namespace PortalClientes.Views
                 gvdetReportes.Columns.Add(clm7);
 
                 gvdetReportes.DataSource = reportes.resumenGastosVuelos.OrderBy(x => x.mes).ToList(); //.GroupBy(r => r.mes).Select(x => x.First());
+                gvdetReportes.DataBind();
+
+                lblTotalTrasnRes.Text = totalRegistros.S();
+                lblTotalRes.Text = totalTransacciones.ToString("C", CultureInfo.CreateSpecificCulture("es-MX")) + " MXN";
+                lblPromedioRes.Text = promedio.ToString("C", CultureInfo.CreateSpecificCulture("es-MX")) + " USD";
+            }
+            else if (tipo == 5)
+            {
+                totalRegistros = reportes.detalleGastosVuelos.gvVuelos.Count();
+                //contMeses = reportes.resumenGastosVuelos.Count();
+                totalTransacciones = reportes.detalleGastosVuelos.gvConceptos.Sum(x => x.totalMXN);
+                promedio = reportes.detalleGastosVuelos.gvConceptos.Sum(x => x.totalUSD);
+
+                BoundField clm = new BoundField();
+                clm.DataField = "tituloLink";
+                gvdetReportes.Columns.Add(clm);
+
+                gvdetReportes.DataSource = reportes.detalleGastosVuelos.titulos.OrderBy(x => x.mes).ToList(); //.GroupBy(r => r.mes).Select(x => x.First());
                 gvdetReportes.DataBind();
 
                 lblTotalTrasnRes.Text = totalRegistros.S();
@@ -851,6 +983,5 @@ namespace PortalClientes.Views
         }
 
         #endregion
-
     }
 }
