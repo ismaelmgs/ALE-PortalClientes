@@ -161,6 +161,9 @@
 	font-weight: bold !important;
 	font-size: 18px !important;
 }
+.count2 {
+	font-size:18px !important;
+}
 @media (min-width: 280px) {
 	.flotante {
 		top: 112px;

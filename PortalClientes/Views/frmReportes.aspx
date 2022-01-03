@@ -84,7 +84,7 @@
                                             </tr>
                                             <tr style="background-color: #00000003;">
                                                 <td style="border-bottom: 1px solid #dee2e6; padding: 6px;">
-                                                    <table>
+                                                    <table style="width:100%;">
                                                         <tr>
                                                             <td align="left">
                                                                 <asp:LinkButton runat="server" ID="btnDetGastosVuelos" OnClick="btnDetReporte_Click" data-report="5" data-rpt="0">
@@ -97,7 +97,6 @@
                                                             </td>
                                                         </tr>
                                                     </table>
-                                                    
                                                 </td>
                                             </tr>
                                             <tr>
