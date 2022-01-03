@@ -324,7 +324,7 @@
                 }
             </style>
             <script
-            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC98wN4fcIzsEP7zyEey3V0LkvZ7KHUYdw&callback=initMap&v=weekly"
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC98wN4fcIzsEP7zyEey3V0LkvZ7KHUYdw&callback=initialize"
             async
             ></script>
             <!-- <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?sensor=false"></script> -->
@@ -368,7 +368,7 @@
       }
         
       // Inicializando el mapa cuando se carga la página
-      google.maps.event.addDomListener(window, 'load', initialize);
+    //   google.maps.event.addDomListener(window, 'load', initialize);
             </script>
         </ContentTemplate>
     </asp:UpdatePanel>
