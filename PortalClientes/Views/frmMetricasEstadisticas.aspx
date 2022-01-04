@@ -48,6 +48,7 @@
                                         <span class="count_top">
                                             <asp:Label ID="lblGastoTotalFijo" runat="server" Text=" Gasto Total Fijo" Font-Bold="false"></asp:Label></span>
                                         <div class="count">
+                                            <asp:Label ID="lblGastoTotalSimbolo" runat="server" Text=" $" Font-Bold="true" CssClass="count2" />
                                             <asp:Label ID="lblGastoTotalRes" runat="server" Text=" 2500" Font-Bold="true" CssClass="count"></asp:Label>
                                         </div>
                                     </div>
@@ -57,6 +58,7 @@
                                         <span class="count_top">
                                             <asp:Label ID="lblGastoTotalVariable" runat="server" Text=" Costo Total Variable" Font-Bold="false"></asp:Label></span>
                                         <div class="count">
+                                            <asp:Label ID="lblGastoTotalVariableSimbolo" runat="server" Text=" $" Font-Bold="true" CssClass="count2" />
                                             <asp:Label ID="lblGastoTotalVariableRes" runat="server" Text=" 2500" Font-Bold="true" CssClass="count"></asp:Label>
                                         </div>
                                     </div>
@@ -66,6 +68,7 @@
                                         <span class="count_top">
                                             <asp:Label ID="lblCostoHora" runat="server" Text=" Costo por Hora" Font-Bold="false"></asp:Label></span>
                                         <div class="count">
+                                            <asp:Label ID="lblCostoHoraSimbolo" runat="server" Text=" $" Font-Bold="true" CssClass="count2" />
                                             <asp:Label ID="lblCostoHoraRes" runat="server" Text=" 2500" Font-Bold="true" CssClass="count"></asp:Label>
                                         </div>
                                     </div>
@@ -75,6 +78,7 @@
                                         <span class="count_top">
                                             <asp:Label ID="lblCostoMilla" runat="server" Text=" Costo por Milla" Font-Bold="false"></asp:Label></span>
                                         <div class="count">
+                                            <asp:Label ID="lblCostoMillaSimbolo" runat="server" Text=" $" Font-Bold="true" CssClass="count2" />
                                             <asp:Label ID="lblCostoMillaRes" runat="server" Text=" - " Font-Bold="true" CssClass="count"></asp:Label>
                                         </div>
                                     </div>
@@ -94,6 +98,7 @@
                                         <span class="count_top">
                                             <asp:Label ID="lblGastoTotalFijoMXN" runat="server" Text=" Gasto Total Fijo" Font-Bold="false"></asp:Label></span>
                                         <div class="count">
+                                            <asp:Label ID="lblGastoTotalsimboloMXN" runat="server" Text=" $" Font-Bold="true" CssClass="count2" />
                                             <asp:Label ID="lblGastoTotalResMXN" runat="server" Text=" 2500" Font-Bold="true" CssClass="count"></asp:Label>
                                         </div>
                                     </div>
@@ -103,6 +108,7 @@
                                         <span class="count_top">
                                             <asp:Label ID="lblGastoTotalVariableMXN" runat="server" Text=" Costo Total Variable" Font-Bold="false"></asp:Label></span>
                                         <div class="count">
+                                            <asp:Label ID="lblGastoTotalVariableMXNSimbolo" runat="server" Text=" $" Font-Bold="true" CssClass="count2" />
                                             <asp:Label ID="lblGastoTotalVariableMXNRes" runat="server" Text=" 2500" Font-Bold="true" CssClass="count"></asp:Label>
                                         </div>
                                     </div>
@@ -112,6 +118,7 @@
                                         <span class="count_top">
                                             <asp:Label ID="lblCostoHoraMXN" runat="server" Text=" Costo por Hora" Font-Bold="false"></asp:Label></span>
                                         <div class="count">
+                                            <asp:Label ID="lblCostoHoraMXNSimbolo" runat="server" Text=" $" Font-Bold="true" CssClass="count2" />
                                             <asp:Label ID="lblCostoHoraMXNRes" runat="server" Text=" 2500" Font-Bold="true" CssClass="count"></asp:Label>
                                         </div>
                                     </div>
@@ -121,6 +128,7 @@
                                         <span class="count_top">
                                             <asp:Label ID="lblCostoMillaMXN" runat="server" Text=" Costo por Milla" Font-Bold="false"></asp:Label></span>
                                         <div class="count">
+                                            <asp:Label ID="lblCostoMillaMXNSimbolo" runat="server" Text=" $" Font-Bold="true" CssClass="count2" />
                                             <asp:Label ID="lblCostoMillaMXNRes" runat="server" Text=" - " Font-Bold="true" CssClass="count"></asp:Label>
                                         </div>
                                     </div>
@@ -141,6 +149,7 @@
                                     <span class="count_top">
                                         <asp:Label ID="lblNumeroVuelos" runat="server" Text=" Número de Vuelos" Font-Bold="false"></asp:Label></span>
                                     <div class="count">
+                                        <asp:Label ID="lblNumeroVuelosSimbolo" runat="server" Text=" $" Font-Bold="true" CssClass="count2" />
                                         <asp:Label ID="lblNumeroVuelosRes" runat="server" Text=" 2500" Font-Bold="true" CssClass="count">
                                         </asp:Label>
                                     </div>
@@ -151,6 +160,7 @@
                                     <span class="count_top">
                                         <asp:Label ID="lblHorasVoladas" runat="server" Text=" Horas Voladas" Font-Bold="false"></asp:Label></span>
                                     <div class="count">
+                                        <asp:Label ID="lblHorasVoladasSimbolo" runat="server" Text=" $" Font-Bold="true" CssClass="count2" />
                                         <asp:Label ID="lblHorasVoladasRes" runat="server" Text=" 2500" Font-Bold="true" CssClass="count"></asp:Label>
                                     </div>
                                 </div>
@@ -160,6 +170,7 @@
                                     <span class="count_top">
                                         <asp:Label ID="lblPromedioDePasajeros" runat="server" Text=" Numero de Pasajeros" Font-Bold="false"></asp:Label></span>
                                     <div class="count">
+                                        <asp:Label ID="lblPromedioDePasajerosSimbolo" runat="server" Text=" $" Font-Bold="true" CssClass="count2" />
                                         <asp:Label ID="lblPromedioDePasajerosRes" runat="server" Text=" 2500" Font-Bold="true" CssClass="count"></asp:Label>
                                     </div>
                                 </div>
@@ -183,6 +194,7 @@
                                         <span class="count_top">
                                             <asp:Label ID="lblTiempoPromedio" runat="server" Text=" Tiempo Promedio" Font-Bold="false"></asp:Label></span>
                                         <div class="count">
+                                            <asp:Label ID="lblTiempoPromedioSimbolo" runat="server" Text=" $" Font-Bold="true" CssClass="count2" />
                                             <asp:Label ID="lblTiempoPromedioRes" runat="server" Text=" 2500" Font-Bold="true" CssClass="count"></asp:Label>
                                         </div>
                                     </div>
@@ -192,6 +204,7 @@
                                         <span class="count_top">
                                             <asp:Label ID="lblDistanciaPromedio" runat="server" Text=" Distancia Promedio (millas)" Font-Bold="false"></asp:Label></span>
                                         <div class="count">
+                                            <asp:Label ID="lblDistanciaPromedioSimbolo" runat="server" Text=" $" Font-Bold="true" CssClass="count2" />
                                             <asp:Label ID="lblDistanciaPromedioRes" runat="server" Text=" 2500" Font-Bold="true" CssClass="count"></asp:Label>
                                         </div>
                                     </div>
@@ -201,6 +214,7 @@
                                         <span class="count_top">
                                             <asp:Label ID="lblPromedioPasajeros" runat="server" Text=" Promedio de Pasajeros" Font-Bold="false"></asp:Label></span>
                                         <div class="count">
+                                            <asp:Label ID="lblPromedioPasajerosSimbolo" runat="server" Text=" $" Font-Bold="true" CssClass="count2" />
                                             <asp:Label ID="lblPromedioPasajerosRes" runat="server" Text=" 2500" Font-Bold="true" CssClass="count"></asp:Label>
                                         </div>
                                     </div>
@@ -210,6 +224,7 @@
                                         <span class="count_top">
                                             <asp:Label ID="lblCostoPromedioMXN" runat="server" Text=" Costo Promedio Pesos" Font-Bold="false"></asp:Label></span>
                                         <div class="count">
+                                            <asp:Label ID="lblCostoPromedioSimbolo" runat="server" Text=" $" Font-Bold="true" CssClass="count2" />
                                             <asp:Label ID="lblCostoPromedioRes" runat="server" Text=" 2500" Font-Bold="true" CssClass="count"></asp:Label>
                                         </div>
                                     </div>
@@ -219,6 +234,7 @@
                                         <span class="count_top">
                                             <asp:Label ID="lblCostoPromedioUSD" runat="server" Text=" Costo Promedio Dlls" Font-Bold="false"></asp:Label></span>
                                         <div class="count">
+                                            <asp:Label ID="lblCostoPromedioUSDSimbolo" runat="server" Text=" $" Font-Bold="true" CssClass="count2" />
                                             <asp:Label ID="lblCostoPromedioUSDRes" runat="server" Text=" 2500" Font-Bold="true" CssClass="count"></asp:Label>
                                         </div>
                                     </div>
