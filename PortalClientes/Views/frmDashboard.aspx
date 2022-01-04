@@ -332,8 +332,8 @@
       function initialize() {
       // Configuración del mapa
       var mapProp = {
-        zoom: 2,
-        center: {lat: 23.0000000, lng: -102.0000000},
+        zoom: 5,
+        center: {lat: 24.4848937, lng: -103.3544444},
       };
       // Agregando el mapa al tag de id googleMap
       var map = new google.maps.Map(document.getElementById("googleMap"), mapProp);

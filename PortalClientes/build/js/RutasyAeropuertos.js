@@ -20,7 +20,7 @@ function initialize() {
 
   // Configuración del mapa
   var mapProp = {
-    zoom: 2,
+    zoom: 5,
     center: {lat: 23.0000000, lng: -102.0000000},
   };
 

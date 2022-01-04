@@ -84,17 +84,17 @@
                                             </tr>
                                             <tr style="background-color: #00000003;">
                                                 <td style="border-bottom: 1px solid #dee2e6; padding: 6px;">
-                                                    <table style="width:100%;">
+                                                    <table style="width: 100%;">
                                                         <tr>
                                                             <td align="left">
                                                                 <asp:LinkButton runat="server" ID="btnDetGastosVuelos" OnClick="btnDetReporte_Click" data-report="5" data-rpt="0">
                                                                     <img src="../build/images/detalle_gatos.png" style="width: 32px;" />&nbsp;<span style="font-size: 17px; font-weight: bold;"><asp:Label ID="lblDetalleGastosVuelos" runat="server" Text=" Detalle de gastos / Vuelos" Font-Bold="true"></asp:Label></span><br />
                                                                 </asp:LinkButton>
                                                             </td>
-                                                            <td style="border: 0px; padding: 0.1rem; text-align:right;">
+                                                            <%--<td style="border: 0px; padding: 0.1rem; text-align: right;">
                                                                 <asp:LinkButton ID="LinkButton1" runat="server" Text="<i class='fa fa-file-excel-o' style='color:#73879c;font-size:25px;'></i>" CssClass="btn" OnClick="lkbExpExcelRes_Click" />
                                                                 <asp:LinkButton ID="LinkButton2" runat="server" Text="<i class='fa fa-file-pdf-o' style='color:#73879c;font-size:25px;' ></i>" CssClass="btn" OnClick="lkbExpPDFRes_Click" />
-                                                            </td>
+                                                            </td>--%>
                                                         </tr>
                                                     </table>
                                                 </td>
