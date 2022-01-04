@@ -8,28 +8,28 @@ namespace PortalClientes.Objetos
     [Serializable]
     public class responseRepEdoCuenta
     {
-        private List<DetalleRepEdoCuenta> _olsDetalle = new List<DetalleRepEdoCuenta>();
+        private List<detalleEdoCta> _olsDetalle = new List<detalleEdoCta>();
 
         public string nombreMes { set; get; }
         public int mes { set; get; }
         public int anio { set; get; }
         public string matricula { set; get; }
-        public decimal saldoAnteriorMXN { set; get; }
-        public decimal pagosCreditoMXN { set; get; }
-        public decimal nuevosCargosMXN { set; get; }
-        public decimal saldoActualMXN { set; get; }
-        public decimal saldoAnteriorUSD { set; get; }
-        public decimal pagosCreditoUSD { set; get; }
-        public decimal nuevosCargosUSD { set; get; }
-        public decimal saldoActualUSD { set; get; }
+        public string contrato { set; get; }
         public int docF { set; get; }
+        public string saldoAnteriorMXN { set; get; }
+        public string pagosCreditoMXN { set; get; }
+        public string nuevosCargosMXN { set; get; }
+        public string saldoActualMXN { set; get; }
+        public string saldoAnteriorUSD { set; get; }
+        public string pagosCreditoUSD { set; get; }
+        public string nuevosCargosUSD { set; get; }
+        public string saldoActualUSD { set; get; }              
 
-
-        public List<DetalleRepEdoCuenta> olsDetalle { get => _olsDetalle; set => _olsDetalle = value; }
+        public List<detalleEdoCta> olsDetalle { get => _olsDetalle; set => _olsDetalle = value; }
     }
 
     [Serializable]
-    public class DetalleRepEdoCuenta
+    public class detalleEdoCta
     {
         public string nombreMes { set; get; } 
         public int mes { set; get; }
@@ -88,5 +88,4 @@ namespace PortalClientes.Objetos
         public List<ResponseSubEdoCuenta> estadoCuentaMXN { set; get; }
         public List<ResponseSubEdoCuenta> estadoCuentaUSD { set; get; }
     }
-
 }

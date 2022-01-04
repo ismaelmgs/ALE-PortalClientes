@@ -19,7 +19,7 @@ namespace PortalClientes.Objetos
         public List<gvGastosT> gastosTotales { get; set; }
         public List<gvCostosH> costosHoraVuelo { get; set; }
         public List<gvCostosFVH> costosFijosVariableHora { get; set; }
-        public List<DetalleRepEdoCuenta> detalleEdoCuenta { get; set; }
+        public List<detalleEdoCta> detalleEdoCuenta { get; set; }
         public List<gvDetGastos> detGastos { get; set; }
         public List<rptResumenGastosVuelos> resumenGastosVuelos { get; set; }
         public detGastosVuelos detalleGastosVuelos { get; set; }

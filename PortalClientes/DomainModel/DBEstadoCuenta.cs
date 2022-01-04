@@ -44,53 +44,31 @@ namespace PortalClientes.DomainModel
             }
         }
 
-        public List<responseRepEdoCuenta> DBGetObtieneUltimosEdoCuentaMatricula()
+        public List<responseRepEdoCuenta> DBGetObtieneUltimosEdoCuentaMatricula(FiltroReporteEdoCuenta filtro)
         {
             try
             {
-                DBBase db = new DBBase();
-                List<responseRepEdoCuenta> ols = new List<responseRepEdoCuenta>();
+                JavaScriptSerializer ser = new JavaScriptSerializer();
+                ser.MaxJsonLength = 500000000;
+                List<responseRepEdoCuenta> d = new List<responseRepEdoCuenta>();
+                FiltroReporteEdoCuenta oLog = new FiltroReporteEdoCuenta();
+                oLog = filtro;
 
-                db.oDB_SP.sConexionSQL = "Data Source=192.168.1.219;Initial Catalog=MexJet360;User ID=sa;Password=SYS.*2015%SQL";
-                DataSet ds = db.oDB_SP.EjecutarDS("[PortalClientes].[spS_PC_ObtieneReportesEstadosDeCuentaMatricula]", "@Matricula", Utils.MatriculaActual);
+                oLog.matriculaActual = Utils.MatriculaActual;
 
-                foreach (DataRow row in ds.Tables[0].Rows)
-                {
-                    responseRepEdoCuenta oRes = new responseRepEdoCuenta();
-                    oRes.mes = row["Mes"].S().I();
-                    oRes.anio = row["Anio"].S().I();
-                    oRes.saldoAnteriorMXN = row["SaldoAnteriorMXN"].S().D();
-                    oRes.pagosCreditoMXN = row["PagosCreditoMXN"].S().D();
-                    oRes.nuevosCargosMXN = row["NuevosCargosMXN"].S().D();
-                    oRes.saldoActualMXN = row["SaldoActualMXN"].S().D();
-                    oRes.saldoAnteriorUSD = row["SaldoAnteriorUSD"].S().D();
-                    oRes.pagosCreditoUSD = row["PagosCreditoUSD"].S().D();
-                    oRes.nuevosCargosUSD = row["NuevosCargosUSD"].S().D();
-                    oRes.saldoActualUSD = row["SaldoActualUSD"].S().D();
-                    oRes.docF = row["DocF"].S().I();
+                TokenWS oToken = Utils.ObtieneToken;
 
-                    foreach (DataRow row2 in ds.Tables[1].Rows)
-                    {
-                        DetalleRepEdoCuenta oDet = new DetalleRepEdoCuenta();
-                        oDet.mes = row2["Mes"].S().I();
-                        oDet.anio = row2["Anio"].S().I();
-                        oDet.tipoMoneda = row2["TipoMoneda"].S();
-                        oDet.fecha = row2["Fecha"].S();
-                        oDet.noReferencia = row2["NoReferencia"].S();
-                        oDet.tipoGasto = row2["TipoGasto"].S();
-                        oDet.concepto = row2["Concepto"].S();
-                        oDet.rubro = row2["Rubro"].S();
-                        oDet.detalle = row2["Detalle"].S();
-                        oDet.proveedor = row2["Proveedor"].S();
-                        oDet.importe = row2["Importe"].S().D();
+                var client = new RestClient(Helper.D_UrlconsultaReporteEdoCtaMatricula);
+                var request = new RestRequest(Method.POST);
+                request.AddHeader("Authorization", oToken.token);
+                request.AddJsonBody(oLog);
 
-                        oRes.olsDetalle.Add(oDet);
-                    }
+                IRestResponse response = client.Execute(request);
+                var resp = response.Content;
 
-                    ols.Add(oRes);
-                }
+                d = ser.Deserialize<List<responseRepEdoCuenta>>(resp);
 
-                return ols;
+                return d;               
             }
             catch (Exception ex)
             {
