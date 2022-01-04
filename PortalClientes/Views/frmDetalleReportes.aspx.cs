@@ -228,10 +228,9 @@ namespace PortalClientes.Views
         {
             var tipo = Convert.ToInt32(Session["tipoReporte"]);
 
-            Reportes r = (Reportes)Session["data"];
-
             if (tipo == 5)
             {
+                Reportes r = (Reportes)Session["data"];
                 if (e.Row.RowType == DataControlRowType.Header)
                 {
                     TableCell tc = new TableCell();
