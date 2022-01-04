@@ -294,15 +294,6 @@ namespace PortalClientes.Views
         protected global::System.Web.UI.WebControls.Label lblNumeroVuelos;
 
         /// <summary>
-        /// Control lblNumeroVuelosSimbolo.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblNumeroVuelosSimbolo;
-
-        /// <summary>
         /// Control lblNumeroVuelosRes.
         /// </summary>
         /// <remarks>
@@ -321,15 +312,6 @@ namespace PortalClientes.Views
         protected global::System.Web.UI.WebControls.Label lblHorasVoladas;
 
         /// <summary>
-        /// Control lblHorasVoladasSimbolo.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblHorasVoladasSimbolo;
-
-        /// <summary>
         /// Control lblHorasVoladasRes.
         /// </summary>
         /// <remarks>
@@ -346,15 +328,6 @@ namespace PortalClientes.Views
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblPromedioDePasajeros;
-
-        /// <summary>
-        /// Control lblPromedioDePasajerosSimbolo.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblPromedioDePasajerosSimbolo;
 
         /// <summary>
         /// Control lblPromedioDePasajerosRes.
@@ -384,15 +357,6 @@ namespace PortalClientes.Views
         protected global::System.Web.UI.WebControls.Label lblTiempoPromedio;
 
         /// <summary>
-        /// Control lblTiempoPromedioSimbolo.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblTiempoPromedioSimbolo;
-
-        /// <summary>
         /// Control lblTiempoPromedioRes.
         /// </summary>
         /// <remarks>
@@ -411,15 +375,6 @@ namespace PortalClientes.Views
         protected global::System.Web.UI.WebControls.Label lblDistanciaPromedio;
 
         /// <summary>
-        /// Control lblDistanciaPromedioSimbolo.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblDistanciaPromedioSimbolo;
-
-        /// <summary>
         /// Control lblDistanciaPromedioRes.
         /// </summary>
         /// <remarks>
@@ -436,15 +391,6 @@ namespace PortalClientes.Views
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblPromedioPasajeros;
-
-        /// <summary>
-        /// Control lblPromedioPasajerosSimbolo.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblPromedioPasajerosSimbolo;
 
         /// <summary>
         /// Control lblPromedioPasajerosRes.
