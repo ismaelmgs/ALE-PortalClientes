@@ -93,4 +93,9 @@ namespace PortalClientes.Objetos
         public int anio { get; set; }
         public int mes { get; set; }
     }
+
+    public class FiltroReporteEdoCuenta
+    {
+        public string matriculaActual { get; set; }
+    }
 }

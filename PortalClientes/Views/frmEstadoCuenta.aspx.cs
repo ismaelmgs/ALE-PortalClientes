@@ -51,6 +51,8 @@ namespace PortalClientes.Views
             }
 
             EdoCuenta = new DataSet();
+
+            
         }
 
         protected void gvEdoCuenta_RowDataBound(object sender, GridViewRowEventArgs e)
@@ -323,7 +325,7 @@ namespace PortalClientes.Views
             {
                 item.nombreMes = ObtienePeriodoEdoCuenta(item.mes, item.anio);
 
-                foreach (DetalleRepEdoCuenta itemD in item.olsDetalle)
+                foreach (detalleEdoCta itemD in item.olsDetalle)
                 {
                     itemD.nombreMes = ObtienePeriodoEdoCuenta(itemD.mes, itemD.anio);
                 }

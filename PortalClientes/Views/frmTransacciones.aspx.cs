@@ -141,7 +141,7 @@ namespace PortalClientes.Views
 
                     else if (tipo == 13)
                     {
-                        transacciones.detalleEdoCuenta = (List<DetalleRepEdoCuenta>)Session["data"];
+                        transacciones.detalleEdoCuenta = (List<detalleEdoCta>)Session["data"];
                         LlenarGV(transacciones, tipo);
                         btnRegresaEdoCta.Visible = true;
                     }
@@ -454,7 +454,7 @@ namespace PortalClientes.Views
 
             else if (tipo == 13)
             {
-                transacciones.detalleEdoCuenta = (List<DetalleRepEdoCuenta>)Session["data"];
+                transacciones.detalleEdoCuenta = (List<detalleEdoCta>)Session["data"];
                 LlenarGV(transacciones, tipo);
             }
 
@@ -1794,7 +1794,7 @@ namespace PortalClientes.Views
 
                 else if (tipo == 13)
                 {
-                    transacciones.detalleEdoCuenta = (List<DetalleRepEdoCuenta>)Session["data"];
+                    transacciones.detalleEdoCuenta = (List<detalleEdoCta>)Session["data"];
                     LlenarGV(transacciones, tipo);
                 }
 
@@ -1928,7 +1928,7 @@ namespace PortalClientes.Views
 
                 else if (tipo == 13)
                 {
-                    transacciones.detalleEdoCuenta = (List<DetalleRepEdoCuenta>)Session["data"];
+                    transacciones.detalleEdoCuenta = (List<detalleEdoCta>)Session["data"];
                     LlenarGV(transacciones, tipo);
                 }
 
