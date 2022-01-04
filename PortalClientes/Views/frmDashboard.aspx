@@ -219,6 +219,7 @@
                             <div class="col-md-6">
                                 <asp:Label ID="lblSaldo" runat="server" Text="Saldo Actual" Font-Bold="true"></asp:Label><br />
                                 <span style="font-size: 30px;">
+                                    <asp:Label ID="lblSaldoActualSimbolo" runat="server" Text=" $" Font-Bold="true" CssClass="count2" />
                                     <asp:Label ID="lblSaldoNumber" runat="server" Text="181,011.65" Font-Bold="true"></asp:Label></span>
                                 <br />
                                 <div class="row">
@@ -233,6 +234,7 @@
                             <div class="col-md-6">
                                 <asp:Label ID="lblUltimaDeclaracion" runat="server" Text="Ultima declaración" Font-Bold="true"></asp:Label><br />
                                 <span style="font-size: 30px;">
+                                    <asp:Label ID="lblUtimaDeclaracionSimbolo" runat="server" Text=" $" Font-Bold="true" CssClass="count2" />
                                     <asp:Label ID="lblultimaDeclaracionText" runat="server" Text="58,182.87" Font-Bold="true"></asp:Label></span>
                                 <br />
                                 <div class="row">
