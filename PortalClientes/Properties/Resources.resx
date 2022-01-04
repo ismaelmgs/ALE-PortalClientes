@@ -886,7 +886,7 @@
     <value>Nuevos cargos</value>
   </data>
   <data name="Ec_PagoRequerido" xml:space="preserve">
-    <value>Monto de depósito requerido</value>
+    <value>Saldo actual</value>
   </data>
   <data name="Ec_PagosPeriodo" xml:space="preserve">
     <value>Pagos del periodo</value>
@@ -895,7 +895,7 @@
     <value>Resumen de cuenta</value>
   </data>
   <data name="Ec_SaldoActual" xml:space="preserve">
-    <value>Saldo actual</value>
+    <value>Saldo anterior</value>
   </data>
   <data name="Ec_Titulo" xml:space="preserve">
     <value>Estado de Cuenta Mensual</value>
