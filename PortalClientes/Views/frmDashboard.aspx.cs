@@ -123,7 +123,7 @@ namespace PortalClientes.Views
                 if (count == 0)
                 {
                     lblMes01bVuelo.Text = i.Mes;
-                    lblMes01bVueloNum.Text = Convert.ToInt32(i.total).ToString();
+                    lblMes01bVueloNum.Text = FormatoHora(i.total);
                     BarH1.Position = i.porcentaje.Value;
 
                     count += 1;
@@ -131,14 +131,14 @@ namespace PortalClientes.Views
                 else if (count == 1)
                 {
                     lblMes02bVuelo.Text = i.Mes;
-                    lblMes02bVueloNum.Text = Convert.ToInt32(i.total).ToString();
+                    lblMes02bVueloNum.Text = FormatoHora(i.total);
                     BarH2.Position = i.porcentaje.Value;
                     count += 1;
                 }
                 else if (count == 2)
                 {
                     lblMes03bVuelo.Text = i.Mes;
-                    lblMes03bVueloNum.Text = Convert.ToInt32(i.total).ToString();
+                    lblMes03bVueloNum.Text = FormatoHora(i.total);
                     BarH3.Position = i.porcentaje.Value;
                     count = 0;
                 }
@@ -171,6 +171,20 @@ namespace PortalClientes.Views
             }
 
             ScriptManager.RegisterStartupScript(this.Page, this.GetType(), Guid.NewGuid().ToString(), "closeLoading();", true);
+        }
+
+        private string FormatoHora(decimal? total)
+        {
+            var formato = "0:00";
+            if (total > 0){
+                var horas = total / 60;
+                var minutos = total % 60;
+
+                formato = horas > 0 ? Convert.ToInt32(Math.Truncate(horas.Value)).ToString() : "00";
+                formato += minutos > 0 ? ":" + Convert.ToInt32(minutos.Value).ToString() : ":00" ;
+            }
+
+            return formato;
         }
 
         private void ArmarDashboard()
