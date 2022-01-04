@@ -132,7 +132,7 @@
         PopupControlID="pnlVuelosMes" BackgroundCssClass="overlayy">
     </cc1:ModalPopupExtender>
     <asp:Panel ID="pnlVuelosMes" runat="server" BorderColor="" BackColor="White" Height="" HorizontalAlign="Center"
-        Width="" CssClass=" anim_RLR">
+        Width="" CssClass="width_RLR" >
         <asp:UpdatePanel ID="upaVuelosMes" runat="server">
             <ContentTemplate>
                 <asp:Button ID="Button1" runat="server" CssClass="btn" Text="X" Font-Bold="true" OnClientClick="Ocultar();" Style="z-index: 2000; right: 13px; margin-top: 10px; position: absolute; color: #ffffff;" />
@@ -156,7 +156,7 @@
                     <div class="col-md-10" style="text-align: right;">
                         <asp:Button ID="btnsalir" runat="server" CssClass="btn btn-primary" UseSubmitBehavior="true" OnClick="btnsalir_Click" />
                     </div>
-                </div>
+                </div><br />
             </ContentTemplate>
         </asp:UpdatePanel>
     </asp:Panel>

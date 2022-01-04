@@ -7,11 +7,13 @@
 // </generado automáticamente>
 //------------------------------------------------------------------------------
 
-namespace PortalClientes.Views {
-    
-    
-    public partial class frmDetalleReportes {
-        
+namespace PortalClientes.Views
+{
+
+
+    public partial class frmDetalleReportes
+    {
+
         /// <summary>
         /// Control upaPrincipal.
         /// </summary>
@@ -20,7 +22,7 @@ namespace PortalClientes.Views {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.UpdatePanel upaPrincipal;
-        
+
         /// <summary>
         /// Control lblTitulo.
         /// </summary>
@@ -29,7 +31,7 @@ namespace PortalClientes.Views {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblTitulo;
-        
+
         /// <summary>
         /// Control lblTotalTrasn.
         /// </summary>
@@ -38,7 +40,7 @@ namespace PortalClientes.Views {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblTotalTrasn;
-        
+
         /// <summary>
         /// Control lblTotalTrasnRes.
         /// </summary>
@@ -47,7 +49,7 @@ namespace PortalClientes.Views {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblTotalTrasnRes;
-        
+
         /// <summary>
         /// Control lblTotal.
         /// </summary>
@@ -56,7 +58,7 @@ namespace PortalClientes.Views {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblTotal;
-        
+
         /// <summary>
         /// Control lblTotalRes.
         /// </summary>
@@ -65,7 +67,7 @@ namespace PortalClientes.Views {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblTotalRes;
-        
+
         /// <summary>
         /// Control lblPromedio.
         /// </summary>
@@ -74,7 +76,7 @@ namespace PortalClientes.Views {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblPromedio;
-        
+
         /// <summary>
         /// Control lblPromedioRes.
         /// </summary>
@@ -83,7 +85,7 @@ namespace PortalClientes.Views {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblPromedioRes;
-        
+
         /// <summary>
         /// Control lblTransacciones.
         /// </summary>
@@ -92,7 +94,7 @@ namespace PortalClientes.Views {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblTransacciones;
-        
+
         /// <summary>
         /// Control btnExcel.
         /// </summary>
@@ -101,7 +103,7 @@ namespace PortalClientes.Views {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.LinkButton btnExcel;
-        
+
         /// <summary>
         /// Control btnPDF.
         /// </summary>
@@ -110,7 +112,7 @@ namespace PortalClientes.Views {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.LinkButton btnPDF;
-        
+
         /// <summary>
         /// Control gvdetReportes.
         /// </summary>
@@ -119,7 +121,7 @@ namespace PortalClientes.Views {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.GridView gvdetReportes;
-        
+
         /// <summary>
         /// Control gvdetRepConceptos.
         /// </summary>
@@ -128,7 +130,7 @@ namespace PortalClientes.Views {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.GridView gvdetRepConceptos;
-        
+
         /// <summary>
         /// Control btnRegresarEng.
         /// </summary>
@@ -137,7 +139,7 @@ namespace PortalClientes.Views {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.LinkButton btnRegresarEng;
-        
+
         /// <summary>
         /// Control btnRegresar.
         /// </summary>
@@ -146,7 +148,7 @@ namespace PortalClientes.Views {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.LinkButton btnRegresar;
-        
+
         /// <summary>
         /// Control hdTargetVuelosMes.
         /// </summary>
@@ -155,7 +157,7 @@ namespace PortalClientes.Views {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.HiddenField hdTargetVuelosMes;
-        
+
         /// <summary>
         /// Control mpeVuelosMes.
         /// </summary>
@@ -164,7 +166,7 @@ namespace PortalClientes.Views {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::AjaxControlToolkit.ModalPopupExtender mpeVuelosMes;
-        
+
         /// <summary>
         /// Control pnlVuelosMes.
         /// </summary>
@@ -173,7 +175,7 @@ namespace PortalClientes.Views {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Panel pnlVuelosMes;
-        
+
         /// <summary>
         /// Control upaVuelosMes.
         /// </summary>
@@ -182,7 +184,7 @@ namespace PortalClientes.Views {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.UpdatePanel upaVuelosMes;
-        
+
         /// <summary>
         /// Control Button1.
         /// </summary>
@@ -191,7 +193,7 @@ namespace PortalClientes.Views {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button Button1;
-        
+
         /// <summary>
         /// Control lblVueloMes.
         /// </summary>
@@ -200,7 +202,7 @@ namespace PortalClientes.Views {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblVueloMes;
-        
+
         /// <summary>
         /// Control gvVuelos.
         /// </summary>
@@ -209,7 +211,7 @@ namespace PortalClientes.Views {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.GridView gvVuelos;
-        
+
         /// <summary>
         /// Control btnsalir.
         /// </summary>

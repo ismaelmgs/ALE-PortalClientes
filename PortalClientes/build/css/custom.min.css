@@ -175,6 +175,9 @@
 	.modal-derecha {
 		width: 270px;
 	}
+	.width_RLR {
+		width: 95%;
+	}
 }
 @media (min-width: 320px) {
 	.flotante {
@@ -187,6 +190,9 @@
 	.modal-derecha {
 		width: 310px;
 	}
+	.width_RLR {
+		width: 95%;
+	}
 }
 @media (min-width: 360px) {
 	.flotante {
@@ -195,6 +201,9 @@
 	}
 	.modal-derecha {
 		width: 350px;
+	}
+	.width_RLR {
+		width: 95%;
 	}
 }
 @media (min-width: 375px) {
@@ -205,6 +214,9 @@
 	.modal-derecha {
 		width: 350px;
 	}
+	.width_RLR {
+		width: 95%;
+	}
 }
 @media (min-width: 411px) {
 	.flotante {
@@ -213,6 +225,9 @@
 	}
 	.modal-derecha {
 		width: 400px;
+	}
+	.width_RLR {
+		width: 95%;
 	}
 }
 @media (min-width: 414px) {
@@ -223,6 +238,9 @@
 	.modal-derecha {
 		width: 400px;
 	}
+	.width_RLR {
+		width: 95%;
+	}
 }
 @media (min-width: 540px) {
 	.flotante {
@@ -231,6 +249,9 @@
 	}
 	.modal-derecha {
 		width: 530px;
+	}
+	.width_RLR {
+		width: 95%;
 	}
 }
 @media (min-width: 768px) {
@@ -241,6 +262,9 @@
 	.modal-derecha {
 		width: 650px;
 	}
+	.width_RLR {
+		width: 70%;
+	}
 }
 @media (min-width: 800px) {
 	.flotante {
@@ -249,6 +273,9 @@
 	}
 	.modal-derecha {
 		width: 650px;
+	}
+	.width_RLR {
+		width: 70%;
 	}
 }
 
