@@ -7,16 +7,18 @@ namespace PortalClientes.Objetos
 {
     public class responseDetGastosVuelos
     {
-        public List<vuelos> vuelos { get; set; }
-        public List<conceptos> conceptosVuelos { get; set; }
+        public List<vuelos> reporteDetalleGastosVuelosHOUT { get; set; }
+        public List<conceptos> reporteDetalleGastosVuelosDOUT { get; set; }
     }
 
     public class vuelos
     {
         public int anio { get; set; }
         public int mes { get; set; }
-        public string origenVuelo { get; set; }
-        public string destinoVuelo { get; set; }
+        public string origen { get; set; }
+        public string destino { get; set; }
+        public DateTime origenVuelo { get; set; }
+        public DateTime destinoVuelo { get; set; }
         public string tiempoVuelo { get; set; }
         public int cantPax { get; set; }
         public string cliente { get; set; }

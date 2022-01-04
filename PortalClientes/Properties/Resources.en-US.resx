@@ -1119,4 +1119,7 @@
   <data name="TabTran_TotalUsd" xml:space="preserve">
     <value>Total USD</value>
   </data>
+  <data name="TabTran_TiempoVuelo" xml:space="preserve">
+    <value>Flight time</value>
+  </data>
 </root>

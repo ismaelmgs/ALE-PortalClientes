@@ -1,5 +1,5 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" UICulture="es" Culture="es-MX" AutoEventWireup="true" CodeBehind="frmDetalleReportes.aspx.cs" Inherits="PortalClientes.Views.frmDetalleReportes" %>
-
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="cc1" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <script src="../vendors/jquery/dist/jquery.js"></script>
 
@@ -14,6 +14,14 @@
                 div.style.display = "none";
                 img.src = "../Images/icons/flecha_abre1.png";
             }
+        }
+
+        function Ocultar()
+        {
+            "use strict";
+            var modalId = '<%=mpeVuelosMes.ClientID%>';
+            var modal = $find(modalId);
+            modal.hide();
         }
     </script>
 </asp:Content>
@@ -92,7 +100,15 @@
                                     </div>
                                 </div>
                             </div>
-
+                            <div class="col-md-12">
+                                <div class="table-responsive">
+                                    <div class="card-box table-responsive">
+                                        <asp:GridView ID="gvdetRepConceptos" runat="server" AutoGenerateColumns="false" CssClass="table table-striped table-bordered table-hover" AllowPaging="true"
+                                            OnPageIndexChanging="gvdetRepConceptos_PageIndexChanging" OnRowDataBound="gvdetRepConceptos_RowDataBound" EmptyDataText="No Registros">
+                                        </asp:GridView>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                         <hr style="border: 1px solid #efefef;" />
                         <div style="width: 100%; text-align: center;">
@@ -108,4 +124,40 @@
             <asp:PostBackTrigger ControlID="btnPDF" />
         </Triggers>
     </asp:UpdatePanel>
+
+
+    <%-- MODAL PARA EDICIÓN DEL EMPLEADO --%>
+    <asp:HiddenField ID="hdTargetVuelosMes" runat="server" />
+    <cc1:ModalPopupExtender ID="mpeVuelosMes" runat="server" TargetControlID="hdTargetVuelosMes"
+        PopupControlID="pnlVuelosMes" BackgroundCssClass="overlayy">
+    </cc1:ModalPopupExtender>
+    <asp:Panel ID="pnlVuelosMes" runat="server" BorderColor="" BackColor="White" Height="" HorizontalAlign="Center"
+        Width="" CssClass=" anim_RLR">
+        <asp:UpdatePanel ID="upaVuelosMes" runat="server">
+            <ContentTemplate>
+                <asp:Button ID="Button1" runat="server" CssClass="btn" Text="X" Font-Bold="true" OnClientClick="Ocultar();" Style="z-index: 2000; right: 13px; margin-top: 10px; position: absolute; color: #ffffff;" />
+                <h5 class="modal-title" style="color: #ffffff; background-color: #2a3f54; width: 100%; height: 70px; padding-top: 15px;">
+                    <%--Edición de empleados--%>
+                    <asp:Label ID="lblVueloMes" Text="Vuelos del Mes" runat="server"></asp:Label>
+                </h5>
+                <br />
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="table-responsive">
+                            <div class="card-box table-responsive">
+                                <asp:GridView ID="gvVuelos" runat="server" AutoGenerateColumns="false" CssClass="table table-striped table-bordered table-hover" AllowPaging="true"
+                                    OnPageIndexChanging="gvVuelos_PageIndexChanging" OnRowDataBound="gvVuelos_RowDataBound" EmptyDataText="No Registros">
+                                </asp:GridView>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-10" style="text-align: right;">
+                        <asp:Button ID="btnsalir" runat="server" CssClass="btn btn-primary" UseSubmitBehavior="true" OnClick="btnsalir_Click" />
+                    </div>
+                </div>
+            </ContentTemplate>
+        </asp:UpdatePanel>
+    </asp:Panel>
 </asp:Content>
