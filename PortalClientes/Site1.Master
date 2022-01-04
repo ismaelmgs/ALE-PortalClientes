@@ -186,18 +186,10 @@
                                     </a>--%>
                                     <dx:BootstrapMenu ID="MenuMatriculas" runat="server" OnItemClick="MenuMatriculas_ItemClick">
                                         <Items>
-                                            <dx:BootstrapMenuItem Text="Salir" GroupName="Group1" IconCssClass="fa fa-power-off"></dx:BootstrapMenuItem>
                                             <dx:BootstrapMenuItem Text="Usuario" GroupName="Group2" IconCssClass="fa fa-user"></dx:BootstrapMenuItem>
+                                            <dx:BootstrapMenuItem Text="Matrículas &#x23f7;" IconCssClass="fa fa-plane" GroupName="Group4"></dx:BootstrapMenuItem>
                                             <dx:BootstrapMenuItem Text="Administrar mi cuenta" GroupName="Group3" IconCssClass="fa fa-cogs"></dx:BootstrapMenuItem>
-                                            <dx:BootstrapMenuItem Text="Matrículas &#x23f7;" IconCssClass="fa fa-plane" GroupName="Group4">
-                                                <%--<Items>
-                                                    <dx:BootstrapMenuItem Text="XA-FLC" GroupName="SubItemGroup1" CssClass="dropdown-item">
-                                                    </dx:BootstrapMenuItem>
-                                                    <dx:BootstrapMenuItem Text="XA-SOL" GroupName="SubItemGroup1" CssClass="dropdown-item">
-                                                    </dx:BootstrapMenuItem>
-                                                </Items>--%>
-                                            </dx:BootstrapMenuItem>
-                                            
+                                            <dx:BootstrapMenuItem Text="Salir" GroupName="Group1" IconCssClass="fa fa-power-off"></dx:BootstrapMenuItem>
                                         </Items>
                                     </dx:BootstrapMenu>
                                     <%--<a class="dropdown-item" href="javascript:;">
