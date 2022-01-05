@@ -1319,15 +1319,15 @@ namespace PortalClientes.Views
         {
             oMetEsta = oME;
 
-            lblGastoTotalRes.Text = oMetEsta.GastoTotalFijoUSD.ToString("C", CultureInfo.CreateSpecificCulture("es-MX"));
-            lblGastoTotalVariableRes.Text = oMetEsta.GastoTotalVarUSD.ToString("C", CultureInfo.CreateSpecificCulture("es-MX"));
-            lblCostoHoraRes.Text = oMetEsta.CostoPorHoraUSD.ToString("C", CultureInfo.CreateSpecificCulture("es-MX"));
-            lblCostoMillaRes.Text = oMetEsta.CostoPorMillaUSD.ToString("C", CultureInfo.CreateSpecificCulture("es-MX"));
+            lblGastoTotalRes.Text = oMetEsta.GastoTotalFijoUSD.ToString();
+            lblGastoTotalVariableRes.Text = oMetEsta.GastoTotalVarUSD.ToString();
+            lblCostoHoraRes.Text = oMetEsta.CostoPorHoraUSD.ToString();
+            lblCostoMillaRes.Text = oMetEsta.CostoPorMillaUSD.ToString();
 
-            lblGastoTotalResMXN.Text = oMetEsta.GastoTotalFijoMXN.ToString("C", CultureInfo.CreateSpecificCulture("es-MX"));
-            lblGastoTotalVariableMXNRes.Text = oMetEsta.GastoTotalVarMXN.ToString("C", CultureInfo.CreateSpecificCulture("es-MX"));
-            lblCostoHoraMXNRes.Text = oMetEsta.CostoPorHoraMXN.ToString("C", CultureInfo.CreateSpecificCulture("es-MX"));
-            lblCostoMillaMXNRes.Text = oMetEsta.CostoPorMillaMXN.ToString("C", CultureInfo.CreateSpecificCulture("es-MX"));
+            lblGastoTotalResMXN.Text = oMetEsta.GastoTotalFijoMXN.ToString();
+            lblGastoTotalVariableMXNRes.Text = oMetEsta.GastoTotalVarMXN.ToString();
+            lblCostoHoraMXNRes.Text = oMetEsta.CostoPorHoraMXN.ToString();
+            lblCostoMillaMXNRes.Text = oMetEsta.CostoPorMillaMXN.ToString();
 
             lblNumeroVuelosRes.Text = oMetEsta.NumeroVuelos.ToString();
             lblHorasVoladasRes.Text = oMetEsta.HorasVoladas.ToString();
@@ -1337,8 +1337,8 @@ namespace PortalClientes.Views
             lblTiempoPromedioRes.Text = oMetEsta.TiempoPromedio != null ? oMetEsta.TiempoPromedio.ToString() : "00:00";
             lblDistanciaPromedioRes.Text = oMetEsta.DistanciaPromedio.ToString();
             lblPromedioPasajerosRes.Text = oMetEsta.PaxPromedio.ToString();
-            lblCostoPromedioRes.Text = oMetEsta.PromedioMXN.ToString("C", CultureInfo.CreateSpecificCulture("es-MX"));
-            lblCostoPromedioUSDRes.Text = oMetEsta.PromedioUSD.ToString("C", CultureInfo.CreateSpecificCulture("es-MX"));
+            lblCostoPromedioRes.Text = oMetEsta.PromedioMXN.ToString();
+            lblCostoPromedioUSDRes.Text = oMetEsta.PromedioUSD.ToString();
 
             ScriptManager.RegisterStartupScript(this.Page, this.GetType(), Guid.NewGuid().ToString(), "closeLoading();", true);
 

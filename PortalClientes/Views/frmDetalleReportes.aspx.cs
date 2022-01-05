@@ -749,8 +749,8 @@ namespace PortalClientes.Views
                 gvdetReportes.DataBind();
 
                 lblTotalTrasnRes.Text = totalRegistros.S();
-                lblTotalRes.Text = totalTransacciones.ToString("C", CultureInfo.CreateSpecificCulture("es-MX")) + " MXN";
-                lblPromedioRes.Text = promedio.ToString("C", CultureInfo.CreateSpecificCulture("es-MX")) + " MXN";
+                lblTotalRes.Text = totalTransacciones.ToString() + " MXN";
+                lblPromedioRes.Text = promedio.ToString() + " MXN";
             }
             else if (tipo == 2)
             {
@@ -800,8 +800,8 @@ namespace PortalClientes.Views
                 gvdetReportes.DataBind();
 
                 lblTotalTrasnRes.Text = totalRegistros.S();
-                lblTotalRes.Text = totalTransacciones.ToString("C", CultureInfo.CreateSpecificCulture("es-MX")) + " MXN";
-                lblPromedioRes.Text = promedio.ToString("C", CultureInfo.CreateSpecificCulture("es-MX")) + " MXN";
+                lblTotalRes.Text = totalTransacciones.ToString() + " MXN";
+                lblPromedioRes.Text = promedio.ToString() + " MXN";
             }
             else if(tipo == 3)
             {
@@ -851,8 +851,8 @@ namespace PortalClientes.Views
                 gvdetReportes.DataBind();
 
                 lblTotalTrasnRes.Text = totalRegistros.S();
-                lblTotalRes.Text = totalTransacciones.ToString("C", CultureInfo.CreateSpecificCulture("es-MX")) + " MXN";
-                lblPromedioRes.Text = promedio.ToString("C", CultureInfo.CreateSpecificCulture("es-MX")) + " MXN";
+                lblTotalRes.Text = totalTransacciones.ToString() + " MXN";
+                lblPromedioRes.Text = promedio.ToString() + " MXN";
             }
             else if (tipo == 4)
             {
@@ -894,8 +894,8 @@ namespace PortalClientes.Views
                 gvdetReportes.DataBind();
 
                 lblTotalTrasnRes.Text = totalRegistros.S();
-                lblTotalRes.Text = totalTransacciones.ToString("C", CultureInfo.CreateSpecificCulture("es-MX")) + " MXN";
-                lblPromedioRes.Text = promedio.ToString("C", CultureInfo.CreateSpecificCulture("es-MX")) + " USD";
+                lblTotalRes.Text = totalTransacciones.ToString() + " MXN";
+                lblPromedioRes.Text = promedio.ToString() + " USD";
             }
             else if (tipo == 5)
             {
@@ -912,8 +912,8 @@ namespace PortalClientes.Views
                 gvdetReportes.DataBind();
 
                 lblTotalTrasnRes.Text = totalRegistros.S();
-                lblTotalRes.Text = totalTransacciones.ToString("C", CultureInfo.CreateSpecificCulture("es-MX")) + " MXN";
-                lblPromedioRes.Text = promedio.ToString("C", CultureInfo.CreateSpecificCulture("es-MX")) + " USD";
+                lblTotalRes.Text = totalTransacciones.ToString() + " MXN";
+                lblPromedioRes.Text = promedio.ToString() + " USD";
 
                 LlenarGVS(reportes, tipo);
             }
