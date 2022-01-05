@@ -60,6 +60,15 @@ namespace PortalClientes.Views
         protected global::System.Web.UI.WebControls.Label lblTotal;
 
         /// <summary>
+        /// Control lblTotalSimbolo.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblTotalSimbolo;
+
+        /// <summary>
         /// Control lblTotalRes.
         /// </summary>
         /// <remarks>
@@ -76,6 +85,15 @@ namespace PortalClientes.Views
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblPromedio;
+
+        /// <summary>
+        /// Control lblPromedioSimbolo.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblPromedioSimbolo;
 
         /// <summary>
         /// Control lblPromedioRes.

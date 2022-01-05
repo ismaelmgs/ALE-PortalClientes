@@ -59,6 +59,7 @@
                         <span class="count_top"><i class="fa fa-money"></i>
                             <asp:Label ID="lblTotal" runat="server" Text=" Pagos" Font-Bold="false"></asp:Label></span>
                         <div class="count">
+                            <asp:Label ID="lblTotalSimbolo" runat="server" Text=" $" Font-Bold="true" CssClass="count2" />
                             <asp:Label ID="lblTotalRes" runat="server" Font-Bold="true" CssClass="count" />
                         </div>
                     </div>
@@ -68,6 +69,7 @@
                         <span class="count_top"><i class="fa fa-bar-chart"></i>
                             <asp:Label ID="lblPromedio" runat="server" Text=" Gastos" Font-Bold="false"></asp:Label></span>
                         <div class="count">
+                            <asp:Label ID="lblPromedioSimbolo" runat="server" Text=" $" Font-Bold="true" CssClass="count2" />
                             <asp:Label ID="lblPromedioRes" runat="server" Font-Bold="true" CssClass="count" />
                         </div>
                     </div>
