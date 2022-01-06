@@ -371,25 +371,26 @@ namespace PortalClientes.Views
             {
                 if (contador == 0)
                 {
-                    row["SaldoAnterior"] = item.saldoAnterior;
-                    row["PagosyCred"] = item.pagosCreditos;
-                    row["NuevosCargos"] = item.nuevosCargos;
-                    row["SaldoActual"] = item.saldoActual;
-                    row["Matricula"] = Utils.MatriculaActual;
-                    row["Cliente"] = Utils.NombreUsuario;//Checar (1)
+                    row["SaldoAnterior"] = item.saldoAnterior.S().D().ToString("c");
+                    row["PagosyCred"] = item.pagosCreditos.S().D().ToString("c");
+                    row["NuevosCargos"] = item.nuevosCargos.S().D().ToString("c");
+                    row["SaldoActual"] = item.saldoActual.S().D().ToString("c");
+                    row["Matricula"] = Utils.MatriculaActual;                   
+                    row["Cliente"] = Utils.NombreUsuario;//Checar (1) 
                     row["IVA"] = "";
                     row["IVAText"] = "";
                     row["Fecha"] = "";
                     row["ClaveContrato"] = item.claveContrato;
-                    row["Periodo"] = Utils.Idioma == "es-MX" ? "Anual":"Annual";//Checar (mes)
+                    row["Periodo"] = lblPeriodo.Text;//Checar (mes)
                     row["Elaboro"] = Utils.NombreUsuario;
+                    //lblRespSaldoAntMXP.Text = dtTotal.Rows[0]["SaldoAnterior"].S().D().ToString("c");
                 }
                 else
                 {
-                    row["SaldoAnteriorUSD"] = item.saldoAnterior;
-                    row["PagosyCredUSD"] = item.pagosCreditos;
-                    row["NuevosCargosUSD"] = item.nuevosCargos;
-                    row["SaldoActualUSD"] = item.saldoActual;
+                    row["SaldoAnteriorUSD"] = item.saldoAnterior.S().D().ToString("c");
+                    row["PagosyCredUSD"] = item.pagosCreditos.S().D().ToString("c");
+                    row["NuevosCargosUSD"] = item.nuevosCargos.S().D().ToString("c");
+                    row["SaldoActualUSD"] = item.saldoActual.S().D().ToString("c");
                     dt.Rows.Add(row);
                 }
                 contador++;

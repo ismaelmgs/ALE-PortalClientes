@@ -490,24 +490,6 @@ namespace PortalClientes.Views {
         protected global::System.Web.UI.WebControls.Label lblDeclaracionMesAno1;
         
         /// <summary>
-        /// Control lblVence.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblVence;
-        
-        /// <summary>
-        /// Control lblDeclaracionMesAno2.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblDeclaracionMesAno2;
-        
-        /// <summary>
         /// Control lblCostosCat.
         /// </summary>
         /// <remarks>
