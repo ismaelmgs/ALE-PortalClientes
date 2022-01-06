@@ -252,7 +252,7 @@
                                                     </span>
                                                 </td>
                                             </tr>
-                                            <tr>
+                                            <%--<tr>
                                                 <td valign="top">
                                                     <asp:Label ID="lblVence" runat="server" Text="Vence:" Font-Bold="true"></asp:Label>
                                                 </td>
@@ -263,7 +263,7 @@
                                                         <asp:Label ID="lblDeclaracionMesAno2" runat="server" Text="Abril 15 2020" Font-Bold="true"></asp:Label>
                                                     </span>
                                                 </td>
-                                            </tr>
+                                            </tr>--%>
                                         </table>
                                     </div>
                                 </div>

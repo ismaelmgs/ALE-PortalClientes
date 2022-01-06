@@ -119,8 +119,8 @@ namespace PortalClientes.DomainModel
                 FiltroEdoCuenta oLog = new FiltroEdoCuenta();
                 oLog = filtro;
 
-                oLog.mes = 06;
-                oLog.anio = 2021;
+                oLog.mes = 06;//filtro.anio;
+                oLog.anio = 2021;//filtro.mes;
                 oLog.claveContrato = "RASSI";
                 
                 TokenWS oToken = Utils.ObtieneToken;
@@ -154,8 +154,8 @@ namespace PortalClientes.DomainModel
                 FiltroSubEdoCuenta oLog = new FiltroSubEdoCuenta();
                 oLog = filtro;
 
-                oLog.mes = 06;
-                oLog.anio = 2021;
+                oLog.mes = 06;//filtro.anio;
+                oLog.anio = 2021;//filtro.mes;
                 oLog.matricula = Utils.MatriculaActual;
 
                 TokenWS oToken = Utils.ObtieneToken;
