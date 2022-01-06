@@ -22,6 +22,42 @@ namespace PortalClientes.Views {
         protected global::System.Web.UI.UpdatePanel upaPrincipal;
         
         /// <summary>
+        /// Control HFoLat.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HiddenField HFoLat;
+        
+        /// <summary>
+        /// Control HFoLon.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HiddenField HFoLon;
+        
+        /// <summary>
+        /// Control HFdLat.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HiddenField HFdLat;
+        
+        /// <summary>
+        /// Control HFdLon.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HiddenField HFdLon;
+        
+        /// <summary>
         /// Control lblEstadoDeVuelo.
         /// </summary>
         /// <remarks>

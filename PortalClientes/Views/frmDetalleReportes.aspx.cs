@@ -210,6 +210,7 @@ namespace PortalClientes.Views
         private void Lb_Command(object sender, CommandEventArgs e)
         {
             var value = e.CommandArgument;
+            Session["mesSeleccionado"] = value;
             var tipo = Convert.ToInt32(Session["tipoReporte"]);
             Reportes reporte = new Reportes();
 

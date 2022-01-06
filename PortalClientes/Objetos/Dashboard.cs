@@ -20,6 +20,10 @@ namespace PortalClientes.Objetos
         public double? SaldoUltimaDeclaracion { get; set; }
         public string FechaInicioDeclaracion { get; set; }
         public string FechaFinDeclaracion { get; set; }
+        public string aorigenLatitud { get; set; }
+        public string aorigenLongitud { get; set; }
+        public string adestinoLatitud { get; set; }
+        public string adestinoLongitud { get; set; }
 
 
         public List<totalesMes> Vuelos { get; set; }

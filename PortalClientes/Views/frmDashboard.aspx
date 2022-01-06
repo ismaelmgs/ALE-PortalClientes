@@ -21,7 +21,10 @@
                     </div>
                 </div>
             </div>
-
+            <asp:HiddenField runat="server" ID="HFoLat" />
+            <asp:HiddenField runat="server" ID="HFoLon" />
+            <asp:HiddenField runat="server" ID="HFdLat" />
+            <asp:HiddenField runat="server" ID="HFdLon" />
             <div class="row">
                 <div class="col-md-12 col-sm-12">
                     <div class="x_panel">
@@ -323,45 +326,45 @@
             <!-- <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?sensor=false"></script> -->
             <script type="text/javascript">
       function initialize() {
-      // Configuración del mapa
-      var mapProp = {
-        zoom: 5,
-        center: {lat: 24.4848937, lng: -103.3544444},
-      };
-      // Agregando el mapa al tag de id googleMap
-      var map = new google.maps.Map(document.getElementById("googleMap"), mapProp);
-        
-      // Coordenada de la ruta
-      var flightPlanCoordinates = [
-        {lat: 19.3910038, lng: -99.2836972},
-        {lat: 28.6710638, lng: -106.1346581}
-      ];
-       
-      // Información de la ruta (coordenadas, color de línea, etc...)
-      var flightPath = new google.maps.Polyline({
-        path: flightPlanCoordinates,
-        geodesic: true,
-        strokeColor: '#FF0000',
-        strokeOpacity: 1.0,
-        strokeWeight: 2
-      });
+    // Configuración del mapa
+    var mapProp = {
+      zoom: 5,
+      center: {lat: 24.4848937, lng: -103.3544444},
+    };
+    // Agregando el mapa al tag de id googleMap
+    var map = new google.maps.Map(document.getElementById("googleMap"), mapProp);
+      
+    // Coordenada de la ruta
+    var flightPlanCoordinates = [
+      {lat: Number.parseFloat($('#ContentPlaceHolder1_HFoLat').val()), lng: Number.parseFloat($('#ContentPlaceHolder1_HFoLon').val())},
+      {lat: Number.parseFloat($('#ContentPlaceHolder1_HFdLat').val()), lng: Number.parseFloat($('#ContentPlaceHolder1_HFdLon').val())}
+    ];
+     
+    // Información de la ruta (coordenadas, color de línea, etc...)
+    var flightPath = new google.maps.Polyline({
+      path: flightPlanCoordinates,
+      geodesic: true,
+      strokeColor: '#FF0000',
+      strokeOpacity: 1.0,
+      strokeWeight: 2
+    });
 
-      for (i = 0; i < flightPlanCoordinates.length; i++) {
-          if (i == 0 || i == flightPlanCoordinates.length-1) {
-              var marker = new google.maps.Marker({
-                  position: flightPlanCoordinates[i],
-                  label: 'MX',
-                  map: map
-              });
-          }
-      }
-       
-      // Creando la ruta en el mapa
-      flightPath.setMap(map);
-      }
-        
-      // Inicializando el mapa cuando se carga la página
-    //   google.maps.event.addDomListener(window, 'load', initialize);
+    for (i = 0; i < flightPlanCoordinates.length; i++) {
+        if (i == 0 || i == flightPlanCoordinates.length-1) {
+            var marker = new google.maps.Marker({
+                position: flightPlanCoordinates[i],
+                label: 'MX',
+                map: map
+            });
+        }
+    }
+     
+    // Creando la ruta en el mapa
+    flightPath.setMap(map);
+    }
+      
+    // Inicializando el mapa cuando se carga la página
+  //   google.maps.event.addDomListener(window, 'load', initialize);
             </script>
         </ContentTemplate>
     </asp:UpdatePanel>

@@ -89,6 +89,12 @@ namespace PortalClientes.Views
             lblDeclaracionMesAno1.Text = Convert.ToDateTime(oDashboard.FechaInicioDeclaracion).ToString("dd/MM/yyyy");
             lblDeclaracionMesAno2.Text = Convert.ToDateTime(oDashboard.FechaFinDeclaracion).ToString("dd/MM/yyyy");
 
+            //coordenadas
+            HFoLat.Value = oDashboard.aorigenLatitud;
+            HFoLon.Value = oDashboard.aorigenLongitud;
+            HFdLat.Value = oDashboard.adestinoLatitud;
+            HFdLon.Value = oDashboard.adestinoLongitud;
+
             var count = 0;
 
             foreach(var i in oDashboard.Vuelos)
@@ -171,6 +177,7 @@ namespace PortalClientes.Views
             }
 
             ScriptManager.RegisterStartupScript(this.Page, this.GetType(), Guid.NewGuid().ToString(), "closeLoading();", true);
+            ScriptManager.RegisterStartupScript(this.Page, this.GetType(), Guid.NewGuid().ToString(), "initialize();", true);
         }
 
         private string FormatoHora(decimal? total)
