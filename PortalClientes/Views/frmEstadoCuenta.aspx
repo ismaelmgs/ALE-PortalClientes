@@ -92,7 +92,7 @@
                                                 <span class="count_top">
                                                     <asp:Label ID="lblMontoReq" runat="server" Text=" Monto de Depósito Requerido" Font-Bold="false"></asp:Label></span>
                                                 <div class="count">
-                                                    <asp:Label ID="lblMontoReqUSD" runat="server" Text=" $" Font-Bold="true" CssClass="count2" Style="color:#ff0000;" />
+                                                    <asp:Label ID="lblMontoReqUSD" runat="server" Text=" $" Font-Bold="true" CssClass="count2" />
                                                     <asp:Label ID="lblMontoReqRes" runat="server" Text=" 0.00" Font-Bold="true" CssClass="count"></asp:Label>
                                                 </div>
                                             </div>
@@ -149,7 +149,7 @@
                                                 <span class="count_top">
                                                     <asp:Label ID="lblMontoReqMXN" runat="server" Text=" Monto de Depósito Requerido" Font-Bold="false"></asp:Label></span>
                                                 <div class="count">
-                                                    <asp:Label ID="Label13" runat="server" Text=" $" Font-Bold="true" CssClass="count2" Style="color:#ff0000;" />
+                                                    <asp:Label ID="Label13" runat="server" Text=" $" Font-Bold="true" CssClass="count2" />
                                                     <asp:Label ID="lblMontoReqMXNRes" runat="server" Text=" 0.00" Font-Bold="true" CssClass="count"></asp:Label>
                                                 </div>
                                             </div>

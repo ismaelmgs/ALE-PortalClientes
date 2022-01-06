@@ -228,7 +228,7 @@
                                 <div class="row">
                                     <div class="col-md-12">
                                         <asp:Label ID="lblIncVenc90Dias" runat="server" Text="incluido el vencimiento (+ de 90 días)" Font-Bold="true"></asp:Label>
-                                        &nbsp;&nbsp; <span style="color: #ff0000; font-weight: bold;">
+                                        &nbsp;&nbsp; <span style="font-weight: bold;">
                                             <asp:Label ID="lblIncVenc90DiasNumber" runat="server" Text="181,011.65" Font-Bold="true"></asp:Label>
                                             USD</span>
                                     </div>
@@ -255,7 +255,7 @@
                                                     </span>
                                                 </td>
                                             </tr>
-                                            <tr>
+                                            <%--<tr>
                                                 <td valign="top">
                                                     <asp:Label ID="lblVence" runat="server" Text="Vence:" Font-Bold="true"></asp:Label>
                                                 </td>
@@ -266,7 +266,7 @@
                                                         <asp:Label ID="lblDeclaracionMesAno2" runat="server" Text="Abril 15 2020" Font-Bold="true"></asp:Label>
                                                     </span>
                                                 </td>
-                                            </tr>
+                                            </tr>--%>
                                         </table>
                                     </div>
                                 </div>
