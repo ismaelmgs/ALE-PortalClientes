@@ -4,8 +4,6 @@
     
     let obj = JSON.stringify({
         meses: $("#ContentPlaceHolder1_ddlPeriodo").val(),
-        fechaInicial: $("#ContentPlaceHolder1_txtFechaInicioGrafica").val(),
-        fechaFinal: $("#ContentPlaceHolder1_txtFechaFinGrafica").val(),
         rubro: '',
         tipoRubro: $("#ContentPlaceHolder1_ddlTipoRubro").val() // 1.fijo 2. var 3. todos
     });
@@ -23,23 +21,23 @@
 
 function getUrl() {
     let value = window.location + "/GetGastos";
-    //console.log(value);
     return value;
 }
 
-$('#btnGraficasBuscar').click(function (event) {
-
+$('#ContentPlaceHolder1_ddlPeriodo').change(function (event) {
     event.preventDefault();
     ActualizarGrafica();
+});
 
+$('#ContentPlaceHolder1_ddlTipoRubro').change(function (event) {
+    event.preventDefault();
+    ActualizarGrafica();
 });
 
 function ActualizarGrafica() {
     const url = getUrl(); // API URL
     let obj = JSON.stringify({
         meses: $("#ContentPlaceHolder1_ddlPeriodo").val(),
-        fechaInicial: $("#ContentPlaceHolder1_txtFechaInicioGrafica").val(),
-        fechaFinal: $("#ContentPlaceHolder1_txtFechaFinGrafica").val(),
         rubro: '',
         tipoRubro: $("#ContentPlaceHolder1_ddlTipoRubro").val() // 1.fijo 2. var 3. todos
     });

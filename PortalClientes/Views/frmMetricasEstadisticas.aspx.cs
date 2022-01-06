@@ -408,14 +408,8 @@ namespace PortalClientes.Views
             FiltroGraficaGastos fg = new FiltroGraficaGastos();
             fg.meses = ddlPeriodo.SelectedValue;
 
-            if (txtFechaInicioGrafica.Text != "")
-                fg.fechaInicial = DateTime.Parse(txtFechaInicioGrafica.Text);
-            else
-                fg.fechaInicial = null;
-            if (txtFechaFinGrafica.Text != "")
-                fg.fechaFinal = DateTime.Parse(txtFechaFinGrafica.Text);
-            else
-                fg.fechaFinal = null;
+            fg.fechaInicial = null;
+            fg.fechaFinal = null;
             fg.rubro = 5; // modificar despues
             fg.tipoRubro = int.Parse(ddlTipoRubro.SelectedValue);
 
@@ -488,14 +482,8 @@ namespace PortalClientes.Views
             FiltroGraficaGastos fg = new FiltroGraficaGastos();
             fg.meses = ddlPeriodo.SelectedValue;
 
-            if (txtFechaInicioGrafica.Text != "")
-                fg.fechaInicial = DateTime.Parse(txtFechaInicioGrafica.Text);
-            else
-                fg.fechaInicial = null;
-            if (txtFechaFinGrafica.Text != "")
-                fg.fechaFinal = DateTime.Parse(txtFechaFinGrafica.Text);
-            else
-                fg.fechaFinal = null;
+            fg.fechaInicial = null;
+            fg.fechaFinal = null;
             fg.rubro = 5; // modificar despues
             fg.tipoRubro = int.Parse(ddlTipoRubro.SelectedValue);
 
@@ -963,14 +951,14 @@ namespace PortalClientes.Views
         }
 
         [WebMethod]
-        public static List<responseGraficaGastos> GetGastos(string meses, DateTime? fechaInicial, DateTime? fechaFinal, string rubro, int tipoRubro)
+        public static List<responseGraficaGastos> GetGastos(string meses, string rubro, int tipoRubro)
         {
             DBMetricasEstatics oIGesCat = new DBMetricasEstatics();
 
             FiltroGraficaGastos fg = new FiltroGraficaGastos();
             fg.meses = meses;
-            fg.fechaInicial = fechaInicial;
-            fg.fechaFinal = fechaFinal;
+            fg.fechaInicial = DateTime.Now;
+            fg.fechaFinal = DateTime.Now;
             fg.rubro = 5; // modificar despues
             fg.tipoRubro = tipoRubro;
 

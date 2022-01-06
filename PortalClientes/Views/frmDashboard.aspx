@@ -282,20 +282,11 @@
                             <div class="clearfix"></div>
                         </div>
                         <div class="row">
-                            <div class="col-md-2">
+                            <div class="col-md-6">
                                 <asp:DropDownList ID="ddlPeriodo" runat="server" CssClass="form-control" Width="100%"></asp:DropDownList>
                             </div>
-                            <div class="col-md-3">
-                                <asp:TextBox ID="txtFechaInicioGrafica" runat="server" CssClass="form-control" Type="date" Width="100%"></asp:TextBox>
-                            </div>
-                            <div class="col-md-3">
-                                <asp:TextBox ID="txtFechaFinGrafica" runat="server" CssClass="form-control" Type="date" Width="100%"></asp:TextBox>
-                            </div>
-                            <div class="col-md-2">
+                            <div class="col-md-6">
                                 <asp:DropDownList ID="ddlTipoRubro" runat="server" CssClass="form-control" Width="100%"></asp:DropDownList>
-                            </div>
-                            <div class="col-md-2">
-                                <button id="btnGraficasBuscar" class="btn">&nbsp;&nbsp;<i class='fa fa-undo' style='color: #73879c; font-size: 23px;'></i>&nbsp;&nbsp;</button>
                             </div>
                         </div>
                         <div class="row">
