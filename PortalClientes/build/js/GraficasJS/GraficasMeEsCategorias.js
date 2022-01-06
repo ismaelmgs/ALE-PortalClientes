@@ -228,8 +228,8 @@ function chartsCLT(data) {
                  let mes = selection[0].row + 1
                  let concepto = jsonDataCLT.conceptos[selection[0].column - 1]
 
-                 let array = idoma == "es-MX" ? jsonDataCLT.response.find(item => item.mes == mes && item.rubroESP == concepto) : sonDataCLT.response.find(item => item.mes == mes && item.rubroENG == concepto);
-                 let detGasto = idoma == "es-MX" ? array.detalleGastos.filter(elem => elem.mes == mes && elem.rubroESP == concepto && elem.totalMXN > 0) :  array.detalleGastos.filter(elem => elem.mes == mes && elem.rubroENG == concepto && elem.totalMXN > 0)
+                 let array = idioma == "es-MX" ? jsonDataCLT.response.find(item => item.mes == mes && item.rubroESP == concepto) : sonDataCLT.response.find(item => item.mes == mes && item.rubroENG == concepto);
+                 let detGasto = idioma == "es-MX" ? array.detalleGastos.filter(elem => elem.mes == mes && elem.rubroESP == concepto && elem.totalMXN > 0) :  array.detalleGastos.filter(elem => elem.mes == mes && elem.rubroENG == concepto && elem.totalMXN > 0)
 
                  let opt = {
                     campo1: null,
@@ -295,8 +295,8 @@ function chartsCLT(data) {
                 let mes = selection[0].row + 1
                 let concepto = jsonDataCLT.conceptos[selection[0].column - 1]
 
-                let array = idoma == "es-MX" ? jsonDataCLT.response.find(item => item.mes == mes && item.rubroESP == concepto) : sonDataCLT.response.find(item => item.mes == mes && item.rubroENG == concepto);
-                 let detGasto = idoma == "es-MX" ? array.detalleGastos.filter(elem => elem.mes == mes && elem.rubroESP == concepto && elem.totalUSD> 0) :  array.detalleGastos.filter(elem => elem.mes == mes && elem.rubroENG == concepto && elem.totalUSD > 0)
+                let array = idioma == "es-MX" ? jsonDataCLT.response.find(item => item.mes == mes && item.rubroESP == concepto) : sonDataCLT.response.find(item => item.mes == mes && item.rubroENG == concepto);
+                 let detGasto = idioma == "es-MX" ? array.detalleGastos.filter(elem => elem.mes == mes && elem.rubroESP == concepto && elem.totalUSD> 0) :  array.detalleGastos.filter(elem => elem.mes == mes && elem.rubroENG == concepto && elem.totalUSD > 0)
 
                 let opt = {
                    campo1: null,

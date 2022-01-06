@@ -853,7 +853,7 @@ namespace PortalClientes.Properties {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Anual.
+        ///   Busca una cadena traducida similar a Ultimos 12 Meses.
         /// </summary>
         internal static string Das_Anual {
             get {
@@ -943,7 +943,7 @@ namespace PortalClientes.Properties {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Manual.
+        ///   Busca una cadena traducida similar a Mes Actual.
         /// </summary>
         internal static string Das_Manual {
             get {
@@ -952,7 +952,7 @@ namespace PortalClientes.Properties {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Mensual.
+        ///   Busca una cadena traducida similar a Ultimo mes.
         /// </summary>
         internal static string Das_Mensual {
             get {
@@ -1006,7 +1006,7 @@ namespace PortalClientes.Properties {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Semestral.
+        ///   Busca una cadena traducida similar a Ultimos 6 Meses.
         /// </summary>
         internal static string Das_Semestral {
             get {
@@ -1024,7 +1024,7 @@ namespace PortalClientes.Properties {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Trimestral.
+        ///   Busca una cadena traducida similar a Ultimos 3 Meses.
         /// </summary>
         internal static string Das_Trimestral {
             get {

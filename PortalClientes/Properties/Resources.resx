@@ -376,25 +376,25 @@
     <value>Ver Docuemtno</value>
   </data>
   <data name="Das_Anual" xml:space="preserve">
-    <value>Anual</value>
+    <value>Ultimos 12 Meses</value>
   </data>
   <data name="Das_Fijo" xml:space="preserve">
     <value>Fijo</value>
   </data>
   <data name="Das_Manual" xml:space="preserve">
-    <value>Manual</value>
+    <value>Mes Actual</value>
   </data>
   <data name="Das_Mensual" xml:space="preserve">
-    <value>Mensual</value>
+    <value>Ultimo mes</value>
   </data>
   <data name="Das_Semestral" xml:space="preserve">
-    <value>Semestral</value>
+    <value>Ultimos 6 Meses</value>
   </data>
   <data name="Das_Todos" xml:space="preserve">
     <value>Todos</value>
   </data>
   <data name="Das_Trimestral" xml:space="preserve">
-    <value>Trimestral</value>
+    <value>Ultimos 3 Meses</value>
   </data>
   <data name="Das_Variable" xml:space="preserve">
     <value>Variable</value>

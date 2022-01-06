@@ -376,25 +376,25 @@
     <value>View Document</value>
   </data>
   <data name="Das_Anual" xml:space="preserve">
-    <value>Annual</value>
+    <value>Last 12 Months</value>
   </data>
   <data name="Das_Fijo" xml:space="preserve">
     <value>Permanent</value>
   </data>
   <data name="Das_Manual" xml:space="preserve">
-    <value>Handbook</value>
+    <value>Current Month</value>
   </data>
   <data name="Das_Mensual" xml:space="preserve">
-    <value>Monthly</value>
+    <value>Last Month</value>
   </data>
   <data name="Das_Semestral" xml:space="preserve">
-    <value>Biannual</value>
+    <value>Last 6 Months</value>
   </data>
   <data name="Das_Todos" xml:space="preserve">
     <value>All</value>
   </data>
   <data name="Das_Trimestral" xml:space="preserve">
-    <value>Quarterly</value>
+    <value>Last 3 Months</value>
   </data>
   <data name="Das_Variable" xml:space="preserve">
     <value>Variable</value>

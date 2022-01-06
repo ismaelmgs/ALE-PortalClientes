@@ -243,14 +243,14 @@ namespace PortalClientes.Views
         }
 
         [WebMethod(EnableSession = true)]
-        public static List<responseGraficaGastos> GetGastos(string meses, DateTime? fechaInicial, DateTime? fechaFinal, string rubro, int tipoRubro)
+        public static List<responseGraficaGastos> GetGastos(string meses, string rubro, int tipoRubro)
         {
             DBDashboard oIGesCat = new DBDashboard();
 
             FiltroGraficaGastos fg = new FiltroGraficaGastos();
             fg.meses = meses;
-            fg.fechaInicial = fechaInicial;
-            fg.fechaFinal = fechaFinal;
+            fg.fechaInicial = DateTime.Now;
+            fg.fechaFinal = DateTime.Now;
             fg.rubro = 5; // modificar despues
             fg.tipoRubro = tipoRubro;
 
