@@ -202,7 +202,7 @@
     <value>Último vuelo</value>
   </data>
   <data name="Das_DeclaracionPara" xml:space="preserve">
-    <value>Ultimo Pago</value>
+    <value>Declaración para:</value>
   </data>
   <data name="Das_Destino" xml:space="preserve">
     <value>Destino:</value>
@@ -223,19 +223,19 @@
     <value>Origen:</value>
   </data>
   <data name="Das_ResumenCuenta" xml:space="preserve">
-    <value>Periodo</value>
+    <value>Resumen de la Cuenta</value>
   </data>
   <data name="Das_Saldo" xml:space="preserve">
-    <value>Saldo Actual MXN</value>
+    <value>Saldo Actual</value>
   </data>
   <data name="Das_Salida" xml:space="preserve">
     <value>Salida:</value>
   </data>
   <data name="Das_UltimaDeclaracion" xml:space="preserve">
-    <value>Saldo Actual USD</value>
+    <value>Último Pago</value>
   </data>
   <data name="Das_Ven90dias" xml:space="preserve">
-    <value>Ultimo Pago</value>
+    <value>incluido el vencimiento (+ de 90 días)</value>
   </data>
   <data name="Das_Vence" xml:space="preserve">
     <value>Vence:</value>

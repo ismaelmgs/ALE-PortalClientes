@@ -87,7 +87,7 @@ namespace PortalClientes.Views
             lblIncVenc90DiasNumber.Text = oDashboard.SaldoAlVencimiento.HasValue ? oDashboard.SaldoAlVencimiento.Value.ToString() : "0";
             lblultimaDeclaracionText.Text = oDashboard.SaldoUltimaDeclaracion.HasValue ? oDashboard.SaldoUltimaDeclaracion.Value.ToString() : "0";
             lblDeclaracionMesAno1.Text = Convert.ToDateTime(oDashboard.FechaInicioDeclaracion).ToString("dd/MM/yyyy");
-            //lblDeclaracionMesAno2.Text = Convert.ToDateTime(oDashboard.FechaFinDeclaracion).ToString("dd/MM/yyyy");
+            lblDeclaracionMesAno2.Text = Convert.ToDateTime(oDashboard.FechaFinDeclaracion).ToString("dd/MM/yyyy");
 
             var count = 0;
 
@@ -203,7 +203,7 @@ namespace PortalClientes.Views
             lblIncVenc90Dias.Text = Properties.Resources.Das_Ven90dias;
             lblUltimaDeclaracion.Text = Properties.Resources.Das_UltimaDeclaracion;
             lblDeclaracionPara.Text = Properties.Resources.Das_DeclaracionPara;
-            //lblVence.Text = Properties.Resources.Das_Vence;
+            lblVence.Text = Properties.Resources.Das_Vence;
 
             var vPeriodo = ddlPeriodo.SelectedValue;
             // llenar dropdown Periodo

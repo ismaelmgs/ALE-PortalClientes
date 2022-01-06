@@ -177,14 +177,14 @@
                                         EmptyDataText="No Registros" OnRowDataBound="gvEdoCuenta_RowDataBound" OnRowCommand="gvEdoCuenta_RowCommand" DataKeyNames="Mes">
                                         <Columns>
                                             <asp:BoundField DataField="nombreMes" />
-                                            <asp:BoundField DataField="saldoAnteriorMXN" DataFormatString="{0:C2}" />
-                                            <asp:BoundField DataField="pagosCreditoMXN" DataFormatString="{0:C2}" />
-                                            <asp:BoundField DataField="nuevosCargosMXN" DataFormatString="{0:C2}" />
-                                            <asp:BoundField DataField="saldoActualMXN" DataFormatString="{0:C2}" />
-                                            <asp:BoundField DataField="saldoAnteriorUSD" DataFormatString="{0:C2}" />
-                                            <asp:BoundField DataField="pagosCreditoUSD" DataFormatString="{0:C2}" />
-                                            <asp:BoundField DataField="nuevosCargosUSD" DataFormatString="{0:C2}" />
-                                            <asp:BoundField DataField="saldoActualUSD" DataFormatString="{0:C2}" />
+                                            <asp:BoundField DataField="saldoAnteriorMXN" DataFormatString="{0:c}" />
+                                            <asp:BoundField DataField="pagosCreditoMXN" DataFormatString="{0:c}" />
+                                            <asp:BoundField DataField="nuevosCargosMXN" DataFormatString="{0:c}" />
+                                            <asp:BoundField DataField="saldoActualMXN" DataFormatString="{0:c}" />
+                                            <asp:BoundField DataField="saldoAnteriorUSD" DataFormatString="{0:c}" />
+                                            <asp:BoundField DataField="pagosCreditoUSD" DataFormatString="{0:c}" />
+                                            <asp:BoundField DataField="nuevosCargosUSD" DataFormatString="{0:c}" />
+                                            <asp:BoundField DataField="saldoActualUSD" DataFormatString="{0:c}" />
                                              <asp:TemplateField ItemStyle-HorizontalAlign="Center">
                                                 <ItemTemplate>
                                                     &nbsp;&nbsp;&nbsp;<asp:ImageButton ID="lkbViewDocument" runat="server" ImageUrl="~/Images/icons/files.png" Width="40px" Height="42px"
