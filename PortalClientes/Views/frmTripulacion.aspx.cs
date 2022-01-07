@@ -132,7 +132,7 @@ namespace PortalClientes.Views
                 {
                     e.Row.Cells[2].Visible = false;
                     e.Row.Cells[9].Visible = false;
-                }
+                }             
 
             }
 
@@ -199,18 +199,18 @@ namespace PortalClientes.Views
             }
         }
 
-        protected void btnFiltrar_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                if (eSearchObj != null)
-                    eSearchObj(null, EventArgs.Empty);
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-        }
+        //protected void btnFiltrar_Click(object sender, EventArgs e)
+        //{
+        //    try
+        //    {
+        //        if (eSearchObj != null)
+        //            eSearchObj(null, EventArgs.Empty);
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        throw ex;
+        //    }
+        //}
 
         #endregion
 
@@ -237,7 +237,7 @@ namespace PortalClientes.Views
             lblTitleTripulacion.Text = Properties.Resources.TitleTripulacion;
             lblPanelEventos.Text = Properties.Resources.PTEventos;
             lblPanelListado.Text = Properties.Resources.PTListado;
-            btnFiltrarTripulacion.Text = Properties.Resources.BTFiltro;
+            //btnFiltrarTripulacion.Text = Properties.Resources.BTFiltro;
 
             var v = ddlFiltro.SelectedValue;
             // llenar dropdown Tipo Rubro
@@ -254,6 +254,16 @@ namespace PortalClientes.Views
             else
             {
                 ddlFiltro.SelectedValue = v;
+            }
+
+            try
+            {
+                if (eSearchObj != null)
+                    eSearchObj(null, EventArgs.Empty);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
             }
 
         }

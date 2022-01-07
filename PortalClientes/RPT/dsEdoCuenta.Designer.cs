@@ -518,14 +518,14 @@ namespace PortalClientes.RPT {
                         string IVA, 
                         string IVAText, 
                         string Fecha, 
-                        string SaldoAnterior, 
-                        string PagosyCred, 
-                        string NuevosCargos, 
-                        string SaldoActual, 
-                        string SaldoAnteriorUSD, 
-                        string PagosyCredUSD, 
-                        string NuevosCargosUSD, 
-                        string SaldoActualUSD) {
+                        decimal SaldoAnterior, 
+                        decimal PagosyCred, 
+                        decimal NuevosCargos, 
+                        decimal SaldoActual, 
+                        decimal SaldoAnteriorUSD, 
+                        decimal PagosyCredUSD, 
+                        decimal NuevosCargosUSD, 
+                        decimal SaldoActualUSD) {
                 ExtrasRow rowExtrasRow = ((ExtrasRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         Cliente,
@@ -603,21 +603,21 @@ namespace PortalClientes.RPT {
                 base.Columns.Add(this.columnIVAText);
                 this.columnFecha = new global::System.Data.DataColumn("Fecha", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnFecha);
-                this.columnSaldoAnterior = new global::System.Data.DataColumn("SaldoAnterior", typeof(string), null, global::System.Data.MappingType.Element);
+                this.columnSaldoAnterior = new global::System.Data.DataColumn("SaldoAnterior", typeof(decimal), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnSaldoAnterior);
-                this.columnPagosyCred = new global::System.Data.DataColumn("PagosyCred", typeof(string), null, global::System.Data.MappingType.Element);
+                this.columnPagosyCred = new global::System.Data.DataColumn("PagosyCred", typeof(decimal), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnPagosyCred);
-                this.columnNuevosCargos = new global::System.Data.DataColumn("NuevosCargos", typeof(string), null, global::System.Data.MappingType.Element);
+                this.columnNuevosCargos = new global::System.Data.DataColumn("NuevosCargos", typeof(decimal), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnNuevosCargos);
-                this.columnSaldoActual = new global::System.Data.DataColumn("SaldoActual", typeof(string), null, global::System.Data.MappingType.Element);
+                this.columnSaldoActual = new global::System.Data.DataColumn("SaldoActual", typeof(decimal), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnSaldoActual);
-                this.columnSaldoAnteriorUSD = new global::System.Data.DataColumn("SaldoAnteriorUSD", typeof(string), null, global::System.Data.MappingType.Element);
+                this.columnSaldoAnteriorUSD = new global::System.Data.DataColumn("SaldoAnteriorUSD", typeof(decimal), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnSaldoAnteriorUSD);
-                this.columnPagosyCredUSD = new global::System.Data.DataColumn("PagosyCredUSD", typeof(string), null, global::System.Data.MappingType.Element);
+                this.columnPagosyCredUSD = new global::System.Data.DataColumn("PagosyCredUSD", typeof(decimal), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnPagosyCredUSD);
-                this.columnNuevosCargosUSD = new global::System.Data.DataColumn("NuevosCargosUSD", typeof(string), null, global::System.Data.MappingType.Element);
+                this.columnNuevosCargosUSD = new global::System.Data.DataColumn("NuevosCargosUSD", typeof(decimal), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnNuevosCargosUSD);
-                this.columnSaldoActualUSD = new global::System.Data.DataColumn("SaldoActualUSD", typeof(string), null, global::System.Data.MappingType.Element);
+                this.columnSaldoActualUSD = new global::System.Data.DataColumn("SaldoActualUSD", typeof(decimal), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnSaldoActualUSD);
             }
             
@@ -889,10 +889,10 @@ namespace PortalClientes.RPT {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public string SaldoAnterior {
+            public decimal SaldoAnterior {
                 get {
                     try {
-                        return ((string)(this[this.tableExtras.SaldoAnteriorColumn]));
+                        return ((decimal)(this[this.tableExtras.SaldoAnteriorColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("El valor de la columna \'SaldoAnterior\' de la tabla \'Extras\' es DBNull.", e);
@@ -905,10 +905,10 @@ namespace PortalClientes.RPT {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public string PagosyCred {
+            public decimal PagosyCred {
                 get {
                     try {
-                        return ((string)(this[this.tableExtras.PagosyCredColumn]));
+                        return ((decimal)(this[this.tableExtras.PagosyCredColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("El valor de la columna \'PagosyCred\' de la tabla \'Extras\' es DBNull.", e);
@@ -921,10 +921,10 @@ namespace PortalClientes.RPT {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public string NuevosCargos {
+            public decimal NuevosCargos {
                 get {
                     try {
-                        return ((string)(this[this.tableExtras.NuevosCargosColumn]));
+                        return ((decimal)(this[this.tableExtras.NuevosCargosColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("El valor de la columna \'NuevosCargos\' de la tabla \'Extras\' es DBNull.", e);
@@ -937,10 +937,10 @@ namespace PortalClientes.RPT {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public string SaldoActual {
+            public decimal SaldoActual {
                 get {
                     try {
-                        return ((string)(this[this.tableExtras.SaldoActualColumn]));
+                        return ((decimal)(this[this.tableExtras.SaldoActualColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("El valor de la columna \'SaldoActual\' de la tabla \'Extras\' es DBNull.", e);
@@ -953,10 +953,10 @@ namespace PortalClientes.RPT {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public string SaldoAnteriorUSD {
+            public decimal SaldoAnteriorUSD {
                 get {
                     try {
-                        return ((string)(this[this.tableExtras.SaldoAnteriorUSDColumn]));
+                        return ((decimal)(this[this.tableExtras.SaldoAnteriorUSDColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("El valor de la columna \'SaldoAnteriorUSD\' de la tabla \'Extras\' es DBNull.", e);
@@ -969,10 +969,10 @@ namespace PortalClientes.RPT {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public string PagosyCredUSD {
+            public decimal PagosyCredUSD {
                 get {
                     try {
-                        return ((string)(this[this.tableExtras.PagosyCredUSDColumn]));
+                        return ((decimal)(this[this.tableExtras.PagosyCredUSDColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("El valor de la columna \'PagosyCredUSD\' de la tabla \'Extras\' es DBNull.", e);
@@ -985,10 +985,10 @@ namespace PortalClientes.RPT {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public string NuevosCargosUSD {
+            public decimal NuevosCargosUSD {
                 get {
                     try {
-                        return ((string)(this[this.tableExtras.NuevosCargosUSDColumn]));
+                        return ((decimal)(this[this.tableExtras.NuevosCargosUSDColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("El valor de la columna \'NuevosCargosUSD\' de la tabla \'Extras\' es DBNull.", e);
@@ -1001,10 +1001,10 @@ namespace PortalClientes.RPT {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public string SaldoActualUSD {
+            public decimal SaldoActualUSD {
                 get {
                     try {
-                        return ((string)(this[this.tableExtras.SaldoActualUSDColumn]));
+                        return ((decimal)(this[this.tableExtras.SaldoActualUSDColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("El valor de la columna \'SaldoActualUSD\' de la tabla \'Extras\' es DBNull.", e);
