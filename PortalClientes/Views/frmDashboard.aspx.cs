@@ -102,16 +102,11 @@ namespace PortalClientes.Views
             lblultimaDeclaracionText.Text = oDashboard.saldoActualUSD.HasValue ? oDashboard.saldoActualUSD.Value.ToString() : "0";
             //lblDeclaracionMesAno1.Text = Convert.ToDateTime(oDashboard.FechaInicioDeclaracion).ToString("dd/MM/yyyy");
             //lblDeclaracionMesAno2.Text = Convert.ToDateTime(oDashboard.FechaFinDeclaracion).ToString("dd/MM/yyyy");
-            if(oDashboard.anioPeriodo != null && oDashboard.mesPeriodo != null)
-            {
-                lblDeclaracionPara.Text = Utils.Idioma == "es-MX" ? "Periodo al mes de " + textInfo.ToTitleCase(month.GetMonthName(oDashboard.mesPeriodo.Value)) + " del " + oDashboard.anioPeriodo.ToString() : "Period to " + textInfo.ToTitleCase(month.GetMonthName(oDashboard.mesPeriodo.Value)) + " " + oDashboard.anioPeriodo.Value.ToString();
-                lblIncVenc90Dias.Text = Utils.Idioma == "es-MX" ? "Periodo al mes de " + textInfo.ToTitleCase(month.GetMonthName(oDashboard.mesPeriodo.Value)) + " del " + oDashboard.anioPeriodo.ToString() : "Period to " + textInfo.ToTitleCase(month.GetMonthName(oDashboard.mesPeriodo.Value)) + " " + oDashboard.anioPeriodo.Value.ToString();
-            }
-            else
-            {
-                lblDeclaracionPara.Text = "";
-                lblIncVenc90Dias.Text = "";
-            }
+
+            var mes = oDashboard.mesPeriodo > 0 ? textInfo.ToTitleCase(month.GetMonthName(oDashboard.mesPeriodo.Value)) : "";
+
+            lblDeclaracionPara.Text = Utils.Idioma == "es-MX" ? "Periodo al mes de " + mes +" del " + oDashboard.anioPeriodo.ToString() : "Period to " + mes + " " + oDashboard.anioPeriodo.Value.ToString();
+            lblIncVenc90Dias.Text = Utils.Idioma == "es-MX" ? "Periodo al mes de " + mes + " del " + oDashboard.anioPeriodo.ToString() : "Period to " + mes + " " + oDashboard.anioPeriodo.Value.ToString();
 
             //coordenadas
             HFoLat.Value = oDashboard.aorigenLatitud;
