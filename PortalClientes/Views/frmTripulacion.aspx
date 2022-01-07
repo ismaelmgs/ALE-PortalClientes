@@ -47,12 +47,11 @@
                                         <div class="row">
                                             <div class="col-md-6">&nbsp;</div>
                                             <div class="col-md-3">
-                                                <asp:DropDownList ID="ddlFiltro" runat="server" CssClass="form-control">
-                                                </asp:DropDownList>
+                                                <asp:DropDownList ID="ddlFiltro" runat="server" CssClass="form-control" AutoPostBack="true"></asp:DropDownList>
                                             </div>
-                                            <div class="col-md-1" style="text-align: right;">
+                                            <%--<div class="col-md-1" style="text-align: right;">
                                                 <asp:Button ID="btnFiltrarTripulacion" runat="server" Text="Filtrar" CssClass="btn btn-success" OnClick="btnFiltrar_Click" Style="margin-left: 10px;" />
-                                            </div>
+                                            </div>--%>
                                             <div class="col" style="text-align: center;">
                                                 <asp:LinkButton ID="btnExcelEvent" runat="server" Text="<i class='fa fa-file-excel-o' style='color:#73879c;font-size:28px;'></i>" CssClass="btn" OnClick="btnExcelEvent_Click" />
                                                 <asp:LinkButton ID="btnPDFEvent" runat="server" Text="<i class='fa fa-file-pdf-o' style='color:#73879c;font-size:28px;'></i>" CssClass="btn" OnClick="btnPDFEvent_Click" />

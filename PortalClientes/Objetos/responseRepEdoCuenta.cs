@@ -16,14 +16,14 @@ namespace PortalClientes.Objetos
         public string matricula { set; get; }
         public string contrato { set; get; }
         public int docF { set; get; }
-        public string saldoAnteriorMXN { set; get; }
-        public string pagosCreditoMXN { set; get; }
-        public string nuevosCargosMXN { set; get; }
-        public string saldoActualMXN { set; get; }
-        public string saldoAnteriorUSD { set; get; }
-        public string pagosCreditoUSD { set; get; }
-        public string nuevosCargosUSD { set; get; }
-        public string saldoActualUSD { set; get; }              
+        public decimal? saldoAnteriorMXN { set; get; }
+        public decimal? pagosCreditoMXN { set; get; }
+        public decimal? nuevosCargosMXN { set; get; }
+        public decimal? saldoActualMXN { set; get; }
+        public decimal? saldoAnteriorUSD { set; get; }
+        public decimal? pagosCreditoUSD { set; get; }
+        public decimal? nuevosCargosUSD { set; get; }
+        public decimal? saldoActualUSD { set; get; }              
 
         public List<detalleEdoCta> olsDetalle { get => _olsDetalle; set => _olsDetalle = value; }
     }
