@@ -24,6 +24,10 @@ namespace PortalClientes.Objetos
         public string aorigenLongitud { get; set; }
         public string adestinoLatitud { get; set; }
         public string adestinoLongitud { get; set; }
+        public decimal? saldoActualMXN { get; set; }
+        public decimal? saldoActualUSD { get; set; }
+        public int? mesPeriodo { get; set; }
+        public int? anioPeriodo { get; set; }
 
 
         public List<totalesMes> Vuelos { get; set; }

@@ -12,6 +12,7 @@ using System.Web.UI.WebControls;
 using System.Web.Services;
 using System.Web.Script.Services;
 using System.Globalization;
+using System.Threading;
 
 namespace PortalClientes.Views
 {
@@ -62,6 +63,19 @@ namespace PortalClientes.Views
 
         public void CargarDashboard(Dashboard oDash)
         {
+            DateTimeFormatInfo month = null;
+            CultureInfo cultureInfo = Thread.CurrentThread.CurrentCulture;
+            TextInfo textInfo = cultureInfo.TextInfo;
+
+            if (Utils.Idioma == "es-MX")
+            {
+                month = new CultureInfo("es-ES", false).DateTimeFormat;
+            }
+            else
+            {
+                month = new CultureInfo("en-US", false).DateTimeFormat;
+            }
+
             oDashboard = oDash;
             var fechaSalida = "";
             var fechaLlegada = "";
@@ -83,11 +97,21 @@ namespace PortalClientes.Views
             lblDestinoText.Text = oDashboard.Destino;
             lblSalidaText.Text = fechaSalida;
             lblLlegoText.Text = fechaLlegada;
-            lblSaldoNumber.Text = oDashboard.SaldoActual.HasValue ? oDashboard.SaldoActual.Value.ToString() : "0";
-            lblIncVenc90DiasNumber.Text = oDashboard.SaldoAlVencimiento.HasValue ? oDashboard.SaldoAlVencimiento.Value.ToString() : "0";
-            lblultimaDeclaracionText.Text = oDashboard.SaldoUltimaDeclaracion.HasValue ? oDashboard.SaldoUltimaDeclaracion.Value.ToString() : "0";
-            lblDeclaracionMesAno1.Text = Convert.ToDateTime(oDashboard.FechaInicioDeclaracion).ToString("dd/MM/yyyy");
+            lblSaldoNumber.Text = oDashboard.saldoActualMXN.HasValue ? oDashboard.saldoActualMXN.Value.ToString() : "0";
+            //lblIncVenc90DiasNumber.Text = oDashboard.SaldoAlVencimiento.HasValue ? oDashboard.SaldoAlVencimiento.Value.ToString() : "0";
+            lblultimaDeclaracionText.Text = oDashboard.saldoActualUSD.HasValue ? oDashboard.saldoActualUSD.Value.ToString() : "0";
+            //lblDeclaracionMesAno1.Text = Convert.ToDateTime(oDashboard.FechaInicioDeclaracion).ToString("dd/MM/yyyy");
             //lblDeclaracionMesAno2.Text = Convert.ToDateTime(oDashboard.FechaFinDeclaracion).ToString("dd/MM/yyyy");
+            if(oDashboard.anioPeriodo != null && oDashboard.mesPeriodo != null)
+            {
+                lblDeclaracionPara.Text = Utils.Idioma == "es-MX" ? "Periodo al mes de " + textInfo.ToTitleCase(month.GetMonthName(oDashboard.mesPeriodo.Value)) + " del " + oDashboard.anioPeriodo.ToString() : "Period to " + textInfo.ToTitleCase(month.GetMonthName(oDashboard.mesPeriodo.Value)) + " " + oDashboard.anioPeriodo.Value.ToString();
+                lblIncVenc90Dias.Text = Utils.Idioma == "es-MX" ? "Periodo al mes de " + textInfo.ToTitleCase(month.GetMonthName(oDashboard.mesPeriodo.Value)) + " del " + oDashboard.anioPeriodo.ToString() : "Period to " + textInfo.ToTitleCase(month.GetMonthName(oDashboard.mesPeriodo.Value)) + " " + oDashboard.anioPeriodo.Value.ToString();
+            }
+            else
+            {
+                lblDeclaracionPara.Text = "";
+                lblIncVenc90Dias.Text = "";
+            }
 
             //coordenadas
             HFoLat.Value = oDashboard.aorigenLatitud;
@@ -207,9 +231,9 @@ namespace PortalClientes.Views
             lblNMVuelo.Text = Properties.Resources.Das_NMVuelo;
             lblResumenDeCuenta.Text = Properties.Resources.Das_ResumenCuenta;
             lblSaldo.Text = Properties.Resources.Das_Saldo;
-            lblIncVenc90Dias.Text = Properties.Resources.Das_Ven90dias;
+            //lblIncVenc90Dias.Text = Properties.Resources.Das_Ven90dias;
             lblUltimaDeclaracion.Text = Properties.Resources.Das_UltimaDeclaracion;
-            lblDeclaracionPara.Text = Properties.Resources.Das_DeclaracionPara;
+            //lblDeclaracionPara.Text = Properties.Resources.Das_DeclaracionPara;
             //lblVence.Text = Properties.Resources.Das_Vence;
 
             var vPeriodo = ddlPeriodo.SelectedValue;
