@@ -212,12 +212,20 @@
                 <div class="col-md-12 col-sm-12">
                     <div class="x_panel">
                         <div class="x_title">
-                            <h2>
-                                <asp:Label ID="lblResumenDeCuenta" runat="server" Text="" Font-Bold="true"></asp:Label>
-                                |
-                        <asp:Label ID="lblMatriculaAeronave" runat="server" Text="" Font-Bold="true"></asp:Label></h2>
-                            <div class="clearfix"></div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <h2>
+                                        <asp:Label ID="lblResumenDeCuenta" runat="server" Text="" Font-Bold="true"></asp:Label>
+                                        <asp:Label ID="lblMatriculaAeronave" runat="server" Text="" Font-Bold="true"></asp:Label>
+                                    </h2>
+                                <div class="clearfix"></div>
+                                </div>
+                                <div class="col-md-6" style="text-align:right;">
+                                    <span data-toggle="popover" title="Dudas o Aclaraciones" data-html="true" data-content="Favor de comunicarse con:<br /> <strong>Miguel Ríos</strong><br /> al teléfono:<br /> <a href='tel:+525555555555'> <strong>(55) 5555 5555</strong></a>"><i class="fa fa-question-circle" style="font-size:35px;margin-top: 5px;cursor:pointer;color: #73879c;"></i></span>
+                                </div>
+                            </div>
                         </div>
+                        
                         <div class="row">
                             <div class="col-md-6">
                                 <asp:Label ID="lblSaldo" runat="server" Text="Saldo Actual" Font-Bold="true"></asp:Label><br />

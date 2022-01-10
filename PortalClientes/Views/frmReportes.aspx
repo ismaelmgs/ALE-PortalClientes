@@ -94,6 +94,16 @@
                                             </tr>
                                             <tr style="background-color: #00000003;">
                                                 <td style="border-bottom: 1px solid #dee2e6; padding: 6px;">
+                                                    <asp:LinkButton runat="server" ID="btnGastoCombustibleVuelo" OnClick="btnDetReporte_Click" data-report="5" data-rpt="0">
+                                                        <img src="../build/images/detalle_gatos.png" style="width: 32px;" />&nbsp;<span style="font-size: 17px; font-weight: bold;"><asp:Label ID="lblGastoCombustibleVuelo" runat="server" Text=" Gasto de Combustible por Vuelo" Font-Bold="true"></asp:Label></span><br />
+                                                    </asp:LinkButton>          
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td style="height: 3px;"></td>
+                                            </tr>
+                                            <tr style="background-color: #00000003;">
+                                                <td style="border-bottom: 1px solid #dee2e6; padding: 6px;">
                                                     <div class="row" style="width:99%;">
                                                         <div class="col-md-6" style="text-align:left;">
                                                             <asp:LinkButton runat="server" ID="btnReporteAdminAnual" OnClick="btnDetReporte_Click" data-report="5" data-rpt="0">

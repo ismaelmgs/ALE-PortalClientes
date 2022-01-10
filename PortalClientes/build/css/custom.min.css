@@ -164,6 +164,12 @@
 .count2 {
 	font-size:18px !important;
 }
+.popover-header {
+	text-align: center !important;
+}
+.popover-body {
+	text-align: center !important;
+}
 @media (min-width: 280px) {
 	.flotante {
 		top: 112px;
