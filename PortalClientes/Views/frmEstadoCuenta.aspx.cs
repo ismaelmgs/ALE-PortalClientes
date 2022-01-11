@@ -103,7 +103,9 @@ namespace PortalClientes.Views
 
         protected void gvEdoCuenta_RowCommand(object sender, GridViewCommandEventArgs e)
         {
-            iMes = gvEdoCuenta.DataKeys[e.CommandArgument.S().I()]["Mes"].S().I();
+
+            sMes = gvEdoCuenta.DataKeys[e.CommandArgument.S().I()]["nombreMes"].S();
+            ObtienePeriodoEdoCuentaI(sMes);
 
             if (e.CommandName == "Detalle")
             {
@@ -317,8 +319,89 @@ namespace PortalClientes.Views
             return Periodo + " " + iAnio.S();
         }
 
-        public void LlenaTableEdoCuenta(List<responseRepEdoCuenta> olstRep)
+        private void ObtienePeriodoEdoCuentaI(string sMes)
         {
+            string[] ma = sMes.Split(' ');
+            iAnio = Convert.ToInt32(ma[1]);
+            switch (ma[0])
+            {
+                case "Enero":
+                    iMes = 1;
+                    break;
+                case "Jaunary":
+                    iMes = 1;
+                    break;
+                case "Febrero":
+                    iMes = 2;
+                    break;
+                case "February":
+                    iMes = 2;
+                    break;
+                case "Marzo":
+                    iMes = 3;
+                    break;
+                case "March":
+                    iMes = 3;
+                    break;
+                case "Abril":
+                    iMes = 4;
+                    break;
+                case "April":
+                    iMes = 4;
+                    break;
+                case "Mayo":
+                    iMes = 5;
+                    break;
+                case "May":
+                    iMes = 5;
+                    break;
+                case "Junio":
+                    iMes = 6;
+                    break;
+                case "June":
+                    iMes = 6;
+                    break;
+                case "Julio":
+                    iMes = 7;
+                    break;
+                case "July":
+                    iMes = 7;
+                    break;
+                case "Agosto":
+                    iMes = 8;
+                    break;
+                case "August":
+                    iMes = 8;
+                    break;
+                case "Septiembre":
+                    iMes = 9;
+                    break;
+                case "September":
+                    iMes = 9;
+                    break;
+                case "Octubre":
+                    iMes = 10;
+                    break;
+                case "October":
+                    iMes = 10;
+                    break;
+                case "Noviembre":
+                    iMes = 11;
+                    break;
+                case "November":
+                    iMes = 11;
+                    break;
+                case "Diciembre":
+                    iMes = 12;
+                    break;
+                case "December":
+                    iMes = 12;
+                    break;
+            }
+        }
+
+        public void LlenaTableEdoCuenta(List<responseRepEdoCuenta> olstRep)
+        {        
             oEstados = olstRep;
 
             foreach (responseRepEdoCuenta item in olstRep)
@@ -329,6 +412,7 @@ namespace PortalClientes.Views
                 {
                     itemD.nombreMes = ObtienePeriodoEdoCuenta(itemD.mes, itemD.anio);
                 }
+
             }
 
             gvEdoCuenta.DataSource = olstRep;
@@ -381,7 +465,7 @@ namespace PortalClientes.Views
                     row["IVAText"] = "";
                     row["Fecha"] = "";
                     row["ClaveContrato"] = item.claveContrato;
-                    row["Periodo"] = lblPeriodo.Text;//Checar (mes)
+                    row["Periodo"] = ObtienePeriodoEdoCuenta(item.mes,item.anio);//nombreMes;//Checar (mes)
                     row["Elaboro"] = Utils.NombreUsuario;
                     //lblRespSaldoAntMXP.Text = dtTotal.Rows[0]["SaldoAnterior"].S().D().ToString("c");
                 }
@@ -486,6 +570,12 @@ namespace PortalClientes.Views
         {
             get { return ViewState["VSMes"].S().I(); }
             set { ViewState["VSMes"] = value; }
+        }
+
+        public string sMes
+        {
+            get { return ViewState["sVSMes"].S(); }
+            set { ViewState["sVSMes"] = value; }
         }
 
         public int iAnio

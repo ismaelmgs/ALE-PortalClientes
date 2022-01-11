@@ -355,6 +355,11 @@
             alert(matricula);
         }
     </script>
+    <script>
+        $(document).ready(function () {
+            $('[data-toggle="popover"]').popover();
+        });
+    </script>
     <style type="text/css">
         .overlayy {
             position: fixed;

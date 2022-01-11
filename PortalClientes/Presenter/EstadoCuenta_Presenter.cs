@@ -41,7 +41,11 @@ namespace PortalClientes.Presenter
         protected void eSearchEdoObj_Presenter(object sender, EventArgs e)
         {
             FiltroEdoCuenta F = new FiltroEdoCuenta();
+            F.anio = oIView.iAnio;
+            F.mes = oIView.iMes;
             FiltroSubEdoCuenta Fsub = new FiltroSubEdoCuenta();
+            Fsub.anio = oIView.iAnio;
+            Fsub.mes = oIView.iMes;
             oIView.LlenarEdoCuenta(oIGesCat.ObtenerEstadoCuenta(F));
             oIView.LlenarSubEdoCuenta(oIGesCat.ObtenerSubEstadoCuenta(Fsub));
 

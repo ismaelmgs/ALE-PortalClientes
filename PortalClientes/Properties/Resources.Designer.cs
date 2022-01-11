@@ -1510,6 +1510,15 @@ namespace PortalClientes.Properties {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Matrículas ⏷.
+        /// </summary>
+        internal static string MatriculasMenu {
+            get {
+                return ResourceManager.GetString("MatriculasMenu", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Costo por Categoría.
         /// </summary>
         internal static string ME_CostoCat {

@@ -34,12 +34,13 @@
                         </h3>
                     </div>
                 </div>
-                <div class="col-md-6">
+                <div class="col-md-6" style="text-align:right;">
                     <div class="title_right">
-                        <div class="col-md-5 col-sm-5   form-group pull-right top_search">
+                        <span data-toggle="popover" title="Dudas o Aclaraciones" data-html="true" data-content="Favor de comunicarse con:<br /> <strong>Miguel Ríos</strong><br /> al teléfono:<br /> <a href='tel:+525555555555'> <strong>(55) 5555 5555</strong></a>"><i class="fa fa-question-circle" style="font-size:35px;margin-top: 5px;cursor:pointer;"></i></span>
+                        <%--<div class="col-md-5 col-sm-5   form-group pull-right top_search">
                             <div class="input-group">
                             </div>
-                        </div>
+                        </div>--%>
                     </div>
                 </div>
             </div>
@@ -174,7 +175,7 @@
                             <div class="col-md-12">
                                 <div>
                                     <asp:GridView ID="gvEdoCuenta" runat="server" AutoGenerateColumns="false" CssClass="table table-striped table-bordered table-hover" AllowPaging="true"
-                                        EmptyDataText="No Registros" OnRowDataBound="gvEdoCuenta_RowDataBound" OnRowCommand="gvEdoCuenta_RowCommand" DataKeyNames="Mes">
+                                        EmptyDataText="No Registros" OnRowDataBound="gvEdoCuenta_RowDataBound" OnRowCommand="gvEdoCuenta_RowCommand" DataKeyNames="nombreMes">
                                         <Columns>
                                             <asp:BoundField DataField="nombreMes" />
                                             <asp:BoundField DataField="saldoAnteriorMXN" DataFormatString="{0:C}" />
