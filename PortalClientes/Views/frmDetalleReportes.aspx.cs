@@ -1013,7 +1013,7 @@ namespace PortalClientes.Views
                 gvdetReportes.Columns.Add(clm4);
 
                 BoundField clm9 = new BoundField();
-                clm9.DataField = "comentario";
+                clm9.DataField = "comentarios";
                 gvdetReportes.Columns.Add(clm9);
 
                 BoundField clm10 = new BoundField();
