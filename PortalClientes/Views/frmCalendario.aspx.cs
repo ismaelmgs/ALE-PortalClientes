@@ -18,6 +18,7 @@ using CrystalDecisions.CrystalReports.Engine;
 using CrystalDecisions.Shared;
 using System.Data;
 using Newtonsoft.Json;
+using System.Globalization;
 
 namespace PortalClientes.Views
 {
@@ -435,8 +436,8 @@ namespace PortalClientes.Views
                 {
                     row["idioma"] = Utils.Idioma;
                     row["TiempoVuelo"] = (item.FechaFin - item.FechaInicio).ToString(@"hh\h\ mm\m\ ");
-                    row["FechaInicioStr"] = item.FechaInicio.ToLongDateString();
-                    row["FechaFinStr"] = item.FechaFin.ToLongDateString();
+                    row["FechaInicioStr"] = Utils.Idioma == "es-MX" ? item.FechaInicio.ToLongDateString().ToString(CultureInfo.CreateSpecificCulture("es-MX")) : DevuelveFechaIngles(item.FechaInicio.Day, item.FechaInicio.Month, item.FechaInicio.Year);
+                    row["FechaFinStr"] = Utils.Idioma == "es-MX" ? item.FechaFin.ToLongDateString().ToString(CultureInfo.CreateSpecificCulture("es-MX")) : DevuelveFechaIngles(item.FechaFin.Day, item.FechaFin.Month, item.FechaFin.Year);
                     row["HoraInicio"] = item.FechaInicio.ToShortTimeString();
                     row["HoraFin"] = item.FechaFin.ToShortTimeString();
                     row["Matricula"] = Utils.MatriculaActual;
@@ -492,6 +493,76 @@ namespace PortalClientes.Views
                 return null;
             }
             
+        }
+
+        public static string DevuelveFechaIngles(int iDia, int iMes, int iAnio)
+        {
+            string sFecha = string.Empty;
+            string sDia = string.Empty;
+            string sMes = string.Empty;
+
+            switch (iDia)
+            {
+                case 1:
+                    sDia = "1st";
+                    break;
+                case 2:
+                    sDia = "2nd";
+                    break;
+                case 3:
+                    sDia = "3rd";
+                    break;
+                case 4:
+                    sDia = "4th";
+                    break;
+                default:
+                    sDia = iDia.ToString() + "th";
+                    break;
+            }
+
+            switch (iMes)
+            {
+                case 1:
+                    sMes = "January";
+                    break;
+                case 2:
+                    sMes = "February";
+                    break;
+                case 3:
+                    sMes = "March";
+                    break;
+                case 4:
+                    sMes = "April";
+                    break;
+                case 5:
+                    sMes = "May";
+                    break;
+                case 6:
+                    sMes = "June";
+                    break;
+                case 7:
+                    sMes = "July";
+                    break;
+                case 8:
+                    sMes = "August";
+                    break;
+                case 9:
+                    sMes = "September";
+                    break;
+                case 10:
+                    sMes = "October";
+                    break;
+                case 11:
+                    sMes = "November";
+                    break;
+                case 12:
+                    sMes = "December";
+                    break;
+            }
+
+            sFecha = sMes + " " + sDia + ", " + iAnio.ToString();
+
+            return sFecha;
         }
 
         private void LlenaModal()

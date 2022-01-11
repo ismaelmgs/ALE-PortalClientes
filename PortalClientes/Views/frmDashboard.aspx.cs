@@ -97,16 +97,24 @@ namespace PortalClientes.Views
             lblDestinoText.Text = oDashboard.Destino;
             lblSalidaText.Text = fechaSalida;
             lblLlegoText.Text = fechaLlegada;
-            lblSaldoNumber.Text = oDashboard.saldoActualMXN.HasValue ? oDashboard.saldoActualMXN.Value.ToString() : "0";
+            lblSaldoNumber.Text = oDashboard.saldoActualMXN.HasValue ? Decimal.Round(oDashboard.saldoActualMXN.Value, 2).ToString() : "0";
             //lblIncVenc90DiasNumber.Text = oDashboard.SaldoAlVencimiento.HasValue ? oDashboard.SaldoAlVencimiento.Value.ToString() : "0";
-            lblultimaDeclaracionText.Text = oDashboard.saldoActualUSD.HasValue ? oDashboard.saldoActualUSD.Value.ToString() : "0";
+            lblultimaDeclaracionText.Text = oDashboard.saldoActualUSD.HasValue ? Decimal.Round(oDashboard.saldoActualUSD.Value, 2).ToString() : "0";
             //lblDeclaracionMesAno1.Text = Convert.ToDateTime(oDashboard.FechaInicioDeclaracion).ToString("dd/MM/yyyy");
             //lblDeclaracionMesAno2.Text = Convert.ToDateTime(oDashboard.FechaFinDeclaracion).ToString("dd/MM/yyyy");
 
             var mes = oDashboard.mesPeriodo > 0 ? textInfo.ToTitleCase(month.GetMonthName(oDashboard.mesPeriodo.Value)) : "";
 
-            lblDeclaracionPara.Text = Utils.Idioma == "es-MX" ? "Periodo al mes de " + mes +" del " + oDashboard.anioPeriodo.ToString() : "Period to " + mes + " " + oDashboard.anioPeriodo.Value.ToString();
-            lblIncVenc90Dias.Text = Utils.Idioma == "es-MX" ? "Periodo al mes de " + mes + " del " + oDashboard.anioPeriodo.ToString() : "Period to " + mes + " " + oDashboard.anioPeriodo.Value.ToString();
+            if(mes != ""){
+                lblDeclaracionPara.Text = Utils.Idioma == "es-MX" ? "Periodo al mes de " + mes + " del " + oDashboard.anioPeriodo.ToString() : "Period to " + mes + " " + oDashboard.anioPeriodo.Value.ToString();
+                lblIncVenc90Dias.Text = Utils.Idioma == "es-MX" ? "Periodo al mes de " + mes + " del " + oDashboard.anioPeriodo.ToString() : "Period to " + mes + " " + oDashboard.anioPeriodo.Value.ToString();
+            }
+            else
+            {
+                lblDeclaracionPara.Text = "";
+                lblIncVenc90Dias.Text = "";
+            }
+            
 
             //coordenadas
             HFoLat.Value = oDashboard.aorigenLatitud;

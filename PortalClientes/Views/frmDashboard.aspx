@@ -325,46 +325,51 @@
             ></script>
             <!-- <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?sensor=false"></script> -->
             <script type="text/javascript">
-      function initialize() {
-    // Configuración del mapa
-    var mapProp = {
-      zoom: 5,
-      center: {lat: 24.4848937, lng: -103.3544444},
-    };
-    // Agregando el mapa al tag de id googleMap
-    var map = new google.maps.Map(document.getElementById("googleMap"), mapProp);
-      
-    // Coordenada de la ruta
-    var flightPlanCoordinates = [
-      {lat: Number.parseFloat($('#ContentPlaceHolder1_HFoLat').val()), lng: Number.parseFloat($('#ContentPlaceHolder1_HFoLon').val())},
-      {lat: Number.parseFloat($('#ContentPlaceHolder1_HFdLat').val()), lng: Number.parseFloat($('#ContentPlaceHolder1_HFdLon').val())}
-    ];
-     
-    // Información de la ruta (coordenadas, color de línea, etc...)
-    var flightPath = new google.maps.Polyline({
-      path: flightPlanCoordinates,
-      geodesic: true,
-      strokeColor: '#FF0000',
-      strokeOpacity: 1.0,
-      strokeWeight: 2
-    });
+              function initialize() {
+                // Configuración del mapa
+                var mapProp = {
+                  zoom: 5,
+                  center: {lat: 24.4848937, lng: -103.3544444},
+                };
+                let olat = Number.parseFloat($('#ContentPlaceHolder1_HFoLat').val())
+                let olng = Number.parseFloat($('#ContentPlaceHolder1_HFoLon').val())
 
-    for (i = 0; i < flightPlanCoordinates.length; i++) {
-        if (i == 0 || i == flightPlanCoordinates.length-1) {
-            var marker = new google.maps.Marker({
-                position: flightPlanCoordinates[i],
-                label: 'MX',
-                map: map
-            });
-        }
-    }
-     
-    // Creando la ruta en el mapa
-    flightPath.setMap(map);
-    }
+                let dlat = Number.parseFloat($('#ContentPlaceHolder1_HFdLat').val())
+                let dlng = Number.parseFloat($('#ContentPlaceHolder1_HFdLon').val())
+
+                if(olat != null && olng != null && dlat != null && dlng != null){
+                  // Agregando el mapa al tag de id googleMap
+                  var map = new google.maps.Map(document.getElementById("googleMap"), mapProp);
       
-    // Inicializando el mapa cuando se carga la página
-  //   google.maps.event.addDomListener(window, 'load', initialize);
+                  // Coordenada de la ruta
+                  var flightPlanCoordinates = [
+                    {lat: olat, lng: olng},
+                    {lat: dlat, lng: dlng}
+                  ];
+                  
+                  // Información de la ruta (coordenadas, color de línea, etc...)
+                  var flightPath = new google.maps.Polyline({
+                    path: flightPlanCoordinates,
+                    geodesic: true,
+                    strokeColor: '#FF0000',
+                    strokeOpacity: 1.0,
+                    strokeWeight: 2
+                  });
+
+                  for (i = 0; i < flightPlanCoordinates.length; i++) {
+                    if (i == 0 || i == flightPlanCoordinates.length-1) {
+                      var marker = new google.maps.Marker({
+                        position: flightPlanCoordinates[i],
+                        label: 'MX',
+                        map: map
+                      });
+                    }
+                  }
+                    
+                  // Creando la ruta en el mapa
+                  flightPath.setMap(map);
+                }
+              }
             </script>
         </ContentTemplate>
     </asp:UpdatePanel>

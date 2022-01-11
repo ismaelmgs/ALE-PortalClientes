@@ -309,5 +309,3 @@ function charts(data, ChartType) {
         });
     }
 }
-
-
