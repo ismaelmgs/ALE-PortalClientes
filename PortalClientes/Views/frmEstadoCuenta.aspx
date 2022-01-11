@@ -175,7 +175,7 @@
                             <div class="col-md-12">
                                 <div>
                                     <asp:GridView ID="gvEdoCuenta" runat="server" AutoGenerateColumns="false" CssClass="table table-striped table-bordered table-hover" AllowPaging="true"
-                                        EmptyDataText="No Registros" OnRowDataBound="gvEdoCuenta_RowDataBound" OnRowCommand="gvEdoCuenta_RowCommand" DataKeyNames="Mes">
+                                        EmptyDataText="No Registros" OnRowDataBound="gvEdoCuenta_RowDataBound" OnRowCommand="gvEdoCuenta_RowCommand" DataKeyNames="nombreMes">
                                         <Columns>
                                             <asp:BoundField DataField="nombreMes" />
                                             <asp:BoundField DataField="saldoAnteriorMXN" DataFormatString="{0:C}" />

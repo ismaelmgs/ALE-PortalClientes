@@ -1119,4 +1119,7 @@
   <data name="TabTran_TiempoVuelo" xml:space="preserve">
     <value>Tiempo de Vuelo</value>
   </data>
+  <data name="MatriculasMenu" xml:space="preserve">
+    <value>Matrículas ⏷</value>
+  </data>
 </root>

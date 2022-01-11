@@ -71,6 +71,7 @@ namespace PortalClientes
             MenuMatriculas.Items[3].Text = Properties.Resources.CerrarSesion;
             MenuMatriculas.Items[0].Text = Utils.NombreUsuario;
             MenuMatriculas.Items[2].Text = Properties.Resources.AdministrarCuenta;
+            MenuMatriculas.Items[1].Text = Properties.Resources.MatriculasMenu;
             
         }
 
