@@ -1125,4 +1125,7 @@
   <data name="MatriculasMenu" xml:space="preserve">
     <value>Tail number ⏷</value>
   </data>
+  <data name="TabTran_Referencia" xml:space="preserve">
+    <value>Reference</value>
+  </data>
 </root>

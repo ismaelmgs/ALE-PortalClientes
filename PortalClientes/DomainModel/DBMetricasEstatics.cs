@@ -533,6 +533,42 @@ namespace PortalClientes.DomainModel
             }
         }
 
+        public List<responseGastosCombustibleVuelos> obtenerReporteGastosCombVuelos(FiltroGraficaGC filtro)
+        {
+            try
+            {
+                JavaScriptSerializer ser = new JavaScriptSerializer();
+                ser.MaxJsonLength = 500000000;
+                List<responseGastosCombustibleVuelos> d = new List<responseGastosCombustibleVuelos>();
+                FiltroGraficaGC oLog = new FiltroGraficaGC();
+                oLog = filtro;
+                oLog.matricula = Utils.MatriculaActual;
+
+                oLog.matricula = "XA-CLB";
+                oLog.mes = "11";
+                oLog.anio = "2021";
+                oLog.claveContrato = "LOMED";
+
+                TokenWS oToken = Utils.ObtieneToken;
+
+                var client = new RestClient(Helper.D_UrlObtieneGastosCombustibleVuelos);
+                var request = new RestRequest(Method.POST);
+                request.AddHeader("Authorization", oToken.token);
+                request.AddJsonBody(oLog);
+
+                IRestResponse response = client.Execute(request);
+                var resp = response.Content;
+
+                d = ser.Deserialize<List<responseGastosCombustibleVuelos>>(resp);
+
+                return d;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
         public RutaAeropuerto obtenerRutasAeropuertos (FiltroEvent filtro)
         {
             try

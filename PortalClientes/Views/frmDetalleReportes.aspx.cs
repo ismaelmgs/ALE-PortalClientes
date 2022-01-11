@@ -110,6 +110,12 @@ namespace PortalClientes.Views
                 reporte.detalleGastosVuelos = (detGastosVuelos)Session["data"];
                 LlenarGV(reporte, tipo);
             }
+
+            else if (tipo == 6)
+            {
+                reporte.gastoCombustible = (List<gvGastosCombustible>)Session["data"];
+                LlenarGV(reporte, tipo);
+            }
         }
 
         protected void gvdetReportes_RowDataBound(object sender, GridViewRowEventArgs e)
@@ -167,6 +173,19 @@ namespace PortalClientes.Views
                 {
                     e.Row.Cells[0].Text = Properties.Resources.TabTran_Mes;
                     e.Row.Cells[0].Visible = false;
+                }
+
+                else if (tipo == 6)
+                {
+                    e.Row.Cells[0].Text = Properties.Resources.TabTran_Mes;
+                    e.Row.Cells[1].Text = Properties.Resources.TabTran_Anio;
+                    e.Row.Cells[2].Text = Properties.Resources.TabTran_Referencia;
+                    e.Row.Cells[3].Text = Properties.Resources.TabTran_TGasto;
+                    e.Row.Cells[4].Text = Properties.Resources.TabTran_Proveedor;
+                    e.Row.Cells[5].Text = Properties.Resources.TabTran_Importe;
+                    e.Row.Cells[6].Text = Properties.Resources.TabTran_Comentario;
+                    e.Row.Cells[7].Text = Properties.Resources.TabTran_Origen;
+                    e.Row.Cells[8].Text = Properties.Resources.TabTran_Destino;
                 }
             }
 
@@ -695,6 +714,48 @@ namespace PortalClientes.Views
             LlenarGV(r, reporte);
         }
 
+        public void CargarReporteGastosCombustible(List<responseGastosCombustibleVuelos> orptComb)
+        {
+            DateTimeFormatInfo month = null;
+            CultureInfo cultureInfo = Thread.CurrentThread.CurrentCulture;
+            TextInfo textInfo = cultureInfo.TextInfo;
+            var reporte = 6;
+
+            Session["tipoReporte"] = reporte;
+
+            if (Utils.Idioma == "es-MX")
+            {
+                month = new CultureInfo("es-ES", false).DateTimeFormat;
+            }
+            else
+            {
+                month = new CultureInfo("en-US", false).DateTimeFormat;
+            }
+
+            List<gvGastosCombustible> gvc = new List<gvGastosCombustible>();
+            foreach (var i in orptComb)
+            {
+                gvGastosCombustible g = new gvGastosCombustible();
+                g.referencia = i.referencia;
+                g.tipoGasto = i.tipoGasto;
+                g.comentarios = i.comentarios;
+                g.proveedor = i.proveedor;
+                g.anio = i.anio;
+                g.mes = textInfo.ToTitleCase(month.GetMonthName(i.mes));
+                g.importe = i.importe;
+                g.origen = i.origen;
+                g.destino = i.destino;
+               
+                gvc.Add(g);
+            }
+
+            Reportes r = new Reportes();
+            Session["data"] = gvc;
+            r.gastoCombustible = gvc;
+
+            LlenarGV(r, reporte);
+        }
+
         private void LlenarGV(Reportes reportes, int tipo)
         {
             var contMeses = 0;
@@ -804,7 +865,7 @@ namespace PortalClientes.Views
                 lblTotalRes.Text = totalTransacciones.ToString() + " MXN";
                 lblPromedioRes.Text = promedio.ToString() + " MXN";
             }
-            else if(tipo == 3)
+            else if (tipo == 3)
             {
                 totalRegistros = reportes.gastosProv.Count();
                 contMeses = reportes.gastosProv.Count();
@@ -917,6 +978,58 @@ namespace PortalClientes.Views
                 lblPromedioRes.Text = promedio.ToString() + " USD";
 
                 LlenarGVS(reportes, tipo);
+            }
+            else if (tipo == 6)
+            {
+                totalRegistros = reportes.gastoCombustible.Count();
+                contMeses = reportes.gastoCombustible.Count();
+                totalTransacciones = reportes.gastoCombustible.Sum(x => x.importe);
+                promedio = totalTransacciones / contMeses;
+
+                BoundField clm = new BoundField();
+                clm.DataField = "mes";
+                gvdetReportes.Columns.Add(clm);
+
+                BoundField clm3 = new BoundField();
+                clm3.DataField = "anio";
+                gvdetReportes.Columns.Add(clm3);
+
+
+                BoundField clm6 = new BoundField();
+                clm6.DataField = "referencia";
+                gvdetReportes.Columns.Add(clm6);
+
+                BoundField clm7 = new BoundField();
+                clm7.DataField = "tipoGasto";
+                gvdetReportes.Columns.Add(clm7);
+
+                BoundField clm8 = new BoundField();
+                clm8.DataField = "proveedor";
+                gvdetReportes.Columns.Add(clm8);
+
+                BoundField clm4 = new BoundField();
+                clm4.DataField = "importe";
+                clm4.DataFormatString = "{0:c}";
+                gvdetReportes.Columns.Add(clm4);
+
+                BoundField clm9 = new BoundField();
+                clm9.DataField = "comentario";
+                gvdetReportes.Columns.Add(clm9);
+
+                BoundField clm10 = new BoundField();
+                clm10.DataField = "origen";
+                gvdetReportes.Columns.Add(clm10);
+
+                BoundField clm11 = new BoundField();
+                clm11.DataField = "destino";
+                gvdetReportes.Columns.Add(clm11);
+
+                gvdetReportes.DataSource = reportes.gastoCombustible.OrderBy(x => x.mes).ToList(); //.GroupBy(r => r.mes).Select(x => x.First());
+                gvdetReportes.DataBind();
+
+                lblTotalTrasnRes.Text = totalRegistros.S();
+                lblTotalRes.Text = totalTransacciones.ToString() + " MXN";
+                lblPromedioRes.Text = promedio.ToString() + " MXN";
             }
         }
 
@@ -1031,6 +1144,12 @@ namespace PortalClientes.Views
                     LlenarGV(reportes, tipo);
                 }
 
+                else if (tipo == 6)
+                {
+                    reportes.gastoCombustible = (List<gvGastosCombustible>)Session["data"];
+                    LlenarGV(reportes, tipo);
+                }
+
                 gvdetReportes.HeaderRow.BackColor = Color.White;
                 foreach (TableCell cell in gvdetReportes.HeaderRow.Cells)
                 {
@@ -1094,6 +1213,12 @@ namespace PortalClientes.Views
                 else if (tipo == 3)
                 {
                     reportes.gastosProv = (List<gvGastosProveedor>)Session["data"];
+                    LlenarGV(reportes, tipo);
+                }
+
+                else if (tipo == 6)
+                {
+                    reportes.gastoCombustible = (List<gvGastosCombustible>)Session["data"];
                     LlenarGV(reportes, tipo);
                 }
 
