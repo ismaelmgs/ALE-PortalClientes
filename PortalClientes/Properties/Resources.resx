@@ -241,7 +241,7 @@
     <value>Vence:</value>
   </data>
   <data name="Das_Vuelos" xml:space="preserve">
-    <value>Vuelos</value>
+    <value>N° de Vuelos</value>
   </data>
   <data name="Ta_AltitudMaxima" xml:space="preserve">
     <value>Altitud Máxima:</value>
