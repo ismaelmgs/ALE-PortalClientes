@@ -24,7 +24,7 @@ namespace PortalClientes.Objetos
 
     public class gvGastosCombustible
     {
-        public int referencia { get; set; }
+        public string referencia { get; set; }
         public string tipoGasto { get; set; }
         public string comentarios { get; set; }
         public string proveedor { get; set; }
