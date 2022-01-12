@@ -91,6 +91,11 @@
                                 </li>
                             </ul>
                             <div class="clearfix"></div>
+                            <div class="row">
+                                <div class="col-md-3 offset-9">
+                                    <asp:TextBox ID="txtFecha" AutoPostBack="true" runat="server" CssClass="form-control" Type="date" Width="100%" OnTextChanged="txtFecha_TextChanged"></asp:TextBox>
+                                </div>
+                            </div>
                         </div>
                         <div class="row">
                             <div class="col-md-12">

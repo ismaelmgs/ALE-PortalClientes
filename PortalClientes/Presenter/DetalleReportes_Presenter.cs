@@ -64,9 +64,9 @@ namespace PortalClientes.Presenter
                 case 6:
                     FiltroGraficaGC f6 = new FiltroGraficaGC();
                     f6.matricula = Utils.MatriculaActual;
-                    f6.mes = "12";
+                    f6.mes = oIView.imes;
                     f6.claveContrato = "RASSI";
-                    f6.anio = "2021";
+                    f6.anio = oIView.ianio;
                     oIView.CargarReporteGastosCombustible(oIGesCat.obtenerReporteGastosCombVuelos(f6));
                     break;
             }

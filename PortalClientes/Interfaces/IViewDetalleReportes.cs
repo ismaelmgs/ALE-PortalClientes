@@ -15,5 +15,7 @@ namespace PortalClientes.Interfaces
         void CargarReporteDetalleGastosVuelos(responseDetGastosVuelos orptDetalleGastosVuelos);
         void CargarReporteGastosCombustible(List<responseGastosCombustibleVuelos> orptComb);
         int iReporte { get; }
+        int ianio { get; set; }
+        int imes { get; set; }
     }
 }

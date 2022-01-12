@@ -49,8 +49,8 @@ namespace PortalClientes.Objetos
     public class FiltroGraficaGC
     {
         public string matricula { get; set; }
-        public string mes { get; set; }
-        public string anio { get; set; }
+        public int mes { get; set; }
+        public int anio { get; set; }
         public string claveContrato { get; set; }
     }
 

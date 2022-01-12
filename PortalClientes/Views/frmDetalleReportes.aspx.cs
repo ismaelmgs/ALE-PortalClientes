@@ -39,6 +39,9 @@ namespace PortalClientes.Views
             iReporte = (int)Session["reporteDetalle"];
             iisRpt = (int)Session["isRpt"];
 
+            ianio = DateTime.Now.Year;
+            imes = DateTime.Now.Month;
+
             lblTransacciones.Text = GenerateTitle(true, iReporte);
 
             TextBox milabel = (TextBox)this.Master.FindControl("txtLang");
@@ -53,6 +56,8 @@ namespace PortalClientes.Views
                 System.Threading.Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo(Utils.Idioma);
                 ArmarDetalleReportes();
             }
+
+            usaCaalendario(iReporte);
 
             if (Utils.Idioma == "es-MX")
             {
@@ -72,6 +77,19 @@ namespace PortalClientes.Views
                     eSearchObj(sender, e);
             }
 
+        }
+
+        private void usaCaalendario(int iReporte)
+        {
+            switch (iReporte)
+            {
+                case 6:
+                    txtFecha.Visible = true;
+                    break;
+                default:
+                    txtFecha.Visible = false;
+                    break;
+            }
         }
 
         protected void gvdetReportes_PageIndexChanging(object sender, GridViewPageEventArgs e)
@@ -437,6 +455,15 @@ namespace PortalClientes.Views
             mpeVuelosMes.Hide();
         }
 
+        protected void txtFecha_TextChanged(object sender, EventArgs e)
+        {
+            ianio = Convert.ToInt32(txtFecha.Text.Split('-')[0]);
+            imes = Convert.ToInt32(txtFecha.Text.Split('-')[1]);
+
+            if (eSearchObj != null)
+                eSearchObj(sender, e);
+        }
+
         #endregion
 
         #region METODOS
@@ -458,6 +485,9 @@ namespace PortalClientes.Views
                     break;
                 case 4:
                     title += Utils.Idioma == "es-MX" ? "Resumen de Gastos / Vuelos" : "Summary of Expenses / Flights";
+                    break;
+                case 6:
+                    title += Utils.Idioma == "es-MX" ? "Gasto de Combustible por Vuelo" : "Fuel Cost per Flight";
                     break;
             }
 
@@ -811,8 +841,8 @@ namespace PortalClientes.Views
                 gvdetReportes.DataBind();
 
                 lblTotalTrasnRes.Text = totalRegistros.S();
-                lblTotalRes.Text = totalTransacciones.ToString() + " MXN";
-                lblPromedioRes.Text = promedio.ToString() + " MXN";
+                lblTotalRes.Text = decimal.Round(Convert.ToDecimal(totalTransacciones), 2).ToString() + " MXN";
+                lblPromedioRes.Text = promedio > 0 ? decimal.Round(Convert.ToDecimal(promedio), 2).ToString() + " MXN" : "0";
             }
             else if (tipo == 2)
             {
@@ -862,8 +892,8 @@ namespace PortalClientes.Views
                 gvdetReportes.DataBind();
 
                 lblTotalTrasnRes.Text = totalRegistros.S();
-                lblTotalRes.Text = totalTransacciones.ToString() + " MXN";
-                lblPromedioRes.Text = promedio.ToString() + " MXN";
+                lblTotalRes.Text = decimal.Round(Convert.ToDecimal(totalTransacciones), 2).ToString() + " MXN";
+                lblPromedioRes.Text = promedio > 0 ? decimal.Round(Convert.ToDecimal(promedio), 2).ToString() + " MXN" : "0";
             }
             else if (tipo == 3)
             {
@@ -913,8 +943,8 @@ namespace PortalClientes.Views
                 gvdetReportes.DataBind();
 
                 lblTotalTrasnRes.Text = totalRegistros.S();
-                lblTotalRes.Text = totalTransacciones.ToString() + " MXN";
-                lblPromedioRes.Text = promedio.ToString() + " MXN";
+                lblTotalRes.Text = decimal.Round(Convert.ToDecimal(totalTransacciones), 2).ToString() + " MXN";
+                lblPromedioRes.Text = promedio > 0 ? decimal.Round(Convert.ToDecimal(promedio), 2).ToString() + " MXN" : "0";
             }
             else if (tipo == 4)
             {
@@ -956,8 +986,8 @@ namespace PortalClientes.Views
                 gvdetReportes.DataBind();
 
                 lblTotalTrasnRes.Text = totalRegistros.S();
-                lblTotalRes.Text = totalTransacciones.ToString() + " MXN";
-                lblPromedioRes.Text = promedio.ToString() + " USD";
+                lblTotalRes.Text = decimal.Round(Convert.ToDecimal(totalTransacciones), 2).ToString() + " MXN";
+                lblPromedioRes.Text = decimal.Round(Convert.ToDecimal(promedio), 2).ToString() + " USD";
             }
             else if (tipo == 5)
             {
@@ -974,8 +1004,8 @@ namespace PortalClientes.Views
                 gvdetReportes.DataBind();
 
                 lblTotalTrasnRes.Text = totalRegistros.S();
-                lblTotalRes.Text = totalTransacciones.ToString() + " MXN";
-                lblPromedioRes.Text = promedio.ToString() + " USD";
+                lblTotalRes.Text = decimal.Round(Convert.ToDecimal(totalTransacciones), 2).ToString() + " MXN";
+                lblPromedioRes.Text = decimal.Round(Convert.ToDecimal(promedio), 2).ToString() + " USD";
 
                 LlenarGVS(reportes, tipo);
             }
@@ -1028,8 +1058,8 @@ namespace PortalClientes.Views
                 gvdetReportes.DataBind();
 
                 lblTotalTrasnRes.Text = totalRegistros.S();
-                lblTotalRes.Text = totalTransacciones.ToString() + " MXN";
-                lblPromedioRes.Text = promedio.ToString() + " MXN";
+                lblTotalRes.Text = decimal.Round(Convert.ToDecimal(totalTransacciones), 2).ToString() + " MXN";
+                lblPromedioRes.Text = promedio > 0 ? decimal.Round(Convert.ToDecimal(promedio), 2).ToString() + " MXN" : "0";
             }
         }
 
@@ -1279,6 +1309,18 @@ namespace PortalClientes.Views
         {
             get { return (int)ViewState["VSIsReport"]; }
             set { ViewState["VSIsReport"] = value; }
+        }
+
+        public int ianio
+        {
+            get { return (int)ViewState["VSAnio"]; }
+            set { ViewState["VSAnio"] = value; }
+        }
+
+        public int imes
+        {
+            get { return (int)ViewState["VSMes"]; }
+            set { ViewState["VSMes"] = value; }
         }
 
         #endregion
