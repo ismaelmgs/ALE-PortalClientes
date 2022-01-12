@@ -9,7 +9,7 @@ namespace PortalClientes.Objetos
     {
         public int idGasto { get; set; }
         public string matricula { get; set; }
-        public int referencia { get; set; }
+        public string referencia { get; set; }
         public string tipodeGasto { get; set; }
         public string tipoGasto { get; set; }
         public string comentarios { get; set; }

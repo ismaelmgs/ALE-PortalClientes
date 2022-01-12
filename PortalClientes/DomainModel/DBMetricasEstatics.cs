@@ -544,7 +544,6 @@ namespace PortalClientes.DomainModel
                 oLog = filtro;
                 oLog.matricula = Utils.MatriculaActual;
 
-                oLog.matricula = "XA-CLB";
                 oLog.claveContrato = "LOMED";
 
                 TokenWS oToken = Utils.ObtieneToken;
