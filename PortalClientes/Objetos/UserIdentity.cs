@@ -15,5 +15,7 @@ namespace PortalClientes.Objetos
         public string sIdioma { set; get; }
         public List<string> lsMatriculas { set; get; }
         public string sMatricula { set; get; }
+        public string Clientes { set; get; }
+        public string NombreCliente { set; get; }
     }
 }

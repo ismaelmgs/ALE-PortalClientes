@@ -29,6 +29,7 @@ namespace PortalClientes.Objetos
         public DateTime? FechaModificacion { set; get; }
         public string codigo { set; get; }
         public string mensaje { set; get; }
+        public string NombreCliente { set; get; }
     }
 
 

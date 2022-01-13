@@ -460,14 +460,13 @@ namespace PortalClientes.Views
                     row["NuevosCargos"] = item.nuevosCargos.S().D().ToString("c");
                     row["SaldoActual"] = item.saldoActual.S().D().ToString("c");
                     row["Matricula"] = Utils.MatriculaActual;                   
-                    row["Cliente"] = Utils.NombreUsuario;//Checar (1) 
+                    row["Cliente"] = Utils.NombreCliente;
                     row["IVA"] = "";
                     row["IVAText"] = "";
                     row["Fecha"] = "";
                     row["ClaveContrato"] = item.claveContrato;
-                    row["Periodo"] = ObtienePeriodoEdoCuenta(item.mes,item.anio);//nombreMes;//Checar (mes)
+                    row["Periodo"] = ObtienePeriodoEdoCuenta(item.mes,item.anio);
                     row["Elaboro"] = Utils.NombreUsuario;
-                    //lblRespSaldoAntMXP.Text = dtTotal.Rows[0]["SaldoAnterior"].S().D().ToString("c");
                 }
                 else
                 {

@@ -28,6 +28,8 @@ namespace PortalClientes.Presenter
             oUI.sPuesto = oUs.Puesto;
             oUI.sIdioma = Utils.Idioma;
             oUI.iIdUsuario = oUs.IdUsuario;
+            oUI.Clientes = oUs.Clientes;
+            oUI.NombreCliente = oUs.NombreCliente;
 
             if (!string.IsNullOrEmpty(oUs.Matriculas))
             {

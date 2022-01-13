@@ -134,6 +134,48 @@ namespace PortalClientes.Clases
             }
         }
 
+        public static string ClaveContrato
+        {
+            get
+            {
+                if (System.Web.HttpContext.Current.Session["UserIdentity"] == null)
+                {
+                    UserIdentity oClientes = new UserIdentity();
+                    oClientes.Clientes = "";
+                    System.Web.HttpContext.Current.Session["UserIdentity"] = oClientes;
+                }
+
+                return ((UserIdentity)System.Web.HttpContext.Current.Session["UserIdentity"]).Clientes;
+            }
+            set
+            {
+                UserIdentity oClientes = (UserIdentity)System.Web.HttpContext.Current.Session["UserIdentity"];
+                oClientes.Clientes = value;
+                System.Web.HttpContext.Current.Session["UserIdentity"] = oClientes;
+            }
+        }
+
+        public static string NombreCliente
+        {
+            get
+            {
+                if (System.Web.HttpContext.Current.Session["UserIdentity"] == null)
+                {
+                    UserIdentity oNombreCliente = new UserIdentity();
+                    oNombreCliente.NombreCliente = "";
+                    System.Web.HttpContext.Current.Session["UserIdentity"] = oNombreCliente;
+                }
+
+                return ((UserIdentity)System.Web.HttpContext.Current.Session["UserIdentity"]).NombreCliente;
+            }
+            set
+            {
+                UserIdentity oNombreCliente = (UserIdentity)System.Web.HttpContext.Current.Session["UserIdentity"];
+                oNombreCliente.NombreCliente = value;
+                System.Web.HttpContext.Current.Session["UserIdentity"] = oNombreCliente;
+            }
+        }
+
         public static DataTable ConvertListToDataTable<T>(this IList<T> data)
         {
             PropertyDescriptorCollection properties = TypeDescriptor.GetProperties(typeof(T));

@@ -121,8 +121,8 @@ namespace PortalClientes.DomainModel
 
                 oLog.mes = filtro.mes;
                 oLog.anio = filtro.anio;
-                oLog.claveContrato = "RASSI";
-                
+                oLog.claveContrato = Utils.ClaveContrato;
+
                 TokenWS oToken = Utils.ObtieneToken;
 
                 var client = new RestClient(Helper.D_UrlObtieneEdoCuenta);
