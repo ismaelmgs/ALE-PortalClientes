@@ -828,6 +828,8 @@ namespace PortalClientes.Views
                 g.totalImpPago = i.totalImpPago;
                 g.noGastos =i.noGastos;
                 g.noPagos = i.noPagos;
+                g.mesint = i.mes;
+
 
                 gi.Add(g);
             }
@@ -1151,7 +1153,7 @@ namespace PortalClientes.Views
                 clm9.DataFormatString = "{0:c}";
                 gvdetReportes.Columns.Add(clm9);
 
-                gvdetReportes.DataSource = reportes.gastosIngresos.OrderBy(x => x.mes).ToList(); //.GroupBy(r => r.mes).Select(x => x.First());
+                gvdetReportes.DataSource = reportes.gastosIngresos.OrderBy(x => x.mesint).ToList(); //.GroupBy(r => r.mes).Select(x => x.First());
                 gvdetReportes.DataBind();
 
                 lblTotalTrasnRes.Text = totalRegistros.S();

@@ -25,6 +25,7 @@ namespace PortalClientes.Objetos
         public string facturante { get; set; }
         public int anio { get; set; }
         public string mes { get; set; }
+        public int mesint { get; set; }
         public double totalImpGasto { get; set; }
         public double totalImpPago { get; set; }
         public int noGastos { get; set; }
