@@ -1117,7 +1117,7 @@ namespace PortalClientes.Views
             else if (tipo == 7)
             {
                 totalRegistros = reportes.gastosIngresos.Count();
-                contMeses = reportes.gastoCombustible.Count();
+                contMeses = reportes.gastosIngresos.Count();
                 totalTransacciones = reportes.gastosIngresos.Sum(x => x.totalImpGasto);
                 promedio = reportes.gastosIngresos.Sum(x => x.totalImpPago);
 
