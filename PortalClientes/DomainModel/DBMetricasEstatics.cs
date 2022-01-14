@@ -566,6 +566,37 @@ namespace PortalClientes.DomainModel
             }
         }
 
+        public List<responseGastosIngresos> obtenerReporteGastosIngresos(FiltroGraficaCC filtro)
+        {
+            try
+            {
+                JavaScriptSerializer ser = new JavaScriptSerializer();
+                ser.MaxJsonLength = 500000000;
+                List<responseGastosIngresos> d = new List<responseGastosIngresos>();
+                FiltroGraficaCC oLog = new FiltroGraficaCC();
+                oLog = filtro;
+                oLog.matricula = Utils.MatriculaActual;
+
+                TokenWS oToken = Utils.ObtieneToken;
+
+                var client = new RestClient(Helper.D_UrlObtieneGastosCombustibleVuelos);
+                var request = new RestRequest(Method.POST);
+                request.AddHeader("Authorization", oToken.token);
+                request.AddJsonBody(oLog);
+
+                IRestResponse response = client.Execute(request);
+                var resp = response.Content;
+
+                d = ser.Deserialize<List<responseGastosIngresos>>(resp);
+
+                return d;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
         public RutaAeropuerto obtenerRutasAeropuertos (FiltroEvent filtro)
         {
             try

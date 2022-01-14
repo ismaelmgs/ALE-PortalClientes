@@ -69,6 +69,14 @@ namespace PortalClientes.Presenter
                     f6.anio = oIView.ianio;
                     oIView.CargarReporteGastosCombustible(oIGesCat.obtenerReporteGastosCombVuelos(f6));
                     break;
+                case 7:
+                    FiltroGraficaCC f7 = new FiltroGraficaCC();
+                    f7.matricula = Utils.MatriculaActual;
+                    f7.meses = "12";
+                    f7.claveCliente = "RASSI";
+
+                    oIView.CargarReporteGastosIngresos(oIGesCat.obtenerReporteGastosIngresos(f7));
+                    break;
             }
         }
     }

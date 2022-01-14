@@ -1128,4 +1128,28 @@
   <data name="TabTran_Referencia" xml:space="preserve">
     <value>Reference</value>
   </data>
+  <data name="Re_AdminAnual" xml:space="preserve">
+    <value>Annual Administration Report</value>
+  </data>
+  <data name="Re_GastoCombustibleVuelo" xml:space="preserve">
+    <value>Fuel Expenditure per Flight</value>
+  </data>
+  <data name="Re_GastosIngresos" xml:space="preserve">
+    <value>Income and Expenses</value>
+  </data>
+  <data name="TabTran_Facturante" xml:space="preserve">
+    <value>Invoicing</value>
+  </data>
+  <data name="TabTran_NumGastos" xml:space="preserve">
+    <value>No. Expenses</value>
+  </data>
+  <data name="TabTran_NumPagos" xml:space="preserve">
+    <value>No. Payments</value>
+  </data>
+  <data name="TabTran_TotalGasto" xml:space="preserve">
+    <value>Total Amount Expense</value>
+  </data>
+  <data name="TabTran_TotalPago" xml:space="preserve">
+    <value>Total Payment Amount</value>
+  </data>
 </root>

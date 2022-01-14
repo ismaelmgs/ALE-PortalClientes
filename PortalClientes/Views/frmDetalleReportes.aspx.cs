@@ -134,6 +134,12 @@ namespace PortalClientes.Views
                 reporte.gastoCombustible = (List<gvGastosCombustible>)Session["data"];
                 LlenarGV(reporte, tipo);
             }
+
+            else if (tipo == 7)
+            {
+                reporte.gastosIngresos = (List<gvGastosIngresos>)Session["data"];
+                LlenarGV(reporte, tipo);
+            }
         }
 
         protected void gvdetReportes_RowDataBound(object sender, GridViewRowEventArgs e)
@@ -204,6 +210,17 @@ namespace PortalClientes.Views
                     e.Row.Cells[6].Text = Properties.Resources.TabTran_Comentario;
                     e.Row.Cells[7].Text = Properties.Resources.TabTran_Origen;
                     e.Row.Cells[8].Text = Properties.Resources.TabTran_Destino;
+                }
+
+                else if (tipo == 7)
+                {
+                    e.Row.Cells[0].Text = Properties.Resources.TabTran_Mes;
+                    e.Row.Cells[1].Text = Properties.Resources.TabTran_Anio;
+                    e.Row.Cells[2].Text = Properties.Resources.TabTran_Facturante;
+                    e.Row.Cells[3].Text = Properties.Resources.TabTran_NumGastos;
+                    e.Row.Cells[4].Text = Properties.Resources.TabTran_TotalGasto;
+                    e.Row.Cells[5].Text = Properties.Resources.TabTran_NumPagos;
+                    e.Row.Cells[6].Text = Properties.Resources.TabTran_TotalPago;
                 }
             }
 
@@ -489,6 +506,9 @@ namespace PortalClientes.Views
                 case 6:
                     title += Utils.Idioma == "es-MX" ? "Gasto de Combustible por Vuelo" : "Fuel Cost per Flight";
                     break;
+                case 7:
+                    title += Utils.Idioma == "es-MX" ? "Ingresos y Gastos" : "Income and Expenses";
+                    break;
             }
 
             if (tipoT)
@@ -519,6 +539,11 @@ namespace PortalClientes.Views
                     lblTotalTrasn.Text = Properties.Resources.TabTran_NoVuelos;
                     lblTotal.Text = Properties.Resources.TabTran_TotalMxn;
                     lblPromedio.Text = Properties.Resources.TabTran_TotalUsd;
+                    break;
+                case 7:
+                    lblTotalTrasn.Text = "";//Properties.Resources.TabTran_No;
+                    lblTotal.Text = Properties.Resources.TabTran_TotalGasto;
+                    lblPromedio.Text = Properties.Resources.TabTran_TotalPago;
                     break;
                 default:
                     lblTotalTrasn.Text = Properties.Resources.TabTran_NoGastos;
@@ -782,6 +807,34 @@ namespace PortalClientes.Views
             Reportes r = new Reportes();
             Session["data"] = gvc;
             r.gastoCombustible = gvc;
+
+            LlenarGV(r, reporte);
+        }
+
+        public void CargarReporteGastosIngresos(List<responseGastosIngresos> orptGastosIng)
+        {
+            var reporte = 7;
+
+            Session["tipoReporte"] = reporte;
+
+            List<gvGastosIngresos> gi = new List<gvGastosIngresos>();
+            foreach (var i in orptGastosIng)
+            {
+                gvGastosIngresos g = new gvGastosIngresos();
+                g.facturante = i.facturante;
+                g.anio = i.anio;
+                g.mes = Utils.Idioma == "es-MX" ? i.mesESP : i.mesENG;
+                g.totalImpGasto = i.totalImpGasto;
+                g.totalImpPago = i.totalImpPago;
+                g.noGastos =i.noGastos;
+                g.noPagos = i.noPagos;
+
+                gi.Add(g);
+            }
+
+            Reportes r = new Reportes();
+            Session["data"] = gi;
+            r.gastosIngresos = gi;
 
             LlenarGV(r, reporte);
         }
@@ -1061,6 +1114,50 @@ namespace PortalClientes.Views
                 lblTotalRes.Text = decimal.Round(Convert.ToDecimal(totalTransacciones), 2).ToString() + " MXN";
                 lblPromedioRes.Text = promedio > 0 ? decimal.Round(Convert.ToDecimal(promedio), 2).ToString() + " MXN" : "0";
             }
+            else if (tipo == 7)
+            {
+                totalRegistros = reportes.gastosIngresos.Count();
+                contMeses = reportes.gastoCombustible.Count();
+                totalTransacciones = reportes.gastosIngresos.Sum(x => x.totalImpGasto);
+                promedio = reportes.gastosIngresos.Sum(x => x.totalImpPago);
+
+                BoundField clm = new BoundField();
+                clm.DataField = "mes";
+                gvdetReportes.Columns.Add(clm);
+
+                BoundField clm3 = new BoundField();
+                clm3.DataField = "anio";
+                gvdetReportes.Columns.Add(clm3);
+
+                BoundField clm6 = new BoundField();
+                clm6.DataField = "facturante";
+                gvdetReportes.Columns.Add(clm6);
+
+                BoundField clm7 = new BoundField();
+                clm7.DataField = "noGastos";
+                gvdetReportes.Columns.Add(clm7);
+
+                BoundField clm8 = new BoundField();
+                clm8.DataField = "totalImpGasto";
+                clm8.DataFormatString = "{0:c}";
+                gvdetReportes.Columns.Add(clm8);
+
+                BoundField clm4 = new BoundField();
+                clm4.DataField = "noPagos";
+                gvdetReportes.Columns.Add(clm4);
+
+                BoundField clm9 = new BoundField();
+                clm9.DataField = "totalImpPago";
+                clm9.DataFormatString = "{0:c}";
+                gvdetReportes.Columns.Add(clm9);
+
+                gvdetReportes.DataSource = reportes.gastosIngresos.OrderBy(x => x.mes).ToList(); //.GroupBy(r => r.mes).Select(x => x.First());
+                gvdetReportes.DataBind();
+
+                lblTotalTrasnRes.Text = totalRegistros.S();
+                lblTotalRes.Text = decimal.Round(Convert.ToDecimal(totalTransacciones), 2).ToString() + " MXN";
+                lblPromedioRes.Text = promedio > 0 ? decimal.Round(Convert.ToDecimal(promedio), 2).ToString() + " MXN" : "0";
+            }
         }
 
         private void LlenarGVS(Reportes reportes, int tipo)
@@ -1180,6 +1277,12 @@ namespace PortalClientes.Views
                     LlenarGV(reportes, tipo);
                 }
 
+                else if (tipo == 7)
+                {
+                    reportes.gastosIngresos = (List<gvGastosIngresos>)Session["data"];
+                    LlenarGV(reportes, tipo);
+                }
+
                 gvdetReportes.HeaderRow.BackColor = Color.White;
                 foreach (TableCell cell in gvdetReportes.HeaderRow.Cells)
                 {
@@ -1249,6 +1352,12 @@ namespace PortalClientes.Views
                 else if (tipo == 6)
                 {
                     reportes.gastoCombustible = (List<gvGastosCombustible>)Session["data"];
+                    LlenarGV(reportes, tipo);
+                }
+
+                else if (tipo == 7)
+                {
+                    reportes.gastosIngresos = (List<gvGastosIngresos>)Session["data"];
                     LlenarGV(reportes, tipo);
                 }
 

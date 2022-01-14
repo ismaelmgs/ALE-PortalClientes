@@ -19,7 +19,7 @@ namespace PortalClientes.Properties {
     // a través de una herramienta como ResGen o Visual Studio.
     // Para agregar o quitar un miembro, edite el archivo .ResX y, a continuación, vuelva a ejecutar ResGen
     // con la opción /str o recompile su proyecto de VS.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "16.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "15.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     internal class Resources {
@@ -1924,11 +1924,29 @@ namespace PortalClientes.Properties {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Reporte de Administración Anual.
+        /// </summary>
+        internal static string Re_AdminAnual {
+            get {
+                return ResourceManager.GetString("Re_AdminAnual", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Detalle de gastos / Vuelos.
         /// </summary>
         internal static string Re_DetalleGastosVuelos {
             get {
                 return ResourceManager.GetString("Re_DetalleGastosVuelos", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Gasto de Combustible por Vuelo.
+        /// </summary>
+        internal static string Re_GastoCombustibleVuelo {
+            get {
+                return ResourceManager.GetString("Re_GastoCombustibleVuelo", resourceCulture);
             }
         }
         
@@ -1947,6 +1965,15 @@ namespace PortalClientes.Properties {
         internal static string Re_GastosFijoVariable {
             get {
                 return ResourceManager.GetString("Re_GastosFijoVariable", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Ingresos y Gastos.
+        /// </summary>
+        internal static string Re_GastosIngresos {
+            get {
+                return ResourceManager.GetString("Re_GastosIngresos", resourceCulture);
             }
         }
         
@@ -2500,6 +2527,15 @@ namespace PortalClientes.Properties {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Facturante.
+        /// </summary>
+        internal static string TabTran_Facturante {
+            get {
+                return ResourceManager.GetString("TabTran_Facturante", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Fecha.
         /// </summary>
         internal static string TabTran_Fecha {
@@ -2604,6 +2640,24 @@ namespace PortalClientes.Properties {
         internal static string TabTran_NoVuelos {
             get {
                 return ResourceManager.GetString("TabTran_NoVuelos", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a No. Gastos.
+        /// </summary>
+        internal static string TabTran_NumGastos {
+            get {
+                return ResourceManager.GetString("TabTran_NumGastos", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a No. Pagos.
+        /// </summary>
+        internal static string TabTran_NumPagos {
+            get {
+                return ResourceManager.GetString("TabTran_NumPagos", resourceCulture);
             }
         }
         
@@ -2734,11 +2788,29 @@ namespace PortalClientes.Properties {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Total Importe Gasto.
+        /// </summary>
+        internal static string TabTran_TotalGasto {
+            get {
+                return ResourceManager.GetString("TabTran_TotalGasto", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Total MXN.
         /// </summary>
         internal static string TabTran_TotalMxn {
             get {
                 return ResourceManager.GetString("TabTran_TotalMxn", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Total Importe Pago.
+        /// </summary>
+        internal static string TabTran_TotalPago {
+            get {
+                return ResourceManager.GetString("TabTran_TotalPago", resourceCulture);
             }
         }
         

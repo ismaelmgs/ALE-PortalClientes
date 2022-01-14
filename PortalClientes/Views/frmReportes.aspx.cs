@@ -54,6 +54,9 @@ namespace PortalClientes.Views
             lblRepGastosProveedor.Text = Properties.Resources.Re_GastosProveedor;
             lblResumenGastosVuelos.Text = Properties.Resources.Re_ResumenGastosVuelos;
             lblDetalleGastosVuelos.Text = Properties.Resources.Re_DetalleGastosVuelos;
+            lblIngresosGastos.Text = Properties.Resources.Re_GastosIngresos;
+            lblReporteAdminAnual.Text = Properties.Resources.Re_AdminAnual;
+            lblGastoCombustibleVuelo.Text = Properties.Resources.Re_GastoCombustibleVuelo;
         }
     }
 }

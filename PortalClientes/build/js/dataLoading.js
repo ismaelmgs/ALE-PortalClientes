@@ -16,7 +16,7 @@ function closeSession() {
         if(url.includes('localhost')){
             window.location.pathname = "/frmLogin.aspx";
         }else{
-            window.location.pathname = "/PortalClientes/Views/frmLogin.aspx";
+            window.location.pathname = "/PortalClientes/frmLogin.aspx";
         }
         
     }, 5000);
