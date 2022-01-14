@@ -579,7 +579,7 @@ namespace PortalClientes.DomainModel
 
                 TokenWS oToken = Utils.ObtieneToken;
 
-                var client = new RestClient(Helper.D_UrlObtieneGastosCombustibleVuelos);
+                var client = new RestClient(Helper.D_UrlObtieneGastosIngresos);
                 var request = new RestRequest(Method.POST);
                 request.AddHeader("Authorization", oToken.token);
                 request.AddJsonBody(oLog);

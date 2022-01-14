@@ -54,6 +54,8 @@ namespace PortalClientes.Clases
         public const string D_UrlObtieneCategoriasPeriodo = "http://201.163.208.231/" + DominioWS + "/ws/pc/obtieneGastosRubroDetTiempo";
         public const string D_UrlObtieneRptResumenGastosVuelos = "http://201.163.208.231/" + DominioWS + "/ws/pc/consultaRepDetalleGastosVuelos";
         public const string D_UrlObtieneGastosCombustibleVuelos = "http://201.163.208.231/" + DominioWS + "/ws/pc/consultaGastosCombustibleVuelos";
+        public const string D_UrlObtieneGastosIngresos = "http://201.163.208.231/" + DominioWS + "/ws/pc/consultaGastosIngresos";
+        
         public const string D_UrlObtieneFacturasContratos = "http://201.163.208.231/" + DominioWS + "/ws/pc/obtieneFacturasContratos";
         public const string D_UrlconsultaReporteEdoCtaMatricula = "http://201.163.208.231/" + DominioWS + "/ws/pc/consultaReporteEdoCtaMatricula";
 
