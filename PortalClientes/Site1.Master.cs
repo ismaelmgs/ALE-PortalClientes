@@ -206,51 +206,22 @@ namespace PortalClientes
                 }
             }
 
-            if (path == Enums.Dashboard)
+            List<string> listMenus = new List<string>();
+            listMenus.Add(Enums.Dashboard);
+            listMenus.Add(Enums.Aeronaves);
+            listMenus.Add(Enums.Tripulacion);
+            listMenus.Add(Enums.EstadoCuenta);
+
+            if (listMenus.Contains(path))
             {
                 if (url.Contains("localhost"))
                 {
-                    Response.Redirect("~/Views/frmDashboard.aspx");
+                    Response.Redirect("/Views/" + path);
                 }
                 else
                 {
-                    Response.Redirect("~/frmDashboard.aspx");
+                    Response.Redirect("/PortalClientes/Views/" + path);
                 }
-                
-            }
-            else if (path == Enums.Aeronaves)
-            {
-                if(url.Contains("localhost"))
-                {
-                    Response.Redirect("~/Views/frmTuAeronave.aspx");
-                }
-                else
-                {
-                    Response.Redirect("~/frmTuAeronave.aspx");
-                }
-            }
-            else if (path == Enums.Tripulacion)
-            {
-                if(url.Contains("localhost"))
-                {
-                    Response.Redirect("~/Views/frmTripulacion.aspx");
-                }
-                else
-                {
-                    Response.Redirect("~/frmTripulacion.aspx");
-                }
-            }
-            else if (path == Enums.EstadoCuenta)
-            {
-                if(url.Contains("localhost"))
-                {
-                    Response.Redirect("~/Views/frmEstadoCuenta.aspx");
-                }
-                else
-                {
-                    Response.Redirect("~/frmEstadoCuenta.aspx");
-                }
-                
             }
         }
 
