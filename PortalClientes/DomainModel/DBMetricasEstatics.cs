@@ -60,7 +60,7 @@ namespace PortalClientes.DomainModel
                 oLog = filtro;
                 oLog.matricula = Utils.MatriculaActual;
 
-                oLog.matricula = "XA-CHY";
+                //oLog.matricula = "XA-CHY";
                 oLog.meses = "3";
 
                 TokenWS oToken = Utils.ObtieneToken;
@@ -95,7 +95,7 @@ namespace PortalClientes.DomainModel
                 oLog = filtro;
                 oLog.matricula = Utils.MatriculaActual;
 
-                oLog.matricula = "XA-CHY";
+                //oLog.matricula = "XA-CHY";
                 oLog.meses = "3";
 
                 TokenWS oToken = Utils.ObtieneToken;
@@ -129,7 +129,7 @@ namespace PortalClientes.DomainModel
                 oLog = filtro;
                 oLog.matricula = Utils.MatriculaActual;
 
-                oLog.matricula = "XA-CHY";
+                //oLog.matricula = "XA-CHY";
                 oLog.meses = "3";
 
                 TokenWS oToken = Utils.ObtieneToken;
@@ -163,7 +163,7 @@ namespace PortalClientes.DomainModel
                 oLog = filtro;
                 oLog.matricula = Utils.MatriculaActual;
 
-                oLog.matricula = "XA-CHY";
+                //oLog.matricula = "XA-CHY";
                 oLog.meses = "3";
 
                 TokenWS oToken = Utils.ObtieneToken;
@@ -197,7 +197,7 @@ namespace PortalClientes.DomainModel
                 oLog = filtro;
                 oLog.matricula = Utils.MatriculaActual;
 
-                oLog.matricula = "XA-CHY";
+                //oLog.matricula = "XA-CHY";
                 oLog.meses = "3";
 
                 TokenWS oToken = Utils.ObtieneToken;
@@ -231,7 +231,7 @@ namespace PortalClientes.DomainModel
                 oLog = filtro;
                 oLog.matricula = Utils.MatriculaActual;
 
-                oLog.matricula = "XA-CHY";
+                //oLog.matricula = "XA-CHY";
                 oLog.meses = "3";
 
                 TokenWS oToken = Utils.ObtieneToken;
@@ -265,7 +265,7 @@ namespace PortalClientes.DomainModel
                 oLog = filtro;
                 oLog.matricula = Utils.MatriculaActual;
 
-                oLog.matricula = "XA-CHY";
+                //oLog.matricula = "XA-CHY";
                 oLog.meses = "3";
 
                 TokenWS oToken = Utils.ObtieneToken;
@@ -335,7 +335,7 @@ namespace PortalClientes.DomainModel
                 oLog = filtro;
                 oLog.matricula = Utils.MatriculaActual;
 
-                oLog.matricula = "XA-FLC";
+                //oLog.matricula = "XA-FLC";
                 oLog.meses = "12";
 
                 TokenWS oToken = Utils.ObtieneToken;
@@ -370,7 +370,7 @@ namespace PortalClientes.DomainModel
                 oLog = filtro;
                 oLog.matricula = Utils.MatriculaActual;
 
-                oLog.matricula = "XA-FLC";
+                //oLog.matricula = "XA-FLC";
                 oLog.meses = "12";
 
                 TokenWS oToken = Utils.ObtieneToken;
@@ -405,7 +405,7 @@ namespace PortalClientes.DomainModel
                 oLog.matricula = Utils.MatriculaActual;
                 oLog.idioma = Utils.Idioma;
 
-                oLog.matricula = "XA-CHY";
+                //oLog.matricula = "XA-CHY";
                 oLog.meses = "3";
 
                 TokenWS oToken = Utils.ObtieneToken;
@@ -439,7 +439,7 @@ namespace PortalClientes.DomainModel
                 oLog = filtro;
                 oLog.matricula = Utils.MatriculaActual;
 
-                oLog.matricula = "XA-FLC";
+                //oLog.matricula = "XA-FLC";
                 //oLog.meses = "12";
                 oLog.idioma = Utils.Idioma;
 
@@ -474,9 +474,9 @@ namespace PortalClientes.DomainModel
                 oLog = filtro;
                 oLog.matricula = Utils.MatriculaActual;
 
-                oLog.matricula = "XA-FLC";
+                //oLog.matricula = "XA-FLC";
                 oLog.meses = "12";
-                oLog.claveCliente = "RASSI";
+                oLog.claveCliente = Utils.ClaveContrato;
 
                 TokenWS oToken = Utils.ObtieneToken;
 
@@ -509,9 +509,9 @@ namespace PortalClientes.DomainModel
                 oLog = filtro;
                 oLog.matricula = Utils.MatriculaActual;
 
-                oLog.matricula = "XA-FLC";
+                //oLog.matricula = "XA-FLC";
                 oLog.meses = "12";
-                oLog.claveCliente = "RASSI";
+                oLog.claveCliente = Utils.ClaveContrato;
 
                 TokenWS oToken = Utils.ObtieneToken;
 
@@ -544,7 +544,7 @@ namespace PortalClientes.DomainModel
                 oLog = filtro;
                 oLog.matricula = Utils.MatriculaActual;
 
-                oLog.claveContrato = "LOMED";
+                oLog.claveContrato = Utils.ClaveContrato;
 
                 TokenWS oToken = Utils.ObtieneToken;
 
@@ -608,7 +608,7 @@ namespace PortalClientes.DomainModel
                 oLog = filtro;
                 oLog.matricula = Utils.MatriculaActual;
 
-                oLog.matricula = "XA-ALE";
+                //oLog.matricula = "XA-ALE";
                 oLog.meses = 2;
 
                 TokenWS oToken = Utils.ObtieneToken;

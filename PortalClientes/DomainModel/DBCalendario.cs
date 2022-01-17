@@ -21,7 +21,7 @@ namespace PortalClientes.DomainModel
                 List<Appointment> dc = new List<Appointment>();
                 FiltroEvent oLog = new FiltroEvent();
                 oLog = ev;
-                oLog.matricula = "XA-CHY";// Utils.MatriculaActual;
+                oLog.matricula = Utils.MatriculaActual;
 
                 TokenWS oToken = Utils.ObtieneToken;
 
