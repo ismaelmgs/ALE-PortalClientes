@@ -21,3 +21,7 @@ function closeSession() {
         
     }, 5000);
 }
+
+function reloadPage() {
+    window.location.reload();
+}

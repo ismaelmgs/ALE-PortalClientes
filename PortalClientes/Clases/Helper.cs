@@ -75,5 +75,7 @@ namespace PortalClientes.Clases
         public const string D_UrlObtieneEdoCuenta = "http://201.163.208.231/" + DominioWS + "/ws/pc/consultaTotalesEdoCta";
         public const string D_UrlObtieneSubEdoCuenta = "http://201.163.208.231/" + DominioWS + "/ws/pc/consultaEdoCta";
 
+        public const string US_UrlObtieneMatriculasContratos = "http://201.163.208.231/" + DominioWS + "/ws/pc/obtieneMatriculasContratos";
+
     }
 }

@@ -143,6 +143,7 @@ namespace PortalClientes
 
         private void CargaMatriculas()
         {
+            
             if (Session["UserIdentity"] != null)
             {
                 UserIdentity oU = (UserIdentity)Session["UserIdentity"];
@@ -175,6 +176,14 @@ namespace PortalClientes
                             }
                         }
                     }
+                    foreach (var item in ObtieneMatriculasContrato())
+                    {
+                        if (item.matricula == Utils.MatriculaActual)
+                        {
+                            Utils.ClaveContrato = item.claveCliente;
+                            Utils.NombreCliente = item.nombre;
+                        }
+                    }
                 }
             }
         }
@@ -204,6 +213,15 @@ namespace PortalClientes
                     lblAeronave.Text = Utils.MatriculaActual;
                     lblAeronaveLat.Text = Utils.MatriculaActual;
                 }
+
+                foreach (var item in ObtieneMatriculasContrato())
+                {
+                    if (item.matricula == Utils.MatriculaActual)
+                    {
+                        Utils.ClaveContrato = item.claveCliente;
+                        Utils.NombreCliente = item.nombre;
+                    }
+                }
             }
 
             List<string> listMenus = new List<string>();
@@ -229,6 +247,26 @@ namespace PortalClientes
         {
             Session["UserIdentity"] = null;
             Response.Redirect("~/frmLogin.aspx");
+        }
+
+        private List<MatriculasContratoUsuario> ObtieneMatriculasContrato()
+        {
+            List<MatriculasContratoUsuario> olst = new List<MatriculasContratoUsuario>();
+            JavaScriptSerializer ser = new JavaScriptSerializer();
+            TokenWS oToken = Utils.ObtieneToken;
+            requestIdUsuario oRe = new requestIdUsuario();
+            oRe.idUsuario = Utils.GetIdEmpUsuario;
+
+            var client = new RestClient(Helper.US_UrlObtieneMatriculasContratos);
+            var request = new RestRequest(Method.POST);
+            request.AddHeader("Authorization", oToken.token);
+            request.AddJsonBody(oRe);
+
+            IRestResponse response = client.Execute(request);
+            var resp = response.Content;
+            olst = ser.Deserialize<List<MatriculasContratoUsuario>>(resp);
+
+            return olst;
         }
     }
 }
