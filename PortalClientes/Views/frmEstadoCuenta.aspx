@@ -186,20 +186,20 @@
                                             <asp:BoundField DataField="pagosCreditoUSD" DataFormatString="{0:C}" />
                                             <asp:BoundField DataField="nuevosCargosUSD" DataFormatString="{0:C}" />
                                             <asp:BoundField DataField="saldoActualUSD" DataFormatString="{0:C}" />
-                                             <asp:TemplateField ItemStyle-HorizontalAlign="Center">
+                                             <asp:TemplateField ItemStyle-HorizontalAlign="Center" ItemStyle-VerticalAlign="Middle" >
                                                 <ItemTemplate>
-                                                    &nbsp;&nbsp;&nbsp;<asp:ImageButton ID="lkbViewDocument" runat="server" ImageUrl="~/Images/icons/files.png" Width="40px" Height="42px"
+                                                    &nbsp;&nbsp;&nbsp;<asp:ImageButton ID="lkbViewDocument" runat="server" ImageUrl="~/Images/icons/files.png" Width="25px" Height="27px"
                                                              CommandName="ViewDocument" CommandArgument="<%# ((GridViewRow) Container).RowIndex %>" CssClass="btn" />&nbsp;&nbsp;&nbsp;
                                                 </ItemTemplate>
                                             </asp:TemplateField>
                                             <asp:TemplateField>
                                                 <ItemTemplate>
-                                                    <asp:LinkButton ID="lkbDetalle" runat="server" CommandName="Detalle" CommandArgument="<%# ((GridViewRow) Container).RowIndex %>"></asp:LinkButton>
+                                                    <asp:LinkButton Font-Underline="True" ID="lkbDetalle" runat="server" CommandName="Detalle" CommandArgument="<%# ((GridViewRow) Container).RowIndex %>"></asp:LinkButton>
                                                 </ItemTemplate>
                                             </asp:TemplateField>
-                                            <asp:TemplateField ItemStyle-HorizontalAlign="Center" HeaderText="Reporte">
+                                            <asp:TemplateField ItemStyle-VerticalAlign="Middle" ItemStyle-HorizontalAlign="Center" HeaderText="Reporte">
                                                 <ItemTemplate>
-                                                    &nbsp;&nbsp;&nbsp;<asp:ImageButton ID="lkbReporte" runat="server" ImageUrl="~/Images/icons/descargar.png" Width="40px" Height="42px"
+                                                    &nbsp;&nbsp;&nbsp;<asp:ImageButton ID="lkbReporte" runat="server" ImageUrl="~/Images/icons/descargar.png" Width="25px" Height="27px"
                                                              CommandName="Reporte" CommandArgument="<%# ((GridViewRow) Container).RowIndex %>" CssClass="btn" />&nbsp;&nbsp;&nbsp;
                                                 </ItemTemplate>
                                             </asp:TemplateField>

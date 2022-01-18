@@ -296,19 +296,9 @@ namespace PortalClientes.Views
 
         private void exportarExcel(string tipo)
         {
-            var nameFile = "";
-            if (tipo == "Piloto")
-            {
-                nameFile = "TripulacionPilotosMat-" + Utils.MatriculaActual + ".xls";
-            }
-            else
-            {
-                nameFile = "TripulacionEventosMat-" + Utils.MatriculaActual + ".xls";
-            }
-                
             Response.Clear();
             Response.Buffer = true;
-            Response.AddHeader("content-disposition", string.Format("attachment;filename={0}", nameFile));
+            Response.AddHeader("content-disposition", string.Format("attachment;filename={0}", nameFile(tipo)));
             Response.Charset = "";
             Response.ContentType = "application/vnd.ms-excel";
             using (StringWriter sw = new StringWriter())
@@ -359,18 +349,47 @@ namespace PortalClientes.Views
             }
         }
 
-        private void exportarPDF(string tipo)
+        private string nameFile(string tipo)
         {
             var nameFile = "";
             if (tipo == "Piloto")
             {
-                nameFile = "TripulacionPilotosMat-"+ Utils.MatriculaActual +".pdf";
+                nameFile = Utils.Idioma == "es-MX" ? "Pilotos Tripulacion Matricula " : "Pilot Crew Tail number ";
             }
             else
             {
-                nameFile = "TripulacionEventosMat-" + Utils.MatriculaActual + ".pdf";
+                nameFile = Utils.Idioma == "es-MX" ? "Eventos Tripulacion Matricula " : "Crew Events Tail number ";
             }
 
+            nameFile+= Utils.MatriculaActual + " " + fechaConsulta(ddlFiltro.SelectedValue) + ".xls";
+
+            return nameFile;
+        }
+
+        private string fechaConsulta(string selectedValue)
+        {
+            var fecha = "";
+            switch (selectedValue)
+            {
+                case "0":
+                    fecha = Utils.Idioma == "es-MX" ? "Fecha Mes Actual" : "Date Current month";
+                    break;
+                case "1":
+                    fecha = Utils.Idioma == "es-MX" ? "Fecha Proximo Mes" : "Date Next month";
+                    break;
+                case "2":
+                    fecha = Utils.Idioma == "es-MX" ? "Fecha Proximos 2 Meses" : "Date Next 2 Months";
+                    break;
+                case "3":
+                    fecha = Utils.Idioma == "es-MX" ? "Fecha Proximos 3 Meses" : "Date Next 3 Months";
+                    break;
+            }
+
+            return fecha;
+        }
+
+        private void exportarPDF(string tipo)
+        {
             Response.Clear();
             Response.Buffer = true;
             using (StringWriter sw = new StringWriter())
@@ -389,7 +408,7 @@ namespace PortalClientes.Views
                 }
 
                 Response.ContentType = "application/pdf";
-                Response.AddHeader("content-disposition", string.Format("attachment;filename={0}", nameFile));
+                Response.AddHeader("content-disposition", string.Format("attachment;filename={0}", nameFile(tipo)));
                 Response.Cache.SetCacheability(HttpCacheability.NoCache);
 
                 gv.HeaderRow.BackColor = Color.White;

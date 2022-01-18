@@ -97,9 +97,9 @@ namespace PortalClientes.Views
             lblDestinoText.Text = oDashboard.Destino;
             lblSalidaText.Text = fechaSalida;
             lblLlegoText.Text = fechaLlegada;
-            lblSaldoNumber.Text = oDashboard.saldoActualMXN.HasValue ? Decimal.Round(oDashboard.saldoActualMXN.Value, 2).ToString() : "0";
+            lblSaldoNumber.Text = oDashboard.saldoActualMXN.HasValue ? string.Format("{0:#,0.##}", Decimal.Round(oDashboard.saldoActualMXN.Value, 2)) : "0";
             //lblIncVenc90DiasNumber.Text = oDashboard.SaldoAlVencimiento.HasValue ? oDashboard.SaldoAlVencimiento.Value.ToString() : "0";
-            lblultimaDeclaracionText.Text = oDashboard.saldoActualUSD.HasValue ? Decimal.Round(oDashboard.saldoActualUSD.Value, 2).ToString() : "0";
+            lblultimaDeclaracionText.Text = oDashboard.saldoActualUSD.HasValue ? string.Format("{0:#,0.##}", Decimal.Round(oDashboard.saldoActualUSD.Value, 2)) : "0";
             //lblDeclaracionMesAno1.Text = Convert.ToDateTime(oDashboard.FechaInicioDeclaracion).ToString("dd/MM/yyyy");
             //lblDeclaracionMesAno2.Text = Convert.ToDateTime(oDashboard.FechaFinDeclaracion).ToString("dd/MM/yyyy");
 
@@ -117,10 +117,10 @@ namespace PortalClientes.Views
             
 
             //coordenadas
-            HFoLat.Value = oDashboard.aorigenLatitud;
-            HFoLon.Value = oDashboard.aorigenLongitud;
-            HFdLat.Value = oDashboard.adestinoLatitud;
-            HFdLon.Value = oDashboard.adestinoLongitud;
+            HFoLat.Value = oDashboard.aorigenLatitud != null ? oDashboard.aorigenLatitud : "0";
+            HFoLon.Value = oDashboard.aorigenLongitud != null ? oDashboard.aorigenLongitud : "0";
+            HFdLat.Value = oDashboard.adestinoLatitud != null ? oDashboard.adestinoLatitud : "0";
+            HFdLon.Value = oDashboard.adestinoLongitud != null ? oDashboard.adestinoLongitud : "0";
 
             var count = 0;
 

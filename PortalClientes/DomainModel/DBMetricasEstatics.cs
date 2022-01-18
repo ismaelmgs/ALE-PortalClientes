@@ -60,9 +60,6 @@ namespace PortalClientes.DomainModel
                 oLog = filtro;
                 oLog.matricula = Utils.MatriculaActual;
 
-                //oLog.matricula = "XA-CHY";
-                oLog.meses = "3";
-
                 TokenWS oToken = Utils.ObtieneToken;
 
                 var client = new RestClient(Helper.D_UrlObbtenerGastoProveedor);
@@ -95,9 +92,6 @@ namespace PortalClientes.DomainModel
                 oLog = filtro;
                 oLog.matricula = Utils.MatriculaActual;
 
-                //oLog.matricula = "XA-CHY";
-                oLog.meses = "3";
-
                 TokenWS oToken = Utils.ObtieneToken;
 
                 var client = new RestClient(Helper.D_UrlObbtenerGastoAeropuerto);
@@ -128,9 +122,6 @@ namespace PortalClientes.DomainModel
                 FiltroGrafica oLog = new FiltroGrafica();
                 oLog = filtro;
                 oLog.matricula = Utils.MatriculaActual;
-
-                //oLog.matricula = "XA-CHY";
-                oLog.meses = "3";
 
                 TokenWS oToken = Utils.ObtieneToken;
 
@@ -163,9 +154,6 @@ namespace PortalClientes.DomainModel
                 oLog = filtro;
                 oLog.matricula = Utils.MatriculaActual;
 
-                //oLog.matricula = "XA-CHY";
-                oLog.meses = "3";
-
                 TokenWS oToken = Utils.ObtieneToken;
 
                 var client = new RestClient(Helper.D_UrlObbtenerHorasVoladas);
@@ -196,9 +184,6 @@ namespace PortalClientes.DomainModel
                 FiltroGrafica oLog = new FiltroGrafica();
                 oLog = filtro;
                 oLog.matricula = Utils.MatriculaActual;
-
-                //oLog.matricula = "XA-CHY";
-                oLog.meses = "3";
 
                 TokenWS oToken = Utils.ObtieneToken;
 
@@ -231,9 +216,6 @@ namespace PortalClientes.DomainModel
                 oLog = filtro;
                 oLog.matricula = Utils.MatriculaActual;
 
-                //oLog.matricula = "XA-CHY";
-                oLog.meses = "3";
-
                 TokenWS oToken = Utils.ObtieneToken;
 
                 var client = new RestClient(Helper.D_UrlObbtenerPromedioCostos);
@@ -264,9 +246,6 @@ namespace PortalClientes.DomainModel
                 FiltroGrafica oLog = new FiltroGrafica();
                 oLog = filtro;
                 oLog.matricula = Utils.MatriculaActual;
-
-                //oLog.matricula = "XA-CHY";
-                oLog.meses = "3";
 
                 TokenWS oToken = Utils.ObtieneToken;
 
@@ -300,9 +279,6 @@ namespace PortalClientes.DomainModel
                 oLog.matricula = Utils.MatriculaActual;
                 oLog.idioma = Utils.Idioma;
 
-                //oLog.matricula = "XA-CHY";
-                oLog.meses = "3";
-
                 TokenWS oToken = Utils.ObtieneToken;
 
                 var client = new RestClient(Helper.D_UrlObbtenerCostoFijoVariable);
@@ -334,9 +310,6 @@ namespace PortalClientes.DomainModel
                 FiltroGrafica oLog = new FiltroGrafica();
                 oLog = filtro;
                 oLog.matricula = Utils.MatriculaActual;
-
-                //oLog.matricula = "XA-FLC";
-                oLog.meses = "12";
 
                 TokenWS oToken = Utils.ObtieneToken;
 
@@ -370,9 +343,6 @@ namespace PortalClientes.DomainModel
                 oLog = filtro;
                 oLog.matricula = Utils.MatriculaActual;
 
-                //oLog.matricula = "XA-FLC";
-                oLog.meses = "12";
-
                 TokenWS oToken = Utils.ObtieneToken;
 
                 var client = new RestClient(Helper.D_UrlObtieneCostoHoraVuelo);
@@ -405,9 +375,6 @@ namespace PortalClientes.DomainModel
                 oLog.matricula = Utils.MatriculaActual;
                 oLog.idioma = Utils.Idioma;
 
-                //oLog.matricula = "XA-CHY";
-                oLog.meses = "3";
-
                 TokenWS oToken = Utils.ObtieneToken;
 
                 var client = new RestClient(Helper.D_UrlObtieneCostoFijoVariableHora);
@@ -438,9 +405,6 @@ namespace PortalClientes.DomainModel
                 FiltroGraficaFV oLog = new FiltroGraficaFV();
                 oLog = filtro;
                 oLog.matricula = Utils.MatriculaActual;
-
-                //oLog.matricula = "XA-FLC";
-                //oLog.meses = "12";
                 oLog.idioma = Utils.Idioma;
 
                 TokenWS oToken = Utils.ObtieneToken;
@@ -473,9 +437,6 @@ namespace PortalClientes.DomainModel
                 FiltroGraficaCC oLog = new FiltroGraficaCC();
                 oLog = filtro;
                 oLog.matricula = Utils.MatriculaActual;
-
-                //oLog.matricula = "XA-FLC";
-                oLog.meses = "12";
                 oLog.claveCliente = Utils.ClaveContrato;
 
                 TokenWS oToken = Utils.ObtieneToken;
@@ -508,9 +469,6 @@ namespace PortalClientes.DomainModel
                 FiltroGraficaCC oLog = new FiltroGraficaCC();
                 oLog = filtro;
                 oLog.matricula = Utils.MatriculaActual;
-
-                //oLog.matricula = "XA-FLC";
-                oLog.meses = "12";
                 oLog.claveCliente = Utils.ClaveContrato;
 
                 TokenWS oToken = Utils.ObtieneToken;
@@ -543,7 +501,6 @@ namespace PortalClientes.DomainModel
                 FiltroGraficaGC oLog = new FiltroGraficaGC();
                 oLog = filtro;
                 oLog.matricula = Utils.MatriculaActual;
-
                 oLog.claveContrato = Utils.ClaveContrato;
 
                 TokenWS oToken = Utils.ObtieneToken;
@@ -607,9 +564,6 @@ namespace PortalClientes.DomainModel
                 FiltroEvent oLog = new FiltroEvent();
                 oLog = filtro;
                 oLog.matricula = Utils.MatriculaActual;
-
-                //oLog.matricula = "XA-ALE";
-                oLog.meses = 2;
 
                 TokenWS oToken = Utils.ObtieneToken;
 

@@ -226,24 +226,6 @@ namespace PortalClientes
 
             Page.Response.Redirect(Page.Request.Url.ToString(), false);
             Context.ApplicationInstance.CompleteRequest();
-
-            //List<string> listMenus = new List<string>();
-            //listMenus.Add(Enums.Dashboard);
-            //listMenus.Add(Enums.Aeronaves);
-            //listMenus.Add(Enums.Tripulacion);
-            //listMenus.Add(Enums.EstadoCuenta);
-
-            //if (listMenus.Contains(path))
-            //{
-            //    if (url.Contains("localhost"))
-            //    {
-            //        Response.Redirect("/Views/" + path);
-            //    }
-            //    else
-            //    {
-            //        Response.Redirect("/PortalClientes/Views/" + path);
-            //    }
-            //}
         }
 
         protected void btnSalir_Click(object sender, EventArgs e)

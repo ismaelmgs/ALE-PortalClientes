@@ -84,15 +84,16 @@ namespace PortalClientes.Views
                     LinkButton lkb = (LinkButton)e.Row.FindControl("lkbDetalle");
                     lkb.Text = Properties.Resources.Ec_VerDetalle;
 
-                    if(existeDoc > 0) //cambiar a ==0
+                    ImageButton lkbvd = (ImageButton)e.Row.FindControl("lkbViewDocument");
+
+                    if (existeDoc == 0) //cambiar a ==0
                     {
-                        e.Row.Cells[10].Visible = false;
+                        lkbvd.Visible = false;
                     }
                     else
                     {
-                        ImageButton lkbvd = (ImageButton)e.Row.FindControl("lkbViewDocument");
-                        //lkbvd.Text = Properties.Resources.Ec_VerFactura;
-                    } 
+                        lkbvd.Visible = true;
+                    }
                 }
             }
             catch (Exception ex)

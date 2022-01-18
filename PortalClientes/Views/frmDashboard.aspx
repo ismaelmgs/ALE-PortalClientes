@@ -345,7 +345,7 @@
                 let dlat = Number.parseFloat($('#ContentPlaceHolder1_HFdLat').val())
                 let dlng = Number.parseFloat($('#ContentPlaceHolder1_HFdLon').val())
 
-                if(olat != null && olng != null && dlat != null && dlng != null){
+                if(olat > 0 && olng > 0 && dlat > 0 && dlng > 0){
                   // Agregando el mapa al tag de id googleMap
                   var map = new google.maps.Map(document.getElementById("googleMap"), mapProp);
       

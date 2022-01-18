@@ -86,9 +86,6 @@ namespace PortalClientes.DomainModel
                 FiltroDocumento oLog = new FiltroDocumento();
                 oLog = filtro;
 
-                oLog.mes = 12;
-                oLog.anio = 2021;
-
                 TokenWS oToken = Utils.ObtieneToken;
 
                 var client = new RestClient(Helper.D_UrlObtieneFacturasContratos);
