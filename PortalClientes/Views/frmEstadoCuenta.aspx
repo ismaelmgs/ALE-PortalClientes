@@ -190,6 +190,7 @@
                                                 <ItemTemplate>
                                                     &nbsp;&nbsp;&nbsp;<asp:ImageButton ID="lkbViewDocument" runat="server" ImageUrl="~/Images/icons/files.png" Width="25px" Height="27px"
                                                              CommandName="ViewDocument" CommandArgument="<%# ((GridViewRow) Container).RowIndex %>" CssClass="btn" />&nbsp;&nbsp;&nbsp;
+                                                    <asp:Label ID="lkbTextDocument" Text="Sin Documentos" runat="server" Width="25px" Height="27px" CommandName="ViewDocument" Visible="False"/>                                                   
                                                 </ItemTemplate>
                                             </asp:TemplateField>
                                             <asp:TemplateField>

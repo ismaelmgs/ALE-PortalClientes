@@ -1123,6 +1123,15 @@ namespace PortalClientes.Properties {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Sin Documentos.
+        /// </summary>
+        internal static string Ec_Documento {
+            get {
+                return ResourceManager.GetString("Ec_Documento", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Descarga PDF.
         /// </summary>
         internal static string Ec_Download {

@@ -1152,4 +1152,7 @@
   <data name="TabTran_TotalPago" xml:space="preserve">
     <value>Total Payment Amount</value>
   </data>
+  <data name="Ec_Documento" xml:space="preserve">
+    <value>Without Documents</value>
+  </data>
 </root>
