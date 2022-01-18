@@ -38,31 +38,31 @@
             </div>
             <div class="row" style="margin: 5px;">
                 <div class="col-md-4 tile_count">
-                    <div class="tile_stats_count" style="text-align: center;">
+                    <div class="" style="text-align: center;">
                         <span class="count_top"><i class="fa fa-list-ol"></i>
                             <asp:Label ID="lblTotalTrasn" runat="server" Text=" Número de Vuelos" Font-Bold="false"></asp:Label></span>
                         <div class="count">
-                            <asp:Label ID="lblTotalTrasnRes" runat="server" Font-Bold="true" CssClass="count"></asp:Label>
+                            <asp:Label ID="lblTotalTrasnRes" runat="server" Font-Bold="true" CssClass="count4"></asp:Label>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-4 tile_count">
-                    <div class="tile_stats_count" style="text-align: center;">
+                    <div class="" style="text-align: center;">
                         <span class="count_top"><i class="fa fa-money"></i>
                             <asp:Label ID="lblTotal" runat="server" Text=" Pagos" Font-Bold="false"></asp:Label></span>
                         <div class="count">
-                            <asp:Label ID="lblTotalSimbolo" runat="server" Text=" $" Font-Bold="true" CssClass="count2" />
-                            <asp:Label ID="lblTotalRes" runat="server" Font-Bold="true" CssClass="count" />
+                            <asp:Label ID="lblTotalSimbolo" runat="server" Text=" $" Font-Bold="true" CssClass="count3" />
+                            <asp:Label ID="lblTotalRes" runat="server" Font-Bold="true" CssClass="count4" />
                         </div>
                     </div>
                 </div>
                 <div class="col-md-4 tile_count">
-                    <div class="tile_stats_count" style="text-align: center;">
+                    <div class="" style="text-align: center;">
                         <span class="count_top"><i class="fa fa-bar-chart"></i>
                             <asp:Label ID="lblPromedio" runat="server" Text=" Gastos" Font-Bold="false"></asp:Label></span>
                         <div class="count">
-                            <asp:Label ID="lblPromedioSimbolo" runat="server" Text=" $" Font-Bold="true" CssClass="count2" />
-                            <asp:Label ID="lblPromedioRes" runat="server" Font-Bold="true" CssClass="count" />
+                            <asp:Label ID="lblPromedioSimbolo" runat="server" Text=" $" Font-Bold="true" CssClass="count3" style="font-size:17px;" />
+                            <asp:Label ID="lblPromedioRes" runat="server" Font-Bold="true" CssClass="coun4" style="font-size:25px;" />
                         </div>
                     </div>
                 </div>
