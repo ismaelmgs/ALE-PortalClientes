@@ -829,7 +829,7 @@
     <value>Crew</value>
   </data>
   <data name="Ca_ViajeNumero" xml:space="preserve">
-    <value>Trip Number</value>
+    <value>Trip Num</value>
   </data>
   <data name="Ca_ZonaHoraria" xml:space="preserve">
     <value>Time Zone</value>
