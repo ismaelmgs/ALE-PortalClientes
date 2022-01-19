@@ -85,14 +85,18 @@ namespace PortalClientes.Views
                     lkb.Text = Properties.Resources.Ec_VerDetalle;
 
                     ImageButton lkbvd = (ImageButton)e.Row.FindControl("lkbViewDocument");
+                    Label lkbT = (Label)e.Row.FindControl("lkbTextDocument");
 
                     if (existeDoc == 0) //cambiar a ==0
                     {
                         lkbvd.Visible = false;
+                        lkbT.Visible = true;
+                        lkbT.Text = Properties.Resources.Ec_Documento;
                     }
                     else
                     {
                         lkbvd.Visible = true;
+                        lkbT.Visible = false;
                     }
                 }
             }
@@ -147,9 +151,9 @@ namespace PortalClientes.Views
                 rd.SetDataSource(EdoCuenta.Tables[0]);
 
                 rd.Subreports["rptSubEdoCuentaUSD.rpt"].SetDataSource(EdoCuenta.Tables[1]);
-                rd.Subreports["rptSubEdocuentaMXN.rpt"].SetDataSource(EdoCuenta.Tables[2]);
+                rd.Subreports["rptSubEdocuentaMXN.rpt"].SetDataSource(EdoCuenta.Tables[2]);                
 
-                rd.ExportToHttpResponse(ExportFormatType.PortableDocFormat, Response, true, "EstadoCuenta");
+                rd.ExportToHttpResponse(ExportFormatType.PortableDocFormat, Response, true, "Estado Cuenta " + Utils.MatriculaActual + " " + iPeriodo);
                 Response.End();
             }
         }
@@ -456,6 +460,7 @@ namespace PortalClientes.Views
             {
                 if (contador == 0)
                 {
+                    iPeriodo = ObtienePeriodoEdoCuenta(item.mes, item.anio);
                     row["SaldoAnterior"] = item.saldoAnterior.S().D().ToString("c");
                     row["PagosyCred"] = item.pagosCreditos.S().D().ToString("c");
                     row["NuevosCargos"] = item.nuevosCargos.S().D().ToString("c");
@@ -466,7 +471,7 @@ namespace PortalClientes.Views
                     row["IVAText"] = "";
                     row["Fecha"] = "";
                     row["ClaveContrato"] = item.claveContrato;
-                    row["Periodo"] = ObtienePeriodoEdoCuenta(item.mes,item.anio);
+                    row["Periodo"] = iPeriodo;
                     row["Elaboro"] = Utils.NombreUsuario;
                 }
                 else
@@ -596,7 +601,11 @@ namespace PortalClientes.Views
             set { ViewState["EdoCuenta"] = value; }
         }
 
-
+        public string iPeriodo
+        {
+            get { return ViewState["VSiPeriodo"].S(); }
+            set { ViewState["VSiPeriodo"] = value; }
+        }
         #endregion
 
 

@@ -1152,4 +1152,7 @@
   <data name="tabdoc_Descripcion" xml:space="preserve">
     <value>Descripcion</value>
   </data>
+  <data name="Ec_Documento" xml:space="preserve">
+    <value>Sin Documentos</value>
+  </data>
 </root>
