@@ -20,13 +20,19 @@
                             <div class="clearfix"></div>
                         </div>
                         <div class="row">
-
                             <div class="col-md-12" style="text-align: right;">
-                                <asp:Button runat="server" ID="btnActiveDay" OnClick="btnActiveView_Click" data-view="Day" Text="Hoy" CssClass="btn btn-secondary" />
-                                <asp:Button runat="server" ID="btnActiveWorkWeek" OnClick="btnActiveView_Click" data-view="WorkWeek" Text="Semanal" CssClass="btn btn-secondary" />
-                                <asp:Button runat="server" ID="btnActiveMonth" OnClick="btnActiveView_Click" data-view="Month" Text="Mensual" CssClass="btn btn-primary" />
-                                <asp:Button runat="server" ID="btnActiveTimeLine" OnClick="btnActiveView_Click" data-view="Timeline" Text="TimeLine" CssClass="btn btn-secondary" />
-                                <asp:Button runat="server" ID="btnActiveAgenda" OnClick="btnActiveView_Click" data-view="Agenda" Text="Agenda" CssClass="btn btn-secondary" />
+                                <div class="row">
+                                    <div class="col-md-4" style="text-align: left;">
+                                        <h2 style="color: #008000;font-weight: bold;"><span style="border:1px solid #008000; border-radius:50%; padding:1px;background-color:#008000; color:#ffffff;">&nbsp;&nbsp;!&nbsp;&nbsp;</span> De click en el evento para ver la información</h2>
+                                    </div>
+                                    <div class="col-md-8" style="text-align: right;">
+                                        <asp:Button runat="server" ID="btnActiveDay" OnClick="btnActiveView_Click" data-view="Day" Text="Hoy" CssClass="btn btn-secondary" />
+                                        <asp:Button runat="server" ID="btnActiveWorkWeek" OnClick="btnActiveView_Click" data-view="WorkWeek" Text="Semanal" CssClass="btn btn-secondary" />
+                                        <asp:Button runat="server" ID="btnActiveMonth" OnClick="btnActiveView_Click" data-view="Month" Text="Mensual" CssClass="btn btn-primary" />
+                                        <asp:Button runat="server" ID="btnActiveTimeLine" OnClick="btnActiveView_Click" data-view="Timeline" Text="TimeLine" CssClass="btn btn-secondary" />
+                                        <asp:Button runat="server" ID="btnActiveAgenda" OnClick="btnActiveView_Click" data-view="Agenda" Text="Agenda" CssClass="btn btn-secondary" />    
+                                    </div>
+                                </div>
                                 <dx:BootstrapScheduler ID="Scheduler" AppointmentDataSourceID="ObjectDataSource" runat="server" ActiveViewType="month"
                                     OnPopupMenuShowing="Scheduler_PopupMenuShowing">
                                     <Storage>
