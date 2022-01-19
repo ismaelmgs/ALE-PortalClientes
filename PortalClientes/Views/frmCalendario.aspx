@@ -23,7 +23,7 @@
                             <div class="col-md-12" style="text-align: right;">
                                 <div class="row">
                                     <div class="col-md-4" style="text-align: left;">
-                                        <h2 style="color: #008000;font-weight: bold;"><span style="border:1px solid #008000; border-radius:50%; padding:1px;background-color:#008000; color:#ffffff;">&nbsp;&nbsp;!&nbsp;&nbsp;</span> De click en el evento para ver la información</h2>
+                                        <h2 style="color: #008000;font-weight: bold;"><span style="border:1px solid #008000; border-radius:50%; padding:1px;background-color:#008000; color:#ffffff;">&nbsp;&nbsp;!&nbsp;&nbsp;</span>&nbsp;<asp:Label ID="lblDeClickVerEvento" runat="server" Text="De click en el evento para ver la información" Font-Bold="true"></asp:Label> </h2>
                                     </div>
                                     <div class="col-md-8" style="text-align: right;">
                                         <asp:Button runat="server" ID="btnActiveDay" OnClick="btnActiveView_Click" data-view="Day" Text="Hoy" CssClass="btn btn-secondary" />
@@ -101,7 +101,7 @@
                         </div>
                         <div class="col-md-3" style="text-align: right;">
                             <asp:LinkButton ID="btnExcel" runat="server" Text="<i class='fa fa-file-pdf-o' style='color:#73879c;font-size:25px;'></i>" CssClass="btn" OnClick="lkbExpPDFRes_Click" />
-                            <asp:LinkButton ID="btnPDF" runat="server" Text="<i class='fa fa-print' style='color:#73879c;font-size:25px;'></i>" CssClass="btn" />
+                            <%--<asp:LinkButton ID="btnPDF" runat="server" Text="<i class='fa fa-print' style='color:#73879c;font-size:25px;'></i>" CssClass="btn" />--%>
                         </div>
                     </div>
                     <hr style="border-bottom: 2px solid #E6E9ED; margin-top: -1px;" />
@@ -109,7 +109,7 @@
                     <div>
                         <div class="row">
                             <div class="col-md-4" style="text-align: center;">
-                                <asp:Label ID="lblClaveCiudadSalida" runat="server" Text="KTEB" Font-Bold="false" Style="font-size: 20px;"></asp:Label><br />
+                                <asp:Label ID="lblClaveCiudadSalida" runat="server" Text="KTEB" Font-Bold="false" Style="font-size: 20px; font-weight:bold;"></asp:Label><br />
                                 <asp:Label ID="lblClaveCiudadSalidaRes" runat="server" Text="Teterboro" Font-Bold="false" Style=""></asp:Label>
                             </div>
                             <div class="col-md-4" style="text-align: center; padding-top: 10px;">
@@ -120,7 +120,7 @@
                                 <asp:Label ID="lblTiempoVuelo" runat="server" Text="02h 40m" Font-Bold="false"></asp:Label>
                             </div>
                             <div class="col-md-4" style="text-align: center;">
-                                <asp:Label ID="lblClaveCiudadLlegada" runat="server" Text="KMTH" Font-Bold="false" Style="font-size: 20px;"></asp:Label><br />
+                                <asp:Label ID="lblClaveCiudadLlegada" runat="server" Text="KMTH" Font-Bold="false" Style="font-size: 20px; font-weight:bold;"></asp:Label><br />
                                 <asp:Label ID="lblClaveCiudadLlegadaRes" runat="server" Text="The Florida Keys Marathon" Font-Bold="false" Style=""></asp:Label>
                             </div>
                         </div>
