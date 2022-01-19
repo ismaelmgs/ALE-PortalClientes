@@ -1307,15 +1307,15 @@ namespace PortalClientes.Views
         {
             oMetEsta = oME;
 
-            lblGastoTotalRes.Text = oMetEsta.GastoTotalFijoUSD.ToString();
-            lblGastoTotalVariableRes.Text = oMetEsta.GastoTotalVarUSD.ToString();
-            lblCostoHoraRes.Text = oMetEsta.CostoPorHoraUSD.ToString();
-            lblCostoMillaRes.Text = oMetEsta.CostoPorMillaUSD.ToString();
+            lblGastoTotalRes.Text = string.Format("{0:###,###,###,0.##}", oMetEsta.GastoTotalFijoUSD);
+            lblGastoTotalVariableRes.Text = string.Format("{0:###,###,###,0.##}", oMetEsta.GastoTotalVarUSD);
+            lblCostoHoraRes.Text = string.Format("{0:###,###,###,0.##}", oMetEsta.CostoPorHoraUSD);
+            lblCostoMillaRes.Text = string.Format("{0:###,###,###,0.##}", oMetEsta.CostoPorMillaUSD);
 
-            lblGastoTotalResMXN.Text = oMetEsta.GastoTotalFijoMXN.ToString();
-            lblGastoTotalVariableMXNRes.Text = oMetEsta.GastoTotalVarMXN.ToString();
-            lblCostoHoraMXNRes.Text = oMetEsta.CostoPorHoraMXN.ToString();
-            lblCostoMillaMXNRes.Text = oMetEsta.CostoPorMillaMXN.ToString();
+            lblGastoTotalResMXN.Text = string.Format("{0:###,###,###,0.##}", oMetEsta.GastoTotalFijoMXN);
+            lblGastoTotalVariableMXNRes.Text = string.Format("{0:###,###,###,0.##}", oMetEsta.GastoTotalVarMXN);
+            lblCostoHoraMXNRes.Text = string.Format("{0:###,###,###,0.##}", oMetEsta.CostoPorHoraMXN);
+            lblCostoMillaMXNRes.Text = string.Format("{0:###,###,###,0.##}", oMetEsta.CostoPorMillaMXN);
 
             lblNumeroVuelosRes.Text = oMetEsta.NumeroVuelos.ToString();
             lblHorasVoladasRes.Text = oMetEsta.HorasVoladas.ToString();
@@ -1325,8 +1325,8 @@ namespace PortalClientes.Views
             lblTiempoPromedioRes.Text = oMetEsta.TiempoPromedio != null ? oMetEsta.TiempoPromedio.ToString() : "00:00";
             lblDistanciaPromedioRes.Text = oMetEsta.DistanciaPromedio.ToString();
             lblPromedioPasajerosRes.Text = oMetEsta.PaxPromedio.ToString();
-            lblCostoPromedioRes.Text = oMetEsta.PromedioMXN.ToString();
-            lblCostoPromedioUSDRes.Text = oMetEsta.PromedioUSD.ToString();
+            lblCostoPromedioRes.Text = string.Format("{0:###,###,###,0.##}", oMetEsta.PromedioMXN);
+            lblCostoPromedioUSDRes.Text = string.Format("{0:###,###,###,0.##}", oMetEsta.PromedioUSD);
 
             ScriptManager.RegisterStartupScript(this.Page, this.GetType(), Guid.NewGuid().ToString(), "closeLoading();", true);
 
