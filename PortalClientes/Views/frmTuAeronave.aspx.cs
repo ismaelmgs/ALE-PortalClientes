@@ -53,9 +53,10 @@ namespace PortalClientes.Views
             if (e.Row.RowType == DataControlRowType.Header)
             {
                 e.Row.Cells[0].Text = Properties.Resources.TabDoc_Nombre;
-                e.Row.Cells[1].Visible = false;
+                e.Row.Cells[1].Text = Properties.Resources.tabdoc_Descripcion;
                 e.Row.Cells[2].Visible = false;
-                e.Row.Cells[3].Text = Properties.Resources.TabDoc_Acciones;
+                e.Row.Cells[3].Visible = false;
+                e.Row.Cells[4].Text = Properties.Resources.TabDoc_Acciones;
 
                 ImageButton imbMats = (ImageButton)e.Row.FindControl("imbViewDoc");
                 if (imbMats != null)
@@ -92,8 +93,8 @@ namespace PortalClientes.Views
                 if (row != null)
                 {
                     nombre = gvDocumentos.Rows[row.RowIndex].Cells[0].Text;
-                    ext = gvDocumentos.Rows[row.RowIndex].Cells[1].Text;
-                    img = gvDocumentos.Rows[row.RowIndex].Cells[2].Text;
+                    ext = gvDocumentos.Rows[row.RowIndex].Cells[2].Text;
+                    img = gvDocumentos.Rows[row.RowIndex].Cells[3].Text;
                 }
 
                 Response.Clear();
@@ -223,6 +224,7 @@ namespace PortalClientes.Views
                     fa.NombreImagen = item.NombreImagen;
                     fa.Extension = item.Extension;
                     fa.Imagen = item.Imagen;
+                    fa.Descripcion = "";// item.Descripcion;
 
                     Lfa.Add(fa);
                 }

@@ -34,5 +34,6 @@ namespace PortalClientes.Objetos
         public string NombreImagen { get; set; }
         public string Extension { get; set; }
         public string Imagen { get; set; }
+        public string Descripcion { get; set; }
     }
 }

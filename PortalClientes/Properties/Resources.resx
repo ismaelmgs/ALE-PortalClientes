@@ -1149,4 +1149,7 @@
   <data name="TabTran_TotalPago" xml:space="preserve">
     <value>Total Importe Pago</value>
   </data>
+  <data name="tabdoc_Descripcion" xml:space="preserve">
+    <value>Descripcion</value>
+  </data>
 </root>

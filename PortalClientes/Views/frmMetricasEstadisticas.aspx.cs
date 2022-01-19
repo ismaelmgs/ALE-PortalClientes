@@ -101,7 +101,7 @@ namespace PortalClientes.Views
             lbltitulometricasEstadisticas.Text = Properties.Resources.ME_Titulo;
             lblResumenPeriodo.Text = Properties.Resources.ME_ResumeenPeriodo;
             lblResumenPeriodoMXN.Text = Properties.Resources.ME_ResumeenPeriodoMXN;
-            btnFiltrarMetricasEstadisticas.Text = Properties.Resources.ME_Filtrar;
+            //btnFiltrarMetricasEstadisticas.Text = Properties.Resources.ME_Filtrar;
             lblGastoTotalFijo.Text = Properties.Resources.Me_GastoTotalFijo;
             lblGastoTotalFijoMXN.Text = Properties.Resources.Me_GastoTotalFijo;
             lblGastoTotalVariable.Text = Properties.Resources.ME_GastoTotalVariable;

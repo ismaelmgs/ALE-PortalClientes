@@ -33,11 +33,8 @@
                                 &nbsp;
                             </div>
                             <div class="col-md-3" style="text-align: right;">
-                                <asp:DropDownList ID="ddlFiltroResumenPeriodo" runat="server" CssClass="form-control">
+                                <asp:DropDownList ID="ddlFiltroResumenPeriodo" runat="server" CssClass="form-control" OnSelectedIndexChanged="btnFiltrar_Click">
                                 </asp:DropDownList>
-                            </div>
-                            <div class="col-md-2" style="text-align: center;">
-                                <asp:Button ID="btnFiltrarMetricasEstadisticas" runat="server" Text="Filtrar" CssClass="btn btn-primary" OnClick="btnFiltrar_Click" />
                             </div>
                         </div>
                         <div>

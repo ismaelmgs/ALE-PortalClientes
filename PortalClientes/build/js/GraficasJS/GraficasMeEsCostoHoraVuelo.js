@@ -65,6 +65,16 @@ function chartsCH(dataCH, ChartType) {
     if (jsonDataCH.length > 0) {
         google.charts.load("current", { packages: ["corechart"] });
         google.charts.setOnLoadCallback(drawVisualizationCH)
+    }else{
+        let mensaje='';
+        let leng = document.getElementById('txtLang').value
+        if (leng == "es-MX") {
+            mensaje="No Hay Datos Disponibles";
+        }else{
+            mensaje="No data available"
+        }
+        
+        document.getElementById('piechart_3d_10').innerHTML = `<div class="alert alert-info mt-5 text-center" role="alert">${mensaje}</div>`;
     }
     
     function generarUrlCH(obtiene) {
@@ -108,6 +118,8 @@ function chartsCH(dataCH, ChartType) {
             }
         });
 
+        const colorsList = ['#3276ae','#6aabc0','#cf575e','#eb924f','#f6c543','#d578a9','#9889d1','#89d193','#d1b089','#e48fea','#f4d583','#fea6c0','#94e6f2','#89c893','#ffe1a1']
+
         var optionsCH = {
             title: jsonDataCH[0].idioma == "es-MX" ? "Costo por Hora de Vuelo" : "Cost per Flight Hour",
             bar: {
@@ -129,7 +141,7 @@ function chartsCH(dataCH, ChartType) {
                 position: 'bottom',
                 alignment: 'center',
             },
-            colors: ['#3276ae', '#6aabc0', '#cf575e', '#eb924f', '#f6c543', '#d578a9', '#9889d1', '#89d193']
+            colors: colorsList.sort(function () { return 0.5 - Math.random() }),
         };
 
         var chartCH = new google.visualization.ColumnChart(document.getElementById('piechart_3d_10'));

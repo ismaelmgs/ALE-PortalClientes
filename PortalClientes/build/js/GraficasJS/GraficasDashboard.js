@@ -72,6 +72,17 @@ function charts(data, ChartType) {
     if (jsonData.length > 0) {
         google.charts.load("current", { packages: ["corechart"] });
         google.charts.setOnLoadCallback(drawVisualization)
+    }else{
+        let mensaje='';
+        let leng = document.getElementById('txtLang').value
+        if (leng == "es-MX") {
+            mensaje="No Hay Datos Disponibles";
+        }else{
+            mensaje="No data available"
+        }
+        
+        document.getElementById('piechart_3d_2').innerHTML = `<div class="alert alert-info mt-5 text-center" role="alert">${mensaje}</div>`;
+        document.getElementById('piechart_3d_1').innerHTML = `<div class="alert alert-info mt-5 text-center" role="alert">${mensaje}</div>`;
     }
     
     function generarUrl(obtiene) {
@@ -128,6 +139,8 @@ function charts(data, ChartType) {
             
         });
 
+        const colorsList = ['#3276ae','#6aabc0','#cf575e','#eb924f','#f6c543','#d578a9','#9889d1','#89d193','#d1b089','#e48fea','#f4d583','#fea6c0','#94e6f2','#89c893','#ffe1a1']
+
         var options = {
             title: jsonData[0].idioma == "es-MX" ? "Costos por Categoria MXN" : "Costs by Category MXN",
             //is3D: true, //Pie Charts
@@ -147,7 +160,7 @@ function charts(data, ChartType) {
                 position: 'rigth',
                 alignment: 'center',
             },
-            colors: ['#3276ae', '#6aabc0', '#cf575e', '#eb924f', '#f6c543', '#d578a9', '#9889d1', '#89d193']
+            colors: colorsList.sort(function () { return 0.5 - Math.random() }),
         };
 
         var optionsE = {
@@ -169,7 +182,7 @@ function charts(data, ChartType) {
                 position: 'rigth',
                 alignment: 'center',
             },
-            colors: ['#3276ae', '#6aabc0', '#cf575e', '#eb924f', '#f6c543', '#d578a9', '#9889d1', '#89d193']
+            colors: colorsList.sort(function () { return 0.5 - Math.random() }),
         };
 
         var chart = new google.visualization.PieChart(document.getElementById('piechart_3d_1'));

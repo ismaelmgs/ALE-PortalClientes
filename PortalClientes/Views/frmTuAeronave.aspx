@@ -209,6 +209,7 @@
                                             <AlternatingRowStyle />
                                             <Columns>
                                                 <asp:BoundField DataField="NombreImagen" />
+                                                <asp:BoundField DataField="Descripcion" />
                                                 <asp:BoundField DataField="Extension" HeaderText="ID" ItemStyle-CssClass="hiddencol" HeaderStyle-CssClass="hiddencol" />
                                                 <asp:BoundField DataField="Imagen" HeaderText="ID" ItemStyle-CssClass="hiddencol" HeaderStyle-CssClass="hiddencol" />
                                                 <asp:TemplateField ItemStyle-HorizontalAlign="Center">

@@ -245,9 +245,9 @@ namespace PortalClientes.Views
 
         public void LlenaEstadoCuenta(EstadoCuenta oEstado)
         {
-            lblSaldoActualRes.Text = oEstado.saldoAnteriorUSD.ToString("n");
-            lblNuevosCargosRes.Text = oEstado.nuevosCargosUSD.ToString("n");
-            lblPagosPeriodoRes.Text = oEstado.pagosCreditosUSD.ToString("n");
+            lblSaldoActualRes.Text = string.Format("{0:###,###,###,0.##}", oEstado.saldoAnteriorUSD);
+            lblNuevosCargosRes.Text = string.Format("{0:###,###,###,0.##}", oEstado.nuevosCargosUSD);
+            lblPagosPeriodoRes.Text = string.Format("{0:###,###,###,0.##}", oEstado.pagosCreditosUSD);
 
             if (oEstado.saldoActalUSD < 0)
                 lblMontoReqRes.ForeColor = Color.Green;
@@ -256,12 +256,12 @@ namespace PortalClientes.Views
             //if (oEstado.saldoActualUSD == 0)
             //    lblMontoReqRes.ForeColor = Color.Black;
 
-            lblMontoReqRes.Text = oEstado.saldoActalUSD.ToString("n");
+            lblMontoReqRes.Text = string.Format("{0:###,###,###,0.##}", oEstado.saldoActalUSD);
 
 
-            lblSaldoActualMXNRes.Text = oEstado.saldoAnteriorMXN.ToString("n");
-            lblNuevosCargosMXNRes.Text = oEstado.nuevosCargosMXN.ToString("n");
-            lblPagosPeriodoMXNRes.Text = oEstado.pagosCreditosMXN.ToString("n");
+            lblSaldoActualMXNRes.Text = string.Format("{0:###,###,###,0.##}", oEstado.saldoAnteriorMXN);
+            lblNuevosCargosMXNRes.Text = string.Format("{0:###,###,###,0.##}", oEstado.nuevosCargosMXN);
+            lblPagosPeriodoMXNRes.Text = string.Format("{0:###,###,###,0.##}", oEstado.pagosCreditosMXN);
 
             if (oEstado.saldoActalMXN < 0)
                 lblMontoReqMXNRes.ForeColor = Color.Green;
@@ -270,7 +270,7 @@ namespace PortalClientes.Views
             //if (oEstado.saldoActualMXN == 0)
             //    lblMontoReqMXNRes.ForeColor = Color.Black;
 
-            lblMontoReqMXNRes.Text = oEstado.saldoActalMXN.ToString("n");
+            lblMontoReqMXNRes.Text = string.Format("{0:###,###,###,0.##}", oEstado.saldoActalMXN);
             lblPeriodo.Text = ObtienePeriodoEdoCuenta(oEstado.mes, oEstado.anio);
         }
 

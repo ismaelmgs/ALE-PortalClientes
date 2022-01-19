@@ -896,8 +896,8 @@ namespace PortalClientes.Views
                 gvdetReportes.DataBind();
 
                 lblTotalTrasnRes.Text = totalRegistros.S();
-                lblTotalRes.Text = decimal.Round(Convert.ToDecimal(totalTransacciones), 2).ToString() + " MXN";
-                lblPromedioRes.Text = promedio > 0 ? decimal.Round(Convert.ToDecimal(promedio), 2).ToString() + " MXN" : "0";
+                lblTotalRes.Text = string.Format("{0:###,###,###,0.##}", totalTransacciones) + " MXN";
+                lblPromedioRes.Text = promedio > 0 ? string.Format("{0:###,###,###,0.##}", promedio) + " MXN" : "0";
             }
             else if (tipo == 2)
             {
@@ -947,8 +947,8 @@ namespace PortalClientes.Views
                 gvdetReportes.DataBind();
 
                 lblTotalTrasnRes.Text = totalRegistros.S();
-                lblTotalRes.Text = decimal.Round(Convert.ToDecimal(totalTransacciones), 2).ToString() + " MXN";
-                lblPromedioRes.Text = promedio > 0 ? decimal.Round(Convert.ToDecimal(promedio), 2).ToString() + " MXN" : "0";
+                lblTotalRes.Text = string.Format("{0:###,###,###,0.##}", totalTransacciones) + " MXN";
+                lblPromedioRes.Text = promedio > 0 ? string.Format("{0:###,###,###,0.##}", promedio) + " MXN" : "0";
             }
             else if (tipo == 3)
             {
@@ -998,8 +998,8 @@ namespace PortalClientes.Views
                 gvdetReportes.DataBind();
 
                 lblTotalTrasnRes.Text = totalRegistros.S();
-                lblTotalRes.Text = decimal.Round(Convert.ToDecimal(totalTransacciones), 2).ToString() + " MXN";
-                lblPromedioRes.Text = promedio > 0 ? decimal.Round(Convert.ToDecimal(promedio), 2).ToString() + " MXN" : "0";
+                lblTotalRes.Text = string.Format("{0:###,###,###,0.##}", totalTransacciones) + " MXN";
+                lblPromedioRes.Text = promedio > 0 ? string.Format("{0:###,###,###,0.##}", promedio) + " MXN" : "0";
             }
             else if (tipo == 4)
             {
@@ -1041,8 +1041,8 @@ namespace PortalClientes.Views
                 gvdetReportes.DataBind();
 
                 lblTotalTrasnRes.Text = totalRegistros.S();
-                lblTotalRes.Text = decimal.Round(Convert.ToDecimal(totalTransacciones), 2).ToString() + " MXN";
-                lblPromedioRes.Text = decimal.Round(Convert.ToDecimal(promedio), 2).ToString() + " USD";
+                lblTotalRes.Text = string.Format("{0:###,###,###,0.##}", totalTransacciones) + " MXN";
+                lblPromedioRes.Text = string.Format("{0:###,###,###,0.##}", promedio) + " USD";
             }
             else if (tipo == 5)
             {
@@ -1059,8 +1059,8 @@ namespace PortalClientes.Views
                 gvdetReportes.DataBind();
 
                 lblTotalTrasnRes.Text = totalRegistros.S();
-                lblTotalRes.Text = decimal.Round(Convert.ToDecimal(totalTransacciones), 2).ToString() + " MXN";
-                lblPromedioRes.Text = decimal.Round(Convert.ToDecimal(promedio), 2).ToString() + " USD";
+                lblTotalRes.Text = string.Format("{0:###,###,###,0.##}", totalTransacciones) + " MXN";
+                lblPromedioRes.Text = string.Format("{0:###,###,###,0.##}", promedio) + " USD";
 
                 LlenarGVS(reportes, tipo);
             }
@@ -1113,8 +1113,8 @@ namespace PortalClientes.Views
                 gvdetReportes.DataBind();
 
                 lblTotalTrasnRes.Text = totalRegistros.S();
-                lblTotalRes.Text = decimal.Round(Convert.ToDecimal(totalTransacciones), 2).ToString() + " MXN";
-                lblPromedioRes.Text = promedio > 0 ? decimal.Round(Convert.ToDecimal(promedio), 2).ToString() + " MXN" : "0";
+                lblTotalRes.Text = string.Format("{0:###,###,###,0.##}", totalTransacciones) + " MXN";
+                lblPromedioRes.Text = promedio > 0 ? string.Format("{0:###,###,###,0.##}", promedio) + " MXN" : "0";
             }
             else if (tipo == 7)
             {
@@ -1157,8 +1157,8 @@ namespace PortalClientes.Views
                 gvdetReportes.DataBind();
 
                 lblTotalTrasnRes.Text = totalRegistros.S();
-                lblTotalRes.Text = decimal.Round(Convert.ToDecimal(totalTransacciones), 2).ToString() + " MXN";
-                lblPromedioRes.Text = promedio > 0 ? decimal.Round(Convert.ToDecimal(promedio), 2).ToString() + " MXN" : "0";
+                lblTotalRes.Text = string.Format("{0:###,###,###,0.##}", totalTransacciones) + " MXN";
+                lblPromedioRes.Text = promedio > 0 ? string.Format("{0:###,###,###,0.##}", promedio) + " MXN" : "0";
             }
         }
 
