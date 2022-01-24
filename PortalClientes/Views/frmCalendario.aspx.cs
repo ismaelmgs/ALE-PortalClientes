@@ -72,7 +72,9 @@ namespace PortalClientes.Views
             ApplyCommonOptions();
 
             Scheduler.ApplyChanges(ASPxSchedulerChangeAction.NotifyVisibleIntervalsChanged);
-            Scheduler.DataBind();      
+            Scheduler.DataBind();
+
+            lblDeClickVerEvento.Text = Properties.Resources.Ca_DeClickVerEvento;
         }
 
         private void getMonth(string v)
@@ -130,8 +132,10 @@ namespace PortalClientes.Views
                 rd.Load(strPath, OpenReportMethod.OpenReportByDefault);
                 rd.SetDataSource(dt);
 
+                iFechaInicio = System.Web.HttpContext.Current.Session["fechainicio"].S();
+
                 //if (iTipoReporte == 1)
-                rd.ExportToHttpResponse(ExportFormatType.PortableDocFormat, Response, true, "DetalleVuelo");
+                rd.ExportToHttpResponse(ExportFormatType.PortableDocFormat, Response, true, "Detalle Vuelo " + Utils.MatriculaActual + " " + iFechaInicio);
                 //else
                 //   rd.ExportToHttpResponse(ExportFormatType.Excel, Response, true, "ResumenGastos");
                 Response.End();
@@ -432,8 +436,11 @@ namespace PortalClientes.Views
                 tblFiltered.Columns.Add("statusVuelo", typeof(System.String));
                 tblFiltered.Columns.Add("idioma", typeof(System.String));
 
+                string fechaincio;
+
                 foreach (DataRow row in tblFiltered.Rows)
                 {
+                    fechaincio = item.FechaInicio.ToShortDateString();
                     row["idioma"] = Utils.Idioma;
                     row["TiempoVuelo"] = (item.FechaFin - item.FechaInicio).ToString(@"hh\h\ mm\m\ ");
                     row["FechaInicioStr"] = Utils.Idioma == "es-MX" ? item.FechaInicio.ToLongDateString().ToString(CultureInfo.CreateSpecificCulture("es-MX")) : DevuelveFechaIngles(item.FechaInicio.Day, item.FechaInicio.Month, item.FechaInicio.Year);
@@ -446,8 +453,9 @@ namespace PortalClientes.Views
                     row["statusVuelo"] = item.FechaInicio < DateTime.Now ? "Completado" : "En Proceso";
                     row["pasajeros"] = string.Join(", ", item.pasajeros.Split('|').ToList());
                     row["piloto"] = item.primerNomPil + " " + item.segNomPil + " " + item.apellidosPil + ", " + item.primerNomCop + " " + item.segNomCop + " " + item.apellidosCop;
+                    System.Web.HttpContext.Current.Session["fechainicio"] = fechaincio;
                 }
-
+                
 
                 HttpContext.Current.Session["dataTableItem"] = tblFiltered;
 
@@ -652,6 +660,18 @@ namespace PortalClientes.Views
             {
                 e.Menu.Visible = false;
             }
+        }
+
+        public string iFechaInicio
+        {
+            get { return ViewState["VSiFechaInicio"].S(); }
+            set { ViewState["VSiFechaInicio"] = value; }
+        }
+
+        public string iFechaFin
+        {
+            get { return ViewState["VSiFechaFin"].S(); }
+            set { ViewState["VSiFechaFin"] = value; }
         }
     }
 }
