@@ -1554,6 +1554,8 @@
     <Content Include="Views\frmEstadoCuenta.aspx" />
     <Content Include="Views\frmFinconexion.aspx" />
     <Content Include="Views\frmFinconexion2.aspx" />
+    <Content Include="Views\frmFlights.aspx" />
+    <Content Include="Views\frmFlights_Detalle.aspx" />
     <Content Include="Views\frmLegal.aspx" />
     <Content Include="Views\frmMantenimientos.aspx" />
     <Content Include="Views\frmMetricasEstadisticas.aspx" />
@@ -1866,6 +1868,20 @@
     </Compile>
     <Compile Include="Views\frmFinconexion2.aspx.designer.cs">
       <DependentUpon>frmFinconexion2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\frmFlights.aspx.cs">
+      <DependentUpon>frmFlights.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\frmFlights.aspx.designer.cs">
+      <DependentUpon>frmFlights.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\frmFlights_Detalle.aspx.cs">
+      <DependentUpon>frmFlights_Detalle.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\frmFlights_Detalle.aspx.designer.cs">
+      <DependentUpon>frmFlights_Detalle.aspx</DependentUpon>
     </Compile>
     <Compile Include="Views\frmLegal.aspx.cs">
       <DependentUpon>frmLegal.aspx</DependentUpon>

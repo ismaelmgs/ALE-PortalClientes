@@ -8,7 +8,7 @@
             <div class="row">
                 <div class="col-md-6">
                     <div class="title_left">
-                        <h3>Mantenimientos</h3>
+                        <h3><asp:Label ID="lblMantenimientosHeader" runat="server" Text=" Mantenimientos" Font-Bold="false"></asp:Label></h3>
                     </div>
                 </div>
                 <div class="col-md-6">
