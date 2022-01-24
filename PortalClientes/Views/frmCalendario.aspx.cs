@@ -135,7 +135,7 @@ namespace PortalClientes.Views
                 iFechaInicio = System.Web.HttpContext.Current.Session["fechainicio"].S();
 
                 //if (iTipoReporte == 1)
-                rd.ExportToHttpResponse(ExportFormatType.PortableDocFormat, Response, true, "Detalle Vuelo " + Utils.MatriculaActual + " " + iFechaInicio);
+                rd.ExportToHttpResponse(ExportFormatType.PortableDocFormat, Response, true, "DetalleVuelo-" + Utils.MatriculaActual + "-" + iFechaInicio);
                 //else
                 //   rd.ExportToHttpResponse(ExportFormatType.Excel, Response, true, "ResumenGastos");
                 Response.End();
