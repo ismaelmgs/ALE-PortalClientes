@@ -1155,4 +1155,7 @@
   <data name="Ec_Documento" xml:space="preserve">
     <value>Sin Facturas</value>
   </data>
+  <data name="Ca_DeClickVerEvento" xml:space="preserve">
+    <value>De click en el evento para ver la información</value>
+  </data>
 </root>

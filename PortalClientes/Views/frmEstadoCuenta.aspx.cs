@@ -153,7 +153,7 @@ namespace PortalClientes.Views
                 rd.Subreports["rptSubEdoCuentaUSD.rpt"].SetDataSource(EdoCuenta.Tables[1]);
                 rd.Subreports["rptSubEdocuentaMXN.rpt"].SetDataSource(EdoCuenta.Tables[2]);                
 
-                rd.ExportToHttpResponse(ExportFormatType.PortableDocFormat, Response, true, "Estado Cuenta " + Utils.MatriculaActual + " " + iPeriodo);
+                rd.ExportToHttpResponse(ExportFormatType.PortableDocFormat, Response, true, "EstadoCuenta-" + Utils.MatriculaActual + "-" + iPeriodo);
                 Response.End();
             }
         }

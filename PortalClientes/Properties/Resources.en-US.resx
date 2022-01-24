@@ -1158,4 +1158,7 @@
   <data name="Ec_Documento" xml:space="preserve">
     <value>No Bills</value>
   </data>
+  <data name="Ca_DeClickVerEvento" xml:space="preserve">
+    <value>Click on the event to see the information</value>
+  </data>
 </root>
