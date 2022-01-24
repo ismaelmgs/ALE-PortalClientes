@@ -224,7 +224,7 @@ namespace PortalClientes.Views
                     fa.NombreImagen = item.NombreImagen;
                     fa.Extension = item.Extension;
                     fa.Imagen = item.Imagen;
-                    fa.Descripcion = "";// item.Descripcion;
+                    fa.Descripcion = item.Descripcion;
 
                     Lfa.Add(fa);
                 }
