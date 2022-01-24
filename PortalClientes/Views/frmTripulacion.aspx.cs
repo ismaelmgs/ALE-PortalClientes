@@ -298,7 +298,7 @@ namespace PortalClientes.Views
         {
             Response.Clear();
             Response.Buffer = true;
-            Response.AddHeader("content-disposition", string.Format("attachment;filename={0}", nameFile(tipo)));
+            Response.AddHeader("content-disposition", string.Format("attachment;filename={0}", nameFile(tipo,2)));
             Response.Charset = "";
             Response.ContentType = "application/vnd.ms-excel";
             using (StringWriter sw = new StringWriter())
@@ -349,7 +349,7 @@ namespace PortalClientes.Views
             }
         }
 
-        private string nameFile(string tipo)
+        private string nameFile(string tipo, int tipoDocumento)
         {
             var nameFile = "";
             if (tipo == "Piloto")
@@ -361,7 +361,7 @@ namespace PortalClientes.Views
                 nameFile = Utils.Idioma == "es-MX" ? "Eventos Tripulacion Matricula " : "Crew Events Tail number ";
             }
 
-            nameFile+= Utils.MatriculaActual + " " + fechaConsulta(ddlFiltro.SelectedValue) + ".xls";
+            nameFile+= Utils.MatriculaActual + " " + fechaConsulta(ddlFiltro.SelectedValue) + (tipoDocumento == 1 ? ".pdf" : ".xls");
 
             return nameFile;
         }
@@ -408,7 +408,7 @@ namespace PortalClientes.Views
                 }
 
                 Response.ContentType = "application/pdf";
-                Response.AddHeader("content-disposition", string.Format("attachment;filename={0}", nameFile(tipo)));
+                Response.AddHeader("content-disposition", string.Format("attachment;filename={0}", nameFile(tipo,1)));
                 Response.Cache.SetCacheability(HttpCacheability.NoCache);
 
                 gv.HeaderRow.BackColor = Color.White;

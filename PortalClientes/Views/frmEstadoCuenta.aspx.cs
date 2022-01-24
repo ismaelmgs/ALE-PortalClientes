@@ -121,7 +121,7 @@ namespace PortalClientes.Views
                 if (oEC != null)
                 {
                     Session["descripcion"] = ObtienePeriodoEdoCuenta(oEC.mes, oEC.anio);
-                    Session["data"] = oEC.olsDetalle;
+                    Session["data"] = oEC.detalleEdoCta;
                     Response.Redirect("frmTransacciones.aspx");
                 }
             }
@@ -328,80 +328,65 @@ namespace PortalClientes.Views
         {
             string[] ma = sMes.Split(' ');
             iAnio = Convert.ToInt32(ma[1]);
-            switch (ma[0])
+            var mes = ma[0].Trim();
+            if (mes == "January" || mes == "Enero")
             {
-                case "Enero":
-                    iMes = 1;
-                    break;
-                case "Jaunary":
-                    iMes = 1;
-                    break;
-                case "Febrero":
-                    iMes = 2;
-                    break;
-                case "February":
-                    iMes = 2;
-                    break;
-                case "Marzo":
-                    iMes = 3;
-                    break;
-                case "March":
-                    iMes = 3;
-                    break;
-                case "Abril":
-                    iMes = 4;
-                    break;
-                case "April":
-                    iMes = 4;
-                    break;
-                case "Mayo":
-                    iMes = 5;
-                    break;
-                case "May":
-                    iMes = 5;
-                    break;
-                case "Junio":
-                    iMes = 6;
-                    break;
-                case "June":
-                    iMes = 6;
-                    break;
-                case "Julio":
-                    iMes = 7;
-                    break;
-                case "July":
-                    iMes = 7;
-                    break;
-                case "Agosto":
-                    iMes = 8;
-                    break;
-                case "August":
-                    iMes = 8;
-                    break;
-                case "Septiembre":
-                    iMes = 9;
-                    break;
-                case "September":
-                    iMes = 9;
-                    break;
-                case "Octubre":
-                    iMes = 10;
-                    break;
-                case "October":
-                    iMes = 10;
-                    break;
-                case "Noviembre":
-                    iMes = 11;
-                    break;
-                case "November":
-                    iMes = 11;
-                    break;
-                case "Diciembre":
-                    iMes = 12;
-                    break;
-                case "December":
-                    iMes = 12;
-                    break;
+                iMes = 1;
+            }
+
+            if (mes == "February" || mes == "Febrero")
+            {
+                iMes = 2;
+            }
+
+            if (mes == "March" || mes == "Marzo")
+            {
+                iMes = 3;
+            }
+
+            if (mes == "April" || mes == "Abril")
+            {
+                iMes = 4;
+            }
+
+            if (mes == "May" || mes == "Mayo")
+            {
+                iMes = 5;
+            }
+
+            if (mes == "June" || mes == "Junio")
+            {
+                iMes = 6;
+            }
+
+            if (mes == "July" || mes == "Julio")
+            {
+                iMes = 7;
+            }
+
+            if (mes == "August" || mes == "Agosto")
+            {
+                iMes = 8;
+            }
+
+            if (mes == "September" || mes == "Septiembre")
+            {
+                iMes = 9;
+            }
+
+            if (mes == "October" || mes == "Octubre")
+            {
+                iMes = 10;
+            }
+
+            if (mes == "November" || mes == "Noviembre")
+            {
+                iMes = 11;
+            }
+
+            if (mes == "December" || mes == "Diciembre")
+            {
+                iMes = 12;
             }
         }
 
@@ -413,7 +398,7 @@ namespace PortalClientes.Views
             {
                 item.nombreMes = ObtienePeriodoEdoCuenta(item.mes, item.anio);
 
-                foreach (detalleEdoCta itemD in item.olsDetalle)
+                foreach (detalleEdoCta itemD in item.detalleEdoCta)
                 {
                     itemD.nombreMes = ObtienePeriodoEdoCuenta(itemD.mes, itemD.anio);
                 }

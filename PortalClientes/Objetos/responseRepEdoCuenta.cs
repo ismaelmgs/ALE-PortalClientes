@@ -25,7 +25,7 @@ namespace PortalClientes.Objetos
         public decimal? nuevosCargosUSD { set; get; }
         public decimal? saldoActualUSD { set; get; }              
 
-        public List<detalleEdoCta> olsDetalle { get => _olsDetalle; set => _olsDetalle = value; }
+        public List<detalleEdoCta> detalleEdoCta { get => _olsDetalle; set => _olsDetalle = value; }
     }
 
     [Serializable]
