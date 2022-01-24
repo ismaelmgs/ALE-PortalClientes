@@ -187,6 +187,15 @@ namespace PortalClientes.Properties {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a De click en el evento para ver la información.
+        /// </summary>
+        internal static string Ca_DeClickVerEvento {
+            get {
+                return ResourceManager.GetString("Ca_DeClickVerEvento", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Descripción.
         /// </summary>
         internal static string Ca_Descripcion {
