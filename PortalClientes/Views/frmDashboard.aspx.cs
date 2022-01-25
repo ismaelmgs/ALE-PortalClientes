@@ -44,7 +44,6 @@ namespace PortalClientes.Views
             
             if (!IsPostBack)
             {
-                ScriptManager.RegisterStartupScript(this.Page, this.GetType(), Guid.NewGuid().ToString(), "openLoading();", true);
                 lblMatriculaAeronave.Text = Utils.MatriculaActual;
                 LlenarDashboard();
             }
@@ -203,7 +202,6 @@ namespace PortalClientes.Views
                 }
             }
 
-            ScriptManager.RegisterStartupScript(this.Page, this.GetType(), Guid.NewGuid().ToString(), "closeLoading();", true);
             ScriptManager.RegisterStartupScript(this.Page, this.GetType(), Guid.NewGuid().ToString(), "initialize();", true);
         }
 

@@ -1587,10 +1587,12 @@
     <Compile Include="DomainModel\DBLogin.cs" />
     <Compile Include="DomainModel\DBUsuarios.cs" />
     <Compile Include="DomainModel\DBUtils.cs" />
+    <Compile Include="DomainModel\DBVuelos.cs" />
     <Compile Include="Interfaces\IViewDetalleReportes.cs" />
     <Compile Include="Interfaces\IViewEstadoCuenta.cs" />
     <Compile Include="Interfaces\IViewMetricasEstadisticas.cs" />
     <Compile Include="Interfaces\IViewTripulacion.cs" />
+    <Compile Include="Interfaces\IViewVuelos.cs" />
     <Compile Include="Objetos\Calendario.cs" />
     <Compile Include="Objetos\DatosMetricas.cs" />
     <Compile Include="Objetos\EstadoCuenta.cs" />
@@ -1617,10 +1619,12 @@
     <Compile Include="Objetos\Transacciones.cs" />
     <Compile Include="Objetos\Tripulacion.cs" />
     <Compile Include="Objetos\RutasyAeropuertos.cs" />
+    <Compile Include="Objetos\Vuelos.cs" />
     <Compile Include="Presenter\DetalleReportes_Presenter.cs" />
     <Compile Include="Presenter\EstadoCuenta_Presenter.cs" />
     <Compile Include="Presenter\MetricasEstadisticas_Presenter.cs" />
     <Compile Include="Presenter\Tripulacion_Presenter.cs" />
+    <Compile Include="Presenter\Vuelos_Presenter.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

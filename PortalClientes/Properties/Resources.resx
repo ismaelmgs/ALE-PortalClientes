@@ -1158,4 +1158,49 @@
   <data name="Ca_DeClickVerEvento" xml:space="preserve">
     <value>De click en el evento para ver la información</value>
   </data>
+  <data name="Fl_DestinoTitle" xml:space="preserve">
+    <value>Destino</value>
+  </data>
+  <data name="Fl_DetalleTitle" xml:space="preserve">
+    <value>Detalles</value>
+  </data>
+  <data name="Fl_FechaFTitle" xml:space="preserve">
+    <value>Fecha Fin</value>
+  </data>
+  <data name="Fl_FechaITitle" xml:space="preserve">
+    <value>Fecha Inicio</value>
+  </data>
+  <data name="Fl_HorasVoladas" xml:space="preserve">
+    <value>Horas Voladas</value>
+  </data>
+  <data name="Fl_NoAeVisit" xml:space="preserve">
+    <value>Aeropuertos Visitados</value>
+  </data>
+  <data name="Fl_NoPaxTitle" xml:space="preserve">
+    <value>No Pasajeros</value>
+  </data>
+  <data name="Fl_NoViajes" xml:space="preserve">
+    <value>No. Viajes</value>
+  </data>
+  <data name="Fl_NoVuelos" xml:space="preserve">
+    <value>No. Vuelos</value>
+  </data>
+  <data name="Fl_NumTripTitle" xml:space="preserve">
+    <value>Numero Viaje</value>
+  </data>
+  <data name="Fl_OrigenTitle" xml:space="preserve">
+    <value>Origen</value>
+  </data>
+  <data name="Fl_TiempoVolTitle" xml:space="preserve">
+    <value>Tiempo Volado</value>
+  </data>
+  <data name="Fl_TotalPax" xml:space="preserve">
+    <value>Total Pasajeros</value>
+  </data>
+  <data name="Fl_VerDetalle" xml:space="preserve">
+    <value>Ver Detalle</value>
+  </data>
+  <data name="Fl_Vuelos" xml:space="preserve">
+    <value>Vuelos</value>
+  </data>
 </root>
