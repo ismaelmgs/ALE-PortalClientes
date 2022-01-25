@@ -10,6 +10,7 @@ using System.Web.UI.WebControls;
 using System.Drawing;
 using System.Web.UI;
 using System.Collections.Generic;
+using NucleoBase.Core;
 
 namespace PortalClientes.Views
 {
@@ -44,6 +45,11 @@ namespace PortalClientes.Views
                 
                 LLenarVuelo();
             }
+        }
+
+        protected void DDFiltroMeses_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            LLenarVuelo();
         }
 
         protected void gvVuelos_RowDataBound(object sender, GridViewRowEventArgs e)
@@ -81,10 +87,54 @@ namespace PortalClientes.Views
             }
         }
 
+        protected void gvGastos_PageIndexChanging(object sender, GridViewPageEventArgs e)
+        {
+            gvVuelos.Columns.Clear();
+            gvVuelos.PageIndex = e.NewPageIndex;
+            LlenarGV();
+        }
+
         #endregion
 
 
         #region METODOS 
+
+        private void LlenarGV()
+        {
+            List<Vueloss> lVuelos = new List<Vueloss>();
+
+            foreach (detVuelos item in oDetVuelos)
+            {
+
+                var fechaSalida = "";
+                var fechaLlegada = "";
+
+                if (Utils.Idioma == "es-MX")
+                {
+                    fechaSalida = item.FechaInicio.ToString("dd/MM/yyyy HH:mm");
+                    fechaLlegada = item.FechaFin.ToString("dd/MM/yyyy HH:mm");
+                }
+                else
+                {
+                    fechaSalida = item.FechaInicio.ToString("MM/dd/yyyy HH:mm");
+                    fechaLlegada = item.FechaFin.ToString("MM/dd/yyyy HH:mm");
+                }
+
+                Vueloss v = new Vueloss();
+                v.numTrip = item.tripNum;
+                v.origen = item.origen;
+                v.destino = item.destino;
+                v.pax = item.pax.ToString();
+                v.fechaInicio = fechaSalida;
+                v.fechaFin = fechaLlegada;
+                v.TiempoVolado = tiempoVolado(item.FechaInicio, item.FechaFin);
+
+                lVuelos.Add(v);
+            }
+
+            gvVuelos.DataSource = lVuelos;
+            gvVuelos.DataBind();
+        }
 
         public void LLenarVuelo()
         {
@@ -100,6 +150,23 @@ namespace PortalClientes.Views
             lblHorasVuelo.Text = Properties.Resources.Fl_HorasVoladas;
             lblTotalPasajeros.Text = Properties.Resources.Fl_TotalPax;
             lblFlightsDos.Text = Properties.Resources.Fl_Vuelos;
+
+            var v2 = DDFiltroMeses.SelectedValue;
+            // llenar dropdown filtro
+            DDFiltroMeses.Items.Clear();
+            DDFiltroMeses.Items.Add(new ListItem(Properties.Resources.FiltroME_MA, "0"));
+            DDFiltroMeses.Items.Add(new ListItem(Properties.Resources.FiltroME_1M, "1"));
+            DDFiltroMeses.Items.Add(new ListItem(Properties.Resources.FiltroME_2M, "2"));
+            DDFiltroMeses.Items.Add(new ListItem(Properties.Resources.FiltroME_3M, "3"));
+
+            if (v2 == "")
+            {
+                DDFiltroMeses.SelectedIndex = 0;
+            }
+            else
+            {
+                DDFiltroMeses.SelectedValue = v2;
+            }
         }
 
         public void cargarVuelos(Eventoss ov)
@@ -214,6 +281,14 @@ namespace PortalClientes.Views
         {
             get { return (int)ViewState["VSiminutos"]; }
             set { ViewState["VSiminutos"] = value; }
+        }
+
+        public int iMeses
+        {
+            get
+            {
+                return DDFiltroMeses.SelectedValue.S().I();
+            }
         }
         #endregion
     }

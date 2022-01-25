@@ -12,7 +12,7 @@ namespace PortalClientes.DomainModel
 {
     public class DBVuelos
     {
-        public Eventoss obtenerVuelos()
+        public Eventoss obtenerVuelos(int imeses)
         {
             try
             {
@@ -20,7 +20,7 @@ namespace PortalClientes.DomainModel
                 Eventoss v = new Eventoss();
                 FiltroGrafica oLog = new FiltroGrafica();
                 oLog.matricula = Utils.MatriculaActual;
-                oLog.meses = "1";
+                oLog.meses = imeses.ToString();
 
                 TokenWS oToken = Utils.ObtieneToken;
 

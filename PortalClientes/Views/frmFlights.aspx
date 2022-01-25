@@ -10,14 +10,6 @@
                         <h3><asp:Label ID="lblFligthsHeader" runat="server" Text=" Vuelos" Font-Bold="false"></asp:Label></h3>
                     </div>
                 </div>
-                <div class="col-md-6">
-                    <div class="title_right">
-                        <div class="col-md-5 col-sm-5   form-group pull-right top_search">
-                            <div class="input-group">
-                            </div>
-                        </div>
-                    </div>
-                </div>
             </div>
             <div class="row">
                 <div class="col-md-12 col-sm-12">
@@ -79,9 +71,17 @@
                         </div>
                     <div class="x_panel">
                         <div class="x_title">
-                            <h2>
-                                <asp:Label ID="lblFlightsDos" runat="server" Text="Flights" Font-Bold="true"></asp:Label></h2>
-                            <div class="clearfix"></div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <h2>
+                                        <asp:Label ID="lblFlightsDos" runat="server" Text="Flights" Font-Bold="true"></asp:Label>
+                                    </h2>
+                                </div>
+                                <div class="col-md-6">
+                                    <asp:DropDownList ID="DDFiltroMeses" runat="server" AutoPostBack="true" CssClass="form-control" Width="100%" OnSelectedIndexChanged="DDFiltroMeses_SelectedIndexChanged"></asp:DropDownList>
+                                </div>
+                            </div>
+                        <div class="clearfix"></div>
                         </div>
                         <div class="row">
                             <div class="col-md-12">

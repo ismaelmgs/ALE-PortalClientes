@@ -20,7 +20,7 @@ namespace PortalClientes.Presenter
 
         protected override void SearchObj_Presenter(object sender, EventArgs e)
         {
-            oIView.cargarVuelos(oIGesCat.obtenerVuelos());
+            oIView.cargarVuelos(oIGesCat.obtenerVuelos(oIView.iMeses));
         }
     }
 }

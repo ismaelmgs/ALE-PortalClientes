@@ -13,6 +13,6 @@ namespace PortalClientes.Interfaces
         string stiempoVuelo { get; set; }
         int iminutos { get; set; }
         void cargarVuelos(Eventoss oVuelos);
-
+        int iMeses { get; }
     }
 }

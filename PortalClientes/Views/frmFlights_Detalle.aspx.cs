@@ -98,6 +98,17 @@ namespace PortalClientes.Views
 
         private void ArmarDetalleVuelo()
         {
+            if (Utils.Idioma == "es-MX")
+            {
+                btnRegresarVuelos.Visible = true;
+                btnRegresarVuelosEng.Visible = false;
+            }
+            else
+            {
+                btnRegresarVuelos.Visible = false;
+                btnRegresarVuelosEng.Visible = true;
+            }
+
             lblFligthsDetalle.Text = Properties.Resources.Ca_DetalleVuelo;
             lblInformacionGeneral.Text = Properties.Resources.Ca_InformacionGeneral;
             lblTipoEvento.Text = Properties.Resources.Ca_TipoEvento;
