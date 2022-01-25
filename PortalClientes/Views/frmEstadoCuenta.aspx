@@ -36,7 +36,21 @@
                 </div>
                 <div class="col-md-6" style="text-align:right;">
                     <div class="title_right">
-                        <span data-toggle="popover" title="Dudas o Aclaraciones" data-html="true" data-content="Favor de comunicarse con:<br /> <strong>Miguel Ríos</strong><br /> al teléfono:<br /> <a href='tel:+525555555555'> <strong>(55) 5555 5555</strong></a>"><i class="fa fa-question-circle" style="font-size:35px;margin-top: 5px;cursor:pointer;"></i></span>
+                        <div class="popover__wrapper">
+                          <a href="#">
+                            <h2 class="popover__title"><i class="fa fa-question-circle" style="font-size:35px;margin-top: 5px;cursor:pointer;"></i>&nbsp;&nbsp;</h2>
+                          </a>
+                          <div class="popover__content" style="text-align:center">
+                            <p class="popover__message">
+                                <h5 style="background-color: #efefef;
+padding: 5px;"><asp:Label ID="lblHeaderDudasAclaraciones" runat="server" Text="Dudas o Aclaraciones" Font-Bold="true"></asp:Label></h5>
+                                <asp:Label ID="lblFavorComunicarse" runat="server" Text="Favor de comunicarse con:" Font-Bold="false"></asp:Label><br /> 
+                                <asp:Label ID="lblNombreAyuda" runat="server" Text="Miguel Ríos" Font-Bold="true"></asp:Label><br />
+                                    al teléfono:<br /> <a href="tel:+525555555555"> <asp:Label ID="lblTel" runat="server" Text="(55) 5555 5555" Font-Bold="true"></asp:Label></a>
+                            </p>
+                          </div>
+                        </div>
+                        <!-- <span data-toggle="popover" title="Dudas o Aclaraciones" data-html="true" data-content="Favor de comunicarse con:<br /> <strong>Miguel Ríos</strong><br /> al teléfono:<br /> <a href='tel:+525555555555'> <strong>(55) 5555 5555</strong></a>"><i class="fa fa-question-circle" style="font-size:35px;margin-top: 5px;cursor:pointer;"></i></span> -->
                         <%--<div class="col-md-5 col-sm-5   form-group pull-right top_search">
                             <div class="input-group">
                             </div>

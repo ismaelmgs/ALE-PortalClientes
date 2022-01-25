@@ -51,8 +51,66 @@
 
     <script src="https://www.gstatic.com/charts/loader.js"></script>
       
-    <style>
-        
+    <style type="text/css">
+        .overlayy {
+            position: fixed;
+            z-index: 98;
+            top: 0px;
+            left: 0px;
+            right: 0px;
+            bottom: 0px;
+            filter: alpha(opacity=80);
+            opacity: 0.8;
+            background: rgba(0,0,0,0.8);
+        }
+        .popover__title {
+          font-size: 24px;
+          line-height: 36px;
+          text-decoration: none;
+          text-align: center;
+          padding: 15px 0;
+        }
+
+        .popover__wrapper {
+          position: relative;
+            margin-top: -1.1rem;
+            display: inline-block;
+        }
+        .popover__content {
+           opacity: 0;
+            visibility: hidden;
+            position: absolute;
+            left: -200px;
+            transform: translate(0, 10px);
+            background-color: #ffffff;
+            box-shadow: 0 2px 5px 0 rgb(0 0 0 / 26%);
+            width: auto;
+            padding: 5px;
+            width: 252px;
+        }
+        .popover__content:before {
+          position: absolute;
+          text-align:right;
+          margin-left:85px;
+          z-index: -1;
+          content: "";
+          top: -8px;
+          border-style: solid;
+          border-width: 0 10px 10px 10px;
+          border-color: transparent transparent #5a738e transparent;
+          transition-duration: 0.3s;
+          transition-property: transform;
+        }
+        .popover__wrapper:hover .popover__content {
+          z-index: 10;
+          opacity: 1;
+          visibility: visible;
+          transform: translate(0, -20px);
+          transition: all 0.5s cubic-bezier(0.75, -0.02, 0.2, 0.97);
+        }
+        .popover__message {
+          text-align: center;
+        }
     </style>
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
@@ -354,25 +412,12 @@
             var matricula = e.get_text();
             alert(matricula);
         }
-    </script>
+    </script>pt>
     <script>
         $(document).ready(function () {
             $('[data-toggle="popover"]').popover();
         });
     </script>
-    <style type="text/css">
-        .overlayy {
-            position: fixed;
-            z-index: 98;
-            top: 0px;
-            left: 0px;
-            right: 0px;
-            bottom: 0px;
-            filter: alpha(opacity=80);
-            opacity: 0.8;
-            background: rgba(0,0,0,0.8);
-        }
-    </style>
 </form>
 </body>
 </html>
