@@ -13,6 +13,7 @@ using System.Web.Services;
 using System.Web.Script.Services;
 using System.Globalization;
 using System.Threading;
+using System.Configuration;
 
 namespace PortalClientes.Views
 {
@@ -47,7 +48,10 @@ namespace PortalClientes.Views
                 lblMatriculaAeronave.Text = Utils.MatriculaActual;
                 LlenarDashboard();
             }
-            
+            var NombreAyuda = ConfigurationManager.AppSettings["NombreAyuda"];
+            var TelAyuda = ConfigurationManager.AppSettings["Tel"];
+            lblNombreAyuda.Text = NombreAyuda;
+            lblTel.Text = TelAyuda;
         }
         #endregion
 

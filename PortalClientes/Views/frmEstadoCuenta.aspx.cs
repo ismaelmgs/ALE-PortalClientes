@@ -16,6 +16,7 @@ using System.IO;
 using CrystalDecisions.CrystalReports.Engine;
 using CrystalDecisions.Shared;
 using Newtonsoft.Json;
+using System.Configuration;
 
 namespace PortalClientes.Views
 {
@@ -52,7 +53,11 @@ namespace PortalClientes.Views
 
             EdoCuenta = new DataSet();
 
-            
+            var NombreAyuda = ConfigurationManager.AppSettings["NombreAyuda"];
+            var TelAyuda = ConfigurationManager.AppSettings["Tel"];
+            lblNombreAyuda.Text = NombreAyuda;
+            lblTel.Text = TelAyuda;
+
         }
 
         protected void gvEdoCuenta_RowDataBound(object sender, GridViewRowEventArgs e)

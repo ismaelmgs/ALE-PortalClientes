@@ -16,6 +16,7 @@ using System.Data;
 using CrystalDecisions.CrystalReports.Engine;
 using CrystalDecisions.Shared;
 using NucleoBase.Core;
+using System.Configuration;
 
 namespace PortalClientes.Views
 {
@@ -50,6 +51,10 @@ namespace PortalClientes.Views
                 ScriptManager.RegisterStartupScript(this.Page, this.GetType(), Guid.NewGuid().ToString(), "openLoading();", true);
                 LlenarMetricasEstadisticas();
             }
+            var NombreAyuda = ConfigurationManager.AppSettings["NombreAyuda"];
+            var TelAyuda = ConfigurationManager.AppSettings["Tel"];
+            lblNombreAyuda.Text = NombreAyuda;
+            lblTel.Text = TelAyuda;
         }
 
         protected void lkbExpExcel_Click(object sender, EventArgs e)
