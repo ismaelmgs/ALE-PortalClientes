@@ -26,6 +26,7 @@ namespace PortalClientes.Views
             Session["RefUrl"] = Request.Url.ToString();
             if (System.Web.HttpContext.Current.Session["UserIdentity"] == null)
             {
+                /// cOMENTARIO PRUEBA
                 Response.Redirect("~/Views/frmFinconexion2.aspx");
             }
 
