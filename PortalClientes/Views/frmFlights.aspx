@@ -90,7 +90,7 @@
                                 <asp:UpdatePanel ID="UpdatePanel1" runat="server">
                                     <ContentTemplate>
                                         <asp:GridView ID="gvVuelos" runat="server" AutoGenerateColumns="false" CssClass="table table-striped table-bordered table-hover" ChildrenAsTriggers="False"
-                                            AllowPaging="true" OnRowDataBound="gvVuelos_RowDataBound" onRowCommand="gvVuelos_RowCommand" EmptyDataText="No Registros">
+                                            AllowPaging="true" OnRowDataBound="gvVuelos_RowDataBound" onRowCommand="gvVuelos_RowCommand" EmptyDataText="No Registros" OnPageIndexChanging="gvVuelos_PageIndexChanging">
                                             <HeaderStyle />
                                             <RowStyle />
                                             <AlternatingRowStyle />

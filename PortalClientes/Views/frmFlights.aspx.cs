@@ -87,9 +87,8 @@ namespace PortalClientes.Views
             }
         }
 
-        protected void gvGastos_PageIndexChanging(object sender, GridViewPageEventArgs e)
+        protected void gvVuelos_PageIndexChanging(object sender, GridViewPageEventArgs e)
         {
-            gvVuelos.Columns.Clear();
             gvVuelos.PageIndex = e.NewPageIndex;
             LlenarGV();
         }
