@@ -31,6 +31,60 @@ namespace PortalClientes.Views {
         protected global::System.Web.UI.WebControls.Label lblResumenPeriodo;
         
         /// <summary>
+        /// Control lblHeaderDudasAclaraciones.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblHeaderDudasAclaraciones;
+        
+        /// <summary>
+        /// Control lblFavorComunicarse.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblFavorComunicarse;
+        
+        /// <summary>
+        /// Control lblNombreAyuda.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblNombreAyuda;
+        
+        /// <summary>
+        /// Control lblALTel.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblALTel;
+        
+        /// <summary>
+        /// Control hrefTel.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlAnchor hrefTel;
+        
+        /// <summary>
+        /// Control lblTel.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblTel;
+        
+        /// <summary>
         /// Control ddlFiltroResumenPeriodo.
         /// </summary>
         /// <remarks>

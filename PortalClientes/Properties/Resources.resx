@@ -1203,4 +1203,13 @@
   <data name="Fl_Vuelos" xml:space="preserve">
     <value>Vuelos</value>
   </data>
+  <data name="Du_AlTel" xml:space="preserve">
+    <value>al teléfono:</value>
+  </data>
+  <data name="Du_Dudas" xml:space="preserve">
+    <value>Dudas o Aclaraciones</value>
+  </data>
+  <data name="Du_FavorCom" xml:space="preserve">
+    <value>Favor de comunicarse con:</value>
+  </data>
 </root>

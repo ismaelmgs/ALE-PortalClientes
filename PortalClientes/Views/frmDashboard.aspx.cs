@@ -13,6 +13,7 @@ using System.Web.Services;
 using System.Web.Script.Services;
 using System.Globalization;
 using System.Threading;
+using System.Configuration;
 
 namespace PortalClientes.Views
 {
@@ -47,7 +48,15 @@ namespace PortalClientes.Views
                 lblMatriculaAeronave.Text = Utils.MatriculaActual;
                 LlenarDashboard();
             }
-            
+            lblHeaderDudasAclaraciones.Text = Properties.Resources.Du_Dudas;
+            lblFavorComunicarse.Text = Properties.Resources.Du_FavorCom;
+            lblALTel.Text = Properties.Resources.Du_AlTel;
+            var NombreAyuda = ConfigurationManager.AppSettings["NombreAyuda"];
+            var TelAyuda = ConfigurationManager.AppSettings["Tel"];
+            var linkTel = ConfigurationManager.AppSettings["linkTel"];
+            lblNombreAyuda.Text = NombreAyuda;
+            lblTel.Text = TelAyuda;
+            hrefTel.HRef = linkTel;
         }
         #endregion
 

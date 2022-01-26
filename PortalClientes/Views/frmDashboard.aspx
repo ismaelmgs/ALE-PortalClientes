@@ -491,22 +491,16 @@ TagPrefix="dx" %>
 									  <a href="#">
 										<h2 class="popover__title"><i class="fa fa-question-circle" style="font-size:35px;margin-top: 5px;cursor:pointer;"></i>&nbsp;&nbsp;</h2>
 									  </a>
-									  <div class="popover__content" style="text-align:center; margin-top:90px;">
-										<p class="popover__message">
-											<h5 style="background-color: #efefef;
-			padding: 5px;"><asp:Label ID="lblHeaderDudasAclaraciones" runat="server" Text="Dudas o Aclaraciones" Font-Bold="true"></asp:Label></h5>
-											<asp:Label ID="lblFavorComunicarse" runat="server" Text="Favor de comunicarse con:" Font-Bold="false"></asp:Label><br /> 
-											<asp:Label ID="lblNombreAyuda" runat="server" Text="Miguel Ríos" Font-Bold="true"></asp:Label><br />
-												al teléfono:<br /> <a href="tel:+525555555555"> <asp:Label ID="lblTel" runat="server" Text="(55) 5555 5555" Font-Bold="true"></asp:Label></a>
+									  <div class="popover__content" style="text-align:center; margin-top:90px;line-height:18px;">
+										<p class="popover__message" style="text">
+											<h5 style="background-color: #efefef; padding: 5px;">
+											<asp:Label ID="lblHeaderDudasAclaraciones" runat="server" Text="Dudas o Aclaraciones" Font-Bold="true" Style="color:#5a738e;"></asp:Label></h5>
+											<asp:Label ID="lblFavorComunicarse" runat="server" Text="Favor de comunicarse con:" Font-Bold="false" Style="color:#5a738e;"></asp:Label><br /> 
+											<asp:Label ID="lblNombreAyuda" runat="server" Text="" Font-Bold="true" Style="color:#5a738e;"></asp:Label><br />
+											<asp:Label ID="lblALTel" runat="server" Text="al teléfono:"></asp:Label><br /> <a runat="server" id="hrefTel" href="tel:+525555555555"><asp:Label ID="lblTel" runat="server" Text="" Font-Bold="true"></asp:Label></a>
 										</p>
 									  </div>
 									</div>
-									<%--<span data-toggle="popover"
-										title="<strong>Dudas o Aclaraciones</strong>"
-										data-html="true"
-										data-content="Favor de comunicarse con:<br /> <strong>Miguel Ríos</strong><br /> al teléfono:<br /> <a href='tel:+525555555555'> <strong>(55) 5555 5555</strong></a>">
-										<i class="fa fa-question-circle" style="font-size: 35px;margin-top: 5px; cursor: pointer; color: #73879c;"></i>
-									</span>--%>
 								</div>
 							</div>
 						</div>

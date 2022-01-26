@@ -43,10 +43,10 @@
                           <div class="popover__content" style="text-align:center">
                             <p class="popover__message">
                                 <h5 style="background-color: #efefef;
-padding: 5px;"><asp:Label ID="lblHeaderDudasAclaraciones" runat="server" Text="Dudas o Aclaraciones" Font-Bold="true"></asp:Label></h5>
+                                padding: 5px;"><asp:Label ID="lblHeaderDudasAclaraciones" runat="server" Text="Dudas o Aclaraciones" Font-Bold="true"></asp:Label></h5>
                                 <asp:Label ID="lblFavorComunicarse" runat="server" Text="Favor de comunicarse con:" Font-Bold="false"></asp:Label><br /> 
-                                <asp:Label ID="lblNombreAyuda" runat="server" Text="Miguel Ríos" Font-Bold="true"></asp:Label><br />
-                                    al teléfono:<br /> <a href="tel:+525555555555"> <asp:Label ID="lblTel" runat="server" Text="(55) 5555 5555" Font-Bold="true"></asp:Label></a>
+                                <asp:Label ID="lblNombreAyuda" runat="server" Text="" Font-Bold="true"></asp:Label><br />
+                                 <asp:Label ID="lblALTel" runat="server" Text="al teléfono:"></asp:Label><br /> <a runat="server" id="hrefTel" href="tel:+525555555555"><asp:Label ID="lblTel" runat="server" Text="" Font-Bold="true"></asp:Label></a>    
                             </p>
                           </div>
                         </div>
