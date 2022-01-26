@@ -48,15 +48,7 @@ namespace PortalClientes.Views
                 lblMatriculaAeronave.Text = Utils.MatriculaActual;
                 LlenarDashboard();
             }
-            lblHeaderDudasAclaraciones.Text = Properties.Resources.Du_Dudas;
-            lblFavorComunicarse.Text = Properties.Resources.Du_FavorCom;
-            lblALTel.Text = Properties.Resources.Du_AlTel;
-            var NombreAyuda = ConfigurationManager.AppSettings["NombreAyuda"];
-            var TelAyuda = ConfigurationManager.AppSettings["Tel"];
-            var linkTel = ConfigurationManager.AppSettings["linkTel"];
-            lblNombreAyuda.Text = NombreAyuda;
-            lblTel.Text = TelAyuda;
-            hrefTel.HRef = linkTel;
+            
         }
         #endregion
 
@@ -255,7 +247,17 @@ namespace PortalClientes.Views
             ddlPeriodo.Items.Add(new ListItem(Properties.Resources.Das_Semestral, "6"));
             ddlPeriodo.Items.Add(new ListItem(Properties.Resources.Das_Anual, "12"));
 
-            if(vPeriodo== "")
+            lblHeaderDudasAclaraciones.Text = Properties.Resources.Du_Dudas;
+            lblFavorComunicarse.Text = Properties.Resources.Du_FavorCom;
+            lblALTel.Text = Properties.Resources.Du_AlTel;
+            var NombreAyuda = ConfigurationManager.AppSettings["NombreAyuda"];
+            var TelAyuda = ConfigurationManager.AppSettings["Tel"];
+            var linkTel = ConfigurationManager.AppSettings["linkTel"];
+            lblNombreAyuda.Text = NombreAyuda;
+            lblTel.Text = TelAyuda;
+            hrefTel.HRef = linkTel;
+
+            if (vPeriodo== "")
             {
                 ddlPeriodo.SelectedIndex = 3;
             }

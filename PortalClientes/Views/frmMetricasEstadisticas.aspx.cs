@@ -51,15 +51,6 @@ namespace PortalClientes.Views
                 ScriptManager.RegisterStartupScript(this.Page, this.GetType(), Guid.NewGuid().ToString(), "openLoading();", true);
                 LlenarMetricasEstadisticas();
             }
-            lblHeaderDudasAclaraciones.Text = Properties.Resources.Du_Dudas;
-            lblFavorComunicarse.Text = Properties.Resources.Du_FavorCom;
-            lblALTel.Text = Properties.Resources.Du_AlTel;
-            var NombreAyuda = ConfigurationManager.AppSettings["NombreAyuda"];
-            var TelAyuda = ConfigurationManager.AppSettings["Tel"];
-            var linkTel = ConfigurationManager.AppSettings["linkTel"];
-            lblNombreAyuda.Text = NombreAyuda;
-            lblTel.Text = TelAyuda;
-            hrefTel.HRef = linkTel;
         }
 
         protected void lkbExpExcel_Click(object sender, EventArgs e)
@@ -168,6 +159,16 @@ namespace PortalClientes.Views
             ddlPeriodo.Items.Add(new ListItem(Properties.Resources.Das_Trimestral, "3"));
             ddlPeriodo.Items.Add(new ListItem(Properties.Resources.Das_Semestral, "6"));
             ddlPeriodo.Items.Add(new ListItem(Properties.Resources.Das_Anual, "12"));
+
+            lblHeaderDudasAclaraciones.Text = Properties.Resources.Du_Dudas;
+            lblFavorComunicarse.Text = Properties.Resources.Du_FavorCom;
+            lblALTel.Text = Properties.Resources.Du_AlTel;
+            var NombreAyuda = ConfigurationManager.AppSettings["NombreAyuda"];
+            var TelAyuda = ConfigurationManager.AppSettings["Tel"];
+            var linkTel = ConfigurationManager.AppSettings["linkTel"];
+            lblNombreAyuda.Text = NombreAyuda;
+            lblTel.Text = TelAyuda;
+            hrefTel.HRef = linkTel;
 
             if (vPeriodo == "")
             {
