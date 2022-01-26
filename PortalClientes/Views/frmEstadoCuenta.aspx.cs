@@ -51,17 +51,7 @@ namespace PortalClientes.Views
                     eSearchObj(sender, e);
             }
 
-            EdoCuenta = new DataSet();
-
-            lblHeaderDudasAclaraciones.Text = Properties.Resources.Du_Dudas;
-            lblFavorComunicarse.Text = Properties.Resources.Du_FavorCom;
-            lblALTel.Text = Properties.Resources.Du_AlTel;
-            var NombreAyuda = ConfigurationManager.AppSettings["NombreAyuda"];
-            var TelAyuda = ConfigurationManager.AppSettings["Tel"];
-            var linkTel = ConfigurationManager.AppSettings["linkTel"];
-            lblNombreAyuda.Text = NombreAyuda;
-            lblTel.Text = TelAyuda;
-            hrefTel.HRef = linkTel;
+            EdoCuenta = new DataSet();           
         }
 
         protected void gvEdoCuenta_RowDataBound(object sender, GridViewRowEventArgs e)
@@ -254,6 +244,16 @@ namespace PortalClientes.Views
 
             btnCancelar.Text = Properties.Resources.Ec_btnCancelar;
             lblTituloDocsEdoCuenta.Text = Properties.Resources.Ec_FacturaEdoCuenta;
+
+            lblHeaderDudasAclaraciones.Text = Properties.Resources.Du_Dudas;
+            lblFavorComunicarse.Text = Properties.Resources.Du_FavorCom;
+            lblALTel.Text = Properties.Resources.Du_AlTel;
+            var NombreAyuda = ConfigurationManager.AppSettings["NombreAyuda"];
+            var TelAyuda = ConfigurationManager.AppSettings["Tel"];
+            var linkTel = ConfigurationManager.AppSettings["linkTel"];
+            lblNombreAyuda.Text = NombreAyuda;
+            lblTel.Text = TelAyuda;
+            hrefTel.HRef = linkTel;
         }
 
         public void LlenaEstadoCuenta(EstadoCuenta oEstado)
