@@ -39,7 +39,7 @@
                                             <asp:Label ID="lblHeaderDudasAclaraciones" runat="server" Text="Dudas o Aclaraciones" Font-Bold="true" Style="color:#5a738e;"></asp:Label></h5>
 											<asp:Label ID="lblFavorComunicarse" runat="server" Text="Favor de comunicarse con:" Font-Bold="false" Style="color:#5a738e;"></asp:Label><br /> 
 											<asp:Label ID="lblNombreAyuda" runat="server" Text="" Font-Bold="true" Style="color:#5a738e;"></asp:Label><br />
-												al teléfono:<br /> <a href="tel:+525555555555"> <asp:Label ID="lblTel" runat="server" Text="" Font-Bold="true" Style="color:#5a738e;"></asp:Label></a>
+											<asp:Label ID="lblALTel" runat="server" Text="al teléfono:"></asp:Label><br /> <a runat="server" id="hrefTel" href="tel:+525555555555"><asp:Label ID="lblTel" runat="server" Text="" Font-Bold="true"></asp:Label></a>
 										</p>
 									  </div>
 									</div>

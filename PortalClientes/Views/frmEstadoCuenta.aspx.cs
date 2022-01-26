@@ -53,11 +53,15 @@ namespace PortalClientes.Views
 
             EdoCuenta = new DataSet();
 
+            lblHeaderDudasAclaraciones.Text = Properties.Resources.Du_Dudas;
+            lblFavorComunicarse.Text = Properties.Resources.Du_FavorCom;
+            lblALTel.Text = Properties.Resources.Du_AlTel;
             var NombreAyuda = ConfigurationManager.AppSettings["NombreAyuda"];
             var TelAyuda = ConfigurationManager.AppSettings["Tel"];
+            var linkTel = ConfigurationManager.AppSettings["linkTel"];
             lblNombreAyuda.Text = NombreAyuda;
             lblTel.Text = TelAyuda;
-
+            hrefTel.HRef = linkTel;
         }
 
         protected void gvEdoCuenta_RowDataBound(object sender, GridViewRowEventArgs e)
