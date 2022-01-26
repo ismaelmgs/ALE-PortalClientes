@@ -3,9 +3,6 @@
 }
 
 function closeLoading() {
-    //window.setTimeout(function () {
-    //    lPanel.Hide();
-    //}, 750);
    lPanel.Hide();
 }
 
@@ -22,6 +19,16 @@ function closeSession() {
     }, 5000);
 }
 
-function reloadPage() {
-    window.location.reload();
+
+var menuLat = document.getElementsByClassName("item");
+var matriculas = document.getElementsByClassName("dropdown-item");
+
+for (var i = 0; i < menuLat.length; i++) {
+    menuLat[i].addEventListener('click', openLoading , false);
 }
+
+for (var i = 0; i < matriculas.length; i++) {
+    matriculas[i].addEventListener('click', openLoading , false);
+}
+
+console.log('si exta jalando este archivo');
