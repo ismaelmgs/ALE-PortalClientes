@@ -24,25 +24,28 @@
                 <div class="col-md-12 col-sm-12">
                     <div class="x_panel">
                         <div class="x_title">
+                            <div class="row">
+                                 <div class="col-md-6" style="text-align: right">
                             <h2><asp:Label ID="lblResumenPeriodo" runat="server" Text="Resumen del período $USD" Font-Bold="true"></asp:Label></h2>
-
+                                </div>
                             <div class="col-md-6" style="text-align: right">
 									<div class="popover__wrapper">
 									  <a href="#">
 										<h2 class="popover__title"><i class="fa fa-question-circle" style="font-size:35px;margin-top: 5px;cursor:pointer;"></i>&nbsp;&nbsp;</h2>
 									  </a>
-									  <div class="popover__content" style="text-align:center; margin-top:90px;">
+									  <div class="popover__content" style="text-align:center; margin-top:90px;line-height:18px;">
 										<p class="popover__message">
-											<h5 style="background-color: #efefef;
-			                                    padding: 5px;"><asp:Label ID="lblHeaderDudasAclaraciones" runat="server" Text="Dudas o Aclaraciones" Font-Bold="true"></asp:Label></h5>
-											<asp:Label ID="lblFavorComunicarse" runat="server" Text="Favor de comunicarse con:" Font-Bold="false"></asp:Label><br /> 
-											<asp:Label ID="lblNombreAyuda" runat="server" Text="" Font-Bold="true"></asp:Label><br />
-												al teléfono:<br /> <a href="tel:+525555555555"> <asp:Label ID="lblTel" runat="server" Text="" Font-Bold="true"></asp:Label></a>
+											<h5 style="background-color: #efefef; padding: 5px;">
+                                            <asp:Label ID="lblHeaderDudasAclaraciones" runat="server" Text="Dudas o Aclaraciones" Font-Bold="true" Style="color:#5a738e;"></asp:Label></h5>
+											<asp:Label ID="lblFavorComunicarse" runat="server" Text="Favor de comunicarse con:" Font-Bold="false" Style="color:#5a738e;"></asp:Label><br /> 
+											<asp:Label ID="lblNombreAyuda" runat="server" Text="" Font-Bold="true" Style="color:#5a738e;"></asp:Label><br />
+												al teléfono:<br /> <a href="tel:+525555555555"> <asp:Label ID="lblTel" runat="server" Text="" Font-Bold="true" Style="color:#5a738e;"></asp:Label></a>
 										</p>
 									  </div>
 									</div>
 								</div>
-
+                            </div>
+                            
                             <div class="clearfix"></div>                          
                         </div>                      
                         <div class="row">
