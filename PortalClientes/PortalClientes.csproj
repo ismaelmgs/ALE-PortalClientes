@@ -1558,6 +1558,7 @@
     <Content Include="Views\frmFlights_Detalle.aspx" />
     <Content Include="Views\frmLegal.aspx" />
     <Content Include="Views\frmMantenimientos.aspx" />
+    <Content Include="Views\frmMapaflota.aspx" />
     <Content Include="Views\frmMetricasEstadisticas.aspx" />
     <Content Include="Views\frmReportes.aspx" />
     <Content Include="Views\frmTransacciones.aspx" />
@@ -1900,6 +1901,13 @@
     </Compile>
     <Compile Include="Views\frmMantenimientos.aspx.designer.cs">
       <DependentUpon>frmMantenimientos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\frmMapaflota.aspx.cs">
+      <DependentUpon>frmMapaflota.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\frmMapaflota.aspx.designer.cs">
+      <DependentUpon>frmMapaflota.aspx</DependentUpon>
     </Compile>
     <Compile Include="Views\frmMetricasEstadisticas.aspx.cs">
       <DependentUpon>frmMetricasEstadisticas.aspx</DependentUpon>
