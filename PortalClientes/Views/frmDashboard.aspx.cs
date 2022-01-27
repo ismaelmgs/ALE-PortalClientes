@@ -47,6 +47,8 @@ namespace PortalClientes.Views
             {
                 lblMatriculaAeronave.Text = Utils.MatriculaActual;
                 LlenarDashboard();
+                //string script = "alert('hola que hace');";
+                //ScriptManager.RegisterStartupScript(this, typeof(Page), Guid.NewGuid().ToString(), script, true);
             }
             
         }
@@ -203,7 +205,7 @@ namespace PortalClientes.Views
                 }
             }
 
-            ScriptManager.RegisterStartupScript(this.Page, this.GetType(), Guid.NewGuid().ToString(), "initialize();", true);
+            //ScriptManager.RegisterStartupScript(this.Page, this.GetType(), Guid.NewGuid().ToString(), "initialize();", true);
         }
 
         private string FormatoHora(decimal? total)

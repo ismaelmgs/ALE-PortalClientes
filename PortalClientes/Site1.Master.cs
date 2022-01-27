@@ -83,7 +83,7 @@ namespace PortalClientes
             foreach (MenuDinamico oMenu in olst)
             {
                 string sNombre = Utils.Idioma == "es-MX" || Utils.Idioma == string.Empty ? oMenu.nombreESP : oMenu.nombreUSD;
-                sHtml += "<li><a href = '" + oMenu.urlPage + "'><i class='" + oMenu.style + "'></i>"+ sNombre + "</a></li>";
+                sHtml += "<li class='item'><a href = '" + oMenu.urlPage + "'><i class='" + oMenu.style + "'></i>"+ sNombre + "</a></li>";
             }
 
             sHtml += " </ul>";

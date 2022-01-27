@@ -19,9 +19,9 @@ function closeSession() {
     }, 5000);
 }
 
-
 var menuLat = document.getElementsByClassName("item");
 var matriculas = document.getElementsByClassName("dropdown-item");
+// var botonesExportar = document.getElementsByClassName("btn");
 
 for (var i = 0; i < menuLat.length; i++) {
     menuLat[i].addEventListener('click', openLoading , false);
@@ -30,5 +30,9 @@ for (var i = 0; i < menuLat.length; i++) {
 for (var i = 0; i < matriculas.length; i++) {
     matriculas[i].addEventListener('click', openLoading , false);
 }
+
+// for (var i = 0; i < botonesExportar.length; i++) {
+//     botonesExportar[i].addEventListener('click', openLoading , false);
+// }
 
 console.log('si exta jalando este archivo');
