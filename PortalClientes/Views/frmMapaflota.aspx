@@ -116,7 +116,7 @@
                                             </div>
                                         </div>
                                         <br />
-                                        <div class="row">
+                                        <%--<div class="row">
                                             <div class="col-md-12 col-sm-12">
                                                 <div class="x_title">
                                                     <h2>
@@ -158,7 +158,7 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div>
+                                        </div>--%>
 
                                     </div>
                                     <div class="col-md-9">

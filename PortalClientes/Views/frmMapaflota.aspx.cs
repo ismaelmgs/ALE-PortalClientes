@@ -70,7 +70,7 @@ namespace PortalClientes.Views
 
         private void ArmaFormulario()
         {
-            lblLocacion.Text = Properties.Resources.MF_Locacion;
+            lblLocacion.Text = Properties.Resources.MF_Aeropuerto;
             lblRutas.Text = Properties.Resources.MF_Rutas;
             lblPeriodo.Text = Properties.Resources.MF_Periodo;
             lblAeronave.Text = Properties.Resources.MF_Aeronave;
@@ -79,12 +79,12 @@ namespace PortalClientes.Views
             lblVuelos.Text = Properties.Resources.MF_Vuelos;
             lblHorasVuelo.Text = Properties.Resources.MF_HVoladas;
             lblAeropuertos.Text = Properties.Resources.MF_Aeropuerto;
-            lblMiVuelo.Text = Properties.Resources.MF_MiVuelo;
-            lblRutass.Text = Properties.Resources.MF_Rutas;
-            lblMultiple.Text = Properties.Resources.MF_Multiple;
-            lblPropietarioTerceros.Text = Properties.Resources.MF_PropietarioTercero;
-            lblPropietarioPrincipal.Text = Properties.Resources.MF_PropietarioPpl;
-            lblTiposRutas.Text = Properties.Resources.MF_TRuta;
+            lblMiVuelo.Text = Properties.Resources.MF_Distancia;
+            //lblRutass.Text = Properties.Resources.MF_Rutas;
+            //lblMultiple.Text = Properties.Resources.MF_Multiple;
+            //lblPropietarioTerceros.Text = Properties.Resources.MF_PropietarioTercero;
+            //lblPropietarioPrincipal.Text = Properties.Resources.MF_PropietarioPpl;
+            //lblTiposRutas.Text = Properties.Resources.MF_TRuta;
             lblEstadosVuelos.Text = Properties.Resources.MF_EstadoVuelos;
 
             var v2 = ddlMeses.SelectedValue;

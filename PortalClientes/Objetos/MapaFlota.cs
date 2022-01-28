@@ -17,7 +17,7 @@ namespace PortalClientes.Objetos
     public class totales
     {
         public int numeroVuelos { get; set; }
-        public int numeroAeropuertos { get; set; }
+        public int numAeropuertos { get; set; }
         public string tiempoVolado { get; set; }
         public string distanciaVolada { get; set; }
     }

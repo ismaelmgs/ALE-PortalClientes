@@ -4,6 +4,7 @@ function getUrlMF() {
 }
 
 function initializeMF() {
+	lPanel.Show();
 	// Coordenada de la ruta
 	var flightPlanCoordinatesRutas = []
 	var flightPlanCoordinatesAero = []
@@ -132,11 +133,11 @@ function initializeMF() {
 		const dataRutas = response.detalleRutas
 		const dataAeropuertos = response.detalleAeropuertos
 
-		const { numeroVuelos, tiempoVolado, numeroAeropuertos, distanciaVolada } = response.detalleTotalVuelos
+		const { numeroVuelos, tiempoVolado, numAeropuertos, distanciaVolada } = response.detalleTotalVuelos
 
 		document.getElementById("ContentPlaceHolder1_lblVuelosRes").innerHTML = numeroVuelos;
 		document.getElementById("ContentPlaceHolder1_lblHorasVueloRes").innerHTML = tiempoVolado;
-		document.getElementById("ContentPlaceHolder1_lblAeropuertosRes").innerHTML = numeroAeropuertos;
+		document.getElementById("ContentPlaceHolder1_lblAeropuertosRes").innerHTML = numAeropuertos;
 		document.getElementById("ContentPlaceHolder1_lblMiVueloRes").innerHTML = distanciaVolada;
 
 		dataRutas.forEach((item, index, array) => {
@@ -197,6 +198,8 @@ function initializeMF() {
 			})
 		}
 	})
+
+	lPanel.Hide();
 }
 
 function ajax_dataMF(objMF, success) {

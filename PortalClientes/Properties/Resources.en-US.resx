@@ -1233,8 +1233,8 @@
   <data name="MF_Locacion" xml:space="preserve">
     <value>Location</value>
   </data>
-  <data name="MF_MiVuelo" xml:space="preserve">
-    <value>My Flight</value>
+  <data name="MF_Distancia" xml:space="preserve">
+    <value>Distance</value>
   </data>
   <data name="MF_Multiple" xml:space="preserve">
     <value>Multiple</value>

@@ -2104,6 +2104,15 @@ namespace PortalClientes.Properties {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Distancia.
+        /// </summary>
+        internal static string MF_Distancia {
+            get {
+                return ResourceManager.GetString("MF_Distancia", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Estado de Vuelos.
         /// </summary>
         internal static string MF_EstadoVuelos {
@@ -2136,15 +2145,6 @@ namespace PortalClientes.Properties {
         internal static string MF_Locacion {
             get {
                 return ResourceManager.GetString("MF_Locacion", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Busca una cadena traducida similar a Mi vuelo.
-        /// </summary>
-        internal static string MF_MiVuelo {
-            get {
-                return ResourceManager.GetString("MF_MiVuelo", resourceCulture);
             }
         }
         
