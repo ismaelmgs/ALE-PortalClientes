@@ -57,14 +57,14 @@ namespace PortalClientes.Views
 
         public void cargarMapaFlota(MapaFlota oMapaFlota)
         {
-            oFlota = oMapaFlota;
-            Session["detRutas"] = oFlota.detalleRutas;
-            Session["detAeropuertos"] = oFlota.detalleAeropuertos;
+            //oFlota = oMapaFlota;
+            //Session["detRutas"] = oFlota.detalleRutas;
+            //Session["detAeropuertos"] = oFlota.detalleAeropuertos;
 
-            lblVuelosRes.Text = oFlota.detalleTotalVuelos.numeroVuelos.S();
-            lblHorasVueloRes.Text = oFlota.detalleTotalVuelos.tiempoVolado.S();
-            lblAeropuertosRes.Text = oFlota.detalleTotalVuelos.numeroAeropuertos.S();
-            lblMiVueloRes.Text = oFlota.detalleTotalVuelos.distanciaVolada.S();
+            //lblVuelosRes.Text = oFlota.detalleTotalVuelos.numeroVuelos.S();
+            //lblHorasVueloRes.Text = oFlota.detalleTotalVuelos.tiempoVolado.S();
+            //lblAeropuertosRes.Text = oFlota.detalleTotalVuelos.numAeropuertos.S();
+            //lblMiVueloRes.Text = oFlota.detalleTotalVuelos.distanciaVolada.S();
 
         }
 
