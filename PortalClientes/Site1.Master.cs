@@ -79,13 +79,21 @@ namespace PortalClientes
         {
             List<MenuDinamico> olst = ObtieneMenu();
             string sHtml = "<ul class='nav side-menu'> ";
+            string sliHtml = "";
 
             foreach (MenuDinamico oMenu in olst)
             {
                 string sNombre = Utils.Idioma == "es-MX" || Utils.Idioma == string.Empty ? oMenu.nombreESP : oMenu.nombreUSD;
-                sHtml += "<li class='item'><a href = '" + oMenu.urlPage + "'><i class='" + oMenu.style + "'></i>"+ sNombre + "</a></li>";
+                if(sNombre == "Usuarios" || sNombre == "Users")
+                {
+                    sliHtml += "<li class='item'><a href = '" + oMenu.urlPage + "'><i class='" + oMenu.style + "'></i>" + sNombre + "</a></li>";
+                }
+                else
+                {
+                    sHtml += "<li class='item'><a href = '" + oMenu.urlPage + "'><i class='" + oMenu.style + "'></i>" + sNombre + "</a></li>";
+                }             
             }
-
+            sHtml += sliHtml;
             sHtml += " </ul>";
 
             divMenu.InnerHtml = sHtml;
