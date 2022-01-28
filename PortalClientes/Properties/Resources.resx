@@ -1212,4 +1212,49 @@
   <data name="Du_FavorCom" xml:space="preserve">
     <value>Favor de comunicarse con:</value>
   </data>
+  <data name="MF_Aeronave" xml:space="preserve">
+    <value>Aeronave</value>
+  </data>
+  <data name="MF_Aeropuerto" xml:space="preserve">
+    <value>Aeropuertos</value>
+  </data>
+  <data name="MF_EstadoVuelos" xml:space="preserve">
+    <value>Estado de Vuelos</value>
+  </data>
+  <data name="MF_FuenteDatos" xml:space="preserve">
+    <value>Fuentes de Datos</value>
+  </data>
+  <data name="MF_HVoladas" xml:space="preserve">
+    <value>Horas de vuelo</value>
+  </data>
+  <data name="MF_Locacion" xml:space="preserve">
+    <value>Locación</value>
+  </data>
+  <data name="MF_MiVuelo" xml:space="preserve">
+    <value>Mi vuelo</value>
+  </data>
+  <data name="MF_Multiple" xml:space="preserve">
+    <value>Multiple</value>
+  </data>
+  <data name="MF_Periodo" xml:space="preserve">
+    <value>Periodo</value>
+  </data>
+  <data name="MF_PropietarioPpl" xml:space="preserve">
+    <value>Propietario - Principal</value>
+  </data>
+  <data name="MF_PropietarioTercero" xml:space="preserve">
+    <value>Propietarios - Terceros</value>
+  </data>
+  <data name="MF_Rutas" xml:space="preserve">
+    <value>Rutas</value>
+  </data>
+  <data name="MF_TRuta" xml:space="preserve">
+    <value>Tipos de rutas</value>
+  </data>
+  <data name="MF_TVuelo" xml:space="preserve">
+    <value>Tipos de Vuelo</value>
+  </data>
+  <data name="MF_Vuelos" xml:space="preserve">
+    <value>Vuelos</value>
+  </data>
 </root>

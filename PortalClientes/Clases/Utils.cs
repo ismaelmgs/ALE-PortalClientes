@@ -176,6 +176,28 @@ namespace PortalClientes.Clases
             }
         }
 
+        public static List<string> Matriculas
+        {
+            get
+            {
+                if (System.Web.HttpContext.Current.Session["UserIdentity"] == null)
+                {
+                    UserIdentity oUser= new UserIdentity();
+                    oUser.lsMatriculas = null;
+                    System.Web.HttpContext.Current.Session["UserIdentity"] = oUser;
+                }
+
+                return ((UserIdentity)System.Web.HttpContext.Current.Session["UserIdentity"]).lsMatriculas;
+            }
+            set
+            {
+                UserIdentity oUser = (UserIdentity)System.Web.HttpContext.Current.Session["UserIdentity"];
+                oUser.lsMatriculas = value;
+                System.Web.HttpContext.Current.Session["UserIdentity"] = oUser;
+            }
+        }
+
+
         public static DataTable ConvertListToDataTable<T>(this IList<T> data)
         {
             PropertyDescriptorCollection properties = TypeDescriptor.GetProperties(typeof(T));

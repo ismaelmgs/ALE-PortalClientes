@@ -250,6 +250,7 @@
     <Content Include="build\js\GraficasJS\GraficasDashboard.js" />
     <Content Include="build\js\moment\moment.min.js" />
     <Content Include="build\images\no_image.jpg" />
+    <Content Include="build\js\mapaFlota.js" />
     <Content Include="build\js\RutasyAeropuertos.js" />
     <Content Include="build\js\scheduler.js" />
     <Content Include="Images\icons\descargar.png" />
@@ -1582,6 +1583,7 @@
     <Compile Include="DomainModel\DBEstadoCuenta.cs">
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
+    <Compile Include="DomainModel\DBMapaFlota.cs" />
     <Compile Include="DomainModel\DBMetricasEstatics.cs" />
     <Compile Include="DomainModel\DBTripulacion.cs" />
     <Compile Include="DomainModel\DBDashboard.cs" />
@@ -1591,12 +1593,14 @@
     <Compile Include="DomainModel\DBVuelos.cs" />
     <Compile Include="Interfaces\IViewDetalleReportes.cs" />
     <Compile Include="Interfaces\IViewEstadoCuenta.cs" />
+    <Compile Include="Interfaces\IViewMapaFlota.cs" />
     <Compile Include="Interfaces\IViewMetricasEstadisticas.cs" />
     <Compile Include="Interfaces\IViewTripulacion.cs" />
     <Compile Include="Interfaces\IViewVuelos.cs" />
     <Compile Include="Objetos\Calendario.cs" />
     <Compile Include="Objetos\DatosMetricas.cs" />
     <Compile Include="Objetos\EstadoCuenta.cs" />
+    <Compile Include="Objetos\MapaFlota.cs" />
     <Compile Include="Objetos\Reportes.cs" />
     <Compile Include="Objetos\RequestMatricula.cs" />
     <Compile Include="Objetos\MatriculasUsuario.cs" />
@@ -1623,6 +1627,7 @@
     <Compile Include="Objetos\Vuelos.cs" />
     <Compile Include="Presenter\DetalleReportes_Presenter.cs" />
     <Compile Include="Presenter\EstadoCuenta_Presenter.cs" />
+    <Compile Include="Presenter\MapaFlota_Presenter.cs" />
     <Compile Include="Presenter\MetricasEstadisticas_Presenter.cs" />
     <Compile Include="Presenter\Tripulacion_Presenter.cs" />
     <Compile Include="Presenter\Vuelos_Presenter.cs" />

@@ -709,7 +709,7 @@ TagPrefix="dx" %>
 					let fecha = new Date()
 					let hora = fecha.getHours()
 
-					if (hora >= 19 && hora < 6) {    
+					if (hora >= 19 || hora < 6) {    
 						let styles = [
 							{ elementType: "geometry", stylers: [{ color: "#242f3e" }] },
 							{
