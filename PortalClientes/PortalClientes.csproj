@@ -1562,6 +1562,7 @@
     <Content Include="Views\frmMapaflota.aspx" />
     <Content Include="Views\frmMetricasEstadisticas.aspx" />
     <Content Include="Views\frmReportes.aspx" />
+    <Content Include="Views\frmTiemposciclos.aspx" />
     <Content Include="Views\frmTransacciones.aspx" />
     <Content Include="Views\frmTripulacion.aspx" />
     <Content Include="Views\frmTuAeronave.aspx" />
@@ -1927,6 +1928,13 @@
     </Compile>
     <Compile Include="Views\frmReportes.aspx.designer.cs">
       <DependentUpon>frmReportes.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\frmTiemposciclos.aspx.cs">
+      <DependentUpon>frmTiemposciclos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\frmTiemposciclos.aspx.designer.cs">
+      <DependentUpon>frmTiemposciclos.aspx</DependentUpon>
     </Compile>
     <Compile Include="Views\frmTransacciones.aspx.cs">
       <DependentUpon>frmTransacciones.aspx</DependentUpon>
