@@ -19,7 +19,7 @@ namespace PortalClientes.DomainModel
                 JavaScriptSerializer ser = new JavaScriptSerializer();
                 MapaFlota v = new MapaFlota();
                 FiltroEvent oLog = new FiltroEvent();
-                oLog.matricula = "XA-CLB";// sMatricula;
+                oLog.matricula = sMatricula;
                 oLog.meses = imeses;
 
                 TokenWS oToken = Utils.ObtieneToken;
