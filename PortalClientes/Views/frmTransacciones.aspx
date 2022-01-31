@@ -48,7 +48,7 @@
                 </div>
                 <div class="col-md-4 tile_count">
                     <div class="" style="text-align: center;">
-                        <span class="count_top"><i class="fa fa-clock-o"></i> <i class="fa fa-money"></i>
+                        <span class="count_top"><i runat="server" id="iconTime" class="fa fa-clock-o"></i> <i runat="server" id="iconMoney" class="fa fa-money"></i>
                             <asp:Label ID="lblTotal" runat="server" Text=" Pagos" Font-Bold="false"></asp:Label></span>
                         <div class="count">
                             <asp:Label ID="lblTotalSimbolo" runat="server" Text=" $" Font-Bold="true" CssClass="count3" />

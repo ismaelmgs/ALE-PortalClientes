@@ -1235,6 +1235,11 @@ namespace PortalClientes.Views
                     lblTotalTrasn.Text = Properties.Resources.TabTran_NoVuelos;
                     lblTotal.Text = Properties.Resources.TabTran_TiempoTotVuelo;
                     lblPromedio.Text = Properties.Resources.TabTran_PromedioVuelo;
+
+                    iconTime.Visible = true;
+                    iconMoney.Visible = false;
+                    lblTotalSimbolo.Visible = false;
+                    lblPromedioSimbolo.Visible = false;
                     break;
                 case 5:
                     lblTransacciones.Text = (string)Session["title"];
@@ -1243,6 +1248,11 @@ namespace PortalClientes.Views
                     lblTotalTrasn.Text = Properties.Resources.TabTran_NoVuelos;
                     lblTotal.Text = Properties.Resources.TabTran_promedioPax;
                     lblPromedio.Text = Properties.Resources.TabTran_TiempoTotVuelo;
+
+                    iconTime.Visible = true;
+                    iconMoney.Visible = false;
+                    lblTotalSimbolo.Visible = false;
+                    lblPromedioSimbolo.Visible = false;
                     break;
                 case 7:
                     lblTransacciones.Text = (string)Session["title"];
@@ -1251,6 +1261,11 @@ namespace PortalClientes.Views
                     lblTotalTrasn.Text = Properties.Resources.TabTran_NoVuelos;
                     lblTotal.Text = Properties.Resources.TabTran_TiempoTotVuelo;
                     lblPromedio.Text = Properties.Resources.TabTran_PromedioVuelo;
+
+                    iconTime.Visible = true;
+                    iconMoney.Visible = false;
+                    lblTotalSimbolo.Visible = false;
+                    lblPromedioSimbolo.Visible = false;
                     break;
                 case 8:
                     lblTransacciones.Text = (string)Session["title"];
@@ -1259,6 +1274,11 @@ namespace PortalClientes.Views
                     lblTotalTrasn.Text = Properties.Resources.TabTran_NoVuelos;
                     lblTotal.Text = Properties.Resources.TabTran_TiempoTotVuelo;
                     lblPromedio.Text = Properties.Resources.TabTran_PromedioVuelo;
+
+                    iconTime.Visible = true;
+                    iconMoney.Visible = false;
+                    lblTotalSimbolo.Visible = false;
+                    lblPromedioSimbolo.Visible = false;
                     break;
                 case 12:
                     lblTransacciones.Text = (string)Session["title"];
@@ -1267,6 +1287,11 @@ namespace PortalClientes.Views
                     lblTotalTrasn.Text = Properties.Resources.TabTran_MontoTotal;
                     lblTotal.Text = Properties.Resources.TabTran_CostoHV;
                     lblPromedio.Text = Properties.Resources.TabTran_TiempoTotVuelo;
+
+                    iconTime.Visible = true;
+                    iconMoney.Visible = false;
+                    lblTotalSimbolo.Visible = false;
+                    lblPromedioSimbolo.Visible = false;
                     break;
                 default:
                     lblTransacciones.Text = (string)Session["title"];
@@ -1275,6 +1300,11 @@ namespace PortalClientes.Views
                     lblTotalTrasn.Text = Properties.Resources.TabTran_NoGastos;
                     lblTotal.Text = Properties.Resources.TabTran_MontoTotal;
                     lblPromedio.Text = Properties.Resources.TabTran_PromedioMens;
+
+                    iconTime.Visible = false;
+                    iconMoney.Visible = true;
+                    lblTotalSimbolo.Visible = true;
+                    lblPromedioSimbolo.Visible = true;
                     break;
             }
 
@@ -1846,133 +1876,173 @@ namespace PortalClientes.Views
             Response.Charset = "";
             Response.ContentType = "application/octet-stream";
             Response.Cache.SetCacheability(HttpCacheability.NoCache);
-            using (StringWriter sw = new StringWriter())
+
+            gvGastos.AllowPaging = false;
+            var tipo = Convert.ToInt32(Session["tipoTransaccion"]);
+            Transacciones transacciones = new Transacciones();
+            if (tipo == 1)
             {
-                HtmlTextWriter hw = new HtmlTextWriter(sw);
-
-
-                gvGastos.AllowPaging = false;
-                var tipo = Convert.ToInt32(Session["tipoTransaccion"]);
-                Transacciones transacciones = new Transacciones();
-                if (tipo == 1)
-                {
-                    transacciones.gastos = (List<gvGastos>)Session["data"];
-                    LlenarGV(transacciones, tipo);
-                }
-
-                else if (tipo == 2)
-                {
-                    transacciones.gastosAe = (List<gvGastosAeropuerto>)Session["data"];
-                    LlenarGV(transacciones, tipo);
-                }
-
-                else if (tipo == 3)
-                {
-                    transacciones.gastosProv = (List<gvGastosProveedor>)Session["data"];
-                    LlenarGV(transacciones, tipo);
-                }
-
-                else if (tipo == 4)
-                {
-                    transacciones.vuelos = (List<vuelo>)Session["data"];
-                    LlenarGV(transacciones, tipo);
-                }
-
-                else if (tipo == 5)
-                {
-                    transacciones.promedioPax = (List<gvPromedioPax>)Session["data"];
-                    LlenarGV(transacciones, tipo);
-                }
-
-                else if (tipo == 6)
-                {
-                    transacciones.promedioCosto = (List<gvPromedioCosto>)Session["data"];
-                    LlenarGV(transacciones, tipo);
-                }
-
-                else if (tipo == 7)
-                {
-                    transacciones.horasVoladas = (List<gvhorasVoladas>)Session["data"];
-                    LlenarGV(transacciones, tipo);
-                }
-
-                else if (tipo == 8)
-                {
-                    transacciones.numeroVuelos = (List<gvnoVuelos>)Session["data"];
-                    LlenarGV(transacciones, tipo);
-                }
-
-                else if (tipo == 9)
-                {
-                    transacciones.costosFijosVariable = (List<gvCostosFV>)Session["data"];
-                    LlenarGV(transacciones, tipo);
-                }
-
-                else if (tipo == 10)
-                {
-                    transacciones.gastosTotales = (List<gvGastosT>)Session["data"];
-                    LlenarGV(transacciones, tipo);
-                }
-
-                else if (tipo == 11)
-                {
-                    transacciones.costosHoraVuelo = (List<gvCostosH>)Session["data"];
-                    LlenarGV(transacciones, tipo);
-                }
-
-                else if (tipo == 12)
-                {
-                    transacciones.costosFijosVariableHora = (List<gvCostosFVH>)Session["data"];
-                    LlenarGV(transacciones, tipo);
-                }
-
-                else if (tipo == 13)
-                {
-                    transacciones.detalleEdoCuenta = (List<detalleEdoCta>)Session["data"];
-                    LlenarGV(transacciones, tipo);
-                }
-
-                else if (tipo == 14)
-                {
-                    transacciones.detGastos = (List<gvDetGastos>)Session["data"];
-                    LlenarGV(transacciones, tipo);
-                }
-
-
-                gvGastos.HeaderRow.BackColor = Color.White;
-                foreach (TableCell cell in gvGastos.HeaderRow.Cells)
-                {
-                    cell.BackColor = gvGastos.HeaderStyle.BackColor;
-                }
-                foreach (GridViewRow row in gvGastos.Rows)
-                {
-                    row.BackColor = Color.White;
-                    foreach (TableCell cell in row.Cells)
-                    {
-                        if (row.RowIndex % 2 == 0)
-                        {
-                            cell.BackColor = gvGastos.AlternatingRowStyle.BackColor;
-                        }
-                        else
-                        {
-                            cell.BackColor = gvGastos.RowStyle.BackColor;
-                        }
-                        cell.CssClass = "textmode";
-                    }
-                }
-
-                gvGastos.RenderControl(hw);
-
-                StringReader sr = new StringReader(sw.ToString());
-                Document pdfDoc = new Document(PageSize.A4.Rotate(), 10f, 10f, 100f, 0f);
-                HTMLWorker htmlparser = new HTMLWorker(pdfDoc);
-                PdfWriter.GetInstance(pdfDoc, Response.OutputStream);
-                pdfDoc.Open();
-                htmlparser.Parse(sr);
-                pdfDoc.Close();
-                Response.Write(pdfDoc);
-                Response.End();
+                transacciones.gastos = (List<gvGastos>)Session["data"];
+                LlenarGV(transacciones, tipo);
             }
+
+            else if (tipo == 2)
+            {
+                transacciones.gastosAe = (List<gvGastosAeropuerto>)Session["data"];
+                LlenarGV(transacciones, tipo);
+            }
+
+            else if (tipo == 3)
+            {
+                transacciones.gastosProv = (List<gvGastosProveedor>)Session["data"];
+                LlenarGV(transacciones, tipo);
+            }
+
+            else if (tipo == 4)
+            {
+                transacciones.vuelos = (List<vuelo>)Session["data"];
+                LlenarGV(transacciones, tipo);
+            }
+
+            else if (tipo == 5)
+            {
+                transacciones.promedioPax = (List<gvPromedioPax>)Session["data"];
+                LlenarGV(transacciones, tipo);
+            }
+
+            else if (tipo == 6)
+            {
+                transacciones.promedioCosto = (List<gvPromedioCosto>)Session["data"];
+                LlenarGV(transacciones, tipo);
+            }
+
+            else if (tipo == 7)
+            {
+                transacciones.horasVoladas = (List<gvhorasVoladas>)Session["data"];
+                LlenarGV(transacciones, tipo);
+            }
+
+            else if (tipo == 8)
+            {
+                transacciones.numeroVuelos = (List<gvnoVuelos>)Session["data"];
+                LlenarGV(transacciones, tipo);
+            }
+
+            else if (tipo == 9)
+            {
+                transacciones.costosFijosVariable = (List<gvCostosFV>)Session["data"];
+                LlenarGV(transacciones, tipo);
+            }
+
+            else if (tipo == 10)
+            {
+                transacciones.gastosTotales = (List<gvGastosT>)Session["data"];
+                LlenarGV(transacciones, tipo);
+            }
+
+            else if (tipo == 11)
+            {
+                transacciones.costosHoraVuelo = (List<gvCostosH>)Session["data"];
+                LlenarGV(transacciones, tipo);
+            }
+
+            else if (tipo == 12)
+            {
+                transacciones.costosFijosVariableHora = (List<gvCostosFVH>)Session["data"];
+                LlenarGV(transacciones, tipo);
+            }
+
+            else if (tipo == 13)
+            {
+                transacciones.detalleEdoCuenta = (List<detalleEdoCta>)Session["data"];
+                LlenarGV(transacciones, tipo);
+            }
+
+            else if (tipo == 14)
+            {
+                transacciones.detGastos = (List<gvDetGastos>)Session["data"];
+                LlenarGV(transacciones, tipo);
+            }
+
+            PdfPTable pdfTable = new PdfPTable(gvGastos.Columns.Count);
+            pdfTable.DefaultCell.Padding = 3;
+            pdfTable.WidthPercentage = 100;
+            pdfTable.HorizontalAlignment = Element.ALIGN_LEFT;
+
+            foreach (BoundField column in gvGastos.Columns)
+            {
+                PdfPCell cell = new PdfPCell(new Phrase(column.HeaderText));
+                pdfTable.AddCell(cell);
+            }
+
+            foreach (GridViewRow row in gvGastos.Rows)
+            {
+                for(var i = 0; i < row.Cells.Count; i++)
+                {
+                    pdfTable.AddCell(row.Cells[i].Text);
+                }
+
+                //foreach (BoundField cell in row.Cells)
+                //{
+                //    pdfTable.AddCell(cell. .HeaderText.ToString());
+                //}
+            }
+
+            Document pdfDoc = new Document(PageSize.A4, 10f, 20f, 20f, 10f);
+            //PdfWriter.GetInstance(pdfDoc, stream);
+            PdfWriter.GetInstance(pdfDoc, Response.OutputStream);
+            pdfDoc.Open();
+            pdfDoc.Add(pdfTable);
+            pdfDoc.Close();
+            //stream.Close();
+
+            //using (FileStream stream = new FileStream("example", FileMode.Create))
+            //{
+                
+            //}
+
+            //using (StringWriter sw = new StringWriter())
+            //{
+            //    HtmlTextWriter hw = new HtmlTextWriter(sw);
+
+
+               
+
+
+                //gvGastos.HeaderRow.BackColor = Color.White;
+                //foreach (TableCell cell in gvGastos.HeaderRow.Cells)
+                //{
+                //    cell.BackColor = gvGastos.HeaderStyle.BackColor;
+                //}
+                //foreach (GridViewRow row in gvGastos.Rows)
+                //{
+                //    row.BackColor = Color.White;
+                //    foreach (TableCell cell in row.Cells)
+                //    {
+                //        if (row.RowIndex % 2 == 0)
+                //        {
+                //            cell.BackColor = gvGastos.AlternatingRowStyle.BackColor;
+                //        }
+                //        else
+                //        {
+                //            cell.BackColor = gvGastos.RowStyle.BackColor;
+                //        }
+                //        cell.CssClass = "textmode";
+                //    }
+                //}
+
+                //gvGastos.RenderControl(hw);
+
+                //StringReader sr = new StringReader(sw.ToString());
+                //Document pdfDoc = new Document(PageSize.A4.Rotate(), 10f, 10f, 100f, 0f);
+                //HTMLWorker htmlparser = new HTMLWorker(pdfDoc);
+                //PdfWriter.GetInstance(pdfDoc, Response.OutputStream);
+                //pdfDoc.Open();
+                //htmlparser.Parse(sr);
+                //pdfDoc.Close();
+                //Response.Write(pdfDoc);
+                //Response.End();
+            //}
         }
         #endregion
     }
