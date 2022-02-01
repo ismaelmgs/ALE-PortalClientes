@@ -30,7 +30,44 @@
                         </div>
                         <div class="row">
                             <div class="col-md-12">
-                                Contenido
+
+                                <!-- RLR -->
+
+                                <ul class="nav nav-tabs" id="myTab" role="tablist">
+                                    <li class="nav-item">
+                                        <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">
+                                            <asp:Label ID="lblProgramado" runat="server" Text="Programado"></asp:Label></a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">
+                                            <asp:Label ID="lblProyectado" runat="server" Text="Proyectado"></asp:Label></a>
+                                    </li>
+                                </ul>
+                                <div class="tab-content" id="myTabContent">
+                                    <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                                        Grid
+                                    </div>
+                                    <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                                        <div class="x_title">
+                                            <h2>
+                                                <asp:Label ID="MesEnCurso" runat="server" Text="Mes en curso" Font-Bold="true"></asp:Label></h2>
+                                            <div class="clearfix"></div>
+                                        </div>
+                                            Grid
+                                        <br /><br />
+                                        <hr />
+                                        <br />
+                                        <div class="x_title">
+                                            <h2>
+                                                <asp:Label ID="lblSiguineteMes" runat="server" Text="Siguiente Mes" Font-Bold="true"></asp:Label></h2>
+                                            <div class="clearfix"></div>
+                                        </div>
+                                            Grid
+                                    </div>
+                                </div>
+
+                                <!-- RLR -->
+
                             </div>
                         </div>
                     </div>
