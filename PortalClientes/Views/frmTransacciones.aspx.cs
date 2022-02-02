@@ -1964,85 +1964,81 @@ namespace PortalClientes.Views
                 LlenarGV(transacciones, tipo);
             }
 
-            PdfPTable pdfTable = new PdfPTable(gvGastos.Columns.Count);
-            pdfTable.DefaultCell.Padding = 3;
-            pdfTable.WidthPercentage = 100;
-            pdfTable.HorizontalAlignment = Element.ALIGN_LEFT;
+            //PdfPTable pdfTable = new PdfPTable(gvGastos.Columns.Count);
+            //pdfTable.DefaultCell.Padding = 3;
+            //pdfTable.WidthPercentage = 100;
+            //pdfTable.HorizontalAlignment = Element.ALIGN_LEFT;
 
-            foreach (BoundField column in gvGastos.Columns)
-            {
-                PdfPCell cell = new PdfPCell(new Phrase(column.HeaderText));
-                pdfTable.AddCell(cell);
-            }
+            //foreach (BoundField column in gvGastos.Columns)
+            //{
+            //    PdfPCell cell = new PdfPCell(new Phrase(column.HeaderText));
+            //    pdfTable.AddCell(cell);
+            //}
 
-            foreach (GridViewRow row in gvGastos.Rows)
+            //foreach (GridViewRow row in gvGastos.Rows)
+            //{
+            //    for(var i = 0; i < row.Cells.Count; i++)
+            //    {
+            //        pdfTable.AddCell(row.Cells[i].Text);
+            //    }
+
+            //    //foreach (BoundField cell in row.Cells)
+            //    //{
+            //    //    pdfTable.AddCell(cell. .HeaderText.ToString());
+            //    //}
+            //}
+
+            //Document pdfDoc = new Document(PageSize.A4, 10f, 20f, 20f, 10f);
+            ////PdfWriter.GetInstance(pdfDoc, stream);
+            //PdfWriter.GetInstance(pdfDoc, Response.OutputStream);
+            //pdfDoc.Open();
+            //pdfDoc.Add(pdfTable);
+            //pdfDoc.Close();
+            ////stream.Close();
+
+            ////using (FileStream stream = new FileStream("example", FileMode.Create))
+            ////{
+
+            ////}
+
+            using (StringWriter sw = new StringWriter())
             {
-                for(var i = 0; i < row.Cells.Count; i++)
+                HtmlTextWriter hw = new HtmlTextWriter(sw);
+
+                gvGastos.HeaderRow.BackColor = Color.White;
+                foreach (TableCell cell in gvGastos.HeaderRow.Cells)
                 {
-                    pdfTable.AddCell(row.Cells[i].Text);
+                    cell.BackColor = gvGastos.HeaderStyle.BackColor;
+                }
+                foreach (GridViewRow row in gvGastos.Rows)
+                {
+                    row.BackColor = Color.White;
+                    foreach (TableCell cell in row.Cells)
+                    {
+                        if (row.RowIndex % 2 == 0)
+                        {
+                            cell.BackColor = gvGastos.AlternatingRowStyle.BackColor;
+                        }
+                        else
+                        {
+                            cell.BackColor = gvGastos.RowStyle.BackColor;
+                        }
+                        cell.CssClass = "textmode";
+                    }
                 }
 
-                //foreach (BoundField cell in row.Cells)
-                //{
-                //    pdfTable.AddCell(cell. .HeaderText.ToString());
-                //}
+                gvGastos.RenderControl(hw);
+
+                StringReader sr = new StringReader(sw.ToString());
+                Document pdfDoc = new Document(PageSize.A4.Rotate(), 10f, 10f, 100f, 0f);
+                HTMLWorker htmlparser = new HTMLWorker(pdfDoc);
+                PdfWriter.GetInstance(pdfDoc, Response.OutputStream);
+                pdfDoc.Open();
+                htmlparser.Parse(sr);
+                pdfDoc.Close();
+                Response.Write(pdfDoc);
+                Response.End();
             }
-
-            Document pdfDoc = new Document(PageSize.A4, 10f, 20f, 20f, 10f);
-            //PdfWriter.GetInstance(pdfDoc, stream);
-            PdfWriter.GetInstance(pdfDoc, Response.OutputStream);
-            pdfDoc.Open();
-            pdfDoc.Add(pdfTable);
-            pdfDoc.Close();
-            //stream.Close();
-
-            //using (FileStream stream = new FileStream("example", FileMode.Create))
-            //{
-                
-            //}
-
-            //using (StringWriter sw = new StringWriter())
-            //{
-            //    HtmlTextWriter hw = new HtmlTextWriter(sw);
-
-
-               
-
-
-                //gvGastos.HeaderRow.BackColor = Color.White;
-                //foreach (TableCell cell in gvGastos.HeaderRow.Cells)
-                //{
-                //    cell.BackColor = gvGastos.HeaderStyle.BackColor;
-                //}
-                //foreach (GridViewRow row in gvGastos.Rows)
-                //{
-                //    row.BackColor = Color.White;
-                //    foreach (TableCell cell in row.Cells)
-                //    {
-                //        if (row.RowIndex % 2 == 0)
-                //        {
-                //            cell.BackColor = gvGastos.AlternatingRowStyle.BackColor;
-                //        }
-                //        else
-                //        {
-                //            cell.BackColor = gvGastos.RowStyle.BackColor;
-                //        }
-                //        cell.CssClass = "textmode";
-                //    }
-                //}
-
-                //gvGastos.RenderControl(hw);
-
-                //StringReader sr = new StringReader(sw.ToString());
-                //Document pdfDoc = new Document(PageSize.A4.Rotate(), 10f, 10f, 100f, 0f);
-                //HTMLWorker htmlparser = new HTMLWorker(pdfDoc);
-                //PdfWriter.GetInstance(pdfDoc, Response.OutputStream);
-                //pdfDoc.Open();
-                //htmlparser.Parse(sr);
-                //pdfDoc.Close();
-                //Response.Write(pdfDoc);
-                //Response.End();
-            //}
         }
         #endregion
     }
