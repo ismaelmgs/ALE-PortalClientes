@@ -24,52 +24,24 @@
                 <div class="col-md-12 col-sm-12">
                     <div class="x_panel">
                         <div class="x_title">
-                            <h2>
-                                <asp:Label ID="lblMantenimientos" runat="server" Text="Mantenimientos" Font-Bold="true"></asp:Label></h2>
-                            <div class="clearfix"></div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-12">
-
-                                <!-- RLR -->
-
-                                <ul class="nav nav-tabs" id="myTab" role="tablist">
-                                    <li class="nav-item">
-                                        <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">
-                                            <asp:Label ID="lblProgramado" runat="server" Text="Programado"></asp:Label></a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">
-                                            <asp:Label ID="lblProyectado" runat="server" Text="Proyectado"></asp:Label></a>
-                                    </li>
-                                </ul>
-                                <div class="tab-content" id="myTabContent">
-                                    <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-                                        Grid
-                                    </div>
-                                    <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-                                        <div class="x_title">
-                                            <h2>
-                                                <asp:Label ID="MesEnCurso" runat="server" Text="Mes en curso" Font-Bold="true"></asp:Label></h2>
-                                            <div class="clearfix"></div>
-                                        </div>
-                                            Grid
-                                        <br /><br />
-                                        <hr />
-                                        <br />
-                                        <div class="x_title">
-                                            <h2>
-                                                <asp:Label ID="lblSiguineteMes" runat="server" Text="Siguiente Mes" Font-Bold="true"></asp:Label></h2>
-                                            <div class="clearfix"></div>
-                                        </div>
-                                            Grid
-                                    </div>
+                            <div class="row">
+                                <div class="col-md-6" style="text-align:left;">
+                                    <h2><asp:Label ID="lblMantenimientos" runat="server" Text="Mantenimientos" Font-Bold="true"></asp:Label></h2>
                                 </div>
-
-                                <!-- RLR -->
-
+                                <div class="col-md-6" style="text-align:right;">
+                                    <asp:LinkButton ID="LinkButton1" runat="server" Text="<i class='fa fa-file-excel-o' style='color:#73879c;font-size:25px;'></i>" CssClass="btn" />
+                                    <asp:LinkButton ID="LinkButton2" runat="server" Text="<i class='fa fa-file-pdf-o' style='color:#73879c;font-size:25px;' ></i>" CssClass="btn" />
+                                </div>
+                            </div>
+                            </div>
+                            <div class="clearfix"></div>
+                            <div class="row">
+                            <div class="col-md-12">
+                                Grid
                             </div>
                         </div>
+                        </div>
+                        
                     </div>
                 </div>
             </div>
