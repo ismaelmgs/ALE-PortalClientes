@@ -21,6 +21,7 @@ function closeSession() {
 
 var menuLat = document.getElementsByClassName("item");
 var matriculas = document.getElementsByClassName("dropdown-item");
+var dropDown = document.getElementsByClassName("ddl");
 // var botonesExportar = document.getElementsByClassName("btn");
 
 for (var i = 0; i < menuLat.length; i++) {
@@ -29,6 +30,10 @@ for (var i = 0; i < menuLat.length; i++) {
 
 for (var i = 0; i < matriculas.length; i++) {
     matriculas[i].addEventListener('click', openLoading , false);
+}
+
+for (var i = 0; i < dropDown.length; i++) {
+    dropDown[i].addEventListener('change', openLoading , false);
 }
 
 // for (var i = 0; i < botonesExportar.length; i++) {

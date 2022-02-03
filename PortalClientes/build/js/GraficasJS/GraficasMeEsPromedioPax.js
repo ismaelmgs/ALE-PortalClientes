@@ -23,10 +23,9 @@ function getUrlPP() {
 }
 
 $('#ContentPlaceHolder1_DDFiltroMesesPP').change(function (event) {
-
     event.preventDefault();
+    lPanel.Show();
     ActualizarGraficaPP();
-
 });
 
 function ActualizarGraficaPP() {
@@ -75,6 +74,7 @@ function chartsPP(dataPP, ChartType) {
         }
         
         document.getElementById('piechart_3d_15').innerHTML = `<div class="alert alert-info mt-5 text-center" role="alert">${mensaje}</div>`;
+        lPanel.Hide();
     }
     
     function generarUrlPP(obtiene) {
@@ -144,7 +144,10 @@ function chartsPP(dataPP, ChartType) {
         var chartPP = new google.visualization.ColumnChart(document.getElementById('piechart_3d_15'));
         chartPP.draw(dataPP_, optionsPP);
 
+        lPanel.Hide();
+
         google.visualization.events.addListener(chartPP, 'select', function () {
+            lPanel.Show();
             var selection = chartPP.getSelection();
             if (selection.length) {
                 var row = selection[0].row;

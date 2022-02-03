@@ -1065,8 +1065,8 @@ namespace PortalClientes.Views
                 gvGastos.DataSource = transacciones.costosFijosVariableHora.OrderBy(x => x.mes).ToList(); 
                 gvGastos.DataBind();
 
-                lblTotalTrasnRes.Text = Convert.ToDecimal(totalTransacciones).ToString() + " MXN";
-                lblTotalRes.Text = string.Format("{0:###,###,###,0.##}", dataOpt.campo1) + " MXN";
+                lblTotalTrasnRes.Text = string.Format("{0:###,###,###,0.##}", totalTransacciones) + " MXN";
+                lblTotalRes.Text = string.Format("{0:###,###,###,0.##}", Convert.ToDecimal(dataOpt.campo1)) + " MXN";
                 lblPromedioRes.Text = dataOpt.campo2;
             }
             else if (tipoTransaccion == 13)
@@ -1963,43 +1963,6 @@ namespace PortalClientes.Views
                 transacciones.detGastos = (List<gvDetGastos>)Session["data"];
                 LlenarGV(transacciones, tipo);
             }
-
-            //PdfPTable pdfTable = new PdfPTable(gvGastos.Columns.Count);
-            //pdfTable.DefaultCell.Padding = 3;
-            //pdfTable.WidthPercentage = 100;
-            //pdfTable.HorizontalAlignment = Element.ALIGN_LEFT;
-
-            //foreach (BoundField column in gvGastos.Columns)
-            //{
-            //    PdfPCell cell = new PdfPCell(new Phrase(column.HeaderText));
-            //    pdfTable.AddCell(cell);
-            //}
-
-            //foreach (GridViewRow row in gvGastos.Rows)
-            //{
-            //    for(var i = 0; i < row.Cells.Count; i++)
-            //    {
-            //        pdfTable.AddCell(row.Cells[i].Text);
-            //    }
-
-            //    //foreach (BoundField cell in row.Cells)
-            //    //{
-            //    //    pdfTable.AddCell(cell. .HeaderText.ToString());
-            //    //}
-            //}
-
-            //Document pdfDoc = new Document(PageSize.A4, 10f, 20f, 20f, 10f);
-            ////PdfWriter.GetInstance(pdfDoc, stream);
-            //PdfWriter.GetInstance(pdfDoc, Response.OutputStream);
-            //pdfDoc.Open();
-            //pdfDoc.Add(pdfTable);
-            //pdfDoc.Close();
-            ////stream.Close();
-
-            ////using (FileStream stream = new FileStream("example", FileMode.Create))
-            ////{
-
-            ////}
 
             using (StringWriter sw = new StringWriter())
             {

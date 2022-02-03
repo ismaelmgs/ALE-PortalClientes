@@ -55,6 +55,7 @@ namespace PortalClientes.Objetos
         public string[,] datosM { get; set; }
         public string[,] datosU { get; set; }
         public string[] conceptos { get; set; }
+        public int[] mesesInt { get; set; }
         public List<responseGraficaCategorias> response { get; set; }
     }
 

@@ -23,10 +23,9 @@ function getUrlPC() {
 }
 
 $('#ContentPlaceHolder1_DDFiltroMesesPC').change(function (event) {
-
     event.preventDefault();
+    lPanel.Show();
     ActualizarGraficaPC();
-
 });
 
 function ActualizarGraficaPC() {
@@ -75,6 +74,7 @@ function chartsPC(dataPC, ChartType) {
         }
         
        document.getElementById('piechart_3d_16').innerHTML = `<div class="alert alert-info mt-5 text-center" role="alert">${mensaje}</div>`;
+       lPanel.Hide();
     }
     
     function generarUrlPC(obtiene) {
@@ -147,7 +147,10 @@ function chartsPC(dataPC, ChartType) {
         var chartPC = new google.visualization.ColumnChart(document.getElementById('piechart_3d_16'));
         chartPC.draw(dataPC_, optionsPC);
 
+        lPanel.Hide();
+
         google.visualization.events.addListener(chartPC, 'select', function () {
+            lPanel.Show();
             var selection = chartPC.getSelection();
             if (selection.length) {
                 var row = selection[0].row;

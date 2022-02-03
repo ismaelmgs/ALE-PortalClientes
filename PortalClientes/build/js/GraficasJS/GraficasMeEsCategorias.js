@@ -22,8 +22,9 @@ function getUrlCLT() {
     return value;
 }
 
-$('#ContentPlaceHolder1_ddlCategoriasLT').click(function (event) {
+$('#ContentPlaceHolder1_ddlCategoriasLT').change(function (event) {
     event.preventDefault();
+    lPanel.Show();
     ActualizarGraficaCLT();
 });
 
@@ -59,7 +60,7 @@ function ajax_dataCLT(obj, url, success) {
 function chartsCLT(data) {
     var jsonDataCLT = data;
     
-    if (jsonDataCLT.datosM.length > 0) {
+    if (jsonDataCLT.response.length > 0) {
         google.charts.load("current", { packages: ["corechart"] });
         google.charts.setOnLoadCallback(drawVisualizationCLT)
     }else{
@@ -73,6 +74,7 @@ function chartsCLT(data) {
         
         document.getElementById('piechart_3d_17').innerHTML = `<div class="alert alert-info mt-5 text-center" role="alert">${mensaje}</div>`;
         document.getElementById('piechart_3d_18').innerHTML = `<div class="alert alert-info mt-5 text-center" role="alert">${mensaje}</div>`;
+        lPanel.Hide();
     }
 
     function generarUrlCLT(obtiene) {
@@ -233,11 +235,14 @@ function chartsCLT(data) {
         var chartE = new google.visualization.ColumnChart(document.getElementById('piechart_3d_18'));
         chartE.draw(dataE, optionsE);
 
+        lPanel.Hide();
+
         google.visualization.events.addListener(chart, 'select', function () {
+             lPanel.Show();
              var selection = chart.getSelection();
              if (selection.length) {
 
-                 let mes = selection[0].row + 1
+                 let mes = jsonDataCLT.mesesInt[selection[0].row]
                  let concepto = jsonDataCLT.conceptos[selection[0].column - 1]
 
                  let array = idioma == "es-MX" ? jsonDataCLT.response.find(item => item.mes == mes && item.rubroESP == concepto) : sonDataCLT.response.find(item => item.mes == mes && item.rubroENG == concepto);
@@ -301,6 +306,7 @@ function chartsCLT(data) {
         });
 
         google.visualization.events.addListener(chartE, 'select', function () {
+            lPanel.Show();
             var selection = chartE.getSelection();
             if (selection.length) {
 

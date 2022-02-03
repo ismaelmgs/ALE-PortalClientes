@@ -13,8 +13,8 @@ namespace PortalClientes.Objetos
         public int noGastos { get; set; }
         public int mes { get; set; }
         public int anio { get; set; }
-        public float totalTiempo { get; set; }
-        public float costoHoraVuelo { get; set; }
+        public float? totalTiempo { get; set; }
+        public float? costoHoraVuelo { get; set; }
         public string idioma { get; set; }
         public List<costofvh> gastos { get; set; }
     }

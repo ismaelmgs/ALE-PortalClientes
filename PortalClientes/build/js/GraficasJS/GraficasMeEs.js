@@ -26,11 +26,13 @@ function getUrl() {
 
 $('#ContentPlaceHolder1_ddlPeriodo').change(function (event) {
     event.preventDefault();
+    lPanel.Show();
     ActualizarGrafica();
 });
 
 $('#ContentPlaceHolder1_ddlTipoRubro').change(function (event) {
     event.preventDefault();
+    lPanel.Show();
     ActualizarGrafica();
 });
 
@@ -84,6 +86,7 @@ function charts(data, ChartType) {
         
         document.getElementById('piechart_3d_2').innerHTML = `<div class="alert alert-info mt-5 text-center" role="alert">${mensaje}</div>`;
         document.getElementById('piechart_3d_1').innerHTML = `<div class="alert alert-info mt-5 text-center" role="alert">${mensaje}</div>`;
+        lPanel.Hide();
     }
 
     function generarUrl(obtiene) {
@@ -192,7 +195,10 @@ function charts(data, ChartType) {
         var chartE = new google.visualization.PieChart(document.getElementById('piechart_3d_2'));
         chartE.draw(dataE, optionsE);
 
+        lPanel.Hide();
+
         google.visualization.events.addListener(chart, 'select', function () {
+            lPanel.Show();
             var selection = chart.getSelection();
             if (selection.length) {
                 var row = selection[0].row;
@@ -258,6 +264,7 @@ function charts(data, ChartType) {
         });
 
         google.visualization.events.addListener(chartE, 'select', function () {
+            lPanel.Show();
             var selection = chartE.getSelection();
             if (selection.length) {
                 var row = selection[0].row;
@@ -323,5 +330,3 @@ function charts(data, ChartType) {
         });
     }
 }
-
-

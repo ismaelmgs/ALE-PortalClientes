@@ -1247,6 +1247,7 @@ namespace PortalClientes.Views
                 data.idioma = Utils.Idioma;
             }
 
+            data.mesesInt = mesesArray;
             data.response = lrg;
             data.conceptos = conceptos;
 

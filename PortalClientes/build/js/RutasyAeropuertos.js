@@ -6,6 +6,7 @@ function getUrlRA() {
 }
 
 function initialize() {
+	lPanel.Show();
 	// Coordenada de la ruta
 	var flightPlanCoordinates = [
 		// {lat: 19.3910038, lng: -99.2836972},
@@ -187,6 +188,8 @@ function initialize() {
 				})
 			}
 		}
+
+		lPanel.Hide();
 	})
 }
 

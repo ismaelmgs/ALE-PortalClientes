@@ -1,17 +1,17 @@
 $(document).ready(function () {
     //const url = "http://192.168.1.250/PortalClientes/Views/frmMetricasEstadisticas.aspx/GetNumeroVuelos"; // API URL
-    const url = getUrlNV(); // API URL
+    const urlNV = getUrlNV(); // API URL
 
     let objNV = JSON.stringify({
         meses: $("#ContentPlaceHolder1_DDFiltroMesesNV").val(),
     });
 
-    ajax_dataNV(objNV, url, function (dataNV) {
+    ajax_dataNV(objNV, urlNV, function (dataNV) {
         chartsNV(dataNV , "PieChart"); // Pie Charts
     });
 
     window.onresize = function () {
-        ajax_dataNV(objNV, url, function (dataNV) {
+        ajax_dataNV(objNV, urlNV, function (dataNV) {
             chartsNV(dataNV, "PieChart"); // Pie Charts
         });
     };
@@ -23,30 +23,29 @@ function getUrlNV() {
 }
 
 $('#ContentPlaceHolder1_DDFiltroMesesNV').change(function (event) {
-
     event.preventDefault();
+    lPanel.Show();
     ActualizarGraficaNV();
-
 });
 
 function ActualizarGraficaNV() {
-    const url = getUrlP(); // API URL
+    const urlNV = getUrlNV(); // API URL
     let objNV = JSON.stringify({
         meses: $("#ContentPlaceHolder1_DDFiltroMesesNV").val(),
     });
 
-    ajax_dataNV(objNV, url, function (dataNV) {
+    ajax_dataNV(objNV, urlNV, function (dataNV) {
         chartsNV(dataNV, "PieChart"); // Pie Charts
     });
 }
 
-function ajax_dataNV(objNV, url, success) {
+function ajax_dataNV(objNV, urlNV, success) {
     $.ajax({
         data: objNV,
         contentType: "Application/json; charset=utf-8",
         responseType: "json",
         method: 'POST',
-        url: url,
+        url: urlNV,
         dataType: "json",
         beforeSend: function (response) { },
         success: function (response) {
@@ -75,6 +74,7 @@ function chartsNV(dataNV, ChartType) {
         }
         
         document.getElementById('piechart_3d_13').innerHTML = `<div class="alert alert-info mt-5 text-center" role="alert">${mensaje}</div>`;
+        lPanel.Hide();
     }
     
     function generarUrlNV(obtiene) {
@@ -144,7 +144,10 @@ function chartsNV(dataNV, ChartType) {
         var chartNV = new google.visualization.ColumnChart(document.getElementById('piechart_3d_13'));
         chartNV.draw(dataNV_, optionsNV);
 
+        lPanel.Hide();
+
         google.visualization.events.addListener(chartNV, 'select', function () {
+            lPanel.Show();
             var selection = chartNV.getSelection();
             if (selection.length) {
                 var row = selection[0].row;

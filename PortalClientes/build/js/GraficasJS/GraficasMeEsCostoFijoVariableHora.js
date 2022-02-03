@@ -23,10 +23,9 @@ function getUrlFVH() {
 }
 
 $('#ContentPlaceHolder1_DDFiltroMesesFVH').change(function (event) {
-
     event.preventDefault();
+    lPanel.Show();
     ActualizarGraficaFVH();
-
 });
 
 function ActualizarGraficaFVH() {
@@ -75,6 +74,7 @@ function chartsFVH(dataFVH, ChartType) {
         }
         
         document.getElementById('piechart_3d_8').innerHTML = `<div class="alert alert-info mt-5 text-center" role="alert">${mensaje}</div>`;
+        lPanel.Hide();
     }
     
     function generarUrlFVH(obtiene) {
@@ -140,8 +140,11 @@ function chartsFVH(dataFVH, ChartType) {
 
         var chartFVH = new google.visualization.PieChart(document.getElementById('piechart_3d_8'));
         chartFVH.draw(dataFVH_, optionsFVH);
+        
+        lPanel.Hide();
 
         google.visualization.events.addListener(chartFVH, 'select', function () {
+            lPanel.Show();
             var selection = chartFVH.getSelection();
             if (selection.length) {
                 var row = selection[0].row;

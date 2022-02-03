@@ -53,7 +53,7 @@
                                 &nbsp;
                             </div>
                             <div class="col-md-3" style="text-align: right;">
-                                <asp:DropDownList AutoPostBack="true" ID="ddlFiltroResumenPeriodo" runat="server" CssClass="form-control" OnSelectedIndexChanged="btnFiltrar_Click">
+                                <asp:DropDownList AutoPostBack="true" ID="ddlFiltroResumenPeriodo" runat="server" CssClass="form-control ddl" OnSelectedIndexChanged="btnFiltrar_Click">
                                 </asp:DropDownList>
                             </div>
                         </div>
