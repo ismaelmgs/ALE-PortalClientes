@@ -150,6 +150,8 @@ namespace PortalClientes.Views
             lblTotalPasajeros.Text = Properties.Resources.Fl_TotalPax;
             lblFlightsDos.Text = Properties.Resources.Fl_Vuelos;
 
+            DDFiltroMeses.Attributes.Add("onchange", "ShowLoadingPanel();");
+
             var v2 = DDFiltroMeses.SelectedValue;
             // llenar dropdown filtro
             DDFiltroMeses.Items.Clear();

@@ -17,6 +17,7 @@ using CrystalDecisions.CrystalReports.Engine;
 using CrystalDecisions.Shared;
 using Newtonsoft.Json;
 using System.Configuration;
+using DevExpress.Web;
 
 namespace PortalClientes.Views
 {
@@ -82,9 +83,11 @@ namespace PortalClientes.Views
                 {
                     LinkButton lkb = (LinkButton)e.Row.FindControl("lkbDetalle");
                     lkb.Text = Properties.Resources.Ec_VerDetalle;
+                    lkb.Attributes.Add("onClick", "javascript:ShowLoadingPanel();");
 
                     ImageButton lkbvd = (ImageButton)e.Row.FindControl("lkbViewDocument");
                     Label lkbT = (Label)e.Row.FindControl("lkbTextDocument");
+                    lkbT.Attributes.Add("onClick", "javascript:ShowLoadingPanel();");
 
                     if (existeDoc == 0) //cambiar a ==0
                     {
@@ -107,7 +110,6 @@ namespace PortalClientes.Views
 
         protected void gvEdoCuenta_RowCommand(object sender, GridViewCommandEventArgs e)
         {
-
             sMes = gvEdoCuenta.DataKeys[e.CommandArgument.S().I()]["nombreMes"].S();
             ObtienePeriodoEdoCuentaI(sMes);
 

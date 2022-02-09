@@ -53,7 +53,7 @@
                                 &nbsp;
                             </div>
                             <div class="col-md-3" style="text-align: right;">
-                                <asp:DropDownList AutoPostBack="true" ID="ddlFiltroResumenPeriodo" runat="server" CssClass="form-control ddl" OnSelectedIndexChanged="btnFiltrar_Click">
+                                <asp:DropDownList AutoPostBack="true" ID="ddlFiltroResumenPeriodo" runat="server" CssClass="form-control ddl" onchange="openLoading()" OnSelectedIndexChanged="btnFiltrar_Click">
                                 </asp:DropDownList>
                             </div>
                         </div>
@@ -300,8 +300,8 @@
                                                 <asp:Label ID="lblResumanGastosRes" runat="server" Text=" Resumen de gastos " Font-Bold="false"></asp:Label>
                                             </td>
                                             <td align="center" style="border: 0px; padding: 0.1rem;">
-                                                <asp:LinkButton ID="LinkButton1" runat="server" Text="<i class='fa fa-file-excel-o' style='color:#73879c;font-size:25px;'></i>" CssClass="btn" OnClick="lkbExpExcelRes_Click" />
-                                                <asp:LinkButton ID="LinkButton2" runat="server" Text="<i class='fa fa-file-pdf-o' style='color:#73879c;font-size:25px;' ></i>" CssClass="btn" OnClick="lkbExpPDFRes_Click" />
+                                                <asp:LinkButton ID="LinkButton1" runat="server" Text="<i class='fa fa-file-excel-o' style='color:#73879c;font-size:25px;'></i>" CssClass="btn rpt" OnClick="lkbExpExcelRes_Click" />
+                                                <asp:LinkButton ID="LinkButton2" runat="server" Text="<i class='fa fa-file-pdf-o' style='color:#73879c;font-size:25px;' ></i>" CssClass="btn rpt" OnClick="lkbExpPDFRes_Click" />
                                             </td>
                                         </tr>
                                         <tr>
@@ -570,7 +570,7 @@
                                         <span style="color: #bdbdbd; font-size: 16px;">&nbsp;&nbsp;<asp:Label ID="lblTusVuelos" runat="server" Text="" Font-Bold="true"></asp:Label></span>
                                     </div>
                                     <div class="col-md-4">
-                                        <asp:DropDownList ID="ddlFiltroMesesRA" runat="server" CssClass="form-control" Width="100%"></asp:DropDownList>
+                                        <asp:DropDownList ID="ddlFiltroMesesRA" AutoPostBack="true" OnSelectedIndexChanged="ddlFiltroMesesRA_SelectedIndexChanged" runat="server" CssClass="form-control" Width="100%"></asp:DropDownList>
                                     </div>
                                 </div>
                                 <br />

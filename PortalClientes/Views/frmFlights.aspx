@@ -104,7 +104,7 @@
                                                 <asp:BoundField DataField="TiempoVolado" />
                                                 <asp:TemplateField ItemStyle-HorizontalAlign="Center">
                                                     <ItemTemplate>
-                                                        <asp:LinkButton Font-Underline="True" ID="lkbDetalle" runat="server" Text="Detalle" CommandName="detail" CommandArgument="<%# ((GridViewRow) Container).RowIndex %>"></asp:LinkButton>
+                                                        <asp:LinkButton Font-Underline="True" ID="lkbDetalle" runat="server" Text="Detalle" OnClientClick="openLoading()" CommandName="detail" CommandArgument="<%# ((GridViewRow) Container).RowIndex %>"></asp:LinkButton>
                                                     </ItemTemplate>
                                                 </asp:TemplateField>
                                             </Columns>

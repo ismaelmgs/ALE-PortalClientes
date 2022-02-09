@@ -20,7 +20,7 @@ namespace PortalClientes.Presenter
 
         protected override void SearchObj_Presenter(object sender, EventArgs e)
         {
-            oIView.cargarMapaFlota(oIGesCat.obtenerFlota(oIView.iMeses,oIView.sMatricula));
+            oIView.cargarMapaFlota(oIGesCat.obtenerFlota(oIView.iMeses));
         }
     }
 }

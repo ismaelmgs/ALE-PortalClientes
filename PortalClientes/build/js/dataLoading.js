@@ -3,7 +3,15 @@
 }
 
 function closeLoading() {
-   lPanel.Hide();
+    lPanel.Hide();
+}
+
+function LoadingTime(timer) {
+    lPanel.Show();
+    setTimeout(() => {
+        lPanel.Hide();
+    }, timer*1000);
+   
 }
 
 function closeSession() {
@@ -22,7 +30,7 @@ function closeSession() {
 var menuLat = document.getElementsByClassName("item");
 var matriculas = document.getElementsByClassName("dropdown-item");
 var dropDown = document.getElementsByClassName("ddl");
-// var botonesExportar = document.getElementsByClassName("btn");
+var botonesExportar = document.getElementsByClassName("rpt");
 
 for (var i = 0; i < menuLat.length; i++) {
     menuLat[i].addEventListener('click', openLoading , false);
@@ -36,8 +44,20 @@ for (var i = 0; i < dropDown.length; i++) {
     dropDown[i].addEventListener('change', openLoading , false);
 }
 
-// for (var i = 0; i < botonesExportar.length; i++) {
-//     botonesExportar[i].addEventListener('click', openLoading , false);
-// }
+for (var i = 0; i < botonesExportar.length; i++) {
+    botonesExportar[i].addEventListener('click', ShowLoadingPanel , false);
+}
+
+function ShowLoadingPanel() {     
+    var prm = Sys.WebForms.PageRequestManager.getInstance();
+    prm.add_initializeRequest(prm_InitializeRequest);
+    prm.add_endRequest(prm_EndRequest);
+}
+function prm_InitializeRequest(sender, args) {
+    lPanel.Show();
+}
+function prm_EndRequest(sender, args) {
+    lPanel.Hide();
+}
 
 console.log('si exta jalando este archivo');

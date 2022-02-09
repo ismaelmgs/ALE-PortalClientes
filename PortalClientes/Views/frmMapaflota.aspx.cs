@@ -73,7 +73,7 @@ namespace PortalClientes.Views
             lblLocacion.Text = Properties.Resources.MF_Aeropuerto;
             lblRutas.Text = Properties.Resources.MF_Rutas;
             lblPeriodo.Text = Properties.Resources.MF_Periodo;
-            lblAeronave.Text = Properties.Resources.MF_Aeronave;
+            //lblAeronave.Text = Properties.Resources.MF_Aeronave;
             lblFuenteDatos.Text = Properties.Resources.MF_FuenteDatos;
             //lblTiposVuelo.Text = Properties.Resources.MF_TVuelo;
             lblVuelos.Text = Properties.Resources.MF_Vuelos;
@@ -102,33 +102,17 @@ namespace PortalClientes.Views
             {
                 ddlMeses.SelectedValue = v2;
             }
-
-            var v3 = ddlAeronave.SelectedValue;
-            ddlAeronave.Items.Clear();
-            foreach (var item in Utils.Matriculas)
-            {
-                ddlAeronave.Items.Add(new ListItem(item, item));
-            }
-
-            if (v3 == "")
-            {
-                ddlAeronave.SelectedIndex = 0;
-            }
-            else
-            {
-                ddlAeronave.SelectedValue = v3;
-            }
         }
 
         [WebMethod]
-        public static MapaFlota getDataMap(string meses, string matricula)
+        public static MapaFlota getDataMap(string meses)
         {
             try
             {
                 DBMapaFlota oIGesCat = new DBMapaFlota();
 
                 MapaFlota lrg = new MapaFlota();
-                lrg = oIGesCat.obtenerFlota(Convert.ToInt32(meses), matricula);
+                lrg = oIGesCat.obtenerFlota(Convert.ToInt32(meses));
 
                 return lrg;
             }
@@ -155,14 +139,6 @@ namespace PortalClientes.Views
             get
             {
                 return ddlMeses.SelectedValue.S().I();
-            }
-        }
-
-        public string sMatricula
-        {
-            get
-            {
-                return ddlAeronave.SelectedItem.Text.S();
             }
         }
 

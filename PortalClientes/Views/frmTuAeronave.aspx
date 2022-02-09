@@ -216,7 +216,7 @@
                                                     <ItemTemplate>
                                                         <%--<asp:ImageButton ID="imbViewDoc" runat="server" ImageUrl="~/Images/icons/visualizar.png" Width="24px" Height="28px"
                                                     OnClick="imbViewDoc_Click" CommandName="Mats" CommandArgument="<%# ((GridViewRow) Container).RowIndex %>" />&nbsp;&nbsp;&nbsp;--%>
-                                                        <asp:ImageButton ID="imbDownloadDoc" runat="server" ImageUrl="~/Images/icons/descargar.png" Width="30px" Height="32px"
+                                                        <asp:ImageButton ID="imbDownloadDoc" runat="server" ImageUrl="~/Images/icons/descargar.png" Width="30px" Height="32px" OnClientClick="LoadingTime(3)"
                                                              CommandName="download" CommandArgument="<%# ((GridViewRow) Container).RowIndex %>" CssClass="btn" />&nbsp;&nbsp;&nbsp;
                                                     </ItemTemplate>
                                                 </asp:TemplateField>

@@ -42,7 +42,7 @@ namespace PortalClientes.Views
 
             if (!IsPostBack)
             {
-                ScriptManager.RegisterStartupScript(this.Page, this.GetType(), Guid.NewGuid().ToString(), "openLoading();", true);
+                //ScriptManager.RegisterStartupScript(this.Page, this.GetType(), Guid.NewGuid().ToString(), "openLoading();", true);
                 LLenarTuAeronave();
             }
         }
@@ -58,6 +58,13 @@ namespace PortalClientes.Views
                 e.Row.Cells[3].Visible = false;
                 e.Row.Cells[4].Text = Properties.Resources.TabDoc_Acciones;
 
+            }
+
+            if (e.Row.RowType == DataControlRowType.DataRow)
+            {
+                e.Row.Cells[2].Visible = false;
+                e.Row.Cells[3].Visible = false;
+
                 ImageButton imbMats = (ImageButton)e.Row.FindControl("imbViewDoc");
                 if (imbMats != null)
                 {
@@ -68,14 +75,8 @@ namespace PortalClientes.Views
                 if (imbEditarModulos != null)
                 {
                     imbEditarModulos.ToolTip = Properties.Resources.TabDoc_DownDoc;
+                    imbEditarModulos.Attributes.Add("onClick", "javascript:ShowLoadingPanel();");
                 }
-
-            }
-
-            if (e.Row.RowType == DataControlRowType.DataRow)
-            {
-                e.Row.Cells[2].Visible = false;
-                e.Row.Cells[3].Visible = false;
             }
         }
 
@@ -252,7 +253,7 @@ namespace PortalClientes.Views
 
             carouselExampleIndicators.InnerHtml = sHtml;
 
-            ScriptManager.RegisterStartupScript(this.Page, this.GetType(), Guid.NewGuid().ToString(), "closeLoading();", true);
+            //ScriptManager.RegisterStartupScript(this.Page, this.GetType(), Guid.NewGuid().ToString(), "closeLoading();", true);
         }
 
         private void ArmaFormulario()

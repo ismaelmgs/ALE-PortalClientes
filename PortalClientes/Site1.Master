@@ -135,6 +135,9 @@
 </head>
 <body class="nav-md">
 <form id="form1" runat="server">
+    <dx:ASPxGlobalEvents runat="server" ID="ClientGlobalEvents">  
+      <ClientSideEvents BeginCallback="function(s, e) { lPanel.Show(); }" EndCallback="function(s, e) { lPanel.Hide(); }" />  
+    </dx:ASPxGlobalEvents>  
      <dx:ASPxLoadingPanel ID="loadingpanel" runat="server" ClientInstanceName="lPanel" 
         Text=" " ShowImage="false"
         ImagePosition="Top"

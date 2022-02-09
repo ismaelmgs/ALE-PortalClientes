@@ -12,14 +12,14 @@ namespace PortalClientes.DomainModel
 {
     public class DBMapaFlota
     {
-        public MapaFlota obtenerFlota(int imeses, string sMatricula)
+        public MapaFlota obtenerFlota(int imeses)
         {
             try
             {
                 JavaScriptSerializer ser = new JavaScriptSerializer();
                 MapaFlota v = new MapaFlota();
                 FiltroEvent oLog = new FiltroEvent();
-                oLog.matricula = sMatricula;
+                oLog.matricula = Utils.MatriculaActual;
                 oLog.meses = imeses;
 
                 TokenWS oToken = Utils.ObtieneToken;

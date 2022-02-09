@@ -209,12 +209,12 @@
                                             </asp:TemplateField>
                                             <asp:TemplateField>
                                                 <ItemTemplate>
-                                                    <asp:LinkButton Font-Underline="True" ID="lkbDetalle" runat="server" CommandName="Detalle" CommandArgument="<%# ((GridViewRow) Container).RowIndex %>"></asp:LinkButton>
+                                                    <asp:LinkButton Font-Underline="True" OnClientClick="openLoading()" ID="lkbDetalle" runat="server" CommandName="Detalle" CommandArgument="<%# ((GridViewRow) Container).RowIndex %>"></asp:LinkButton>
                                                 </ItemTemplate>
                                             </asp:TemplateField>
                                             <asp:TemplateField ItemStyle-VerticalAlign="Middle" ItemStyle-HorizontalAlign="Center" HeaderText="Reporte">
                                                 <ItemTemplate>
-                                                    &nbsp;&nbsp;&nbsp;<asp:ImageButton ID="lkbReporte" runat="server" ImageUrl="~/Images/icons/descargar.png" Width="25px" Height="27px"
+                                                    &nbsp;&nbsp;&nbsp;<asp:ImageButton ID="lkbReporte" OnClientClick="LoadingTime(3)" runat="server" ImageUrl="~/Images/icons/descargar.png" Width="25px" Height="27px"
                                                              CommandName="Reporte" CommandArgument="<%# ((GridViewRow) Container).RowIndex %>" CssClass="btn" />&nbsp;&nbsp;&nbsp;
                                                 </ItemTemplate>
                                             </asp:TemplateField>

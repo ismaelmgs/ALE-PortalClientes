@@ -797,7 +797,7 @@ TagPrefix="dx" %>
 							},
 						]
 
-                        mapProp.styles = styles;
+            mapProp.styles = styles;
 					}
 					// Configuración del mapa
 

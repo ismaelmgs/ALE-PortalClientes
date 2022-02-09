@@ -85,6 +85,12 @@ namespace PortalClientes.Views
             }
         }
 
+        protected void ddlFiltroMesesRA_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (eSearchObjRA != null)
+                eSearchObjRA(null, EventArgs.Empty);
+        }
+
         #endregion
 
         #region METODOS
@@ -150,6 +156,12 @@ namespace PortalClientes.Views
 
             lblMapRutaAeroPrinc.Text = Properties.Resources.ME_TituloRutaAero;
             lblCategoriasLargoTiempo.Text = Properties.Resources.ME_TituloCatLT;
+
+            LinkButton1.Attributes.Add("onClick", "LoadingTime(3);");
+            LinkButton2.Attributes.Add("onClick", "LoadingTime(3);");
+            btnExcel.Attributes.Add("onClick", "LoadingTime(3);");
+            btnPDF.Attributes.Add("onClick", "LoadingTime(3);");
+            ddlFiltroMesesRA.Attributes.Add("onchange", "initialize();");
 
             var vPeriodo = ddlPeriodo.SelectedValue;
             // llenar dropdown Periodo
@@ -1396,6 +1408,7 @@ namespace PortalClientes.Views
         public event EventHandler eObjSelected;
         public event EventHandler eSaveObj;
         public event EventHandler eDeleteObj;
+        public event EventHandler eSearchObjRA;
 
         public List<gvRutas> oLstRutas
         {

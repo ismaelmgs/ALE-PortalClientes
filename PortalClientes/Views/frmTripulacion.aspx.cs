@@ -257,6 +257,12 @@ namespace PortalClientes.Views
                 ddlFiltro.SelectedValue = v;
             }
 
+            btnExcelEvent.Attributes.Add("onClick", "javascript:ShowLoadingPanel();");
+            btnExcelPilotos.Attributes.Add("onClick", "javascript:ShowLoadingPanel();");
+            btnPDFEvent.Attributes.Add("onClick", "javascript:ShowLoadingPanel();");
+            btnPDFPilotos.Attributes.Add("onClick", "javascript:ShowLoadingPanel();");
+            ddlFiltro.Attributes.Add("onChange", "javascript:ShowLoadingPanel();");
+
             try
             {
                 if (eSearchObj != null)

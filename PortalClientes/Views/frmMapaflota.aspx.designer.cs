@@ -58,24 +58,6 @@ namespace PortalClientes.Views {
         protected global::System.Web.UI.WebControls.DropDownList ddlMeses;
         
         /// <summary>
-        /// Control lblAeronave.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblAeronave;
-        
-        /// <summary>
-        /// Control ddlAeronave.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlAeronave;
-        
-        /// <summary>
         /// Control lblEstadosVuelos.
         /// </summary>
         /// <remarks>

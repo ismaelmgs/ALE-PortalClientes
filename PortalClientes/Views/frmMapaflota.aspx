@@ -45,14 +45,14 @@
                                             </div>
                                         </div>
                                         <br />
-                                        <div class="row">
+                                       <%-- <div class="row">
                                             <div class="col-md-12">
                                                 <asp:Label ID="lblAeronave" runat="server" Text="Aeronave"></asp:Label>
                                                 <asp:DropDownList  onchange="initializeMF();" ID="ddlAeronave" AutoPostBack="True" runat="server" CssClass="form-control">
                                                 </asp:DropDownList>
                                             </div>
                                         </div>
-                                        <br />
+                                        <br />--%>
                                         <%--<div class="row">
                                             <div class="col-md-12">
                                                 <asp:Label ID="lblTiposVuelo" runat="server" Text="Tipos de Vuelo"></asp:Label>

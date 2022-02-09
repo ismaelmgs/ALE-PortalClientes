@@ -16,5 +16,7 @@ namespace PortalClientes.Interfaces
         int iMesesMap { get; }
         string sMatricula { get; }
 
+        event EventHandler eSearchObjRA;
+
     }
 }

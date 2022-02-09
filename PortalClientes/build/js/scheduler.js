@@ -86,6 +86,8 @@ function CloseModal() {
 }
 
 function Click(s, e, evn) {
+    lPanel.Show();
     var y = s.GetSelectedInterval();
     $("#ContentPlaceHolder1_hfdate").val(y.start);
+    lPanel.Hide();
 }

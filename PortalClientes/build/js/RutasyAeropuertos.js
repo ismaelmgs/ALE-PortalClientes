@@ -233,3 +233,11 @@ function profiletab_Click() {
 	rutas = false
 	initialize()
 }
+
+
+// $('#ContentPlaceHolder1_ddlFiltroMesesRA').change(function (event) {
+// 	event.preventDefault();
+// 	lPanel.Show();
+// 	initialize();
+// });
+

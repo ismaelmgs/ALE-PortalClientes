@@ -11,6 +11,5 @@ namespace PortalClientes.Interfaces
         MapaFlota oFlota { get; set; }
         void cargarMapaFlota(MapaFlota oMapaFlota);
         int iMeses { get; }
-        string sMatricula { get; }
     }
 }
