@@ -201,7 +201,7 @@ namespace PortalClientes.Views
                 monthView.ShowWeekend = true;
                 monthView.CompressWeekend = false;
                 monthView.ShowMoreButtons = true;
-                monthView.WeekCount = 4;
+                monthView.WeekCount = 5;
                 Scheduler.OptionsToolTips.ShowSelectionToolTip = false;
             }
             finally
@@ -256,7 +256,8 @@ namespace PortalClientes.Views
         {
             // configuracion vista
             Scheduler.OptionsView.AppointmentSelectionAppearanceMode = AppointmentSelectionAppearanceMode.Auto;
-
+            Scheduler.OptionsView.FirstDayOfWeek = (DevExpress.XtraScheduler.FirstDayOfWeek)System.Web.UI.WebControls.FirstDayOfWeek.Default;
+            Scheduler.Page.UICulture = Utils.Idioma;
 
             // configuracion dialogos
             Scheduler.OptionsDialogs.AppointmentDialog.Visibility = SchedulerFormVisibility.None;
