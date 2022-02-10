@@ -490,10 +490,13 @@ namespace PortalClientes.Views
             rd.Load(strPath, OpenReportMethod.OpenReportByDefault);
             rd.SetDataSource(dsGastos);
 
+            string strNombreArchivo = string.Empty;
+            strNombreArchivo = "ResumenGastos_" + sMatricula;
+
             if (iTipoReporte == 1)
-                rd.ExportToHttpResponse(ExportFormatType.PortableDocFormat, Response, true, "ResumenGastos");
+                rd.ExportToHttpResponse(ExportFormatType.PortableDocFormat, Response, true, strNombreArchivo);
             else
-                rd.ExportToHttpResponse(ExportFormatType.Excel, Response, true, "ResumenGastos");
+                rd.ExportToHttpResponse(ExportFormatType.Excel, Response, true, strNombreArchivo);
 
         }
 
@@ -565,11 +568,13 @@ namespace PortalClientes.Views
             rd.SetDataSource(dtFiltros);
             rd.Subreports["rptSUBGastosMXN.rpt"].SetDataSource(dsGastos.Tables[0]);
             rd.Subreports["rptSUBGastosUSD.rpt"].SetDataSource(dsGastos.Tables[1]);
+            string strNombreArchivo = string.Empty;
+            strNombreArchivo = "DetalleGastos_" + sMatricula;
 
             if (iTipoReporte == 1)
-                rd.ExportToHttpResponse(ExportFormatType.PortableDocFormat, Response, true, "DetalleGastos");
+                rd.ExportToHttpResponse(ExportFormatType.PortableDocFormat, Response, true, strNombreArchivo);
             else
-                rd.ExportToHttpResponse(ExportFormatType.Excel, Response, true, "DetalleGastos");
+                rd.ExportToHttpResponse(ExportFormatType.Excel, Response, true, strNombreArchivo);
         }
 
         protected void gvRutas_PageIndexChanging(object sender, GridViewPageEventArgs e)
