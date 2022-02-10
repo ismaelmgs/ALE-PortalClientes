@@ -165,21 +165,21 @@
                                         <ul class="nav nav-tabs" id="myTab" role="tablist">
                                             <li class="nav-item" onclick="hometab_Click()">
                                                 <asp:LinkButton runat="server" ID="hometab" OnClientClick="hometab_Click()" CssClass="nav-link active" data-toggle="tab" href="#ContentPlaceHolder1_home" role="tab" aria-controls="ContentPlaceHolder1_home" aria-selected="true">
-                                                    <asp:Label ID="lblLocacion" runat="server" Text="Locación"></asp:Label>
+                                                    <asp:Label ID="lblRutas" runat="server" Text="Rutas"></asp:Label>
                                                 </asp:LinkButton>
                                             </li>
                                             <li class="nav-item" onclick="profiletab_Click()">
                                                 <asp:LinkButton runat="server" ID="profiletab" OnClientClick="profiletab_Click()" CssClass="nav-link" data-toggle="tab" href="#ContentPlaceHolder1_profile" role="tab" aria-controls="ContentPlaceHolder1_profile" aria-selected="false">
-                                                    <asp:Label ID="lblRutas" runat="server" Text="Rutas"></asp:Label>
+                                                    <asp:Label ID="lblLocacion" runat="server" Text="Locación"></asp:Label>
                                                 </asp:LinkButton>
                                             </li>
                                         </ul>
                                         <div class="tab-content" id="myTabContent">
                                             <div class="tab-pane fade show active" runat="server" id="home" role="tabpanel" aria-labelledby="home-tab">
-                                                <div id="googleMapLocation"></div>
+                                                <div id="googleMapRutas"></div>
                                             </div>
                                             <div class="tab-pane fade" runat="server" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-                                                <div id="googleMapRutas"></div>
+                                                <div id="googleMapLocation"></div>
                                             </div>
                                         </div>
                                     </div>

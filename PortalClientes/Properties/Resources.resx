@@ -1257,4 +1257,22 @@
   <data name="MF_Vuelos" xml:space="preserve">
     <value>Vuelos</value>
   </data>
+  <data name="Mtto_descripcion" xml:space="preserve">
+    <value>Descripcion</value>
+  </data>
+  <data name="Mtto_fechaFin" xml:space="preserve">
+    <value>Fecha Fin</value>
+  </data>
+  <data name="Mtto_fechaInicio" xml:space="preserve">
+    <value>Fecha Incio</value>
+  </data>
+  <data name="Mtto_notes" xml:space="preserve">
+    <value>Notas</value>
+  </data>
+  <data name="Mtto_origNmbr" xml:space="preserve">
+    <value>Numero de Vuelo</value>
+  </data>
+  <data name="Mtto_title" xml:space="preserve">
+    <value>Mantenimientos Programados</value>
+  </data>
 </root>

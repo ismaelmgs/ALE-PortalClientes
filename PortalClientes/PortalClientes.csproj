@@ -1584,6 +1584,7 @@
     <Compile Include="DomainModel\DBEstadoCuenta.cs">
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
+    <Compile Include="DomainModel\DBMantenimientos.cs" />
     <Compile Include="DomainModel\DBMapaFlota.cs" />
     <Compile Include="DomainModel\DBMetricasEstatics.cs" />
     <Compile Include="DomainModel\DBTripulacion.cs" />
@@ -1594,6 +1595,7 @@
     <Compile Include="DomainModel\DBVuelos.cs" />
     <Compile Include="Interfaces\IViewDetalleReportes.cs" />
     <Compile Include="Interfaces\IViewEstadoCuenta.cs" />
+    <Compile Include="Interfaces\iViewMantenimientos.cs" />
     <Compile Include="Interfaces\IViewMapaFlota.cs" />
     <Compile Include="Interfaces\IViewMetricasEstadisticas.cs" />
     <Compile Include="Interfaces\IViewTripulacion.cs" />
@@ -1601,6 +1603,7 @@
     <Compile Include="Objetos\Calendario.cs" />
     <Compile Include="Objetos\DatosMetricas.cs" />
     <Compile Include="Objetos\EstadoCuenta.cs" />
+    <Compile Include="Objetos\Mantenimientos.cs" />
     <Compile Include="Objetos\MapaFlota.cs" />
     <Compile Include="Objetos\Reportes.cs" />
     <Compile Include="Objetos\RequestMatricula.cs" />
@@ -1628,6 +1631,7 @@
     <Compile Include="Objetos\Vuelos.cs" />
     <Compile Include="Presenter\DetalleReportes_Presenter.cs" />
     <Compile Include="Presenter\EstadoCuenta_Presenter.cs" />
+    <Compile Include="Presenter\Mantenimientos_Presenter.cs" />
     <Compile Include="Presenter\MapaFlota_Presenter.cs" />
     <Compile Include="Presenter\MetricasEstadisticas_Presenter.cs" />
     <Compile Include="Presenter\Tripulacion_Presenter.cs" />

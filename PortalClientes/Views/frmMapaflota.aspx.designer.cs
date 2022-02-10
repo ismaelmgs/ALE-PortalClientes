@@ -148,13 +148,13 @@ namespace PortalClientes.Views {
         protected global::System.Web.UI.WebControls.LinkButton hometab;
         
         /// <summary>
-        /// Control lblLocacion.
+        /// Control lblRutas.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblLocacion;
+        protected global::System.Web.UI.WebControls.Label lblRutas;
         
         /// <summary>
         /// Control profiletab.
@@ -166,13 +166,13 @@ namespace PortalClientes.Views {
         protected global::System.Web.UI.WebControls.LinkButton profiletab;
         
         /// <summary>
-        /// Control lblRutas.
+        /// Control lblLocacion.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblRutas;
+        protected global::System.Web.UI.WebControls.Label lblLocacion;
         
         /// <summary>
         /// Control home.

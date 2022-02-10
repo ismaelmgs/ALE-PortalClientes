@@ -7,13 +7,11 @@
 // </generado automáticamente>
 //------------------------------------------------------------------------------
 
-namespace PortalClientes.Views
-{
-
-
-    public partial class frmMantenimientos
-    {
-
+namespace PortalClientes.Views {
+    
+    
+    public partial class frmMantenimientos {
+        
         /// <summary>
         /// Control upaPrincipal.
         /// </summary>
@@ -22,7 +20,7 @@ namespace PortalClientes.Views
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.UpdatePanel upaPrincipal;
-
+        
         /// <summary>
         /// Control lblMantenimientosHeader.
         /// </summary>
@@ -31,7 +29,7 @@ namespace PortalClientes.Views
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblMantenimientosHeader;
-
+        
         /// <summary>
         /// Control lblMantenimientos.
         /// </summary>
@@ -40,23 +38,50 @@ namespace PortalClientes.Views
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblMantenimientos;
-
+        
         /// <summary>
-        /// Control LinkButton1.
+        /// Control DDFiltroMeses.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton LinkButton1;
-
+        protected global::System.Web.UI.WebControls.DropDownList DDFiltroMeses;
+        
         /// <summary>
-        /// Control LinkButton2.
+        /// Control btnExc.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton LinkButton2;
+        protected global::System.Web.UI.WebControls.LinkButton btnExc;
+        
+        /// <summary>
+        /// Control btnPdf.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton btnPdf;
+        
+        /// <summary>
+        /// Control UpdatePanel1.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.UpdatePanel UpdatePanel1;
+        
+        /// <summary>
+        /// Control gvMttos.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView gvMttos;
     }
 }

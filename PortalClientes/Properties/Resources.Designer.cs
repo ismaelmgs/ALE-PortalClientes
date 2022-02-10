@@ -2221,6 +2221,60 @@ namespace PortalClientes.Properties {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Descripcion.
+        /// </summary>
+        internal static string Mtto_descripcion {
+            get {
+                return ResourceManager.GetString("Mtto_descripcion", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Fecha Fin.
+        /// </summary>
+        internal static string Mtto_fechaFin {
+            get {
+                return ResourceManager.GetString("Mtto_fechaFin", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Fecha Incio.
+        /// </summary>
+        internal static string Mtto_fechaInicio {
+            get {
+                return ResourceManager.GetString("Mtto_fechaInicio", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Notas.
+        /// </summary>
+        internal static string Mtto_notes {
+            get {
+                return ResourceManager.GetString("Mtto_notes", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Numero de Vuelo.
+        /// </summary>
+        internal static string Mtto_origNmbr {
+            get {
+                return ResourceManager.GetString("Mtto_origNmbr", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Mantenimientos Programados.
+        /// </summary>
+        internal static string Mtto_title {
+            get {
+                return ResourceManager.GetString("Mtto_title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Eventos.
         /// </summary>
         internal static string PTEventos {
