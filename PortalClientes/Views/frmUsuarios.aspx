@@ -18,6 +18,14 @@
             var modal = $find(modalId);
             modal.hide();
         }
+
+        function OcultarModalBanUsu()
+        {
+            "use strict";
+            var modalId = '<%=mpeBUsuario.ClientID%>';
+            var modal = $find(modalId);
+            modal.hide();
+        }
         
         function OcultarModalMatriculas() {
             "use strict";
@@ -158,6 +166,8 @@
                                                         OnClick="imbEditarModulos_Click" CommandName="Modulos" CommandArgument="<%# ((GridViewRow) Container).RowIndex %>" />&nbsp;&nbsp;&nbsp;
                                                     <asp:ImageButton ID="imbClonUsuarios" runat="server" ImageUrl="~/Images/icons/clone_permissions.png" Width="22px" Height=""
                                                         OnClick="imbClonUsuarios_Click" CommandName="Usuarios" CommandArgument="<%# ((GridViewRow) Container).RowIndex %>" />
+                                                    <asp:ImageButton ID="imbBanUser" runat="server" ImageUrl="~/Images/icons/clone_permissions.png" Width="22px" Height=""
+                                                        OnClick="imbBanUser_Click" CommandName="Usuarios" CommandArgument="<%# ((GridViewRow) Container).RowIndex %>" />
                                                 </ItemTemplate>
                                             </asp:TemplateField>
                                         </Columns>
@@ -171,6 +181,48 @@
         </ContentTemplate>
     </asp:UpdatePanel>
 
+    <%-- MODAL PARA ACTIVAR / DESACTIVAR USUARIO --%>
+    <asp:HiddenField ID="HdTargetBanUsuario" runat="server" />
+    <cc1:ModalPopupExtender ID="mpeBUsuario" runat="server" TargetControlID="HdTargetBanUsuario"
+        PopupControlID="pnlBanUsuario" BackgroundCssClass="overlayy">
+    </cc1:ModalPopupExtender>
+    <asp:Panel ID="pnlBanUsuario" runat="server" BorderColor="" BackColor="White" HorizontalAlign="Center" Height="" Width=""
+        CssClass="modalrlr">
+        <asp:UpdatePanel ID="upaBanUusario" runat="server" UpdateMode="Conditional">
+            <ContentTemplate>
+                <asp:Button ID="Button2" runat="server" CssClass="btn" Text="X" Font-Bold="true" OnClientClick="OcultarModalBanUsu();" Style="z-index: 2000; right: 13px; margin-top: 10px; position: absolute; color: #ffffff;" />
+                <h5 class="modal-title" style="color: #ffffff; background-color: #2a3f54; width: 100%; height: 70px; padding-top: 15px;">
+                    <asp:Label ID="lblTituloBanUsuario" runat="server"></asp:Label>
+                </h5>
+                <br />
+                <div style="height: 70vh; overflow-y: auto; overflow-x: hidden; border: 1px solid #efefef; background-color: #00000003;">
+
+                    <asp:Label ID="lblBanUsuario" runat="server"></asp:Label>
+                    <br />
+                    <h3>
+                        <asp:Label ID="lblBanUsuarioRes" runat="server"></asp:Label></h3>
+                    <br />
+                    <center>
+                    <asp:DropDownList ID="ddlBanUsuario" runat="server" CssClass="form-control" AutoPostBack="true" Width="90%"></asp:DropDownList>
+                    </center>
+                    <br />
+                </div>
+                <br />
+                <table style="width: 100%;">
+                    <tr>
+                        <td>
+                            <div class="row">
+                                <div class="col-md-12" style="text-align: right;">
+                                    <asp:Button ID="btnAceptarBanUsuario" runat="server" CssClass="btn btn-primary" UseSubmitBehavior="true" OnClick="btnAceptarBanUsuario_Click" />
+                                    <asp:Button ID="btnCancelarBanUsuario" runat="server" CssClass="btn btn-warning" UseSubmitBehavior="true" OnClientClick="OcultarModalBanUsu();" />
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </ContentTemplate>
+        </asp:UpdatePanel>
+    </asp:Panel>
 
     <%-- MODAL PARA EDICIÓN DEL EMPLEADO --%>
     <asp:HiddenField ID="hdTargetUsuario" runat="server" />
@@ -278,11 +330,15 @@
                                     <div class="col-md-5" style="text-align: left;">
                                         <asp:Label ID="lblPass" runat="server"></asp:Label><asp:Label runat="server" ForeColor="Red" Text=" *"></asp:Label><br />
                                         <asp:TextBox ID="txtPass" runat="server" TextMode="Password" CssClass="form-control"></asp:TextBox>
+                                        <asp:RegularExpressionValidator ID="Regex1" runat="server" ControlToValidate="txtPass"
+                                            ValidationExpression="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$" ErrorMessage="Password must contain: Minimum 8 characters atleast 1 Alphabet and 1 Number" ForeColor="Red" />
                                         <asp:Label ID="lblReqPass" runat="server" ForeColor="Red" Visible="false"></asp:Label>
                                     </div>
                                     <div class="col-md-5" style="text-align: left;">
                                         <asp:Label ID="lblConfirPass" runat="server"></asp:Label><asp:Label runat="server" ForeColor="Red" Text=" *"></asp:Label><br />
                                         <asp:TextBox ID="txtConfirPass" runat="server" TextMode="Password" CssClass="form-control"></asp:TextBox>
+                                        <asp:RegularExpressionValidator ID="Regex2" runat="server" ControlToValidate="txtConfirPass"
+                                            ValidationExpression="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$" ErrorMessage="Password must contain: Minimum 8 characters atleast 1 Alphabet and 1 Number" ForeColor="Red" />
                                         <asp:Label ID="lblReqConfirPass" runat="server" ForeColor="Red" Visible="false"></asp:Label>
                                     </div>
                                     <div class="col-md-1"></div>
