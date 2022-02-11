@@ -74,7 +74,7 @@
                           </dx:BootstrapButton>
                           <br />
                           <br />
-                        <asp:Label ID="lblOlvidoPAssword" runat="server"></asp:Label>
+                        <a href="frmLoginLoss.aspx"><asp:Label ID="lblOlvidoPAssword" runat="server"></asp:Label></a>
                       </div>
                   </div>
               </div>
