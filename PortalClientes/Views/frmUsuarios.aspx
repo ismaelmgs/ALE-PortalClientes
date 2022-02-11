@@ -166,7 +166,7 @@
                                                         OnClick="imbEditarModulos_Click" CommandName="Modulos" CommandArgument="<%# ((GridViewRow) Container).RowIndex %>" />&nbsp;&nbsp;&nbsp;
                                                     <asp:ImageButton ID="imbClonUsuarios" runat="server" ImageUrl="~/Images/icons/clone_permissions.png" Width="22px" Height=""
                                                         OnClick="imbClonUsuarios_Click" CommandName="Usuarios" CommandArgument="<%# ((GridViewRow) Container).RowIndex %>" />
-                                                    <asp:ImageButton ID="imbBanUser" runat="server" ImageUrl="~/Images/icons/clone_permissions.png" Width="22px" Height=""
+                                                    <asp:ImageButton ID="imbBanUser" runat="server" ImageUrl="~/Images/icons/eliminar_usuario.png" Width="22px" Height=""
                                                         OnClick="imbBanUser_Click" CommandName="Usuarios" CommandArgument="<%# ((GridViewRow) Container).RowIndex %>" />
                                                 </ItemTemplate>
                                             </asp:TemplateField>
