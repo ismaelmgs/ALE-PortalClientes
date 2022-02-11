@@ -106,6 +106,12 @@ namespace PortalClientes.Views
                     imbClonUsuarios.ToolTip = Properties.Resources.Us_TtipClonarUsuarios;
                 }
 
+                ImageButton imbBanUser = (ImageButton)e.Row.FindControl("imbBanUser");
+                if (imbBanUser != null)
+                {
+                    imbBanUser.ToolTip = Properties.Resources.Us_TtipActivacionUsuario;
+                }
+
             }
         }
 
@@ -314,6 +320,11 @@ namespace PortalClientes.Views
             mpeModulos.Show();
         }
 
+        protected void btnAceptarBanUsuario_Click(object sender, EventArgs e)
+        {
+            mpeBUsuario.Hide();
+        }
+
         protected void gvModulosUsuario_RowDataBound(object sender, GridViewRowEventArgs e)
         {
             if (e.Row.RowType == DataControlRowType.Header)
@@ -330,6 +341,33 @@ namespace PortalClientes.Views
 
             if (eObjSelected != null)
                 eObjSelected(sender, e);
+        }
+
+        protected void imbBanUser_Click(object sender, ImageClickEventArgs e)
+        {
+            try
+            {
+                GridViewRow row = ((ImageButton)sender).NamingContainer as GridViewRow;
+                if (row != null)
+                {
+                    iIdUsuario = gvUsuarios.DataKeys[row.RowIndex]["IdUsuario"].S().I();
+
+                    var usuario = oLstUsers.Find(x => x.IdUsuario == iIdUsuario);
+
+                    if(usuario != null)
+                    {
+                        lblBanUsuarioRes.Text = usuario.Nombres + " " + usuario.ApePat + " " + usuario.ApeMat;
+                        ddlBanUsuario.SelectedValue = usuario.Sts.S();
+                    }
+                }
+
+                upaBanUusario.Update();
+                mpeBUsuario.Show();
+            }
+            catch (Exception ex)
+            {
+
+            }
         }
 
         #endregion
@@ -383,6 +421,29 @@ namespace PortalClientes.Views
             btnCancelarClonar.Text = Properties.Resources.Cancelar;
 
             lblUsuarioDestino.Text = Properties.Resources.Us_UsuarioDestino;
+
+            Regex1.ErrorMessage = Properties.Resources.Us_ValidacionContrasena;
+            Regex2.ErrorMessage = Properties.Resources.Us_ValidacionConfirmContrasena;
+            btnAceptarBanUsuario.Text = Properties.Resources.Aceptar;
+            btnCancelarBanUsuario.Text = Properties.Resources.Cancelar;
+            lblTituloBanUsuario.Text = Properties.Resources.Us_TitelBanUsuario;
+            lblBanUsuario.Text = Properties.Resources.Us_BanUsuario;
+
+
+            var vBanUser = ddlBanUsuario.SelectedValue;
+            if (vBanUser == "")
+            {
+                ddlBanUsuario.SelectedIndex = 3;
+            }
+            else
+            {
+                ddlBanUsuario.SelectedValue = vBanUser;
+            }
+
+            ddlBanUsuario.Items.Clear();
+            ddlBanUsuario.Items.Add(new ListItem(Properties.Resources.Us_BanUsuActivar, "1"));
+            ddlBanUsuario.Items.Add(new ListItem(Properties.Resources.Us_BanUsuDesAct, "0"));
+
             //ddlUsuarios.Caption = Properties.Resources.Us_UsuarioOrigen;
         }
 
@@ -610,10 +671,9 @@ namespace PortalClientes.Views
             set { ViewState["VSIdUsuarioDestino"] = value; }
         }
 
-        #endregion
-       
 
-        
+
+        #endregion
     }
     
 }

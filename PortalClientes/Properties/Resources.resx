@@ -1275,4 +1275,25 @@
   <data name="Mtto_title" xml:space="preserve">
     <value>Mantenimientos Programados</value>
   </data>
+  <data name="Us_TtipActivacionUsuario" xml:space="preserve">
+    <value>Activar / Inactivar Usuario</value>
+  </data>
+  <data name="Us_BanUsuActivar" xml:space="preserve">
+    <value>Activar</value>
+  </data>
+  <data name="Us_BanUsuario" xml:space="preserve">
+    <value>Desea Activar / Desactivar este Usuario</value>
+  </data>
+  <data name="Us_BanUsuDesAct" xml:space="preserve">
+    <value>Inactivar</value>
+  </data>
+  <data name="Us_TitelBanUsuario" xml:space="preserve">
+    <value>Activar / Desactivar Usuario</value>
+  </data>
+  <data name="Us_ValidacionConfirmContrasena" xml:space="preserve">
+    <value>La confirmación de la contraseña debe contener: Mínimo 8 caracteres al menos 1 Alfabeto y 1 Número</value>
+  </data>
+  <data name="Us_ValidacionContrasena" xml:space="preserve">
+    <value>La contraseña debe contener: Mínimo 8 caracteres al menos 1 Alfabeto y 1 Número</value>
+  </data>
 </root>

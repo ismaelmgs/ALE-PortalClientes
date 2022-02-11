@@ -3292,6 +3292,33 @@ namespace PortalClientes.Properties {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Activar.
+        /// </summary>
+        internal static string Us_BanUsuActivar {
+            get {
+                return ResourceManager.GetString("Us_BanUsuActivar", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Desea Activar / Desactivar este Usuario.
+        /// </summary>
+        internal static string Us_BanUsuario {
+            get {
+                return ResourceManager.GetString("Us_BanUsuario", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Inactivar.
+        /// </summary>
+        internal static string Us_BanUsuDesAct {
+            get {
+                return ResourceManager.GetString("Us_BanUsuDesAct", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Celular:.
         /// </summary>
         internal static string Us_Celular {
@@ -3418,6 +3445,15 @@ namespace PortalClientes.Properties {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Activar / Desactivar Usuario.
+        /// </summary>
+        internal static string Us_TitelBanUsuario {
+            get {
+                return ResourceManager.GetString("Us_TitelBanUsuario", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Clonar permisos desde.
         /// </summary>
         internal static string Us_TituloClon {
@@ -3459,6 +3495,15 @@ namespace PortalClientes.Properties {
         internal static string Us_TituloPagUsuarios {
             get {
                 return ResourceManager.GetString("Us_TituloPagUsuarios", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Activar / Inactivar Usuario.
+        /// </summary>
+        internal static string Us_TtipActivacionUsuario {
+            get {
+                return ResourceManager.GetString("Us_TtipActivacionUsuario", resourceCulture);
             }
         }
         
@@ -3522,6 +3567,24 @@ namespace PortalClientes.Properties {
         internal static string Us_ValCorreo {
             get {
                 return ResourceManager.GetString("Us_ValCorreo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a La confirmación de la contraseña debe contener: Mínimo 8 caracteres al menos 1 Alfabeto y 1 Número.
+        /// </summary>
+        internal static string Us_ValidacionConfirmContrasena {
+            get {
+                return ResourceManager.GetString("Us_ValidacionConfirmContrasena", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a La contraseña debe contener: Mínimo 8 caracteres al menos 1 Alfabeto y 1 Número.
+        /// </summary>
+        internal static string Us_ValidacionContrasena {
+            get {
+                return ResourceManager.GetString("Us_ValidacionContrasena", resourceCulture);
             }
         }
         
