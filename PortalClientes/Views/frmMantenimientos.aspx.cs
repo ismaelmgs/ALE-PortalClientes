@@ -107,6 +107,11 @@ namespace PortalClientes.Views
 
         #region METODOS 
 
+        public override void VerifyRenderingInServerForm(Control control)
+        {
+            return;
+        }
+
         private void ArmaFormulario()
         {
             lblMantenimientos.Text = Properties.Resources.Mtto_title;
@@ -240,7 +245,7 @@ namespace PortalClientes.Views
         private string nameFile(int tipoDocumento)
         {
             var nameFile = "";
-            nameFile = Utils.Idioma == "es-MX" ? "Pilotos Tripulacion Matricula " : "Pilot Crew Tail number ";
+            nameFile = Properties.Resources.Mtto_title + " ";
             nameFile += Utils.MatriculaActual + " " + fechaConsulta(DDFiltroMeses.SelectedValue) + (tipoDocumento == 1 ? ".pdf" : ".xls");
 
             return nameFile;
@@ -288,5 +293,6 @@ namespace PortalClientes.Views
         public event EventHandler eDeleteObj;
         public event EventHandler eSearchObj;
         #endregion
+
     }
 }

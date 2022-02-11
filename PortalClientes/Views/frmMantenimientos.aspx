@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="frmMantenimientos.aspx.cs" Inherits="PortalClientes.Views.frmMantenimientos" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="frmMantenimientos.aspx.cs" Inherits="PortalClientes.Views.frmMantenimientos"  EnableEventValidation="false"%>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
@@ -37,7 +37,7 @@
                                             &nbsp;
                                         </div>
                                         <div class="col-md-8">
-                                            <asp:DropDownList ID="DDFiltroMeses" runat="server" AutoPostBack="true" CssClass="form-control" Width="100%" OnSelectedIndexChanged="DDFiltroMeses_SelectedIndexChanged"></asp:DropDownList>
+                                            <asp:DropDownList ID="DDFiltroMeses" runat="server" AutoPostBack="true" CssClass="form-control ddl" Width="100%" OnSelectedIndexChanged="DDFiltroMeses_SelectedIndexChanged"></asp:DropDownList>
                                         </div>
                                         <div class="col-md-2">
                                             <asp:LinkButton ID="btnExc" runat="server" Text="<i class='fa fa-file-excel-o' style='color:#73879c;font-size:25px;'></i>" CssClass="btn"  OnClientClick="LoadingTime(3)" OnClick="btnExc_Click"/>
@@ -52,29 +52,19 @@
                            <div class="col-md-12">
                                 <div class="table-responsive">
                                     <div class="card-box table-responsive">
-                                        <asp:UpdatePanel ID="UpdatePanel1" runat="server">
-                                            <ContentTemplate>
-                                                <asp:GridView ID="gvMttos" runat="server" AutoGenerateColumns="false" CssClass="table table-striped table-bordered table-hover" ChildrenAsTriggers="False"
-                                                    AllowPaging="true" OnRowDataBound="gvMttos_RowDataBound" EmptyDataText="No Registros" OnPageIndexChanging="gvMttos_PageIndexChanging">
-                                                    <HeaderStyle />
-                                                    <RowStyle />
-                                                    <AlternatingRowStyle />
-                                                    <Columns>
-                                                        <asp:BoundField DataField="origNmbr" />
-                                                        <asp:BoundField DataField="descripcion" />
-                                                        <asp:BoundField DataField="notes" />
-                                                        <asp:BoundField DataField="fechaInicio" />
-                                                        <asp:BoundField DataField="fechaFin" />
-                                                    </Columns>
-                                                </asp:GridView>
-                                            </ContentTemplate>
-                                            <Triggers>
-                                                <asp:PostBackTrigger ControlID="gvMttos" />
-                                            </Triggers>
-                                        </asp:UpdatePanel>
+                                        <asp:GridView ID="gvMttos" runat="server" AutoGenerateColumns="false" CssClass="table table-striped table-bordered table-hover" ChildrenAsTriggers="False"
+                                            AllowPaging="true" OnRowDataBound="gvMttos_RowDataBound" EmptyDataText="No Registros" OnPageIndexChanging="gvMttos_PageIndexChanging">
+                                            <Columns>
+                                                <asp:BoundField DataField="origNmbr" />
+                                                <asp:BoundField DataField="descripcion" />
+                                                <asp:BoundField DataField="notes" />
+                                                <asp:BoundField DataField="fechaInicio" />
+                                                <asp:BoundField DataField="fechaFin" />
+                                            </Columns>
+                                        </asp:GridView>
                                     </div>
                                 </div>
-                            </div>
+                           </div>
                         </div>
                     </div>
 
@@ -82,5 +72,9 @@
             </div>
             </div>
         </ContentTemplate>
+        <Triggers>
+            <asp:PostBackTrigger ControlID="btnExc" />
+            <asp:PostBackTrigger ControlID="btnPdf" />
+        </Triggers>
     </asp:UpdatePanel>
 </asp:Content>
