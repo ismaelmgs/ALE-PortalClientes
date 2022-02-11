@@ -7,7 +7,7 @@
                 <div class="col-md-6">
                     <div class="title_left">
                         <h3>
-                            <asp:Label ID="lblEdisionUsuarioHeader" runat="server" Text=" Edición Usuario" Font-Bold="false"></asp:Label></h3>
+                            <asp:Label ID="lblEdisionUsuarioHeader" runat="server" Text=" Administrar Cuenta" Font-Bold="false"></asp:Label></h3>
                     </div>
                 </div>
                 <div class="col-md-6">
@@ -26,7 +26,7 @@
                             <div class="row">
                                 <div class="col-md-6" style="text-align: left;">
                                     <h2>
-                                        <asp:Label ID="lblEditarUsuario" runat="server" Text="Edición Usuario" Font-Bold="true"></asp:Label>
+                                        <asp:Label ID="lblEditarUsuario" runat="server" Text="Administrar Cuenta" Font-Bold="true"></asp:Label>
                                     </h2>
                                 </div>
                                 <div class="col-md-6" style="text-align: right;">
