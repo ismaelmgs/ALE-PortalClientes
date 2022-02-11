@@ -253,6 +253,7 @@
     <Content Include="build\js\mapaFlota.js" />
     <Content Include="build\js\RutasyAeropuertos.js" />
     <Content Include="build\js\scheduler.js" />
+    <Content Include="frmLoginLoss.aspx" />
     <Content Include="Images\icons\descargar.png" />
     <Content Include="Images\icons\flecha_abre1.png" />
     <Content Include="Images\icons\flecha_cierra.png" />
@@ -1550,6 +1551,7 @@
     <Content Include="Views\frmCalendario.aspx" />
     <Content Include="Views\frmDashboard.aspx" />
     <Content Include="Views\frmDetalleReportes.aspx" />
+    <Content Include="Views\frmEditusuario.aspx" />
     <Content Include="Views\frmEdoCtaDetalle.aspx" />
     <Content Include="Views\frmErrorconexion.aspx" />
     <Content Include="Views\frmEstadoCuenta.aspx" />
@@ -1593,6 +1595,13 @@
     <Compile Include="DomainModel\DBUsuarios.cs" />
     <Compile Include="DomainModel\DBUtils.cs" />
     <Compile Include="DomainModel\DBVuelos.cs" />
+    <Compile Include="frmLoginLoss.aspx.cs">
+      <DependentUpon>frmLoginLoss.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="frmLoginLoss.aspx.designer.cs">
+      <DependentUpon>frmLoginLoss.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Interfaces\IViewDetalleReportes.cs" />
     <Compile Include="Interfaces\IViewEstadoCuenta.cs" />
     <Compile Include="Interfaces\iViewMantenimientos.cs" />
@@ -1848,6 +1857,13 @@
     </Compile>
     <Compile Include="Views\frmDetalleReportes.aspx.designer.cs">
       <DependentUpon>frmDetalleReportes.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\frmEditusuario.aspx.cs">
+      <DependentUpon>frmEditusuario.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\frmEditusuario.aspx.designer.cs">
+      <DependentUpon>frmEditusuario.aspx</DependentUpon>
     </Compile>
     <Compile Include="Views\frmEdoCtaDetalle.aspx.cs">
       <DependentUpon>frmEdoCtaDetalle.aspx</DependentUpon>
