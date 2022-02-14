@@ -449,6 +449,7 @@ namespace PortalClientes.Views
             dt.Columns.Add("PagosyCredUSD", typeof(System.String));
             dt.Columns.Add("NuevosCargosUSD", typeof(System.String));
             dt.Columns.Add("SaldoActualUSD", typeof(System.String));
+            dt.Columns.Add("Idioma", typeof(System.String));
 
             var contador = 0;
             DataRow row = dt.NewRow();
@@ -469,6 +470,7 @@ namespace PortalClientes.Views
                     row["ClaveContrato"] = item.claveContrato;
                     row["Periodo"] = iPeriodo;
                     row["Elaboro"] = Utils.NombreUsuario;
+                    row["Idioma"] = Utils.Idioma;
                 }
                 else
                 {
@@ -498,6 +500,7 @@ namespace PortalClientes.Views
             dtMXP.Columns.Add("Proveedor", typeof(System.String));
             dtMXP.Columns.Add("Importe", typeof(System.Decimal));
             dtMXP.Columns.Add("AmpliadoGasto", typeof(System.String));
+            dtMXP.Columns.Add("Idioma", typeof(System.String));
 
             foreach (var item in olstRep.estadoCuentaUSD)
             {
@@ -511,6 +514,7 @@ namespace PortalClientes.Views
                 rowMXP["Proveedor"] = item.proveedor;
                 rowMXP["Importe"] = item.importe;
                 rowMXP["AmpliadoGasto"] = "";
+                rowMXP["Idioma"] =Utils.Idioma;
 
                 dtMXP.Rows.Add(rowMXP);
             }
@@ -529,6 +533,7 @@ namespace PortalClientes.Views
             dtUSD.Columns.Add("Proveedor", typeof(System.String));
             dtUSD.Columns.Add("Importe", typeof(System.Decimal));
             dtUSD.Columns.Add("AmpliadoGasto", typeof(System.String));
+            dtUSD.Columns.Add("Idioma", typeof(System.String));
 
             foreach (var item in olstRep.estadoCuentaMXN)
             {
@@ -542,6 +547,7 @@ namespace PortalClientes.Views
                 rowUSD["Proveedor"] = item.proveedor;
                 rowUSD["Importe"] = item.importe;
                 rowUSD["AmpliadoGasto"] = "";
+                rowUSD["Idioma"] = Utils.Idioma;
 
                 dtUSD.Rows.Add(rowUSD);
             }
