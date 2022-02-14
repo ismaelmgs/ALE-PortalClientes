@@ -12,7 +12,7 @@
   <xs:element name="dsEdoCuenta" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="dsEdoCuenta" msprop:Generator_UserDSName="dsEdoCuenta">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="Extras" msprop:Generator_TableClassName="ExtrasDataTable" msprop:Generator_TableVarName="tableExtras" msprop:Generator_RowChangedName="ExtrasRowChanged" msprop:Generator_TablePropName="Extras" msprop:Generator_RowDeletingName="ExtrasRowDeleting" msprop:Generator_RowChangingName="ExtrasRowChanging" msprop:Generator_RowEvHandlerName="ExtrasRowChangeEventHandler" msprop:Generator_RowDeletedName="ExtrasRowDeleted" msprop:Generator_RowClassName="ExtrasRow" msprop:Generator_UserTableName="Extras" msprop:Generator_RowEvArgName="ExtrasRowChangeEvent">
+        <xs:element name="Extras" msprop:Generator_TableClassName="ExtrasDataTable" msprop:Generator_TableVarName="tableExtras" msprop:Generator_TablePropName="Extras" msprop:Generator_RowDeletingName="ExtrasRowDeleting" msprop:Generator_RowChangingName="ExtrasRowChanging" msprop:Generator_RowEvHandlerName="ExtrasRowChangeEventHandler" msprop:Generator_RowDeletedName="ExtrasRowDeleted" msprop:Generator_UserTableName="Extras" msprop:Generator_RowChangedName="ExtrasRowChanged" msprop:Generator_RowEvArgName="ExtrasRowChangeEvent" msprop:Generator_RowClassName="ExtrasRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Cliente" msprop:Generator_ColumnVarNameInTable="columnCliente" msprop:Generator_ColumnPropNameInRow="Cliente" msprop:Generator_ColumnPropNameInTable="ClienteColumn" msprop:Generator_UserColumnName="Cliente" type="xs:string" minOccurs="0" />
@@ -31,6 +31,7 @@
               <xs:element name="PagosyCredUSD" msprop:Generator_ColumnVarNameInTable="columnPagosyCredUSD" msprop:Generator_ColumnPropNameInRow="PagosyCredUSD" msprop:Generator_ColumnPropNameInTable="PagosyCredUSDColumn" msprop:Generator_UserColumnName="PagosyCredUSD" type="xs:decimal" minOccurs="0" />
               <xs:element name="NuevosCargosUSD" msprop:Generator_ColumnVarNameInTable="columnNuevosCargosUSD" msprop:Generator_ColumnPropNameInRow="NuevosCargosUSD" msprop:Generator_ColumnPropNameInTable="NuevosCargosUSDColumn" msprop:Generator_UserColumnName="NuevosCargosUSD" type="xs:decimal" minOccurs="0" />
               <xs:element name="SaldoActualUSD" msprop:Generator_ColumnVarNameInTable="columnSaldoActualUSD" msprop:Generator_ColumnPropNameInRow="SaldoActualUSD" msprop:Generator_ColumnPropNameInTable="SaldoActualUSDColumn" msprop:Generator_UserColumnName="SaldoActualUSD" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Idioma" msprop:Generator_ColumnVarNameInTable="columnIdioma" msprop:Generator_ColumnPropNameInRow="Idioma" msprop:Generator_ColumnPropNameInTable="IdiomaColumn" msprop:Generator_UserColumnName="Idioma" type="xs:string" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
