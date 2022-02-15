@@ -113,18 +113,18 @@ namespace PortalClientes.Views
 
                 ImageButton imbBanUser = (ImageButton)e.Row.FindControl("imbBanUser");
                 if (imbBanUser != null)
-                {
-                    imbBanUser.ToolTip = Properties.Resources.Us_TtipActivacionUsuario;
-
+                {                  
                     var status = e.Row.Cells[5].Text;
                     if(status == Properties.Resources.Us_BanUsuActivo)
                     {
+                        imbBanUser.ToolTip = Properties.Resources.Us_TtipDesActivacionUsuario;
                         imbBanUser.ImageUrl = "~/Images/icons/eliminar_usuario.png";
                     }
 
                     if (status == Properties.Resources.Us_BanUsuInactiv)
                     {
-                        imbBanUser.ImageUrl = "~/Images/icons/editar_usuario.png";
+                        imbBanUser.ToolTip = Properties.Resources.Us_TtipActivacionUsuario;
+                        imbBanUser.ImageUrl = "~/Images/icons/agregar_usuario04.png";
                     }
                 }
             }

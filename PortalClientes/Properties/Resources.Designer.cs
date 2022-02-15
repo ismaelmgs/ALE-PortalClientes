@@ -3526,7 +3526,7 @@ namespace PortalClientes.Properties {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Activar / Inactivar Usuario.
+        ///   Busca una cadena traducida similar a Activar Usuario.
         /// </summary>
         internal static string Us_TtipActivacionUsuario {
             get {
@@ -3540,6 +3540,15 @@ namespace PortalClientes.Properties {
         internal static string Us_TtipClonarUsuarios {
             get {
                 return ResourceManager.GetString("Us_TtipClonarUsuarios", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Inactivar Usuario.
+        /// </summary>
+        internal static string Us_TtipDesActivacionUsuario {
+            get {
+                return ResourceManager.GetString("Us_TtipDesActivacionUsuario", resourceCulture);
             }
         }
         

@@ -1279,7 +1279,7 @@
     <value>Scheduled Maintenance</value>
   </data>
   <data name="Us_TtipActivacionUsuario" xml:space="preserve">
-    <value>Activate / Deactivate User</value>
+    <value>Activate User</value>
   </data>
   <data name="Us_BanUsuActivar" xml:space="preserve">
     <value>Activate</value>
@@ -1307,5 +1307,8 @@
   </data>
   <data name="Us_BanUsuInactiv" xml:space="preserve">
     <value>Inactive</value>
+  </data>
+  <data name="Us_TtipDesActivacionUsuario" xml:space="preserve">
+    <value>Inactivate User</value>
   </data>
 </root>
