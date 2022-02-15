@@ -131,8 +131,8 @@ namespace PortalClientes
 
         public Usuario oUser
         {
-            set { ViewState["VSUsuario"] = value; }
-            get { return (Usuario)ViewState["VSUsuario"]; }
+            set { Session["VSUsuario"] = value; }
+            get { return (Usuario)Session["VSUsuario"]; }
         }
 
         public UserIdentity oU

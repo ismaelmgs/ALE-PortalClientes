@@ -322,6 +322,14 @@ namespace PortalClientes.Views
 
         protected void btnAceptarBanUsuario_Click(object sender, EventArgs e)
         {
+            oUsuario.Sts = ddlBanUsuario.SelectedValue.I();
+            oUsuario.tipoActualizacion = 2;
+
+            if (eSaveBanUsuario != null)
+                eSaveBanUsuario(sender, e);
+
+            LlenaGrid();
+
             mpeBUsuario.Hide();
         }
 
@@ -353,6 +361,7 @@ namespace PortalClientes.Views
                     iIdUsuario = gvUsuarios.DataKeys[row.RowIndex]["IdUsuario"].S().I();
 
                     var usuario = oLstUsers.Find(x => x.IdUsuario == iIdUsuario);
+                    oUsuario = usuario;
 
                     if(usuario != null)
                     {
@@ -591,6 +600,8 @@ namespace PortalClientes.Views
         public event EventHandler eSearchModulos;
         public event EventHandler eSaveModulos;
         public event EventHandler eSaveClonaPermisos;
+        public event EventHandler eSaveBanUsuario;
+
 
         public Usuario oUsuario
         {
@@ -606,7 +617,8 @@ namespace PortalClientes.Views
                     Pass = txtPass.Text.S(),
                     TelefonoMovil = txtTelMovil.Text.S(),
                     CorreoSecundario = txtCorreoSecundario.Text.S(),
-                    TelefonoOficina = txtTelefonoOficina.Text.S()
+                    TelefonoOficina = txtTelefonoOficina.Text.S(),
+                    tipoActualizacion = 2
                 };
             }
             set

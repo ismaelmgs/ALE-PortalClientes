@@ -81,7 +81,7 @@
                                             <div class="row">
                                                 <div class="col-md-1"></div>
                                                 <div class="col-md-5" style="text-align: left;">
-                                                    <asp:Label ID="lblCorreo" runat="server" Text="Correo Electrónico"></asp:Label><asp:Label runat="server" ForeColor="Red" Text=" *"></asp:Label><br />
+                                                    <asp:Label ID="lblCorreo" runat="server" Text="Correo Electrónico"></asp:Label><br />
                                                     <asp:TextBox ID="txtCorreo" runat="server" CssClass="form-control"></asp:TextBox>
                                                 </div>
                                                 <div class="col-md-5" style="text-align: left;">
@@ -108,7 +108,7 @@
                                             </div>
                                         </td>
                                     </tr>
-                                    <tr>
+                                   <%-- <tr>
                                         <td>
                                             <div class="row">
                                                 <div class="col-md-1"></div>
@@ -123,13 +123,13 @@
                                                 <div class="col-md-1"></div>
                                             </div>
                                         </td>
-                                    </tr>
+                                    </tr>--%>
                                     <tr>
                                         <td>
                                             <div class="row">
                                                 <div class="col-md-4"></div>
                                                 <div class="col-md-4" style="text-align: center;"><br /><br />
-                                                    <asp:Button ID="btnEditarUsuario" runat="server" CssClass="btn btn-primary" Text=" Actualizar " />
+                                                    <asp:Button ID="btnEditarUsuario" runat="server" CssClass="btn btn-primary" Text=" Actualizar " OnClick="btnEditarUsuario_Click"/>
                                                 </div>
                                                 <div class="col-md-4"></div>
                                             </div>

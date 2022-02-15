@@ -1608,6 +1608,7 @@
     <Compile Include="Interfaces\IViewMapaFlota.cs" />
     <Compile Include="Interfaces\IViewMetricasEstadisticas.cs" />
     <Compile Include="Interfaces\IViewTripulacion.cs" />
+    <Compile Include="Interfaces\IViewUser.cs" />
     <Compile Include="Interfaces\IViewVuelos.cs" />
     <Compile Include="Objetos\Calendario.cs" />
     <Compile Include="Objetos\DatosMetricas.cs" />
@@ -1644,6 +1645,7 @@
     <Compile Include="Presenter\MapaFlota_Presenter.cs" />
     <Compile Include="Presenter\MetricasEstadisticas_Presenter.cs" />
     <Compile Include="Presenter\Tripulacion_Presenter.cs" />
+    <Compile Include="Presenter\User_Presenter.cs" />
     <Compile Include="Presenter\Vuelos_Presenter.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>

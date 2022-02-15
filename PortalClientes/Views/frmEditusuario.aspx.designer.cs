@@ -7,13 +7,11 @@
 // </generado automáticamente>
 //------------------------------------------------------------------------------
 
-namespace PortalClientes.Views
-{
-
-
-    public partial class frmEditusuario
-    {
-
+namespace PortalClientes.Views {
+    
+    
+    public partial class frmEditusuario {
+        
         /// <summary>
         /// Control lblEdisionUsuarioHeader.
         /// </summary>
@@ -22,7 +20,7 @@ namespace PortalClientes.Views
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblEdisionUsuarioHeader;
-
+        
         /// <summary>
         /// Control lblEditarUsuario.
         /// </summary>
@@ -31,7 +29,7 @@ namespace PortalClientes.Views
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblEditarUsuario;
-
+        
         /// <summary>
         /// Control lblNombre.
         /// </summary>
@@ -40,7 +38,7 @@ namespace PortalClientes.Views
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblNombre;
-
+        
         /// <summary>
         /// Control txtNombre.
         /// </summary>
@@ -49,7 +47,7 @@ namespace PortalClientes.Views
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtNombre;
-
+        
         /// <summary>
         /// Control lblApellidoPat.
         /// </summary>
@@ -58,7 +56,7 @@ namespace PortalClientes.Views
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblApellidoPat;
-
+        
         /// <summary>
         /// Control txtApellidoPat.
         /// </summary>
@@ -67,7 +65,7 @@ namespace PortalClientes.Views
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtApellidoPat;
-
+        
         /// <summary>
         /// Control lblApellidoMat.
         /// </summary>
@@ -76,7 +74,7 @@ namespace PortalClientes.Views
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblApellidoMat;
-
+        
         /// <summary>
         /// Control txtApellidoMat.
         /// </summary>
@@ -85,7 +83,7 @@ namespace PortalClientes.Views
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtApellidoMat;
-
+        
         /// <summary>
         /// Control lblPuesto.
         /// </summary>
@@ -94,7 +92,7 @@ namespace PortalClientes.Views
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblPuesto;
-
+        
         /// <summary>
         /// Control txtPuesto.
         /// </summary>
@@ -103,7 +101,7 @@ namespace PortalClientes.Views
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtPuesto;
-
+        
         /// <summary>
         /// Control lblCorreo.
         /// </summary>
@@ -112,7 +110,7 @@ namespace PortalClientes.Views
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblCorreo;
-
+        
         /// <summary>
         /// Control txtCorreo.
         /// </summary>
@@ -121,7 +119,7 @@ namespace PortalClientes.Views
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtCorreo;
-
+        
         /// <summary>
         /// Control lblTelefonoMovil.
         /// </summary>
@@ -130,7 +128,7 @@ namespace PortalClientes.Views
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblTelefonoMovil;
-
+        
         /// <summary>
         /// Control txtTelMovil.
         /// </summary>
@@ -139,7 +137,7 @@ namespace PortalClientes.Views
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtTelMovil;
-
+        
         /// <summary>
         /// Control lblCorreoSecundario.
         /// </summary>
@@ -148,7 +146,7 @@ namespace PortalClientes.Views
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblCorreoSecundario;
-
+        
         /// <summary>
         /// Control txtCorreoSecundario.
         /// </summary>
@@ -157,7 +155,7 @@ namespace PortalClientes.Views
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtCorreoSecundario;
-
+        
         /// <summary>
         /// Control lblTelefonoOficina.
         /// </summary>
@@ -166,7 +164,7 @@ namespace PortalClientes.Views
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblTelefonoOficina;
-
+        
         /// <summary>
         /// Control txtTelefonoOficina.
         /// </summary>
@@ -175,43 +173,7 @@ namespace PortalClientes.Views
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtTelefonoOficina;
-
-        /// <summary>
-        /// Control lblPass.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblPass;
-
-        /// <summary>
-        /// Control txtPass.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtPass;
-
-        /// <summary>
-        /// Control lblConfirPass.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblConfirPass;
-
-        /// <summary>
-        /// Control txtConfirPass.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtConfirPass;
-
+        
         /// <summary>
         /// Control btnEditarUsuario.
         /// </summary>

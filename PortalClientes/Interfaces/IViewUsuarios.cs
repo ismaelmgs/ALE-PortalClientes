@@ -29,5 +29,7 @@ namespace PortalClientes.Interfaces
         event EventHandler eSaveClonaPermisos;
         event EventHandler eSaveMatriculasUsuario;
         event EventHandler eSaveModulos;
+        event EventHandler eSaveBanUsuario;
+
     }
 }

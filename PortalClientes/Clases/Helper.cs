@@ -23,6 +23,7 @@ namespace PortalClientes.Clases
         public const string US_UrlObtieneUsuarios = "http://201.163.208.231/" + DominioWS + "/ws/pc/obtieneUsuarios";
         public const string US_UrlObtieneUsuariosFiltros = "http://201.163.208.231/" + DominioWS + "/ws/pc/consultaUsuariosFiltros";
         public const string US_UrlInsertaUsuario = "http://201.163.208.231/" + DominioWS + "/ws/pc/insertaUsuarios";
+        public const string US_UrlActualizaUsuario = "http://201.163.208.231/" + DominioWS + "/ws/pc/editaUsr";
         public const string US_UrlConsultaMatriculas = "http://201.163.208.231/" + DominioWS + "/ws/pc/consultaMatriculas";
         public const string US_UrlconsultaMatriculasUsuario = "http://201.163.208.231/" + DominioWS + "/ws/pc/consultaMatriculasUsuario";
 

@@ -24,6 +24,12 @@ namespace PortalClientes.Presenter
             oIView.eSearchModulos += eSearchModulos_Presenter;
             oIView.eSaveModulos += eSaveModulos_Presenter;
             oIView.eSaveClonaPermisos += eSaveClonaPermisos_Presenter;
+            oIView.eSaveBanUsuario += eSaveBanUsuario_Presenter;
+        }
+
+        protected void eSaveBanUsuario_Presenter(object sender, EventArgs e)
+        {
+            oIGesCat.ActualizaUsuarios(oIView.oUsuario);
         }
 
         protected override void SearchObj_Presenter(object sender, EventArgs e)

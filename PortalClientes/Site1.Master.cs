@@ -204,6 +204,11 @@ namespace PortalClientes
                 Response.Redirect("~/frmLogin.aspx");
             }
 
+            if (e.Item.GroupName == "Group3")
+            {
+                Response.Redirect("~/Views/frmEditusuario.aspx");
+            }
+
             string[] pathList = HttpContext.Current.Request.Url.Segments;
             var url = HttpContext.Current.Request.Url.AbsoluteUri;
             string path = pathList[2];

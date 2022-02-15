@@ -77,6 +77,45 @@ namespace PortalClientes.DomainModel
             }
         }
 
+        public responceAct ActualizaUsuarios(Usuario oUser)
+        {
+            try
+            {
+                JavaScriptSerializer ser = new JavaScriptSerializer();
+                TokenWS oToken = Utils.ObtieneToken;
+
+                responceAct res = new responceAct();
+
+                requestActualizaUsuario oReq = new requestActualizaUsuario();
+                oReq.email = oUser.Correo;
+                oReq.nombre = oUser.Nombres;
+                oReq.primeroApe = oUser.ApePat;
+                oReq.segundoApe = oUser.ApeMat;
+                oReq.puesto = oUser.Puesto;
+                oReq.telefonoMovil = oUser.TelefonoMovil;
+                oReq.telefonoOficina = oUser.TelefonoOficina;
+                oReq.correoSecundario = oUser.CorreoSecundario;
+                oReq.usuarioModifica = "i.morato";
+                oReq.opcion = oUser.tipoActualizacion;
+
+
+                var client = new RestClient(Helper.US_UrlActualizaUsuario);
+                var request = new RestRequest(Method.POST);
+                request.AddHeader("Authorization", oToken.token);
+                request.AddJsonBody(oReq);
+
+                IRestResponse response = client.Execute(request);
+                var resp = response.Content;
+                res = ser.Deserialize<responceAct>(resp);
+
+                return res;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
         public List<Usuario> ObtieneUsuariosFiltros(string sFiltro)
         {
             try
@@ -98,6 +137,34 @@ namespace PortalClientes.DomainModel
                 oUser = ser.Deserialize<List<Usuario>>(resp);
 
                 return oUser;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public Usuario ObtieneUsuarioId(int Id)
+        {
+            try
+            {
+                JavaScriptSerializer ser = new JavaScriptSerializer();
+                List<Usuario> oUser = new List<Usuario>();
+                Filtros oLog = new Filtros();
+                oLog.filtro = string.Empty;
+
+                TokenWS oToken = Utils.ObtieneToken;
+
+                var client = new RestClient(Helper.US_UrlObtieneUsuariosFiltros);
+                var request = new RestRequest(Method.POST);
+                request.AddHeader("Authorization", oToken.token);
+                request.AddJsonBody(oLog);
+
+                IRestResponse response = client.Execute(request);
+                var resp = response.Content;
+                oUser = ser.Deserialize<List<Usuario>>(resp);
+
+                return oUser.Find(x => x.IdUsuario == Id);
             }
             catch (Exception ex)
             {

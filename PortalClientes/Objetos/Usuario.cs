@@ -30,6 +30,7 @@ namespace PortalClientes.Objetos
         public string codigo { set; get; }
         public string mensaje { set; get; }
         public string NombreCliente { set; get; }
+        public int tipoActualizacion { get; set; }
     }
 
 
