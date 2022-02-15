@@ -258,6 +258,8 @@
     <Content Include="Images\icons\agregar_usuario02.png" />
     <Content Include="Images\icons\agregar_usuario03.png" />
     <Content Include="Images\icons\agregar_usuario04.png" />
+    <Content Include="Images\icons\bien_01.png" />
+    <Content Include="Images\icons\bien_02.png" />
     <Content Include="Images\icons\descargar.png" />
     <Content Include="Images\icons\editar.png" />
     <Content Include="Images\icons\editar_usuario.png" />
