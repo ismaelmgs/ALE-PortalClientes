@@ -56,7 +56,8 @@ namespace PortalClientes.Views
             if(resp.mensaje == "Operación ejecutada correctamente")
             {
                 System.Web.HttpContext.Current.Session["VSUsuario"] = oUsuario;
-                Response.Redirect("~/Views/frmDashboard.aspx");
+                lblMessageConfirm.Text = "Usurio Guardado con Exito!, Para ver los cambios reflejados es necesario iniciar sesion nuevamente.";
+                mpeConfirm.Show();
             }
             else
             {
@@ -80,6 +81,7 @@ namespace PortalClientes.Views
             lblCorreoSecundario.Text = Properties.Resources.Us_CorreoSecundario;
             lblTelefonoOficina.Text = Properties.Resources.Us_TelefonoOficina;
             lblTelefonoMovil.Text = Properties.Resources.Us_Celular;
+            btnAceptConfirm.Text = Properties.Resources.Aceptar;
 
             txtCorreo.Enabled = false;
         }

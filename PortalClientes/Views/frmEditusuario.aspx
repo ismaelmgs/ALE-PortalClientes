@@ -1,7 +1,11 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="frmEditusuario.aspx.cs" Inherits="PortalClientes.Views.frmEditusuario" %>
+
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="cc1" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    <asp:UpdatePanel ID="upaPrincipal" runat="server">
         <ContentTemplate>
             <div class="row">
                 <div class="col-md-6">
@@ -36,7 +40,7 @@
                         </div>
                         <div class="clearfix"></div>
                         <div class="row">
-                           <div class="col-md-12">
+                            <div class="col-md-12">
                                 <table style="width: 97%; margin: 0 auto !important;">
                                     <tr>
                                         <td>&nbsp;
@@ -86,7 +90,7 @@
                                                 </div>
                                                 <div class="col-md-5" style="text-align: left;">
                                                     <asp:Label ID="lblTelefonoMovil" runat="server" Text="Celular"></asp:Label><br />
-                                                    <asp:TextBox ID="txtTelMovil" runat="server" CssClass="form-control" MaxLength="13"></asp:TextBox>                                        
+                                                    <asp:TextBox ID="txtTelMovil" runat="server" CssClass="form-control" MaxLength="13"></asp:TextBox>
                                                 </div>
                                                 <div class="col-md-1"></div>
                                             </div>
@@ -108,7 +112,7 @@
                                             </div>
                                         </td>
                                     </tr>
-                                   <%-- <tr>
+                                    <%-- <tr>
                                         <td>
                                             <div class="row">
                                                 <div class="col-md-1"></div>
@@ -128,20 +132,66 @@
                                         <td>
                                             <div class="row">
                                                 <div class="col-md-4"></div>
-                                                <div class="col-md-4" style="text-align: center;"><br /><br />
-                                                    <asp:Button ID="btnEditarUsuario" runat="server" CssClass="btn btn-primary" Text=" Actualizar " OnClick="btnEditarUsuario_Click"/>
+                                                <div class="col-md-4" style="text-align: center;">
+                                                    <br />
+                                                    <br />
+                                                    <asp:Button ID="btnEditarUsuario" runat="server" CssClass="btn btn-primary" Text=" Actualizar " OnClick="btnEditarUsuario_Click" />
                                                 </div>
                                                 <div class="col-md-4"></div>
                                             </div>
                                         </td>
                                     </tr>
                                 </table>
-                               <br /><br />
-                           </div>
+                                <br />
+                                <br />
+                            </div>
                         </div>
                     </div>
 
                 </div>
             </div>
         </ContentTemplate>
+    </asp:UpdatePanel>
+
+    <%-- Modal Confirm --%>
+    <asp:HiddenField ID="hdTargetConfirm" runat="server" />
+    <cc1:ModalPopupExtender ID="mpeConfirm" runat="server" TargetControlID="hdTargetConfirm" CancelControlID="btnCancelConfirm"
+        PopupControlID="pnlConfirm" BackgroundCssClass="overlayy">
+    </cc1:ModalPopupExtender>
+    <asp:Panel ID="pnlConfirm" runat="server" BackColor="White" Style="display: none;" CssClass="modalrlr">
+        <asp:UpdatePanel ID="UpdatePanel2" runat="server">
+            <ContentTemplate>
+                <table style="width: 100%">
+                    <tr>
+                        <td colspan="2" runat="server" id="tdCaption">&nbsp;
+                           
+                            <center>
+                                <h4>
+                                    <asp:Label ID="lblCaption" runat="server"></asp:Label></h4>
+                            </center>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="width: 60px; vertical-align: middle; text-align: center">
+                            <asp:Image ID="imgInfo" runat="server" ImageUrl="~/Images/icons/information.png" Height="24" Width="24" />
+                        </td>
+                        <td style="text-align: left; vertical-align: middle">
+                            <asp:Label ID="lblMessageConfirm" runat="server"></asp:Label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: right">
+                            <asp:Button ID="btnAceptConfirm" runat="server" Text="Entendido" OnClientClick="OcultarModalConfir();" CssClass="btn btn-primary" />
+                        </td>
+                        <%--<td style="text-align: left">
+                            <asp:Button ID="btnCancelConfirm" runat="server" Text="No" OnClick="btnCancelConfirm_Click" CssClass="btn btn-default" />
+                        </td>--%>
+                    </tr>
+                </table>
+            </ContentTemplate>
+            <Triggers>
+                <asp:AsyncPostBackTrigger ControlID="btnCancelConfirm" EventName="Click" />
+            </Triggers>
+        </asp:UpdatePanel>
+    </asp:Panel>
 </asp:Content>
