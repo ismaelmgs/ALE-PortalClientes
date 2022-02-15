@@ -197,8 +197,7 @@
                 </h5>
                 <br />
                 <div style="height: 30vh; overflow-y: auto; overflow-x: hidden; border: 1px solid #efefef; background-color: #00000003;">
-                    <h3>
-                        <asp:Label ID="lblBanUsuarioRes" runat="server"></asp:Label></h3>
+                        <br /><br /><asp:Label ID="lblBanUsuarioRes" runat="server" style="font-size:16px;"></asp:Label>
                     <br />
                 </div>
                 <br />

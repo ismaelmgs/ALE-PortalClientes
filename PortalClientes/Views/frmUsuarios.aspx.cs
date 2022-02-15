@@ -383,11 +383,11 @@ namespace PortalClientes.Views
 
                         if(Utils.Idioma == "es-MX")
                         {
-                            texto = "Usuario " + usuario.Nombres + " " + usuario.ApePat + " " + usuario.ApeMat + " esta " + usuario.stsString.S() + " desea " + (usuario.Sts == 0 ? Properties.Resources.Us_BanUsuActivar : Properties.Resources.Us_BanUsuDesAct);
+                            texto = "Usuario: <br /><strong>" + usuario.Nombres + " " + usuario.ApePat + " " + usuario.ApeMat + "</strong><br /> esta:<br /> <strong>" + usuario.stsString.S() + "</strong><br /> ¿desea " + (usuario.Sts == 0 ? Properties.Resources.Us_BanUsuActivar : Properties.Resources.Us_BanUsuDesAct) + "?";
                         }
                         else
                         {
-                            texto = usuario.stsString + " " + usuario.Nombres + " " + usuario.ApePat + " " + usuario.ApeMat + " user  wants to " + (usuario.Sts == 0 ? Properties.Resources.Us_BanUsuActivar : Properties.Resources.Us_BanUsuDesAct) + " it";
+                            texto = "The user: <br /><strong>" + usuario.Nombres + " " + usuario.ApePat + " " + usuario.ApeMat + "</strong><br /> is<br /><strong>"  + usuario.stsString + "</strong><br> user  wants to " + (usuario.Sts == 0 ? Properties.Resources.Us_BanUsuActivar : Properties.Resources.Us_BanUsuDesAct) + " it?";
                         }
 
                         lblBanUsuarioRes.Text = texto;
