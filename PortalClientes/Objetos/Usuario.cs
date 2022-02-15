@@ -31,6 +31,7 @@ namespace PortalClientes.Objetos
         public string mensaje { set; get; }
         public string NombreCliente { set; get; }
         public int tipoActualizacion { get; set; }
+        public string stsString { get; set; }
     }
 
 

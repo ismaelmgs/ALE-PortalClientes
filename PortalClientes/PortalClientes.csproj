@@ -254,9 +254,15 @@
     <Content Include="build\js\RutasyAeropuertos.js" />
     <Content Include="build\js\scheduler.js" />
     <Content Include="frmLoginLoss.aspx" />
+    <Content Include="Images\icons\agregar_usuario01.png" />
+    <Content Include="Images\icons\agregar_usuario02.png" />
+    <Content Include="Images\icons\agregar_usuario03.png" />
+    <Content Include="Images\icons\agregar_usuario04.png" />
     <Content Include="Images\icons\descargar.png" />
+    <Content Include="Images\icons\editar.png" />
     <Content Include="Images\icons\editar_usuario.png" />
     <Content Include="Images\icons\eliminar_usuario.png" />
+    <Content Include="Images\icons\files.png" />
     <Content Include="Images\icons\flecha_abre1.png" />
     <Content Include="Images\icons\flecha_cierra.png" />
     <Content Include="Images\icons\visualizar.png" />
