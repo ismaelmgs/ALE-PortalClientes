@@ -87,7 +87,12 @@ namespace PortalClientes.Views
                 e.Row.Cells[2].Text = Properties.Resources.Us_ApeMat;
                 e.Row.Cells[3].Text = Properties.Resources.Correo;
                 e.Row.Cells[4].Text = Properties.Resources.Us_Puesto;
+                e.Row.Cells[5].Text = Properties.Resources.Us_Estatus;
 
+            }
+
+            if(e.Row.RowType == DataControlRowType.DataRow)
+            {
                 ImageButton imbMats = (ImageButton)e.Row.FindControl("imbAddMats");
                 if (imbMats != null)
                 {
@@ -110,8 +115,18 @@ namespace PortalClientes.Views
                 if (imbBanUser != null)
                 {
                     imbBanUser.ToolTip = Properties.Resources.Us_TtipActivacionUsuario;
-                }
 
+                    var status = e.Row.Cells[5].Text;
+                    if(status == Properties.Resources.Us_BanUsuActivo)
+                    {
+                        imbBanUser.ImageUrl = "~/Images/icons/eliminar_usuario.png";
+                    }
+
+                    if (status == Properties.Resources.Us_BanUsuInactiv)
+                    {
+                        imbBanUser.ImageUrl = "~/Images/icons/editar_usuario.png";
+                    }
+                }
             }
         }
 
@@ -322,7 +337,6 @@ namespace PortalClientes.Views
 
         protected void btnAceptarBanUsuario_Click(object sender, EventArgs e)
         {
-            oUsuario.Sts = ddlBanUsuario.SelectedValue.I();
             oUsuario.tipoActualizacion = 2;
 
             if (eSaveBanUsuario != null)
@@ -365,8 +379,18 @@ namespace PortalClientes.Views
 
                     if(usuario != null)
                     {
-                        lblBanUsuarioRes.Text = usuario.Nombres + " " + usuario.ApePat + " " + usuario.ApeMat;
-                        ddlBanUsuario.SelectedValue = usuario.Sts.S();
+                        var texto = "";
+
+                        if(Utils.Idioma == "es-MX")
+                        {
+                            texto = "Usuario " + usuario.Nombres + " " + usuario.ApePat + " " + usuario.ApeMat + " esta " + usuario.stsString.S() + " desea " + (usuario.Sts == 0 ? Properties.Resources.Us_BanUsuActivar : Properties.Resources.Us_BanUsuDesAct);
+                        }
+                        else
+                        {
+                            texto = usuario.stsString + " " + usuario.Nombres + " " + usuario.ApePat + " " + usuario.ApeMat + " user  wants to " + (usuario.Sts == 0 ? Properties.Resources.Us_BanUsuActivar : Properties.Resources.Us_BanUsuDesAct) + " it";
+                        }
+
+                        lblBanUsuarioRes.Text = texto;
                     }
                 }
 
@@ -436,24 +460,6 @@ namespace PortalClientes.Views
             btnAceptarBanUsuario.Text = Properties.Resources.Aceptar;
             btnCancelarBanUsuario.Text = Properties.Resources.Cancelar;
             lblTituloBanUsuario.Text = Properties.Resources.Us_TitelBanUsuario;
-            lblBanUsuario.Text = Properties.Resources.Us_BanUsuario;
-
-
-            var vBanUser = ddlBanUsuario.SelectedValue;
-            if (vBanUser == "")
-            {
-                ddlBanUsuario.SelectedIndex = 3;
-            }
-            else
-            {
-                ddlBanUsuario.SelectedValue = vBanUser;
-            }
-
-            ddlBanUsuario.Items.Clear();
-            ddlBanUsuario.Items.Add(new ListItem(Properties.Resources.Us_BanUsuActivar, "1"));
-            ddlBanUsuario.Items.Add(new ListItem(Properties.Resources.Us_BanUsuDesAct, "0"));
-
-            //ddlUsuarios.Caption = Properties.Resources.Us_UsuarioOrigen;
         }
 
         private void LlenaGrid()
@@ -476,6 +482,11 @@ namespace PortalClientes.Views
             if (oLst[0].codigo != "0000")
             {
                 gvUsuarios.EmptyDataText = "No existen registro para mostrar";
+            }
+
+            foreach(var item in oLstUsers)
+            {
+                item.stsString = item.Sts > 0 ? Properties.Resources.Us_BanUsuActivo : Properties.Resources.Us_BanUsuInactiv;
             }
 
             gvUsuarios.DataSource = oLstUsers;

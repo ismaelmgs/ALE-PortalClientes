@@ -1296,4 +1296,13 @@
   <data name="Us_ValidacionContrasena" xml:space="preserve">
     <value>La contraseña debe contener: Mínimo 8 caracteres al menos 1 Alfabeto y 1 Número</value>
   </data>
+  <data name="Us_Estatus" xml:space="preserve">
+    <value>Estatus</value>
+  </data>
+  <data name="Us_BanUsuActivo" xml:space="preserve">
+    <value>Activo</value>
+  </data>
+  <data name="Us_BanUsuInactiv" xml:space="preserve">
+    <value>Inactivo</value>
+  </data>
 </root>

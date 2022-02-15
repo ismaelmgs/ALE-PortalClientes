@@ -40,7 +40,7 @@ namespace PortalClientes.Presenter
         protected override void SaveObj_Presenter(object sender, EventArgs e)
         {
             oIGesCat.InsertaActualizaUsuarios(oIView.oUsuario);
-            oIView.CargaUsuarios(oIGesCat.ObtieneUsuariosFiltros(oIView.sFiltro));
+            oIView.CargaUsuarios(oIGesCat.ObtieneUsuarios());
         }
 
         protected void eSearchObjFiltros_Presenter(object sender, EventArgs e)

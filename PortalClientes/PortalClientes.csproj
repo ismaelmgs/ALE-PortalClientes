@@ -255,6 +255,8 @@
     <Content Include="build\js\scheduler.js" />
     <Content Include="frmLoginLoss.aspx" />
     <Content Include="Images\icons\descargar.png" />
+    <Content Include="Images\icons\editar_usuario.png" />
+    <Content Include="Images\icons\eliminar_usuario.png" />
     <Content Include="Images\icons\flecha_abre1.png" />
     <Content Include="Images\icons\flecha_cierra.png" />
     <Content Include="Images\icons\visualizar.png" />

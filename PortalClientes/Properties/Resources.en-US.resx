@@ -1299,4 +1299,13 @@
   <data name="Us_ValidacionContrasena" xml:space="preserve">
     <value>Password must contain: Minimum 8 characters atleast 1 Alphabet and 1 Number</value>
   </data>
+  <data name="Us_Estatus" xml:space="preserve">
+    <value>Status</value>
+  </data>
+  <data name="Us_BanUsuActivo" xml:space="preserve">
+    <value>Active</value>
+  </data>
+  <data name="Us_BanUsuInactiv" xml:space="preserve">
+    <value>Inactive</value>
+  </data>
 </root>

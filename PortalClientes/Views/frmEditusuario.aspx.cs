@@ -120,6 +120,8 @@ namespace PortalClientes.Views
                 txtPuesto.Text = oUser.Puesto;
                 txtCorreo.Text = oUser.Correo;
                 txtTelMovil.Text = oUser.TelefonoMovil;
+                txtTelefonoOficina.Text = oUser.TelefonoOficina;
+                txtCorreoSecundario.Text = oUser.CorreoSecundario;
             }
         }
 

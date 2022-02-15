@@ -3301,6 +3301,15 @@ namespace PortalClientes.Properties {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Activo.
+        /// </summary>
+        internal static string Us_BanUsuActivo {
+            get {
+                return ResourceManager.GetString("Us_BanUsuActivo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Desea Activar / Desactivar este Usuario.
         /// </summary>
         internal static string Us_BanUsuario {
@@ -3315,6 +3324,15 @@ namespace PortalClientes.Properties {
         internal static string Us_BanUsuDesAct {
             get {
                 return ResourceManager.GetString("Us_BanUsuDesAct", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Inactivo.
+        /// </summary>
+        internal static string Us_BanUsuInactiv {
+            get {
+                return ResourceManager.GetString("Us_BanUsuInactiv", resourceCulture);
             }
         }
         
@@ -3369,6 +3387,15 @@ namespace PortalClientes.Properties {
         internal static string Us_CorreoSecundario {
             get {
                 return ResourceManager.GetString("Us_CorreoSecundario", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Estatus.
+        /// </summary>
+        internal static string Us_Estatus {
+            get {
+                return ResourceManager.GetString("Us_Estatus", resourceCulture);
             }
         }
         

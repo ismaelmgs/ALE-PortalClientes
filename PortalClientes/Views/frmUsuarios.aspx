@@ -158,6 +158,7 @@
                                             <asp:BoundField DataField="ApeMat" />
                                             <asp:BoundField DataField="Correo" />
                                             <asp:BoundField DataField="Puesto" />
+                                            <asp:BoundField DataField="stsString" />
                                             <asp:TemplateField ItemStyle-HorizontalAlign="Center">
                                                 <ItemTemplate>
                                                     <asp:ImageButton ID="imbAddMats" runat="server" ImageUrl="~/Images/icons/add_mats.png" Width="22px" Height=""
@@ -195,16 +196,9 @@
                     <asp:Label ID="lblTituloBanUsuario" runat="server"></asp:Label>
                 </h5>
                 <br />
-                <div style="height: 70vh; overflow-y: auto; overflow-x: hidden; border: 1px solid #efefef; background-color: #00000003;">
-
-                    <asp:Label ID="lblBanUsuario" runat="server"></asp:Label>
-                    <br />
+                <div style="height: 30vh; overflow-y: auto; overflow-x: hidden; border: 1px solid #efefef; background-color: #00000003;">
                     <h3>
                         <asp:Label ID="lblBanUsuarioRes" runat="server"></asp:Label></h3>
-                    <br />
-                    <center>
-                    <asp:DropDownList ID="ddlBanUsuario" runat="server" CssClass="form-control" AutoPostBack="true" Width="90%"></asp:DropDownList>
-                    </center>
                     <br />
                 </div>
                 <br />

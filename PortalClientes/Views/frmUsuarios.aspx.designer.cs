@@ -130,15 +130,6 @@ namespace PortalClientes.Views {
         protected global::System.Web.UI.WebControls.Label lblTituloBanUsuario;
         
         /// <summary>
-        /// Control lblBanUsuario.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblBanUsuario;
-        
-        /// <summary>
         /// Control lblBanUsuarioRes.
         /// </summary>
         /// <remarks>
@@ -146,15 +137,6 @@ namespace PortalClientes.Views {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblBanUsuarioRes;
-        
-        /// <summary>
-        /// Control ddlBanUsuario.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlBanUsuario;
         
         /// <summary>
         /// Control btnAceptarBanUsuario.
