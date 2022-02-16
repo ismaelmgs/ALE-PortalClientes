@@ -254,6 +254,7 @@
     <Content Include="build\js\RutasyAeropuertos.js" />
     <Content Include="build\js\scheduler.js" />
     <Content Include="frmLoginLoss.aspx" />
+    <Content Include="frmRecuperaLogin.aspx" />
     <Content Include="Images\icons\agregar_usuario01.png" />
     <Content Include="Images\icons\agregar_usuario02.png" />
     <Content Include="Images\icons\agregar_usuario03.png" />
@@ -1611,6 +1612,13 @@
     </Compile>
     <Compile Include="frmLoginLoss.aspx.designer.cs">
       <DependentUpon>frmLoginLoss.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="frmRecuperaLogin.aspx.cs">
+      <DependentUpon>frmRecuperaLogin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="frmRecuperaLogin.aspx.designer.cs">
+      <DependentUpon>frmRecuperaLogin.aspx</DependentUpon>
     </Compile>
     <Compile Include="Interfaces\IViewDetalleReportes.cs" />
     <Compile Include="Interfaces\IViewEstadoCuenta.cs" />
