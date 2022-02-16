@@ -3,6 +3,16 @@
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="cc1" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+    <script type="text/javascript">
+        function OcultarModal()
+        {
+            "use strict";
+            var modalId = '<%=mpeConfirm.ClientID%>';
+            var modal = $find(modalId);
+            modal.hide();
+        }
+
+    </script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <asp:UpdatePanel ID="upaPrincipal" runat="server">
@@ -155,7 +165,7 @@
 
     <%-- Modal Confirm --%>
     <asp:HiddenField ID="hdTargetConfirm" runat="server" />
-    <cc1:ModalPopupExtender ID="mpeConfirm" runat="server" TargetControlID="hdTargetConfirm" CancelControlID="btnCancelConfirm"
+    <cc1:ModalPopupExtender ID="mpeConfirm" runat="server" TargetControlID="hdTargetConfirm"
         PopupControlID="pnlConfirm" BackgroundCssClass="overlayy">
     </cc1:ModalPopupExtender>
     <asp:Panel ID="pnlConfirm" runat="server" BackColor="White" Style="display: none;" CssClass="modalrlr">
@@ -173,7 +183,7 @@
                     </tr>
                     <tr>
                         <td style="width: 60px; vertical-align: middle; text-align: center">
-                            <asp:Image ID="imgInfo" runat="server" ImageUrl="~/Images/icons/information.png" Height="24" Width="24" />
+                            <asp:Image ID="imgInfo" runat="server" ImageUrl="~/Images/icons/bien_02.png" Height="24" Width="24" />
                         </td>
                         <td style="text-align: left; vertical-align: middle">
                             <asp:Label ID="lblMessageConfirm" runat="server"></asp:Label>
@@ -181,7 +191,7 @@
                     </tr>
                     <tr>
                         <td style="text-align: right">
-                            <asp:Button ID="btnAceptConfirm" runat="server" Text="Entendido" OnClientClick="OcultarModalConfir();" CssClass="btn btn-primary" />
+                            <asp:Button ID="btnAceptConfirm" runat="server" Text="Entendido" OnClientClick="OcultarModal();" CssClass="btn btn-primary" />
                         </td>
                         <%--<td style="text-align: left">
                             <asp:Button ID="btnCancelConfirm" runat="server" Text="No" OnClick="btnCancelConfirm_Click" CssClass="btn btn-default" />
@@ -189,9 +199,6 @@
                     </tr>
                 </table>
             </ContentTemplate>
-            <Triggers>
-                <asp:AsyncPostBackTrigger ControlID="btnCancelConfirm" EventName="Click" />
-            </Triggers>
         </asp:UpdatePanel>
     </asp:Panel>
 </asp:Content>
