@@ -13,5 +13,6 @@ namespace PortalClientes.Interfaces
         string sPassword { get; }
         Usuario oUser { set; get; }
         UserIdentity oU { set; get; }
+        void goLogin(responceAct resp);
     }
 }

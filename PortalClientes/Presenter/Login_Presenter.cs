@@ -59,8 +59,9 @@ namespace PortalClientes.Presenter
             MailMessage email = new MailMessage();
             email.To.Add(new MailAddress(oIView.sEmail));
             email.From = new MailAddress(ConfigurationManager.AppSettings["EmailSoporte"]);
-            email.Subject = "Asunto ( " + DateTime.Now.ToString("dd / MMM / yyy hh:mm:ss") + " ) ";
-            email.Body = "Cualquier contenido en <b>HTML</b> para enviarlo por correo electrónico.";
+            email.Subject = "Asunto ( " + DateTime.Now.ToString("dd / MMM / yyy hh:mm:ss") + " ) Recuperacion de Contrasena";
+            email.Body = "Cualquier contenido en <b>HTML</b> para enviarlo por correo electrónico. <a href='https://localhost:44305/frmRecuperaLogin.aspx?email="+ oIView.sEmail + "' class='btn btn-primary'>" +
+                         "Actualizar Contrasena</a>";
             email.IsBodyHtml = true;
             email.Priority = MailPriority.Normal;
 
@@ -85,6 +86,11 @@ namespace PortalClientes.Presenter
             }
 
             Console.WriteLine(output);
+        }
+
+        protected override void NewObj_Presenter(object sender, EventArgs e)
+        {
+            oIView.goLogin(oIGesCat.ActualizaUsuarios(oIView.sEmail, oIView.sPassword, 2));
         }
     }
 }

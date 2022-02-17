@@ -39,5 +39,38 @@ namespace PortalClientes.DomainModel
                 throw ex;
             }
         }
+
+        public responceAct ActualizaUsuarios(string sEmail, string spass, int tipoActualizacion)
+        {
+            try
+            {
+                JavaScriptSerializer ser = new JavaScriptSerializer();
+                TokenWS oToken = Utils.ObtieneToken;
+
+                responceAct res = new responceAct();
+
+                requestActualizaUsuario oReq = new requestActualizaUsuario();
+                oReq.email = sEmail;
+                oReq.nombre = spass;
+                oReq.opcion = tipoActualizacion;
+
+
+                var client = new RestClient(Helper.US_UrlActualizaUsuario);
+                var request = new RestRequest(Method.POST);
+                request.AddHeader("Authorization", oToken.token);
+                request.AddJsonBody(oReq);
+
+                IRestResponse response = client.Execute(request);
+                var resp = response.Content;
+                res = ser.Deserialize<responceAct>(resp);
+
+                return res;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+
+            }
+        }
     }
 }

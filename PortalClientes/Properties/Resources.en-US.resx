@@ -1323,4 +1323,10 @@
   <data name="Lo_Enviar" xml:space="preserve">
     <value>Send</value>
   </data>
+  <data name="Lo_Actualizar" xml:space="preserve">
+    <value>Update</value>
+  </data>
+  <data name="Lo_NuevaContrasena" xml:space="preserve">
+    <value>Enter New Password</value>
+  </data>
 </root>

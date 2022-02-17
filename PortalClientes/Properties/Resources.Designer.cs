@@ -1645,6 +1645,15 @@ namespace PortalClientes.Properties {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Actualizar.
+        /// </summary>
+        internal static string Lo_Actualizar {
+            get {
+                return ResourceManager.GetString("Lo_Actualizar", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Regresar a Acceso.
         /// </summary>
         internal static string Lo_BackLogin {
@@ -1695,6 +1704,15 @@ namespace PortalClientes.Properties {
         internal static string Lo_Ingresar {
             get {
                 return ResourceManager.GetString("Lo_Ingresar", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Ingresar Contraseña Nueva.
+        /// </summary>
+        internal static string Lo_NuevaContrasena {
+            get {
+                return ResourceManager.GetString("Lo_NuevaContrasena", resourceCulture);
             }
         }
         

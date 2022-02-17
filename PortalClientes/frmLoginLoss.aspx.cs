@@ -45,6 +45,11 @@ namespace PortalClientes
             btnEviarContrasena.Text = Properties.Resources.Lo_Enviar;
         }
 
+        public void goLogin(responceAct resp)
+        {
+            throw new NotImplementedException();
+        }
+
         #endregion
 
         #region VARIABLES Y PROPIEDADES

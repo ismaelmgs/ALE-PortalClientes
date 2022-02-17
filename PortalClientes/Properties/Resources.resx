@@ -1320,4 +1320,10 @@
   <data name="Lo_Enviar" xml:space="preserve">
     <value>Enviar</value>
   </data>
+  <data name="Lo_Actualizar" xml:space="preserve">
+    <value>Actualizar</value>
+  </data>
+  <data name="Lo_NuevaContrasena" xml:space="preserve">
+    <value>Ingresar Contraseña Nueva</value>
+  </data>
 </root>

@@ -109,6 +109,11 @@ namespace PortalClientes
             ArmaFormulario();
         }
 
+        public void goLogin(responceAct resp)
+        {
+            throw new NotImplementedException();
+        }
+
         #endregion
 
         #region VARIABLES Y PROPIEDADES
