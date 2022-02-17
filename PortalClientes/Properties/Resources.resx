@@ -1308,4 +1308,16 @@
   <data name="Us_TtipDesActivacionUsuario" xml:space="preserve">
     <value>Inactivar Usuario</value>
   </data>
+  <data name="Us_ActContrasena" xml:space="preserve">
+    <value>Actualizar Contraseña</value>
+  </data>
+  <data name="Lo_BackLogin" xml:space="preserve">
+    <value>Regresar a Acceso</value>
+  </data>
+  <data name="Lo_CamContrasena" xml:space="preserve">
+    <value>Cambiar Contraseña</value>
+  </data>
+  <data name="Lo_Enviar" xml:space="preserve">
+    <value>Enviar</value>
+  </data>
 </root>

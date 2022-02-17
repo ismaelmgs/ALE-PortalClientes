@@ -160,6 +160,74 @@
 
                 </div>
             </div>
+
+            <div class="row">
+                <div class="col-md-12 col-sm-12">
+                    <div class="x_panel">
+                        <div class="x_title">
+                            <div class="row">
+                                <div class="col-md-6" style="text-align: left;">
+                                    <h2>
+                                        <asp:Label ID="lblEditarPass" runat="server" Text="Actualizar Contrasena" Font-Bold="true"></asp:Label>
+                                    </h2>
+                                </div>
+                                <div class="col-md-6" style="text-align: right;">
+                                    &nbsp;
+                                </div>
+                            </div>
+                        </div>
+                        <div class="clearfix"></div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <table style="width: 97%; margin: 0 auto !important;">
+                                    <tr>
+                                        <td>&nbsp;
+                                        </td>
+                                    </tr>
+                                     <tr>
+                                        <td>
+                                            <div class="row">
+                                                <div class="col-md-1"></div>
+                                                <div class="col-md-5" style="text-align: left;">
+                                                    <asp:Label ID="lblPass" runat="server"></asp:Label><asp:Label runat="server" ForeColor="Red" Text=" *"></asp:Label><br />
+                                                    <asp:TextBox ID="txtPass" runat="server" TextMode="Password" CssClass="form-control"></asp:TextBox>
+                                                    <asp:RegularExpressionValidator ID="Regex1" runat="server" ControlToValidate="txtPass"
+                                                        ValidationExpression="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$" ErrorMessage="Password must contain: Minimum 8 characters atleast 1 Alphabet and 1 Number" ForeColor="Red" />
+                                                    <asp:Label ID="lblReqPass" runat="server" ForeColor="Red" Visible="false"></asp:Label>
+                                                </div>
+                                                <div class="col-md-5" style="text-align: left;">
+                                                    <asp:Label ID="lblConfirPass" runat="server"></asp:Label><asp:Label runat="server" ForeColor="Red" Text=" *"></asp:Label><br />
+                                                    <asp:TextBox ID="txtConfirPass" runat="server" TextMode="Password" CssClass="form-control"></asp:TextBox>
+                                                    <asp:RegularExpressionValidator ID="Regex2" runat="server" ControlToValidate="txtConfirPass"
+                                                        ValidationExpression="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$" ErrorMessage="Password must contain: Minimum 8 characters atleast 1 Alphabet and 1 Number" ForeColor="Red" />
+                                                    <asp:Label ID="lblReqConfirPass" runat="server" ForeColor="Red" Visible="false"></asp:Label>
+                                                </div>
+                                                <div class="col-md-1"></div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="row">
+                                                <div class="col-md-4"></div>
+                                                <div class="col-md-4" style="text-align: center;">
+                                                    <br />
+                                                    <br />
+                                                    <asp:Button ID="btnEditarPass" runat="server" CssClass="btn btn-primary" Text=" Actualizar " OnClick="btnEditarPass_Click" />
+                                                </div>
+                                                <div class="col-md-4"></div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </table>
+                                <br />
+                                <br />
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
         </ContentTemplate>
     </asp:UpdatePanel>
 

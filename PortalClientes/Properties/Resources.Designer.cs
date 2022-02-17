@@ -1645,6 +1645,24 @@ namespace PortalClientes.Properties {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Regresar a Acceso.
+        /// </summary>
+        internal static string Lo_BackLogin {
+            get {
+                return ResourceManager.GetString("Lo_BackLogin", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Cambiar Contraseña.
+        /// </summary>
+        internal static string Lo_CamContrasena {
+            get {
+                return ResourceManager.GetString("Lo_CamContrasena", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Contraseña.
         /// </summary>
         internal static string Lo_Contrasena {
@@ -1659,6 +1677,15 @@ namespace PortalClientes.Properties {
         internal static string Lo_Correo {
             get {
                 return ResourceManager.GetString("Lo_Correo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Enviar.
+        /// </summary>
+        internal static string Lo_Enviar {
+            get {
+                return ResourceManager.GetString("Lo_Enviar", resourceCulture);
             }
         }
         
@@ -3243,6 +3270,15 @@ namespace PortalClientes.Properties {
         internal static string TitleTripulacion {
             get {
                 return ResourceManager.GetString("TitleTripulacion", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Actualizar Contraseña.
+        /// </summary>
+        internal static string Us_ActContrasena {
+            get {
+                return ResourceManager.GetString("Us_ActContrasena", resourceCulture);
             }
         }
         

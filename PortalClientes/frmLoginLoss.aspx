@@ -53,7 +53,7 @@
               <div><br />
                   <div class="row">
                       <div class="col-md-12" style="text-align:center;">
-                          <asp:Button ID="btnEviarContrasena" runat="server" CssClass="btn btn-primary" Text=" Enviar " Style="width:100%;" />  
+                          <asp:Button ID="btnEviarContrasena" runat="server" OnClick="btnEviarContrasena_Click" CssClass="btn btn-primary" Text=" Enviar " Style="width:100%;" />  
                       </div>
                   </div>
                   <br />

@@ -9,6 +9,8 @@ namespace PortalClientes.Interfaces
     public interface IViewUser : IBaseView
     {
         Usuario oUsuario { get; set; }
+        int tipoActualizacion { get; set; }
         void recargarPagina(responceAct resp);
+        void msjContrasena(responceAct resp);
     }
 }

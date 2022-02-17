@@ -629,7 +629,7 @@ namespace PortalClientes.Views
                     TelefonoMovil = txtTelMovil.Text.S(),
                     CorreoSecundario = txtCorreoSecundario.Text.S(),
                     TelefonoOficina = txtTelefonoOficina.Text.S(),
-                    tipoActualizacion = 2
+                    tipoActualizacion = 3
                 };
             }
             set

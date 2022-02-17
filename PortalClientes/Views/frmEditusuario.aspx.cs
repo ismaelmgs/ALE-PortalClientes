@@ -47,8 +47,30 @@ namespace PortalClientes.Views
 
         protected void btnEditarUsuario_Click(object sender, EventArgs e)
         {
+            tipoActualizacion = 1; // Actualizar datos del usuario
             if (eSaveObj != null)
                 eSaveObj(sender, e);
+        }
+
+        protected void btnEditarPass_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (EsValidoFormulario())
+                {
+                    tipoActualizacion = 2; // Actualizar contrasena del usuario
+                    oUsuario.tipoActualizacion = tipoActualizacion;
+                    oUsuario.Nombres = txtPass.Text;
+
+                    if (eSaveObj != null)
+                        eSaveObj(sender, e);
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            
         }
 
         public void recargarPagina(responceAct resp)
@@ -56,7 +78,21 @@ namespace PortalClientes.Views
             if(resp.mensaje == "Operación ejecutada correctamente")
             {
                 System.Web.HttpContext.Current.Session["VSUsuario"] = oUsuario;
-                lblMessageConfirm.Text = "Usurio Guardado con Exito!, Para ver los cambios reflejados es necesario iniciar sesion nuevamente.";
+                lblMessageConfirm.Text = "Usurio Actulizado con Exito!, Para ver los cambios reflejados es necesario iniciar sesion nuevamente.";
+                mpeConfirm.Show();
+            }
+            else
+            {
+                Response.Redirect("~/Views/frmEditusuario.aspx");
+            }
+        }
+
+        public void msjContrasena(responceAct resp)
+        {
+            if (resp.mensaje == "Operación ejecutada correctamente")
+            {
+                System.Web.HttpContext.Current.Session["VSUsuario"] = oUsuario;
+                lblMessageConfirm.Text = "Contraseña Actualizada con Exito!, Para ver los cambios reflejados es necesario iniciar sesion nuevamente.";
                 mpeConfirm.Show();
             }
             else
@@ -82,6 +118,12 @@ namespace PortalClientes.Views
             lblTelefonoOficina.Text = Properties.Resources.Us_TelefonoOficina;
             lblTelefonoMovil.Text = Properties.Resources.Us_Celular;
             btnAceptConfirm.Text = Properties.Resources.Aceptar;
+            lblEditarPass.Text = Properties.Resources.Us_ActContrasena;
+            lblPass.Text = Properties.Resources.Us_Password;
+            lblConfirPass.Text = Properties.Resources.Us_ConfirPass;
+
+            Regex1.ErrorMessage = Properties.Resources.Us_ValidacionContrasena;
+            Regex2.ErrorMessage = Properties.Resources.Us_ValidacionConfirmContrasena;
 
             txtCorreo.Enabled = false;
         }
@@ -89,6 +131,46 @@ namespace PortalClientes.Views
         private void LlenaFormulario()
         {
             oUsuario = (Usuario)System.Web.HttpContext.Current.Session["VSUsuario"];
+        }
+
+        public bool EsValidoFormulario()
+        {
+            bool ban = true;
+
+            if (txtPass.Text.S() == string.Empty)
+            {
+                lblReqPass.Visible = true;
+                lblReqPass.Text = Properties.Resources.Cm_CampoReq;
+                ban = false;
+            }
+            else
+            {
+                lblReqPass.Visible = false;
+                lblReqPass.Text = string.Empty;
+
+                if (txtConfirPass.Text.S() == string.Empty)
+                {
+                    lblReqConfirPass.Visible = true;
+                    lblReqConfirPass.Text = Properties.Resources.Cm_CampoReq;
+                    ban = false;
+                }
+                else
+                {
+                    if (txtPass.Text.S() != txtConfirPass.Text.S())
+                    {
+                        lblReqConfirPass.Visible = true;
+                        lblReqConfirPass.Text = Properties.Resources.Us_ValConfirPass;
+                        ban = false;
+                    }
+                    else
+                    {
+                        lblReqConfirPass.Visible = false;
+                        lblReqConfirPass.Text = string.Empty;
+                    }
+                }
+            }
+
+            return ban;
         }
 
         #endregion
@@ -102,7 +184,7 @@ namespace PortalClientes.Views
             {
                 return new Usuario()
                 {
-                    Nombres = txtNombre.Text.S(),
+                    Nombres = tipoActualizacion == 1 ? txtNombre.Text.S() : txtPass.Text.S(),
                     ApePat = txtApellidoPat.Text.S(),
                     ApeMat = txtApellidoMat.Text.S(),
                     Puesto = txtPuesto.Text.S(),
@@ -110,7 +192,7 @@ namespace PortalClientes.Views
                     TelefonoMovil = txtTelMovil.Text.S(),
                     CorreoSecundario = txtCorreoSecundario.Text.S(),
                     TelefonoOficina = txtTelefonoOficina.Text.S(),
-                    tipoActualizacion = 1
+                    tipoActualizacion = tipoActualizacion
                 };
             }
             set
@@ -127,6 +209,12 @@ namespace PortalClientes.Views
             }
         }
 
+        public int tipoActualizacion
+        {
+            get { return ViewState["VStipoActualizacion"].S().I(); }
+            set { ViewState["VStipoActualizacion"] = value; }
+        }
+
         public event EventHandler eNewObj;
         public event EventHandler eObjSelected;
         public event EventHandler eSaveObj;
@@ -136,5 +224,6 @@ namespace PortalClientes.Views
         User_Presenter oPresenter;
 
         #endregion
+
     }
 }

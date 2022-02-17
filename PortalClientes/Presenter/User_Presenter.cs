@@ -20,7 +20,14 @@ namespace PortalClientes.Presenter
 
         protected override void SaveObj_Presenter(object sender, EventArgs e)
         {
-             oIView.recargarPagina(oIGesCat.ActualizaUsuarios(oIView.oUsuario));
+            if(oIView.tipoActualizacion == 1)
+            {
+                oIView.recargarPagina(oIGesCat.ActualizaUsuarios(oIView.oUsuario));
+            }
+            else
+            {
+                oIView.msjContrasena(oIGesCat.ActualizaUsuarios(oIView.oUsuario));
+            }
         }
     }
 }
