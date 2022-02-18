@@ -2,17 +2,16 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Web;
 
 namespace PortalClientes.Interfaces
 {
-    public interface IViewLogin : IBaseView
+    public interface IViewRecoveryPass : IBaseView
     {
         string sEmail { get; }
         string sTime { get; }
         string sPassword { get; }
-        Usuario oUser { set; get; }
-        UserIdentity oU { set; get; }
+        int iTipoActualizacion { get; }
+        void requestResponse(responceAct response);
     }
 }

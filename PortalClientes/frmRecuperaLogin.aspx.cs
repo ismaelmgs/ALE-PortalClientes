@@ -13,14 +13,15 @@ using System.Web.UI.WebControls;
 
 namespace PortalClientes
 {
-    public partial class frmRecuperaLogin : System.Web.UI.Page, IViewLogin
+    public partial class frmRecuperaLogin : System.Web.UI.Page, IViewRecoveryPass
     {
         #region EVENTOS
         protected void Page_Load(object sender, EventArgs e)
         {
-            oPresenter = new Login_Presenter(this, new DBLogin());
+            oPresenter = new RecoveryPass_Presenter(this, new DBLogin());
 
             sEmail = Request.QueryString["email"];
+            sTime = Request.QueryString["timeInterval"];
 
             if (!IsPostBack)
             {
@@ -33,6 +34,7 @@ namespace PortalClientes
         {
             try
             {
+                iTipoActualizacion = 2;
                 if (EsValidoFormulario())
                 {
                     if (eNewObj != null)
@@ -43,6 +45,24 @@ namespace PortalClientes
             {
                 throw ex;
             }
+        }
+
+        protected void btnAceptConfirm_Click(object sender, EventArgs e)
+        {
+            mpeConfirm.Hide();
+            Response.Redirect("/frmLogin.aspx");
+        }
+
+        protected void lblIdiomaEspanol_Click(object sender, EventArgs e)
+        {
+            Utils.Idioma = "es-MX";
+            CambiaIdioma();
+        }
+
+        protected void lblIdiomaEnglish_Click(object sender, EventArgs e)
+        {
+            Utils.Idioma = "en-US";
+            CambiaIdioma();
         }
 
         #endregion
@@ -100,16 +120,26 @@ namespace PortalClientes
             return ban;
         }
 
-        public void goLogin(responceAct resp)
+        public void requestResponse(responceAct response)
         {
-            Response.Redirect("frmLogin.aspx");
+            if (response.mensaje == "Operación ejecutada correctamente")
+            {
+                lblMessageConfirm.Text = "Contraseña actualizada con Exito!, Ahora puede iniciar sesion.";
+                mpeConfirm.Show();
+            }
+        }
+
+        private void CambiaIdioma()
+        {
+            System.Threading.Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo(Utils.Idioma);
+            ArmaFormulario();
         }
 
         #endregion
 
         #region VARIABLES Y PROPIEDADES
 
-        Login_Presenter oPresenter;
+        RecoveryPass_Presenter oPresenter;
 
         public event EventHandler eNewObj;
         public event EventHandler eObjSelected;
@@ -123,16 +153,26 @@ namespace PortalClientes
             set { ViewState["VSsEmail"] = value; }
         }
 
+        public string sTime
+        {
+            get { return ViewState["VSsTime"].S(); }
+            set { ViewState["VSsTime"] = value; }
+        }
+
         public string sPassword
         {
             get { return ViewState["VSsPassword"].S(); }
             set { ViewState["VSsPassword"] = value; }
         }
 
-        public Usuario oUser { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public UserIdentity oU { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        public int iTipoActualizacion
+        {
+            get { return ViewState["VSiTipoActualizacion"].I(); }
+            set { ViewState["VSiTipoActualizacion"] = value; }
+        }
 
         #endregion
+
 
     }
 }

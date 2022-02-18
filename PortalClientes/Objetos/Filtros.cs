@@ -107,4 +107,9 @@ namespace PortalClientes.Objetos
     {
         public string matriculaActual { get; set; }
     }
+
+    public class FiltroEmail
+    {
+        public string email { get; set; }
+    }
 }

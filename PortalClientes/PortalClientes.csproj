@@ -1621,10 +1621,12 @@
       <DependentUpon>frmRecuperaLogin.aspx</DependentUpon>
     </Compile>
     <Compile Include="Interfaces\IViewDetalleReportes.cs" />
+    <Compile Include="Interfaces\IViewEmailRecoverPass.cs" />
     <Compile Include="Interfaces\IViewEstadoCuenta.cs" />
     <Compile Include="Interfaces\iViewMantenimientos.cs" />
     <Compile Include="Interfaces\IViewMapaFlota.cs" />
     <Compile Include="Interfaces\IViewMetricasEstadisticas.cs" />
+    <Compile Include="Interfaces\IViewRecoveryPass.cs" />
     <Compile Include="Interfaces\IViewTripulacion.cs" />
     <Compile Include="Interfaces\IViewUser.cs" />
     <Compile Include="Interfaces\IViewVuelos.cs" />
@@ -1658,10 +1660,12 @@
     <Compile Include="Objetos\RutasyAeropuertos.cs" />
     <Compile Include="Objetos\Vuelos.cs" />
     <Compile Include="Presenter\DetalleReportes_Presenter.cs" />
+    <Compile Include="Presenter\EmailRecoveryPass_Presenter.cs" />
     <Compile Include="Presenter\EstadoCuenta_Presenter.cs" />
     <Compile Include="Presenter\Mantenimientos_Presenter.cs" />
     <Compile Include="Presenter\MapaFlota_Presenter.cs" />
     <Compile Include="Presenter\MetricasEstadisticas_Presenter.cs" />
+    <Compile Include="Presenter\RecoveryPass_Presenter.cs" />
     <Compile Include="Presenter\Tripulacion_Presenter.cs" />
     <Compile Include="Presenter\User_Presenter.cs" />
     <Compile Include="Presenter\Vuelos_Presenter.cs" />

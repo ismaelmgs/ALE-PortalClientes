@@ -109,11 +109,6 @@ namespace PortalClientes
             ArmaFormulario();
         }
 
-        public void goLogin(responceAct resp)
-        {
-            throw new NotImplementedException();
-        }
-
         #endregion
 
         #region VARIABLES Y PROPIEDADES
@@ -127,6 +122,12 @@ namespace PortalClientes
         public string sEmail
         {
             get { return txtUsuarios.Text.S(); }
+        }
+
+        public string sTime
+        {
+            get { return ViewState["VSsTime"].S(); }
+            set { ViewState["VSsTime"] = value; }
         }
 
         public string sPassword

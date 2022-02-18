@@ -72,5 +72,34 @@ namespace PortalClientes.DomainModel
 
             }
         }
+
+        public bool ValidarUsuario(string sEmail)
+        {
+            try
+            {
+                JavaScriptSerializer ser = new JavaScriptSerializer();
+                List<Usuario> oUser = new List<Usuario>();
+                FiltroEmail oLog = new FiltroEmail();
+                oLog.email = sEmail;
+
+                TokenWS oToken = Utils.ObtieneToken;
+
+                var client = new RestClient(Helper.US_UrlObtieneValidacionUusario);
+                var request = new RestRequest(Method.POST);
+                request.AddHeader("Authorization", oToken.token);
+                request.AddJsonBody(oLog);
+
+                IRestResponse response = client.Execute(request);
+                var resp = response.Content;
+                oUser = ser.Deserialize<List<Usuario>>(resp);
+
+                return true;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+
+        }
     }
 }

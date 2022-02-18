@@ -78,7 +78,7 @@ namespace PortalClientes.Views
             if(resp.mensaje == "Operación ejecutada correctamente")
             {
                 System.Web.HttpContext.Current.Session["VSUsuario"] = oUsuario;
-                lblMessageConfirm.Text = "Usurio Actulizado con Exito!, Para ver los cambios reflejados es necesario iniciar sesion nuevamente.";
+                lblMessageConfirm.Text = "Usuario Actulizado con Exito!, Para ver los cambios reflejados es necesario iniciar sesion nuevamente.";
                 mpeConfirm.Show();
             }
             else

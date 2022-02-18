@@ -1,5 +1,6 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="frmRecuperaLogin.aspx.cs" Inherits="PortalClientes.frmRecuperaLogin" %>
 
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="cc1" %>
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -115,6 +116,48 @@
                 </div>
             </div>
         </div>
+
+        <asp:ScriptManager ID="ScriptManager1" runat="server" />
+        <%-- Modal Confirm --%>
+        <asp:HiddenField ID="hdTargetConfirm" runat="server" />
+        <cc1:ModalPopupExtender ID="mpeConfirm" runat="server" TargetControlID="hdTargetConfirm"
+            PopupControlID="pnlConfirm" BackgroundCssClass="overlayy">
+        </cc1:ModalPopupExtender>
+        <asp:Panel ID="pnlConfirm" runat="server" BackColor="White" Style="display: none;" CssClass="modalrlr">
+            <asp:UpdatePanel ID="UpdatePanel2" runat="server">
+                <ContentTemplate>
+                    <table style="width: 100%">
+                        <tr>
+                            <td colspan="2" runat="server" id="tdCaption">&nbsp;
+                           
+                            <center>
+                                <h4>
+                                    <asp:Label ID="lblCaption" runat="server"></asp:Label></h4>
+                            </center>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="width: 60px; vertical-align: middle; text-align: center">
+                                <asp:Image ID="imgInfo" runat="server" ImageUrl="~/Images/icons/bien_02.png" Height="24" Width="24" />
+                            </td>
+                            <td style="text-align: left; vertical-align: middle">
+                                <asp:Label ID="lblMessageConfirm" runat="server"></asp:Label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="text-align: right">
+                                <asp:Button ID="btnAceptConfirm" runat="server" Text="Entendido" OnClick="btnAceptConfirm_Click" CssClass="btn btn-primary" />
+                            </td>
+                            <%--<td style="text-align: left">
+                            <asp:Button ID="btnCancelConfirm" runat="server" Text="No" OnClick="btnCancelConfirm_Click" CssClass="btn btn-default" />
+                        </td>--%>
+                        </tr>
+                    </table>
+                </ContentTemplate>
+            </asp:UpdatePanel>
+        </asp:Panel>
     </form>
 </body>
 </html>
+
+
