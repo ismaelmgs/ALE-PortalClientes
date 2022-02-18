@@ -106,36 +106,43 @@
         <cc1:ModalPopupExtender ID="mpeConfirm" runat="server" TargetControlID="hdTargetConfirm"
             PopupControlID="pnlConfirm" BackgroundCssClass="overlayy">
         </cc1:ModalPopupExtender>
-        <asp:Panel ID="pnlConfirm" runat="server" BackColor="White" Style="display: none;" CssClass="modalrlr">
+        <asp:Panel ID="pnlConfirm" runat="server" BackColor="White" CssClass="" style="display: none;background-color:#00000070; width:100%; height:100vh;">
             <asp:UpdatePanel ID="UpdatePanel2" runat="server">
                 <ContentTemplate>
-                    <table style="width: 100%">
-                        <tr>
-                            <td colspan="2" runat="server" id="tdCaption">&nbsp;
-                           
-                            <center>
-                                <h4>
-                                    <asp:Label ID="lblCaption" runat="server"></asp:Label></h4>
-                            </center>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td style="width: 60px; vertical-align: middle; text-align: center">
-                                <asp:Image ID="imgInfo" runat="server" ImageUrl="~/Images/icons/bien_02.png" Height="24" Width="24" />
-                            </td>
-                            <td style="text-align: center; vertical-align: middle">
-                                <asp:Label ID="lblMessageConfirm" runat="server"></asp:Label>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td style="text-align: center">
-                                <asp:Button ID="btnAceptConfirm" runat="server" Text="Entendido" OnClick="btnAceptConfirm_Click" CssClass="btn btn-primary" />
-                            </td>
-                            <%--<td style="text-align: left">
-                            <asp:Button ID="btnCancelConfirm" runat="server" Text="No" OnClick="btnCancelConfirm_Click" CssClass="btn btn-default" />
-                        </td>--%>
-                        </tr>
-                    </table>
+                    <div style="max-width:550px;min-width:320px;min-height:35px; background-color:#ffffff; margin:0 auto; margin-top:20%;">
+                        <table style="width: 100%">
+                                    <tr>
+                                        <td colspan="2" runat="server" id="tdCaption">&nbsp;
+                                        <center>
+                                            <h3>
+                                                <asp:Label ID="lblCaption" runat="server"></asp:Label></h3>
+                                        </center>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="2" style="vertical-align: middle; text-align: center">
+                                            <div class="row">
+                                                <div class="col-md-12" style="text-align:center;">
+                                                    <asp:Image ID="imgInfo" runat="server" ImageUrl="~/Images/icons/bien_02.png" Height="24" Width="24" /><br />
+                                                    <asp:Label ID="lblMessageConfirm" runat="server"></asp:Label>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="2" style="text-align: center">
+                                            <br />
+                                            <asp:Button ID="btnAceptConfirm" runat="server" Text="Entendido" OnClick="btnAceptConfirm_Click" CssClass="btn btn-primary" /><br /><br />
+                                        </td>
+                                        <%--<td style="text-align: left">
+                                        <asp:Button ID="btnCancelConfirm" runat="server" Text="No" OnClick="btnCancelConfirm_Click" CssClass="btn btn-default" />
+                                    </td>--%>
+                                    </tr>
+                                </table>
+                        
+                    </div>
+                        
+                    
                 </ContentTemplate>
             </asp:UpdatePanel>
         </asp:Panel>

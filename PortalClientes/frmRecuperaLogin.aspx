@@ -129,24 +129,27 @@
                     <table style="width: 100%">
                         <tr>
                             <td colspan="2" runat="server" id="tdCaption">&nbsp;
-                           
                             <center>
-                                <h4>
-                                    <asp:Label ID="lblCaption" runat="server"></asp:Label></h4>
+                                <h3>
+                                    <asp:Label ID="lblCaption" runat="server"></asp:Label></h3>
                             </center>
                             </td>
                         </tr>
                         <tr>
-                            <td style="width: 60px; vertical-align: middle; text-align: center">
-                                <asp:Image ID="imgInfo" runat="server" ImageUrl="~/Images/icons/bien_02.png" Height="24" Width="24" />
-                            </td>
-                            <td style="text-align: left; vertical-align: middle">
-                                <asp:Label ID="lblMessageConfirm" runat="server"></asp:Label>
+                            <td colspan="2" style="vertical-align: middle; text-align: center">
+                                <div class="row">
+                                    <div class="col-md-12" style="text-align:center;">
+                                        <asp:Image ID="imgInfo" runat="server" ImageUrl="~/Images/icons/bien_02.png" Height="24" Width="24" /><br />            
+                                        <asp:Label ID="lblMessageConfirm" runat="server"></asp:Label>            
+                                    </div>
+                                </div>
                             </td>
                         </tr>
                         <tr>
-                            <td style="text-align: right">
-                                <asp:Button ID="btnAceptConfirm" runat="server" Text="Entendido" OnClick="btnAceptConfirm_Click" CssClass="btn btn-primary" />
+                            <td colspan="2" style="text-align: center">
+                                <br />
+                                 <asp:Button ID="btnAceptConfirm" runat="server" Text="Entendido" OnClick="btnAceptConfirm_Click" CssClass="btn btn-primary" />
+                                <br /><br />
                             </td>
                             <%--<td style="text-align: left">
                             <asp:Button ID="btnCancelConfirm" runat="server" Text="No" OnClick="btnCancelConfirm_Click" CssClass="btn btn-default" />
