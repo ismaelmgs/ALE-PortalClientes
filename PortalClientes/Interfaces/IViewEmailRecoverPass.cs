@@ -9,6 +9,6 @@ namespace PortalClientes.Interfaces
     {
         string sEmail { get; }
         event EventHandler eValidateObj;
-        void isValidUser(bool isValid);
+        void isValidUser(string isValid);
     }
 }

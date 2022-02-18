@@ -1329,4 +1329,10 @@
   <data name="Lo_NuevaContrasena" xml:space="preserve">
     <value>Enter New Password</value>
   </data>
+  <data name="Us_ActInfo" xml:space="preserve">
+    <value>Update Information</value>
+  </data>
+  <data name="Us_AdminCta" xml:space="preserve">
+    <value>Manage Account</value>
+  </data>
 </root>

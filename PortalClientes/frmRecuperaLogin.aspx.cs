@@ -23,6 +23,15 @@ namespace PortalClientes
             sEmail = Request.QueryString["email"];
             sTime = Request.QueryString["timeInterval"];
 
+            string formatString = "ddMMyyHHmm";
+            DateTime dt = DateTime.ParseExact(sTime, formatString, null);
+
+            if (DateTime.Now > dt)
+            {
+                lblMessageConfirm.Text = "El metodo de recuperacion ah expirado, intentalo nuevamente";
+                mpeConfirm.Show();
+            }
+
             if (!IsPostBack)
             {
                 System.Threading.Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo(Utils.Idioma);
@@ -161,8 +170,7 @@ namespace PortalClientes
 
         public string sPassword
         {
-            get { return ViewState["VSsPassword"].S(); }
-            set { ViewState["VSsPassword"] = value; }
+            get { return txtPass.Text.S(); }
         }
 
         public int iTipoActualizacion

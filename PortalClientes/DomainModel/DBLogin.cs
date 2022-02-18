@@ -73,12 +73,12 @@ namespace PortalClientes.DomainModel
             }
         }
 
-        public bool ValidarUsuario(string sEmail)
+        public string ValidarUsuario(string sEmail)
         {
             try
             {
                 JavaScriptSerializer ser = new JavaScriptSerializer();
-                List<Usuario> oUser = new List<Usuario>();
+                nombreUsuario n = new nombreUsuario();
                 FiltroEmail oLog = new FiltroEmail();
                 oLog.email = sEmail;
 
@@ -91,9 +91,9 @@ namespace PortalClientes.DomainModel
 
                 IRestResponse response = client.Execute(request);
                 var resp = response.Content;
-                oUser = ser.Deserialize<List<Usuario>>(resp);
+                n = ser.Deserialize<nombreUsuario>(resp);
 
-                return true;
+                return n.nombre;
             }
             catch (Exception ex)
             {

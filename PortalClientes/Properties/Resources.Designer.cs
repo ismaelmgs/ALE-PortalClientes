@@ -3301,6 +3301,24 @@ namespace PortalClientes.Properties {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Actualizar Informacion.
+        /// </summary>
+        internal static string Us_ActInfo {
+            get {
+                return ResourceManager.GetString("Us_ActInfo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Administrar Cuenta.
+        /// </summary>
+        internal static string Us_AdminCta {
+            get {
+                return ResourceManager.GetString("Us_AdminCta", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Agregar usuario.
         /// </summary>
         internal static string Us_AltaUsuario {

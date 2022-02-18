@@ -11,4 +11,10 @@ namespace PortalClientes.Objetos
         public string email { set; get; }
         public string password { set; get; }
     }
+
+    [Serializable]
+    public class nombreUsuario
+    {
+        public string nombre { set; get; }
+    }
 }

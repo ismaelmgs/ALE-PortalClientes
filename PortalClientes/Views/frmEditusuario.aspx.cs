@@ -121,6 +121,8 @@ namespace PortalClientes.Views
             lblEditarPass.Text = Properties.Resources.Us_ActContrasena;
             lblPass.Text = Properties.Resources.Us_Password;
             lblConfirPass.Text = Properties.Resources.Us_ConfirPass;
+            lblEdisionUsuarioHeader.Text = Properties.Resources.Us_AdminCta;
+            lblEditarUsuario.Text = Properties.Resources.Us_ActInfo;
 
             Regex1.ErrorMessage = Properties.Resources.Us_ValidacionContrasena;
             Regex2.ErrorMessage = Properties.Resources.Us_ValidacionConfirmContrasena;

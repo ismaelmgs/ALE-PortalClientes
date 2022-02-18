@@ -1326,4 +1326,10 @@
   <data name="Lo_NuevaContrasena" xml:space="preserve">
     <value>Ingresar Contraseña Nueva</value>
   </data>
+  <data name="Us_ActInfo" xml:space="preserve">
+    <value>Actualizar Informacion</value>
+  </data>
+  <data name="Us_AdminCta" xml:space="preserve">
+    <value>Administrar Cuenta</value>
+  </data>
 </root>

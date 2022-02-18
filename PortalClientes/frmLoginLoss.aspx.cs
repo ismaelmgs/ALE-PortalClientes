@@ -77,9 +77,9 @@ namespace PortalClientes
             btnEviarContrasena.Text = Properties.Resources.Lo_Enviar;
         }
 
-        public void isValidUser(bool isValid)
+        public void isValidUser(string nombre)
         {
-            if (isValid)
+            if (nombre != "")
             {
                 NameValueCollection values = new NameValueCollection();
                 values.Add("apikey", "896078D9DDE07A2B7199BB3A5D9EA05706C6672E86F814B49E158488C84C623E08F0697E89438A8303A7E49C7B44BD99");
@@ -89,9 +89,11 @@ namespace PortalClientes
                 values.Add("subject", "recuperación de contraseña");
                 values.Add("isTransactional", "true");
                 values.Add("template", "RecuperarContraseñaCCTest");
-                values.Add("merge_firstname", sEmail);
-                values.Add("merge_timeInterval", DateTime.Now.ToString("ddMMyyHHmm"));
+                values.Add("merge_firstname", nombre);
+                values.Add("merge_timeInterval", DateTime.Now.AddHours(2).ToString("ddMMyyHHmm"));
                 values.Add("merge_accountaddress", sEmail);
+                values.Add("merge_url", "https://localhost:44305/frmRecuperaLogin.aspx?email=" + sEmail +"&timeInterval="+ DateTime.Now.AddHours(2).ToString("ddMMyyHHmm")); // localhost
+                //values.Add("merge_url", "https://192.168.1.250/PortalClientes/frmRecuperaLogin.aspx?email=" + sEmail +"&timeInterval="+ DateTime.Now.AddHours(2).ToString("ddMMyyHHmm")); // produccion
 
                 string address = "https://api.elasticemail.com/v2/email/send";
 
@@ -111,7 +113,8 @@ namespace PortalClientes
             }
             else
             {
-
+                lblMessageConfirm.Text = "Ud estara recibiendo un correo electronico para recuperar su contraseña.";
+                mpeConfirm.Show();
             }
         }
 
