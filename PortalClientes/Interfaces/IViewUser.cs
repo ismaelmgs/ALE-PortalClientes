@@ -10,7 +10,9 @@ namespace PortalClientes.Interfaces
     {
         Usuario oUsuario { get; set; }
         int tipoActualizacion { get; set; }
+        string smatricula { get; set; }
         void recargarPagina(responceAct resp);
         void msjContrasena(responceAct resp);
+        void msjMatriculas(responceAct resp);
     }
 }

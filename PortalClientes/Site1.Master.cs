@@ -170,26 +170,17 @@ namespace PortalClientes
                             oItem.IconCssClass = "fa fa-caret-right";
                             oItem.CssClass = "icon_left";
                             oMenuMats.Items.Add(oItem);
-
-                            if(Utils.MatriculaActual == null || Utils.MatriculaActual == "")
-                            {
-                                lblAeronave.Text = sMat;
-                                lblAeronaveLat.Text = sMat;
-                                Utils.MatriculaActual = sMat;
-                            }
-                            else
-                            {
-                                lblAeronave.Text = Utils.MatriculaActual;
-                                lblAeronaveLat.Text = Utils.MatriculaActual;
-                            }
                         }
                     }
                     foreach (var item in ObtieneMatriculasContrato())
                     {
-                        if (item.matricula == Utils.MatriculaActual)
+                        if (item.matriculaDefault == 1)
                         {
                             Utils.ClaveContrato = item.claveCliente;
                             Utils.NombreCliente = item.nombre;
+                            lblAeronave.Text = item.matricula;
+                            lblAeronaveLat.Text = item.matricula;
+                            Utils.MatriculaActual = item.matricula;
                         }
                     }
                 }
@@ -263,6 +254,7 @@ namespace PortalClientes
             IRestResponse response = client.Execute(request);
             var resp = response.Content;
             olst = ser.Deserialize<List<MatriculasContratoUsuario>>(resp);
+            Session["LstMatriculas"] = olst;
 
             return olst;
         }

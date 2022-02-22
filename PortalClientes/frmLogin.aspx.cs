@@ -78,6 +78,11 @@ namespace PortalClientes
                     lblError.Text = string.Empty;
                     lblError.Visible = false;
 
+                    if (oU.lsMatriculas == null)
+                    {
+                        Response.Redirect("/Views/frmSinMatriculas.aspx");
+                    }
+
                     if (oUser.IdUsuario != 0)
                         Response.Redirect("Views/frmDashboard.aspx");
                 }

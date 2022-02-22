@@ -184,7 +184,7 @@
                                         <td>&nbsp;
                                         </td>
                                     </tr>
-                                     <tr>
+                                    <tr>
                                         <td>
                                             <div class="row">
                                                 <div class="col-md-1"></div>
@@ -228,6 +228,77 @@
 
                 </div>
             </div>
+
+            <div class="row">
+                <div class="col-md-12 col-sm-12">
+                    <div class="x_panel">
+                        <div class="x_title">
+                            <div class="row">
+                                <div class="col-md-6" style="text-align: left;">
+                                    <h2>
+                                        <asp:Label ID="Label1" runat="server" Text="Actualizar Contrasena" Font-Bold="true"></asp:Label>
+                                    </h2>
+                                </div>
+                                <div class="col-md-6" style="text-align: right;">
+                                    &nbsp;
+                                </div>
+                            </div>
+                        </div>
+                        <div class="clearfix"></div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <table style="width: 97%; margin: 0 auto !important;">
+                                    <tr>
+                                        <td>&nbsp;
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    <div class="table-responsive">
+                                                        <div class="card-box table-responsive">
+                                                            <asp:GridView ID="gvMatriculas" runat="server" AutoGenerateColumns="false" CssClass="table table-striped table-bordered table-hover" ChildrenAsTriggers="False"
+                                                                AllowPaging="true" OnRowDataBound="gvMatriculas_RowDataBound" EmptyDataText="No Registros"
+                                                                DataKeyNames="matricula" OnPageIndexChanging="gvMatriculas_PageIndexChanging">
+                                                                <Columns>
+                                                                    <asp:BoundField DataField="matricula" />
+                                                                    <asp:BoundField DataField="claveCliente" />
+                                                                    <asp:TemplateField>
+                                                                        <ItemTemplate>
+                                                                            <asp:CheckBox ID="chkSeleccione" AutoPostBack="true" runat="server" OnCheckedChanged="chkSeleccione_CheckedChanged" />
+                                                                        </ItemTemplate>
+                                                                    </asp:TemplateField>
+                                                                </Columns>
+                                                            </asp:GridView>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="row">
+                                                <div class="col-md-4"></div>
+                                                <div class="col-md-4" style="text-align: center;">
+                                                    <br />
+                                                    <br />
+                                                    <asp:Button ID="btnEditMatDefault" runat="server" CssClass="btn btn-primary" Text=" Actualizar " OnClick="btnEditMatDefault_Click" />
+                                                </div>
+                                                <div class="col-md-4"></div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </table>
+                                <br />
+                                <br />
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
         </ContentTemplate>
     </asp:UpdatePanel>
 
@@ -252,18 +323,19 @@
                     <tr>
                         <td colspan="2" style="vertical-align: middle; text-align: center">
                             <div class="row">
-                                <div class="col-md-12" style="text-align:center;">
-                                   <asp:Image ID="imgInfo" runat="server" ImageUrl="~/Images/icons/bien_02.png" Height="24" Width="24" /><br />                 
-                                    <asp:Label ID="lblMessageConfirm" runat="server"></asp:Label>                
+                                <div class="col-md-12" style="text-align: center;">
+                                    <asp:Image ID="imgInfo" runat="server" ImageUrl="~/Images/icons/bien_02.png" Height="24" Width="24" /><br />
+                                    <asp:Label ID="lblMessageConfirm" runat="server"></asp:Label>
                                 </div>
                             </div>
                         </td>
                     </tr>
                     <tr>
                         <td colspan="2" style="text-align: center">
-                             <br />
+                            <br />
                             <asp:Button ID="btnAceptConfirm" runat="server" Text="Entendido" OnClientClick="OcultarModal();" CssClass="btn btn-primary" />
-                            <br /><br />
+                            <br />
+                            <br />
                         </td>
                         <%--<td style="text-align: left">
                             <asp:Button ID="btnCancelConfirm" runat="server" Text="No" OnClick="btnCancelConfirm_Click" CssClass="btn btn-default" />

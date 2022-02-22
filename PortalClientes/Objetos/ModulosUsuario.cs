@@ -19,12 +19,13 @@ namespace PortalClientes.Objetos
         public string mensaje { set; get; }
     }
 
+    [Serializable]
     public class MatriculasContratoUsuario
     {
         public string matricula { set; get; }
         public string claveCliente { set; get; }
         public string nombre { set; get; }
-        public string matriculaDefault { set; get; }
+        public int matriculaDefault { set; get; }
     }
 
     //public class ModulosUsuarioGrid

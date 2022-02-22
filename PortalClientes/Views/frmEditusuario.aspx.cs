@@ -73,31 +73,60 @@ namespace PortalClientes.Views
             
         }
 
-        public void recargarPagina(responceAct resp)
+        protected void btnEditMatDefault_Click(object sender, EventArgs e)
         {
-            if(resp.mensaje == "Operación ejecutada correctamente")
+            tipoActualizacion = 3; // Actualizar contrasena del usuario
+            oUsuario.tipoActualizacion = tipoActualizacion;
+
+            if (eSaveObj != null)
+                eSaveObj(sender, e);
+        }
+
+        protected void gvMatriculas_RowDataBound(object sender, GridViewRowEventArgs e)
+        {
+            if (e.Row.RowType == DataControlRowType.Header)
             {
-                System.Web.HttpContext.Current.Session["VSUsuario"] = oUsuario;
-                lblMessageConfirm.Text = "¡Usuario Actulizado con Exito! <br /> Para ver los cambios reflejados es necesario iniciar sesion nuevamente.";
-                mpeConfirm.Show();
+                e.Row.Cells[0].Text = Properties.Resources.Us_Matricula;
+                e.Row.Cells[1].Text = Properties.Resources.Us_Contrato;
+                //e.Row.Cells[2].Text = Properties.Resources.Us_Name;
+                //e.Row.Cells[3].Text = Properties.Resources.Us_MatDefault;
             }
-            else
+
+            if (e.Row.RowType == DataControlRowType.DataRow)
             {
-                Response.Redirect("~/Views/frmEditusuario.aspx");
+                if (oLstMatriculas[e.Row.RowIndex].matriculaDefault == 1)
+                {
+                    CheckBox chk = (CheckBox)e.Row.FindControl("chkSeleccione");
+                    if (chk != null)
+                    {
+                        chk.Checked = true;
+                        smatricula = e.Row.Cells[0].Text;
+                    }
+                }
             }
         }
 
-        public void msjContrasena(responceAct resp)
+        protected void gvMatriculas_PageIndexChanging(object sender, GridViewPageEventArgs e)
         {
-            if (resp.mensaje == "Operación ejecutada correctamente")
+
+        }
+
+        protected void chkSeleccione_CheckedChanged(object sender, EventArgs e)
+        {
+            CheckBox chkApproved = (CheckBox)sender;
+            GridViewRow gridViewRow = (GridViewRow)chkApproved.Parent.Parent;
+            smatricula = gridViewRow.Cells[0].Text;
+
+            foreach (GridViewRow row in gvMatriculas.Rows)
             {
-                System.Web.HttpContext.Current.Session["VSUsuario"] = oUsuario;
-                lblMessageConfirm.Text = "¡Contraseña Actualizada con Exito! <br /> Para ver los cambios reflejados es necesario iniciar sesion nuevamente.";
-                mpeConfirm.Show();
-            }
-            else
-            {
-                Response.Redirect("~/Views/frmEditusuario.aspx");
+                CheckBox chk = (CheckBox)row.FindControl("chkSeleccione");
+                if (chk != null)
+                {
+                    if (chk.Checked && row.Cells[0].Text != smatricula)
+                    {
+                        chk.Checked = false;
+                    }
+                }
             }
         }
 
@@ -132,7 +161,10 @@ namespace PortalClientes.Views
 
         private void LlenaFormulario()
         {
-            oUsuario = (Usuario)System.Web.HttpContext.Current.Session["VSUsuario"];
+            oUsuario = (Usuario)System.Web.HttpContext.Current. Session["VSUsuario"];
+            oLstMatriculas = (List<MatriculasContratoUsuario>)System.Web.HttpContext.Current.Session["LstMatriculas"];
+            gvMatriculas.DataSource = (List<MatriculasContratoUsuario>)System.Web.HttpContext.Current.Session["LstMatriculas"];
+            gvMatriculas.DataBind();
         }
 
         public bool EsValidoFormulario()
@@ -173,6 +205,48 @@ namespace PortalClientes.Views
             }
 
             return ban;
+        }
+
+        public void recargarPagina(responceAct resp)
+        {
+            if (resp.mensaje == "Operación ejecutada correctamente")
+            {
+                System.Web.HttpContext.Current.Session["VSUsuario"] = oUsuario;
+                lblMessageConfirm.Text = "¡Usuario Actulizado con Exito! <br /> Para ver los cambios reflejados es necesario iniciar sesion nuevamente.";
+                mpeConfirm.Show();
+            }
+            else
+            {
+                Response.Redirect("~/Views/frmEditusuario.aspx");
+            }
+        }
+
+        public void msjContrasena(responceAct resp)
+        {
+            if (resp.mensaje == "Operación ejecutada correctamente")
+            {
+                System.Web.HttpContext.Current.Session["VSUsuario"] = oUsuario;
+                lblMessageConfirm.Text = "¡Contraseña Actualizada con Exito! <br /> Para ver los cambios reflejados es necesario iniciar sesion nuevamente.";
+                mpeConfirm.Show();
+            }
+            else
+            {
+                Response.Redirect("~/Views/frmEditusuario.aspx");
+            }
+        }
+
+        public void msjMatriculas(responceAct resp)
+        {
+            if (resp.mensaje == "Operación ejecutada correctamente")
+            {
+                System.Web.HttpContext.Current.Session["VSUsuario"] = oUsuario;
+                lblMessageConfirm.Text = "¡Matricula Default Actualizada con Exito! <br /> Para ver los cambios reflejados es necesario iniciar sesion nuevamente.";
+                mpeConfirm.Show();
+            }
+            else
+            {
+                Response.Redirect("~/Views/frmEditusuario.aspx");
+            }
         }
 
         #endregion
@@ -217,6 +291,18 @@ namespace PortalClientes.Views
             set { ViewState["VStipoActualizacion"] = value; }
         }
 
+        public string smatricula
+        {
+            get { return ViewState["VSmatricula"].S(); }
+            set { ViewState["VSmatricula"] = value; }
+        }
+
+        public List<MatriculasContratoUsuario> oLstMatriculas
+        {
+            get { return (List<MatriculasContratoUsuario>)ViewState["VSoLstMatriculas"]; }
+            set { ViewState["VSoLstMatriculas"] = value; }
+        }
+
         public event EventHandler eNewObj;
         public event EventHandler eObjSelected;
         public event EventHandler eSaveObj;
@@ -225,7 +311,7 @@ namespace PortalClientes.Views
 
         User_Presenter oPresenter;
 
-        #endregion
 
+        #endregion
     }
 }
