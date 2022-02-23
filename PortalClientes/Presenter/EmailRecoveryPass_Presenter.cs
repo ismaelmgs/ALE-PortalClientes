@@ -20,6 +20,7 @@ namespace PortalClientes.Presenter
 
         protected void eValidateObj_Presenter(object sender, EventArgs e)
         {
+            oIView.setParameters(oIGesCat.getParameters());
             oIView.isValidUser(oIGesCat.ValidarUsuario(oIView.sEmail));
         }
     }

@@ -101,5 +101,31 @@ namespace PortalClientes.DomainModel
             }
 
         }
+
+        public List<Parametros> getParameters()
+        {
+            try
+            {
+                JavaScriptSerializer ser = new JavaScriptSerializer();
+                List<Parametros> p = new List<Parametros>();
+
+                TokenWS oToken = Utils.ObtieneToken;
+
+                var client = new RestClient(Helper.US_UrlObtieneParametros);
+                var request = new RestRequest(Method.GET);
+                request.AddHeader("Authorization", oToken.token);
+
+                IRestResponse response = client.Execute(request);
+                var resp = response.Content;
+                p = ser.Deserialize<List<Parametros>>(resp);
+
+                return p;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+
+        }
     }
 }

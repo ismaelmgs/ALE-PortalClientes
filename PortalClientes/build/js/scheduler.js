@@ -56,7 +56,7 @@ function InsertData(item) {
     $("#ContentPlaceHolder1_lblTiempoVuelo").html(item.TiempoVuelo);
     //$("#ContentPlaceHolder1_lblObjetivoRes").html(item.);
     $("#ContentPlaceHolder1_lblDescripcionRes").html(item.typeDesc);
-    $("#ContentPlaceHolder1_lblAeropuertoLLegadaRes").html(item.fboNombreDestino);
+    $("#ContentPlaceHolder1_lblAeropuertoLLegadaRes").html(item.fboNombreDest);
     $("#ContentPlaceHolder1_lblFechaArrivoRes").html(item.FechaFin);
     $("#ContentPlaceHolder1_lblHoraArrivoRes").html(item.HoraFin);
     $("#ContentPlaceHolder1_lblFechaBloqueRes").html(item.FechaFin);
@@ -70,7 +70,7 @@ function InsertData(item) {
     $("#ContentPlaceHolder1_lblSalidaFBORes").html(item.fboNombreOrigen);
     $("#ContentPlaceHolder1_lblTelRes").html(item.fboPhoneOrigen);
     $("#ContentPlaceHolder1_lblDireccionRes").html(item.fboDirOrigen);
-    $("#ContentPlaceHolder1_lblLLEgadaRes").html(item.fboNombreDestino);
+    $("#ContentPlaceHolder1_lblLLEgadaRes").html(item.fboNombreDest);
     $("#ContentPlaceHolder1_lblTelLLegadaRes").html(item.fboPhoneDest);
     $("#ContentPlaceHolder1_lblDireccioLLegadaRes").html(item.fboDirDest);
     $("#ContentPlaceHolder1_lblCateringTelNotasRes").html(item.notes);

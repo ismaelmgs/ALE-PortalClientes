@@ -77,24 +77,37 @@ namespace PortalClientes
             btnEviarContrasena.Text = Properties.Resources.Lo_Enviar;
         }
 
+        public void setParameters(List<Parametros> lstParameteres)
+        {
+            foreach(Parametros p in lstParameteres)
+            {
+                if (p.Nombre == "apiKey")
+                    sapiKey = p.Valor;
+
+                if (p.Nombre == "EmailSoporte")
+                    sEmailSoporte = p.Valor;
+
+                if (p.Nombre == "template")
+                    sTemplate = p.Valor;
+            }
+        }
+
         public void isValidUser(string nombre)
         {
             if (nombre != "")
             {
                 NameValueCollection values = new NameValueCollection();
-                values.Add("apikey", ConfigurationManager.AppSettings["apiKey"]);
-                values.Add("from", ConfigurationManager.AppSettings["EmailSoporte"]);
+                values.Add("apikey", sapiKey);//ConfigurationManager.AppSettings["apiKey"]);
+                values.Add("from", sEmailSoporte);//onfigurationManager.AppSettings["EmailSoporte"]);
                 values.Add("fromName", "MexJet");
                 values.Add("to", sEmail);
                 values.Add("subject", "recuperación de contraseña");
                 values.Add("isTransactional", "true");
-                values.Add("template", ConfigurationManager.AppSettings["template"]);
+                values.Add("template", sTemplate);// ConfigurationManager.AppSettings["template"]);
                 values.Add("merge_firstname", nombre);
                 values.Add("merge_email", sEmail);
                 values.Add("merge_timeInterval", DateTime.Now.AddHours(2).ToString("ddMMyyHHmm"));
                 values.Add("merge_accountaddress", sEmail);
-                //values.Add("merge_url", "https://localhost:44305/frmRecuperaLogin.aspx?email=" + sEmail +"&timeInterval="+ DateTime.Now.AddHours(2).ToString("ddMMyyHHmm")); // produccion
-                //values.Add("merge_url", "https://192.168.1.250/PortalClientes/frmRecuperaLogin.aspx?email=" + sEmail +"&timeInterval="+ DateTime.Now.AddHours(2).ToString("ddMMyyHHmm")); // produccion
 
                 string address = "https://api.elasticemail.com/v2/email/send";
 
@@ -158,6 +171,24 @@ namespace PortalClientes
         public string sEmail
         {
             get { return txtEmail.Text.S(); }
+        }
+
+        public string sapiKey
+        {
+            get { return ViewState["sVSsapiKey"].S(); }
+            set { ViewState["sVSsapiKey"] = value; }
+        }
+
+        public string sTemplate
+        {
+            get { return ViewState["sVSsTemplate"].S(); }
+            set { ViewState["sVSsTemplate"] = value; }
+        }
+
+        public string sEmailSoporte
+        {
+            get { return ViewState["sVsEmailSoporte"].S(); }
+            set { ViewState["sVsEmailSoporte"] = value; }
         }
 
         public class Success

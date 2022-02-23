@@ -1637,6 +1637,7 @@
     <Compile Include="Objetos\EstadoCuenta.cs" />
     <Compile Include="Objetos\Mantenimientos.cs" />
     <Compile Include="Objetos\MapaFlota.cs" />
+    <Compile Include="Objetos\Parametros.cs" />
     <Compile Include="Objetos\Reportes.cs" />
     <Compile Include="Objetos\RequestMatricula.cs" />
     <Compile Include="Objetos\MatriculasUsuario.cs" />
