@@ -56,18 +56,18 @@ namespace PortalClientes.Views
                 }
             }
 
-            //Scheduler.Start = DateTime.Now.AddMonths(-2);
+            DateTime date = DateTime.Now;
+            DateTime dateStart = new DateTime(date.Year, date.Month, 1);
+            DateTime dateEnd = dateStart.AddMonths(1).AddDays(-1);
 
-            ApplyOptionsDay(); // configuracion dia
-
-            ApplyOptionsWeek(); // configuracion semana laboral
-            ApplyWorkDaysWeek();
-
+            Scheduler.Start = dateStart;
             ApplyOptionsMonth(); // configuracion menusal
 
-            ApplyOptionsTimeLine(); // configuracion timeline
-
-            ApplyOptionsAgenda(); // configuracion agenda
+            //ApplyOptionsDay(); // configuracion dia
+            //ApplyOptionsWeek(); // configuracion semana laboral
+            //ApplyWorkDaysWeek();
+            //ApplyOptionsTimeLine(); // configuracion timeline
+            //ApplyOptionsAgenda(); // configuracion agenda
 
             ApplyCommonOptions();
 
@@ -200,7 +200,7 @@ namespace PortalClientes.Views
                 MonthView monthView = Scheduler.MonthView;
                 monthView.ShowWeekend = true;
                 monthView.CompressWeekend = false;
-                monthView.ShowMoreButtons = true;
+                monthView.ShowMoreButtons = false;
                 monthView.WeekCount = 5;
                 Scheduler.OptionsToolTips.ShowSelectionToolTip = false;
             }
@@ -255,6 +255,7 @@ namespace PortalClientes.Views
         void ApplyCommonOptions()
         {
             // configuracion vista
+            Scheduler.OptionsView.ShowOnlyResourceAppointments = true;
             Scheduler.OptionsView.AppointmentSelectionAppearanceMode = AppointmentSelectionAppearanceMode.Auto;
             Scheduler.OptionsView.FirstDayOfWeek = (DevExpress.XtraScheduler.FirstDayOfWeek)System.Web.UI.WebControls.FirstDayOfWeek.Default;
             Scheduler.Page.UICulture = Utils.Idioma;
@@ -273,8 +274,9 @@ namespace PortalClientes.Views
             // comportamiento del calendario
             Scheduler.OptionsBehavior.HighlightSelectionHeaders = true;
             Scheduler.OptionsBehavior.ShowViewNavigator = true;
-            Scheduler.OptionsBehavior.ShowViewVisibleInterval = true;
             Scheduler.OptionsBehavior.ShowViewSelector = false;
+            Scheduler.OptionsBehavior.ShowViewNavigatorGotoDateButton = false;
+            Scheduler.OptionsBehavior.ShowViewVisibleInterval = true;
 
 
             Scheduler.OptionsLoadingPanel.Text = "Cargando eventos";// se puede cambiar con el idioma
