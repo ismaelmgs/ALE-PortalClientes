@@ -35,7 +35,7 @@ namespace PortalClientes.Presenter
             oUI.iIdUsuario = oUs.IdUsuario;
             oUI.Clientes = oUs.Clientes;
             oUI.NombreCliente = oUs.NombreCliente;
-            oUI.sMatricula = oUs.Matriculas.Split(',').Count() > 0 ? oUs.Matriculas.Split(',')[0] : "";
+            //oUI.sMatricula = oUs.Matriculas.Split(',').Count() > 0 ? oUs.Matriculas.Split(',')[0] : "";
 
             if (!string.IsNullOrEmpty(oUs.Matriculas))
             {

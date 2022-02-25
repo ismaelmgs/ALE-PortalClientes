@@ -50,6 +50,8 @@ namespace PortalClientes
 
             if (!IsPostBack)
             {
+                Session["cambioMatricula"] = Session["cambioMatricula"] != null ? Session["cambioMatricula"] : 0;
+                var x = Session["cambioMatricula"];
                 CargaMatriculas();  
             }
         }
@@ -174,13 +176,19 @@ namespace PortalClientes
                     }
                     foreach (var item in ObtieneMatriculasContrato())
                     {
-                        if (item.matriculaDefault == 1)
+                        if (item.matriculaDefault == 1 && (int)Session["cambioMatricula"] == 0)
                         {
                             Utils.ClaveContrato = item.claveCliente;
                             Utils.NombreCliente = item.nombre;
                             lblAeronave.Text = item.matricula;
                             lblAeronaveLat.Text = item.matricula;
                             Utils.MatriculaActual = item.matricula;
+                            break;
+                        }
+                        else
+                        {
+                            lblAeronave.Text = Utils.MatriculaActual;
+                            lblAeronaveLat.Text = Utils.MatriculaActual;
                         }
                     }
                 }
@@ -211,6 +219,7 @@ namespace PortalClientes
                     Utils.MatriculaActual = e.Item.Text;
                     lblAeronave.Text = e.Item.Text;
                     lblAeronaveLat.Text = e.Item.Text;
+                    Session["cambioMatricula"] = 1;
                 }
                 else
                 {
