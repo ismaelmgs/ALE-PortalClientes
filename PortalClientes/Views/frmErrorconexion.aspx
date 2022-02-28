@@ -26,8 +26,8 @@
             </div>
             <div class="row">
                 <div class="col-md-3">&nbsp;</div>
-                <div class="col-md-6" style="text-align:center;">
-                    <img src="../build/images/sinconexion.jpg" style="width:100%;" /><%--<img src="../build/images/sinconexion_us.jpg" style="width:100%;" />--%><br />
+                <div class="col-md-6" style="text-align:center;"><br />
+                    <img src="../build/images/sinconexion.jpg" style="width:100%; border-radius:4px;"/><%--<img src="../build/images/sinconexion_us.jpg" style="width:100%;" />--%><br /><br />
                     <asp:LinkButton OnClick="btnRegresarLogin_Click" ID="btnRegresarLogin" runat="server" Text="<i class='fa fa-undo' style='color:#73879C;font-size:14px;'></i> Regresar " CssClass="btn"/>
                 </div>
                 <div class="col-md-3">&nbsp;</div>
