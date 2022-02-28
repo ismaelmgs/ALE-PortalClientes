@@ -180,6 +180,7 @@ namespace PortalClientes
                         {
                             Utils.ClaveContrato = item.claveCliente;
                             Utils.NombreCliente = item.nombre;
+                            lblContratoCliente.Text = item.claveCliente;
                             lblAeronave.Text = item.matricula;
                             lblAeronaveLat.Text = item.matricula;
                             Utils.MatriculaActual = item.matricula;
@@ -189,6 +190,7 @@ namespace PortalClientes
                         {
                             lblAeronave.Text = Utils.MatriculaActual;
                             lblAeronaveLat.Text = Utils.MatriculaActual;
+                            lblContratoCliente.Text = Utils.ClaveContrato;
                         }
                     }
                 }
@@ -231,6 +233,7 @@ namespace PortalClientes
                 {
                     if (item.matricula == Utils.MatriculaActual)
                     {
+                        lblContratoCliente.Text = item.claveCliente;
                         Utils.ClaveContrato = item.claveCliente;
                         Utils.NombreCliente = item.nombre;
                     }
