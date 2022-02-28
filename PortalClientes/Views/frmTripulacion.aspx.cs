@@ -15,6 +15,7 @@ using iTextSharp.text.pdf;
 using NucleoBase.Core;
 using System.Linq;
 using System.Web.UI.HtmlControls;
+using System.Text;
 
 namespace PortalClientes.Views
 {
@@ -304,9 +305,10 @@ namespace PortalClientes.Views
         private void exportarExcel(string tipo)
         {
             Response.Clear();
+            Response.ContentEncoding = Encoding.Default;
+            //Response.Charset = "ISO-8859-1";
             Response.Buffer = true;
             Response.AddHeader("content-disposition", string.Format("attachment;filename={0}", nameFile(tipo,2)));
-            Response.Charset = "";
             Response.ContentType = "application/vnd.ms-excel";
             using (StringWriter sw = new StringWriter())
             {
@@ -413,7 +415,8 @@ namespace PortalClientes.Views
                     LlenaGridEventosLocal();
                     gv = gvEventos;
                 }
-
+                Response.ContentEncoding = Encoding.Default;
+                //Response.Charset = "ISO-8859-1";
                 Response.ContentType = "application/pdf";
                 Response.AddHeader("content-disposition", string.Format("attachment;filename={0}", nameFile(tipo,1)));
                 Response.Cache.SetCacheability(HttpCacheability.NoCache);

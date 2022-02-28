@@ -1246,7 +1246,8 @@ namespace PortalClientes.Views
             Response.Clear();
             Response.Buffer = true;
             Response.AddHeader("content-disposition", string.Format("attachment;filename={0}", nameFile));
-            Response.Charset = "";
+            Response.ContentEncoding = Encoding.Default;
+            //Response.Charset = "ISO-8859-1";
             Response.ContentType = "application/vnd.ms-excel";
             using (StringWriter sw = new StringWriter())
             {
@@ -1323,7 +1324,8 @@ namespace PortalClientes.Views
             Response.Clear();
             Response.Buffer = true;
             Response.AddHeader("content-disposition", string.Format("attachment;filename={0}", nameFile));
-            Response.Charset = "";
+            Response.ContentEncoding = Encoding.Default;
+            //Response.Charset = "ISO-8859-1";
             Response.ContentType = "application/octet-stream";
             Response.Cache.SetCacheability(HttpCacheability.NoCache);
             using (StringWriter sw = new StringWriter())
