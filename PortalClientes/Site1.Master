@@ -219,43 +219,17 @@
                                 <a href="javascript:;" class="user-profile dropdown-toggle" aria-haspopup="true" id="navbarDropdown" data-toggle="dropdown" aria-expanded="false">
                                     <img src='<%=ResolveUrl("~/build/images/img.jpg")%>' alt="" style="z-index:100;margin-top:-10px;"><asp:Label ID="lblAeronave" runat="server" Text="" Font-Bold="true"></asp:Label>
                                 </a>
-                                <div class="dropdown-menu dropdown-usermenu pull-right" aria-labelledby="navbarDropdown" style="width: 230px; margin-top:25px;">
-                                    <%--<a class="dropdown-item" href="javascript:;">
-                                        <asp:Label ID="lblUsuario" runat="server" Text="Usuario" Font-Bold="true"></asp:Label>
-                                        <i class="fa fa-user" style="position: absolute; right: 22px;"></i></a>--%>
-                                    <%--<a class="dropdown-item" href="javascript:;">
-                                        <asp:Label ID="lblUserSetings" runat="server" Text="Administrar cuenta" Font-Bold="true"></asp:Label>
-                                        <i class="fa fa-cog" style="position: absolute; right: 22px;"></i></a>
-                                    <a class="dropdown-item" href="javascript:;">
-                                        <div class="row" style="margin-left: 0px;">
-                                            <div class="col-md-6">
-                                                <span style="font-size: 14px; color: #ffffff; background-color: #1a8ebb; padding: 5px; border-radius: 50%; margin: 4px;"><i class="fa fa-plane"></i></span>&nbsp;&nbsp;<asp:Label ID="lblmatricula1" runat="server" Text="N849WC" Font-Bold="" Style="font-size: 12px;"></asp:Label>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <asp:Label ID="lblDescripcionAeronave1" runat="server" Text="AAAAAAA0000000" Font-Bold="true"></asp:Label>
-                                            </div>
-                                        </div>
-                                    </a>
-                                    <a class="dropdown-item" href="javascript:;">
-                                        <div class="row" style="margin-left: 0px;">
-                                            <div class="col-md-6">
-                                                <span style="font-size: 14px; color: #ffffff; background-color: #808080; padding: 5px; border-radius: 50%; margin: 4px;"><i class="fa fa-plane"></i></span>&nbsp;&nbsp;<asp:Label ID="lblmatricula2" runat="server" Text="N849WC" Font-Bold="" Style="font-size: 12px;"></asp:Label>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <asp:Label ID="lblDescripcionAeronave2" runat="server" Text="AAAAAAA0000000" Font-Bold="true"></asp:Label>
-                                            </div>
-                                        </div>
-                                    </a>--%>
+                                <div class="dropdown-menu dropdown-usermenu pull-right" aria-labelledby="navbarDropdown" style="width: 230px; margin-top: 25px;">
                                     <dx:BootstrapMenu ID="MenuMatriculas" runat="server" OnItemClick="MenuMatriculas_ItemClick">
+                                        <ClientSideEvents
+                                            ItemClick="function(s, e) { onItemClick(s, e); }"/>
                                         <Items>
-                                            <dx:BootstrapMenuItem Text="Usuario" GroupName="Group2" IconCssClass="fa fa-user"></dx:BootstrapMenuItem>
-                                            <dx:BootstrapMenuItem Text="Matrículas &#x23f7;" IconCssClass="fa fa-plane" GroupName="Group4"></dx:BootstrapMenuItem>
+                                            <dx:BootstrapMenuItem  Text="Usuario" GroupName="Group2" IconCssClass="fa fa-user"></dx:BootstrapMenuItem>
+                                            <dx:BootstrapMenuItem Text="Matrículas &#x23f7;" Name="matriculas" CssClass="" IconCssClass="fa fa-plane" GroupName="Group4"></dx:BootstrapMenuItem>
                                             <dx:BootstrapMenuItem Text="Administrar mi cuenta" GroupName="Group3" IconCssClass="fa fa-cogs"></dx:BootstrapMenuItem>
                                             <dx:BootstrapMenuItem Text="Salir" GroupName="Group1" IconCssClass="fa fa-power-off"></dx:BootstrapMenuItem>
                                         </Items>
                                     </dx:BootstrapMenu>
-                                    <%--<a class="dropdown-item" href="javascript:;">
-                                        <asp:Label ID="lblSalir" runat="server" Text="Salir" Font-Bold="true"></asp:Label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i class="fa fa-sign-out pull-right"></i> </a>--%>
                                 </div>
                             </li>
                             <li role="presentation" class="nav-item dropdown open">
@@ -411,11 +385,7 @@
             $('#<%= txtLang.ClientID%>').val('en-US');
         }
 
-        function onItemClick(s, e) {
-
-            var matricula = e.get_text();
-            alert(matricula);
-        }
+        
     </script>pt>
     <script>
         $(document).ready(function () {
