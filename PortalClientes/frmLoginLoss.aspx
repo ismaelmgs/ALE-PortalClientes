@@ -1,6 +1,8 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="frmLoginLoss.aspx.cs" Inherits="PortalClientes.frmLoginLoss" %>
 
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="cc1" %>
+<%@ Register Assembly="DevExpress.Web.Bootstrap.v18.1, Version=18.1.15.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Namespace="DevExpress.Web.Bootstrap" TagPrefix="dx" %>
+
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -47,7 +49,8 @@
                                 <i class="fa fa-envelope" style="font-size: 20px; margin-top: 5px;"></i>
                             </div>
                             <div class="col-md-11">
-                                <asp:TextBox ID="txtEmail" runat="server" CssClass="form-control" Text="Correo electrónico" Style="border-top: none; border-right: none; border-left: none;"></asp:TextBox>
+                                <dx:BootstrapTextBox ID="txtEmail" runat="server"></dx:BootstrapTextBox>
+                                <%--<asp:TextBox ID="" runat="server" CssClass="form-control" Text="Correo electrónico" Style="border-top: none; border-right: none; border-left: none;"></asp:TextBox>--%>
                             </div>
                         </div>
                         <br />
@@ -75,13 +78,13 @@
                             <br />
                             <div class="row" style="width: 100%;">
                                 <div class="col-md-5" style="text-align: right;">
-                                    <asp:LinkButton ID="lblIdiomaEspanol" runat="server" Text="Español" Font-Bold="true"></asp:LinkButton>
+                                    <asp:LinkButton ID="lblIdiomaEspanol" OnClick="lblIdiomaEspanol_Click" runat="server" Text="Español" Font-Bold="true"></asp:LinkButton>
                                 </div>
                                 <div class="col-md-2">
                                     <i class="fa fa-globe" style="font-size: 25px;"></i>
                                 </div>
                                 <div class="col-md-5" style="text-align: left;">
-                                    <asp:LinkButton ID="lblIdiomaEnglish" runat="server" Text="English" Font-Bold="true"></asp:LinkButton>
+                                    <asp:LinkButton ID="lblIdiomaEnglish" OnClick="lblIdiomaEnglish_Click" runat="server" Text="English" Font-Bold="true"></asp:LinkButton>
                                 </div>
                             </div>
                             <br />

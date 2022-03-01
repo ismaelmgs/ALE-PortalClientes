@@ -25,7 +25,6 @@
                 <div class="col-md-3">&nbsp;</div>
                 <div class="col-md-6" style="text-align:center;">
                     <img src="../build/images/sinmatriculas.jpg" style="width:100%;" /><br />
-                    <asp:LinkButton ID="btnRegresar" runat="server" Text="<i class='fa fa-undo' style='color:#73879C;font-size:14px;'></i> Regresar " CssClass="btn"/>
                 </div>
                 <div class="col-md-3">&nbsp;</div>
             </div>

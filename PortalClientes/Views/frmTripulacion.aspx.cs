@@ -244,10 +244,9 @@ namespace PortalClientes.Views
             var v = ddlFiltro.SelectedValue;
             // llenar dropdown Tipo Rubro
             ddlFiltro.Items.Clear();
-            ddlFiltro.Items.Add(new ListItem(Properties.Resources.FiltroEvenTri_MA, "0"));
-            ddlFiltro.Items.Add(new ListItem(Properties.Resources.FiltroEvenTri_1M, "1"));
-            ddlFiltro.Items.Add(new ListItem(Properties.Resources.FiltroEvenTri_2M, "2"));
-            ddlFiltro.Items.Add(new ListItem(Properties.Resources.FiltroEvenTri_3M, "3"));
+            ddlFiltro.Items.Add(new ListItem(Properties.Resources.FiltroEvenTri_6MP, "1"));
+            ddlFiltro.Items.Add(new ListItem(Properties.Resources.FiltroEvenTri_6MU, "2"));
+            //ultimos 6 y proximos 6
 
             if (v == "")
             {

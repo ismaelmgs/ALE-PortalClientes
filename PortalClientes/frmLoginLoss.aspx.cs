@@ -50,7 +50,7 @@ namespace PortalClientes
         protected void btnAceptConfirm_Click(object sender, EventArgs e)
         {
             mpeConfirm.Hide();
-            Response.Redirect("/frmLogin.aspx");
+            Response.Redirect("~/frmLogin.aspx");
         }
 
         protected void lblIdiomaEspanol_Click(object sender, EventArgs e)
@@ -72,7 +72,7 @@ namespace PortalClientes
         private void ArmaFormulario()
         {
             lblLoginLossHeader.Text = Properties.Resources.Lo_CamContrasena;
-            txtEmail.Text = Properties.Resources.Lo_Correo;
+            txtEmail.NullText = Properties.Resources.Lo_Correo;
             lblRegresarLogin.Text = Properties.Resources.Lo_BackLogin;
             btnEviarContrasena.Text = Properties.Resources.Lo_Enviar;
         }

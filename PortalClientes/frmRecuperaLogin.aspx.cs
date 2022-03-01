@@ -59,7 +59,7 @@ namespace PortalClientes
         protected void btnAceptConfirm_Click(object sender, EventArgs e)
         {
             mpeConfirm.Hide();
-            Response.Redirect("/frmLogin.aspx");
+            Response.Redirect("~/frmLogin.aspx");
         }
 
         protected void lblIdiomaEspanol_Click(object sender, EventArgs e)

@@ -236,7 +236,7 @@
                             <div class="row">
                                 <div class="col-md-6" style="text-align: left;">
                                     <h2>
-                                        <asp:Label ID="Label1" runat="server" Text="Actualizar Contrasena" Font-Bold="true"></asp:Label>
+                                        <asp:Label ID="lblMatriculaActual" runat="server" Text="Actualizar Contrasena" Font-Bold="true"></asp:Label>
                                     </h2>
                                 </div>
                                 <div class="col-md-6" style="text-align: right;">

@@ -1447,6 +1447,24 @@ namespace PortalClientes.Properties {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Proximos 6 meses.
+        /// </summary>
+        internal static string FiltroEvenTri_6MP {
+            get {
+                return ResourceManager.GetString("FiltroEvenTri_6MP", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Ultimo 6 meses.
+        /// </summary>
+        internal static string FiltroEvenTri_6MU {
+            get {
+                return ResourceManager.GetString("FiltroEvenTri_6MU", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Mes Actual.
         /// </summary>
         internal static string FiltroEvenTri_MA {
@@ -3306,6 +3324,15 @@ namespace PortalClientes.Properties {
         internal static string Us_ActInfo {
             get {
                 return ResourceManager.GetString("Us_ActInfo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Actualizar Matricula Default.
+        /// </summary>
+        internal static string Us_ActMatricula {
+            get {
+                return ResourceManager.GetString("Us_ActMatricula", resourceCulture);
             }
         }
         

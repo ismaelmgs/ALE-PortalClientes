@@ -1335,4 +1335,13 @@
   <data name="Us_AdminCta" xml:space="preserve">
     <value>Manage Account</value>
   </data>
+  <data name="Us_ActMatricula" xml:space="preserve">
+    <value>Update number tail default</value>
+  </data>
+  <data name="FilterEvenTri_6MP" xml:space="preserve">
+    <value> Next 6 months</value>
+  </data>
+  <data name="FilterEvenTri_6MU" xml:space="preserve">
+    <value>Last 6 months</value>
+  </data>
 </root>

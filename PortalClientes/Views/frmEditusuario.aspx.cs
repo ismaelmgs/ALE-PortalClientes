@@ -156,6 +156,8 @@ namespace PortalClientes.Views
             Regex1.ErrorMessage = Properties.Resources.Us_ValidacionContrasena;
             Regex2.ErrorMessage = Properties.Resources.Us_ValidacionConfirmContrasena;
 
+            lblMatriculaActual.Text = Properties.Resources.Us_ActMatricula;
+
             txtCorreo.Enabled = false;
         }
 
