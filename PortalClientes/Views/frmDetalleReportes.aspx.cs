@@ -20,6 +20,7 @@ using PortalClientes.DomainModel;
 using CrystalDecisions.CrystalReports.Engine;
 using CrystalDecisions.Shared;
 using System.Data;
+using System.Text;
 
 namespace PortalClientes.Views
 {
