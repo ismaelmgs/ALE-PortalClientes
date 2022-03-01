@@ -11,6 +11,8 @@ using System.Net;
 using System.Configuration;
 using System.Collections.Specialized;
 using System.Text;
+using System.Web.Script.Serialization;
+using RestSharp;
 
 namespace PortalClientes.Presenter
 {
@@ -36,6 +38,32 @@ namespace PortalClientes.Presenter
             oUI.Clientes = oUs.Clientes;
             oUI.NombreCliente = oUs.NombreCliente;
             //oUI.sMatricula = oUs.Matriculas.Split(',').Count() > 0 ? oUs.Matriculas.Split(',')[0] : "";
+
+            List<MatriculasContratoUsuario> olst = new List<MatriculasContratoUsuario>();
+            JavaScriptSerializer ser = new JavaScriptSerializer();
+            TokenWS oToken = Utils.ObtieneToken;
+            requestIdUsuario oRe = new requestIdUsuario();
+            oRe.idUsuario = Utils.GetIdEmpUsuario;
+
+            var client = new RestClient(Helper.US_UrlObtieneMatriculasContratos);
+            var request = new RestRequest(Method.POST);
+            request.AddHeader("Authorization", oToken.token);
+            request.AddJsonBody(oRe);
+
+            IRestResponse response = client.Execute(request);
+            var resp = response.Content;
+            olst = ser.Deserialize<List<MatriculasContratoUsuario>>(resp);
+
+            foreach (var item in olst)
+            {
+                if (item.matriculaDefault == 1)
+                {
+                    Utils.MatriculaActual = item.matricula;
+                    Utils.ClaveContrato = item.claveCliente;
+                    Utils.NombreCliente = item.nombre;
+                    oUI.sMatricula = item.matricula;
+                }
+            }
 
             if (!string.IsNullOrEmpty(oUs.Matriculas))
             {

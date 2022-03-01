@@ -80,7 +80,7 @@ namespace PortalClientes
 
                     if (oU.lsMatriculas == null)
                     {
-                        Response.Redirect("/Views/frmSinMatriculas.aspx");
+                        Response.Redirect("~/Views/frmSinMatriculas.aspx");
                     }
 
                     if (oUser.IdUsuario != 0)
