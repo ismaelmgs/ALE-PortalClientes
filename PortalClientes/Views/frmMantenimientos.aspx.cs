@@ -14,6 +14,7 @@ using NucleoBase.Core;
 using System.Web;
 using iTextSharp.text.html.simpleparser;
 using iTextSharp.text.pdf;
+using System.Text;
 
 namespace PortalClientes.Views
 {
@@ -157,6 +158,10 @@ namespace PortalClientes.Views
             {
                 HtmlTextWriter hw = new HtmlTextWriter(sw);
 
+                LlenarGV();
+
+                Response.ContentEncoding = Encoding.Default;
+                //Response.Charset = "ISO-8859-1";
                 Response.ContentType = "application/pdf";
                 Response.AddHeader("content-disposition", string.Format("attachment;filename={0}", nameFile(1)));
                 Response.Cache.SetCacheability(HttpCacheability.NoCache);
@@ -204,13 +209,15 @@ namespace PortalClientes.Views
             Response.Clear();
             Response.Buffer = true;
             Response.AddHeader("content-disposition", string.Format("attachment;filename={0}", nameFile(2)));
-            Response.Charset = "";
+            Response.ContentEncoding = Encoding.Default;
+            //Response.Charset = "ISO-8859-1";
             Response.ContentType = "application/vnd.ms-excel";
+
             using (StringWriter sw = new StringWriter())
             {
                 HtmlTextWriter hw = new HtmlTextWriter(sw);
 
-                gvMttos.AllowPaging = false;
+                LlenarGV();
 
                 gvMttos.HeaderRow.BackColor = Color.White;
                 foreach (TableCell cell in gvMttos.HeaderRow.Cells)
@@ -233,7 +240,8 @@ namespace PortalClientes.Views
                         cell.CssClass = "textmode";
                     }
                 }
-
+                gvMttos.AllowPaging = false;
+                gvMttos.DataBind();
                 gvMttos.RenderControl(hw);
 
                 string style = @"<style> .textmode { } </style>";

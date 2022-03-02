@@ -529,6 +529,9 @@ namespace PortalClientes.Views
             lblTitulo.Text = Properties.Resources.DetRpt_Title;
             btnsalir.Text = Properties.Resources.Cancelar;
 
+            btnPDF.Visible = true;
+            btnExcel.Visible = true;
+
             switch (iReporte)
             {
                 case 4:
@@ -540,6 +543,9 @@ namespace PortalClientes.Views
                     lblTotalTrasn.Text = Properties.Resources.TabTran_NoVuelos;
                     lblTotal.Text = Properties.Resources.TabTran_TotalMxn;
                     lblPromedio.Text = Properties.Resources.TabTran_TotalUsd;
+
+                    btnPDF.Visible = false;
+                    btnExcel.Visible = false;
                     break;
                 case 7:
                     lblTotalTrasn.Text = "";//Properties.Resources.TabTran_No;
@@ -1254,7 +1260,6 @@ namespace PortalClientes.Views
             {
                 HtmlTextWriter hw = new HtmlTextWriter(sw);
 
-                gvdetReportes.AllowPaging = false;
                 var tipo = Convert.ToInt32(Session["tipoReporte"]);
                 Reportes reportes = new Reportes();
                 if (tipo == 1)
@@ -1309,6 +1314,8 @@ namespace PortalClientes.Views
                     }
                 }
 
+                gvdetReportes.AllowPaging = false;
+                gvdetReportes.DataBind();
                 gvdetReportes.RenderControl(hw);
 
                 string style = @"<style> .textmode { } </style>";
@@ -1333,7 +1340,6 @@ namespace PortalClientes.Views
             {
                 HtmlTextWriter hw = new HtmlTextWriter(sw);
 
-                gvdetReportes.AllowPaging = false;
                 var tipo = Convert.ToInt32(Session["tipoReporte"]);
                 Reportes reportes = new Reportes();
                 if (tipo == 1)
@@ -1388,6 +1394,8 @@ namespace PortalClientes.Views
                     }
                 }
 
+                gvdetReportes.AllowPaging = false;
+                gvdetReportes.DataBind();
                 gvdetReportes.RenderControl(hw);
 
                 StringReader sr = new StringReader(sw.ToString());
