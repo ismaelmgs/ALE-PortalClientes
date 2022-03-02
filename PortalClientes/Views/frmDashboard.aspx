@@ -653,6 +653,10 @@ TagPrefix="dx" %>
 									CssClass="form-control"
 									Width="100%"
 								></asp:DropDownList>
+                                <div>
+                                    <br />
+                                    <asp:Label ID="lblperiodotext" Text="Periodo al mes de Ener del 2022" runat="server"></asp:Label>
+								</div>
 							</div>
 							<div class="col-md-6">
 								<asp:DropDownList

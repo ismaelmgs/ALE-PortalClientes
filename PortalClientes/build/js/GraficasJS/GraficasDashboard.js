@@ -12,6 +12,10 @@
         charts(data, "PieChart"); // Pie Charts
     });
 
+    let texto = $('#ContentPlaceHolder1_lblIncVenc90Dias').text();
+    $('#ContentPlaceHolder1_lblperiodotext').empty();
+    $('#ContentPlaceHolder1_lblperiodotext').append(texto);
+
     window.onresize = function () {
         ajax_data(obj, url, function (data) {
             charts(data, "PieChart"); // Pie Charts
@@ -27,6 +31,18 @@ function getUrl() {
 $('#ContentPlaceHolder1_ddlPeriodo').change(function (event) {
     event.preventDefault();
     lPanel.Show();
+
+    //leyenda de ultimo periodo
+    let valorPeriodo = $('#ContentPlaceHolder1_ddlPeriodo').val();
+
+    if(valorPeriodo == 1) {
+       let texto = $('#ContentPlaceHolder1_lblIncVenc90Dias').text();
+       $('#ContentPlaceHolder1_lblperiodotext').empty();
+       $('#ContentPlaceHolder1_lblperiodotext').append(texto);
+    }else{
+        $('#ContentPlaceHolder1_lblperiodotext').text('');
+    }
+
     ActualizarGrafica();
 });
 

@@ -261,7 +261,7 @@ namespace PortalClientes.Views
 
             if (vPeriodo== "")
             {
-                ddlPeriodo.SelectedIndex = 3;
+                ddlPeriodo.SelectedIndex = 1;
             }
             else
             {
