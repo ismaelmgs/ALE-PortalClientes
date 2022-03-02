@@ -37,9 +37,9 @@
                 <div class="col-md-6" style="text-align:right;">
                     <div class="title_right">
                         <div class="popover__wrapper">
-                          <a href="#">
-                            <h2 class="popover__title"><i class="fa fa-question-circle" style="font-size:35px;margin-top: 5px;cursor:pointer;"></i>&nbsp;&nbsp;</h2>
-                          </a>
+                          
+                            <h2 class="popover__title"><i class="fa fa-question-circle" style="font-size:35px;margin-top: 5px;cursor:pointer;"></i>&nbsp;&nbsp;&nbsp;&nbsp;</h2>
+                          
                           <div class="popover__content" style="text-align:center">
                             <p class="popover__message">
                                 <h5 style="background-color: #efefef;
@@ -187,7 +187,7 @@
                         </div>
                         <div class="row">
                             <div class="col-md-12">
-                                <div>
+                                <div class="table-responsive">
                                     <asp:GridView ID="gvEdoCuenta" runat="server" AutoGenerateColumns="false" CssClass="table table-striped table-bordered table-hover" AllowPaging="true"
                                         EmptyDataText="No Registros" OnRowDataBound="gvEdoCuenta_RowDataBound" OnRowCommand="gvEdoCuenta_RowCommand" DataKeyNames="nombreMes">
                                         <Columns>
@@ -202,7 +202,7 @@
                                             <asp:BoundField DataField="saldoActualUSD" DataFormatString="{0:C}" />
                                              <asp:TemplateField ItemStyle-HorizontalAlign="Center" ItemStyle-VerticalAlign="Middle" >
                                                 <ItemTemplate>
-                                                    <asp:ImageButton ID="lkbViewDocument" runat="server" ImageUrl="~/Images/icons/files.png" Width="25px" Height="27px"
+                                                    <asp:ImageButton ID="lkbViewDocument" runat="server" ImageUrl="~/Images/icons/files.png"
                                                              CommandName="ViewDocument" CommandArgument="<%# ((GridViewRow) Container).RowIndex %>" CssClass="btn" />
                                                     <asp:Label ID="lkbTextDocument" Text="Sin Documentos" runat="server" Width="25px" Height="27px" CommandName="ViewDocument" Visible="False" style="display: contents;"/>                                                   
                                                 </ItemTemplate>
@@ -215,7 +215,7 @@
                                             <asp:TemplateField ItemStyle-VerticalAlign="Middle" ItemStyle-HorizontalAlign="Center" HeaderText="Reporte">
                                                 <ItemTemplate>
                                                     &nbsp;&nbsp;&nbsp;<asp:ImageButton ID="lkbReporte" OnClientClick="LoadingTime(3)" runat="server" ImageUrl="~/Images/icons/descargar.png" Width="25px" Height="27px"
-                                                             CommandName="Reporte" CommandArgument="<%# ((GridViewRow) Container).RowIndex %>" CssClass="btn" />&nbsp;&nbsp;&nbsp;
+                                                             CommandName="Reporte" CommandArgument="<%# ((GridViewRow) Container).RowIndex %>" CssClass="" />&nbsp;&nbsp;&nbsp;
                                                 </ItemTemplate>
                                             </asp:TemplateField>
                                         </Columns>
