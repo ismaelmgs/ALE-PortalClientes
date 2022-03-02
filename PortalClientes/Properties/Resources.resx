@@ -1333,12 +1333,15 @@
     <value>Administrar Cuenta</value>
   </data>
   <data name="FiltroEvenTri_6MP" xml:space="preserve">
-    <value>Proximos 6 meses</value>
+    <value>Próximos 6 meses</value>
   </data>
   <data name="FiltroEvenTri_6MU" xml:space="preserve">
-    <value>Ultimo 6 meses</value>
+    <value>Últimos 6 meses</value>
   </data>
   <data name="Us_ActMatricula" xml:space="preserve">
     <value>Actualizar Matricula Default</value>
+  </data>
+  <data name="Ec_DownloadReporte" xml:space="preserve">
+    <value>Reporte</value>
   </data>
 </root>

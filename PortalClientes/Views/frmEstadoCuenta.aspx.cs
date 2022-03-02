@@ -77,6 +77,7 @@ namespace PortalClientes.Views
                     e.Row.Cells[8].Text = Properties.Resources.Ec_SaldoActualUSD;
                     e.Row.Cells[9].Text = Properties.Resources.Ec_VerFacturaTitle;
                     e.Row.Cells[10].Text = Properties.Resources.Ec_VerDetalleTitle;
+                    e.Row.Cells[11].Text = Properties.Resources.Ec_DownloadReporte;
                 }
 
                 if (e.Row.RowType == DataControlRowType.DataRow)

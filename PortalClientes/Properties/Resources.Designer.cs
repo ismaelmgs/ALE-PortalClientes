@@ -1186,6 +1186,15 @@ namespace PortalClientes.Properties {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Reporte.
+        /// </summary>
+        internal static string Ec_DownloadReporte {
+            get {
+                return ResourceManager.GetString("Ec_DownloadReporte", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Descargar XML.
         /// </summary>
         internal static string Ec_DownloadXML {
@@ -1447,7 +1456,7 @@ namespace PortalClientes.Properties {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Proximos 6 meses.
+        ///   Busca una cadena traducida similar a Próximos 6 meses.
         /// </summary>
         internal static string FiltroEvenTri_6MP {
             get {
@@ -1456,7 +1465,7 @@ namespace PortalClientes.Properties {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Ultimo 6 meses.
+        ///   Busca una cadena traducida similar a Últimos 6 meses.
         /// </summary>
         internal static string FiltroEvenTri_6MU {
             get {

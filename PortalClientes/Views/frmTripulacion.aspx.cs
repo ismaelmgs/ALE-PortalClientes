@@ -313,19 +313,16 @@ namespace PortalClientes.Views
             {
                 HtmlTextWriter hw = new HtmlTextWriter(sw);
                 GridView gv = null;
-
                 if (tipo == "Piloto")
                 {
-                    gv = gvPilotos;
                     LlenaGridPilotosLocal();
+                    gv = gvPilotos;
                 }
                 else
                 {
-                    gv = gvEventos;
                     LlenaGridEventosLocal();
+                    gv = gvEventos;
                 }
-
-                gv.AllowPaging = false;
 
                 gv.HeaderRow.BackColor = Color.White;
                 foreach (TableCell cell in gv.HeaderRow.Cells)
@@ -349,6 +346,8 @@ namespace PortalClientes.Views
                     }
                 }
 
+                gv.AllowPaging = false;
+                gv.DataBind();
                 gv.RenderControl(hw);
 
                 string style = @"<style> .textmode { } </style>";
