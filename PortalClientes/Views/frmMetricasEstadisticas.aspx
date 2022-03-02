@@ -30,9 +30,9 @@
                                 </div>
                             <div class="col-md-6" style="text-align: right">
 									<div class="popover__wrapper">
-									  <a href="#">
-										<h2 class="popover__title"><i class="fa fa-question-circle" style="font-size:35px;margin-top: 5px;cursor:pointer;"></i>&nbsp;&nbsp;</h2>
-									  </a>
+									  
+										<h2 class="popover__title"><i class="fa fa-question-circle" style="font-size:35px;margin-top: 5px;cursor:pointer;"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h2>
+									  
 									  <div class="popover__content" style="text-align:center; margin-top:90px;line-height:18px;">
 										<p class="popover__message">
 											<h5 style="background-color: #efefef; padding: 5px;">
