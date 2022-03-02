@@ -40,8 +40,17 @@
                                             <asp:DropDownList ID="DDFiltroMeses" runat="server" AutoPostBack="true" CssClass="form-control ddl" Width="100%" OnSelectedIndexChanged="DDFiltroMeses_SelectedIndexChanged"></asp:DropDownList>
                                         </div>
                                         <div class="col-md-2">
-                                            <asp:LinkButton ID="btnExc" runat="server" Text="<i class='fa fa-file-excel-o' style='color:#73879c;font-size:25px;'></i>" CssClass="btn"  OnClientClick="LoadingTime(3)" OnClick="btnExc_Click"/>
-                                            <asp:LinkButton ID="btnPdf" runat="server" Text="<i class='fa fa-file-pdf-o' style='color:#73879c;font-size:25px;' ></i>" CssClass="btn"  OnClientClick="LoadingTime(3)" OnClick="btnPdf_Click"/>
+                                            <div class="row">
+                                                <div class="col-md-5">
+                                                    <asp:LinkButton ID="btnExc" runat="server" Text="<i class='fa fa-file-excel-o' style='color:#73879c;font-size:25px;'></i>" CssClass="btn"  OnClientClick="LoadingTime(3)" OnClick="btnExc_Click"/>
+                                                </div>
+                                                <div class="col-md-5">
+                                                    <asp:LinkButton ID="btnPdf" runat="server" Text="<i class='fa fa-file-pdf-o' style='color:#73879c;font-size:25px;' ></i>" CssClass="btn"  OnClientClick="LoadingTime(3)" OnClick="btnPdf_Click"/>
+                                                </div>
+                                                <div class="col-md-2">
+                                                    &nbsp;
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
