@@ -250,7 +250,7 @@ namespace PortalClientes.Views
 
             if (v == "")
             {
-                ddlFiltro.SelectedIndex = 0;
+                ddlFiltro.SelectedIndex = 1;
             }
             else
             {

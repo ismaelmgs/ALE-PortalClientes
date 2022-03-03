@@ -862,7 +862,7 @@ namespace PortalClientes.Properties {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Ultimos 12 Meses.
+        ///   Busca una cadena traducida similar a Últimos 12 Meses.
         /// </summary>
         internal static string Das_Anual {
             get {
@@ -898,7 +898,7 @@ namespace PortalClientes.Properties {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Ultimo Pago.
+        ///   Busca una cadena traducida similar a Último Pago.
         /// </summary>
         internal static string Das_DeclaracionPara {
             get {
@@ -961,7 +961,7 @@ namespace PortalClientes.Properties {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Ultimo mes.
+        ///   Busca una cadena traducida similar a Último mes.
         /// </summary>
         internal static string Das_Mensual {
             get {
@@ -1618,7 +1618,7 @@ namespace PortalClientes.Properties {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Numero Viaje.
+        ///   Busca una cadena traducida similar a Número Viaje.
         /// </summary>
         internal static string Fl_NumTripTitle {
             get {

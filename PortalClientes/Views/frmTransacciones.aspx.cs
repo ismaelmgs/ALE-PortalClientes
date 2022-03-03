@@ -553,8 +553,8 @@ namespace PortalClientes.Views
                 gvGastos.DataBind();
 
                 lblTotalTrasnRes.Text = totalRegistros.S();
-                lblTotalRes.Text = string.Format("{0:###,###,###,0.##}", totalTransacciones);
-                lblPromedioRes.Text = string.Format("{0:###,###,###,0.##}", promedio);
+                lblTotalRes.Text = string.Format("{0:###,###,###,0.##}", totalTransacciones) + " " + (string)Session["tipoDet"];
+                lblPromedioRes.Text = string.Format("{0:###,###,###,0.##}", promedio) + " " + (string)Session["tipoDet"];
             }
             else if (tipoTransaccion == 2)
             {
@@ -1175,8 +1175,8 @@ namespace PortalClientes.Views
                 gvGastos.DataBind();
 
                 lblTotalTrasnRes.Text = totalRegistros.S();
-                lblTotalRes.Text = string.Format("{0:###,###,###,0.##}", totalTransacciones);
-                lblPromedioRes.Text = string.Format("{0:###,###,###,0.##}", promedio);
+                lblTotalRes.Text = string.Format("{0:###,###,###,0.##}", totalTransacciones) + " " + (string)Session["tipoDet"]; 
+                lblPromedioRes.Text = string.Format("{0:###,###,###,0.##}", promedio) + " " + (string)Session["tipoDet"];
             }
         }
 
@@ -1602,29 +1602,6 @@ namespace PortalClientes.Views
                 HttpContext.Current.Session["data"] = gvnv;
             }
 
-            else if (tipoTrans == 8)
-            {
-                List<gvnoVuelos> gvnv = new List<gvnoVuelos>();
-                foreach (var item in novuelos)
-                {
-                    gvnoVuelos nv = new gvnoVuelos();
-                    nv.mes = textInfo.ToTitleCase(month.GetMonthName(Convert.ToInt32(item.mes)));
-                    nv.anio = item.anio.S();
-                    nv.origen = item.origen;
-                    nv.destino = item.destino;
-                    nv.fechaOrigen = Convert.ToDateTime(item.origenVuelo).ToString("dd/MM/yyyy HH:mm");
-                    nv.fechaDestino = Convert.ToDateTime(item.destinoVuelo).ToString("dd/MM/yyyy HH:mm");
-                    nv.tiempoVuelo = item.tiempoVuelo;
-                    nv.cantPax = item.cantPax.S();
-                    nv.cliente = item.cliente;
-                    nv.contrato = item.contrato;
-
-                    gvnv.Add(nv);
-                }
-
-                HttpContext.Current.Session["data"] = gvnv;
-            }
-
             else if (tipoTrans == 9)
             {
                 List<gvCostosFV> gvgfv = new List<gvCostosFV>();
@@ -1729,6 +1706,7 @@ namespace PortalClientes.Views
             var det = tipoTrans == 8 ? Utils.MatriculaActual : tipoDet;
 
             HttpContext.Current.Session["origenData"] = origen;
+            HttpContext.Current.Session["tipoDet"] = tipoDet;
             HttpContext.Current.Session["tipoTransaccion"] = tipoTrans;
             HttpContext.Current.Session["descripcion"] = descripcion;
             HttpContext.Current.Session["title"] = descripcion + " - " + det;

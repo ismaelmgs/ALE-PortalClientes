@@ -202,7 +202,7 @@
     <value>Último vuelo</value>
   </data>
   <data name="Das_DeclaracionPara" xml:space="preserve">
-    <value>Ultimo Pago</value>
+    <value>Último Pago</value>
   </data>
   <data name="Das_Destino" xml:space="preserve">
     <value>Destino:</value>
@@ -376,7 +376,7 @@
     <value>Ver Docuemtno</value>
   </data>
   <data name="Das_Anual" xml:space="preserve">
-    <value>Ultimos 12 Meses</value>
+    <value>Últimos 12 Meses</value>
   </data>
   <data name="Das_Fijo" xml:space="preserve">
     <value>Fijo</value>
@@ -385,7 +385,7 @@
     <value>Mes Actual</value>
   </data>
   <data name="Das_Mensual" xml:space="preserve">
-    <value>Ultimo mes</value>
+    <value>Último mes</value>
   </data>
   <data name="Das_Semestral" xml:space="preserve">
     <value>Ultimos 6 Meses</value>
@@ -1186,7 +1186,7 @@
     <value>No. Vuelos</value>
   </data>
   <data name="Fl_NumTripTitle" xml:space="preserve">
-    <value>Numero Viaje</value>
+    <value>Número Viaje</value>
   </data>
   <data name="Fl_OrigenTitle" xml:space="preserve">
     <value>Origen</value>
