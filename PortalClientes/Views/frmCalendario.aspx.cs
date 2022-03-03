@@ -200,7 +200,7 @@ namespace PortalClientes.Views
                 MonthView monthView = Scheduler.MonthView;
                 monthView.ShowWeekend = true;
                 monthView.CompressWeekend = false;
-                monthView.ShowMoreButtons = false;
+                monthView.ShowMoreButtons = true;
                 monthView.WeekCount = 5;
                 Scheduler.OptionsToolTips.ShowSelectionToolTip = false;
             }
@@ -255,7 +255,7 @@ namespace PortalClientes.Views
         void ApplyCommonOptions()
         {
             // configuracion vista
-            Scheduler.OptionsView.ShowOnlyResourceAppointments = true;
+            //Scheduler.OptionsView.ShowOnlyResourceAppointments = true;
             Scheduler.OptionsView.AppointmentSelectionAppearanceMode = AppointmentSelectionAppearanceMode.Auto;
             Scheduler.OptionsView.FirstDayOfWeek = (DevExpress.XtraScheduler.FirstDayOfWeek)System.Web.UI.WebControls.FirstDayOfWeek.Default;
             Scheduler.Page.UICulture = Utils.Idioma;
@@ -275,7 +275,7 @@ namespace PortalClientes.Views
             Scheduler.OptionsBehavior.HighlightSelectionHeaders = true;
             Scheduler.OptionsBehavior.ShowViewNavigator = true;
             Scheduler.OptionsBehavior.ShowViewSelector = false;
-            Scheduler.OptionsBehavior.ShowViewNavigatorGotoDateButton = false;
+            //Scheduler.OptionsBehavior.ShowViewNavigatorGotoDateButton = false;
             Scheduler.OptionsBehavior.ShowViewVisibleInterval = true;
 
 
