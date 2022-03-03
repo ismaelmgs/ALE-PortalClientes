@@ -1924,7 +1924,7 @@ namespace PortalClientes.Properties {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Numero de Vuelos.
+        ///   Busca una cadena traducida similar a Número de Vuelos.
         /// </summary>
         internal static string ME_NoVuelos {
             get {
@@ -2293,7 +2293,7 @@ namespace PortalClientes.Properties {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Descripcion.
+        ///   Busca una cadena traducida similar a Descripción.
         /// </summary>
         internal static string Mtto_descripcion {
             get {
@@ -2311,7 +2311,7 @@ namespace PortalClientes.Properties {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Fecha Incio.
+        ///   Busca una cadena traducida similar a Fecha Inicio.
         /// </summary>
         internal static string Mtto_fechaInicio {
             get {
@@ -2329,7 +2329,7 @@ namespace PortalClientes.Properties {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Numero de Vuelo.
+        ///   Busca una cadena traducida similar a Número de Vuelo.
         /// </summary>
         internal static string Mtto_origNmbr {
             get {

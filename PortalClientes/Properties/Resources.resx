@@ -874,7 +874,7 @@
     <value>Horas de Vuelo</value>
   </data>
   <data name="ME_NoVuelos" xml:space="preserve">
-    <value>Numero de Vuelos</value>
+    <value>Número de Vuelos</value>
   </data>
   <data name="ME_PromedioCosto" xml:space="preserve">
     <value>Promedio de Costo</value>
@@ -1258,19 +1258,19 @@
     <value>Vuelos</value>
   </data>
   <data name="Mtto_descripcion" xml:space="preserve">
-    <value>Descripcion</value>
+    <value>Descripción</value>
   </data>
   <data name="Mtto_fechaFin" xml:space="preserve">
     <value>Fecha Fin</value>
   </data>
   <data name="Mtto_fechaInicio" xml:space="preserve">
-    <value>Fecha Incio</value>
+    <value>Fecha Inicio</value>
   </data>
   <data name="Mtto_notes" xml:space="preserve">
     <value>Notas</value>
   </data>
   <data name="Mtto_origNmbr" xml:space="preserve">
-    <value>Numero de Vuelo</value>
+    <value>Número de Vuelo</value>
   </data>
   <data name="Mtto_title" xml:space="preserve">
     <value>Mantenimientos Programados</value>
