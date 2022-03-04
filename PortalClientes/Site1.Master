@@ -217,18 +217,27 @@
                     <nav class="nav navbar-nav">
                         <ul class="navbar-right">
 <!-- Inicio Menú 2 RLR -->
-                            <li class="nav-item dropdown" style="padding-top:17px;">
+                            <li class="nav-item dropdown" style="padding-top:19px; margin-left:5px;">
                                 <a class="nav-link dropdown-toggle" href="" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    <img src='<%=ResolveUrl("~/build/images/img.jpg")%>' alt="" style="z-index:100;margin-top:-10px;width:30px;border-radius:50%;">
+                                    <img src='<%=ResolveUrl("~/build/images/img.jpg")%>' alt="" style="z-index:100;margin-top:-10px;width:29px;border-radius:50%;">
                                     <asp:Label ID="lblAeronave" runat="server" Text="" Font-Bold="true"></asp:Label>
                                 </a>
                                 <div class="dropdown-menu RLR-derecha-menu" aria-labelledby="navbarDropdownMenuLink" style="width:230px;">
-                                    
-                                    <asp:LinkButton CssClass="dropdown-item image fa fa-user" ID="lblUsuario" runat="server" Font-Bold="false" ClientIDMode="Static"></asp:LinkButton>
-
+                                    <div class="nav-item">
+                                        <table style="padding:8px;">
+                                            <tr>
+                                            <td style="padding-top:5px;text-align:right;">
+                                                <i class="fa fa-user" style="color:#73879c;margin-left:10px;"></i>
+                                            </td>
+                                            <td style="text-align:left;">
+                                                <asp:LinkButton CssClass="dropdown-item" ID="lblUsuario" runat="server" Font-Bold="false" ClientIDMode="Static"></asp:LinkButton>   
+                                            </td>
+                                            </tr>
+                                        </table>
+                                    </div>
                                     <a class="nav-item">
                                         <a class="dropdown-toggle" href="#" id="navbarDropdownMenuLink2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color: #73879c; font-size: 14px;">
-                                            <span class="image fa fa-plane" style="margin: 7px;"></span>
+                                            <span class="image fa fa-plane" style="margin-left: 10px;"></span>&nbsp;
                                             <asp:Label ID="lblMatricula" runat="server" Text="Matrícula" Font-Bold="false"></asp:Label>
                                         </a>
                                         <div class="dropdown-menu" runat="server" id="subMenuMatriculas" aria-labelledby="navbarDropdownMenuLink2" style="margin-left: 60px;">
@@ -239,9 +248,31 @@
                                         </div>
                                     </a>
 
-                                    <asp:LinkButton CssClass="dropdown-item image fa fa-cogs" ID="lblAdminMiCuenta" runat="server" Font-Bold="false" ClientIDMode="Static" OnClick="btnAdminCuenta_Click"></asp:LinkButton>
-                                    <asp:LinkButton CssClass="dropdown-item image fa fa-power-off" ID="lblSalir" runat="server" Font-Bold="false" ClientIDMode="Static" OnClick="btnSalir_Click"></asp:LinkButton>
-                                </div>
+                                    <div class="nav-item">
+                                        <table style="padding:8px;">
+                                            <tr>
+                                            <td style="padding-top:5px;text-align:left;width:20%;">
+                                                <i class="fa fa-cogs" style="color:#73879c;margin-left:10px;"></i>
+                                            </td>
+                                            <td style="text-align:left;width:80%;">
+                                              <asp:LinkButton CssClass="dropdown-item" ID="lblAdminMiCuenta" runat="server" Font-Bold="false" ClientIDMode="Static" OnClick="btnAdminCuenta_Click" style="margin-left:-8px;"></asp:LinkButton>  
+                                            </td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                    <div class="nav-item">
+                                        <table style="padding:8px;margin-top:-10px;">
+                                            <tr>
+                                                <td style="padding-top:-10px;text-align:right;width:20%;">
+                                                    <i class="fa fa-power-off" style="color:#73879c;margin-left:10px;"></i>
+                                                </td>
+                                                <td style="text-align:left;width:80%;">
+                                                    <asp:LinkButton CssClass="dropdown-item" ID="lblSalir" runat="server" Font-Bold="false" ClientIDMode="Static" OnClick="btnSalir_Click"></asp:LinkButton>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </div> 
                             </li>
 <!-- Fin Menú 2 RLR -->
                             <%--<li class="nav-item dropdown open" style="padding-left: 15px;padding-top: 26px;">
