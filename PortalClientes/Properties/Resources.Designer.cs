@@ -1762,7 +1762,7 @@ namespace PortalClientes.Properties {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Matrículas ⏷.
+        ///   Busca una cadena traducida similar a Matrículas.
         /// </summary>
         internal static string MatriculasMenu {
             get {

@@ -74,11 +74,10 @@ namespace PortalClientes
 
         private void ArmaFormulario()
         {
-            MenuMatriculas.Items[3].Text = Properties.Resources.CerrarSesion;
-            MenuMatriculas.Items[0].Text = Utils.NombreUsuario;
-            MenuMatriculas.Items[2].Text = Properties.Resources.AdministrarCuenta;
-            MenuMatriculas.Items[1].Text = Properties.Resources.MatriculasMenu;
-            
+            lblUsuario.Text = "  " + Utils.NombreUsuario;
+            lblMatricula.Text = "  " + Properties.Resources.MatriculasMenu;
+            lblAdminMiCuenta.Text = "  " + Properties.Resources.AdministrarCuenta;
+            lblSalir.Text = "  " + Properties.Resources.CerrarSesion;
         }
 
         private void ArmaMenu()
@@ -163,8 +162,8 @@ namespace PortalClientes
                 UserIdentity oU = (UserIdentity)Session["UserIdentity"];
                 if (oU != null)
                 {
+
                     BootstrapMenuItem oMenuMats = new BootstrapMenuItem();
-                    oMenuMats = MenuMatriculas.Items[1];
 
                     if (oU.lsMatriculas != null)
                     {
@@ -175,7 +174,7 @@ namespace PortalClientes
                             oItem.GroupName = "Group4";
                             oItem.IconCssClass = "fa fa-caret-right";
                             oItem.CssClass = "icon_left";
-                            oMenuMats.Items.Add(oItem);
+                            MenuMatriculas.Items.Add(oItem);
                         }
                     }
                     foreach (var item in ObtieneMatriculasContrato())
@@ -252,6 +251,11 @@ namespace PortalClientes
         {
             Session["UserIdentity"] = null;
             Response.Redirect("~/frmLogin.aspx");
+        }
+
+        protected void btnAdminCuenta_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/Views/frmEditusuario.aspx");
         }
 
         private List<MatriculasContratoUsuario> ObtieneMatriculasContrato()

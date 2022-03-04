@@ -63,18 +63,5 @@ function prm_EndRequest(sender, args) {
 console.log('si exta jalando este archivo');
 
 function onItemClick(s, e) {
-    if (e.item.name == "matriculas")  {
-        e.processOnServer = false;  
-        // const htmlElement = e.htmlElement;
-        // const style = htmlElement.style;
-        // style.visibility = "visible";
-        // style.display = "block";
-
-        // var element = document.getElementsByClassName("dpmain");
-        // element.className += " show";
-
-        // var element = document.getElementsByClassName("dropdown-usermenu");
-        // element.className += " show";
-
-    }
+    lPanel.Show();
 }

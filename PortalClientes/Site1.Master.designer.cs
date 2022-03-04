@@ -7,13 +7,11 @@
 // </generado automáticamente>
 //------------------------------------------------------------------------------
 
-namespace PortalClientes
-{
-
-
-    public partial class Site1
-    {
-
+namespace PortalClientes {
+    
+    
+    public partial class Site1 {
+        
         /// <summary>
         /// Control head.
         /// </summary>
@@ -22,7 +20,7 @@ namespace PortalClientes
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.ContentPlaceHolder head;
-
+        
         /// <summary>
         /// Control form1.
         /// </summary>
@@ -31,7 +29,7 @@ namespace PortalClientes
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
-
+        
         /// <summary>
         /// Control ClientGlobalEvents.
         /// </summary>
@@ -40,7 +38,7 @@ namespace PortalClientes
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::DevExpress.Web.ASPxGlobalEvents ClientGlobalEvents;
-
+        
         /// <summary>
         /// Control loadingpanel.
         /// </summary>
@@ -49,7 +47,7 @@ namespace PortalClientes
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::DevExpress.Web.ASPxLoadingPanel loadingpanel;
-
+        
         /// <summary>
         /// Control lblAeronaveLat.
         /// </summary>
@@ -58,7 +56,7 @@ namespace PortalClientes
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblAeronaveLat;
-
+        
         /// <summary>
         /// Control lblContratoCliente.
         /// </summary>
@@ -67,7 +65,7 @@ namespace PortalClientes
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblContratoCliente;
-
+        
         /// <summary>
         /// Control divMenu.
         /// </summary>
@@ -76,7 +74,7 @@ namespace PortalClientes
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl divMenu;
-
+        
         /// <summary>
         /// Control btnSalir.
         /// </summary>
@@ -85,43 +83,7 @@ namespace PortalClientes
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.LinkButton btnSalir;
-
-        /// <summary>
-        /// Control lblUsuario.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblUsuario;
-
-        /// <summary>
-        /// Control lblMatricula.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblMatricula;
-
-        /// <summary>
-        /// Control lblAdminMiCuenta.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblAdminMiCuenta;
-
-        /// <summary>
-        /// Control lblSalir.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblSalir;
-
+        
         /// <summary>
         /// Control lblAeronave.
         /// </summary>
@@ -130,7 +92,34 @@ namespace PortalClientes
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblAeronave;
-
+        
+        /// <summary>
+        /// Control lblUsuario.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton lblUsuario;
+        
+        /// <summary>
+        /// Control lblMatricula.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblMatricula;
+        
+        /// <summary>
+        /// Control subMenuMatriculas.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl subMenuMatriculas;
+        
         /// <summary>
         /// Control MenuMatriculas.
         /// </summary>
@@ -139,7 +128,25 @@ namespace PortalClientes
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::DevExpress.Web.Bootstrap.BootstrapMenu MenuMatriculas;
-
+        
+        /// <summary>
+        /// Control lblAdminMiCuenta.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton lblAdminMiCuenta;
+        
+        /// <summary>
+        /// Control lblSalir.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton lblSalir;
+        
         /// <summary>
         /// Control imgIconoEspanol.
         /// </summary>
@@ -148,7 +155,7 @@ namespace PortalClientes
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Image imgIconoEspanol;
-
+        
         /// <summary>
         /// Control imgIconoEnglish.
         /// </summary>
@@ -157,7 +164,7 @@ namespace PortalClientes
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Image imgIconoEnglish;
-
+        
         /// <summary>
         /// Control lblIdiomaEspanol.
         /// </summary>
@@ -166,7 +173,7 @@ namespace PortalClientes
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.LinkButton lblIdiomaEspanol;
-
+        
         /// <summary>
         /// Control lblIdiomaEnglish.
         /// </summary>
@@ -175,7 +182,7 @@ namespace PortalClientes
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.LinkButton lblIdiomaEnglish;
-
+        
         /// <summary>
         /// Control lblNombreUsuario.
         /// </summary>
@@ -184,7 +191,7 @@ namespace PortalClientes
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblNombreUsuario;
-
+        
         /// <summary>
         /// Control txtLang.
         /// </summary>
@@ -193,7 +200,7 @@ namespace PortalClientes
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtLang;
-
+        
         /// <summary>
         /// Control ScriptManager1.
         /// </summary>
@@ -202,7 +209,7 @@ namespace PortalClientes
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.ScriptManager ScriptManager1;
-
+        
         /// <summary>
         /// Control ContentPlaceHolder1.
         /// </summary>
