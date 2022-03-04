@@ -65,7 +65,7 @@ namespace PortalClientes.Clases
                 if (System.Web.HttpContext.Current.Session["UserIdentity"] == null)
                 {
                     UserIdentity oUsuario = new UserIdentity();
-                    //oUsuario.iIdUsuario = 1;
+                    oUsuario.iIdUsuario = 1;
                     System.Web.HttpContext.Current.Session["UserIdentity"] = oUsuario;
                 }
 
