@@ -57,6 +57,7 @@ function InsertData(item) {
     //$("#ContentPlaceHolder1_lblObjetivoRes").html(item.);
     $("#ContentPlaceHolder1_lblDescripcionRes").html(item.typeDesc);
     $("#ContentPlaceHolder1_lblAeropuertoLLegadaRes").html(item.fboNombreDest);
+    $("#ContentPlaceHolder1_lblAeropuertoLLegada").html(item.destino);
     $("#ContentPlaceHolder1_lblFechaArrivoRes").html(item.FechaFin);
     $("#ContentPlaceHolder1_lblHoraArrivoRes").html(item.HoraFin);
     $("#ContentPlaceHolder1_lblFechaBloqueRes").html(item.FechaFin);
