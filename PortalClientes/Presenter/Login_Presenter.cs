@@ -43,7 +43,7 @@ namespace PortalClientes.Presenter
             JavaScriptSerializer ser = new JavaScriptSerializer();
             TokenWS oToken = Utils.ObtieneToken;
             requestIdUsuario oRe = new requestIdUsuario();
-            oRe.idUsuario = Utils.GetIdEmpUsuario;
+            oRe.idUsuario = oUs.IdUsuario;
 
             var client = new RestClient(Helper.US_UrlObtieneMatriculasContratos);
             var request = new RestRequest(Method.POST);

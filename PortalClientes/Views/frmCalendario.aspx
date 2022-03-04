@@ -100,7 +100,7 @@
                         <div class="col-md-9" style="text-align: left;">
                         </div>
                         <div class="col-md-3" style="text-align: right;">
-                            <asp:LinkButton ID="btnExcel" runat="server" Text="<i class='fa fa-file-pdf-o' style='color:#73879c;font-size:25px;'></i>" CssClass="btn" OnClick="lkbExpPDFRes_Click" />
+                            <asp:LinkButton ID="btnExcel" runat="server" Text="<i class='fa fa-file-pdf-o' style='color:#73879c;font-size:25px;'></i>" CssClass="btn" OnClientClick="LoadingTime(15)" OnClick="lkbExpPDFRes_Click" />
                             <%--<asp:LinkButton ID="btnPDF" runat="server" Text="<i class='fa fa-print' style='color:#73879c;font-size:25px;'></i>" CssClass="btn" />--%>
                         </div>
                     </div>

@@ -46,7 +46,11 @@ namespace PortalClientes
                 imgIconoEnglish.Visible = true;
             }
 
-            ArmaMenu();
+            if(Utils.Matriculas.Count > 0)
+            {
+                ArmaMenu();
+            }
+            
 
             if (!IsPostBack)
             {
