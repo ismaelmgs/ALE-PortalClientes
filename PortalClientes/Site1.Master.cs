@@ -46,7 +46,7 @@ namespace PortalClientes
                 imgIconoEnglish.Visible = true;
             }
 
-            if(Utils.Matriculas.Count > 0)
+            if(Utils.Matriculas != null)
             {
                 ArmaMenu();
             }
