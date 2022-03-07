@@ -77,17 +77,19 @@
 
                             <div class="clearfix"></div>
                             <br />
-                            <div class="row" style="width: 100%;">
-                                <div class="col-md-5" style="text-align: right;">
-                                    <asp:LinkButton ID="lblIdiomaEspanol" OnClick="lblIdiomaEspanol_Click" runat="server" Text="Español" Font-Bold="true"></asp:LinkButton>
-                                </div>
-                                <div class="col-md-2">
-                                    <i class="fa fa-globe" style="font-size: 25px;"></i>
-                                </div>
-                                <div class="col-md-5" style="text-align: left;">
-                                    <asp:LinkButton ID="lblIdiomaEnglish" OnClick="lblIdiomaEnglish_Click" runat="server" Text="English" Font-Bold="true"></asp:LinkButton>
-                                </div>
-                            </div>
+                            <table style="width: 100%;">
+                                <tr>
+                                    <td style="text-align: right;">
+                                        <asp:LinkButton ID="lblIdiomaEspanol" OnClick="lblIdiomaEspanol_Click" runat="server" Text="Español" Font-Bold="true"></asp:LinkButton>
+                                    </td>
+                                    <td style="text-align: center;">
+                                        <i class="fa fa-globe" style="font-size: 25px;"></i>
+                                    </td>
+                                    <td style="text-align: left;">
+                                        <asp:LinkButton ID="lblIdiomaEnglish" OnClick="lblIdiomaEnglish_Click" runat="server" Text="English" Font-Bold="true"></asp:LinkButton>
+                                    </td>
+                                </tr>
+                            </table>
                             <br />
                         </div>
                     </section>

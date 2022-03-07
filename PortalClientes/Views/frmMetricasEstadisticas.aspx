@@ -330,7 +330,7 @@
                             <div class="clearfix"></div>
                         </div>
                         <div class="row">
-                            <div class="col-md-3 offset-9">
+                            <div class="col-md-4 offset-4">
                                 <asp:DropDownList ID="DDFiltroMesesPA" runat="server" CssClass="form-control" Width="100%"></asp:DropDownList>
                             </div>
                         </div>
@@ -351,7 +351,7 @@
                             <div class="clearfix"></div>
                         </div>
                         <div class="row">
-                            <div class="col-md-4 offset-8">
+                            <div class="col-md-4 offset-4">
                                 <asp:DropDownList ID="DDFiltroMesesV" runat="server" CssClass="form-control" Width="100%"></asp:DropDownList>
                             </div>
                         </div>
@@ -374,7 +374,7 @@
                                     <div class="clearfix"></div>
                                 </div>
                                 <div class="row">
-                                    <div class="col-md-4 offset-8">
+                                    <div class="col-md-4 offset-4">
                                         <asp:DropDownList ID="DDFiltroMesesFV" runat="server" CssClass="form-control" Width="100%"></asp:DropDownList>
                                     </div>
                                 </div>
@@ -393,7 +393,7 @@
                                     <div class="clearfix"></div>
                                 </div>
                                 <div class="row">
-                                    <div class="col-md-4 offset-8">
+                                    <div class="col-md-4 offset-4">
                                         <asp:DropDownList ID="DDFiltroMesesFVH" runat="server" CssClass="form-control" Width="100%"></asp:DropDownList>
                                     </div>
                                 </div>
@@ -415,7 +415,7 @@
                                     <div class="clearfix"></div>
                                 </div>
                                 <div class="row">
-                                    <div class="col-md-4 offset-8">
+                                    <div class="col-md-4 offset-4">
                                         <asp:DropDownList ID="DDFiltroMesesGT" runat="server" CssClass="form-control" Width="100%"></asp:DropDownList>
                                     </div>
                                 </div>
@@ -434,7 +434,7 @@
                                     <div class="clearfix"></div>
                                 </div>
                                 <div class="row">
-                                    <div class="col-md-4 offset-8">
+                                    <div class="col-md-4 offset-4">
                                         <asp:DropDownList ID="DDFiltroMesesCH" runat="server" CssClass="form-control" Width="100%"></asp:DropDownList>
                                     </div>
                                 </div>
@@ -456,7 +456,7 @@
                                     <div class="clearfix"></div>
                                 </div>
                                 <div class="row">
-                                    <div class="col-md-4 offset-8">
+                                    <div class="col-md-4 offset-4">
                                         <asp:DropDownList ID="DDFiltroMesesNV" runat="server" CssClass="form-control" Width="100%"></asp:DropDownList>
                                     </div>
                                 </div>
@@ -475,7 +475,7 @@
                                     <div class="clearfix"></div>
                                 </div>
                                 <div class="row">
-                                    <div class="col-md-4 offset-8">
+                                    <div class="col-md-4 offset-4">
                                         <asp:DropDownList ID="DDFiltroMesesHV" runat="server" CssClass="form-control" Width="100%"></asp:DropDownList>
                                     </div>
                                 </div>
@@ -497,7 +497,7 @@
                                     <div class="clearfix"></div>
                                 </div>
                                 <div class="row">
-                                    <div class="col-md-4 offset-8">
+                                    <div class="col-md-4 offset-4">
                                         <asp:DropDownList ID="DDFiltroMesesPP" runat="server" CssClass="form-control" Width="100%"></asp:DropDownList>
                                     </div>
                                 </div>
@@ -516,7 +516,7 @@
                                     <div class="clearfix"></div>
                                 </div>
                                 <div class="row">
-                                    <div class="col-md-4 offset-8">
+                                    <div class="col-md-4 offset-4">
                                         <asp:DropDownList ID="DDFiltroMesesPC" runat="server" CssClass="form-control" Width="100%"></asp:DropDownList>
                                     </div>
                                 </div>
@@ -539,7 +539,7 @@
                                     <div class="clearfix"></div>
                                 </div>
                                 <div class="row">
-                                    <div class="col-md-4 offset-8">
+                                    <div class="col-md-4 offset-4">
                                         <asp:DropDownList ID="ddlCategoriasLT" runat="server" CssClass="form-control" Width="100%"></asp:DropDownList>
                                     </div>
                                 </div>

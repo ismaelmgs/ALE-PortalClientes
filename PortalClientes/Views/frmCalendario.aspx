@@ -28,7 +28,7 @@
                                     <div class="col-md-8" style="text-align: right;">
                                         <asp:Button runat="server" ID="btnActiveDay" OnClick="btnActiveView_Click" data-view="Day" Text="Hoy" CssClass="btn btn-secondary" Visible="false"  />
                                         <asp:Button runat="server" ID="btnActiveWorkWeek" OnClick="btnActiveView_Click" data-view="WorkWeek" Text="Semanal" CssClass="btn btn-secondary" Visible="false"  />
-                                        <asp:Button runat="server" ID="btnActiveMonth" OnClick="btnActiveView_Click" data-view="Month" Text="Mensual" CssClass="btn btn-primary" />
+                                        <!--<asp:Button runat="server" ID="btnActiveMonth" OnClick="btnActiveView_Click" data-view="Month" Text="Mensual" CssClass="btn btn-primary" /> -->
                                         <asp:Button runat="server" ID="btnActiveTimeLine" OnClick="btnActiveView_Click" data-view="Timeline" Text="TimeLine" CssClass="btn btn-secondary" Visible="false"  />
                                         <asp:Button runat="server" ID="btnActiveAgenda" OnClick="btnActiveView_Click" data-view="Agenda" Text="Agenda" CssClass="btn btn-secondary" Visible="false" />    
                                     </div>
