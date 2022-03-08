@@ -217,7 +217,7 @@ namespace PortalClientes.Views
 
             if (v == "")
             {
-                ddlFiltroResumenPeriodo.SelectedIndex = 0;
+                ddlFiltroResumenPeriodo.SelectedIndex = 1;
             }
             else
             {
@@ -267,7 +267,7 @@ namespace PortalClientes.Views
 
             if (v4 == "")
             {
-                DDFiltroMesesHV.SelectedIndex = 0;
+                DDFiltroMesesHV.SelectedIndex = 2;
             }
             else
             {
@@ -283,7 +283,7 @@ namespace PortalClientes.Views
 
             if (v5 == "")
             {
-                DDFiltroMesesNV.SelectedIndex = 0;
+                DDFiltroMesesNV.SelectedIndex = 2;
             }
             else
             {
@@ -332,7 +332,7 @@ namespace PortalClientes.Views
 
             if (v8 == "")
             {
-                DDFiltroMesesFV.SelectedIndex = 0;
+                DDFiltroMesesFV.SelectedIndex = 1;
             }
             else
             {
@@ -381,7 +381,7 @@ namespace PortalClientes.Views
 
             if (v11 == "")
             {
-                DDFiltroMesesFVH.SelectedIndex = 0;
+                DDFiltroMesesFVH.SelectedIndex = 1;
             }
             else
             {
