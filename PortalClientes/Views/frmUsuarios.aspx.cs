@@ -337,7 +337,7 @@ namespace PortalClientes.Views
 
         protected void btnAceptarBanUsuario_Click(object sender, EventArgs e)
         {
-            oUsuario.tipoActualizacion = 2;
+            HDTipoActualizacion.Value = 4.S();
 
             if (eSaveBanUsuario != null)
                 eSaveBanUsuario(sender, e);
@@ -629,7 +629,7 @@ namespace PortalClientes.Views
                     TelefonoMovil = txtTelMovil.Text.S(),
                     CorreoSecundario = txtCorreoSecundario.Text.S(),
                     TelefonoOficina = txtTelefonoOficina.Text.S(),
-                    tipoActualizacion = 3
+                    tipoActualizacion = HDTipoActualizacion.Value.I()
                 };
             }
             set

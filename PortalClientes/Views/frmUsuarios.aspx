@@ -183,6 +183,7 @@
     </asp:UpdatePanel>
 
     <%-- MODAL PARA ACTIVAR / DESACTIVAR USUARIO --%>
+    <asp:HiddenField ID="HDTipoActualizacion" runat="server" />
     <asp:HiddenField ID="HdTargetBanUsuario" runat="server" />
     <cc1:ModalPopupExtender ID="mpeBUsuario" runat="server" TargetControlID="HdTargetBanUsuario"
         PopupControlID="pnlBanUsuario" BackgroundCssClass="overlayy">
