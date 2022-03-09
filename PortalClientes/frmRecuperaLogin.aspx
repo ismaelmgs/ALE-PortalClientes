@@ -44,10 +44,10 @@
                             <asp:Label ID="lblLoginLossHeader" runat="server" Text="Ingresar Contraseña Nueva"></asp:Label></h2>
                         <br />
                         <div class="row">
-                            <div class="col-md-1" style="text-align: center;">
+                            <div class="col-md-2" style="text-align: center;">
                                 <i class="fa fa-lock" style="font-size: 20px; margin-top: 5px;"></i>
                             </div>
-                            <div class="col-md-11">
+                            <div class="col-md-10">
                                 <asp:Label ID="lblPass" runat="server"></asp:Label><br />
                                 <asp:TextBox ID="txtPass" runat="server" TextMode="Password" CssClass="form-control"></asp:TextBox>
                                 <asp:RegularExpressionValidator ID="Regex1" runat="server" ControlToValidate="txtPass"
@@ -57,10 +57,10 @@
                         </div>
                         <br />
                         <div class="row">
-                            <div class="col-md-1" style="text-align: center;">
+                            <div class="col-md-2" style="text-align: center;">
                                 <i class="fa fa-lock" style="font-size: 20px; margin-top: 5px;"></i>
                             </div>
-                            <div class="col-md-11">
+                            <div class="col-md-10">
                                 <asp:Label ID="lblConfirPass" runat="server"></asp:Label><br />
                                 <asp:TextBox ID="txtConfirPass" runat="server" TextMode="Password" CssClass="form-control"></asp:TextBox>
                                 <asp:RegularExpressionValidator ID="Regex2" runat="server" ControlToValidate="txtConfirPass"

@@ -82,7 +82,8 @@
                                     <div class="tab-pane fade" runat="server" id="profile" role="tabpanel" aria-labelledby="profile-tab">
                                         <br />
                                         <div class="row">
-                                            <div class="col-md-2 offset-10" style="text-align: center;">
+                                            <div class="col-md-4">&nbsp;</div>
+                                            <div class="col-md-8" style="text-align: right;">
                                                 <asp:LinkButton ID="btnExcelPilotos" runat="server" Text="<i class='fa fa-file-excel-o' style='color:#73879c;font-size:28px;'></i>" CssClass="btn" OnClick="btnExcelPilotos_Click" />
                                                 <asp:LinkButton ID="btnPDFPilotos" runat="server" Text="<i class='fa fa-file-pdf-o' style='color:#73879c;font-size:28px;'></i>" CssClass="btn" OnClick="btnPDFPilotos_Click" />
                                             </div>
