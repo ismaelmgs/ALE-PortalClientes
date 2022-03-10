@@ -1344,4 +1344,16 @@
   <data name="Ec_DownloadReporte" xml:space="preserve">
     <value>Reporte</value>
   </data>
+  <data name="Lo_ActConfirmContrasena" xml:space="preserve">
+    <value>Contraseña actualizada con Exito!, Ahora puede iniciar sesion.</value>
+  </data>
+  <data name="MsjActContrasena" xml:space="preserve">
+    <value>¡Contraseña Actualizada con Exito! &lt;br /&gt; Para ver los cambios reflejados es necesario iniciar sesion nuevamente.</value>
+  </data>
+  <data name="MsjActMatricula" xml:space="preserve">
+    <value>¡Matricula Default Actualizada con Exito! &lt;br /&gt; Para ver los cambios reflejados es necesario iniciar sesion nuevamente.</value>
+  </data>
+  <data name="MsjActUsuario" xml:space="preserve">
+    <value>¡Usuario Actulizado con Exito! &lt;br /&gt; Para ver los cambios reflejados es necesario iniciar sesion nuevamente.</value>
+  </data>
 </root>

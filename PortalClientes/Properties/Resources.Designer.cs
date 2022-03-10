@@ -1672,6 +1672,15 @@ namespace PortalClientes.Properties {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Contraseña actualizada con Exito!, Ahora puede iniciar sesion..
+        /// </summary>
+        internal static string Lo_ActConfirmContrasena {
+            get {
+                return ResourceManager.GetString("Lo_ActConfirmContrasena", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Actualizar.
         /// </summary>
         internal static string Lo_Actualizar {
@@ -2289,6 +2298,33 @@ namespace PortalClientes.Properties {
         internal static string MF_Vuelos {
             get {
                 return ResourceManager.GetString("MF_Vuelos", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a ¡Contraseña Actualizada con Exito! &lt;br /&gt; Para ver los cambios reflejados es necesario iniciar sesion nuevamente..
+        /// </summary>
+        internal static string MsjActContrasena {
+            get {
+                return ResourceManager.GetString("MsjActContrasena", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a ¡Matricula Default Actualizada con Exito! &lt;br /&gt; Para ver los cambios reflejados es necesario iniciar sesion nuevamente..
+        /// </summary>
+        internal static string MsjActMatricula {
+            get {
+                return ResourceManager.GetString("MsjActMatricula", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a ¡Usuario Actulizado con Exito! &lt;br /&gt; Para ver los cambios reflejados es necesario iniciar sesion nuevamente..
+        /// </summary>
+        internal static string MsjActUsuario {
+            get {
+                return ResourceManager.GetString("MsjActUsuario", resourceCulture);
             }
         }
         

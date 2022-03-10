@@ -1347,4 +1347,16 @@
   <data name="FiltroEvenTri_6MU" xml:space="preserve">
     <value>Last 6 months</value>
   </data>
+  <data name="Lo_ActConfirmContrasena" xml:space="preserve">
+    <value>Password Updated Successfully! Now you can log in.</value>
+  </data>
+  <data name="MsjActContrasena" xml:space="preserve">
+    <value>Password Updated Successfully! &lt;br /&gt; To see the changes reflected you need to log in again.</value>
+  </data>
+  <data name="MsjActMatricula" xml:space="preserve">
+    <value>Tail number Default Updated Successfully! &lt;br /&gt; To see the changes reflected you need to log in again.</value>
+  </data>
+  <data name="MsjActUsuario" xml:space="preserve">
+    <value>User Updated Successfully! &lt;br /&gt; To see the changes reflected you need to log in again.</value>
+  </data>
 </root>
