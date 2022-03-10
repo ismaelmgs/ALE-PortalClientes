@@ -43,9 +43,9 @@
                         <h2>
                             <asp:Label ID="lblLoginLossHeader" runat="server" Text="Ingresar Contraseña Nueva"></asp:Label></h2>
                         <br />
-                        <div class="row">
+                        <div class="row" style="height:70px;">
                             <div class="col-md-2" style="text-align: center;">
-                                <i class="fa fa-lock" style="font-size: 20px; margin-top: 5px;"></i>
+                                <i class="fa fa-lock" style="font-size: 20px; margin-top: 25px;"></i>
                             </div>
                             <div class="col-md-10">
                                 <asp:Label ID="lblPass" runat="server"></asp:Label><br />
@@ -56,9 +56,9 @@
                             </div>
                         </div>
                         <br />
-                        <div class="row">
+                        <div class="row" style="height:70px;">
                             <div class="col-md-2" style="text-align: center;">
-                                <i class="fa fa-lock" style="font-size: 20px; margin-top: 5px;"></i>
+                                <i class="fa fa-lock" style="font-size: 20px; margin-top: 25px;"></i>
                             </div>
                             <div class="col-md-10">
                                 <asp:Label ID="lblConfirPass" runat="server"></asp:Label><br />
