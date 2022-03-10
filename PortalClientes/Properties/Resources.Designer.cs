@@ -2311,6 +2311,15 @@ namespace PortalClientes.Properties {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Ud estara recibiendo un correo electronico para recuperar su contraseña..
+        /// </summary>
+        internal static string MsjActEmail {
+            get {
+                return ResourceManager.GetString("MsjActEmail", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a ¡Matricula Default Actualizada con Exito! &lt;br /&gt; Para ver los cambios reflejados es necesario iniciar sesion nuevamente..
         /// </summary>
         internal static string MsjActMatricula {

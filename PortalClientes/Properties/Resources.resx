@@ -1356,4 +1356,7 @@
   <data name="MsjActUsuario" xml:space="preserve">
     <value>¡Usuario Actulizado con Exito! &lt;br /&gt; Para ver los cambios reflejados es necesario iniciar sesion nuevamente.</value>
   </data>
+  <data name="MsjActEmail" xml:space="preserve">
+    <value>Ud estara recibiendo un correo electronico para recuperar su contraseña.</value>
+  </data>
 </root>

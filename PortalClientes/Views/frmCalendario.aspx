@@ -44,7 +44,7 @@
                                     </Storage>
                                     <ClientSideEvents
                                         AppointmentClick="function(s, e) { ClickAppointment(s, e); }"
-                                        MouseUp="function(s, e) { Click(s, e,9); }" />
+                                        MouseUp="function(s, e) { Click(s, e); }" />
                                     <OptionsToolTips ShowAppointmentToolTip="false" />
                                     <Views>
                                         <DayView>

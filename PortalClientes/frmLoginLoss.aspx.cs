@@ -119,7 +119,7 @@ namespace PortalClientes
 
                 if (s.success)
                 {
-                    lblMessageConfirm.Text = "Ud estara recibiendo un correo electronico para recuperar su contraseña.";
+                    lblMessageConfirm.Text = Properties.Resources.MsjActEmail;
                     mpeConfirm.Show();
                 }
 
@@ -127,7 +127,7 @@ namespace PortalClientes
             }
             else
             {
-                lblMessageConfirm.Text = "Ud estara recibiendo un correo electronico para recuperar su contraseña.";
+                lblMessageConfirm.Text = Properties.Resources.MsjActEmail;
                 mpeConfirm.Show();
             }
         }
