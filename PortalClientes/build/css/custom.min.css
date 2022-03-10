@@ -193,6 +193,9 @@
 .popover-body {
 	text-align: center !important;
 }
+.dxbs-scheduler .dxscApt .dxsc-apt-content-layer {
+	cursor: pointer;
+}
 @media (min-width: 280px) {
 	.flotante {
 		top: 112px;

@@ -95,7 +95,7 @@
                 <h5 class="modal-title" style="color: #ffffff; background-color: #2a3f54; width: 100%; height: 70px; padding-top: 15px;">
                     <asp:Label ID="lblDetallesVuelo" runat="server" Text="Detalles de Vuelo" Font-Bold="true"></asp:Label></h5>
                 <!-- inicio contenido modal RLR-->
-                <div style="padding: 5px;">
+                <div style="padding: 15px;">
                     <div class="row">
                         <div class="col-md-9" style="text-align: left;">
                         </div>
