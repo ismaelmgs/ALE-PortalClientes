@@ -58,7 +58,7 @@
                                         </FullWeekView>
                                         <MonthView ResourcesPerPage="1">
                                             <AppointmentDisplayOptions StartTimeVisibility="Never" EndTimeVisibility="Never" StatusDisplayType="Bounds" />
-                                            <CellAutoHeightOptions Mode="LimitHeight" MinHeight="140" />
+                                            <CellAutoHeightOptions Mode="LimitHeight" MinHeight="100" />
                                         </MonthView>
                                         <TimelineView ResourcesPerPage="1">
                                         </TimelineView>
