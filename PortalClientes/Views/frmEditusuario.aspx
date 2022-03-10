@@ -325,7 +325,9 @@
                             <div class="row">
                                 <div class="col-md-12" style="text-align: center;">
                                     <asp:Image ID="imgInfo" runat="server" ImageUrl="~/Images/icons/bien_02.png" Height="24" Width="24" /><br />
-                                    <asp:Label ID="lblMessageConfirm" runat="server"></asp:Label>
+                                    <asp:Label ID="lblMessageConfirmMatricula" runat="server" Visible="false"></asp:Label>
+                                    <asp:Label ID="lblMessageConfirmUsuario" runat="server" Visible="false"></asp:Label>
+                                    <asp:Label ID="lblMessageConfirmContrasena" runat="server" Visible="false"></asp:Label>
                                 </div>
                             </div>
                         </td>

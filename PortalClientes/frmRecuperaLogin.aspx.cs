@@ -87,6 +87,7 @@ namespace PortalClientes
             lblLoginLossHeader.Text = Properties.Resources.Lo_NuevaContrasena;
             lblRegresarLogin.Text = Properties.Resources.Lo_BackLogin;
             btnRecuperarContrasena.Text = Properties.Resources.Lo_Actualizar;
+            lblMessageConfirm.Text = Properties.Resources.Lo_ActConfirmContrasena;
         }
 
         public bool EsValidoFormulario()
@@ -132,8 +133,7 @@ namespace PortalClientes
         public void requestResponse(responceAct response)
         {
             if (response.mensaje == "Operación ejecutada correctamente")
-            {
-                lblMessageConfirm.Text = Properties.Resources.Lo_ActConfirmContrasena;
+            {          
                 mpeConfirm.Show();
             }
         }

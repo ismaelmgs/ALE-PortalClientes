@@ -75,6 +75,8 @@ namespace PortalClientes
             txtEmail.NullText = Properties.Resources.Lo_Correo;
             lblRegresarLogin.Text = Properties.Resources.Lo_BackLogin;
             btnEviarContrasena.Text = Properties.Resources.Lo_Enviar;
+            lblMessageConfirm.Text = Properties.Resources.MsjActEmail;
+            btnAceptConfirm.Text = Properties.Resources.Lo_BtnEntendido;
         }
 
         public void setParameters(List<Parametros> lstParameteres)
@@ -119,7 +121,6 @@ namespace PortalClientes
 
                 if (s.success)
                 {
-                    lblMessageConfirm.Text = Properties.Resources.MsjActEmail;
                     mpeConfirm.Show();
                 }
 
@@ -127,7 +128,6 @@ namespace PortalClientes
             }
             else
             {
-                lblMessageConfirm.Text = Properties.Resources.MsjActEmail;
                 mpeConfirm.Show();
             }
         }

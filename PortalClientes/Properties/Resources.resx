@@ -1359,4 +1359,10 @@
   <data name="MsjActEmail" xml:space="preserve">
     <value>Ud estara recibiendo un correo electronico para recuperar su contraseña.</value>
   </data>
+  <data name="Lo_BtnEntendido" xml:space="preserve">
+    <value>Entendido</value>
+  </data>
+  <data name="Us_Actualizar" xml:space="preserve">
+    <value>Actualizar</value>
+  </data>
 </root>

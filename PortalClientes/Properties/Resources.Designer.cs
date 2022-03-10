@@ -1699,6 +1699,15 @@ namespace PortalClientes.Properties {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Entendido.
+        /// </summary>
+        internal static string Lo_BtnEntendido {
+            get {
+                return ResourceManager.GetString("Lo_BtnEntendido", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Cambiar Contraseña.
         /// </summary>
         internal static string Lo_CamContrasena {
@@ -3387,6 +3396,15 @@ namespace PortalClientes.Properties {
         internal static string Us_ActMatricula {
             get {
                 return ResourceManager.GetString("Us_ActMatricula", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Actualizar.
+        /// </summary>
+        internal static string Us_Actualizar {
+            get {
+                return ResourceManager.GetString("Us_Actualizar", resourceCulture);
             }
         }
         

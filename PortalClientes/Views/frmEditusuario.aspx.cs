@@ -156,6 +156,16 @@ namespace PortalClientes.Views
             Regex1.ErrorMessage = Properties.Resources.Us_ValidacionContrasena;
             Regex2.ErrorMessage = Properties.Resources.Us_ValidacionConfirmContrasena;
 
+            btnEditarPass.Text = Properties.Resources.Us_Actualizar;
+            btnEditMatDefault.Text = Properties.Resources.Us_Actualizar;
+            btnEditarUsuario.Text = Properties.Resources.Us_Actualizar;
+
+
+            lblMatriculaActual.Text = Properties.Resources.Us_ActMatricula;
+            lblMessageConfirmContrasena.Text = Properties.Resources.MsjActContrasena;
+            lblMessageConfirmMatricula.Text = Properties.Resources.MsjActMatricula;
+            lblMessageConfirmUsuario.Text = Properties.Resources.MsjActUsuario;
+
             lblMatriculaActual.Text = Properties.Resources.Us_ActMatricula;
 
             txtCorreo.Enabled = false;
@@ -211,10 +221,13 @@ namespace PortalClientes.Views
 
         public void recargarPagina(responceAct resp)
         {
+            lblMessageConfirmMatricula.Visible = false;
+            lblMessageConfirmUsuario.Visible = true;
+            lblMessageConfirmContrasena.Visible = false;
+
             if (resp.mensaje == "Operación ejecutada correctamente")
             {
                 System.Web.HttpContext.Current.Session["VSUsuario"] = oUsuario;
-                lblMessageConfirm.Text = Properties.Resources.MsjActUsuario;
                 mpeConfirm.Show();
             }
             else
@@ -225,10 +238,13 @@ namespace PortalClientes.Views
 
         public void msjContrasena(responceAct resp)
         {
+            lblMessageConfirmMatricula.Visible = false;
+            lblMessageConfirmUsuario.Visible = false;
+            lblMessageConfirmContrasena.Visible = true;
+
             if (resp.mensaje == "Operación ejecutada correctamente")
             {
                 System.Web.HttpContext.Current.Session["VSUsuario"] = oUsuario;
-                lblMessageConfirm.Text = Properties.Resources.MsjActContrasena;
                 mpeConfirm.Show();
             }
             else
@@ -239,10 +255,13 @@ namespace PortalClientes.Views
 
         public void msjMatriculas(responceAct resp)
         {
+            lblMessageConfirmMatricula.Visible = true;
+            lblMessageConfirmUsuario.Visible = false;
+            lblMessageConfirmContrasena.Visible = false;
+
             if (resp.mensaje == "Operación ejecutada correctamente")
             {
                 System.Web.HttpContext.Current.Session["VSUsuario"] = oUsuario;
-                lblMessageConfirm.Text = Properties.Resources.MsjActMatricula;
                 mpeConfirm.Show();
             }
             else

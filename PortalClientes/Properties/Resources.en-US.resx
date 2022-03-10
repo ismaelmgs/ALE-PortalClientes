@@ -1362,4 +1362,10 @@
   <data name="MsjActEmail" xml:space="preserve">
     <value>You will be receiving an email to recover your password.</value>
   </data>
+  <data name="Lo_BtnEntendido" xml:space="preserve">
+    <value>Agreed</value>
+  </data>
+  <data name="Us_Actualizar" xml:space="preserve">
+    <value>Update</value>
+  </data>
 </root>
