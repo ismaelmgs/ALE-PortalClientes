@@ -133,7 +133,7 @@ namespace PortalClientes
         {
             if (response.mensaje == "Operación ejecutada correctamente")
             {
-                lblMessageConfirm.Text = "Contraseña actualizada con Exito!, Ahora puede iniciar sesion.";
+                lblMessageConfirm.Text = Properties.Resources.Lo_ActConfirmContrasena;
                 mpeConfirm.Show();
             }
         }

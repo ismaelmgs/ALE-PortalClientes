@@ -214,7 +214,7 @@ namespace PortalClientes.Views
             if (resp.mensaje == "Operación ejecutada correctamente")
             {
                 System.Web.HttpContext.Current.Session["VSUsuario"] = oUsuario;
-                lblMessageConfirm.Text = "¡Usuario Actulizado con Exito! <br /> Para ver los cambios reflejados es necesario iniciar sesion nuevamente.";
+                lblMessageConfirm.Text = Properties.Resources.MsjActUsuario;
                 mpeConfirm.Show();
             }
             else
@@ -228,7 +228,7 @@ namespace PortalClientes.Views
             if (resp.mensaje == "Operación ejecutada correctamente")
             {
                 System.Web.HttpContext.Current.Session["VSUsuario"] = oUsuario;
-                lblMessageConfirm.Text = "¡Contraseña Actualizada con Exito! <br /> Para ver los cambios reflejados es necesario iniciar sesion nuevamente.";
+                lblMessageConfirm.Text = Properties.Resources.MsjActContrasena;
                 mpeConfirm.Show();
             }
             else
@@ -242,7 +242,7 @@ namespace PortalClientes.Views
             if (resp.mensaje == "Operación ejecutada correctamente")
             {
                 System.Web.HttpContext.Current.Session["VSUsuario"] = oUsuario;
-                lblMessageConfirm.Text = "¡Matricula Default Actualizada con Exito! <br /> Para ver los cambios reflejados es necesario iniciar sesion nuevamente.";
+                lblMessageConfirm.Text = Properties.Resources.MsjActMatricula;
                 mpeConfirm.Show();
             }
             else

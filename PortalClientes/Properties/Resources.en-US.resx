@@ -1285,13 +1285,13 @@
     <value>Activate</value>
   </data>
   <data name="Us_BanUsuario" xml:space="preserve">
-    <value>You want to Activate / Inactivar this User</value>
+    <value>You want to Activate / Inactivate this User</value>
   </data>
   <data name="Us_BanUsuDesAct" xml:space="preserve">
     <value>Inactivate</value>
   </data>
   <data name="Us_TitelBanUsuario" xml:space="preserve">
-    <value>Activate / Inactivar User</value>
+    <value>Activate / Inactivate User</value>
   </data>
   <data name="Us_ValidacionConfirmContrasena" xml:space="preserve">
     <value>Password confirm must contain: Minimum 8 characters atleast 1 Alphabet and 1 Number</value>
@@ -1346,5 +1346,17 @@
   </data>
   <data name="FiltroEvenTri_6MU" xml:space="preserve">
     <value>Last 6 months</value>
+  </data>
+  <data name="Lo_ActConfirmContrasena" xml:space="preserve">
+    <value>Password Updated Successfully! Now you can log in.</value>
+  </data>
+  <data name="MsjActContrasena" xml:space="preserve">
+    <value>Password Updated Successfully! &lt;br /&gt; To see the changes reflected you need to log in again.</value>
+  </data>
+  <data name="MsjActMatricula" xml:space="preserve">
+    <value>Tail number Default Updated Successfully! &lt;br /&gt; To see the changes reflected you need to log in again.</value>
+  </data>
+  <data name="MsjActUsuario" xml:space="preserve">
+    <value>User Updated Successfully! &lt;br /&gt; To see the changes reflected you need to log in again.</value>
   </data>
 </root>
