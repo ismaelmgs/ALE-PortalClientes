@@ -101,9 +101,9 @@ namespace PortalClientes
                 NameValueCollection values = new NameValueCollection();
                 values.Add("apikey", sapiKey);//ConfigurationManager.AppSettings["apiKey"]);
                 values.Add("from", sEmailSoporte);//onfigurationManager.AppSettings["EmailSoporte"]);
-                values.Add("fromName", "MexJet");
+                values.Add("fromName", "ALE Management");
                 values.Add("to", sEmail);
-                values.Add("subject", "recuperación de contraseña");
+                values.Add("subject", "Recuperación de contraseña");
                 values.Add("isTransactional", "true");
                 values.Add("template", sTemplate);// ConfigurationManager.AppSettings["template"]);
                 values.Add("merge_firstname", nombre);
