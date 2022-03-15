@@ -230,6 +230,12 @@ namespace PortalClientes.Views
             }
         }
 
+        protected void gvEdoCuenta_PageIndexChanging(object sender, GridViewPageEventArgs e)
+        {
+            gvEdoCuenta.PageIndex = e.NewPageIndex;
+            LlenaTableEdoCuenta(oEstados);
+        }
+
         #region METODOS
         private void ArmarEstadoCuenta()
         {
@@ -609,8 +615,9 @@ namespace PortalClientes.Views
             get { return ViewState["VSiPeriodo"].S(); }
             set { ViewState["VSiPeriodo"] = value; }
         }
+
         #endregion
 
-
+        
     }
 }
