@@ -44,29 +44,31 @@
                             <asp:Label ID="lblLoginLossHeader" runat="server" Text="Ingresar Contraseña Nueva"></asp:Label></h2>
                         <br />
                         <div class="row" style="height:70px;">
-                            <div class="col-md-2" style="text-align: center;">
-                                <i class="fa fa-lock" style="font-size: 20px; margin-top: 25px;"></i>
+                            <div class="col-md-2" style="text-align: right;">
+                                <i class="fa fa-lock" style="font-size: 20px; margin-top: 25px; margin-right: -10px;"></i>
                             </div>
-                            <div class="col-md-10">
-                                <asp:Label ID="lblPass" runat="server"></asp:Label><br />
+                            <div class="col-md-9">
+                                <asp:Label ID="lblPass" runat="server"></asp:Label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br />
                                 <asp:TextBox ID="txtPass" runat="server" TextMode="Password" CssClass="form-control"></asp:TextBox>
                                 <asp:RegularExpressionValidator ID="Regex1" runat="server" ControlToValidate="txtPass"
                                     ValidationExpression="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$" ErrorMessage="Password must contain: Minimum 8 characters atleast 1 Alphabet and 1 Number" ForeColor="Red" />
                                 <asp:Label ID="lblReqPass" runat="server" ForeColor="Red" Visible="false"></asp:Label>
                             </div>
+                            <div class="col-md-1">&nbsp;</div>
                         </div>
                         <br />
                         <div class="row" style="height:70px;">
-                            <div class="col-md-2" style="text-align: center;">
-                                <i class="fa fa-lock" style="font-size: 20px; margin-top: 25px;"></i>
+                            <div class="col-md-2" style="text-align: right;">
+                                <i class="fa fa-lock" style="font-size: 20px; margin-top: 25px; margin-right: -10px;"></i>
                             </div>
-                            <div class="col-md-10">
-                                <asp:Label ID="lblConfirPass" runat="server"></asp:Label><br />
+                            <div class="col-md-9">
+                                <asp:Label ID="lblConfirPass" runat="server"></asp:Label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br />
                                 <asp:TextBox ID="txtConfirPass" runat="server" TextMode="Password" CssClass="form-control"></asp:TextBox>
                                 <asp:RegularExpressionValidator ID="Regex2" runat="server" ControlToValidate="txtConfirPass"
                                     ValidationExpression="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$" ErrorMessage="Password must contain: Minimum 8 characters atleast 1 Alphabet and 1 Number" ForeColor="Red" />
                                 <asp:Label ID="lblReqConfirPass" runat="server" ForeColor="Red" Visible="false"></asp:Label>
                             </div>
+                            <div class="col-md-1">&nbsp;</div>
                         </div>
                         <br />
                         <div>
@@ -74,9 +76,11 @@
                         <div>
                             <br />
                             <div class="row">
-                                <div class="col-md-12" style="text-align: center;">
+                                <div class="col-md-1">&nbsp;</div>
+                                <div class="col-md-10" style="text-align: center; padding-left: 20px !important;">
                                     <asp:Button ID="btnRecuperarContrasena" OnClick="btnRecuperarContrasena_Click" runat="server" CssClass="btn btn-primary" Text=" Recuperar " Style="width: 100%;" />
                                 </div>
+                                <div class="col-md-1">&nbsp;</div>
                             </div>
                             <br />
                             <a href="frmLogin.aspx">

@@ -54,7 +54,7 @@
                                             </div>--%>
                                             <div class="col" style="text-align: center;">
                                                 <asp:LinkButton ID="btnExcelEvent" runat="server" Text="<i class='fa fa-file-excel-o' style='color:#73879c;font-size:28px;'></i>" OnClientClick="LoadingTime(5)" CssClass="btn" OnClick="btnExcelEvent_Click" />
-                                                <asp:LinkButton ID="btnPDFEvent" runat="server" Text="<i class='fa fa-file-pdf-o' style='color:#73879c;font-size:28px;'></i>" OnClientClick="LoadingTime(5)" CssClass="btn" OnClick="btnPDFEvent_Click" />
+                                                <asp:LinkButton ID="btnPDFEvent" runat="server" Text="<i class='fa fa-file-pdf-o' style='color:#73879c;font-size:28px;'></i>" OnClientClick="LoadingTime(5)" CssClass="btn" OnClick="btnPDFEvent_Click" Visible="false" />
                                             </div>
                                         </div>
                                         <br />
