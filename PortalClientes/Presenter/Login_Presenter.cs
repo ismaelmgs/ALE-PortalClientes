@@ -37,13 +37,14 @@ namespace PortalClientes.Presenter
             oUI.iIdUsuario = oUs.IdUsuario;
             oUI.Clientes = oUs.Clientes;
             oUI.NombreCliente = oUs.NombreCliente;
+            var id = oUs.IdUsuario;
             //oUI.sMatricula = oUs.Matriculas.Split(',').Count() > 0 ? oUs.Matriculas.Split(',')[0] : "";
 
             List<MatriculasContratoUsuario> olst = new List<MatriculasContratoUsuario>();
             JavaScriptSerializer ser = new JavaScriptSerializer();
             TokenWS oToken = Utils.ObtieneToken;
             requestIdUsuario oRe = new requestIdUsuario();
-            oRe.idUsuario = Utils.GetIdEmpUsuario;
+            oRe.idUsuario = id;
 
             var client = new RestClient(Helper.US_UrlObtieneMatriculasContratos);
             var request = new RestRequest(Method.POST);
