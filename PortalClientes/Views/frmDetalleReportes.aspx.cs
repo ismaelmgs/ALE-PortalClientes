@@ -529,7 +529,7 @@ namespace PortalClientes.Views
             lblTitulo.Text = Properties.Resources.DetRpt_Title;
             btnsalir.Text = Properties.Resources.Cancelar;
 
-            btnPDF.Visible = true;
+            //btnPDF.Visible = true;
             btnExcel.Visible = true;
 
             switch (iReporte)

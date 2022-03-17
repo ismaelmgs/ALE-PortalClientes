@@ -87,7 +87,7 @@
                                     <asp:LinkButton ID="btnExcel" runat="server" Text="<i class='fa fa-file-excel-o' style='color:#73879c;font-size:25px;'></i>" CssClass="btn" OnClientClick="LoadingTime(3)" OnClick="btnExcel_Click" />
                                 </li>
                                 <li>
-                                    <asp:LinkButton ID="btnPDF" runat="server" Text="<i class='fa fa-file-pdf-o' style='color:#73879c;font-size:25px;'></i>" CssClass="btn" OnClientClick="LoadingTime(3)" OnClick="btnPDF_Click" />
+                                    <asp:LinkButton ID="btnPDF" runat="server" Text="<i class='fa fa-file-pdf-o' style='color:#73879c;font-size:25px;'></i>" CssClass="btn" OnClientClick="LoadingTime(3)" OnClick="btnPDF_Click" Visible="false" />
                                 </li>
                             </ul>
                             <div class="clearfix"></div>

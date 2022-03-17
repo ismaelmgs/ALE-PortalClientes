@@ -55,16 +55,7 @@ namespace PortalClientes.Presenter
             var resp = response.Content;
             olst = ser.Deserialize<List<MatriculasContratoUsuario>>(resp);
 
-            foreach (var item in olst)
-            {
-                if (item.matriculaDefault == 1)
-                {
-                    Utils.MatriculaActual = item.matricula;
-                    Utils.ClaveContrato = item.claveCliente;
-                    Utils.NombreCliente = item.nombre;
-                    oUI.sMatricula = item.matricula;
-                }
-            }
+            
 
             if (!string.IsNullOrEmpty(oUs.Matriculas))
             {
@@ -83,6 +74,17 @@ namespace PortalClientes.Presenter
 
             oIView.oU = oUI;
             oIView.oUser = oUs;
+
+            foreach (var item in olst)
+            {
+                if (item.matriculaDefault == 1)
+                {
+                    Utils.MatriculaActual = item.matricula;
+                    Utils.ClaveContrato = item.claveCliente;
+                    Utils.NombreCliente = item.nombre;
+                    oUI.sMatricula = item.matricula;
+                }
+            }
         }
     }
 }
