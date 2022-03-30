@@ -92,3 +92,9 @@ function Click(s, e) {
     $("#ContentPlaceHolder1_hfdate").val(y.start);
     lPanel.Hide();
 }
+
+document.addEventListener("DOMContentLoaded", function(event) {
+    document.getElementById("ctl00_ContentPlaceHolder1_Scheduler_viewNavigatorBlock_ctl00_toolbar_DXI0_").style.display = "none";
+    document.getElementById("ctl00_ContentPlaceHolder1_Scheduler_viewNavigatorBlock_ctl00_toolbar_DXI1_").style.display = "none";
+    document.getElementById("ctl00_ContentPlaceHolder1_Scheduler_viewNavigatorBlock_ctl00_toolbar_DXI3_").style.display = "none";
+});

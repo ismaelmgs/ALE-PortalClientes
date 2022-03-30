@@ -175,8 +175,8 @@
 .dxbs-sc-vi {
 	font-weight: bold !important;
 	font-size: 18px !important;
-	margin-top: 31px;
-	margin-left: -25%;
+	margin-top: 35px;
+	margin-left: -6%;
 }
 .count2 {
 	font-size:18px !important;
@@ -211,9 +211,9 @@
 		left: 1px !important;
 		width: 100%;
 	}
-	.dxbs-sc-vi {
+	/*.dxbs-sc-vi {
 		margin-left: -220px;
-	}
+	}*/
 }
 @media (min-width: 320px) {
 	.flotante {
@@ -248,9 +248,9 @@
 	.modalrlr {
 		left: 1px !important;
 	}
-	.dxbs-sc-vi {
+	/*.dxbs-sc-vi {
 		margin-left: -220px;
-	}
+	}*/
 }
 @media (min-width: 375px) {
 	.flotante {
@@ -283,9 +283,9 @@
 		left: 1px !important;
 		width: 100%;
 	}
-	.dxbs-sc-vi {
+	/*.dxbs-sc-vi {
 		margin-left: -230px;
-	}
+	}*/
 }
 @media (min-width: 414px) {
 	.flotante {

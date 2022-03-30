@@ -200,7 +200,7 @@ namespace PortalClientes.Views
                 MonthView monthView = Scheduler.MonthView;
                 monthView.ShowWeekend = true;
                 monthView.CompressWeekend = false;
-                monthView.ShowMoreButtons = true;
+                monthView.ShowMoreButtons = false;
                 monthView.WeekCount = 5;
                 Scheduler.OptionsToolTips.ShowSelectionToolTip = false;
             }
@@ -270,13 +270,17 @@ namespace PortalClientes.Views
             Scheduler.OptionsToolTips.ShowAppointmentToolTip = false; // bloquear boton izquierdo de eventos
             Scheduler.OptionsToolTips.ShowSelectionToolTip = false;
 
+            Scheduler.OptionsView.NavigationButtons.Visibility = NavigationButtonVisibility.Never;
 
             // comportamiento del calendario
-            Scheduler.OptionsBehavior.HighlightSelectionHeaders = true;
+            Scheduler.OptionsBehavior.HighlightSelectionHeaders = false;
+            Scheduler.OptionsBehavior.ShowViewVisibleInterval = false;
             Scheduler.OptionsBehavior.ShowViewNavigator = true;
             Scheduler.OptionsBehavior.ShowViewSelector = false;
-            //Scheduler.OptionsBehavior.ShowViewNavigatorGotoDateButton = false;
+            Scheduler.OptionsBehavior.ShowViewNavigatorGotoDateButton = false;
             Scheduler.OptionsBehavior.ShowViewVisibleInterval = true;
+
+            Scheduler.Templates.ToolbarViewNavigatorTemplate = null;
 
 
             Scheduler.OptionsLoadingPanel.Text = "Cargando eventos";// se puede cambiar con el idioma
@@ -306,6 +310,8 @@ namespace PortalClientes.Views
                 status.SetColor(PaymentColorStatuses[i]);
                 statusColl.Add(status);
             }
+
+            Scheduler.EndUpdate();
         }
 
         private void ArmaCalendario()
