@@ -385,7 +385,7 @@
     <value>Current Month</value>
   </data>
   <data name="Das_Mensual" xml:space="preserve">
-    <value>Last Month</value>
+    <value>Last Month Closed</value>
   </data>
   <data name="Das_Semestral" xml:space="preserve">
     <value>Last 6 Months</value>

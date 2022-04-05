@@ -961,7 +961,7 @@ namespace PortalClientes.Properties {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Último mes.
+        ///   Busca una cadena traducida similar a Último mes cerrado.
         /// </summary>
         internal static string Das_Mensual {
             get {
