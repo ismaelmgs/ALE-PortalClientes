@@ -11,7 +11,8 @@ namespace PortalClientes
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-           
+            lblBienvenido.Text = Properties.Resources.Def_Bienvenidos;
+            lblEstadoDeCuenta.Text = Properties.Resources.Def_NuestraFlota;
         }
     }
 }

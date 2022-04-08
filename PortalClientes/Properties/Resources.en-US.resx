@@ -181,7 +181,7 @@
     <value>Password:</value>
   </data>
   <data name="Us_Puesto" xml:space="preserve">
-    <value>Job:</value>
+    <value>Position:</value>
   </data>
   <data name="Us_SubTituloPagUsuarios" xml:space="preserve">
     <value>Users List</value>
@@ -1367,5 +1367,11 @@
   </data>
   <data name="Us_Actualizar" xml:space="preserve">
     <value>Update</value>
+  </data>
+  <data name="Def_Bienvenidos" xml:space="preserve">
+    <value>Welcome</value>
+  </data>
+  <data name="Def_NuestraFlota" xml:space="preserve">
+    <value>Our fleet</value>
   </data>
 </root>

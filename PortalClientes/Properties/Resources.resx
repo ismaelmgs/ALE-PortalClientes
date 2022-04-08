@@ -1365,4 +1365,10 @@
   <data name="Us_Actualizar" xml:space="preserve">
     <value>Actualizar</value>
   </data>
+  <data name="Def_Bienvenidos" xml:space="preserve">
+    <value>Bienvenido</value>
+  </data>
+  <data name="Def_NuestraFlota" xml:space="preserve">
+    <value>Nuestra Flota</value>
+  </data>
 </root>

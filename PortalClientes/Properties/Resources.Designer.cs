@@ -1087,6 +1087,24 @@ namespace PortalClientes.Properties {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Bienvenido.
+        /// </summary>
+        internal static string Def_Bienvenidos {
+            get {
+                return ResourceManager.GetString("Def_Bienvenidos", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Nuestra Flota.
+        /// </summary>
+        internal static string Def_NuestraFlota {
+            get {
+                return ResourceManager.GetString("Def_NuestraFlota", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Detalle Reporte.
         /// </summary>
         internal static string DetRpt_Title {

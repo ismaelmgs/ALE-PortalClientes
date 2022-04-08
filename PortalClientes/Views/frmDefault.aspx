@@ -6,7 +6,7 @@
     <div class="row">
         <div class="col-md-6">
             <div class="title_left">
-                <h3>Bienvenido</h3>
+                <h3><asp:Label ID="lblBienvenido" runat="server" Text="Nuestra Flota" Font-Bold="true"></asp:Label></h3>
             </div>
         </div>
         <div class="col-md-6">
