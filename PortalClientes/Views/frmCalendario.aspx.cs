@@ -393,7 +393,15 @@ namespace PortalClientes.Views
 
             if(Convert.ToInt32(Session["dateScheduler"]) > 0)
             {
-                fg.meses = Convert.ToInt32(Session["dateScheduler"]);
+                if(Convert.ToInt32(Session["dateScheduler"]) == DateTime.Now.Month - 2)
+                {
+                    fg.meses = Convert.ToInt32(Session["dateScheduler"]) + 1;
+                }
+                else
+                {
+                    fg.meses = Convert.ToInt32(Session["dateScheduler"]);
+                }
+      
             }
             else
             {

@@ -74,7 +74,7 @@ namespace PortalClientes.Presenter
 
             oIView.oU = oUI;
             oIView.oUser = oUs;
-
+            var totalMatriculas = 1;
             foreach (var item in olst)
             {
                 if (item.matriculaDefault == 1)
@@ -83,7 +83,22 @@ namespace PortalClientes.Presenter
                     Utils.ClaveContrato = item.claveCliente;
                     Utils.NombreCliente = item.nombre;
                     oUI.sMatricula = item.matricula;
+
+                    return;
                 }
+                else
+                {
+                    if(totalMatriculas == olst.Count)
+                    {
+                        Utils.MatriculaActual = olst.FirstOrDefault().matricula;
+                        Utils.ClaveContrato = olst.FirstOrDefault().claveCliente;
+                        Utils.NombreCliente = olst.FirstOrDefault().nombre;
+                        oUI.sMatricula = olst.FirstOrDefault().matricula;
+
+                        return;
+                    }
+                }
+                totalMatriculas++;
             }
         }
     }

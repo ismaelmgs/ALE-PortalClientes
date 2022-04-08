@@ -84,7 +84,7 @@ namespace PortalClientes
                     }
 
                     if (oUser.IdUsuario != 0)
-                        Response.Redirect("Views/frmDashboard.aspx");
+                        Response.Redirect("Views/frmDefault.aspx");
                 }
                 else
                 {
