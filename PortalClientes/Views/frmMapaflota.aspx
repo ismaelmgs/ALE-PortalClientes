@@ -203,9 +203,13 @@
                 }
             </style>
     <script
-            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC98wN4fcIzsEP7zyEey3V0LkvZ7KHUYdw&callback=initializeMF"
-            async
-            ></script>
+				src='<%=ResolveUrl("~/vendors/jquery/dist/jquery.min.js")%>'
+			></script>
+			<script src='<%=ResolveUrl("~/vendors/jquery/dist/jquery.js")%>'></script>
+    <script
+				src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC98wN4fcIzsEP7zyEey3V0LkvZ7KHUYdw&callback=initializeMF"
+				async
+			></script>
             <!-- <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?sensor=false"></script> -->
             <script src='<%=ResolveUrl("~/build/js/mapaFlota.js")%>'></script>
 </asp:Content>

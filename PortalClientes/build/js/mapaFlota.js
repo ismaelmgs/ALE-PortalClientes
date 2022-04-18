@@ -130,72 +130,76 @@ function initializeMF() {
 	})
 
 	ajax_dataMF(objMF, function (response) {
-		const dataRutas = response.detalleRutas
-		const dataAeropuertos = response.detalleAeropuertos
 
-		const { numeroVuelos, tiempoVolado, numAeropuertos, distanciaVolada } = response.detalleTotalVuelos
+		if(response.detalleRutas != null && response.detalleAeropuertos != null && response.detalleTotalVuelos != null)
+		{
+			const dataRutas = response.detalleRutas
+			const dataAeropuertos = response.detalleAeropuertos
 
-		document.getElementById("ContentPlaceHolder1_lblVuelosRes").innerHTML = numeroVuelos;
-		document.getElementById("ContentPlaceHolder1_lblHorasVueloRes").innerHTML = tiempoVolado;
-		document.getElementById("ContentPlaceHolder1_lblAeropuertosRes").innerHTML = numAeropuertos;
-		document.getElementById("ContentPlaceHolder1_lblMiVueloRes").innerHTML = distanciaVolada;
+			const { numeroVuelos, tiempoVolado, numAeropuertos, distanciaVolada } = response.detalleTotalVuelos
 
-		dataRutas.forEach((item, index, array) => {
-			if (
-				item.adestinoLatitud != null &&
-				item.adestinoLongitud != null &&
-				item.aorigenLatitud != null &&
-				item.aorigenLongitud != null
-			) {
-				let ca = { ...coordenada }
-				ca.lat = parseFloat(item.aorigenLatitud)
-				ca.lng = parseFloat(item.aorigenLongitud)
-				flightPlanCoordinatesRutas.push(ca)
+			document.getElementById("ContentPlaceHolder1_lblVuelosRes").innerHTML = numeroVuelos;
+			document.getElementById("ContentPlaceHolder1_lblHorasVueloRes").innerHTML = tiempoVolado;
+			document.getElementById("ContentPlaceHolder1_lblAeropuertosRes").innerHTML = numAeropuertos;
+			document.getElementById("ContentPlaceHolder1_lblMiVueloRes").innerHTML = distanciaVolada;
 
-				let cb = { ...coordenada }
-				cb.lat = parseFloat(item.adestinoLatitud)
-				cb.lng = parseFloat(item.adestinoLongitud)
-				flightPlanCoordinatesRutas.push(cb)
+			dataRutas.forEach((item, index, array) => {
+				if (
+					item.adestinoLatitud != null &&
+					item.adestinoLongitud != null &&
+					item.aorigenLatitud != null &&
+					item.aorigenLongitud != null
+				) {
+					let ca = { ...coordenada }
+					ca.lat = parseFloat(item.aorigenLatitud)
+					ca.lng = parseFloat(item.aorigenLongitud)
+					flightPlanCoordinatesRutas.push(ca)
 
-				// Información de la ruta (coordenadas, color de línea, etc...)
-				var flightPathRutas = new google.maps.Polyline({
-					path: flightPlanCoordinatesRutas,
-					geodesic: true,
-					strokeColor: "#FF0000",
-					strokeOpacity: 1.0,
-					strokeWeight: 2,
-				})
+					let cb = { ...coordenada }
+					cb.lat = parseFloat(item.adestinoLatitud)
+					cb.lng = parseFloat(item.adestinoLongitud)
+					flightPlanCoordinatesRutas.push(cb)
 
-				for (i = 0; i < flightPlanCoordinatesRutas.length; i++) {
-					var markerRutas = new google.maps.Marker({
-						position: flightPlanCoordinatesRutas[i],
-						// label: i > 0 ? item.origen : item.destino,
-						map: mapRutas,
+					// Información de la ruta (coordenadas, color de línea, etc...)
+					var flightPathRutas = new google.maps.Polyline({
+						path: flightPlanCoordinatesRutas,
+						geodesic: true,
+						strokeColor: "#FF0000",
+						strokeOpacity: 1.0,
+						strokeWeight: 2,
 					})
+
+					for (i = 0; i < flightPlanCoordinatesRutas.length; i++) {
+						var markerRutas = new google.maps.Marker({
+							position: flightPlanCoordinatesRutas[i],
+							// label: i > 0 ? item.origen : item.destino,
+							map: mapRutas,
+						})
+					}
+
+					// Creando la ruta en el mapa
+					flightPathRutas.setMap(mapRutas)
 				}
-
-				// Creando la ruta en el mapa
-				flightPathRutas.setMap(mapRutas)
-			}
-		})
-
-		let arrayClaves = []
-		dataAeropuertos.forEach((item, index, array) => {
-			if (item.latitud != null && item.longitud != null) {
-				let ca = { ...coordenada }
-				ca.lat = parseFloat(item.latitud)
-				ca.lng = parseFloat(item.longitud)
-				flightPlanCoordinatesAero.push(ca)
-				arrayClaves.push(item.aeropuerto)
-			}
-		})
-
-		for (i = 0; i < flightPlanCoordinatesAero.length; i++) {
-			var markerAero = new google.maps.Marker({
-				position: flightPlanCoordinatesAero[i],
-				// label: arrayClaves[i],
-				map: mapAero,
 			})
+
+			let arrayClaves = []
+			dataAeropuertos.forEach((item, index, array) => {
+				if (item.latitud != null && item.longitud != null) {
+					let ca = { ...coordenada }
+					ca.lat = parseFloat(item.latitud)
+					ca.lng = parseFloat(item.longitud)
+					flightPlanCoordinatesAero.push(ca)
+					arrayClaves.push(item.aeropuerto)
+				}
+			})
+
+			for (i = 0; i < flightPlanCoordinatesAero.length; i++) {
+				var markerAero = new google.maps.Marker({
+					position: flightPlanCoordinatesAero[i],
+					// label: arrayClaves[i],
+					map: mapAero,
+				})
+			}
 		}
 	})
 
