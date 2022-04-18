@@ -16,6 +16,7 @@ namespace PortalClientes.DomainModel
             try
             {
                 JavaScriptSerializer ser = new JavaScriptSerializer();
+                ser.MaxJsonLength = 500000000;
                 List<Usuario> oUser = new List<Usuario>();
                 Login oLog = new Login();
                 oLog.email = sUsuario;
@@ -45,6 +46,7 @@ namespace PortalClientes.DomainModel
             try
             {
                 JavaScriptSerializer ser = new JavaScriptSerializer();
+                ser.MaxJsonLength = 500000000;
                 TokenWS oToken = Utils.ObtieneToken;
 
                 responceAct res = new responceAct();
@@ -78,6 +80,7 @@ namespace PortalClientes.DomainModel
             try
             {
                 JavaScriptSerializer ser = new JavaScriptSerializer();
+                ser.MaxJsonLength = 500000000;
                 nombreUsuario n = new nombreUsuario();
                 FiltroEmail oLog = new FiltroEmail();
                 oLog.email = sEmail;
@@ -107,6 +110,7 @@ namespace PortalClientes.DomainModel
             try
             {
                 JavaScriptSerializer ser = new JavaScriptSerializer();
+                ser.MaxJsonLength = 500000000;
                 List<Parametros> p = new List<Parametros>();
 
                 TokenWS oToken = Utils.ObtieneToken;

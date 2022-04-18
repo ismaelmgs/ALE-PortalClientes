@@ -17,6 +17,7 @@ namespace PortalClientes.DomainModel
             try
             {
                 JavaScriptSerializer ser = new JavaScriptSerializer();
+                ser.MaxJsonLength = 500000000;
                 List<DatosCalendario> d = new List<DatosCalendario>();
                 List<Appointment> dc = new List<Appointment>();
                 FiltroEvent oLog = new FiltroEvent();

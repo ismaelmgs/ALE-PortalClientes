@@ -21,6 +21,7 @@ namespace PortalClientes.DomainModel
             try
             {
                 JavaScriptSerializer ser = new JavaScriptSerializer();
+                ser.MaxJsonLength = 500000000;
                 List<Usuario> ListUsers = new List<Usuario>();
 
                 TokenWS oToken = Utils.ObtieneToken;
@@ -46,6 +47,7 @@ namespace PortalClientes.DomainModel
             try
             {
                 JavaScriptSerializer ser = new JavaScriptSerializer();
+                ser.MaxJsonLength = 500000000;
                 TokenWS oToken = Utils.ObtieneToken;
 
                 requestInsertaUsuario oReq = new requestInsertaUsuario();
@@ -82,6 +84,7 @@ namespace PortalClientes.DomainModel
             try
             {
                 JavaScriptSerializer ser = new JavaScriptSerializer();
+                ser.MaxJsonLength = 500000000;
                 TokenWS oToken = Utils.ObtieneToken;
 
                 responceAct res = new responceAct();
@@ -121,6 +124,7 @@ namespace PortalClientes.DomainModel
             try
             {
                 JavaScriptSerializer ser = new JavaScriptSerializer();
+                ser.MaxJsonLength = 500000000;
                 List<Usuario> oUser = new List<Usuario>();
                 Filtros oLog = new Filtros();
                 oLog.filtro = sFiltro;
@@ -179,6 +183,7 @@ namespace PortalClientes.DomainModel
             {
                 List<Matriculas> olstMats = new List<Matriculas>();
                 JavaScriptSerializer ser = new JavaScriptSerializer();
+                ser.MaxJsonLength = 500000000;
                 TokenWS oToken = Utils.ObtieneToken;
                 requestOpcion oRe = new requestOpcion();
                 oRe.opcion = 1;
@@ -205,6 +210,7 @@ namespace PortalClientes.DomainModel
             try
             {
                 JavaScriptSerializer ser = new JavaScriptSerializer();
+                ser.MaxJsonLength = 500000000;
                 List<Matriculas> oMU = new List<Matriculas>();
                 FiltroMatUsuario oLog = new FiltroMatUsuario();
                 oLog.idUsuario = iidUsuario;
@@ -232,6 +238,7 @@ namespace PortalClientes.DomainModel
             try
             {
                 JavaScriptSerializer ser = new JavaScriptSerializer();
+                ser.MaxJsonLength = 500000000;
                 responseCodigoMensaje oCodigo = new responseCodigoMensaje();
 
                 requestUsuarioOpcion oReq = new requestUsuarioOpcion();
@@ -262,6 +269,7 @@ namespace PortalClientes.DomainModel
             try
             {
                 JavaScriptSerializer ser = new JavaScriptSerializer();
+                ser.MaxJsonLength = 500000000;
                 requestIdUsuario oReq = new requestIdUsuario();
                 
                 foreach (var item in oLstMats)
@@ -299,6 +307,7 @@ namespace PortalClientes.DomainModel
             {
                 List<ModulosUsuario> olstMods = new List<ModulosUsuario>();
                 JavaScriptSerializer ser = new JavaScriptSerializer();
+                ser.MaxJsonLength = 500000000;
                 TokenWS oToken = Utils.ObtieneToken;
 
                 requestIdUsuario oRe = new requestIdUsuario();
@@ -327,6 +336,7 @@ namespace PortalClientes.DomainModel
             {
                 List<ModulosUsuario> olstMods = new List<ModulosUsuario>();
                 JavaScriptSerializer ser = new JavaScriptSerializer();
+                ser.MaxJsonLength = 500000000;
                 TokenWS oToken = Utils.ObtieneToken;
 
                 requestIdUsuario oRe = new requestIdUsuario();
@@ -355,6 +365,7 @@ namespace PortalClientes.DomainModel
             {
                 List<ModulosUsuario> olstMods = new List<ModulosUsuario>();
                 JavaScriptSerializer ser = new JavaScriptSerializer();
+                ser.MaxJsonLength = 500000000;
                 TokenWS oToken = Utils.ObtieneToken;
 
                 requestModulosUsuario oRe = new requestModulosUsuario();
@@ -384,6 +395,7 @@ namespace PortalClientes.DomainModel
             {
                 List<ModulosUsuario> olstMods = new List<ModulosUsuario>();
                 JavaScriptSerializer ser = new JavaScriptSerializer();
+                ser.MaxJsonLength = 500000000;
                 TokenWS oToken = Utils.ObtieneToken;
 
                 requestUsuarioUsuario oRe = new requestUsuarioUsuario();

@@ -17,6 +17,7 @@ namespace PortalClientes.DomainModel
             try
             {
                 JavaScriptSerializer ser = new JavaScriptSerializer();
+                ser.MaxJsonLength = 500000000;
                 List<EventosPiloto> ep = new List<EventosPiloto>();
                 FiltroEvent oLog = new FiltroEvent();
                 oLog.matricula = Utils.MatriculaActual;
@@ -46,6 +47,7 @@ namespace PortalClientes.DomainModel
             try
             {
                 JavaScriptSerializer ser = new JavaScriptSerializer();
+                ser.MaxJsonLength = 500000000;
                 List<Piloto> p = new List<Piloto>();
                 FiltroPilotos oLog = new FiltroPilotos();
                 oLog.matricula = Utils.MatriculaActual;

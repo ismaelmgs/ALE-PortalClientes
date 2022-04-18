@@ -17,6 +17,7 @@ namespace PortalClientes.DomainModel
             try
             {
                 JavaScriptSerializer ser = new JavaScriptSerializer();
+                ser.MaxJsonLength = 500000000;
                 Eventoss v = new Eventoss();
                 FiltroGrafica oLog = new FiltroGrafica();
                 oLog.matricula = Utils.MatriculaActual;

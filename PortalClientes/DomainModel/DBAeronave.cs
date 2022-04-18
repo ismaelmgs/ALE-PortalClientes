@@ -17,6 +17,7 @@ namespace PortalClientes.DomainModel
             try
             {
                 JavaScriptSerializer ser = new JavaScriptSerializer();
+                ser.MaxJsonLength = 500000000;
                 Aeronave a = new Aeronave();
                 FiltroMat oLog = new FiltroMat();
                 oLog.matriculaActual = Utils.MatriculaActual;

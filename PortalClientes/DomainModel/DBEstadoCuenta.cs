@@ -19,6 +19,7 @@ namespace PortalClientes.DomainModel
             try
             {
                 JavaScriptSerializer ser = new JavaScriptSerializer();
+                ser.MaxJsonLength = 500000000;
                 EstadoCuenta ec = new EstadoCuenta();
                 RequestMatricula oMat = new RequestMatricula();
                 oMat.matricula = Utils.MatriculaActual;
