@@ -84,18 +84,92 @@
                             </ul>
                             <div class="clearfix"></div>
                         </div>
-                        <div class="row">
-                            <div class="col-md-12">
-                                <div class="table-responsive">
-                                    <div class="card-box table-responsive">
-                                        <asp:GridView ID="gvGastos" runat="server" AutoGenerateColumns="false" CssClass="table table-striped table-bordered table-hover" AllowPaging="true"
-                                            OnPageIndexChanging="gvGastos_PageIndexChanging" OnRowDataBound="gvGastos_RowDataBound" EmptyDataText="No Registros">
-                                        </asp:GridView>
+
+                        <asp:Panel ID="pnlGastos" runat="server" Visible="false">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="table-responsive">
+                                        <div class="card-box table-responsive">
+                                            <asp:GridView ID="gvGastos" runat="server" AutoGenerateColumns="false" CssClass="table table-striped table-bordered table-hover" AllowPaging="true"
+                                                OnPageIndexChanging="gvGastos_PageIndexChanging" OnRowDataBound="gvGastos_RowDataBound" EmptyDataText="No Registros">
+                                            </asp:GridView>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
+                        </asp:Panel>
+                        
+                        <asp:Panel ID="pnlGastosViewRef" runat="server" Visible="false">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="table-responsive">
+                                        <div class="card-box table-responsive">
 
-                        </div>
+                                            <asp:GridView ID="gvGastosRef" runat="server" AutoGenerateColumns="false" CssClass="table table-striped table-bordered table-hover" AllowPaging="true"
+                                                OnPageIndexChanging="gvGastosRef_PageIndexChanging" EmptyDataText="No Registros" OnRowCommand="gvGastosRef_RowCommand">
+                                                <Columns>
+                                                    <asp:TemplateField HeaderText="Mes" ItemStyle-HorizontalAlign="Left">
+                                                        <ItemTemplate>
+                                                            <asp:Label ID="lblMesAnio" Text='<%# Bind("nombreMes") %>' runat="server" Style="display: block; text-align: right;"></asp:Label>
+                                                        </ItemTemplate>
+                                                    </asp:TemplateField>
+                                                    <asp:TemplateField HeaderText="Tipo Moneda" ItemStyle-HorizontalAlign="Left">
+                                                        <ItemTemplate>
+                                                            <asp:Label ID="lblTipoMoneda" Text='<%# Bind("tipoMoneda") %>' runat="server" Style="display: block; text-align: right;"></asp:Label>
+                                                        </ItemTemplate>
+                                                    </asp:TemplateField>
+                                                    <asp:TemplateField HeaderText="Fecha" ItemStyle-HorizontalAlign="Left">
+                                                        <ItemTemplate>
+                                                            <asp:Label ID="lblFecha" Text='<%# Bind("fecha") %>' runat="server" Style="display: block; text-align: right;"></asp:Label>
+                                                        </ItemTemplate>
+                                                    </asp:TemplateField>
+                                                    <asp:TemplateField HeaderText="No Referencia" SortExpression="Referencia" ControlStyle-Width="150">
+                                                        <ItemTemplate>
+                                                            <asp:UpdatePanel ID="upaLinkRef" runat="server" UpdateMode="Conditional">
+                                                                <ContentTemplate>
+                                                                    <asp:Label ID="lblReferenciaPesos" runat="server" Text='<%# Bind("noReferencia") %>' Font-Size="X-Small"></asp:Label>
+                                                                    <asp:ImageButton ID="imbReferenciaPesos" runat="server" Width="16" Height="16" ImageUrl="~/Images/icons/searchdate.png" CommandName="ViewReference" Style="margin: 0 auto; margin-left: 25%;"
+                                                                        CommandArgument="<%# ((GridViewRow) Container).RowIndex %>" ToolTip="De clic para visualizar el documento." Visible="true"></asp:ImageButton>
+                                                                </ContentTemplate>
+                                                            </asp:UpdatePanel>
+                                                        </ItemTemplate>
+                                                    </asp:TemplateField>
+                                                    <asp:TemplateField HeaderText="Tipo de Gasto" ItemStyle-HorizontalAlign="Left">
+                                                        <ItemTemplate>
+                                                            <asp:Label ID="lblTipoGasto" Text='<%# Bind("tipoGasto") %>' runat="server" Style="display: block; text-align: right;"></asp:Label>
+                                                        </ItemTemplate>
+                                                    </asp:TemplateField>
+                                                    <asp:TemplateField HeaderText="Concepto" ItemStyle-HorizontalAlign="Left">
+                                                        <ItemTemplate>
+                                                            <asp:Label ID="lblConcepto" Text='<%# Bind("concepto") %>' runat="server" Style="display: block; text-align: right;"></asp:Label>
+                                                        </ItemTemplate>
+                                                    </asp:TemplateField>
+                                                    <asp:TemplateField HeaderText="Detalle" ItemStyle-HorizontalAlign="Left">
+                                                        <ItemTemplate>
+                                                            <asp:Label ID="lblDetalle" Text='<%# Bind("detalle") %>' runat="server" Style="display: block; text-align: right;"></asp:Label>
+                                                        </ItemTemplate>
+                                                    </asp:TemplateField>
+                                                    <asp:TemplateField HeaderText="Proveedor" ItemStyle-HorizontalAlign="Left">
+                                                        <ItemTemplate>
+                                                            <asp:Label ID="lblProveedor" Text='<%# Bind("proveedor") %>' runat="server" Style="display: block; text-align: right;"></asp:Label>
+                                                        </ItemTemplate>
+                                                    </asp:TemplateField>
+                                                    <asp:TemplateField HeaderText="Importe" ItemStyle-HorizontalAlign="Right">
+                                                        <ItemTemplate>
+                                                            <asp:Label ID="lblImporte" Text='<%# Bind("importe", "{0:c}") %>' runat="server" Style="display: block; text-align: right;"></asp:Label>
+                                                        </ItemTemplate>
+                                                    </asp:TemplateField>
+                                                </Columns>
+                                            </asp:GridView>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </asp:Panel>
+
+
+
                         <hr style="border: 1px solid #efefef;" />
                         <div style="width: 100%; text-align: center;">
                             <asp:LinkButton ID="btnRegresarMeEsEng" runat="server" Text="<i class='fa fa-undo' style='color:#73879C;font-size:14px;'></i> Metrics and Statistics <i class='fa fa-line-chart' style='color:#73879C;font-size:14px;'></i>" CssClass="btn" href="frmMetricasEstadisticas.aspx" />

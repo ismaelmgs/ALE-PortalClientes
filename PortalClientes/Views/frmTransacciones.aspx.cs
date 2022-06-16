@@ -19,6 +19,8 @@ using iTextSharp.text.html.simpleparser;
 using iTextSharp.text.pdf;
 using System.Threading;
 using System.Text;
+using PortalClientes.DomainModel;
+using System.Data;
 
 namespace PortalClientes.Views
 {
@@ -43,6 +45,8 @@ namespace PortalClientes.Views
             var od = Convert.ToInt32(Session["origenData"]);
             var descripcion = (string)Session["descripcion"];
             //oPresenter = new Transacciones_Presenter(this, new DBTransacciones());
+
+            string Smatricula = "";
 
             Session["title"] = GenerateTitle(true, tipo, descripcion);
             Session["titleFile"] = GenerateTitle(false, tipo, descripcion);
@@ -1097,6 +1101,7 @@ namespace PortalClientes.Views
                 clm5.DataField = "noReferencia";
                 gvGastos.Columns.Add(clm5);
 
+
                 BoundField clm6 = new BoundField();
                 clm6.DataField = "tipoGasto";
                 gvGastos.Columns.Add(clm6);
@@ -1119,10 +1124,14 @@ namespace PortalClientes.Views
                 clm10.DataFormatString = "{0:c}";
                 gvGastos.Columns.Add(clm10);
 
-                
-
-                gvGastos.DataSource = transacciones.detalleEdoCuenta.OrderBy(x => x.mes).ToList(); 
+                gvGastos.DataSource = transacciones.detalleEdoCuenta.OrderBy(x => x.mes).ToList();
                 gvGastos.DataBind();
+
+                pnlGastos.Visible = false;
+                pnlGastosViewRef.Visible = true;
+                gvGastosRef.DataSource = transacciones.detalleEdoCuenta.OrderBy(x => x.mes).ToList();
+                gvGastosRef.DataBind();
+                ControlReferencias(gvGastosRef);
 
                 lblTotalTrasnRes.Text = totalRegistros.S();
 
@@ -1985,5 +1994,255 @@ namespace PortalClientes.Views
             }
         }
         #endregion
+
+        protected void gvGastos_RowCommand(object sender, GridViewCommandEventArgs e)
+        {
+            
+        }
+
+        private string ArmaRutaComprobante(string sReferencia, string[] sPeriodo)
+        {
+            try
+            {
+                string sRuta = string.Empty;
+                string sMatricula = Utils.MatriculaActual;
+                int iAnio = sPeriodo[1].I();
+                string sMes = sPeriodo[0].S();
+                int iMes = ObtenerNumeroMes(sMes);
+
+                DataTable dt = new DBTransacciones().DBGetDetalleReferencia(sReferencia, sMatricula, iAnio.S(), iMes.S());
+                if (dt.Rows.Count > 0)
+                {
+                    int iMesRef = dt.Rows[0]["Mes"].S().I();
+                    int iAnioRef = dt.Rows[0]["Anio"].S().I();
+                    string sMatriculaRef = dt.Rows[0]["Matricula"].S();
+                    string sMoneda = dt.Rows[0]["TipoMoneda"].S();
+
+                    sRuta = System.Configuration.ConfigurationManager.AppSettings["PATH_FILES_S"].S();
+                    sRuta = sRuta.S().Replace("\\", "\\\\");
+                    sRuta = sRuta.Replace("[anio]", iAnioRef.S());
+                    sRuta = sRuta.Replace("[matricula]", sMatriculaRef);
+                    sRuta = sRuta.Replace("[mes]", ObtieneNombreMes(iMesRef));
+                    string sMon = sMoneda == "MXN" ? "MN" : "USD";
+                    sRuta = sRuta.Replace("[moneda]", sMon);
+                }
+
+                return sRuta;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        private string ObtieneNombreMes(int iMes)
+        {
+            string sMes = string.Empty;
+            switch (iMes)
+            {
+                case 1:
+                    sMes = "01 ENERO";
+                    break;
+                case 2:
+                    sMes = "02 FEBRERO";
+                    break;
+                case 3:
+                    sMes = "03 MARZO";
+                    break;
+                case 4:
+                    sMes = "04 ABRIL";
+                    break;
+                case 5:
+                    sMes = "05 MAYO";
+                    break;
+                case 6:
+                    sMes = "06 JUNIO";
+                    break;
+                case 7:
+                    sMes = "07 JULIO";
+                    break;
+                case 8:
+                    sMes = "08 AGOSTO";
+                    break;
+                case 9:
+                    sMes = "09 SEPTIEMBRE";
+                    break;
+                case 10:
+                    sMes = "10 OCTUBRE";
+                    break;
+                case 11:
+                    sMes = "11 NOVIEMBRE";
+                    break;
+                case 12:
+                    sMes = "12 DICIEMBRE";
+                    break;
+            }
+
+            return sMes;
+        }
+
+        protected void gvGastosRef_PageIndexChanging(object sender, GridViewPageEventArgs e)
+        {
+            try
+            {
+                var tipo = Convert.ToInt32(Session["tipoTransaccion"]);
+                Transacciones transacciones = new Transacciones();
+                gvGastosRef.PageIndex = e.NewPageIndex;
+
+                if (tipo == 13)
+                {
+                    transacciones.detalleEdoCuenta = (List<detalleEdoCta>)Session["data"];
+                    LlenarGV(transacciones, tipo);
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        protected void gvGastosRef_RowCommand(object sender, GridViewCommandEventArgs e)
+        {
+            try
+            {
+                switch (e.CommandName)
+                {
+                    case "ViewReference":
+                        int index = e.CommandArgument.I();
+                        Label lblReferencia = (Label)gvGastosRef.Rows[index].FindControl("lblReferenciaPesos");
+                        Label lblMesAnio = (Label)gvGastosRef.Rows[index].FindControl("lblMesAnio");
+
+                        string[] sPeriodo = null;
+                        sPeriodo = lblMesAnio.Text.Split(' ');
+
+                        string sReferencia = lblReferencia.Text;
+                        string sUrl = sReferencia + ".pdf";
+                        string sMatricula = Utils.MatriculaActual;
+                        int iAnio = sPeriodo[1].I();
+                        string sMes = sPeriodo[0].S();
+                        int iMes = ObtenerNumeroMes(sMes);
+
+                        DataTable dt = new DBTransacciones().DBGetDetalleReferencia(sReferencia, sMatricula, iAnio.S(), iMes.S());
+                        if (dt.Rows.Count > 0)
+                        {
+                            string sRuta = ArmaRutaComprobante(sReferencia, sPeriodo);
+
+                            if (File.Exists(sRuta + sUrl))
+                                ScriptManager.RegisterStartupScript(Page, typeof(Page), "OpenWindow", "window.open('frmVistaPreviaRef.aspx?sRuta=" + sRuta + sUrl + "',this.target, 'width=600,height=600,top=120,left=400,toolbar=no,location=no,status=no,menubar=no');", true);
+                            //else
+                            //    MostrarMensaje("No se encontró el archivo, favor de verificar", "Aviso");
+                        }
+                        break;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public int ObtenerNumeroMes(string sMes)
+        {
+            try
+            {
+                int iMes = 0;
+                switch (sMes)
+                {
+                    case "Enero":
+                    case "January":
+                        iMes = 1;
+                        break;
+                    case "Febrero":
+                    case "February":
+                        iMes = 2;
+                        break;
+                    case "Marzo":
+                    case "March":
+                        iMes = 3;
+                        break;
+                    case "Abril":
+                    case "April":
+                        iMes = 4;
+                        break;
+                    case "Mayo":
+                    case "May":
+                        iMes = 5;
+                        break;
+                    case "Junio":
+                    case "June":
+                        iMes = 6;
+                        break;
+                    case "Julio":
+                    case "July":
+                        iMes = 7;
+                        break;
+                    case "Agosto":
+                    case "August":
+                        iMes = 8;
+                        break;
+                    case "Septiembre":
+                    case "September":
+                        iMes = 9;
+                        break;
+                    case "Octubre":
+                    case "October":
+                        iMes = 10;
+                        break;
+                    case "Noviembre":
+                    case "November":
+                        iMes = 11;
+                        break;
+                    case "Diciembre":
+                    case "December":
+                        iMes = 12;
+                        break;
+                    default:
+                        break;
+                }
+                return iMes;
+            }
+            catch (Exception)
+            {
+                return 0;
+            }
+        }
+
+        public void ControlReferencias(GridView gv)
+        {
+            try
+            {
+                for (int i = 0; i < gv.Rows.Count; i++)
+                {
+                    Label lblReferencia = (Label)gv.Rows[i].FindControl("lblReferenciaPesos");
+                    ImageButton imbReferencia = (ImageButton)gv.Rows[i].FindControl("imbReferenciaPesos");
+                    string sMatricula = Utils.MatriculaActual;
+
+                    DataSet ds = new DBTransacciones().DBGetComprobanteXRef(lblReferencia.Text, sMatricula);
+
+                    if (ds != null)
+                    {
+                        if (ds.Tables.Count > 0)
+                        {
+                            if (ds.Tables[0].Rows.Count > 0)
+                            {
+                                if (imbReferencia != null)
+                                {
+                                    if (ds.Tables[0].Rows[0]["Comprobante"].S().I() == 1)
+                                        imbReferencia.Visible = true;
+                                    else
+                                        imbReferencia.Visible = false;
+                                }
+                            }
+                            else
+                                imbReferencia.Visible = false;
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
     }
 }
