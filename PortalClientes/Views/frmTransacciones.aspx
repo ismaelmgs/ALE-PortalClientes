@@ -108,22 +108,22 @@
                                             <asp:GridView ID="gvGastosRef" runat="server" AutoGenerateColumns="false" CssClass="table table-striped table-bordered table-hover" AllowPaging="true"
                                                 OnPageIndexChanging="gvGastosRef_PageIndexChanging" EmptyDataText="No Registros" OnRowCommand="gvGastosRef_RowCommand">
                                                 <Columns>
-                                                    <asp:TemplateField HeaderText="Mes" ItemStyle-HorizontalAlign="Left">
+                                                    <asp:TemplateField HeaderText="Mes" ItemStyle-HorizontalAlign="center" HeaderStyle-HorizontalAlign="Center">
                                                         <ItemTemplate>
-                                                            <asp:Label ID="lblMesAnio" Text='<%# Bind("nombreMes") %>' runat="server" Style="display: block; text-align: right;"></asp:Label>
+                                                            <asp:Label ID="lblMesAnio" Text='<%# Bind("nombreMes") %>' runat="server" Style="display: block; text-align: center;"></asp:Label>
                                                         </ItemTemplate>
                                                     </asp:TemplateField>
-                                                    <asp:TemplateField HeaderText="Tipo Moneda" ItemStyle-HorizontalAlign="Left">
+                                                    <asp:TemplateField HeaderText="Tipo Moneda" ItemStyle-HorizontalAlign="center" HeaderStyle-HorizontalAlign="center">
                                                         <ItemTemplate>
-                                                            <asp:Label ID="lblTipoMoneda" Text='<%# Bind("tipoMoneda") %>' runat="server" Style="display: block; text-align: right;"></asp:Label>
+                                                            <asp:Label ID="lblTipoMoneda" Text='<%# Bind("tipoMoneda") %>' runat="server" Style="display: block; text-align: center;"></asp:Label>
                                                         </ItemTemplate>
                                                     </asp:TemplateField>
-                                                    <asp:TemplateField HeaderText="Fecha" ItemStyle-HorizontalAlign="Left">
+                                                    <asp:TemplateField HeaderText="Fecha" HeaderStyle-HorizontalAlign="Center" ItemStyle-HorizontalAlign="center">
                                                         <ItemTemplate>
-                                                            <asp:Label ID="lblFecha" Text='<%# Bind("fecha") %>' runat="server" Style="display: block; text-align: right;"></asp:Label>
+                                                            <asp:Label ID="lblFecha" Text='<%# Bind("fecha") %>' runat="server" Style="display: block; text-align: center;"></asp:Label>
                                                         </ItemTemplate>
                                                     </asp:TemplateField>
-                                                    <asp:TemplateField HeaderText="No Referencia" SortExpression="Referencia" ControlStyle-Width="150">
+                                                    <asp:TemplateField HeaderText="No Referencia" SortExpression="Referencia" ControlStyle-Width="150" HeaderStyle-HorizontalAlign="Center">
                                                         <ItemTemplate>
                                                             <asp:UpdatePanel ID="upaLinkRef" runat="server" UpdateMode="Conditional">
                                                                 <ContentTemplate>
@@ -134,29 +134,29 @@
                                                             </asp:UpdatePanel>
                                                         </ItemTemplate>
                                                     </asp:TemplateField>
-                                                    <asp:TemplateField HeaderText="Tipo de Gasto" ItemStyle-HorizontalAlign="Left">
+                                                    <asp:TemplateField HeaderText="Tipo de Gasto" ItemStyle-HorizontalAlign="center" HeaderStyle-HorizontalAlign="Center">
                                                         <ItemTemplate>
-                                                            <asp:Label ID="lblTipoGasto" Text='<%# Bind("tipoGasto") %>' runat="server" Style="display: block; text-align: right;"></asp:Label>
+                                                            <asp:Label ID="lblTipoGasto" Text='<%# Bind("tipoGasto") %>' runat="server" Style="display: block; text-align: center;"></asp:Label>
                                                         </ItemTemplate>
                                                     </asp:TemplateField>
-                                                    <asp:TemplateField HeaderText="Concepto" ItemStyle-HorizontalAlign="Left">
+                                                    <asp:TemplateField HeaderText="Concepto" ItemStyle-HorizontalAlign="center" HeaderStyle-HorizontalAlign="center">
                                                         <ItemTemplate>
-                                                            <asp:Label ID="lblConcepto" Text='<%# Bind("concepto") %>' runat="server" Style="display: block; text-align: right;"></asp:Label>
+                                                            <asp:Label ID="lblConcepto" Text='<%# Bind("concepto") %>' runat="server" Style="display: block; text-align: center;"></asp:Label>
                                                         </ItemTemplate>
                                                     </asp:TemplateField>
-                                                    <asp:TemplateField HeaderText="Detalle" ItemStyle-HorizontalAlign="Left">
+                                                    <asp:TemplateField HeaderText="Detalle" ItemStyle-HorizontalAlign="center" HeaderStyle-HorizontalAlign="Center">
                                                         <ItemTemplate>
-                                                            <asp:Label ID="lblDetalle" Text='<%# Bind("detalle") %>' runat="server" Style="display: block; text-align: right;"></asp:Label>
+                                                            <asp:Label ID="lblDetalle" Text='<%# Bind("detalle") %>' runat="server" Style="display: block; text-align: center;"></asp:Label>
                                                         </ItemTemplate>
                                                     </asp:TemplateField>
-                                                    <asp:TemplateField HeaderText="Proveedor" ItemStyle-HorizontalAlign="Left">
+                                                    <asp:TemplateField HeaderText="Proveedor" ItemStyle-HorizontalAlign="center" HeaderStyle-HorizontalAlign="Center">
                                                         <ItemTemplate>
-                                                            <asp:Label ID="lblProveedor" Text='<%# Bind("proveedor") %>' runat="server" Style="display: block; text-align: right;"></asp:Label>
+                                                            <asp:Label ID="lblProveedor" Text='<%# Bind("proveedor") %>' runat="server" Style="display: block; text-align: center;"></asp:Label>
                                                         </ItemTemplate>
                                                     </asp:TemplateField>
-                                                    <asp:TemplateField HeaderText="Importe" ItemStyle-HorizontalAlign="Right">
+                                                    <asp:TemplateField HeaderText="Importe" ItemStyle-HorizontalAlign="center" HeaderStyle-HorizontalAlign="Center">
                                                         <ItemTemplate>
-                                                            <asp:Label ID="lblImporte" Text='<%# Bind("importe", "{0:c}") %>' runat="server" Style="display: block; text-align: right;"></asp:Label>
+                                                            <asp:Label ID="lblImporte" Text='<%# Bind("importe", "{0:c}") %>' runat="server" Style="display: block; text-align: center;"></asp:Label>
                                                         </ItemTemplate>
                                                     </asp:TemplateField>
                                                 </Columns>
