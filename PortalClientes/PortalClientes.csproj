@@ -269,6 +269,7 @@
     <Content Include="Images\icons\files.png" />
     <Content Include="Images\icons\flecha_abre1.png" />
     <Content Include="Images\icons\flecha_cierra.png" />
+    <Content Include="Images\icons\searchdate.png" />
     <Content Include="Images\icons\visualizar.png" />
     <Content Include="Images\ico_eu.jpg" />
     <Content Include="Images\ico_eu.png" />
@@ -1582,6 +1583,7 @@
     <Content Include="Views\frmTripulacion.aspx" />
     <Content Include="Views\frmTuAeronave.aspx" />
     <Content Include="Views\frmUsuarios.aspx" />
+    <Content Include="Views\frmVistaPreviaRef.aspx" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -1602,6 +1604,7 @@
     <Compile Include="DomainModel\DBMantenimientos.cs" />
     <Compile Include="DomainModel\DBMapaFlota.cs" />
     <Compile Include="DomainModel\DBMetricasEstatics.cs" />
+    <Compile Include="DomainModel\DBTransacciones.cs" />
     <Compile Include="DomainModel\DBTripulacion.cs" />
     <Compile Include="DomainModel\DBDashboard.cs" />
     <Compile Include="DomainModel\DBLogin.cs" />
@@ -2016,6 +2019,13 @@
     </Compile>
     <Compile Include="Views\frmUsuarios.aspx.designer.cs">
       <DependentUpon>frmUsuarios.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\frmVistaPreviaRef.aspx.cs">
+      <DependentUpon>frmVistaPreviaRef.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\frmVistaPreviaRef.aspx.designer.cs">
+      <DependentUpon>frmVistaPreviaRef.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
