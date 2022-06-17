@@ -2174,6 +2174,8 @@ namespace PortalClientes.Views
                             {
                                 ScriptManager.RegisterStartupScript(Page, typeof(Page), "Mensaje", "alert('No se encontró el archivo, favor de verificar');", true);
                             }
+                            lblTotal.Text = Properties.Resources.TabTran_TotalTranMXN;
+                            lblPromedio.Text = Properties.Resources.TabTran_TotalTranUSD;
                         }
                         break;
                 }
