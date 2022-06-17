@@ -16,6 +16,11 @@
             }
         }
     </script>
+    <style>
+        th {
+            text-align: center !important;
+        }
+    </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <asp:UpdatePanel ID="upaPrincipal" runat="server">
@@ -108,7 +113,7 @@
                                             <asp:GridView ID="gvGastosRef" runat="server" AutoGenerateColumns="false" CssClass="table table-striped table-bordered table-hover" AllowPaging="true"
                                                 OnPageIndexChanging="gvGastosRef_PageIndexChanging" EmptyDataText="No Registros" OnRowCommand="gvGastosRef_RowCommand">
                                                 <Columns>
-                                                    <asp:TemplateField HeaderText="Mes" ItemStyle-HorizontalAlign="center" HeaderStyle-HorizontalAlign="Center">
+                                                    <asp:TemplateField HeaderText="Mes" ItemStyle-HorizontalAlign="center" HeaderStyle-HorizontalAlign="Left">
                                                         <ItemTemplate>
                                                             <asp:Label ID="lblMesAnio" Text='<%# Bind("nombreMes") %>' runat="server" Style="display: block; text-align: center;"></asp:Label>
                                                         </ItemTemplate>
@@ -154,9 +159,9 @@
                                                             <asp:Label ID="lblProveedor" Text='<%# Bind("proveedor") %>' runat="server" Style="display: block; text-align: center;"></asp:Label>
                                                         </ItemTemplate>
                                                     </asp:TemplateField>
-                                                    <asp:TemplateField HeaderText="Importe" ItemStyle-HorizontalAlign="center" HeaderStyle-HorizontalAlign="Center">
+                                                    <asp:TemplateField HeaderText="Importe" HeaderStyle-HorizontalAlign="Center">
                                                         <ItemTemplate>
-                                                            <asp:Label ID="lblImporte" Text='<%# Bind("importe", "{0:c}") %>' runat="server" Style="display: block; text-align: center;"></asp:Label>
+                                                            <asp:Label ID="lblImporte" Text='<%# Bind("importe", "{0:c}") %>' runat="server" Style="display: block; text-align: right;"></asp:Label>
                                                         </ItemTemplate>
                                                     </asp:TemplateField>
                                                 </Columns>
