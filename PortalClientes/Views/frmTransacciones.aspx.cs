@@ -2128,9 +2128,13 @@ namespace PortalClientes.Views
                             string sRuta = ArmaRutaComprobante(sReferencia, sPeriodo);
 
                             if (File.Exists(sRuta + sUrl))
+                            {
                                 ScriptManager.RegisterStartupScript(Page, typeof(Page), "OpenWindow", "window.open('frmVistaPreviaRef.aspx?sRuta=" + sRuta + sUrl + "',this.target, 'width=600,height=600,top=120,left=400,toolbar=no,location=no,status=no,menubar=no');", true);
-                            //else
-                            //    MostrarMensaje("No se encontró el archivo, favor de verificar", "Aviso");
+                            }
+                            else
+                            {
+                                ScriptManager.RegisterStartupScript(Page, typeof(Page), "Mensaje", "alert('No se encontró el archivo, favor de verificar');", true);
+                            }
                         }
                         break;
                 }

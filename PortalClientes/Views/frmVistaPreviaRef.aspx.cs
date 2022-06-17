@@ -19,6 +19,12 @@ namespace PortalClientes.Views
             else
                 sPath = "";
 
+            //Response.Clear();
+            //Response.AddHeader("content-disposition", string.Format("attachment;filename={0}", sPath));
+            //Response.ContentType = "application/pdf";
+            //Response.WriteFile(Server.MapPath(Path.Combine("~/files", sPath)));
+            //Response.End();
+
             if (!string.IsNullOrEmpty(sPath))
             {
                 Context.Response.Buffer = false;
