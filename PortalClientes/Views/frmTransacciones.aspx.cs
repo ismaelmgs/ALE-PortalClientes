@@ -556,6 +556,9 @@ namespace PortalClientes.Views
                 gvGastos.DataSource = transacciones.gastos.OrderBy(x => x.Fecha).ToList(); 
                 gvGastos.DataBind();
 
+                pnlGastos.Visible = true;
+                pnlGastosViewRef.Visible = false;
+
                 lblTotalTrasnRes.Text = totalRegistros.S();
                 lblTotalRes.Text = string.Format("{0:###,###,###,0.##}", totalTransacciones) + " " + (string)Session["tipoDet"];
                 lblPromedioRes.Text = string.Format("{0:###,###,###,0.##}", promedio) + " " + (string)Session["tipoDet"];
@@ -606,6 +609,9 @@ namespace PortalClientes.Views
 
                 gvGastos.DataSource = transacciones.gastosAe.OrderBy(x => x.Mes).ToList(); 
                 gvGastos.DataBind();
+
+                pnlGastos.Visible = true;
+                pnlGastosViewRef.Visible = false;
 
                 lblTotalTrasnRes.Text = totalRegistros.S();
                 lblTotalRes.Text = string.Format("{0:###,###,###,0.##}", totalTransacciones) + " MXN";
@@ -658,6 +664,9 @@ namespace PortalClientes.Views
                 gvGastos.DataSource = transacciones.gastosProv.OrderBy(x => x.Mes).ToList(); 
                 gvGastos.DataBind();
 
+                pnlGastos.Visible = true;
+                pnlGastosViewRef.Visible = false;
+
                 lblTotalTrasnRes.Text = totalRegistros.S();
                 lblTotalRes.Text = string.Format("{0:###,###,###,0.##}", totalTransacciones) + " MXN";
                 lblPromedioRes.Text = string.Format("{0:###,###,###,0.##}", promedio) + " MXN";
@@ -703,6 +712,9 @@ namespace PortalClientes.Views
 
                 gvGastos.DataSource = transacciones.vuelos.OrderBy(x => x.mes).ToList(); 
                 gvGastos.DataBind();
+
+                pnlGastos.Visible = true;
+                pnlGastosViewRef.Visible = false;
 
                 lblTotalTrasnRes.Text = totalRegistros.S();
                 lblTotalRes.Text = totalTiempoVuelo;
@@ -758,6 +770,9 @@ namespace PortalClientes.Views
                 gvGastos.DataSource = transacciones.promedioPax.OrderBy(x => x.mes).ToList(); 
                 gvGastos.DataBind();
 
+                pnlGastos.Visible = true;
+                pnlGastosViewRef.Visible = false;
+
                 lblTotalTrasnRes.Text = totalRegistros.S();
                 lblTotalRes.Text = TiempoVueloProm;
                 lblPromedioRes.Text = totalTiempoVuelo;
@@ -800,6 +815,9 @@ namespace PortalClientes.Views
 
                 gvGastos.DataSource = transacciones.promedioCosto.OrderBy(x => x.mes).ToList(); 
                 gvGastos.DataBind();
+
+                pnlGastos.Visible = true;
+                pnlGastosViewRef.Visible = false;
 
                 lblTotalTrasnRes.Text = totalRegistros.S();
                 lblTotalRes.Text = string.Format("{0:###,###,###,0.##}", totalTransacciones) + " MXN";
@@ -855,6 +873,9 @@ namespace PortalClientes.Views
                 gvGastos.DataSource = transacciones.horasVoladas.OrderBy(x => x.mes).ToList(); 
                 gvGastos.DataBind();
 
+                pnlGastos.Visible = true;
+                pnlGastosViewRef.Visible = false;
+
                 lblTotalTrasnRes.Text = totalRegistros.S();
                 lblTotalRes.Text = totalTiempoVuelo;
                 lblPromedioRes.Text = TiempoVueloProm;
@@ -909,6 +930,9 @@ namespace PortalClientes.Views
                 gvGastos.DataSource = transacciones.numeroVuelos.OrderBy(x => x.mes).ToList(); 
                 gvGastos.DataBind();
 
+                pnlGastos.Visible = true;
+                pnlGastosViewRef.Visible = false;
+
                 lblTotalTrasnRes.Text = totalRegistros.S();
                 lblTotalRes.Text = totalTiempoVuelo;
                 lblPromedioRes.Text = TiempoVueloProm;
@@ -952,6 +976,9 @@ namespace PortalClientes.Views
                 gvGastos.DataSource = transacciones.costosFijosVariable.OrderBy(x => x.mes).ToList(); 
                 gvGastos.DataBind();
 
+                pnlGastos.Visible = true;
+                pnlGastosViewRef.Visible = false;
+
                 lblTotalTrasnRes.Text = totalRegistros.S();
                 lblTotalRes.Text = string.Format("{0:###,###,###,0.##}", totalTransacciones) + " MXN";
                 lblPromedioRes.Text = string.Format("{0:###,###,###,0.##}", promedio) + " MXN";
@@ -990,6 +1017,9 @@ namespace PortalClientes.Views
 
                 gvGastos.DataSource = transacciones.gastosTotales.OrderBy(x => x.mes).ToList(); 
                 gvGastos.DataBind();
+
+                pnlGastos.Visible = true;
+                pnlGastosViewRef.Visible = false;
 
                 lblTotalTrasnRes.Text = totalRegistros.S();
                 lblTotalRes.Text = string.Format("{0:###,###,###,0.##}", totalTransacciones) + " MXN";
@@ -1030,6 +1060,9 @@ namespace PortalClientes.Views
                 gvGastos.DataSource = transacciones.costosHoraVuelo.OrderBy(x => x.mes).ToList(); 
                 gvGastos.DataBind();
 
+                pnlGastos.Visible = true;
+                pnlGastosViewRef.Visible = false;
+
                 lblTotalTrasnRes.Text = totalRegistros.S();
                 lblTotalRes.Text = string.Format("{0:###,###,###,0.##}", totalTransacciones) + " MXN";
                 lblPromedioRes.Text = string.Format("{0:###,###,###,0.##}", promedio) + " MXN";
@@ -1069,6 +1102,9 @@ namespace PortalClientes.Views
 
                 gvGastos.DataSource = transacciones.costosFijosVariableHora.OrderBy(x => x.mes).ToList(); 
                 gvGastos.DataBind();
+
+                pnlGastos.Visible = true;
+                pnlGastosViewRef.Visible = false;
 
                 lblTotalTrasnRes.Text = string.Format("{0:###,###,###,0.##}", totalTransacciones) + " MXN";
                 lblTotalRes.Text = string.Format("{0:###,###,###,0.##}", Convert.ToDecimal(dataOpt.campo1)) + " MXN";
@@ -1182,6 +1218,9 @@ namespace PortalClientes.Views
 
                 gvGastos.DataSource = transacciones.detGastos.OrderBy(x => x.mes).ToList(); 
                 gvGastos.DataBind();
+
+                pnlGastos.Visible = true;
+                pnlGastosViewRef.Visible = false;
 
                 lblTotalTrasnRes.Text = totalRegistros.S();
                 lblTotalRes.Text = string.Format("{0:###,###,###,0.##}", totalTransacciones) + " " + (string)Session["tipoDet"]; 
