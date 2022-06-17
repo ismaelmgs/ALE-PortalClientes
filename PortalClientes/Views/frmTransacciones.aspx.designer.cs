@@ -157,6 +157,42 @@ namespace PortalClientes.Views {
         protected global::System.Web.UI.WebControls.GridView gvGastos;
         
         /// <summary>
+        /// Control pnlusd.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl pnlusd;
+        
+        /// <summary>
+        /// Control lblTransacciones2.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblTransacciones2;
+        
+        /// <summary>
+        /// Control btnExcelUSD.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton btnExcelUSD;
+        
+        /// <summary>
+        /// Control gvGastosUSD.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView gvGastosUSD;
+        
+        /// <summary>
         /// Control btnRegresarMeEsEng.
         /// </summary>
         /// <remarks>

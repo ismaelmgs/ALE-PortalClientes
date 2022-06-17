@@ -96,19 +96,45 @@
                             </div>
 
                         </div>
-                        <hr style="border: 1px solid #efefef;" />
-                        <div style="width: 100%; text-align: center;">
-                            <asp:LinkButton ID="btnRegresarMeEsEng" runat="server" Text="<i class='fa fa-undo' style='color:#73879C;font-size:14px;'></i> Metrics and Statistics <i class='fa fa-line-chart' style='color:#73879C;font-size:14px;'></i>" CssClass="btn" href="frmMetricasEstadisticas.aspx" />
-                            <asp:LinkButton ID="btnRegresarMeEs" runat="server" Text="<i class='fa fa-undo' style='color:#73879C;font-size:14px;'></i> Metricas y Estadisticas <i class='fa fa-line-chart' style='color:#73879C;font-size:14px;'></i>" CssClass="btn" href="frmMetricasEstadisticas.aspx" />
-                            <asp:LinkButton ID="btnRegresarDash" runat="server" Text="<i class='fa fa-undo' style='color:#73879C;font-size:14px;'></i> Dashboard <i class='fa fa-th-large' style='color:#73879C;font-size:14px;'></i>" CssClass="btn" href="frmDashboard.aspx" />
-                            <asp:LinkButton ID="btnRegresaEdoCtaEng" runat="server" Text="<i class='fa fa-undo' style='color:#73879C;font-size:14px;'></i> Account Status <i class='fa fa-th-large' style='color:#73879C;font-size:14px;'></i>" CssClass="btn" href="frmEstadoCuenta.aspx" />
-                            <asp:LinkButton ID="btnRegresaEdoCta" runat="server" Text="<i class='fa fa-undo' style='color:#73879C;font-size:14px;'></i> Estado de cuenta <i class='fa fa-th-large' style='color:#73879C;font-size:14px;'></i>" CssClass="btn" href="frmEstadoCuenta.aspx" />
+
+                    </div>
+                    <div class="x_panel" style="min-height: 55vh;" runat="server" id="pnlusd">
+                        <div class="x_title">
+                            <h2>
+                                <asp:Label ID="lblTransacciones2" runat="server" Text="Transacciones" Font-Bold="true"></asp:Label></h2>
+
+                            <ul class="nav navbar-right panel_toolbox">
+                                <li style="padding-left: 5px;">
+                                    <asp:LinkButton ID="btnExcelUSD" runat="server" Text="<i class='fa fa-file-excel-o' style='color:#73879c;font-size:25px;'></i>" OnClientClick="LoadingTime(3)" CssClass="btn" OnClick="btnExcelUSD_Click" />
+                                </li>
+                            </ul>
+                            <div class="clearfix"></div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="table-responsive">
+                                    <div class="card-box table-responsive">
+                                        <asp:GridView ID="gvGastosUSD" runat="server" AutoGenerateColumns="false" CssClass="table table-striped table-bordered table-hover" AllowPaging="true"
+                                            OnPageIndexChanging="gvGastosUSD_PageIndexChanging" OnRowDataBound="gvGastosUSD_RowDataBound" EmptyDataText="No Registros">
+                                        </asp:GridView>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
+                </div>
+                <hr style="border: 1px solid #efefef;" />
+                <div style="width: 100%; text-align: center;">
+                    <asp:LinkButton ID="btnRegresarMeEsEng" runat="server" Text="<i class='fa fa-undo' style='color:#73879C;font-size:14px;'></i> Metrics and Statistics <i class='fa fa-line-chart' style='color:#73879C;font-size:14px;'></i>" CssClass="btn" href="frmMetricasEstadisticas.aspx" />
+                    <asp:LinkButton ID="btnRegresarMeEs" runat="server" Text="<i class='fa fa-undo' style='color:#73879C;font-size:14px;'></i> Metricas y Estadisticas <i class='fa fa-line-chart' style='color:#73879C;font-size:14px;'></i>" CssClass="btn" href="frmMetricasEstadisticas.aspx" />
+                    <asp:LinkButton ID="btnRegresarDash" runat="server" Text="<i class='fa fa-undo' style='color:#73879C;font-size:14px;'></i> Dashboard <i class='fa fa-th-large' style='color:#73879C;font-size:14px;'></i>" CssClass="btn" href="frmDashboard.aspx" />
+                    <asp:LinkButton ID="btnRegresaEdoCtaEng" runat="server" Text="<i class='fa fa-undo' style='color:#73879C;font-size:14px;'></i> Account Status <i class='fa fa-th-large' style='color:#73879C;font-size:14px;'></i>" CssClass="btn" href="frmEstadoCuenta.aspx" />
+                    <asp:LinkButton ID="btnRegresaEdoCta" runat="server" Text="<i class='fa fa-undo' style='color:#73879C;font-size:14px;'></i> Estado de cuenta <i class='fa fa-th-large' style='color:#73879C;font-size:14px;'></i>" CssClass="btn" href="frmEstadoCuenta.aspx" />
                 </div>
             </div>
         </ContentTemplate>
         <Triggers>
+            <asp:PostBackTrigger ControlID="btnExcelUSD" />
             <asp:PostBackTrigger ControlID="btnExcel" />
             <asp:PostBackTrigger ControlID="btnPDF" />
         </Triggers>

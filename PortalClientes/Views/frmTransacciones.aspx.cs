@@ -66,6 +66,8 @@ namespace PortalClientes.Views
                 {
                     tipo = Convert.ToInt32(Session["tipoTransaccion"]);
                     od = Convert.ToInt32(Session["origenData"]);
+                    btnExcelUSD.Visible = false;
+                    pnlusd.Visible = false;
 
                     Transacciones transacciones = new Transacciones();
                     if (tipo == 1)
@@ -144,6 +146,9 @@ namespace PortalClientes.Views
                     {
                         transacciones.detalleEdoCuenta = (List<detalleEdoCta>)Session["data"];
                         LlenarGV(transacciones, tipo);
+                        LlenarGVUSD(transacciones, tipo);
+                        btnExcelUSD.Visible = true;
+                        pnlusd.Visible = true;
                         btnRegresaEdoCta.Visible = true;
                     }
 
@@ -465,6 +470,41 @@ namespace PortalClientes.Views
                 LlenarGV(transacciones, tipo);
             }
 
+        }
+
+        protected void gvGastosUSD_PageIndexChanging(object sender, GridViewPageEventArgs e)
+        {
+            var tipo = Convert.ToInt32(Session["tipoTransaccion"]);
+            Transacciones transacciones = new Transacciones();
+            gvGastosUSD.Columns.Clear();
+            gvGastosUSD.PageIndex = e.NewPageIndex;
+
+            if (tipo == 13)
+            {
+                transacciones.detalleEdoCuenta = (List<detalleEdoCta>)Session["data"];
+                LlenarGVUSD(transacciones, tipo);
+            }
+        }
+
+        protected void gvGastosUSD_RowDataBound(object sender, GridViewRowEventArgs e)
+        {
+            if (e.Row.RowType == DataControlRowType.Header)
+            {
+                var tipo = Convert.ToInt32(Session["tipoTransaccion"]);
+
+                if (tipo == 13)
+                {
+                    e.Row.Cells[0].Text = Properties.Resources.TabTran_Mes;
+                    e.Row.Cells[1].Text = Properties.Resources.TabTran_TMoneda;
+                    e.Row.Cells[2].Text = Properties.Resources.TabTran_Fecha;
+                    e.Row.Cells[3].Text = Properties.Resources.TabTran_NoReferencia;
+                    e.Row.Cells[4].Text = Properties.Resources.TabTran_TGasto;
+                    e.Row.Cells[5].Text = Properties.Resources.TabTran_Concepto;
+                    e.Row.Cells[6].Text = Properties.Resources.TabTran_Detalle;
+                    e.Row.Cells[7].Text = Properties.Resources.TabTran_Proveedor;
+                    e.Row.Cells[8].Text = Properties.Resources.TabTran_Importe;
+                }
+            }
         }
 
         protected void btnExcel_Click(object sender, EventArgs e)
@@ -1121,7 +1161,7 @@ namespace PortalClientes.Views
 
                 
 
-                gvGastos.DataSource = transacciones.detalleEdoCuenta.OrderBy(x => x.mes).ToList(); 
+                gvGastos.DataSource = transacciones.detalleEdoCuenta.Where(x => x.tipoMoneda == "MXN").OrderBy(x => x.mes).ToList(); 
                 gvGastos.DataBind();
 
                 lblTotalTrasnRes.Text = totalRegistros.S();
@@ -1180,6 +1220,59 @@ namespace PortalClientes.Views
             }
         }
 
+        private void LlenarGVUSD(Transacciones transacciones, int tipoTransaccion)
+        {
+            var dataOpt = (camposOpcionales)Session["dataOpt"];
+
+            gvGastosUSD.DataSource = null;
+            gvGastosUSD.Columns.Clear();
+
+            if (tipoTransaccion == 13)
+            {
+                BoundField clm = new BoundField();
+                clm.DataField = "nombreMes";
+                gvGastosUSD.Columns.Add(clm);
+
+                BoundField clm3 = new BoundField();
+                clm3.DataField = "tipoMoneda";
+                gvGastosUSD.Columns.Add(clm3);
+
+                BoundField clm4 = new BoundField();
+                clm4.DataField = "fecha";
+                gvGastosUSD.Columns.Add(clm4);
+
+                BoundField clm5 = new BoundField();
+                clm5.DataField = "noReferencia";
+                gvGastosUSD.Columns.Add(clm5);
+
+                BoundField clm6 = new BoundField();
+                clm6.DataField = "tipoGasto";
+                gvGastosUSD.Columns.Add(clm6);
+
+                BoundField clm7 = new BoundField();
+                clm7.DataField = "concepto";
+                gvGastosUSD.Columns.Add(clm7);
+
+                BoundField clm8 = new BoundField();
+                clm8.DataField = "detalle";
+                gvGastosUSD.Columns.Add(clm8);
+
+                BoundField clm9 = new BoundField();
+                clm9.DataField = "proveedor";
+                gvGastosUSD.Columns.Add(clm9);
+
+
+                BoundField clm10 = new BoundField();
+                clm10.DataField = "importe";
+                clm10.DataFormatString = "{0:c}";
+                gvGastosUSD.Columns.Add(clm10);
+
+                gvGastosUSD.DataSource = transacciones.detalleEdoCuenta.Where(x => x.tipoMoneda == "USD").OrderBy(x => x.mes).ToList();
+                gvGastosUSD.DataBind();
+
+            }
+        }
+
         private string SumatoriaTiempos(List<string> items, int totalReg, int tipoSum)
         {
             var horas = 0;
@@ -1227,12 +1320,12 @@ namespace PortalClientes.Views
         private void ArmarTransacciones()
         {
             var transaccion = Session["tipoTransaccion"];
+            lblTransacciones.Text = (string)Session["title"];
+            lblTransacciones2.Text = (string)Session["title"] + "USD";
+            lblTitulo.Text = Properties.Resources.TabTransacciones;
             switch (transaccion)
             {
                 case 4:
-                    lblTransacciones.Text = (string)Session["title"];
-                    lblTitulo.Text = Properties.Resources.TabTransacciones;
-
                     lblTotalTrasn.Text = Properties.Resources.TabTran_NoVuelos;
                     lblTotal.Text = Properties.Resources.TabTran_TiempoTotVuelo;
                     lblPromedio.Text = Properties.Resources.TabTran_PromedioVuelo;
@@ -1243,9 +1336,6 @@ namespace PortalClientes.Views
                     lblPromedioSimbolo.Visible = false;
                     break;
                 case 5:
-                    lblTransacciones.Text = (string)Session["title"];
-                    lblTitulo.Text = Properties.Resources.TabTransacciones;
-
                     lblTotalTrasn.Text = Properties.Resources.TabTran_NoVuelos;
                     lblTotal.Text = Properties.Resources.TabTran_promedioPax;
                     lblPromedio.Text = Properties.Resources.TabTran_TiempoTotVuelo;
@@ -1256,9 +1346,6 @@ namespace PortalClientes.Views
                     lblPromedioSimbolo.Visible = false;
                     break;
                 case 7:
-                    lblTransacciones.Text = (string)Session["title"];
-                    lblTitulo.Text = Properties.Resources.TabTransacciones;
-
                     lblTotalTrasn.Text = Properties.Resources.TabTran_NoVuelos;
                     lblTotal.Text = Properties.Resources.TabTran_TiempoTotVuelo;
                     lblPromedio.Text = Properties.Resources.TabTran_PromedioVuelo;
@@ -1269,9 +1356,6 @@ namespace PortalClientes.Views
                     lblPromedioSimbolo.Visible = false;
                     break;
                 case 8:
-                    lblTransacciones.Text = (string)Session["title"];
-                    lblTitulo.Text = Properties.Resources.TabTransacciones;
-
                     lblTotalTrasn.Text = Properties.Resources.TabTran_NoVuelos;
                     lblTotal.Text = Properties.Resources.TabTran_TiempoTotVuelo;
                     lblPromedio.Text = Properties.Resources.TabTran_PromedioVuelo;
@@ -1282,9 +1366,6 @@ namespace PortalClientes.Views
                     lblPromedioSimbolo.Visible = false;
                     break;
                 case 12:
-                    lblTransacciones.Text = (string)Session["title"];
-                    lblTitulo.Text = Properties.Resources.TabTransacciones;
-
                     lblTotalTrasn.Text = Properties.Resources.TabTran_MontoTotal;
                     lblTotal.Text = Properties.Resources.TabTran_CostoHV;
                     lblPromedio.Text = Properties.Resources.TabTran_TiempoTotVuelo;
@@ -1295,9 +1376,6 @@ namespace PortalClientes.Views
                     lblPromedioSimbolo.Visible = false;
                     break;
                 default:
-                    lblTransacciones.Text = (string)Session["title"];
-                    lblTitulo.Text = Properties.Resources.TabTransacciones;
-
                     lblTotalTrasn.Text = Properties.Resources.TabTran_NoGastos;
                     lblTotal.Text = Properties.Resources.TabTran_MontoTotal;
                     lblPromedio.Text = Properties.Resources.TabTran_PromedioMens;
@@ -1981,6 +2059,61 @@ namespace PortalClientes.Views
                 htmlparser.Parse(sr);
                 pdfDoc.Close();
                 Response.Write(pdfDoc);
+                Response.End();
+            }
+        }
+
+        protected void btnExcelUSD_Click(object sender, EventArgs e)
+        {
+            var nameFile = "Transacciones_" + (string)Session["titleFile"] + "_USD.xls";
+            Response.Clear();
+            Response.Buffer = true;
+            Response.AddHeader("content-disposition", string.Format("attachment;filename={0}", nameFile));
+            Response.ContentEncoding = Encoding.Default;
+            //Response.Charset = "ISO-8859-1";
+            Response.ContentType = "application/vnd.ms-excel";
+            using (StringWriter sw = new StringWriter())
+            {
+                HtmlTextWriter hw = new HtmlTextWriter(sw);
+
+
+                gvGastosUSD.AllowPaging = false;
+                var tipo = Convert.ToInt32(Session["tipoTransaccion"]);
+                Transacciones transacciones = new Transacciones();
+                if (tipo == 13)
+                {
+                    transacciones.detalleEdoCuenta = (List<detalleEdoCta>)Session["data"];
+                    LlenarGVUSD(transacciones, tipo);
+                }
+
+                gvGastosUSD.HeaderRow.BackColor = Color.White;
+                foreach (TableCell cell in gvGastosUSD.HeaderRow.Cells)
+                {
+                    cell.BackColor = gvGastosUSD.HeaderStyle.BackColor;
+                }
+                foreach (GridViewRow row in gvGastosUSD.Rows)
+                {
+                    row.BackColor = Color.White;
+                    foreach (TableCell cell in row.Cells)
+                    {
+                        if (row.RowIndex % 2 == 0)
+                        {
+                            cell.BackColor = gvGastosUSD.AlternatingRowStyle.BackColor;
+                        }
+                        else
+                        {
+                            cell.BackColor = gvGastosUSD.RowStyle.BackColor;
+                        }
+                        cell.CssClass = "textmode";
+                    }
+                }
+
+                gvGastosUSD.RenderControl(hw);
+
+                string style = @"<style> .textmode { } </style>";
+                Response.Write(sw.ToString());
+                //Response.Output.Write();
+                //Response.Flush();
                 Response.End();
             }
         }

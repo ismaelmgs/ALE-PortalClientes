@@ -294,6 +294,7 @@ namespace PortalClientes.Views
 
             lblMontoReqMXNRes.Text = string.Format("{0:###,###,###,0.##}", oEstado.saldoActalMXN);
             lblPeriodo.Text = ObtienePeriodoEdoCuenta(oEstado.mes, oEstado.anio);
+            lblAnio.Text = oEstado.anio.ToString();
         }
 
         private string ObtienePeriodoEdoCuenta(int iMes, int iAnio)
