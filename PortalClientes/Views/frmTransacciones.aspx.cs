@@ -480,7 +480,6 @@ namespace PortalClientes.Views
         {
             var tipo = Convert.ToInt32(Session["tipoTransaccion"]);
             Transacciones transacciones = new Transacciones();
-            gvGastosUSD.Columns.Clear();
             gvGastosUSD.PageIndex = e.NewPageIndex;
 
             if (tipo == 13)
