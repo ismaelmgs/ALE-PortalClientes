@@ -10,5 +10,8 @@ namespace PortalClientes.Interfaces
     {
         Aeronave oAeronave { get; }
         void CargarAeronave(Aeronave oAeronave);
+        void descargarDocumento(FotoAeronave oDoc);
+        event EventHandler eGetObj;
+        int idImagen { get; set; }
     }
 }

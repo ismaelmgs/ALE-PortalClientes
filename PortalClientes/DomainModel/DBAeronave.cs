@@ -51,5 +51,34 @@ namespace PortalClientes.DomainModel
                 throw ex;
             }
         }
+
+        public FotoAeronave ObtenerDoc(int id)
+        {
+            try
+            {
+                JavaScriptSerializer ser = new JavaScriptSerializer();
+                ser.MaxJsonLength = 500000000;
+                FotoAeronave a = new FotoAeronave();
+                FiltroImg oLog = new FiltroImg();
+                oLog.idImagen = id;
+
+                TokenWS oToken = Utils.ObtieneToken;
+
+                var client = new RestClient(Helper.D_UrlObtenerDocs);
+                var request = new RestRequest(Method.POST);
+                request.AddHeader("Authorization", oToken.token);
+                request.AddJsonBody(oLog);
+
+                IRestResponse response = client.Execute(request);
+                var resp = response.Content;
+                a = ser.Deserialize<FotoAeronave>(resp);
+
+                return a;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
     }
 }

@@ -88,60 +88,15 @@ namespace PortalClientes.Views
 
                 GridViewRow row = gvDocumentos.Rows[index];
 
-                var nombre = "";
-                var ext = "";
-                var img = "";
                 if (row != null)
                 {
-                    nombre = gvDocumentos.Rows[row.RowIndex].Cells[0].Text;
-                    ext = gvDocumentos.Rows[row.RowIndex].Cells[2].Text;
-                    img = gvDocumentos.Rows[row.RowIndex].Cells[3].Text;
+                    idImagen = Convert.ToInt32(gvDocumentos.Rows[row.RowIndex].Cells[0].Text);
+
                 }
 
-                Response.Clear();
+                obtenerDocumento();
 
-                Response.AddHeader("content-disposition", string.Format("attachment;filename={0}", nombre));
-                Response.ContentType = "application/octet-stream";
-
-                Byte[] bytes = Convert.FromBase64String(img);
-                Response.BinaryWrite(bytes);
-                Response.End();
             }
-        }
-
-        protected void imbViewDoc_Click(object sender, ImageClickEventArgs e)
-        {
-            GridViewRow row = ((ImageButton)sender).NamingContainer as GridViewRow;
-            var nombre = "";
-            var ext = "";
-            var img = "";
-            if (row != null)
-            {
-                nombre = gvDocumentos.Rows[row.RowIndex].Cells[0].Text;
-                ext = gvDocumentos.Rows[row.RowIndex].Cells[1].Text;
-                img = gvDocumentos.Rows[row.RowIndex].Cells[2].Text;
-            }
-            var path = Server.MapPath("/images/documento.pdf");
-
-            HFPath.Value = path;
-
-            File.Delete(path);
-            if (!File.Exists(path))
-            {
-                Byte[] bytes = Convert.FromBase64String(img);
-                MemoryStream ms = new MemoryStream(bytes);
-
-                FileStream file = new FileStream(path, FileMode.OpenOrCreate, FileAccess.Write);
-                ms.WriteTo(file);
-                file.Close();
-                ms.Close();
-            }
-
-            Response.Write("<script language='javascript'>" +
-                "setTimeout(" +
-                "   function(){" +
-                "      window.open('file:///' + document.getElementById('ContentPlaceHolder1_HFPath').value,'_explorer.exe','location=yes,height=570,width=520,scrollbars=yes,status=yes')" +
-                "   }, 2000);</script>");
         }
 
         #endregion
@@ -153,6 +108,12 @@ namespace PortalClientes.Views
         {
             if (eSearchObj != null)
                 eSearchObj(null, EventArgs.Empty);
+        }
+
+        public void obtenerDocumento()
+        {
+            if (eGetObj != null)
+                eGetObj(null, EventArgs.Empty);
         }
 
         public void CargarAeronave(Aeronave oAero)
@@ -222,9 +183,10 @@ namespace PortalClientes.Views
                 else
                 {
                     FotoAeronave fa = new FotoAeronave();
+                    fa.IdImagen = item.IdImagen;
                     fa.NombreImagen = item.NombreImagen;
                     fa.Extension = item.Extension;
-                    fa.Imagen = item.Imagen;
+                    //fa.Imagen = item.Imagen;
                     fa.Descripcion = item.Descripcion;
 
                     Lfa.Add(fa);
@@ -279,6 +241,17 @@ namespace PortalClientes.Views
             lblMaxCeroCombustible.Text = Properties.Resources.Ta_PesoMaxZeroComb;
             lblPesoBasicoOperacion.Text = Properties.Resources.Ta_PesoBasicoOpe;
         }
+        public void descargarDocumento(FotoAeronave oDoc)
+        {
+            Response.Clear();
+
+            Response.AddHeader("content-disposition", string.Format("attachment;filename={0}", oDoc.NombreImagen));
+            Response.ContentType = "application/octet-stream";
+
+            Byte[] bytes = Convert.FromBase64String(oDoc.Imagen);
+            Response.BinaryWrite(bytes);
+            Response.End();
+        }
 
         #endregion
 
@@ -290,11 +263,18 @@ namespace PortalClientes.Views
         public event EventHandler eSaveObj;
         public event EventHandler eDeleteObj;
         public event EventHandler eSearchObj;
+        public event EventHandler eGetObj;
 
         public Aeronave oAeronave
         {
             get { return (Aeronave)ViewState["VSAeronave"]; }
             set { ViewState["VSAeronave"] = value; }
+        }
+
+        public int idImagen
+        {
+            get { return (int)ViewState["VSId"]; }
+            set { ViewState["VSId"] = value; }
         }
 
         #endregion

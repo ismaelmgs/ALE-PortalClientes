@@ -68,6 +68,7 @@ namespace PortalClientes.Clases
         public const string D_UrlObtieneRutasAeropuertos = "http://201.163.208.231/" + DominioWS + "/ws/pc/consultaRutaAeropuertosPeriodo";
 
         public const string D_UrlObtenerImagenesAeronave = "http://201.163.208.231/" + DominioWS + "/ws/pc/consultaImagenesAeronave";
+        public const string D_UrlObtenerDocs = "http://201.163.208.231/" + DominioWS + "/ws/pc/consultaDoctoAeronaveIdImagen";
 
         public const string D_UrlObbtenerEventosPiloto = "http://201.163.208.231/" + DominioWS + "/ws/pc/obtieneEventosPilotos";
         public const string D_UrlObtenerPilotos = "http://201.163.208.231/" + DominioWS + "/ws/pc/obtieneInfoPilotos";

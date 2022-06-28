@@ -208,10 +208,10 @@
                                             <RowStyle />
                                             <AlternatingRowStyle />
                                             <Columns>
+                                                <asp:BoundField DataField="IdImagen" HeaderText="ID" ItemStyle-CssClass="hiddencol" HeaderStyle-CssClass="hiddencol" />
                                                 <asp:BoundField DataField="NombreImagen" />
                                                 <asp:BoundField DataField="Descripcion" />
                                                 <asp:BoundField DataField="Extension" HeaderText="ID" ItemStyle-CssClass="hiddencol" HeaderStyle-CssClass="hiddencol" />
-                                                <asp:BoundField DataField="Imagen" HeaderText="ID" ItemStyle-CssClass="hiddencol" HeaderStyle-CssClass="hiddencol" />
                                                 <asp:TemplateField ItemStyle-HorizontalAlign="Center">
                                                     <ItemTemplate>
                                                         <%--<asp:ImageButton ID="imbViewDoc" runat="server" ImageUrl="~/Images/icons/visualizar.png" Width="24px" Height="28px"

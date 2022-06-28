@@ -31,6 +31,7 @@ namespace PortalClientes.Objetos
     [Serializable]
     public class FotoAeronave
     {
+        public int IdImagen { get; set; }
         public string NombreImagen { get; set; }
         public string Extension { get; set; }
         public string Imagen { get; set; }

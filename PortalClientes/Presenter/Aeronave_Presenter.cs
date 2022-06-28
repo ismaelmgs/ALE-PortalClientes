@@ -16,11 +16,17 @@ namespace PortalClientes.Presenter
             oIGesCat = oGC;
 
             oIView.eSearchObj += SearchObj_Presenter;
+            oIView.eGetObj += getObj_Presenter;
         }
 
         protected override void SearchObj_Presenter(object sender, EventArgs e)
         {
             oIView.CargarAeronave(oIGesCat.ObtenerAeronave());
+        }
+
+        protected void getObj_Presenter(object sender, EventArgs e)
+        {
+            oIView.descargarDocumento(oIGesCat.ObtenerDoc(oIView.idImagen));
         }
     }
 }

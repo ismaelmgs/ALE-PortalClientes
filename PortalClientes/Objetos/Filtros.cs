@@ -19,6 +19,12 @@ namespace PortalClientes.Objetos
     }
 
     [Serializable]
+    public class FiltroImg
+    {
+        public int idImagen { get; set; }
+    }
+
+    [Serializable]
     public class FiltroGraficaGastos
     {
         public string matricula { get; set; }
