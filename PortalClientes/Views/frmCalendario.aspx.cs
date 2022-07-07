@@ -258,7 +258,7 @@ namespace PortalClientes.Views
             //Scheduler.OptionsView.ShowOnlyResourceAppointments = true;
             Scheduler.OptionsView.AppointmentSelectionAppearanceMode = AppointmentSelectionAppearanceMode.Auto;
             Scheduler.OptionsView.FirstDayOfWeek = (DevExpress.XtraScheduler.FirstDayOfWeek)System.Web.UI.WebControls.FirstDayOfWeek.Default;
-            Scheduler.Page.UICulture = Utils.Idioma;
+            Scheduler.Page.Culture = Utils.Idioma;
 
             // configuracion dialogos
             Scheduler.OptionsDialogs.AppointmentDialog.Visibility = SchedulerFormVisibility.None;
@@ -485,9 +485,9 @@ namespace PortalClientes.Views
                     dm.destino = item.destino;
                     dm.fboNombreDest = item.fboNombreDest;
                     dm.TiempoVuelo = (item.FechaFin - item.FechaInicio).ToString(@"hh\h\ mm\m\ ");
-                    dm.FechaInicio = item.FechaInicio.ToLongDateString();
+                    dm.FechaInicio = Utils.Idioma == "es-MX" ? item.FechaInicio.ToLongDateString().ToString(CultureInfo.CreateSpecificCulture("es-MX")) : DevuelveFechaIngles(item.FechaInicio.Day, item.FechaInicio.Month, item.FechaInicio.Year);
                     dm.HoraInicio = item.FechaInicio.ToShortTimeString();
-                    dm.FechaFin = item.FechaFin.ToLongDateString();
+                    dm.FechaFin = Utils.Idioma == "es-MX" ? item.FechaFin.ToLongDateString().ToString(CultureInfo.CreateSpecificCulture("es-MX")) : DevuelveFechaIngles(item.FechaFin.Day, item.FechaFin.Month, item.FechaFin.Year);
                     dm.HoraFin = item.FechaFin.ToShortTimeString();
 
                     dm.matricula = Utils.MatriculaActual;
