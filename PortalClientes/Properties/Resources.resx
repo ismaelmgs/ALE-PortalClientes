@@ -514,10 +514,10 @@
     <value>Descripción</value>
   </data>
   <data name="TabEventTri_FechaFin" xml:space="preserve">
-    <value>Fecha y hora de término</value>
+    <value>Vencimiento</value>
   </data>
   <data name="TabEventTri_FechaInicio" xml:space="preserve">
-    <value>Fecha y hora de inicio</value>
+    <value>Previa</value>
   </data>
   <data name="TabEventTri_MiembroTri" xml:space="preserve">
     <value>Miembro de la tripulación</value>

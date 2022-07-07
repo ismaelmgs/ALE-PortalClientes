@@ -65,8 +65,8 @@
                                                         <asp:GridView ID="gvEventos" runat="server" AutoGenerateColumns="false" CssClass="table table-striped table-bordered table-hover" AllowPaging="true"
                                                             OnPageIndexChanging="gvEventos_PageIndexChanging" OnRowDataBound="gvEventos_RowDataBound" EmptyDataText="No Registros">
                                                             <Columns>
-                                                                <asp:BoundField DataField="fechaInicio" />
-                                                                <asp:BoundField DataField="fechaFin" />
+                                                                <asp:BoundField DataFormatString="{0:dd/MM/yyyy}" DataField="fechaInicio" />
+                                                                <asp:BoundField DataFormatString="{0:dd/MM/yyyy}" DataField="fechaFin" />
                                                                 <asp:BoundField DataField="codigoPiloto" />
                                                                 <asp:BoundField DataField="piloto" />
                                                                 <asp:BoundField DataField="temaESP" />
@@ -102,7 +102,7 @@
                                                                 <asp:BoundField DataField="tipoDocumentoEng" />
                                                                 <asp:BoundField DataField="tipo" />
                                                                 <asp:BoundField DataField="numero" />
-                                                                <asp:BoundField DataField="fechaExpiracion" />
+                                                                <asp:BoundField DataFormatString="{0:dd/MM/yyyy}" DataField="fechaExpiracion" />
                                                                 <asp:BoundField DataField="lugarTrabajo" />
                                                                 <asp:BoundField DataField="pais" />
                                                                 <asp:BoundField DataField="estatusEsp" />

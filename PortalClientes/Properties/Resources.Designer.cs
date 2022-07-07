@@ -2824,7 +2824,7 @@ namespace PortalClientes.Properties {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Fecha y hora de término.
+        ///   Busca una cadena traducida similar a Vencimiento.
         /// </summary>
         internal static string TabEventTri_FechaFin {
             get {
@@ -2833,7 +2833,7 @@ namespace PortalClientes.Properties {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Fecha y hora de inicio.
+        ///   Busca una cadena traducida similar a Previa.
         /// </summary>
         internal static string TabEventTri_FechaInicio {
             get {
