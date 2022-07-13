@@ -111,7 +111,7 @@
                                         <div class="card-box table-responsive">
 
                                             <asp:GridView ID="gvGastosRef" runat="server" AutoGenerateColumns="false" CssClass="table table-striped table-bordered table-hover" AllowPaging="true"
-                                                OnPageIndexChanging="gvGastosRef_PageIndexChanging" EmptyDataText="No Registros" OnRowCommand="gvGastosRef_RowCommand">
+                                                OnPageIndexChanging="gvGastosRef_PageIndexChanging" OnRowDataBound="gvGastosRef_RowDataBound" EmptyDataText="No Registros" OnRowCommand="gvGastosRef_RowCommand">
                                                 <Columns>
                                                     <asp:TemplateField HeaderText="Mes" ItemStyle-HorizontalAlign="center" HeaderStyle-HorizontalAlign="Left">
                                                         <ItemTemplate>

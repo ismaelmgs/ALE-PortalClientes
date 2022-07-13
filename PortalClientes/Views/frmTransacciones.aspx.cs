@@ -288,8 +288,7 @@ namespace PortalClientes.Views
                     e.Row.Cells[6].Text = Properties.Resources.TabTran_Comentario;
                 }
 
-                else if (tipo == 7)
-                {
+                else if (tipo == 7) {
                     e.Row.Cells[0].Text = Properties.Resources.TabTran_Mes;
                     e.Row.Cells[1].Text = Properties.Resources.TabTran_Anio;
                     e.Row.Cells[2].Text = Properties.Resources.TabTran_Origen;
@@ -486,6 +485,27 @@ namespace PortalClientes.Views
             {
                 transacciones.detalleEdoCuenta = (List<detalleEdoCta>)Session["data"];
                 LlenarGVUSD(transacciones, tipo);
+            }
+        }
+
+        protected void gvGastosRef_RowDataBound(object sender, GridViewRowEventArgs e)
+        {
+            if (e.Row.RowType == DataControlRowType.Header)
+            {
+                var tipo = Convert.ToInt32(Session["tipoTransaccion"]);
+
+                if (tipo == 13)
+                {
+                    e.Row.Cells[0].Text = Properties.Resources.TabTran_Mes;
+                    e.Row.Cells[1].Text = Properties.Resources.TabTran_TMoneda;
+                    e.Row.Cells[2].Text = Properties.Resources.TabTran_Fecha;
+                    e.Row.Cells[3].Text = Properties.Resources.TabTran_NoReferencia;
+                    e.Row.Cells[4].Text = Properties.Resources.TabTran_TGasto;
+                    e.Row.Cells[5].Text = Properties.Resources.TabTran_Concepto;
+                    e.Row.Cells[6].Text = Properties.Resources.TabTran_Detalle;
+                    e.Row.Cells[7].Text = Properties.Resources.TabTran_Proveedor;
+                    e.Row.Cells[8].Text = Properties.Resources.TabTran_Importe;
+                }
             }
         }
 
@@ -2470,5 +2490,6 @@ namespace PortalClientes.Views
             }
 
         }
+
     }
 }
