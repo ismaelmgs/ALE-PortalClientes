@@ -203,7 +203,7 @@
                                 <asp:UpdatePanel ID="upaPrincipal" runat="server">
                                     <ContentTemplate>
                                         <asp:GridView ID="gvDocumentos" runat="server" AutoGenerateColumns="false" CssClass="table table-striped table-bordered table-hover" ChildrenAsTriggers="False"
-                                            DataKeyNames="NombreImagen" AllowPaging="true" OnRowDataBound="gvDocumentos_RowDataBound" onRowCommand="gvDocumentos_RowCommand" EmptyDataText="No Registros">
+                                            DataKeyNames="NombreImagen" AllowPaging="true" OnRowDataBound="gvDocumentos_RowDataBound" onRowCommand="gvDocumentos_RowCommand" OnPageIndexChanging="gvDocumentos_PageIndexChanging" EmptyDataText="No Registros">
                                             <HeaderStyle />
                                             <RowStyle />
                                             <AlternatingRowStyle />

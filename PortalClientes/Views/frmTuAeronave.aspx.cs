@@ -99,6 +99,12 @@ namespace PortalClientes.Views
             }
         }
 
+        protected void gvDocumentos_PageIndexChanging(object sender, GridViewPageEventArgs e)
+        {
+            gvDocumentos.PageIndex = e.NewPageIndex;
+            LlenarGV();
+        }
+
         #endregion
 
 
@@ -193,6 +199,7 @@ namespace PortalClientes.Views
                 }
             }
 
+            oFotoAeronave = Lfa;
             gvDocumentos.DataSource = Lfa;
             gvDocumentos.DataBind();
 
@@ -216,6 +223,26 @@ namespace PortalClientes.Views
             carouselExampleIndicators.InnerHtml = sHtml;
 
             //ScriptManager.RegisterStartupScript(this.Page, this.GetType(), Guid.NewGuid().ToString(), "closeLoading();", true);
+        }
+
+        private void LlenarGV()
+        {
+            List<FotoAeronave> lfotos = new List<FotoAeronave>();
+
+            foreach (FotoAeronave item in oFotoAeronave)
+            {
+                FotoAeronave fa = new FotoAeronave();
+                fa.IdImagen = item.IdImagen;
+                fa.NombreImagen = item.NombreImagen;
+                fa.Extension = item.Extension;
+                //fa.Imagen = item.Imagen;
+                fa.Descripcion = item.Descripcion;
+
+                lfotos.Add(fa);
+            }
+
+            gvDocumentos.DataSource = lfotos;
+            gvDocumentos.DataBind();
         }
 
         private void ArmaFormulario()
@@ -277,6 +304,14 @@ namespace PortalClientes.Views
             set { ViewState["VSId"] = value; }
         }
 
+        public List<FotoAeronave> oFotoAeronave
+        {
+            get { return (List<FotoAeronave>)ViewState["VSFotoAeronave"]; }
+            set { ViewState["VSFotoAeronave"] = value; }
+        }
+
         #endregion
+
+
     }
 }

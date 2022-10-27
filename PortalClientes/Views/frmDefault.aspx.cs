@@ -14,6 +14,11 @@ namespace PortalClientes
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            Session["RefUrl"] = Request.Url.ToString();
+            if (System.Web.HttpContext.Current.Session["UserIdentity"] == null)
+            {
+                Response.Redirect("~/Views/frmFinconexion2.aspx");
+            }
 
             TextBox milabel = (TextBox)this.Master.FindControl("txtLang");
             if (milabel.Text != Utils.Idioma && milabel.Text != string.Empty)
