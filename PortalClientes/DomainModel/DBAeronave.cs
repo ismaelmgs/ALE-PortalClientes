@@ -3,6 +3,7 @@ using PortalClientes.Objetos;
 using RestSharp;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Web;
@@ -10,7 +11,7 @@ using System.Web.Script.Serialization;
 
 namespace PortalClientes.DomainModel
 {
-    public class DBAeronave
+    public class DBAeronave : DBBase
     {
         public Aeronave ObtenerAeronave()
         {
@@ -33,6 +34,8 @@ namespace PortalClientes.DomainModel
                 var resp = response.Content;
                 a = ser.Deserialize<Aeronave>(resp);
 
+
+                List<FotoAeronave> ls = new List<FotoAeronave>();
                 // Carga de Imagenes
                 var clientImg = new RestClient(Helper.D_UrlObtenerImagenesAeronave);
                 var requestImg = new RestRequest(Method.POST);
@@ -42,8 +45,27 @@ namespace PortalClientes.DomainModel
                 IRestResponse responseImg = clientImg.Execute(requestImg);
                 var respImg = responseImg.Content;
 
-                a.Imagenes = ser.Deserialize<List<FotoAeronave>>(respImg);
+                ls = ser.Deserialize<List<FotoAeronave>>(respImg);
 
+                DataSet ds = oDB_SP.EjecutarDS("[PortalClientes].[spS_PC_ObtenerPDFAeronavePorMatricula]", "@matriculaActual", oLog.matriculaActual);
+                DataTable dt = ds.Tables[0];
+
+                 List<FotoAeronave> ls2 = (from DataRow dr in dt.Rows
+                       select new FotoAeronave()
+                       {
+                           IdImagen = Convert.ToInt32(dr["IdImagen"]),
+                           NombreImagen = dr["NombreImagen"].ToString(),
+                           Extension = dr["Extension"].ToString(),
+                           Imagen = dr["Imagen"].ToString(),
+                           Descripcion = dr["Descripcion"].ToString()
+                       }).ToList();
+
+                foreach(var item in ls2)
+                {
+                    ls.Add(item);
+                }
+
+                a.Imagenes = ls;
                 return a;
             }
             catch (Exception ex)
