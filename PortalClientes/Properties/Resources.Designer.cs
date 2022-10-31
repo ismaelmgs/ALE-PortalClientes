@@ -3796,7 +3796,7 @@ namespace PortalClientes.Properties {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a La confirmación de la contraseña debe contener: Mínimo 8 caracteres al menos 1 Alfabeto y 1 Número.
+        ///   Busca una cadena traducida similar a La contraseña debe contener: Mínimo 8 caracteres al menos 1 Alfabeto y 1 Número y 1 carácter especial.
         /// </summary>
         internal static string Us_ValidacionConfirmContrasena {
             get {
@@ -3805,7 +3805,7 @@ namespace PortalClientes.Properties {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a La contraseña debe contener: Mínimo 8 caracteres al menos 1 Alfabeto y 1 Número.
+        ///   Busca una cadena traducida similar a La contraseña debe contener: Mínimo 8 caracteres al menos 1 Alfabeto y 1 Número y 1 carácter especial.
         /// </summary>
         internal static string Us_ValidacionContrasena {
             get {

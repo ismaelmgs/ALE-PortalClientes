@@ -51,7 +51,7 @@
                                 <asp:Label ID="lblPass" runat="server"></asp:Label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br />
                                 <asp:TextBox ID="txtPass" runat="server" TextMode="Password" CssClass="form-control"></asp:TextBox>
                                 <asp:RegularExpressionValidator ID="Regex1" runat="server" ControlToValidate="txtPass"
-                                    ValidationExpression="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$" ErrorMessage="Password must contain: Minimum 8 characters atleast 1 Alphabet and 1 Number" ForeColor="Red" />
+                                    ValidationExpression="^(?=(?:.*\d))(?=(?:.*[A-Z]))(?=(?:.*[a-z]))(?=(?:.*[@$?¡\-_.,]))\S{8,}$" ErrorMessage="The password must contain: Minimum 8 characters at least 1 Alphabet and 1 Number and 1 special character" ForeColor="Red" />
                                 <asp:Label ID="lblReqPass" runat="server" ForeColor="Red" Visible="false"></asp:Label>
                             </div>
                             <div class="col-md-1">&nbsp;</div>
@@ -65,7 +65,7 @@
                                 <asp:Label ID="lblConfirPass" runat="server"></asp:Label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br />
                                 <asp:TextBox ID="txtConfirPass" runat="server" TextMode="Password" CssClass="form-control"></asp:TextBox>
                                 <asp:RegularExpressionValidator ID="Regex2" runat="server" ControlToValidate="txtConfirPass"
-                                    ValidationExpression="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$" ErrorMessage="Password must contain: Minimum 8 characters atleast 1 Alphabet and 1 Number" ForeColor="Red" />
+                                    ValidationExpression="^(?=(?:.*\d))(?=(?:.*[A-Z]))(?=(?:.*[a-z]))(?=(?:.*[@$?¡\-_.,]))\S{8,}$" ErrorMessage="The password must contain: Minimum 8 characters at least 1 Alphabet and 1 Number and 1 special character" ForeColor="Red" />
                                 <asp:Label ID="lblReqConfirPass" runat="server" ForeColor="Red" Visible="false"></asp:Label>
                             </div>
                             <div class="col-md-1">&nbsp;</div>

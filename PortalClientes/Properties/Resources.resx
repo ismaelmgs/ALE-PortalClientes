@@ -1291,10 +1291,10 @@
     <value>Activar / Desactivar Usuario</value>
   </data>
   <data name="Us_ValidacionConfirmContrasena" xml:space="preserve">
-    <value>La confirmación de la contraseña debe contener: Mínimo 8 caracteres al menos 1 Alfabeto y 1 Número</value>
+    <value>La contraseña debe contener: Mínimo 8 caracteres al menos 1 Alfabeto y 1 Número y 1 carácter especial</value>
   </data>
   <data name="Us_ValidacionContrasena" xml:space="preserve">
-    <value>La contraseña debe contener: Mínimo 8 caracteres al menos 1 Alfabeto y 1 Número</value>
+    <value>La contraseña debe contener: Mínimo 8 caracteres al menos 1 Alfabeto y 1 Número y 1 carácter especial</value>
   </data>
   <data name="Us_Estatus" xml:space="preserve">
     <value>Estatus</value>
