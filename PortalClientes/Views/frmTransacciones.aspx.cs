@@ -2468,11 +2468,11 @@ namespace PortalClientes.Views
                     {
                         if (ds.Tables.Count > 0)
                         {
-                            if (ds.Tables[0].Rows.Count > 0)
+                            if (ds.Tables[1].Rows.Count > 0)
                             {
                                 if (imbReferencia != null)
                                 {
-                                    if (ds.Tables[0].Rows[0]["Comprobante"].S().I() == 1)
+                                    if (ds.Tables[1].Rows[0]["Comprobante"].S().I() == 1)
                                         imbReferencia.Visible = true;
                                     else
                                         imbReferencia.Visible = false;
