@@ -48,6 +48,7 @@ namespace PortalClientes.Presenter
             Fsub.mes = oIView.iMes;
             oIView.LlenarEdoCuenta(oIGesCat.ObtenerEstadoCuenta(F));
             oIView.LlenarSubEdoCuenta(oIGesCat.ObtenerSubEstadoCuenta(Fsub));
+            oIView.LlenarRequiereIVAEdoCuenta(oIGesCat.ObtenerRequiereIVAEdoCuenta(Fsub));
 
             //oIView.LlenaDocsEdoCuenta(oIGesCat.ObtenerDocumentoF(f));
         }

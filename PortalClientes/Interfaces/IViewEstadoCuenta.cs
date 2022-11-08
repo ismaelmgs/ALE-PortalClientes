@@ -14,6 +14,7 @@ namespace PortalClientes.Interfaces
         void LlenaDocsEdoCuenta(List<responseDocumentoF> olstRep);
 
         void LlenarEdoCuenta(List<responseEdoCuenta> olstRep);
+        void LlenarRequiereIVAEdoCuenta(List<RequiereIVA> olstRep);
         void LlenarSubEdoCuenta(SubEdoCuenta olstRep);
 
         event EventHandler eSearchEdoObj;

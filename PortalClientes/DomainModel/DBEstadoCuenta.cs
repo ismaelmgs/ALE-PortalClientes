@@ -12,7 +12,7 @@ using RestSharp;
 
 namespace PortalClientes.DomainModel
 {
-    public class DBEstadoCuenta : System.Web.UI.Page
+    public class DBEstadoCuenta : DBBase
     {
         public EstadoCuenta DBGetObtieneMatricuasPorUsuario(string Matricula)
         {
@@ -34,8 +34,6 @@ namespace PortalClientes.DomainModel
                 IRestResponse response = client.Execute(request);
                 var resp = response.Content;
                 ec = ser.Deserialize<EstadoCuenta>(resp);
-
-                Session["tableRpt"] = ec;
 
                 return ec;
             }
@@ -169,6 +167,32 @@ namespace PortalClientes.DomainModel
                 d = ser.Deserialize<SubEdoCuenta> (resp);
 
                 return d;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+
+        }
+
+        public List<RequiereIVA> ObtenerRequiereIVAEdoCuenta(FiltroSubEdoCuenta filtro)
+        {
+            try
+            {
+                DataSet ds = oDB_SP.EjecutarDS("[ClientesCasa].[spS_CC_ObtieneEstadoCuentaVersion1]",
+                                               "@Matricula", filtro.matricula,
+                                               "@Mes", filtro.mes,
+                                               "@Anio", filtro.anio
+                                               );
+                DataTable dt = ds.Tables[2];
+
+                List<RequiereIVA> req = (from DataRow dr in dt.Rows
+                                          select new RequiereIVA()
+                                          {
+                                              requiereIVA = Convert.ToInt32(dr["RequiereIVA"])
+                                          }).ToList();
+
+                return req;
             }
             catch (Exception ex)
             {

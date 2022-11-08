@@ -88,4 +88,9 @@ namespace PortalClientes.Objetos
         public List<ResponseSubEdoCuenta> estadoCuentaMXN { set; get; }
         public List<ResponseSubEdoCuenta> estadoCuentaUSD { set; get; }
     }
+
+    public class RequiereIVA
+    {
+        public int requiereIVA { get; set; }
+    }
 }

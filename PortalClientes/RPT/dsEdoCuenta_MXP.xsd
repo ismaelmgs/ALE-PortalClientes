@@ -12,7 +12,7 @@
   <xs:element name="dsEdoCuenta_MXP" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="dsEdoCuenta_MXP" msprop:Generator_UserDSName="dsEdoCuenta_MXP">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="MXP" msprop:Generator_TableClassName="MXPDataTable" msprop:Generator_TableVarName="tableMXP" msprop:Generator_TablePropName="MXP" msprop:Generator_RowDeletingName="MXPRowDeleting" msprop:Generator_RowChangingName="MXPRowChanging" msprop:Generator_RowEvHandlerName="MXPRowChangeEventHandler" msprop:Generator_RowDeletedName="MXPRowDeleted" msprop:Generator_UserTableName="MXP" msprop:Generator_RowChangedName="MXPRowChanged" msprop:Generator_RowEvArgName="MXPRowChangeEvent" msprop:Generator_RowClassName="MXPRow">
+        <xs:element name="MXP" msprop:Generator_TableClassName="MXPDataTable" msprop:Generator_TableVarName="tableMXP" msprop:Generator_RowChangedName="MXPRowChanged" msprop:Generator_TablePropName="MXP" msprop:Generator_RowDeletingName="MXPRowDeleting" msprop:Generator_RowChangingName="MXPRowChanging" msprop:Generator_RowEvHandlerName="MXPRowChangeEventHandler" msprop:Generator_RowDeletedName="MXPRowDeleted" msprop:Generator_RowClassName="MXPRow" msprop:Generator_UserTableName="MXP" msprop:Generator_RowEvArgName="MXPRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Fecha" msprop:Generator_ColumnVarNameInTable="columnFecha" msprop:Generator_ColumnPropNameInRow="Fecha" msprop:Generator_ColumnPropNameInTable="FechaColumn" msprop:Generator_UserColumnName="Fecha" type="xs:string" minOccurs="0" />
@@ -25,6 +25,13 @@
               <xs:element name="Importe" msprop:Generator_ColumnVarNameInTable="columnImporte" msprop:Generator_ColumnPropNameInRow="Importe" msprop:Generator_ColumnPropNameInTable="ImporteColumn" msprop:Generator_UserColumnName="Importe" type="xs:decimal" minOccurs="0" />
               <xs:element name="AmpliadoGasto" msprop:Generator_ColumnVarNameInTable="columnAmpliadoGasto" msprop:Generator_ColumnPropNameInRow="AmpliadoGasto" msprop:Generator_ColumnPropNameInTable="AmpliadoGastoColumn" msprop:Generator_UserColumnName="AmpliadoGasto" type="xs:string" minOccurs="0" />
               <xs:element name="Idioma" msprop:Generator_ColumnVarNameInTable="columnIdioma" msprop:Generator_ColumnPropNameInRow="Idioma" msprop:Generator_ColumnPropNameInTable="IdiomaColumn" msprop:Generator_UserColumnName="Idioma" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="RequiereIVA" msprop:Generator_TableClassName="RequiereIVADataTable" msprop:Generator_TableVarName="tableRequiereIVA" msprop:Generator_TablePropName="RequiereIVA" msprop:Generator_RowDeletingName="RequiereIVARowDeleting" msprop:Generator_RowChangingName="RequiereIVARowChanging" msprop:Generator_RowEvHandlerName="RequiereIVARowChangeEventHandler" msprop:Generator_RowDeletedName="RequiereIVARowDeleted" msprop:Generator_UserTableName="RequiereIVA" msprop:Generator_RowChangedName="RequiereIVARowChanged" msprop:Generator_RowEvArgName="RequiereIVARowChangeEvent" msprop:Generator_RowClassName="RequiereIVARow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="requiereIVA" msprop:Generator_ColumnVarNameInTable="columnrequiereIVA" msprop:Generator_ColumnPropNameInRow="requiereIVA" msprop:Generator_ColumnPropNameInTable="requiereIVAColumn" msprop:Generator_UserColumnName="requiereIVA" type="xs:string" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>

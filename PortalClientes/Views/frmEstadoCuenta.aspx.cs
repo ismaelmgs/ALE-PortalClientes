@@ -53,6 +53,8 @@ namespace PortalClientes.Views
             }
 
             EdoCuenta = new DataSet();           
+            EdoCuentaMXN = new DataSet();           
+            EdoCuentaUSD = new DataSet();
         }
 
         protected void gvEdoCuenta_RowDataBound(object sender, GridViewRowEventArgs e)
@@ -152,8 +154,8 @@ namespace PortalClientes.Views
                 rd.Load(strPath, OpenReportMethod.OpenReportByDefault);
                 rd.SetDataSource(EdoCuenta.Tables[0]);
 
-                rd.Subreports["rptSubEdoCuentaUSD.rpt"].SetDataSource(EdoCuenta.Tables[1]);
-                rd.Subreports["rptSubEdocuentaMXN.rpt"].SetDataSource(EdoCuenta.Tables[2]);                
+                rd.Subreports["rptSubEdoCuentaUSD.rpt"].SetDataSource(EdoCuentaUSD);
+                rd.Subreports["rptSubEdocuentaMXN.rpt"].SetDataSource(EdoCuentaMXN);                
 
                 rd.ExportToHttpResponse(ExportFormatType.PortableDocFormat, Response, true, "EstadoCuenta-" + Utils.MatriculaActual + "-" + iPeriodo);
                 Response.End();
@@ -267,6 +269,8 @@ namespace PortalClientes.Views
 
         public void LlenaEstadoCuenta(EstadoCuenta oEstado)
         {
+            Session["tableRpt"] = oEstado;
+
             lblSaldoActualRes.Text = string.Format("{0:###,###,###,0.##}", oEstado.saldoAnteriorUSD);
             lblNuevosCargosRes.Text = string.Format("{0:###,###,###,0.##}", oEstado.nuevosCargosUSD);
             lblPagosPeriodoRes.Text = string.Format("{0:###,###,###,0.##}", oEstado.pagosCreditosUSD);
@@ -527,7 +531,7 @@ namespace PortalClientes.Views
                 dtMXP.Rows.Add(rowMXP);
             }
 
-            EdoCuenta.Tables.Add(dtMXP);
+            EdoCuentaMXN.Tables.Add(dtMXP);
 
             //Tabla USD
             DataTable dtUSD = new DataTable();
@@ -560,7 +564,25 @@ namespace PortalClientes.Views
                 dtUSD.Rows.Add(rowUSD);
             }
 
-            EdoCuenta.Tables.Add(dtUSD);
+            EdoCuentaUSD.Tables.Add(dtUSD);
+        }
+
+        public void LlenarRequiereIVAEdoCuenta(List<RequiereIVA> olstRep)
+        {
+            DataTable dtri = new DataTable();
+            dtri.TableName = "RequiereIVA";
+            dtri.Columns.Add("requiereIVA", typeof(System.Int32));
+
+            DataRow row = dtri.NewRow();
+            foreach (var item in olstRep)
+            {
+                row["requiereIVA"] = item.requiereIVA;
+
+                dtri.Rows.Add(row);
+            }
+
+            EdoCuentaMXN.Tables.Add(dtri);
+            EdoCuentaUSD.Tables.Add(dtri.Copy());
         }
         #endregion
 
@@ -609,6 +631,18 @@ namespace PortalClientes.Views
         {
             get { return (DataSet)ViewState["EdoCuenta"]; }
             set { ViewState["EdoCuenta"] = value; }
+        }
+
+        public DataSet EdoCuentaMXN
+        {
+            get { return (DataSet)ViewState["EdoCuentaMXN"]; }
+            set { ViewState["EdoCuentaMXN"] = value; }
+        }
+
+        public DataSet EdoCuentaUSD
+        {
+            get { return (DataSet)ViewState["EdoCuentaUSD"]; }
+            set { ViewState["EdoCuentaUSD"] = value; }
         }
 
         public string iPeriodo
