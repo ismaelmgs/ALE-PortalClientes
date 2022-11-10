@@ -117,7 +117,8 @@ namespace PortalClientes.DomainModel
 
                 oLog.mes = filtro.mes;
                 oLog.anio = filtro.anio;
-                oLog.claveContrato = Utils.ClaveContrato;
+                oLog.claveContrato = filtro.claveContrato;  // nuevo ajustes MOGI  08/11/2022
+                //oLog.claveContrato = Utils.ClaveContrato;  // Se cambió para que tome el del parametro filtro
 
                 TokenWS oToken = Utils.ObtieneToken;
 
