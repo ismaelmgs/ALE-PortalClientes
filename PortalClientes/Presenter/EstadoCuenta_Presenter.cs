@@ -43,6 +43,13 @@ namespace PortalClientes.Presenter
             FiltroEdoCuenta F = new FiltroEdoCuenta();
             F.anio = oIView.iAnio;
             F.mes = oIView.iMes;
+            if (Utils.ClaveContrato == "RASSI")
+            {
+                F.claveContrato = "RAS7X";
+                //F.claveContrato = Utils.ClaveContrato;
+            }
+            else
+                F.claveContrato = Utils.ClaveContrato;
             FiltroSubEdoCuenta Fsub = new FiltroSubEdoCuenta();
             Fsub.anio = oIView.iAnio;
             Fsub.mes = oIView.iMes;

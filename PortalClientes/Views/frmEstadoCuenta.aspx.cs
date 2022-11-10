@@ -121,7 +121,8 @@ namespace PortalClientes.Views
                 Session["tipoTransaccion"] = 13;
                 Session["origenData"] = 3;
                 
-                responseRepEdoCuenta oEC = (responseRepEdoCuenta) oEstados.Where(x => x.mes == iMes).FirstOrDefault();
+                responseRepEdoCuenta oEC = (responseRepEdoCuenta) oEstados.Where(x => x.mes == iMes && x.anio== iAnio).FirstOrDefault();
+               
                 if (oEC != null)
                 {
                     Session["descripcion"] = ObtienePeriodoEdoCuenta(oEC.mes, oEC.anio);
@@ -514,7 +515,7 @@ namespace PortalClientes.Views
             dtMXP.Columns.Add("AmpliadoGasto", typeof(System.String));
             dtMXP.Columns.Add("Idioma", typeof(System.String));
 
-            foreach (var item in olstRep.estadoCuentaUSD)
+            foreach (var item in olstRep.estadoCuentaMXN)
             {
                 DataRow rowMXP = dtMXP.NewRow();
                 rowMXP["Fecha"] = item.fecha;
@@ -547,7 +548,7 @@ namespace PortalClientes.Views
             dtUSD.Columns.Add("AmpliadoGasto", typeof(System.String));
             dtUSD.Columns.Add("Idioma", typeof(System.String));
 
-            foreach (var item in olstRep.estadoCuentaMXN)
+            foreach (var item in olstRep.estadoCuentaUSD) 
             {
                 DataRow rowUSD = dtUSD.NewRow();
                 rowUSD["Fecha"] = item.fecha;
