@@ -84,6 +84,23 @@ namespace PortalClientes.Views
 
                 if (e.Row.RowType == DataControlRowType.DataRow)
                 {
+                    if (e.Row.Cells[1].Text.Replace("$","").D() < 0)
+                        e.Row.Cells[1].ForeColor = Color.Red;
+                    if (e.Row.Cells[2].Text.Replace("$", "").D() < 0)
+                        e.Row.Cells[2].ForeColor = Color.Red;
+                    if (e.Row.Cells[3].Text.Replace("$", "").D() < 0)
+                        e.Row.Cells[3].ForeColor = Color.Red;
+                    if (e.Row.Cells[4].Text.Replace("$", "").D() < 0)
+                        e.Row.Cells[4].ForeColor = Color.Red;
+                    if (e.Row.Cells[5].Text.Replace("$", "").D() < 0)
+                        e.Row.Cells[5].ForeColor = Color.Red;
+                    if (e.Row.Cells[6].Text.Replace("$", "").D() < 0)
+                        e.Row.Cells[6].ForeColor = Color.Red;
+                    if (e.Row.Cells[7].Text.Replace("$", "").D() < 0)
+                        e.Row.Cells[7].ForeColor = Color.Red;
+                    if (e.Row.Cells[8].Text.Replace("$", "").D() < 0)
+                        e.Row.Cells[8].ForeColor = Color.Red;
+
                     LinkButton lkb = (LinkButton)e.Row.FindControl("lkbDetalle");
                     lkb.Text = Properties.Resources.Ec_VerDetalle;
                     lkb.Attributes.Add("onClick", "javascript:ShowLoadingPanel();");
