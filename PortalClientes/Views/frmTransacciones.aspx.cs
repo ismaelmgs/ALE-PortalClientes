@@ -1337,7 +1337,7 @@ namespace PortalClientes.Views
 
                 pnlGastos.Visible = false;
                 pnlGastosViewRef.Visible = true;
-                gvGastosRef.DataSource = transacciones.detalleEdoCuenta.Where(x => x.tipoMoneda == "MXN").OrderBy(x => x.mes).ToList();
+                gvGastosRef.DataSource = transacciones.detalleEdoCuenta.Where(x => x.tipoMoneda == "MXN").OrderBy(x => x.noReferencia).ToList();
                 gvGastosRef.DataBind();
                 ControlReferencias(gvGastosRef);
 
@@ -1409,7 +1409,7 @@ namespace PortalClientes.Views
             if (tipoTransaccion == 13)
             {
 
-                gvGastosUSD.DataSource = transacciones.detalleEdoCuenta.Where(x => x.tipoMoneda == "USD").OrderBy(x => x.mes).ToList();
+                gvGastosUSD.DataSource = transacciones.detalleEdoCuenta.Where(x => x.tipoMoneda == "USD").OrderBy(x => x.noReferencia).ToList();
                 gvGastosUSD.DataBind();
                 ControlReferenciasUSD(gvGastosUSD);
 
