@@ -34,6 +34,27 @@
                                 <div class="row" style="margin: 0px;">
                                     <div class="col-md-12 table-responsive" style="padding-left: 1px !important; padding-right: 1px !important">
                                         <table class="table" style="border: 0px;">
+
+                                            <tr style="background-color: #00000003;">
+                                                <td style="border-bottom: 1px solid #dee2e6; padding: 6px;">
+                                                    <div class="row" style="width:99%;">
+                                                        <div class="col-md-6" style="text-align:left;">
+                                                            <asp:LinkButton runat="server" ID="btnReporteVueloHora" data-report="100" data-rpt="0">
+                                                                <img src="../build/images/detalle_gatos.png" style="width: 32px;" />&nbsp;<span style="font-size: 17px; font-weight: bold;">
+                                                                    <asp:Label ID="Label1" runat="server" Text=" Reporte de costo por hora de vuelo" Font-Bold="true"></asp:Label></span><br />
+                                                            </asp:LinkButton>
+                                                        </div>
+                                                        <div class="col-md-6" style="text-align:right;">
+                                                            <%--<asp:LinkButton ID="LinkButton4" runat="server" Text="<i class='fa fa-file-excel-o' style='color:#73879c;font-size:25px;'></i>" CssClass="btn" />--%>
+                                                            <asp:LinkButton ID="btnExportarPDF" runat="server" Text="<i class='fa fa-file-pdf-o' style='color:#73879c;font-size:25px;' ></i>" OnClick="btnExportarPDF_Click" CssClass="btn" />
+                                                        </div>
+                                                    </div>
+                                                    
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td style="height: 3px;"></td>
+                                            </tr
                                             <tr style="background-color: #00000003;">
                                                 <td style="border-bottom: 1px solid #dee2e6; padding: 6px;">
                                                     <asp:LinkButton runat="server" ID="btnDetReporte1" OnClick="btnDetReporte_Click" data-report="1" data-rpt="0" OnClientClick="openLoading()">
@@ -138,5 +159,8 @@
                 </div>
             </div>
         </ContentTemplate>
+        <Triggers>
+            <asp:PostBackTrigger ControlID="btnExportarPDF" />
+        </Triggers>
     </asp:UpdatePanel>
 </asp:Content>

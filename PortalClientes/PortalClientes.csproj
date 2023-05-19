@@ -167,6 +167,9 @@
     <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>packages\Newtonsoft.Json.13.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
+    <Reference Include="NReco.PdfGenerator, Version=1.2.1.0, Culture=neutral, PublicKeyToken=231663d50a41b451, processorArchitecture=MSIL">
+      <HintPath>packages\NReco.PdfGenerator.1.2.1\lib\net45\NReco.PdfGenerator.dll</HintPath>
+    </Reference>
     <Reference Include="NucleoBase">
       <HintPath>..\..\..\AerolineasEjecutivas\Codigos\MyALE\trunk\MyALE\MyALE\bin\NucleoBase.dll</HintPath>
     </Reference>
@@ -214,6 +217,7 @@
     <Content Include="build\images\loading.gif" />
     <Content Include="build\images\logo-ale_azul.png" />
     <Content Include="build\images\logo-ale_azul2.png" />
+    <Content Include="build\images\logo-ale_azul2_2.jpg" />
     <Content Include="build\images\logo-ale_blanco.png" />
     <Content Include="build\images\mastercard.png" />
     <Content Include="build\images\media.jpg" />
@@ -281,6 +285,7 @@
     <Content Include="jets\fotos_portada_03.jpg" />
     <Content Include="jets\fotos_portada_04.jpg" />
     <Content Include="jets\fotos_portada_05.jpg" />
+    <Content Include="vendors\bootstrap4\bootstrap4.min.css" />
     <Content Include="Views\frmDefault.aspx" />
     <Content Include="frmLogin.aspx" />
     <Content Include="Global.asax" />
@@ -1604,6 +1609,7 @@
     <Compile Include="DomainModel\DBMantenimientos.cs" />
     <Compile Include="DomainModel\DBMapaFlota.cs" />
     <Compile Include="DomainModel\DBMetricasEstatics.cs" />
+    <Compile Include="DomainModel\DBReportes.cs" />
     <Compile Include="DomainModel\DBTransacciones.cs" />
     <Compile Include="DomainModel\DBTripulacion.cs" />
     <Compile Include="DomainModel\DBDashboard.cs" />
@@ -1672,6 +1678,7 @@
     <Compile Include="Presenter\MapaFlota_Presenter.cs" />
     <Compile Include="Presenter\MetricasEstadisticas_Presenter.cs" />
     <Compile Include="Presenter\RecoveryPass_Presenter.cs" />
+    <Compile Include="Presenter\Reportes_Presenter.cs" />
     <Compile Include="Presenter\Tripulacion_Presenter.cs" />
     <Compile Include="Presenter\User_Presenter.cs" />
     <Compile Include="Presenter\Vuelos_Presenter.cs" />
