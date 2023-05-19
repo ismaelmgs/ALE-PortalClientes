@@ -77,12 +77,21 @@ namespace PortalClientes.Views
                 if (ds != null && ds.Tables[0].Rows.Count > 0)
                 {
                     string sReport = GetBodyReport(ds);
+                    string sHeader = GetHeader(ds);
+                    string sFooter = "<div class='row'>";
+                    sFooter += "    <div class='col-md-12' style='text-align:center;'>";
+                    sFooter += "        <hr style='color:#002D56;' />";
+                    sFooter += "        <span style='vertical-align:top; font-size:10pt; color:#002D56; font-family: Arial, sans-serif;'>Copyright © 2023 ALE Aerolíneas Ejecutivas S.A. de C.V. Todos los Derechos Reservados.</span>";
+                    sFooter += "    </div>";
+                    sFooter += "</div>";
 
                     var htmlToPdf = new HtmlToPdfConverter();
                     htmlToPdf.Orientation = PageOrientation.Landscape;
                     htmlToPdf.Margins.Left = 1;
                     htmlToPdf.Margins.Right = 1;
                     htmlToPdf.Size = PageSize.A4;
+                    htmlToPdf.PageHeaderHtml = sHeader;
+                    htmlToPdf.PageFooterHtml = sFooter;
 
                     byte[] pdfBytes = htmlToPdf.GeneratePdf(sReport);
 
@@ -111,7 +120,7 @@ namespace PortalClientes.Views
             }
         }
 
-        public string GetBodyReport(DataSet dsData)
+        public string GetHeader(DataSet dsData)
         {
             try
             {
@@ -119,22 +128,13 @@ namespace PortalClientes.Views
                 string sMatricula = Utils.MatriculaActual;
                 string sContrato = Utils.ClaveContrato;
                 string sCliente = Utils.NombreCliente;
-
-                DataTable dtFV = new DataTable();
-                DataTable dtF = new DataTable();
-                DataTable dtV = new DataTable();
                 DateTime dtActual = DateTime.Now;
                 string sFechaImpresion = dtActual.Day.ToString() + " de " + GetMes(dtActual.Month) + " de " + dtActual.Year.ToString() + " a las " + dtActual.Hour.ToString() + ":" + dtActual.Minute.ToString() + " hrs.";
-
-                dtFV = dsData.Tables[0];
-                dtF = dsData.Tables[1];
-                dtV = dsData.Tables[2];
-
                 string css = System.IO.File.ReadAllText(Server.MapPath(@"~/vendors/bootstrap4/bootstrap4.min.css"));
                 byte[] imageArray = System.IO.File.ReadAllBytes(Server.MapPath(@"~/build/images/logo-ale_azul2_2.jpg"));
                 string base64ImageRepresentation = Convert.ToBase64String(imageArray);
-
                 string sHTML = string.Empty;
+
                 sHTML += "<!doctype html>";
                 sHTML += "<html>";
                 sHTML += "<head>";
@@ -149,10 +149,6 @@ namespace PortalClientes.Views
                 sHTML += "</head>";
                 sHTML += "<body>";
                 sHTML += "  <div>";
-
-                #region PRIMERA TABLA
-
-
                 sHTML += "      <div class='row'>";
                 sHTML += "          <div class='col-md-4' align='left'>";
                 sHTML += "              <div style='text-align:center;'>";
@@ -212,8 +208,124 @@ namespace PortalClientes.Views
                 sHTML += "          </div>";
                 sHTML += "      </div>";
 
+                sHTML += "  </div>";
+                sHTML += "</body>";
+                sHTML += "</html>";
+                return sHTML;
 
-                sHTML += "<br />";
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+        }
+
+        public string GetBodyReport(DataSet dsData)
+        {
+            try
+            {
+                string sUsuario = Utils.NombreUsuario;
+                string sMatricula = Utils.MatriculaActual;
+                string sContrato = Utils.ClaveContrato;
+                string sCliente = Utils.NombreCliente;
+
+                DataTable dtFV = new DataTable();
+                DataTable dtF = new DataTable();
+                DataTable dtV = new DataTable();
+                DataTable dtHV = new DataTable();
+                DateTime dtActual = DateTime.Now;
+
+                string sFechaImpresion = dtActual.Day.ToString() + " de " + GetMes(dtActual.Month) + " de " + dtActual.Year.ToString() + " a las " + dtActual.Hour.ToString() + ":" + dtActual.Minute.ToString() + " hrs.";
+
+                dtFV = dsData.Tables[0];
+                dtF = dsData.Tables[1];
+                dtV = dsData.Tables[2];
+                dtHV = dsData.Tables[3];
+
+                string css = System.IO.File.ReadAllText(Server.MapPath(@"~/vendors/bootstrap4/bootstrap4.min.css"));
+                byte[] imageArray = System.IO.File.ReadAllBytes(Server.MapPath(@"~/build/images/logo-ale_azul2_2.jpg"));
+                string base64ImageRepresentation = Convert.ToBase64String(imageArray);
+
+                string sHTML = string.Empty;
+                sHTML += "<!doctype html>";
+                sHTML += "<html>";
+                sHTML += "<head>";
+                sHTML += "  <title></title>";
+                sHTML += "  <meta charset='utf-8' />";
+                sHTML += "  <meta name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no'>";
+                sHTML += "  <style>";
+                sHTML += css;
+                sHTML += ".tbldata tr:nth-child(even) { background-color: #ffffff; }";
+                sHTML += ".tbldata tr:nth-child(odd) { background-color: #f2f2f2; }";
+                sHTML += "  </style>";
+                sHTML += "</head>";
+                sHTML += "<body>";
+                sHTML += "  <div>";
+
+                #region PRIMERA TABLA
+
+
+                //sHTML += "      <div class='row'>";
+                //sHTML += "          <div class='col-md-4' align='left'>";
+                //sHTML += "              <div style='text-align:center;'>";
+                //sHTML += "                  <img src='data:image/png;base64," + base64ImageRepresentation + "' alt='Fancy Image' width='380px' />";
+                //sHTML += "              </div>";
+                //sHTML += "          </div>";
+                //sHTML += "          <div class='col'></div>";
+                //sHTML += "          <div class='col'></div>";
+                //sHTML += "      </div>";
+
+                //sHTML += "      <div class='row'>";
+
+                //sHTML += "          <div class='col-md-4' align='left' style='padding-left:80px;'>";
+                //sHTML += "                <table border='0' width='60%' style='border: 0px solid transparent !important; font-size:10pt;'>";
+                //sHTML += "                  <tr>";
+                //sHTML += "                      <td>Matrícula:</td>";
+                //sHTML += "                      <td style='width:60%;font-weight:600;'>" + sMatricula + " </td>";
+                //sHTML += "                  </tr>";
+                //sHTML += "                  <tr>";
+                //sHTML += "                      <td style='width:40%;'>Clave Contrato:</td>";
+                //sHTML += "                      <td style='width:60%;font-weight:600;'>" + sContrato + "</td>";
+                //sHTML += "                  </tr>";
+
+                //sHTML += "              </table>";
+                //sHTML += "          </div>";
+
+                //sHTML += "          <div class='col-md-4'>";
+                //sHTML += "              <table border='0' width='100%' style='vertical-align:top !important;'>";
+                //sHTML += "                <tr>";
+                //sHTML += "                    <td>";
+                //sHTML += "                      <div style='text-align:center;'>";
+                //sHTML += "                          <span style='color:#2D416E;font-size:18pt;'>Reporte de costo por hora de vuelo</span>";
+                //sHTML += "                      </div>";
+                //sHTML += "                    </td>";
+                //sHTML += "                </tr>";
+                //sHTML += "                <tr>";
+                //sHTML += "                    <td>";
+                //sHTML += "                      <div style='text-align:center;'>";
+                //sHTML += "                          <span style='color:#2D416E;font-size:14pt;'>" + sCliente + "</span>";
+                //sHTML += "                      </div>";
+                //sHTML += "                    </td>";
+                //sHTML += "                </tr>";
+                //sHTML += "              </table>";
+                //sHTML += "          </div>";
+
+                //sHTML += "          <div class='col-md-4' align='left'>";
+                //sHTML += "                <table border='0' width='95%' style='border: 0px solid transparent !important; font-size:10pt;'>";
+                //sHTML += "                  <tr>";
+                //sHTML += "                      <td style='width:40%;'>Usuario:</td>";
+                //sHTML += "                      <td style='width:60%; font-weight:600;'>" + sUsuario + "</td>";
+                //sHTML += "                  </tr>";
+                //sHTML += "                  <tr>";
+                //sHTML += "                      <td>Fecha de Impresión:</td>";
+                //sHTML += "                      <td style='width:60%; font-weight:600;'>" + sFechaImpresion + " </td>";
+                //sHTML += "                  </tr>";
+                //sHTML += "              </table>";
+                //sHTML += "          </div>";
+                //sHTML += "      </div>";
+
+
+                //sHTML += "<br />";
 
                 sHTML += "      <div class='row'>";
                 sHTML += "          <div class='col-md-12' align='center'>";
@@ -288,7 +400,7 @@ namespace PortalClientes.Views
                 #endregion
 
                 sHTML += "      <br />";
-                sHTML += "      <br />";
+                //sHTML += "      <br />";
 
                 #region TABLAS DE FIJO Y VARIABLES COSTO POR HORA USD
                 sHTML += "      <div class='row'>";
@@ -354,10 +466,45 @@ namespace PortalClientes.Views
                 sHTML += "                  </table>";
                 sHTML += "              </div>";
                 sHTML += "          </div>";
+
                 sHTML += "      </div>";
                 #endregion
+                sHTML += "<br /><br /><br /><br /><br /><br />";
+                sHTML += "<div class='row'>";
+                sHTML += "  <div class='col-md-6' align='center'>";
+                sHTML += "      <div style='width: 98%; margin:0 auto 0 auto;'>";
+                sHTML += "          <table id='tblHoraVuelo' name='tblHoraVuelo'  class='tbldata' style='border: 0px solid #85B4DE !important; font-size:9pt; width:50%;'>";
+                sHTML += "  	        <tr style='background-color:#2D416E; color: #FFFFFF;'>";
+                sHTML += "  	        	<td style='padding:5px; text-align: left; width:50%;'><span>Mes</span></td>";
+                sHTML += "  	        	<td style='padding:5px; text-align: center; width:50%;'><span>Total</span></td>";
+                sHTML += "  	        </tr>";
+                for (int i = 0; i < dtHV.Rows.Count; i++)
+                {
+                    if (i != dtHV.Rows.Count - 1)
+                    {
+                        sHTML += "  		<tr style='border-left: 0px solid transparent !important; border-right: 0px solid transparent !important;'>";
+                        sHTML += "  			<td style='padding:5px; text-align:left; width:50%;'><span>" + dtHV.Rows[i]["Mes"].S() + "</span></td>";
+                        sHTML += "  			<td style='padding:5px; text-align:center; width:50%;'><span>" + dtHV.Rows[i]["Total"].S() + "</span></td>";
+                        sHTML += "  		</tr>";
+                    }
+                    else
+                    {
+                        sHTML += "  		<tr style='border-left: 0px solid transparent !important; border-right: 0px solid transparent !important; border-bottom: 0px solid transparent !important;'>";
+                        sHTML += "  			<td style='padding:5px; text-align:left; font-weight:600; width:50%;'><span>" + dtHV.Rows[i]["Mes"].S() + "</span></td>";
+                        sHTML += "  			<td style='padding:5px; text-align:center; font-weight:600; width:50%;'><span>" + dtHV.Rows[i]["Total"].S() + "</span></td>";
+                        sHTML += "  		</tr>";
+                    }
+                }
+                sHTML += "          </table>";
+                sHTML += "      </div>";
+                sHTML += "  </div>";
 
-                sHTML += "";
+                sHTML += "  <div class='col-md-6' align='center'>";
+                sHTML += "      <div style='width: 98%; margin:0 auto 0 auto;'>";
+                sHTML += "      </div>";
+                sHTML += "  </div>";
+
+                sHTML += "</div>";
 
                 sHTML += "  </div>";
                 sHTML += "</body>";
