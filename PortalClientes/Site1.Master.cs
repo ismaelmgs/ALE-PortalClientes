@@ -63,13 +63,17 @@ namespace PortalClientes
         protected void lblIdiomaEspanol_Click(object sender, EventArgs e)
         {
             Utils.Idioma = "es-MX";
-            Page.Response.Redirect(Page.Request.Url.ToString(), true);
+            string strUrl = string.Empty;
+            strUrl = Page.Request.Url.ToString().Replace("192.168.1.250", "www.alesuite.com");
+            Page.Response.Redirect(strUrl, true);
         }
 
         protected void lblIdiomaEnglish_Click(object sender, EventArgs e)
         {
             Utils.Idioma = "en-US";
-            Page.Response.Redirect(Page.Request.Url.ToString(), true);
+            string strUrl = string.Empty;
+            strUrl = Page.Request.Url.ToString().Replace("192.168.1.250", "www.alesuite.com");
+            Page.Response.Redirect(strUrl, true);
         }
 
         private void ArmaFormulario()
@@ -242,8 +246,10 @@ namespace PortalClientes
                     }
                 }
             }
-
-            Page.Response.Redirect(Page.Request.Url.ToString(), false);
+            string strUrl = string.Empty;
+            strUrl = Page.Request.Url.ToString().Replace("192.168.1.250", "www.alesuite.com");
+            strUrl = Page.Request.Url.ToString().Replace("portal", "www.alesuite.com");
+            Page.Response.Redirect(strUrl, false);
             Context.ApplicationInstance.CompleteRequest();
         }
 
