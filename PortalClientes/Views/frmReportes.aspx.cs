@@ -92,6 +92,7 @@ namespace PortalClientes.Views
                     htmlToPdf.Size = PageSize.A4;
                     htmlToPdf.PageHeaderHtml = sHeader;
                     htmlToPdf.PageFooterHtml = sFooter;
+                    string outputPath = "Reporte_CostoPorHora_" + sMatricula + ".pdf";
 
                     byte[] pdfBytes = htmlToPdf.GeneratePdf(sReport);
 
@@ -99,7 +100,7 @@ namespace PortalClientes.Views
                     Response.ClearHeaders();
                     Response.Buffer = true;
                     Response.Charset = "UTF-8";
-                    string filename = "Reporte_CostoPorHora_" + sMatricula + ".pdf";
+                    string filename = outputPath;
                     Response.ContentType = "application/pdf";
                     Response.AddHeader("Content-Disposition", "attachment;filename=\"" + filename + "\"");
                     Response.BinaryWrite(pdfBytes);
@@ -108,11 +109,11 @@ namespace PortalClientes.Views
                     Response.SuppressContent = true;
                     HttpContext.Current.ApplicationInstance.CompleteRequest();
                 }
-                else
-                {
-                    //Algun mensaje
-                }
 
+            }
+            catch (WkHtmlToPdfException ex)
+            {
+                throw ex;
             }
             catch (Exception ex)
             {
