@@ -60,7 +60,7 @@
                         <div>
                             <br />
                             <div class="row" style="margin: 5px;">
-                                <div class="col-md-3 tile_count">
+                                <div class="col-md-4 tile_count">
                                     <div class="" style="text-align: center;">
                                         <span class="count_top">
                                             <asp:Label ID="lblGastoTotalFijo" runat="server" Text=" Gasto Total Fijo" Font-Bold="false"></asp:Label></span>
@@ -70,7 +70,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-md-3 tile_count">
+                                <div class="col-md-4 tile_count">
                                     <div class="" style="text-align: center;">
                                         <span class="count_top">
                                             <asp:Label ID="lblGastoTotalVariable" runat="server" Text=" Costo Total Variable" Font-Bold="false"></asp:Label></span>
@@ -80,7 +80,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-md-3 tile_count">
+                                <div class="col-md-4 tile_count">
                                     <div class="" style="text-align: center;">
                                         <span class="count_top">
                                             <asp:Label ID="lblCostoHora" runat="server" Text=" Costo por Hora" Font-Bold="false"></asp:Label></span>
@@ -90,7 +90,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-md-3 tile_count">
+                                <div class="col-md-3 tile_count" style="display:none;">
                                     <div class="" style="text-align: center;">
                                         <span class="count_top">
                                             <asp:Label ID="lblCostoMilla" runat="server" Text=" Costo por Milla" Font-Bold="false"></asp:Label></span>
@@ -110,7 +110,7 @@
                         <div>
                             <br />
                             <div class="row" style="margin: 5px;">
-                                <div class="col-md-3 tile_count">
+                                <div class="col-md-4 tile_count">
                                     <div class="" style="text-align: center;">
                                         <span class="count_top">
                                             <asp:Label ID="lblGastoTotalFijoMXN" runat="server" Text=" Gasto Total Fijo" Font-Bold="false"></asp:Label></span>
@@ -120,7 +120,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-md-3 tile_count">
+                                <div class="col-md-4 tile_count">
                                     <div class="" style="text-align: center;">
                                         <span class="count_top">
                                             <asp:Label ID="lblGastoTotalVariableMXN" runat="server" Text=" Costo Total Variable" Font-Bold="false"></asp:Label></span>
@@ -130,7 +130,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-md-3 tile_count">
+                                <div class="col-md-4 tile_count">
                                     <div class="" style="text-align: center;">
                                         <span class="count_top">
                                             <asp:Label ID="lblCostoHoraMXN" runat="server" Text=" Costo por Hora" Font-Bold="false"></asp:Label></span>
@@ -140,7 +140,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-md-3 tile_count">
+                                <div class="col-md-3 tile_count" style="display:none;">
                                     <div class="" style="text-align: center;">
                                         <span class="count_top">
                                             <asp:Label ID="lblCostoMillaMXN" runat="server" Text=" Costo por Milla" Font-Bold="false"></asp:Label></span>

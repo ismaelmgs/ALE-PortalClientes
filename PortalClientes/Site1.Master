@@ -453,6 +453,12 @@
             $('[data-toggle="popover"]').popover();
         });
     </script>
-</form>
+    <script>
+        $(document).ready(function () {
+            $("i.fa-file-excel-o").replaceWith("<img src='../Images/icons/XLS.png' alt='EXCEL' style='height:35px;' />");
+            $("i.fa-file-pdf-o").replaceWith("<img src='../Images/icons/PDF.png' alt='PDF' style='height:35px;'/>");
+        });
+    </script>
+</form>'
 </body>
 </html>
