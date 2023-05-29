@@ -273,8 +273,10 @@
     <Content Include="Images\icons\files.png" />
     <Content Include="Images\icons\flecha_abre1.png" />
     <Content Include="Images\icons\flecha_cierra.png" />
+    <Content Include="Images\icons\PDF.png" />
     <Content Include="Images\icons\searchdate.png" />
     <Content Include="Images\icons\visualizar.png" />
+    <Content Include="Images\icons\XLS.png" />
     <Content Include="Images\ico_eu.jpg" />
     <Content Include="Images\ico_eu.png" />
     <Content Include="Images\ico_mx.jpg" />
