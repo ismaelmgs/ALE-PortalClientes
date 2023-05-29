@@ -15,6 +15,7 @@ using System.Web;
 using iTextSharp.text.html.simpleparser;
 using iTextSharp.text.pdf;
 using System.Text;
+using System.Data;
 
 namespace PortalClientes.Views
 {
@@ -141,6 +142,12 @@ namespace PortalClientes.Views
             oMttos = oMttoss;
 
             gvMttos.DataSource = oMttoss;
+            gvMttos.DataBind();
+        }
+        public void cargarMantenimientosDB(DataTable dtMttos)
+        {
+            //oMttos = oMttoss;
+            gvMttos.DataSource = dtMttos;
             gvMttos.DataBind();
         }
 

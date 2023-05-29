@@ -22,5 +22,16 @@ namespace PortalClientes.Objetos
         public DateTime fechaFin { get; set; }
         public string tailMnbr { get; set; }
         public string typeDesc { get; set; }
+
+        //--- Campos del stored
+        public string Matricula { get; set; }
+        public string Origen { get; set; }
+        public string Destino { get; set; }
+        public string FechaSalida { get; set; }
+        public string FechaLlegada { get; set; }
+        public string Pasajeros { get; set; }
+        public string Trip { get; set; }
+        public string Comentarios { get; set; }
+
     }
 }

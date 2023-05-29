@@ -39,7 +39,7 @@
                                                 <td style="border-bottom: 1px solid #dee2e6; padding: 6px;">
                                                     <div class="row" style="width:99%;">
                                                         <div class="col-md-6" style="text-align:left;">
-                                                            <asp:LinkButton runat="server" ID="btnReporteVueloHora" data-report="100" data-rpt="0">
+                                                            <asp:LinkButton runat="server" ID="btnReporteVueloHora" OnClick="btnExportarPDF_Click">
                                                                 <img src="../build/images/detalle_gatos.png" style="width: 32px;" />&nbsp;<span style="font-size: 17px; font-weight: bold;">
                                                                     <asp:Label ID="Label1" runat="server" Text=" Reporte de costo por hora de vuelo" Font-Bold="true"></asp:Label></span><br />
                                                             </asp:LinkButton>
@@ -161,6 +161,7 @@
         </ContentTemplate>
         <Triggers>
             <asp:PostBackTrigger ControlID="btnExportarPDF" />
+            <asp:PostBackTrigger ControlID="btnReporteVueloHora" />
         </Triggers>
     </asp:UpdatePanel>
 </asp:Content>

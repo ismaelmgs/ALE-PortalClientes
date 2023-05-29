@@ -20,7 +20,8 @@ namespace PortalClientes.Presenter
 
         protected override void SearchObj_Presenter(object sender, EventArgs e)
         {
-            oIView.cargarMantenimientos(oIGesCat.obtenerMttos(oIView.iMeses));
+            //oIView.cargarMantenimientos(oIGesCat.obtenerMttos(oIView.iMeses));
+            oIView.cargarMantenimientosDB(oIGesCat.GetMantenimientos(oIView.iMeses));
         }
     }
 }

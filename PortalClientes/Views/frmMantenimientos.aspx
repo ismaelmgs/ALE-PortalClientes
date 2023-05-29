@@ -42,10 +42,10 @@
                                         <div class="col-md-3">
                                             <div class="row">
                                                 <div class="col-md-5">
-                                                    <asp:LinkButton ID="btnExc" runat="server" Text="<i class='fa fa-file-excel-o' style='color:#73879c;font-size:25px;'></i>" CssClass="btn"  OnClientClick="LoadingTime(3)" OnClick="btnExc_Click"/>
+                                                    <asp:LinkButton ID="btnExc" runat="server" Text="<i class='fa fa-file-excel-o' style='color:#73879c;font-size:25px;'></i>" CssClass="btn"  OnClientClick="LoadingTime(3)" OnClick="btnExc_Click" Visible="false" />
                                                 </div>
                                                 <div class="col-md-5">
-                                                    <asp:LinkButton ID="btnPdf" runat="server" Text="<i class='fa fa-file-pdf-o' style='color:#73879c;font-size:25px;' ></i>" CssClass="btn"  OnClientClick="LoadingTime(3)" OnClick="btnPdf_Click"/>
+                                                    <asp:LinkButton ID="btnPdf" runat="server" Text="<i class='fa fa-file-pdf-o' style='color:#73879c;font-size:25px;' ></i>" CssClass="btn"  OnClientClick="LoadingTime(3)" OnClick="btnPdf_Click" Visible="false" />
                                                 </div>
                                                 <div class="col-md-2">
                                                     &nbsp;
@@ -64,11 +64,14 @@
                                         <asp:GridView ID="gvMttos" runat="server" AutoGenerateColumns="false" CssClass="table table-striped table-bordered table-hover" ChildrenAsTriggers="False"
                                             AllowPaging="true" OnRowDataBound="gvMttos_RowDataBound" EmptyDataText="No Registros" OnPageIndexChanging="gvMttos_PageIndexChanging">
                                             <Columns>
-                                                <asp:BoundField DataField="origNmbr" />
-                                                <asp:BoundField DataField="descripcion" />
-                                                <asp:BoundField DataField="notes" />
-                                                <asp:BoundField DataField="fechaInicio" />
-                                                <asp:BoundField DataField="fechaFin" />
+                                                <asp:BoundField DataField="Matricula" />
+                                                <asp:BoundField DataField="Origen" />
+                                                <asp:BoundField DataField="Destino" />
+                                                <asp:BoundField DataField="FechaSalida" />
+                                                <asp:BoundField DataField="FechaLlegada" />
+                                                <asp:BoundField DataField="Pasajeros" />
+                                                <asp:BoundField DataField="Trip" />
+                                                <asp:BoundField DataField="Comentarios" />
                                             </Columns>
                                         </asp:GridView>
                                     </div>
