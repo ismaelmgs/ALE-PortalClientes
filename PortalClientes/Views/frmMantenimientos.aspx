@@ -64,14 +64,14 @@
                                         <asp:GridView ID="gvMttos" runat="server" AutoGenerateColumns="false" CssClass="table table-striped table-bordered table-hover" ChildrenAsTriggers="False"
                                             AllowPaging="true" OnRowDataBound="gvMttos_RowDataBound" EmptyDataText="No Registros" OnPageIndexChanging="gvMttos_PageIndexChanging">
                                             <Columns>
-                                                <asp:BoundField DataField="Matricula" />
-                                                <asp:BoundField DataField="Origen" />
-                                                <asp:BoundField DataField="Destino" />
-                                                <asp:BoundField DataField="FechaSalida" />
-                                                <asp:BoundField DataField="FechaLlegada" />
-                                                <asp:BoundField DataField="Pasajeros" />
-                                                <asp:BoundField DataField="Trip" />
-                                                <asp:BoundField DataField="Comentarios" />
+                                                <asp:BoundField DataField="Matricula" HeaderText="Matricula" />
+                                                <asp:BoundField DataField="Origen" HeaderText="Origen" />
+                                                <asp:BoundField DataField="Destino" HeaderText="Destino" />
+                                                <asp:BoundField DataField="FechaSalida" HeaderText="FechaSalida" />
+                                                <asp:BoundField DataField="FechaLlegada" HeaderText="FechaLlegada" />
+                                                <asp:BoundField DataField="Pasajeros" HeaderText="Pasajeros" />
+                                                <asp:BoundField DataField="Trip" HeaderText="Trip" />
+                                                <asp:BoundField DataField="Comentarios" HeaderText="Comentarios" />
                                             </Columns>
                                         </asp:GridView>
                                     </div>

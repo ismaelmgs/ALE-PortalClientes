@@ -250,5 +250,30 @@ namespace PortalClientes.Clases
             }
         }
 
+
+        public static Token ObtieneTokenPortalClientes
+        {
+            get
+
+            {
+                JavaScriptSerializer ser = new JavaScriptSerializer();
+                Credenciales oCred = new Credenciales();
+                oCred.UserName = Globales.GetConfigApp<string>("UsrWs");
+                oCred.Password = Globales.GetConfigApp<string>("PassWs");
+
+                var client = new RestClient(Helper.D_TokenPortal);
+                var request = new RestRequest(Method.POST);
+
+                request.AddJsonBody(oCred);
+
+                IRestResponse response = client.Execute(request);
+                var resp = response.Content;
+
+                Token oToken = ser.Deserialize<Token>(resp);
+
+                return oToken;
+            }
+        }
+
     }
 }

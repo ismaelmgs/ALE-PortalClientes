@@ -14,7 +14,8 @@ namespace PortalClientes.Objetos
         public double GastoTotalVarUSD { get; set; }
         public int NumeroVuelos { get; set; }
         public int TotalPasajeros { get; set; }
-        public double HorasVoladas { get; set; }
+        //public double HorasVoladas { get; set; }
+        public string HorasVoladas { get; set; }
         public double CostoPorHoraMXN { get; set; }
         public double CostoPorHoraUSD { get; set; }
         public double CostoPorMillaMXN { get; set; }

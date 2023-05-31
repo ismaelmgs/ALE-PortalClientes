@@ -1347,7 +1347,7 @@ namespace PortalClientes.Views
             lblCostoMillaMXNRes.Text = string.Format("{0:###,###,###,0.##}", oMetEsta.CostoPorMillaMXN);
 
             lblNumeroVuelosRes.Text = oMetEsta.NumeroVuelos.ToString();
-            lblHorasVoladasRes.Text = oMetEsta.HorasVoladas.ToString();
+            lblHorasVoladasRes.Text = string.IsNullOrEmpty(oMetEsta.HorasVoladas) ? "00:00" : oMetEsta.HorasVoladas.ToString();
             lblPromedioDePasajerosRes.Text = oMetEsta.TotalPasajeros.ToString();
 
 

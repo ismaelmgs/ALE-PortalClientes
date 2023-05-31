@@ -118,4 +118,11 @@ namespace PortalClientes.Objetos
     {
         public string email { get; set; }
     }
+
+    [Serializable]
+    public class FiltroReporte
+    {
+        public int anio { get; set; }
+        public string matricula { get; set; }
+    }
 }

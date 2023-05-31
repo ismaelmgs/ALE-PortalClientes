@@ -596,7 +596,7 @@ namespace PortalClientes.DomainModel
                 oLog.matricula = sMatricula;
                 oLog.meses = iMeses;
 
-                TokenWS oToken = Utils.ObtieneToken;
+                Token oToken = Utils.ObtieneTokenPortalClientes;
 
                 var client = new RestClient(Helper.D_UrlobtieneMetricasEstadisticas);
                 var request = new RestRequest(Method.POST);
