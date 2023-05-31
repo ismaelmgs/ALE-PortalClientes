@@ -257,14 +257,18 @@ namespace PortalClientes.Clases
 
             {
                 JavaScriptSerializer ser = new JavaScriptSerializer();
+                ser.MaxJsonLength = 500000000;
+
                 Credenciales oCred = new Credenciales();
                 oCred.UserName = Globales.GetConfigApp<string>("UsrWs");
                 oCred.Password = Globales.GetConfigApp<string>("PassWs");
 
+                string sResultado = JsonConvert.SerializeObject(oCred).ToString();
+
                 var client = new RestClient(Helper.D_TokenPortal);
                 var request = new RestRequest(Method.POST);
-
-                request.AddJsonBody(oCred);
+                request.AddHeader("Content-Type", "application/json");
+                request.AddJsonBody(sResultado);
 
                 IRestResponse response = client.Execute(request);
                 var resp = response.Content;
