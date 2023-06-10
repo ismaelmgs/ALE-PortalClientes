@@ -75,6 +75,7 @@ namespace PortalClientes.Objetos
         public string fboPhoneDest { get; set; }
         public string fboDirDest { get; set; }
         public string ciudadDestino { get; set; }
+        public string ciudadOrigen { get; set; }
     }
 
     [Serializable]

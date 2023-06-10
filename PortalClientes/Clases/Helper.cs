@@ -38,7 +38,11 @@ namespace PortalClientes.Clases
 
         public const string D_UrlObtenerDashboard = "http://201.163.208.231/" + DominioWS + "/ws/pc/consultaInfoDashboard";
         public const string D_UrlObtenerAeronave = "http://201.163.208.231/" + DominioWS + "/ws/pc/consultaMatriculaAeronave";
-        public const string D_UrlObtenerVuelos = "http://201.163.208.231/" + DominioWS + "/ws/pc/obtieneEventosMatriculaVuelos";
+
+        //public const string D_UrlObtenerVuelos = "http://201.163.208.231/" + DominioWS + "/ws/pc/obtieneEventosMatriculaVuelos";
+        //public const string D_UrlObtenerVuelos = "http://localhost:64945/api/obtieneEventosMatriculaVuelos/";
+        public const string D_UrlObtenerVuelos = "http://192.168.1.250/wsALERest/api/obtieneEventosMatriculaVuelos/";
+
         public const string D_UrlObtenerMttos = "http://201.163.208.231/" + DominioWS + "/ws/pc/obtieneEventosMantto";
         public const string D_UrlObtenerMapaFlota = "http://201.163.208.231/" + DominioWS + "/ws/pc/consultaFleetMap";
         public const string US_UrlObtieneValidacionUusario = "http://201.163.208.231/" + DominioWS + "/ws/pc/existeUsr";

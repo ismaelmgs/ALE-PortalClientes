@@ -11,6 +11,7 @@ using System.Drawing;
 using System.Web.UI;
 using System.Collections.Generic;
 using NucleoBase.Core;
+using DevExpress.Office.Utils;
 
 namespace PortalClientes.Views
 {
@@ -172,49 +173,58 @@ namespace PortalClientes.Views
 
         public void cargarVuelos(Eventoss ov)
         {
-            iminutos = 0;
-            stiempoVuelo = "";
-            oVuelos = ov.totalesEventosMatriculas;
-            List<Vueloss> lVuelos = new List<Vueloss>();
-            oDetVuelos = ov.detalleEventosMatriculas;
-
-            foreach (detVuelos item in oDetVuelos)
+            if(ov.detalleEventosMatriculas != null && ov.totalesEventosMatriculas != null)
             {
+                iminutos = 0;
+                stiempoVuelo = "";
+                oVuelos = ov.totalesEventosMatriculas;
+                List<Vueloss> lVuelos = new List<Vueloss>();
+                //List<detVuelos> oDetVuelos = new List<detVuelos>();
+                oDetVuelos = ov.detalleEventosMatriculas;
 
-                var fechaSalida = "";
-                var fechaLlegada = "";
-
-                if (Utils.Idioma == "es-MX")
+                if (oDetVuelos.Count > 0)
                 {
-                    fechaSalida = item.FechaInicio.ToString("dd/MM/yyyy HH:mm");
-                    fechaLlegada = item.FechaFin.ToString("dd/MM/yyyy HH:mm");
-                }
-                else
-                {
-                    fechaSalida = item.FechaInicio.ToString("MM/dd/yyyy HH:mm");
-                    fechaLlegada = item.FechaFin.ToString("MM/dd/yyyy HH:mm");
+                    foreach (detVuelos item in oDetVuelos)
+                    {
+
+                        var fechaSalida = "";
+                        var fechaLlegada = "";
+
+                        if (Utils.Idioma == "es-MX")
+                        {
+                            fechaSalida = item.FechaInicio.ToString("dd/MM/yyyy HH:mm");
+                            fechaLlegada = item.FechaFin.ToString("dd/MM/yyyy HH:mm");
+                        }
+                        else
+                        {
+                            fechaSalida = item.FechaInicio.ToString("MM/dd/yyyy HH:mm");
+                            fechaLlegada = item.FechaFin.ToString("MM/dd/yyyy HH:mm");
+                        }
+
+                        Vueloss v = new Vueloss();
+                        v.numTrip = item.tripNum;
+                        v.origen = item.origen;
+                        v.destino = item.destino;
+                        v.pax = item.pax.ToString();
+                        v.fechaInicio = fechaSalida;
+                        v.fechaFin = fechaLlegada;
+                        v.TiempoVolado = tiempoVolado(item.FechaInicio, item.FechaFin);
+
+                        lVuelos.Add(v);
+                    }
                 }
 
-                Vueloss v = new Vueloss();
-                v.numTrip = item.tripNum;
-                v.origen = item.origen;
-                v.destino = item.destino;
-                v.pax = item.pax.ToString();
-                v.fechaInicio = fechaSalida;
-                v.fechaFin = fechaLlegada;
-                v.TiempoVolado = tiempoVolado(item.FechaInicio,item.FechaFin);
 
-                lVuelos.Add(v);
+                lblNumViajesRes.Text = oVuelos.numeroTrips.Value.ToString();
+                lblNumVuelosRes.Text = oVuelos.numeroVuelos.Value.ToString();
+                lblAeropuertosVisitadosRes.Text = oVuelos.aeroVisitados.Value.ToString();
+                lblHorasVueloRes.Text = tiempoTotal();
+                lblTotalPasajerosRes.Text = oVuelos.numeroPasajeros.Value.ToString();
+
+                gvVuelos.DataSource = lVuelos;
+                gvVuelos.DataBind();
             }
-
-            lblNumViajesRes.Text = oVuelos.numeroTrips.Value.ToString();
-            lblNumVuelosRes.Text = oVuelos.numeroVuelos.Value.ToString();
-            lblAeropuertosVisitadosRes.Text = oVuelos.aeroVisitados.Value.ToString();
-            lblHorasVueloRes.Text = tiempoTotal();
-            lblTotalPasajerosRes.Text = oVuelos.numeroPasajeros.Value.ToString();
-
-            gvVuelos.DataSource = lVuelos;
-            gvVuelos.DataBind();
+            
         }
 
         private string tiempoVolado(DateTime fechaInicio, DateTime fechaFin)

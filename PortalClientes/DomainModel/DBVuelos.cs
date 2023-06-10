@@ -23,7 +23,8 @@ namespace PortalClientes.DomainModel
                 oLog.matricula = Utils.MatriculaActual;
                 oLog.meses = imeses.ToString();
 
-                TokenWS oToken = Utils.ObtieneToken;
+                //TokenWS oToken = Utils.ObtieneToken;
+                Token oToken = Utils.ObtieneTokenPortalClientes;
 
                 var client = new RestClient(Helper.D_UrlObtenerVuelos);
                 var request = new RestRequest(Method.POST);
