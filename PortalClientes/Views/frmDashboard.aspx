@@ -73,7 +73,7 @@ TagPrefix="dx" %>
 								<br />
 								<div class="row">
 									<div class="col-md-12">
-										<asp:Label
+										De: <asp:Label
 											ID="lblOrigenText"
 											runat="server"
 											Text="---"
@@ -88,7 +88,7 @@ TagPrefix="dx" %>
 								</div>
 								<div class="row">
 									<div class="col-md-12">
-										<asp:Label
+										A:&nbsp;&nbsp;&nbsp;<asp:Label
 											ID="lblDestinoText"
 											runat="server"
 											Text="---"
