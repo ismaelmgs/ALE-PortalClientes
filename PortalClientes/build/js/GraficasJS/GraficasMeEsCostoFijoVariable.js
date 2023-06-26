@@ -119,7 +119,7 @@ function chartsFV(dataFV, ChartType) {
 
         var optionsFV = {
             title: jsonDataFV[0].idioma == "es-MX" ? "Costo Fijo y Variable" : "Fixed and Variable Cost",
-            fontSize: 9,
+            fontSize: 12,
             chartArea: {
                 left: screenWidth > 500 ? 30 : 10,
                 top: 30,

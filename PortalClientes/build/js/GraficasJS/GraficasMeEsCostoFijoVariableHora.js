@@ -119,7 +119,7 @@ function chartsFVH(dataFVH, ChartType) {
 
         var optionsFVH = {
             title: jsonDataFVH[0].idioma == "es-MX" ? "Costo Fijo y Variable por Hora" : "Fixed and Variable Cost Per Hour",
-            fontSize: 9,
+            fontSize: 12,
             chartArea: {
                 left: screenWidth > 500 ? 30 : 10,
                 top: 30,

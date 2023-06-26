@@ -122,7 +122,7 @@ function chartsProv(dataProve, ChartType) {
         var optionsProv = {
             title: jsonData[0].idioma == "es-MX" ? "Gastos por Proveedor" : "Expenses by Vendor",
             //is3D: true, //Pie Charts
-            fontSize: 9,
+            fontSize: 12,
             chartArea: {
                 left: screenWidth > 500 ? 30 : 10,
                 top: 30,

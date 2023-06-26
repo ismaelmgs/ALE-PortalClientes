@@ -122,7 +122,7 @@ function chartsNV(dataNV, ChartType) {
             bar: {
                 groupWidth: "60%",
             },
-            fontSize: 9,
+            fontSize: 12,
             chartArea: {
                 left: screenWidth > 500 ? 30 : 10,
                 top: 30,
