@@ -369,7 +369,7 @@
                             <div class="col-md-6">
                                 <div class="x_title">
                                     <h2>
-                                        <asp:Label ID="lblCostoFijoVariable" runat="server" Text="Costo Fijo y Variable" Font-Bold="true"></asp:Label>
+                                        <asp:Label ID="lblCostoFijoVariable" runat="server" Text="Costos Fijos y Variables" Font-Bold="true"></asp:Label>
                                     </h2>
                                     <div class="clearfix"></div>
                                 </div>
@@ -388,7 +388,7 @@
                             <div class="col-md-6">
                                 <div class="x_title">
                                     <h2>
-                                        <asp:Label ID="lblCostoFijoVariableHora" runat="server" Text="Costo Fijo y Variable por Hora" Font-Bold="true"></asp:Label>
+                                        <asp:Label ID="lblCostoFijoVariableHora" runat="server" Text="Costos Fijos y Variables por Hora" Font-Bold="true"></asp:Label>
                                     </h2>
                                     <div class="clearfix"></div>
                                 </div>

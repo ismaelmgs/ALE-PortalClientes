@@ -859,10 +859,10 @@
     <value>Tiempo Total de Vuelo</value>
   </data>
   <data name="ME_CostoFIjoVariable" xml:space="preserve">
-    <value>Costo Fijo y Variable</value>
+    <value>Costos Fijos y Variables</value>
   </data>
   <data name="ME_CostoFijoVariableHora" xml:space="preserve">
-    <value>Costo Fijo y Variable por Hora</value>
+    <value>Costos Fijos y Variables por Hora</value>
   </data>
   <data name="ME_CostoPaxMilla" xml:space="preserve">
     <value>Costo por Pax Milla</value>

@@ -531,13 +531,13 @@ TagPrefix="dx" %>
 								<br />
 								<div class="row">
 									<div class="col-md-12">
-										<asp:Label
+										<%--<asp:Label
 											ID="lblIncVenc90Dias"
 											runat="server"
 											Text="incluido el vencimiento (+ de 90 días)"
 											Font-Bold="true"
-										></asp:Label>
-										&nbsp;&nbsp;
+										></asp:Label>--%>
+										<%--&nbsp;&nbsp;--%>
 										<span style="font-weight: bold">
 											<%--<asp:Label
 												ID="lblIncVenc90DiasNumber"
@@ -578,12 +578,12 @@ TagPrefix="dx" %>
 										<table>
 											<tr>
 												<td valign="top">
-													<asp:Label
+													<%--<asp:Label
 														ID="lblDeclaracionPara"
 														runat="server"
 														Text="Declaración para:"
 														Font-Bold="true"
-													></asp:Label>
+													></asp:Label>--%>
 												</td>
 												<td>&nbsp;&nbsp;&nbsp;</td>
 												<%--
@@ -642,6 +642,7 @@ TagPrefix="dx" %>
 									Text="Costos Por Categoría"
 									Font-Bold="true"
 								></asp:Label>
+								<asp:Label ID="lblperiodotext" Text="Periodo al mes de Ener del 2022" runat="server"></asp:Label>
 							</h2>
 							<div class="clearfix"></div>
 						</div>
@@ -653,10 +654,9 @@ TagPrefix="dx" %>
 									CssClass="form-control"
 									Width="100%"
 								></asp:DropDownList>
-                                <div>
+                                <%--<div>
                                     <br />
-                                    <asp:Label ID="lblperiodotext" Text="Periodo al mes de Ener del 2022" runat="server"></asp:Label>
-								</div>
+								</div>--%>
 							</div>
 							<div class="col-md-6">
 								<asp:DropDownList
