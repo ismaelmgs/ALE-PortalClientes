@@ -241,7 +241,7 @@
     <value>Vence:</value>
   </data>
   <data name="Das_Vuelos" xml:space="preserve">
-    <value>N° de Vuelos</value>
+    <value>N°. de Vuelos</value>
   </data>
   <data name="Ta_AltitudMaxima" xml:space="preserve">
     <value>Altitud Máxima:</value>
@@ -346,7 +346,7 @@
     <value>Clonar permisos desde</value>
   </data>
   <data name="Us_Vermas" xml:space="preserve">
-    <value>Ver mas...</value>
+    <value>Ver más...</value>
   </data>
   <data name="Us_UsuarioDestino" xml:space="preserve">
     <value>Usuario destino:</value>
@@ -373,7 +373,7 @@
     <value>Nombre Documento</value>
   </data>
   <data name="TabDoc_VIewDoc" xml:space="preserve">
-    <value>Ver Docuemtno</value>
+    <value>Ver Documento</value>
   </data>
   <data name="Das_Anual" xml:space="preserve">
     <value>Últimos 12 Meses</value>
@@ -388,13 +388,13 @@
     <value>Último mes cerrado</value>
   </data>
   <data name="Das_Semestral" xml:space="preserve">
-    <value>Ultimos 6 Meses</value>
+    <value>Últimos 6 Meses</value>
   </data>
   <data name="Das_Todos" xml:space="preserve">
     <value>Todos</value>
   </data>
   <data name="Das_Trimestral" xml:space="preserve">
-    <value>Ultimos 3 Meses</value>
+    <value>Últimos 3 Meses</value>
   </data>
   <data name="Das_Variable" xml:space="preserve">
     <value>Variables</value>
@@ -442,7 +442,7 @@
     <value>Actualizar</value>
   </data>
   <data name="Das_CostoCategoria" xml:space="preserve">
-    <value>Costos Por Categoria</value>
+    <value>Costos Por Categoría</value>
   </data>
   <data name="TabTran_MontoTotal" xml:space="preserve">
     <value>Total de Gastos</value>
@@ -562,7 +562,7 @@
     <value>Próximos 2 meses</value>
   </data>
   <data name="FiltroEvenTri_3M" xml:space="preserve">
-    <value>Próximos 3  meses</value>
+    <value>Próximos 3 meses</value>
   </data>
   <data name="FiltroEvenTri_MA" xml:space="preserve">
     <value>Mes Actual</value>
@@ -577,7 +577,7 @@
     <value>Tripulación</value>
   </data>
   <data name="BTFiltro" xml:space="preserve">
-    <value>Flitrar</value>
+    <value>Filtrar</value>
   </data>
   <data name="ME_CostoPromedioUSD" xml:space="preserve">
     <value>Costo promedio Dlls</value>
@@ -616,7 +616,7 @@
     <value>Mes Actual</value>
   </data>
   <data name="ME_DuracionVuelos" xml:space="preserve">
-    <value>Duracion de vuelos</value>
+    <value>Duración de vuelos</value>
   </data>
   <data name="ME_ProveedorAeropuerto" xml:space="preserve">
     <value>Gastos Por Proveedor y Aeropuerto</value>
@@ -658,7 +658,7 @@
     <value>Mensual</value>
   </data>
   <data name="Ca_ActiveTimeLine" xml:space="preserve">
-    <value>TimeLine</value>
+    <value>Time Line</value>
   </data>
   <data name="Ca_ActiveWorkWeek" xml:space="preserve">
     <value>Semanal</value>
@@ -1063,7 +1063,7 @@
     <value>Mes</value>
   </data>
   <data name="Ec_RazonSocial" xml:space="preserve">
-    <value>Razon Social</value>
+    <value>Razón Social</value>
   </data>
   <data name="Ec_TipoDocumento" xml:space="preserve">
     <value>Tipo Documento</value>
@@ -1150,13 +1150,13 @@
     <value>Total Importe Pago</value>
   </data>
   <data name="tabdoc_Descripcion" xml:space="preserve">
-    <value>Descripcion</value>
+    <value>Descripción</value>
   </data>
   <data name="Ec_Documento" xml:space="preserve">
     <value>Sin Facturas</value>
   </data>
   <data name="Ca_DeClickVerEvento" xml:space="preserve">
-    <value>De click en el evento para ver la información</value>
+    <value>De clic en el evento para ver la información</value>
   </data>
   <data name="Fl_DestinoTitle" xml:space="preserve">
     <value>Destino</value>
@@ -1234,7 +1234,7 @@
     <value>Distancia</value>
   </data>
   <data name="MF_Multiple" xml:space="preserve">
-    <value>Multiple</value>
+    <value>Múltiple</value>
   </data>
   <data name="MF_Periodo" xml:space="preserve">
     <value>Periodo</value>
@@ -1327,7 +1327,7 @@
     <value>Ingresar Contraseña Nueva</value>
   </data>
   <data name="Us_ActInfo" xml:space="preserve">
-    <value>Actualizar Informacion</value>
+    <value>Actualizar Información</value>
   </data>
   <data name="Us_AdminCta" xml:space="preserve">
     <value>Administrar Cuenta</value>
@@ -1345,16 +1345,16 @@
     <value>Reporte</value>
   </data>
   <data name="Lo_ActConfirmContrasena" xml:space="preserve">
-    <value>Contraseña actualizada con Exito!, Ahora puede iniciar sesion.</value>
+    <value>Contraseña actualizada con Éxito!, Ahora puede iniciar sesión.</value>
   </data>
   <data name="MsjActContrasena" xml:space="preserve">
-    <value>¡Contraseña Actualizada con Exito! &lt;br /&gt; Para ver los cambios reflejados es necesario iniciar sesion nuevamente.</value>
+    <value>¡Contraseña Actualizada con Éxito! &lt;br /&gt; Para ver los cambios reflejados es necesario iniciar sesión nuevamente.</value>
   </data>
   <data name="MsjActMatricula" xml:space="preserve">
-    <value>¡Matricula Default Actualizada con Exito! &lt;br /&gt; Para ver los cambios reflejados es necesario iniciar sesion nuevamente.</value>
+    <value>¡Matricula Default Actualizada con Éxito! &lt;br /&gt; Para ver los cambios reflejados es necesario iniciar sesión nuevamente.</value>
   </data>
   <data name="MsjActUsuario" xml:space="preserve">
-    <value>¡Usuario Actulizado con Exito! &lt;br /&gt; Para ver los cambios reflejados es necesario iniciar sesion nuevamente.</value>
+    <value>¡Usuario Actualizado con Éxito! &lt;br /&gt; Para ver los cambios reflejados es necesario iniciar sesión nuevamente.</value>
   </data>
   <data name="MsjActEmail" xml:space="preserve">
     <value>Ud estara recibiendo un correo electronico para recuperar su contraseña.</value>

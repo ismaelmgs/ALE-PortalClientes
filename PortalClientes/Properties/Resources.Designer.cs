@@ -79,7 +79,7 @@ namespace PortalClientes.Properties {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Flitrar.
+        ///   Busca una cadena traducida similar a Filtrar.
         /// </summary>
         internal static string BTFiltro {
             get {
@@ -115,7 +115,7 @@ namespace PortalClientes.Properties {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a TimeLine.
+        ///   Busca una cadena traducida similar a Time Line.
         /// </summary>
         internal static string Ca_ActiveTimeLine {
             get {
@@ -187,7 +187,7 @@ namespace PortalClientes.Properties {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a De click en el evento para ver la información.
+        ///   Busca una cadena traducida similar a De clic en el evento para ver la información.
         /// </summary>
         internal static string Ca_DeClickVerEvento {
             get {
@@ -889,7 +889,7 @@ namespace PortalClientes.Properties {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Costos Por Categoria.
+        ///   Busca una cadena traducida similar a Costos Por Categoría.
         /// </summary>
         internal static string Das_CostoCategoria {
             get {
@@ -1015,7 +1015,7 @@ namespace PortalClientes.Properties {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Ultimos 6 Meses.
+        ///   Busca una cadena traducida similar a Últimos 6 Meses.
         /// </summary>
         internal static string Das_Semestral {
             get {
@@ -1033,7 +1033,7 @@ namespace PortalClientes.Properties {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Ultimos 3 Meses.
+        ///   Busca una cadena traducida similar a Últimos 3 Meses.
         /// </summary>
         internal static string Das_Trimestral {
             get {
@@ -1078,7 +1078,7 @@ namespace PortalClientes.Properties {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a N° de Vuelos.
+        ///   Busca una cadena traducida similar a N°. de Vuelos.
         /// </summary>
         internal static string Das_Vuelos {
             get {
@@ -1330,7 +1330,7 @@ namespace PortalClientes.Properties {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Razon Social.
+        ///   Busca una cadena traducida similar a Razón Social.
         /// </summary>
         internal static string Ec_RazonSocial {
             get {
@@ -1465,7 +1465,7 @@ namespace PortalClientes.Properties {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Próximos 3  meses.
+        ///   Busca una cadena traducida similar a Próximos 3 meses.
         /// </summary>
         internal static string FiltroEvenTri_3M {
             get {
@@ -1690,7 +1690,7 @@ namespace PortalClientes.Properties {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Contraseña actualizada con Exito!, Ahora puede iniciar sesion..
+        ///   Busca una cadena traducida similar a Contraseña actualizada con Éxito!, Ahora puede iniciar sesión..
         /// </summary>
         internal static string Lo_ActConfirmContrasena {
             get {
@@ -1888,7 +1888,7 @@ namespace PortalClientes.Properties {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Duracion de vuelos.
+        ///   Busca una cadena traducida similar a Duración de vuelos.
         /// </summary>
         internal static string ME_DuracionVuelos {
             get {
@@ -2257,7 +2257,7 @@ namespace PortalClientes.Properties {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Multiple.
+        ///   Busca una cadena traducida similar a Múltiple.
         /// </summary>
         internal static string MF_Multiple {
             get {
@@ -2329,7 +2329,7 @@ namespace PortalClientes.Properties {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a ¡Contraseña Actualizada con Exito! &lt;br /&gt; Para ver los cambios reflejados es necesario iniciar sesion nuevamente..
+        ///   Busca una cadena traducida similar a ¡Contraseña Actualizada con Éxito! &lt;br /&gt; Para ver los cambios reflejados es necesario iniciar sesión nuevamente..
         /// </summary>
         internal static string MsjActContrasena {
             get {
@@ -2347,7 +2347,7 @@ namespace PortalClientes.Properties {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a ¡Matricula Default Actualizada con Exito! &lt;br /&gt; Para ver los cambios reflejados es necesario iniciar sesion nuevamente..
+        ///   Busca una cadena traducida similar a ¡Matricula Default Actualizada con Éxito! &lt;br /&gt; Para ver los cambios reflejados es necesario iniciar sesión nuevamente..
         /// </summary>
         internal static string MsjActMatricula {
             get {
@@ -2356,7 +2356,7 @@ namespace PortalClientes.Properties {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a ¡Usuario Actulizado con Exito! &lt;br /&gt; Para ver los cambios reflejados es necesario iniciar sesion nuevamente..
+        ///   Busca una cadena traducida similar a ¡Usuario Actualizado con Éxito! &lt;br /&gt; Para ver los cambios reflejados es necesario iniciar sesión nuevamente..
         /// </summary>
         internal static string MsjActUsuario {
             get {
@@ -2770,7 +2770,7 @@ namespace PortalClientes.Properties {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Descripcion.
+        ///   Busca una cadena traducida similar a Descripción.
         /// </summary>
         internal static string tabdoc_Descripcion {
             get {
@@ -2797,7 +2797,7 @@ namespace PortalClientes.Properties {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Ver Docuemtno.
+        ///   Busca una cadena traducida similar a Ver Documento.
         /// </summary>
         internal static string TabDoc_VIewDoc {
             get {
@@ -3400,7 +3400,7 @@ namespace PortalClientes.Properties {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Actualizar Informacion.
+        ///   Busca una cadena traducida similar a Actualizar Información.
         /// </summary>
         internal static string Us_ActInfo {
             get {
@@ -3814,7 +3814,7 @@ namespace PortalClientes.Properties {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Ver mas....
+        ///   Busca una cadena traducida similar a Ver más....
         /// </summary>
         internal static string Us_Vermas {
             get {
