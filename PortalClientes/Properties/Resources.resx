@@ -379,7 +379,7 @@
     <value>Últimos 12 Meses</value>
   </data>
   <data name="Das_Fijo" xml:space="preserve">
-    <value>Fijo</value>
+    <value>Fijos</value>
   </data>
   <data name="Das_Manual" xml:space="preserve">
     <value>Mes Actual</value>
@@ -397,7 +397,7 @@
     <value>Ultimos 3 Meses</value>
   </data>
   <data name="Das_Variable" xml:space="preserve">
-    <value>Variable</value>
+    <value>Variables</value>
   </data>
   <data name="TabTran_Categoria" xml:space="preserve">
     <value>Categoría</value>
