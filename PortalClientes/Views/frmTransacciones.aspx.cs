@@ -2328,6 +2328,59 @@ namespace PortalClientes.Views
         }
         private void exportarExcelUSD()
         {
+            var nameFile = "Transacciones_" + (string)Session["titleFile"] + "_USD.xls";
+            Response.Clear();
+            Response.Buffer = true;
+            Response.AddHeader("content-disposition", string.Format("attachment;filename={0}", nameFile));
+            Response.ContentEncoding = Encoding.Default;
+            //Response.Charset = "ISO-8859-1";
+            Response.ContentType = "application/vnd.ms-excel";
+            using (StringWriter sw = new StringWriter())
+            {
+                HtmlTextWriter hw = new HtmlTextWriter(sw);
+
+                gvGastosUSD.AllowPaging = false;
+                var tipo = Convert.ToInt32(Session["tipoTransaccion"]);
+                Transacciones transacciones = new Transacciones();
+
+                if (tipo == 13)
+                {
+                    transacciones.detalleEdoCuenta = (List<detalleEdoCta>)Session["data"];
+                    LlenarGVUSD(transacciones, tipo);
+                }
+
+
+                gvGastosUSD.HeaderRow.BackColor = Color.White;
+                foreach (TableCell cell in gvGastosUSD.HeaderRow.Cells)
+                {
+                    cell.BackColor = gvGastosUSD.HeaderStyle.BackColor;
+                }
+                foreach (GridViewRow row in gvGastosUSD.Rows)
+                {
+                    row.BackColor = Color.White;
+                    foreach (TableCell cell in row.Cells)
+                    {
+                        if (row.RowIndex % 2 == 0)
+                        {
+                            cell.BackColor = gvGastosUSD.AlternatingRowStyle.BackColor;
+                        }
+                        else
+                        {
+                            cell.BackColor = gvGastosUSD.RowStyle.BackColor;
+                        }
+                        cell.CssClass = "textmode";
+                    }
+                }
+
+                gvGastosUSD.RenderControl(hw);
+
+                string style = @"<style> .textmode { } </style>";
+                Response.Write(sw.ToString());
+                //Response.Output.Write();
+                //Response.Flush();
+                Response.End();
+            }
+
             //var nameFile = "Transacciones_" + (string)Session["titleFile"] + ".xls";
             //Response.Clear();
             //Response.Buffer = true;
@@ -2379,57 +2432,57 @@ namespace PortalClientes.Views
             //    Response.End();
             //}
 
-            var nameFile = "Transacciones_" + (string)Session["titleFile"] + "_USD.xls";
-            Response.Clear();
-            Response.Buffer = true;
-            Response.AddHeader("content-disposition", string.Format("attachment;filename={0}", nameFile));
-            Response.ContentEncoding = Encoding.Default;
-            //Response.Charset = "ISO-8859-1";
-            Response.ContentType = "application/vnd.ms-excel";
-            using (StringWriter sw = new StringWriter())
-            {
-                HtmlTextWriter hw = new HtmlTextWriter(sw);
+            //var nameFile = "Transacciones_" + (string)Session["titleFile"] + "_USD.xls";
+            //Response.Clear();
+            //Response.Buffer = true;
+            //Response.AddHeader("content-disposition", string.Format("attachment;filename={0}", nameFile));
+            //Response.ContentEncoding = Encoding.Default;
+            ////Response.Charset = "ISO-8859-1";
+            //Response.ContentType = "application/vnd.ms-excel";
+            //using (StringWriter sw = new StringWriter())
+            //{
+            //    HtmlTextWriter hw = new HtmlTextWriter(sw);
 
 
-                gvGastosUSD.AllowPaging = false;
-                var tipo = Convert.ToInt32(Session["tipoTransaccion"]);
-                Transacciones transacciones = new Transacciones();
-                if (tipo == 13)
-                {
-                    transacciones.detalleEdoCuenta = (List<detalleEdoCta>)Session["data"];
-                    LlenarGVUSD(transacciones, tipo);
-                }
+            //    gvGastosUSD.AllowPaging = false;
+            //    var tipo = Convert.ToInt32(Session["tipoTransaccion"]);
+            //    Transacciones transacciones = new Transacciones();
+            //    if (tipo == 13)
+            //    {
+            //        transacciones.detalleEdoCuenta = (List<detalleEdoCta>)Session["data"];
+            //        LlenarGVUSD(transacciones, tipo);
+            //    }
 
-                gvGastosUSD.HeaderRow.BackColor = Color.White;
-                foreach (TableCell cell in gvGastosUSD.HeaderRow.Cells)
-                {
-                    cell.BackColor = gvGastosUSD.HeaderStyle.BackColor;
-                }
-                foreach (GridViewRow row in gvGastosUSD.Rows)
-                {
-                    row.BackColor = Color.White;
-                    foreach (TableCell cell in row.Cells)
-                    {
-                        if (row.RowIndex % 2 == 0)
-                        {
-                            cell.BackColor = gvGastosUSD.AlternatingRowStyle.BackColor;
-                        }
-                        else
-                        {
-                            cell.BackColor = gvGastosUSD.RowStyle.BackColor;
-                        }
-                        cell.CssClass = "textmode";
-                    }
-                }
+            //    gvGastosUSD.HeaderRow.BackColor = Color.White;
+            //    foreach (TableCell cell in gvGastosUSD.HeaderRow.Cells)
+            //    {
+            //        cell.BackColor = gvGastosUSD.HeaderStyle.BackColor;
+            //    }
+            //    foreach (GridViewRow row in gvGastosUSD.Rows)
+            //    {
+            //        row.BackColor = Color.White;
+            //        foreach (TableCell cell in row.Cells)
+            //        {
+            //            if (row.RowIndex % 2 == 0)
+            //            {
+            //                cell.BackColor = gvGastosUSD.AlternatingRowStyle.BackColor;
+            //            }
+            //            else
+            //            {
+            //                cell.BackColor = gvGastosUSD.RowStyle.BackColor;
+            //            }
+            //            cell.CssClass = "textmode";
+            //        }
+            //    }
 
-                gvGastosUSD.RenderControl(hw);
+            //    gvGastosUSD.RenderControl(hw);
 
-                string style = @"<style> .textmode { } </style>";
-                Response.Write(sw.ToString());
-                //Response.Output.Write();
-                //Response.Flush();
-                Response.End();
-            }
+            //    string style = @"<style> .textmode { } </style>";
+            //    Response.Write(sw.ToString());
+            //    //Response.Output.Write();
+            //    //Response.Flush();
+            //    Response.End();
+            //}
         }
 
 
