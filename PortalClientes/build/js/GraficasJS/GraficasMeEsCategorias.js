@@ -183,7 +183,7 @@ function chartsCLT(data) {
                 groupWidth: "60%",
             },
             isStacked: true,
-            fontSize: 9,
+            fontSize: 12,
             chartArea: {
                 left: screenWidth > 500 ? 30 : 10,
                 top: 30,
@@ -209,7 +209,7 @@ function chartsCLT(data) {
                 groupWidth: "60%",
             },
             isStacked: true,
-            fontSize: 9,
+            fontSize: 12,
             chartArea: {
                 left: screenWidth > 500 ? 30 : 10,
                 top: 30,
