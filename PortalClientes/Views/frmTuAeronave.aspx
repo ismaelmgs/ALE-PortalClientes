@@ -126,7 +126,7 @@
                                                 <asp:Label ID="lblPesoMaxDespegue" runat="server" Text="Peso Máx. Despegue:"></asp:Label>
                                             </div>
                                             <div class="col-md-3">
-                                                <asp:Label ID="lblPesoMaxDespegueRes" runat="server" Text="---" Font-Bold="true"></asp:Label>
+                                                <asp:Label ID="lblPesoMaxDespegueRes" runat="server" Text="---" Font-Bold="true"></asp:Label> lb
                                             </div>
                                         </div>
                                     </div>
@@ -136,7 +136,7 @@
                                                 <asp:Label ID="lblPesoMaxAterrizaje" runat="server" Text="Peso Máx. Aterrizaje:"></asp:Label>
                                             </div>
                                             <div class="col-md-3">
-                                                <asp:Label ID="lblPesoMaxAterrizajeRes" runat="server" Text="---" Font-Bold="true"></asp:Label>
+                                                <asp:Label ID="lblPesoMaxAterrizajeRes" runat="server" Text="---" Font-Bold="true"></asp:Label> lb
                                             </div>
                                         </div>
                                     </div>
@@ -148,7 +148,7 @@
                                                 <asp:Label ID="lblMaxCeroCombustible" runat="server" Text="Peso Máx. 0 combustible:"></asp:Label>
                                             </div>
                                             <div class="col-md-3">
-                                                <asp:Label ID="lblMaxCeroCombustibleRes" runat="server" Text="----------" Font-Bold="true"></asp:Label>
+                                                <asp:Label ID="lblMaxCeroCombustibleRes" runat="server" Text="----------" Font-Bold="true"></asp:Label> lb
                                             </div>
                                         </div>
                                     </div>
@@ -158,7 +158,7 @@
                                                 <asp:Label ID="lblPesoBasicoOperacion" runat="server" Text="Peso Básico Operación:"></asp:Label>
                                             </div>
                                             <div class="col-md-3">
-                                                <asp:Label ID="lblPesoBasicoOperacionRes" runat="server" Text="---" Font-Bold="true"></asp:Label>
+                                                <asp:Label ID="lblPesoBasicoOperacionRes" runat="server" Text="---" Font-Bold="true"></asp:Label> lb
                                             </div>
                                         </div>
                                     </div>
