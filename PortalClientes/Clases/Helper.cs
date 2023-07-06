@@ -40,8 +40,8 @@ namespace PortalClientes.Clases
         public const string D_UrlObtenerAeronave = "http://201.163.208.231/" + DominioWS + "/ws/pc/consultaMatriculaAeronave";
 
         //public const string D_UrlObtenerVuelos = "http://201.163.208.231/" + DominioWS + "/ws/pc/obtieneEventosMatriculaVuelos";
-        //public const string D_UrlObtenerVuelos = "http://localhost:64945/api/obtieneEventosMatriculaVuelos/";
-        public const string D_UrlObtenerVuelos = "http://192.168.1.250/wsALERest/api/obtieneEventosMatriculaVuelos/";
+        public const string D_UrlObtenerVuelos = "https://www.alesuite.com/wsALERest/api/obtieneEventosMatriculaVuelos/";
+        //public const string D_UrlObtenerVuelos = "http://192.168.1.250/wsALERest/api/obtieneEventosMatriculaVuelos/";
 
         public const string D_UrlObtenerMttos = "http://201.163.208.231/" + DominioWS + "/ws/pc/obtieneEventosMantto";
         public const string D_UrlObtenerMapaFlota = "http://201.163.208.231/" + DominioWS + "/ws/pc/consultaFleetMap";
@@ -92,14 +92,14 @@ namespace PortalClientes.Clases
 
         public const string US_UrlObtieneMatriculasContratos = "http://201.163.208.231/" + DominioWS + "/ws/pc/obtieneMatriculasContratos";
 
-        //public const string D_TokenPortal = "https://www.alesuite.com/wsALERest/api/login";
-        public const string D_TokenPortal = "http://192.168.1.250/wsALERest/api/login";
+        public const string D_TokenPortal = "https://www.alesuite.com/wsALERest/api/login";
+        //public const string D_TokenPortal = "http://192.168.1.250/wsALERest/api/login";
 
-        //public const string D_UrlobtieneDatosReporteCostoPorHora = "https://www.alesuite.com/wsALERest/api/obtieneDatosReporteCostoPorHora";
-        public const string D_UrlobtieneDatosReporteCostoPorHora = "http://192.168.1.250/wsALERest/api/obtieneDatosReporteCostoPorHora";
+        public const string D_UrlobtieneDatosReporteCostoPorHora = "https://www.alesuite.com/wsALERest/api/obtieneDatosReporteCostoPorHora";
+        //public const string D_UrlobtieneDatosReporteCostoPorHora = "http://192.168.1.250/wsALERest/api/obtieneDatosReporteCostoPorHora";
 
-        //public const string D_UrlobtieneMetricasEstadisticas = "https://www.alesuite.com/wsALERest/api/obtieneMetricasEstadisticas";
-        public const string D_UrlobtieneMetricasEstadisticas = "http://192.168.1.250/wsALERest/api/obtieneMetricasEstadisticas";
+        public const string D_UrlobtieneMetricasEstadisticas = "https://www.alesuite.com/wsALERest/api/obtieneMetricasEstadisticas";
+        //public const string D_UrlobtieneMetricasEstadisticas = "http://192.168.1.250/wsALERest/api/obtieneMetricasEstadisticas";
 
 
     }
