@@ -193,7 +193,7 @@ namespace PortalClientes.Views
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl pnlusd;
-        
+
         /// <summary>
         /// Control lblTransacciones2.
         /// </summary>
@@ -202,7 +202,7 @@ namespace PortalClientes.Views
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblTransacciones2;
-        
+
         /// <summary>
         /// Control btnExcelUSD.
         /// </summary>
@@ -211,7 +211,16 @@ namespace PortalClientes.Views
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.LinkButton btnExcelUSD;
-        
+
+        /// <summary>
+        /// Control pnlReporteGastosUSD.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel pnlReporteGastosUSD;
+
         /// <summary>
         /// Control gvGastosUSD.
         /// </summary>
@@ -220,7 +229,7 @@ namespace PortalClientes.Views
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.GridView gvGastosUSD;
-        
+
         /// <summary>
         /// Control btnRegresarMeEsEng.
         /// </summary>
