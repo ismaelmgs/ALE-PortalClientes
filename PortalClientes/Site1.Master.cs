@@ -65,6 +65,7 @@ namespace PortalClientes
             Utils.Idioma = "es-MX";
             string strUrl = string.Empty;
             strUrl = Page.Request.Url.ToString().Replace("192.168.1.250", "www.alesuite.com");
+            strUrl = Page.Request.Url.ToString().Replace("portal", "alesuite.com");
             Page.Response.Redirect(strUrl, true);
         }
 
@@ -73,6 +74,7 @@ namespace PortalClientes
             Utils.Idioma = "en-US";
             string strUrl = string.Empty;
             strUrl = Page.Request.Url.ToString().Replace("192.168.1.250", "www.alesuite.com");
+            strUrl = Page.Request.Url.ToString().Replace("portal", "alesuite.com");
             Page.Response.Redirect(strUrl, true);
         }
 
@@ -247,8 +249,8 @@ namespace PortalClientes
                 }
             }
             string strUrl = string.Empty;
-            strUrl = Page.Request.Url.ToString().Replace("192.168.1.250", "www.alesuite.com");
-            strUrl = Page.Request.Url.ToString().Replace("portal", "www.alesuite.com");
+            strUrl = Page.Request.Url.ToString().Replace("192.168.1.250", "alesuite.com");
+            strUrl = Page.Request.Url.ToString().Replace("portal", "alesuite.com");
             Page.Response.Redirect(strUrl, false);
             Context.ApplicationInstance.CompleteRequest();
         }
