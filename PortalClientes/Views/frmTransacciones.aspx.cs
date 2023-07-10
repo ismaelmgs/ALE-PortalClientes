@@ -2213,74 +2213,10 @@ namespace PortalClientes.Views
             }
         }
 
-        private void exportarExcel_USD()
-        {
-            var nameFile = "Transacciones_" + (string)Session["titleFile"] + ".xls";
-            Response.Clear();
-            Response.Buffer = true;
-            Response.AddHeader("content-disposition", string.Format("attachment;filename={0}", nameFile));
-            Response.ContentEncoding = Encoding.Default;
-            //Response.Charset = "ISO-8859-1";
-            Response.ContentType = "application/vnd.ms-excel";
-            using (StringWriter sw = new StringWriter())
-            {
-                HtmlTextWriter hw = new HtmlTextWriter(sw);
-
-
-                gvGastosUSD.AllowPaging = false;
-                var tipo = Convert.ToInt32(Session["tipoTransaccion"]);
-                Transacciones transacciones = new Transacciones();
-                if (tipo == 1)
-                {
-                    transacciones.gastos = (List<gvGastos>)Session["data"];
-                    LlenarGV(transacciones, tipo);
-                }
-                else if (tipo == 13)
-                {
-                    transacciones.detalleEdoCuenta = (List<detalleEdoCta>)Session["data"];
-                    LlenarGV(transacciones, tipo);
-                }
-
-                gvGastosUSD.HeaderRow.BackColor = Color.White;
-                foreach (TableCell cell in gvGastosUSD.HeaderRow.Cells)
-                {
-                    cell.BackColor = gvGastosUSD.HeaderStyle.BackColor;
-                }
-                foreach (GridViewRow row in gvGastosUSD.Rows)
-                {
-                    row.BackColor = Color.White;
-                    foreach (TableCell cell in row.Cells)
-                    {
-                        if (row.RowIndex % 2 == 0)
-                        {
-                            cell.BackColor = gvGastosUSD.AlternatingRowStyle.BackColor;
-                        }
-                        else
-                        {
-                            cell.BackColor = gvGastosUSD.RowStyle.BackColor;
-                        }
-                        cell.CssClass = "textmode";
-                    }
-                }
-
-                gvGastosUSD.RenderControl(hw);
-
-                string style = @"<style> .textmode { } </style>";
-                Response.Write(sw.ToString());
-                //Response.Output.Write();
-                //Response.Flush();
-                Response.End();
-            }
-        }
-
         protected void btnExcelUSD_Click(object sender, EventArgs e)
         {
             try
             {
-                //exportarExcelUSD();
-                //exportarExcelUSD2();
-                //exportarExcel_USD();
-                //ExportarDolares(); //Si exporta
                 exportarExcelUSD();
             }
             catch (Exception ex)
@@ -2289,25 +2225,6 @@ namespace PortalClientes.Views
             }
         }
 
-        public void exportarExcelUSD2()
-        {
-            Response.Clear();
-            Response.Buffer = true;
-            Response.ClearContent();
-            Response.ClearHeaders();
-            Response.Charset = "";
-            string FileName = "Vithal" + DateTime.Now + ".xls";
-            StringWriter strwritter = new StringWriter();
-            HtmlTextWriter htmltextwrtter = new HtmlTextWriter(strwritter);
-            Response.Cache.SetCacheability(HttpCacheability.NoCache);
-            Response.ContentType = "application/vnd.ms-excel";
-            Response.AddHeader("Content-Disposition", "attachment;filename=" + FileName);
-            gvGastosUSD.GridLines = GridLines.Both;
-            gvGastosUSD.HeaderStyle.Font.Bold = true;
-            gvGastosUSD.RenderControl(htmltextwrtter);
-            Response.Write(strwritter.ToString());
-            Response.End();
-        }
         private void exportarExcelUSD()
         {
             var nameFile = "Transacciones_" + (string)Session["titleFile"] + "_USD.xls";
@@ -2340,18 +2257,6 @@ namespace PortalClientes.Views
                 foreach (GridViewRow row in gvGastosUSD.Rows)
                 {
                     row.BackColor = Color.White;
-                    //foreach (TableCell cell in row.Cells)
-                    //{
-                    //    if (row.RowIndex % 2 == 0)
-                    //    {
-                    //        cell.BackColor = gvGastosUSD.AlternatingRowStyle.BackColor;
-                    //    }
-                    //    else
-                    //    {
-                    //        cell.BackColor = gvGastosUSD.RowStyle.BackColor;
-                    //    }
-                    //    cell.CssClass = "textmode";
-                    //}
                 }
 
                 gvGastosUSD.RenderControl(hw);
@@ -2359,110 +2264,7 @@ namespace PortalClientes.Views
                 //Response.Output.Write();
                 Response.Flush();
                 Response.End();
-            }
-
-            //var nameFile = "Transacciones_" + (string)Session["titleFile"] + ".xls";
-            //Response.Clear();
-            //Response.Buffer = true;
-            //Response.AddHeader("content-disposition", string.Format("attachment;filename={0}", nameFile));
-            //Response.ContentEncoding = Encoding.Default;
-            ////Response.Charset = "ISO-8859-1";
-            //Response.ContentType = "application/vnd.ms-excel";
-            //using (StringWriter sw = new StringWriter())
-            //{
-            //    HtmlTextWriter hw = new HtmlTextWriter(sw);
-
-            //    gvGastosUSD.AllowPaging = false;
-            //    var tipo = Convert.ToInt32(Session["tipoTransaccion"]);
-            //    Transacciones transacciones = new Transacciones();
-            //    if (tipo == 13)
-            //    {
-            //        transacciones.detalleEdoCuenta = (List<detalleEdoCta>)Session["data"];
-            //        LlenarGVUSD(transacciones, tipo);
-            //    }
-
-            //    gvGastosUSD.HeaderRow.BackColor = Color.White;
-            //    foreach (TableCell cell in gvGastosUSD.HeaderRow.Cells)
-            //    {
-            //        cell.BackColor = gvGastosUSD.HeaderStyle.BackColor;
-            //    }
-            //    foreach (GridViewRow row in gvGastosUSD.Rows)
-            //    {
-            //        row.BackColor = Color.White;
-            //        foreach (TableCell cell in row.Cells)
-            //        {
-            //            if (row.RowIndex % 2 == 0)
-            //            {
-            //                cell.BackColor = gvGastosUSD.AlternatingRowStyle.BackColor;
-            //            }
-            //            else
-            //            {
-            //                cell.BackColor = gvGastosUSD.RowStyle.BackColor;
-            //            }
-            //            cell.CssClass = "textmode";
-            //        }
-            //    }
-
-            //    gvGastosUSD.RenderControl(hw);
-
-            //    string style = @"<style> .textmode { } </style>";
-            //    Response.Write(sw.ToString());
-            //    //Response.Output.Write();
-            //    //Response.Flush();
-            //    Response.End();
-            //}
-
-            //var nameFile = "Transacciones_" + (string)Session["titleFile"] + "_USD.xls";
-            //Response.Clear();
-            //Response.Buffer = true;
-            //Response.AddHeader("content-disposition", string.Format("attachment;filename={0}", nameFile));
-            //Response.ContentEncoding = Encoding.Default;
-            ////Response.Charset = "ISO-8859-1";
-            //Response.ContentType = "application/vnd.ms-excel";
-            //using (StringWriter sw = new StringWriter())
-            //{
-            //    HtmlTextWriter hw = new HtmlTextWriter(sw);
-
-
-            //    gvGastosUSD.AllowPaging = false;
-            //    var tipo = Convert.ToInt32(Session["tipoTransaccion"]);
-            //    Transacciones transacciones = new Transacciones();
-            //    if (tipo == 13)
-            //    {
-            //        transacciones.detalleEdoCuenta = (List<detalleEdoCta>)Session["data"];
-            //        LlenarGVUSD(transacciones, tipo);
-            //    }
-
-            //    gvGastosUSD.HeaderRow.BackColor = Color.White;
-            //    foreach (TableCell cell in gvGastosUSD.HeaderRow.Cells)
-            //    {
-            //        cell.BackColor = gvGastosUSD.HeaderStyle.BackColor;
-            //    }
-            //    foreach (GridViewRow row in gvGastosUSD.Rows)
-            //    {
-            //        row.BackColor = Color.White;
-            //        foreach (TableCell cell in row.Cells)
-            //        {
-            //            if (row.RowIndex % 2 == 0)
-            //            {
-            //                cell.BackColor = gvGastosUSD.AlternatingRowStyle.BackColor;
-            //            }
-            //            else
-            //            {
-            //                cell.BackColor = gvGastosUSD.RowStyle.BackColor;
-            //            }
-            //            cell.CssClass = "textmode";
-            //        }
-            //    }
-
-            //    gvGastosUSD.RenderControl(hw);
-
-            //    string style = @"<style> .textmode { } </style>";
-            //    Response.Write(sw.ToString());
-            //    //Response.Output.Write();
-            //    //Response.Flush();
-            //    Response.End();
-            //}
+            }    
         }
 
         #endregion
@@ -2696,101 +2498,5 @@ namespace PortalClientes.Views
 
         }
 
-
-        public void ExportarAExcel(GridView gridView)
-        {
-
-            var nameFile = "Transacciones_" + (string)Session["titleFile"] + "_USD.xls";
-            // Establecer la propiedad LicenseContext
-            ExcelPackage.LicenseContext = LicenseContext.NonCommercial;
-
-            // Crear un nuevo paquete de Excel
-            using (ExcelPackage package = new ExcelPackage())
-            {
-                // Crear una nueva hoja de trabajo
-                ExcelWorksheet worksheet = package.Workbook.Worksheets.Add("Datos");
-
-                // Obtener la cantidad de columnas y filas del GridView
-                int columnCount = gridView.Columns.Count;
-                int rowCount = gridView.Rows.Count;
-
-                // Escribir los encabezados de las columnas en el archivo de Excel
-                for (int i = 0; i < columnCount; i++)
-                {
-                    worksheet.Cells[1, i + 1].Value = gridView.Columns[i].HeaderText;
-                }
-
-                // Escribir los datos del GridView en el archivo de Excel
-                for (int i = 0; i < rowCount; i++)
-                {
-                    GridViewRow row = gridView.Rows[i];
-
-                    for (int j = 0; j < columnCount; j++)
-                    {
-                        // Obtener el control de la celda dentro de la fila del GridView
-                        TableCell cell = row.Cells[j];
-
-                        // Verificar si el control es un control de enlace (LinkButton, HyperLink, etc.)
-                        if (cell.Controls.Count > 0 && cell.Controls[0] is ITextControl)
-                        {
-                            // Obtener el texto del control de enlace
-                            string text = ((ITextControl)cell.Controls[0]).Text;
-                            worksheet.Cells[i + 2, j + 1].Value = text;
-                        }
-                        else
-                        {
-                            // Obtener el texto de la celda directamente
-                            worksheet.Cells[i + 2, j + 1].Value = cell.Text;
-                        }
-                    }
-                }
-
-                // Convertir el paquete de Excel a un arreglo de bytes
-                byte[] fileBytes = package.GetAsByteArray();
-
-                // Enviar el archivo para descargar a través de la respuesta HTTP
-                HttpResponse response = HttpContext.Current.Response;
-                response.Clear();
-                response.ContentType = "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet";
-                response.AddHeader("Content-Disposition", "attachment; filename=" + nameFile);
-                response.BinaryWrite(fileBytes);
-                response.End();
-            }
-
-        }
-
-
-        public void ExportarUSD()
-        {
-            Response.Clear();
-            Response.Buffer = true;
-            Response.ContentType = "application/vnd.ms-excel";
-            Response.AddHeader("content-disposition", "attachment;filename=ReporteGeneral.xls");
-            Response.Charset = Encoding.UTF8.WebName; //"UTF-8";
-            Response.ContentEncoding = Encoding.UTF8;
-            this.EnableViewState = false;
-
-            StringWriter stringWrite = new StringWriter();
-            HtmlTextWriter htmlWrite = new HtmlTextWriter(stringWrite);
-            pnlReporteGastosUSD.RenderControl(htmlWrite);
-
-            //string style = @"<style> " + System.IO.File.ReadAllText(Server.MapPath("~/Styles/bootstrap4.min.css")) + "</style>";
-            //Response.Write(style);
-
-            Response.Write(stringWrite.ToString());
-            Response.Flush();
-            Response.Close();
-
-            stringWrite.Flush();
-            htmlWrite.Flush();
-            stringWrite.Close();
-            htmlWrite.Close();
-            stringWrite.Dispose();
-            htmlWrite.Dispose();
-
-            //Response.End();
-            Response.SuppressContent = true;
-            HttpContext.Current.ApplicationInstance.CompleteRequest();
-        }
     }
 }
